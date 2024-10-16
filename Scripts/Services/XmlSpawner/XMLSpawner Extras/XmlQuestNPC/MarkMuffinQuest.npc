@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Muffin Master Mark</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Muffin Bounty</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>MarkMuffinQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Greetings, adventurer! My oven's been working non-stop, and I need more muffins. Would you help me gather some?</Text>
+    <Keywords>You see a man in blue who seems to crave Muffins.</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Muffin Bounty,4/Muffins are needed urgently for a big order. I'll give you a special reward for your help.;Let's do it!;Absolutely</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Wonderful! Once you've gathered enough muffins, return to me. I appreciate your help!</Text>
+    <Keywords>Absolutely</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Muffin Bounty/TitleString/Muffin Bounty/NoteString/Mark needs muffins urgently. Gather them and bring them back for a wonderful reward./Objective1/COLLECT,Muffin,50/Description1/Collect 50 muffins for Mark/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/MaxxiaScroll/ADD/&lt;muffin/hue/RND,1,3000/name/Marks Magic Muffin&gt;/ADD/&lt;bag/hue/55/Name/Bag O' Fresh Muffins/ADD/Muffin/ADD/Muffin/ADD/Muffin&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

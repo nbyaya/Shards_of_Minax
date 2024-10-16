@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Dark Conspirator Vincent</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Assassin's Proof</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>8</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>VincentAssassinQuest4</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Brawny Bart has crossed a line he ought not. Will you be the instrument of his demise?</Text>
+    <Keywords>You notice a cloaked figure who beckons you closer with a sinister intent</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1175</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1175</SpeechHue>
+    <Gump>GUMP,Assassination Contract,4/Brawny Bart must be eliminated quietly. Do you accept this dark deed?;I'll do what must be done.;I accept.</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Excellent. Let no one see you, and bring me proof of his silence.</Text>
+    <Keywords>I accept.</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Assassin's Proof/TitleString/Brawny Bart Assassination/NoteString/Deliver proof of Brawny Bart's assassination to Vincent for a reward./Objective1/ASSASSINATE,Brawny Bart,1/Description1/Silence Brawny Bart/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/&lt;MaxxiaScroll/amount/3&gt;/ADD/&lt;BlackPearl/hue/RND,1,300/name/Shadow of Silence&gt;/ADD/&lt;bag/hue/1109/Name/Assassin's Cache/ADD/&lt;InvisibilityPotion/name/Potion of the Unseen&gt;/ADD/&lt;Kryss/name/Whispering Blade&gt;/ADD/&lt;RefreshPotion/name/Potion of Renewed Vigor&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1175</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1175</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

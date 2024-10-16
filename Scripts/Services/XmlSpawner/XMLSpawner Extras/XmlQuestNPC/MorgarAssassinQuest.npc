@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Dark Envoy Morgar</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Assassin's Token</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>MorgarAssassinQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>I require a certain... nuisance... to be dealt with. The name is Scallywag Steve. Are you willing to take on this dark task?</Text>
+    <Keywords>You approach a shadowy figure who whispers of dark deeds and blood to be spilled.</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Dark Contract,4/Steve's days are numbered. You must act swiftly and without mercy. Do you accept?;I am the shadow that moves unseen;Yes</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Good... return to me with proof of the deed, and you will be handsomely rewarded. Do not disappoint me.</Text>
+    <Keywords>Yes</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Assassin's Token/TitleString/Proof of Scallywag Steve's demise/NoteString/Return proof of assassinating Scallywag Steve to Morgar for a reward./Objective1/KILLNAMED,Scallywag Steve,1/Description1/Assassinate Scallywag Steve/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/&lt;MaxxiaScroll/amount/3&gt;/ADD/&lt;BlackPearl/hue/RND,1,300/name/Dark Gem of Silence&gt;/ADD/&lt;bag/hue/1173/Name/Assassin's Cache/ADD/&lt;TeleportScroll/name/Scroll of Shadows&gt;/ADD/&lt;AssassinSpike/name/Steve's Last Breath&gt;/ADD/&lt;PoisonPotion/name/Potion of Lethal Silence&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

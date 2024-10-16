@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Silver Collector Stella</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Silver Bounty</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>StellaSilverQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Hello, traveler! Our mines have produced a lot of silver this season. Would you assist me in collecting some?</Text>
+    <Keywords>Hello, do you want to help collect silver today?</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Silver Bounty,4/Silver can be found deep in the mines. I'll reward you generously for every batch you bring me.;Sounds interesting!;Absolutely</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Marvelous! Hand over the silver once you've gathered enough. Best of luck mining!</Text>
+    <Keywords>Absolutely</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Silver Bounty/TitleString/Silver Bounty/NoteString/Stella requires silver from the mines. Mine and bring them to her for a splendid reward./Objective1/COLLECT,SilverIngot,50/Description1/Mine 50 Silver Ingots for Stella/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/MaxxiaScroll/ADD,0.2/{RNDSTRLIST,SilverNecklace,SilverChalice,SilverTray}/ADD/&lt;bag/hue/47/Name/Bag O' Mined Silver/ADD/SilverIngot/ADD/SilverIngot/ADD/SilverIngot&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

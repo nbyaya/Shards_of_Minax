@@ -1,0 +1,45 @@
+XmlArcaneExplosion, damage, refractory, expiresin
+XmlBlazeStrike, damage, duration
+XmlCursedTouch, damageIncrease, durationInSeconds
+XmlDisarm, refractory
+XmlEarthquakeStrike, damage, refractory, expiresin
+XmlCustomAttacks, name, nspecials
+XmlCustomDefenses, name, nspecials
+XmlFire, damage, refractory, expiresin
+XmlFreeze, seconds
+XmlFreezeStrike, durationInSeconds
+XmlLifeDrain, drain, refractory, expiresin
+XmlLightning, damage, refractory, expiresin
+XmlMagicWord, word, duration, refractory, charges
+XmlManaBurn, maxManaDrain, damageMultiplier, refractory
+XmlManaDrain, drain, refractory, expiresin
+XmlMinionStrike, minion, chance, refractory, expiresin
+XmlNaturesWrath, damage, refractory, expiresin
+XmlPoisionCloud, intensity, refractory, expiresin
+XmlStamDrain, drain, refractory, expiresin
+XmlWhirlwind, damage, refractory, expiresin
+XmlWindGust, refractory
+
+
+XmlWindGust,1
+XmlEarthquakeStrike,20
+XmlDisarm,1
+XmlDisarmor,1
+XmlTheftStrike,1
+XmlCursedTouch,5,5
+XmlLightning,30,1
+XmlManaBurn,20,2,1
+XmlWhirlwind,20,1
+XmlLifeDrain,20,1
+XmlStamDrain,20,1
+XmlManaDrain,20,1
+XmlMinionStrike,skeleton,30
+XmlBlazeStrike,20,30
+XmlAstralStrike,30,10
+XmlFrostStrike,25,25
+XmlPoisonStrike,10,60
+XmlStaticStrike,50,5
+XmlBladeStrike,25,30
+XmlSmokeStrike,20,60
+XmlBlastStrike,50,30
+XmlWaterStrike,30,20

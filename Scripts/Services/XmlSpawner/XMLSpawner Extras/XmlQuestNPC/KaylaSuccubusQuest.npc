@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Twilight Hunter Kayla</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Succubus Emblem</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>KaylaSuccubusQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Shadows thicken as the Solara Succubi descend upon the land. Will you stand with me against them?</Text>
+    <Keywords>You see a determined warrior, her eyes scanning the horizon for threats from the twilight realm.</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Succubus Hunt,4/The twilight whispers of Solara Succubi charming the unwary. Purge this menace.;I'll face this danger!;Undoubtedly</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your courage shines brightly. Vanquish this foe and bring back a token of your victory for a just reward.</Text>
+    <Keywords>Undoubtedly</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Succubus Emblem/TitleString/Solara Succubus Defeat/NoteString/Return proof of defeating a Solara Succubus to Kayla for a reward./Objective1/KILLNAMED,Solara Succubus,1/Description1/Defeat a Solara Succubus/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/MaxxiaScroll/ADD/&lt;Amethyst/hue/RND,1,300/name/Essence of Twilight&gt;/ADD/&lt;bag/hue/1106/Name/Twilight's Bounty/ADD/&lt;TeleportScroll/name/Scroll of Dusk&gt;/ADD/&lt;Scimitar/name/Blade of the Twilight&gt;/ADD/&lt;RefreshPotion/name/Potion of Night's Respite&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Cyclops Hunter Caden</Name>
+    <Running>True</Running>
+    <ProximityRange>4</ProximityRange>
+    <ResetRange>18</ResetRange>
+    <NoTriggerOnCarried>Cyclops Eyepiece</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>12</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>CadenCyclopsQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>The Crimson Cyclops has been terrorizing the nearby villages. We must stop it before it's too late. Will you join the hunt?</Text>
+    <Keywords>You see a rugged warrior scanning the horizon, searching for those who would dare to face the Crimson Cyclops.</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Cyclops Hunt,4/The Crimson Cyclops is powerful, but I believe you have what it takes to defeat it. Accept the challenge?;I am ready!;Indeed</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>May your blade be swift and your shield strong. Bring me the Cyclops's eye as proof of your victory.</Text>
+    <Keywords>Indeed</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Crimson Evidence/TitleString/Crimson Cyclops Defeat/NoteString/Return proof of defeating the Crimson Cyclops to Caden for a reward./Objective1/KILLNAMED,Crimson Cyclops,1/Description1/Vanquish the Crimson Cyclops/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/MaxxiaScroll/ADD/&lt;Ruby/hue/RND,1,300/name/Eye of the Crimson&gt;/ADD/&lt;bag/hue/1195/Name/Cyclops Hunter's Cache/ADD/&lt;TeleportScroll/name/Scroll of Escape&gt;/ADD/&lt;WarHammer/name/Cyclops's Demise&gt;/ADD/&lt;HealPotion/name/Potion of Vigor&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

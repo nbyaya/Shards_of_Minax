@@ -1,0 +1,17 @@
+Ogre/ATTACH/XmlSuperBlast,1/name/Chlorine Cloud/str/200/dex/150/int/100/hue/63/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Ogre/name/BIG BUTT/str/200/dex/150/int/100/hue/90/tamable/true/hitsmaxseed/4000/hits/4000/ADD,0.1/MaxxiaScroll/
+
+ArmorIgnore
+BleedAttack
+ConcussionBlow
+CrushingBlow
+Disarm
+Dismount
+DoubleStrike
+InfectiousStrike
+MortalStrike
+MovingShot
+ParalyzingBlow
+ShadowStrike
+WhirlwindAttack

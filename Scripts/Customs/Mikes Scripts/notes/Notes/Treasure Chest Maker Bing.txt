@@ -1,0 +1,17 @@
+I would like you help makeing XML Spawner codes for cool unique treasure chests in my Ultima Online challenge world.  Below is an XML spawner code for a pirates treasure chest, it has a 10% chance of dropping a MaxxiaScroll and always drops 1-5000 gold pieces.  It also has several items that can be dropped randomly with unique names and unique hues.  There is also Blackbeards Journey which shows an example of a note item, a treasure box called "Pirates Booty", a random magical weapon (level 2-5) called Davey Jones, a pieces of magical pirate armor (level 1-4) called "Pirates Best", and a treasure map item.  Please only use items from the proveded list to populate the new treasure chests, it is below the XML Spawner code for the pirate chest.  There is a list of special key words you can use.  Please keep the new chest in the same format, all one line.  Please try to give all of the items unique names and hues.  I would like two new chests with Byzintine History themes.
+
+WoodenChest/Name/Treasure Chest/hue/RND,1,1788/ADD/MaxxiaScroll/ADD,0.05/<Sapphire/name/Sapphire of the Seas>/ADD,0.20/<BottleofAle/name/Pirate's Elixir/hue/1486>/ADD,0.15/<TreasureLevel1/name/Pirates Booty>/ADD,0.17/<SilverNecklace/name/Silver Dolphin Necklace>/ADD,0.50/<simplenote/notestring/We have captured a good bit of booty today!/titlestring/Captain Blackbeard's Journal>/ADD/<gold/amount/RND,1,5000>/ADD,0.15/<Emerald/name/Emerald of the Deep/hue/1775>/ADD,0.12/<BottleofAle/name/Aged Pirate's Rum>/ADD,0.08/<gold/name/Cursed Doubloon>/ADD,0.16/<ThighBoots/name/Boots of the Marauder/hue/1618>/ADD,0.19/<GoldenEarrings/name/Golden Sharktooth Earring>/ADD,0.17/<simplemap/name/Map to Blackbeard's Secret Stash>/bounds/(3000,3200,400,400)/newpin/(3100,3350)/protected/true>/ADD,0.04/<Spyglass/name/Captain's Trusted Spyglass>/ADD,0.13/<BlackBannerNorthArtifact/name/Blackbeard's Personal Banner>/ADD,0.15/<DeadlyPoisionPotion/name/Bottle of Mysterious Brew>/ADD,0.20/<WEAPON,2,5/name/Davy Jones/hue/RND,1,1788/maxdamage/RND,30,70>/ADD,0.20/<ARMOR,1,4/name/Pirate's Best/hue/RND,1,1788/BaseArmorRating/RND,30,70>
+
+Here is a list of the currently available special loot keywords:
+
+ARMOR,min,max - will drop a random piece of magical armor, shield, or jewelry with an attribute level randomly selected between min and max. min and max can range between 0 and 5 with 5 being the most powerful.
+WEAPON,min,max - does the same for weapons.
+JEWELRY,minlevel,maxlevel - drops random magic jewelry in the selected range.
+JWEAPON,min,max - drops a random magical weapon or piece of jewelry.
+JARMOR,min,max - drops a random piece of magicalarmor or jewelry.
+SCROLL,mincircle,maxcircle - drops a random scroll between mincircle and maxcircle.
+POTION - drops a random potion
+NECROSCROLL,index - drops a necro scroll of the specified index.
+SHIELD,minlev,maxlev - spawns a random magical shield between the minimum and maximum level (level range is 1-5).
+SARMOR,minlev,maxlev - spawns a random magical shield-or-armor piece.
+LOOTPACK,loottype - can be be used to add items to a mob or container using the distro lootpack system. The loottypes are poor, meager, average, rich, filthyrich, ultrarich, superboss. If the keyword is used in a triggered spawn, then the luck of the triggering mob will also be factored in when generating the loot (otherwise a default luck of zero is used in the loot calculation). Because of the way in which distro lootpack generation works, lootpacks added to a container will not contain stackable items such as gold.

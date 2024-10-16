@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Malicious Mordred</Name>
+    <Running>True</Running>
+    <ProximityRange>4</ProximityRange>
+    <ResetRange>20</ResetRange>
+    <NoTriggerOnCarried>Contract Seal</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>8</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>MordredAssassinQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Baker Bob has baked his last loaf. His fate is sealed. Will you be the blade in the dark?</Text>
+    <Keywords>A shadowy figure beckons you closer, his intentions hidden behind a malevolent grin</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Assassination Contract,4/Baker Bob must be removed from the equation. Accept this contract and fulfill your destiny.;I am the shadow.;I'll do it.</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your willingness to embrace the darkness is... appreciated. Bring me proof of the deed, and you shall be rewarded handsomely.</Text>
+    <Keywords>I'll do it.</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Contract Seal/TitleString/Baker Bob's Demise/NoteString/Return proof of Baker Bob's assassination to Mordred for a reward./Objective1/KILLNAMED,Baker Bob,1/Description1/Assassinate Baker Bob/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/&lt;MaxxiaScroll/amount/3&gt;/ADD/&lt;BlackPearl/hue/RND,1,300/name/Essence of Nightshade&gt;/ADD/&lt;bag/hue/1109/Name/Assassin's Cache/ADD/&lt;TeleportScroll/name/Scroll of Shadows&gt;/ADD/&lt;AssassinSpike/name/Bob's Last Breath&gt;/ADD/&lt;PoisonPotion/name/Potion of Silent Death&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

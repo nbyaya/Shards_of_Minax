@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Venom Hunter Vance</Name>
+    <Running>True</Running>
+    <ProximityRange>4</ProximityRange>
+    <ResetRange>18</ResetRange>
+    <NoTriggerOnCarried>Paralyzing Proof</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>12</SpeechPace>
+    <ResetTime>0.6</ResetTime>
+    <ConfigFile>VanceParalyzerQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>These lands suffer under the toxic grip of the Xyrvak Paralyzers. Will you brave their venom for the greater good?</Text>
+    <Keywords>You notice a determined individual with antidotes strapped to his belt, eyeing the wilderness with resolve</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1.5</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1.5</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Paralyzer Hunt,4/The Xyrvak Paralyzers' poison threatens all. Hunt them down for us.;I will face this threat!;Indeed</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your courage is admirable. Return with a token of your victory, and you will be handsomely rewarded.</Text>
+    <Keywords>Indeed</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Paralyzing Proof/TitleString/Xyrvak Paralyzer Vanquished/NoteString/Prove the defeat of a Xyrvak Paralyzer to Vance for a reward./Objective1/KILLNAMED,Xyrvak Paralyzer,1/Description1/Vanquish a Xyrvak Paralyzer/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/MaxxiaScroll/ADD/&lt;Amber/hue/RND,1,300/name/Venom's Heart&gt;/ADD/&lt;bag/hue/2123/Name/Toxin Defier's Cache/ADD/&lt;RefreshPotion/name/Potion of Clarity&gt;/ADD/&lt;Kryss/name/Venom's Bane&gt;/ADD/&lt;LesserCurePotion/name/Potion of Purification&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1.5</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1.5</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

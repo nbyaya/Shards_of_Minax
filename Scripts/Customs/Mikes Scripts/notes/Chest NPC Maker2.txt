@@ -1,0 +1,595 @@
+I would like your help to me a new NPC for my ServUO server.  The NPCs are kind of like a dialogue puzzle, each one has a response for "name" "job" and "health".  From their responses to these key words, you learn more key words which you can say to unlock more dialogue and eventually a reward.  I would like your help to make a reward specifically tailored to a special reward chest I made earlier.  The NPC should be themed around the chest and give the chest as their reward.  Below is the chest I want you to make an NPC for, and two examples of dialogue challenge NPCs:
+
+I am using an older version of C# so keep this in mind: Always use features compatible with C# 2.0/3.0. 
+Avoid newer C# constructs like interpolated strings, LINQ, var, and async/await.
+
+
+
+Chest to make an NPC for:
+
+using System;
+using Server;
+using Server.Items;
+using Server.Mobiles;
+
+namespace Server.Items
+{
+    public class AbyssalPlaneChest : WoodenChest
+    {
+        [Constructable]
+        public AbyssalPlaneChest()
+        {
+            Name = "Abyssal Plane Chest";
+            Hue = 2159;
+
+            // Add items to the chest
+            AddItem(CreateColoredItem<Sapphire>("Heart of the Abyss", 2336), 0.18);
+            AddItem(CreateSimpleNote(), 0.16);
+            AddItem(CreateNamedItem<TreasureLevel3>("Deepsea Treasure"), 0.13);
+            AddItem(CreateColoredItem<GoldEarrings>("Ocean's Tear Earring", 1265), 0.17);
+            AddItem(new Gold(Utility.Random(1, 6200)), 0.17);
+            AddItem(CreateNamedItem<Apple>("Drenched Apple"), 0.10);
+            AddItem(CreateNamedItem<GreaterHealPotion>("Deepsea Elixir"), 0.14);
+            AddItem(CreateColoredItem<ThighBoots>("Boots of the Tidal", 1156), 0.15);
+            AddItem(CreateNamedItem<Spyglass>("Seer of the Abyss"), 0.14);
+            AddItem(CreateNamedItem<Shaft>("Wand of the Tides"), 0.13);
+            AddItem(CreateArmor(), 0.13);
+            AddItem(CreateStrawHat(), 0.20);
+            AddItem(CreatePlateHelm(), 0.20);
+            AddItem(CreateLongsword(), 0.20);
+        }
+
+        private void AddItem(Item item, double probability)
+        {
+            if (Utility.RandomDouble() < probability)
+            {
+                DropItem(item);
+            }
+        }
+
+        private Item CreateColoredItem<T>(string name, int hue) where T : Item, new()
+        {
+            T item = new T();
+            item.Name = name;
+            item.Hue = hue;
+            return item;
+        }
+
+        private Item CreateNamedItem<T>(string name) where T : Item, new()
+        {
+            T item = new T();
+            item.Name = name;
+            return item;
+        }
+
+        private Item CreateSimpleNote()
+        {
+            SimpleNote note = new SimpleNote();
+            note.NoteString = "In the depths, secrets remain whispered.";
+            note.TitleString = "Abyssal Whispers";
+            return note;
+        }
+
+        private Item CreateArmor()
+        {
+            BaseArmor armor = Utility.RandomList<BaseArmor>(new PlateChest(), new PlateArms(), new PlateLegs(), new PlateHelm());
+            armor.Name = "Abyssal Guardian's Plate";
+            armor.Hue = Utility.RandomMinMax(1, 1160);
+            armor.BaseArmorRating = Utility.Random(28, 64);
+            return armor;
+        }
+
+        private Item CreateStrawHat()
+        {
+            StrawHat hat = new StrawHat();
+            hat.Name = "Nature's Muffler";
+            hat.Hue = Utility.RandomMinMax(350, 1350);
+            hat.ClothingAttributes.DurabilityBonus = 3;
+            hat.Attributes.BonusDex = 10;
+            hat.Attributes.DefendChance = 5;
+            hat.SkillBonuses.SetValues(0, SkillName.AnimalLore, 20.0);
+            hat.SkillBonuses.SetValues(1, SkillName.Veterinary, 20.0);
+            return hat;
+        }
+
+        private Item CreatePlateHelm()
+        {
+            PlateHelm helm = new PlateHelm();
+            helm.Name = "Despair's Shadow";
+            helm.Hue = Utility.RandomMinMax(10, 300);
+            helm.BaseArmorRating = Utility.Random(35, 75);
+            helm.AbsorptionAttributes.EaterEnergy = 20;
+            helm.ArmorAttributes.DurabilityBonus = -10;
+            helm.Attributes.IncreasedKarmaLoss = 15;
+            helm.Attributes.Luck = -45;
+            helm.SkillBonuses.SetValues(0, SkillName.Hiding, 10.0);
+            helm.ColdBonus = 15;
+            helm.EnergyBonus = 20;
+            helm.FireBonus = 5;
+            helm.PhysicalBonus = 10;
+            helm.PoisonBonus = 15;
+            return helm;
+        }
+
+        private Item CreateLongsword()
+        {
+            Longsword longsword = new Longsword();
+            longsword.Name = "Tri-lithium Blade";
+            longsword.Hue = Utility.RandomMinMax(250, 450);
+            longsword.MinDamage = Utility.Random(35, 65);
+            longsword.MaxDamage = Utility.Random(65, 95);
+            longsword.Attributes.SpellDamage = 10;
+            longsword.Attributes.DefendChance = 5;
+            longsword.Slayer = SlayerName.DragonSlaying;
+            longsword.WeaponAttributes.HitLightning = 25;
+            longsword.WeaponAttributes.SelfRepair = 5;
+            longsword.SkillBonuses.SetValues(0, SkillName.Swords, 20.0);
+            return longsword;
+        }
+
+        public AbyssalPlaneChest(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write(0); // version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
+    }
+}
+
+
+
+
+
+
+Example NPC Male:
+
+using System;
+using Server;
+using Server.Mobiles;
+using Server.Items;
+
+namespace Server.Mobiles
+{
+    [CorpseName("the corpse of Patch the Pirate")]
+    public class PatchThePirate : BaseCreature
+    {
+        private DateTime lastRewardTime;
+
+        [Constructable]
+        public PatchThePirate() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
+        {
+            Name = "Patch the Pirate";
+            Body = 0x190; // Human male body
+
+            // Stats
+            Str = 45;
+            Dex = 40;
+            Int = 25;
+            Hits = 45;
+
+            // Appearance
+            AddItem(new LongPants() { Hue = 1904 });
+            AddItem(new FancyShirt() { Hue = 1904 });
+            AddItem(new Boots() { Hue = 1904 });
+            AddItem(new TricorneHat() { Hue = 1904 });
+            AddItem(new Cloak() { Name = "Patch's Cloak" }); // EyePatch
+
+            Hue = Race.RandomSkinHue();
+            HairItemID = Race.RandomHair(this);
+            HairHue = Race.RandomHairHue();
+
+            // Initialize the lastRewardTime to a past time
+            lastRewardTime = DateTime.MinValue;
+        }
+
+        public override void OnSpeech(SpeechEventArgs e)
+        {
+            Mobile from = e.Mobile;
+
+            if (!from.InRange(this, 3))
+                return;
+
+            string speech = e.Speech.ToLower();
+
+            if (speech.Contains("name"))
+            {
+                Say("Ahoy there, I be Patch the Pirate, scourge of the seven seas!");
+            }
+            else if (speech.Contains("health"))
+            {
+                Say("I've taken a few scratches in me day, but I'm still sailin' strong!");
+            }
+            else if (speech.Contains("job"))
+            {
+                Say("I be a pirate through and through, always on the hunt for buried treasure!");
+            }
+            else if (speech.Contains("battles"))
+            {
+                Say("True valor be found in the heart of a pirate, for we face danger with a grin!");
+            }
+            else if (speech.Contains("yes"))
+            {
+                Say("Arrr! Would ye be brave enough to sail the high seas with me, matey?");
+            }
+
+            base.OnSpeech(e);
+        }
+
+        public PatchThePirate(Serial serial) : base(serial) { }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version
+            writer.Write(lastRewardTime);
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+            lastRewardTime = reader.ReadDateTime();
+        }
+    }
+}
+
+
+
+
+
+Example NPC Female:
+
+using System;
+using Server;
+using Server.Mobiles;
+using Server.Items;
+
+namespace Server.Mobiles
+{
+    [CorpseName("the corpse of Anne Boleyn")]
+    public class AnneBoleyn : BaseCreature
+    {
+        private DateTime lastRewardTime;
+
+        [Constructable]
+        public AnneBoleyn() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
+        {
+            Name = "Anne Boleyn";
+            Body = 0x191; // Human female body
+
+            // Stats
+            Str = 85;
+            Dex = 60;
+            Int = 90;
+            Hits = 65;
+
+            // Appearance
+            AddItem(new StuddedLegs() { Hue = 54 });
+            AddItem(new StuddedChest() { Hue = 54 });
+            AddItem(new ChainCoif() { Hue = 54 });
+            AddItem(new StuddedGloves() { Hue = 54 });
+            AddItem(new Boots() { Hue = 54 });
+            AddItem(new Spellbook() { Name = "Anne's Diary" });
+			
+			Hue = Race.RandomSkinHue();
+			HairItemID = Race.RandomHair(Female);
+			HairHue = Race.RandomHairHue();
+
+            // Speech Hue
+            SpeechHue = 0; // Default speech hue
+
+            // Initialize the lastRewardTime to a past time
+            lastRewardTime = DateTime.MinValue;
+        }
+
+        public override void OnSpeech(SpeechEventArgs e)
+        {
+            Mobile from = e.Mobile;
+
+            if (!from.InRange(this, 3))
+                return;
+
+            string speech = e.Speech.ToLower();
+
+            if (speech.Contains("name"))
+            {
+                Say("Greetings, traveler. I am Anne Boleyn.");
+            }
+            else if (speech.Contains("health"))
+            {
+                Say("I am in fine health, thank you.");
+            }
+            else if (speech.Contains("job"))
+            {
+                Say("My daily duty is to tend to the gardens of this fine estate.");
+            }
+            else if (speech.Contains("virtues humility"))
+            {
+                Say("The virtue of humility is a noble one. We should all strive to be humble and kind.");
+            }
+            else if (speech.Contains("virtues ponder"))
+            {
+                Say("Do you ponder the virtues, traveler?");
+            }
+            else if (speech.Contains("anne"))
+            {
+                Say("Aye, once a queen of England, my fate was sealed at the Tower of London. It's a tale of romance, ambition, and betrayal.");
+            }
+            else if (speech.Contains("fine"))
+            {
+                Say("Thankfully, the serenity of these gardens has kept my spirit in a state of tranquility. I find nature to be healing.");
+            }
+            else if (speech.Contains("gardens"))
+            {
+                Say("These gardens are home to many rare and mystical herbs. Some even say there's an ancient herb with powerful healing abilities hidden here.");
+            }
+            else if (speech.Contains("humility"))
+            {
+                Say("True humility is understanding our place in the vastness of the universe. It teaches us to be compassionate to others.");
+            }
+            else if (speech.Contains("ponder"))
+            {
+                TimeSpan cooldown = TimeSpan.FromMinutes(10);
+                if (DateTime.UtcNow - lastRewardTime < cooldown)
+                {
+                    Say("I have no reward right now. Please return later.");
+                }
+                else
+                {
+                    Say("Deep reflection on virtues is essential for one's personal growth. In recognizing them, we shape our destiny. For your thoughtful inquiry, please accept this reward.");
+                    from.AddToBackpack(new BeltSlotChangeDeed()); // Give the reward
+                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
+                }
+            }
+            else if (speech.Contains("serenity"))
+            {
+                Say("Finding serenity amidst chaos is a virtue in itself. It's a sense of peace that eludes many, but can be found in nature's embrace.");
+            }
+            else if (speech.Contains("herbs"))
+            {
+                Say("These herbs carry the wisdom of ages. If you're keen to learn, seek the elder druid in the forest. He knows their secrets.");
+            }
+
+            base.OnSpeech(e);
+        }
+
+        public AnneBoleyn(Serial serial) : base(serial) { }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version
+            writer.Write(lastRewardTime);
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+            lastRewardTime = reader.ReadDateTime();
+        }
+    }
+}
+
+
+You can consult this list of equipable items when making the NPCs appearance:
+
+Equipable Items List:
+
+Helmets:
+Bascinet
+BoneHelm
+ChainCoif
+CloseHelm
+DaemonHelm
+DragonHelm
+Helmet
+NorseHelm
+OrcHelm
+PlateHelm
+WoodlandHelm
+
+Gorgets:
+BoneGorget
+ChainGorget
+LeatherGorget
+RingmailGorget
+PlateGorget
+StuddedGorget
+WoodlandGorget
+
+Chest Armor:
+BoneChest
+ChainChest
+LeatherChest
+RingmailChest
+PlateChest
+StuddedChest
+FemaleLeatherChest
+FemaleStuddedChest
+WoodlandChest
+
+Leg Armor:
+BoneLegs
+ChainLegs
+LeatherLegs
+RingmailLegs
+PlateLegs
+StuddedLegs
+WoodlandLegs
+
+Arm Armor:
+BoneArms
+ChainArms
+LeatherArms
+RingmailArms
+PlateArms
+StuddedArms
+WoodlandArms
+
+Gloves:
+BoneGloves
+ChainGloves
+LeatherGloves
+RingmailGloves
+PlateGloves
+StuddedGloves
+WoodlandGloves
+
+Shields:
+BronzeShield
+Buckler
+HeaterShield
+MetalKiteShield
+MetalShield
+OrderShield
+WoodenKiteShield
+WoodenShield
+
+Clothing:
+
+Hats:
+BearMask
+DeerMask
+FeatheredHat
+FloppyHat
+JesterHat
+LeatherCap
+TricorneHat
+WizardsHat
+SkullCap
+Bandana
+Bonnet
+Cap
+WideBrimHat
+StrawHat
+TallStrawHat
+
+Shirts:
+Shirt
+FancyShirt
+Doublet
+Tunic
+Surcoat
+Robe
+PlainDress
+FancyDress
+JesterSuit
+
+Pants:
+LongPants
+ShortPants
+Kilt
+Skirt
+HalfApron
+FullApron
+
+Footwear:
+Shoes
+Sandals
+Boots
+ThighBoots
+
+Cloaks:
+Cloak
+
+Sashes:
+BodySash
+Doublet
+Surcoat
+
+Robes:
+Robe
+HoodedShroudOfShadows
+DeathRobe
+
+Miscellaneous:
+BodySash
+HalfApron
+FullApron
+
+Weapons:
+
+Swords:
+BroadSword
+Cutlass
+Katana
+Kryss
+Longsword
+Scimitar
+VikingSword
+
+Axes:
+Axe
+BattleAxe
+DoubleAxe
+ExecutionersAxe
+Hatchet
+LargeBattleAxe
+TwoHandedAxe
+
+Maces:
+Club
+HammerPick
+Mace
+Maul
+WarAxe
+WarHammer
+WarMace
+
+Polearms:
+Bardiche
+Halberd
+Scythe
+
+Spears:
+Pike
+Pitchfork
+ShortSpear
+Spear
+
+Ranged Weapons:
+
+Bow
+Crossbow
+HeavyCrossbow
+RepeatingCrossbow
+CompositeBow
+ElvenCompositeLongbow
+MagicalShortbow
+Yumi
+
+Fencing Weapons:
+Dagger
+Kama
+Kryss
+Sai
+ShortSword
+Wakizashi
+
+Other Hand Items:
+Pitchfork
+BlackStaff
+GnarledStaff
+QuarterStaff
+ShepherdsCrook
+SmithHammer
+Scepter
+
+Spellbooks and Related Items:
+BaseBook
+Spellbook
+NecromancerSpellbook
+PaladinSpellbook
+SpellbookOfChivalry
+
+

@@ -1,0 +1,33 @@
+Yes, you can use Amazon EC2 (Elastic Compute Cloud) to host your Ultima Online (UO) shard using RunUO. Amazon EC2 provides scalable virtual servers in the cloud, which can be ideal for hosting game servers, including UO shards.
+
+Here's a general outline of the steps you'd need to take:
+
+1. **Set Up an Amazon EC2 Instance**:
+   - Go to the AWS Management Console and sign in.
+   - Navigate to EC2 and launch a new instance.
+   - Choose an appropriate instance type based on your shard's requirements. For a small shard, a t2.medium or t2.large might suffice, but you might need more powerful instances as your player base grows.
+   - Choose an OS. RunUO is typically run on Windows, but there are versions compatible with Linux.
+
+2. **Configure Security Groups**:
+   - Create a new security group or modify an existing one.
+   - Ensure that you allow inbound traffic on the necessary ports for Ultima Online. By default, this is port 2593 for the game server, but check your RunUO configuration to be sure.
+
+3. **Install and Set Up RunUO**:
+   - Once your EC2 instance is running, connect to it using Remote Desktop (for Windows) or SSH (for Linux).
+   - Download and install the .NET Framework if you're using Windows. RunUO relies on it.
+   - Transfer your RunUO server files to the EC2 instance.
+   - Set up your shard as you would on any other server.
+
+4. **Optimize and Monitor**:
+   - Regularly monitor your EC2 instance's performance. AWS provides CloudWatch for this purpose.
+   - Backup your shard data regularly. Consider using Amazon S3 or other backup solutions.
+   - Optimize your EC2 instance and RunUO configuration as needed, especially if you notice performance issues.
+
+5. **Cost Management**:
+   - Keep an eye on your AWS billing dashboard to understand the costs associated with your EC2 instance and any other AWS services you're using.
+   - Consider using Reserved Instances or Savings Plans if you plan to keep your shard online for a long period to save on costs.
+
+6. **Scaling**:
+   - If your shard grows in popularity, you might need to scale your resources. EC2 allows for easy scalability, letting you change instance types or add additional instances if necessary.
+
+Remember that hosting a public shard comes with responsibilities, including ensuring a stable and fair gaming environment and adhering to any licensing requirements or terms of service associated with Ultima Online and RunUO. Always keep your software updated and secure to protect against potential vulnerabilities.

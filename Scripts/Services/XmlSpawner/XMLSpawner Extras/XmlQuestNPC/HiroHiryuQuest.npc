@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Hiryu Hunter Hiro</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Hiryu Trophy</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>HiroHiryuQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>A legendary Hiryu, Ethereal Stormwing, roams the skies. Its power is unmatched. Will you help me tame it?</Text>
+    <Keywords>You see a seasoned hunter, his gaze set on the skies, seeking help to tame a legendary beast</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Hiryu Hunt,4/Ethereal Stormwing is a force of nature. We need your skill to subdue it.;I'm ready for the challenge!;Absolutely</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your courage is admirable. Bring me a feather from its wing as proof, and you will be handsomely rewarded.</Text>
+    <Keywords>Absolutely</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Hiryu Trophy/TitleString/Ethereal Stormwing Hunt/NoteString/Return a feather from Ethereal Stormwing to Hiro for a reward./Objective1/KILLNAMED,Ethereal Stormwing,1/Description1/Defeat Ethereal Stormwing/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/ZeonRune/ADD/&lt;Sapphire/hue/RND,1,300/name/Stormwing's Essence&gt;/ADD/&lt;bag/hue/1108/Name/Sky Hunter's Cache/ADD/&lt;Feather/name/Feather of Flight&gt;/ADD/&lt;Katana/name/Windcutter Blade&gt;/ADD/&lt;RefreshPotion/name/Potion of Sky's Grace&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Lich Hunter Lydia</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Lich's Remains</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>LydiaLichQuest2</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>The Infernal Magus, an Ancient Lich, has risen. His presence threatens all. Will you confront this evil?</Text>
+    <Keywords>You see a solemn warrior, her eyes set on ending the terror of the undead</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Lich Hunt,4/The dark energies have pinpointed the lair of Infernal Magus. Seek him out and destroy him.;I'll face this menace!;Indeed</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your courage will be remembered. Bring me proof of the Lich's demise, and you shall be rewarded.</Text>
+    <Keywords>Indeed</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Lich's Remains/TitleString/Infernal Magus Defeat/NoteString/Return proof of defeating the Infernal Magus to Lydia for a reward./Objective1/KILLNAMED,Infernal Magus,1/Description1/Defeat the Infernal Magus/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/ZeonRune/ADD/&lt;BlackPearl/hue/RND,1,300/name/Essence of the Lich&gt;/ADD/&lt;bag/hue/1908/Name/Necromancer's Trove/ADD/&lt;Reagent/name/Scroll of Dark Power&gt;/ADD/&lt;BoneHarvester/name/Lich's Bane Blade&gt;/ADD/&lt;GreaterHealPotion/name/Potion of Undead Resistance&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

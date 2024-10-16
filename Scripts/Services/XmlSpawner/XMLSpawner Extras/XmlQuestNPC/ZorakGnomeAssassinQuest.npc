@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Dark Master Zorak</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Assassin's Token</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>ZorakGnomeAssassinQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Gimble the Gnome has meddled in my affairs for the last time. Will you silence him... permanently?</Text>
+    <Keywords>You see a shadowy figure who whispers of dark deeds and assassination contracts</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Assassination Contract,4/Gimble the Gnome is a blight upon this land. Terminate him with extreme prejudice.;I'll take care of Gimble.;Your secret is safe with me.</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your willingness to embrace the darkness pleases me. Bring me his unique trinket as proof, and you shall be rewarded.</Text>
+    <Keywords>Your secret is safe with me.</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Assassin's Token/TitleString/Gnome Assassination/NoteString/Return Gimble's unique trinket to Zorak for a reward./Objective1/KILLNAMED,Gimble the Gnome,1/Description1/Assassinate Gimble the Gnome/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/&lt;MaxxiaScroll/amount/3&gt;/ADD/&lt;Obsidian/name/Shard of Malice&gt;/ADD/&lt;bag/hue/1173/Name/Assassin's Cache/ADD/&lt;Shuriken/name/Stars of Silence&gt;/ADD/&lt;PoisonPotion/name/Potion of Lethal Quiet&gt;/ADD/&lt;DeathShroud/name/Shroud of Finality&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

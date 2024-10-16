@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Inferno Slayer Iris</Name>
+    <Running>True</Running>
+    <ProximityRange>4</ProximityRange>
+    <ResetRange>18</ResetRange>
+    <NoTriggerOnCarried>Infernal Evidence</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>IrisInfernoQuest2</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>The Scorch Elementals are setting the forests ablaze. We must cull their flames. Will you take up this task?</Text>
+    <Keywords>You notice a figure clad in flame-retardant garb, looking to extinguish a fiery threat</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Scorch Hunt,4/The local villagers have reported sightings of Scorch Elementals. We need you to extinguish a few.;I'm ready to quell the flames!;I accept</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your courage shines brighter than any flame. Return with evidence of your victory, and you shall be rewarded handsomely.</Text>
+    <Keywords>I accept</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Infernal Evidence/TitleString/Scorch Elemental Defeat/NoteString/Bring back proof of defeating Scorch Elementals to Iris for a reward./Objective1/KILLNAMED,Scorch Elemental,1/Description1/Extinguish a Scorch Elemental/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/MaxxiaScroll/ADD/&lt;Ruby/hue/RND,1,500/name/Ember of the Inferno&gt;/ADD/&lt;bag/hue/1166/Name/Flame Warden's Cache/ADD/&lt;TeleportScroll/name/Scroll of Cooling Winds&gt;/ADD/&lt;Longsword/name/Blade of Ashes&gt;/ADD/&lt;GreaterHealPotion/name/Potion of Fire Nullification&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Gale Strider Lana</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Wind Evidence</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>LanaWindQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>The Wind Elementals are stirring up the plains with their relentless gusts. Can you help restore calm?</Text>
+    <Keywords>You see a woman clad in garments that flutter like leaves in a breeze, her eyes fixed on the horizon</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Wind Hunt,4/The winds tell of a disturbance. Wind Elementals have been sighted causing turmoil. Will you subdue them?;I will face the gales!;With pleasure</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your courage is as fierce as the winds themselves. Return with proof of your conquest, and you shall be rewarded.</Text>
+    <Keywords>With pleasure</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Wind Evidence/TitleString/Wind Elemental Conquest/NoteString/Bring evidence of the Wind Elemental's defeat to Lana for your reward./Objective1/KILLNAMED,Wind Elemental,1/Description1/Vanquish a Wind Elemental/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/&lt;MaxxiaScroll/amount/5&gt;/ADD/&lt;Amethyst/hue/RND,100,400/name/Breath of the Wind&gt;/ADD/&lt;bag/hue/2122/Name/Wind Dancer's Cache/ADD/&lt;TeleportScroll/name/Scroll of Breezes&gt;/ADD/&lt;Kryss/name/Zephyr's Sting&gt;/ADD/&lt;RefreshPotion/name/Potion of Wind's Grace&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

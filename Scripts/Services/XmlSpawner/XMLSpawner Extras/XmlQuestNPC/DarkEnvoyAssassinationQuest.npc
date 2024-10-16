@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Dark Envoy</Name>
+    <Running>False</Running>
+    <ProximityRange>5</ProximityRange>
+    <ResetRange>20</ResetRange>
+    <NoTriggerOnCarried>Assassin's Token</NoTriggerOnCarried>
+    <AllowGhost>True</AllowGhost>
+    <SpeechPace>8</SpeechPace>
+    <ResetTime>0.3</ResetTime>
+    <ConfigFile>DarkEnvoyAssassinationQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Oldman Omric has meddled in affairs that lie beyond his ken. His fate is sealed. Will you be my instrument?</Text>
+    <Keywords>You see a cloaked figure that seems to radiate malice and whispers promises of power for deeds done in shadow</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Omric's Demise,4/Oldman Omric believes he is untouchable. Prove him wrong.;I shall be your shadow.;I accept this dark task.</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your willingness to embrace the darkness is... pleasing. Omric must suspect nothing. Bring back his signet as proof.</Text>
+    <Keywords>I accept this dark task.</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Assassin's Token/TitleString/Omric's Assassination/NoteString/Return Omric's signet to the Dark Envoy for a reward./Objective1/KILLNAMED,Oldman Omric,1/Description1/Assassinate Oldman Omric/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/&lt;MaxxiaScroll/amount/3&gt;/ADD/&lt;Obsidian/hue/RND,1,300/name/Heart of Shadows&gt;/ADD/&lt;bag/hue/1173/Name/Assassin's Cache/ADD/&lt;TeleportScroll/name/Scroll of Shadows&gt;/ADD/&lt;AssassinSpike/name/Blade of Betrayal&gt;/ADD/&lt;PoisonPotion/name/Potion of Silent Death&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

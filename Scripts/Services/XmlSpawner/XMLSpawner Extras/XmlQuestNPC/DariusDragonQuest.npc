@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Dragon Hunter Darius</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Dragon Evidence</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>DariusDragonQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Infinity Dracarnum, a legendary dragon, threatens our lands. Will you brave its wrath and defeat it?</Text>
+    <Keywords>You see a determined warrior seeking help to vanquish a legendary dragon</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Dragon Hunt,4/The realm is in peril due to Infinity Dracarnum. Your task is to defeat this beast.;I accept this challenge!;Certainly</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your courage honors us. Bring back proof of your victory, and you shall be greatly rewarded.</Text>
+    <Keywords>Certainly</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Dragon Evidence/TitleString/Infinity Dracarnum Defeat/NoteString/Return proof of defeating Infinity Dracarnum to Darius for a reward./Objective1/KILLNAMED,Infinity Dracarnum,1/Description1/Defeat Infinity Dracarnum/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/ZeonRune/ADD/&lt;Gold/hue/5000/amount/10000/name/Dragon's Hoard&gt;/ADD/&lt;bag/hue/2001/Name/Dragon Slayer's Cache/ADD/&lt;HealPotion/name/Potion of Dragon's Might&gt;/ADD/&lt;Halberd/name/Dragonfang Spear&gt;/ADD/&lt;MagicResistPotion/name/Potion of Dragon Warding&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

@@ -1,0 +1,92 @@
+I would like your help creating a new NPC for my Ultima Online free shard challenge.  I am trying to recreate the feel of a classic Ultima game with NPCs who have dialoge trees which you much solve by writing down key words and entering them into the text parser.  Below is a sample NPC (Slithe the Warrior) to show you what I mean.  First is the XML spawner coe then followed by his configuration file that stores his dialogue.  The players will know to ask every NPC about the key words "name" "health" and "job" and from there they will learn other key words to get more information.  In Slithe's case they learn to ask about battle.  The NPC will some times ask a question of the player, and they can respond fo additional dialogue.  Please make up a new creative NPC in this style.
+
+
+
+XMLQuestNPC,0/Str/150/Hits/100/Blessed/True/TalkText/Hail, adventurer! Are you seeking a worthy challenge?/Name/Slithe the Warrior/UNEQUIP,Shoes,Delete/UNEQUIP,Pants,Delete/UNEQUIP,Shirt,Delete/UNEQUIP,Helm,Delete/UNEQUIP,Gloves,Delete/UNEQUIP,OuterTorso,Delete/UNEQUIP,MiddleTorso,Delete/EQUIP/<PlateChest/Hue/1316>/EQUIP/<PlateArms/Hue/1316>/EQUIP/<Cloak/Hue/1316>/EQUIP/<PlateLegs/Hue/1316>/EQUIP/<Bascinet/Hue/1316>/EQUIP/<PlateGorget/Hue/1316>/EQUIP/<PlateGloves/Hue/1316>/EQUIP/<Broadsword/name/Slithe's Blade>/Direction/East/ConfigFile/SilththeWarrior/LoadConfig/True
+
+
+
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Slithe</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.166666666666667</ResetTime>
+    <ConfigFile>SilththeWarrior</ConfigFile>
+    <SpeechEntries>5</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Text>I am Slithe the Warrior!</Text>
+    <Keywords>name</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>10</EntryNumber>
+    <ID>10</ID>
+    <Text>Only minor wounds!</Text>
+    <Keywords>health</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>20</EntryNumber>
+    <ID>20</ID>
+    <Text>I fight battles!</Text>
+    <Keywords>job</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>30</EntryNumber>
+    <ID>30</ID>
+    <Text>True valor is seen not in the force of arms, but in the force of will! Art thou valiant?</Text>
+    <Keywords>battles</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>40</EntryNumber>
+    <ID>40</ID>
+    <Text>Then never flee unless the need is dire!</Text>
+    <Keywords>yes</Keywords>
+    <DependsOn>30</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

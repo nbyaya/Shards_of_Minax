@@ -1,0 +1,146 @@
+<!-- Boss 1: Grom the Thunderer - Based on a Storm Giant -->
+<StormGiant/name/Grom/str/600/dex/350/int/250/hue/1152/tamable/false/bodyvalue/76/hitsmaxseed/1200/hits/1200/ADD,0.3/ASHKey/ADD,0.3/LightningAugmentCrystal/ADD,0.3/WingsOfSpirituality/ADD,0.3/ColdHitAreaCrystal/ADD,0.3/TwinPendantOfDespise/ADD,0.3/WeaponSpeedAugmentCrystal/>
+
+<!-- Boss 2: Lady Vexana - Based on a Succubus -->
+<Succubus/name/Lady Vexana/str/550/dex/450/int/500/hue/1175/tamable/false/bodyvalue/149/hitsmaxseed/1000/hits/1000/ADD,0.3/JewelryKey/ADD,0.3/BanishingRod/ADD,0.3/GoldenCrown/ADD,0.3/LRCdeed/ADD,0.3/Statcapdeed/ADD,0.3/GrandmastersRobe/>
+
+<!-- Boss 3: Ragnarok the Petrified - Based on a Stone Elemental -->
+<StoneElemental/name/Ragnarok/str/700/dex/150/int/100/hue/1345/tamable/false/bodyvalue/14/hitsmaxseed/1400/hits/1400/ADD,0.3/GraniteKey/ADD,0.3/CapacityIncreaseDeed/ADD,0.3/ArmorKey/ADD,0.3/BloodSword/ADD,0.3/PhysicalResistAugmentCrystal/ADD,0.3/BanishingOrb/>
+
+<!-- Boss 4: Zephyra the Sky Serpent - Based on a Dragon -->
+<Dragon/name/Zephyra/str/650/dex/300/int/400/hue/1365/tamable/false/bodyvalue/12/hitsmaxseed/1100/hits/1100/ADD,0.3/GemKey/ADD,0.3/EnergyHitAreaCrystal/ADD,0.3/FireballAugmentCrystal/ADD,0.3/BagOfBombs/ADD,0.3/LightLordsScepter/ADD,0.3/FireResistAugmentCrystal/>
+
+<!-- Boss 5: Helix the Archmage - Based on an Elder Gazer -->
+<ElderGazer/name/Helix/str/400/dex/200/int/650/hue/1300/tamable/false/bodyvalue/22/hitsmaxseed/900/hits/900/ADD,0.3/ScribesKey/ADD,0.3/MageryAugmentCrystal/ADD,0.3/AlchemyAugmentCrystal/ADD,0.3/MaxxiaScroll/ADD,0.3/MirrorOfHonesty/ADD,0.3/ManaDrainAugmentCrystal/>
+
+<!-- Boss 6: Fangor the Savage - Based on a Lich -->
+<Lich/name/Fangor/str/550/dex/200/int/550/hue/1250/tamable/false/bodyvalue/24/hitsmaxseed/1000/hits/1000/ADD,0.3/WeaponKey/ADD,0.3/PoisonHitAreaCrystal/ADD,0.3/BraceletSlotChangeDeed/ADD,0.3/Statcapdeed/ADD,0.3/GoldenDrakelingScaleShield/ADD,0.3/LifeLeechAugmentCrystal/>
+
+<!-- Boss 7: Sir Caledor - Based on a Paladin -->
+<Paladin/name/Sir Caledor/str/500/dex/400/int/300/hue/1500/tamable/false/bodyvalue/40/hitsmaxseed/950/hits/950/ADD,0.3/ChampSkullKey/ADD,0.3/ChivalryAugmentCrystal/ADD,0.3/MedalOfHonor/ADD,0.3/MurderRemovalDeed/ADD,0.3/HealingAugmentCrystal/ADD,0.3/LegsSlotChangeDeed/>
+
+<!-- Boss 8: Mordrake the Fallen - Based on a Daemon -->
+<Daemon/name/Mordrake/str/650/dex/400/int/450/hue/1170/tamable/false/bodyvalue/9/hitsmaxseed/1200/hits/1200/ADD,0.3/TreasureHuntersKey/ADD,0.3/NeckSlotChangeDeed/ADD,0.3/EyeOfCompassion/ADD,0.3/CookingAugmentCrystal/ADD,0.3/PoisonResistAugmentCrystal/ADD,0.3/MasterKey/>
+
+FireGargoyle/name/Gorgath/str/550/dex/450/int/600/hue/2075/tamable/false/bodyvalue/130/hitsmaxseed/1200/hits/1200/ADD,0.3/FireballAugmentCrystal/ADD,0.3/ArmorKey/ADD,0.3/WeaponKey/ADD,0.3/FireHitAreaCrystal/ADD,0.3/FireResistAugmentCrystal/ADD,0.3/GoldenCrown/
+
+FrostDragon/name/Zul/str/700/dex/300/int/500/hue/1152/tamable/false/bodyvalue/49/hitsmaxseed/1500/hits/1500/ADD,0.3/ColdHitAreaCrystal/ADD,0.3/GemKey/ADD,0.3/TreasureHuntersKey/ADD,0.3/ColdResistAugmentCrystal/ADD,0.3/IcicleStaff/ADD,0.3/Statcapdeed/
+
+Troll/name/Lurktooth/str/600/dex/350/int/300/hue/1420/tamable/false/bodyvalue/53/hitsmaxseed/1100/hits/1100/ADD,0.3/PoisonHitAreaCrystal/ADD,0.3/FishKey/ADD,0.3/BODKey/ADD,0.3/PoisonResistAugmentCrystal/ADD,0.3/GraniteKey/ADD,0.3/LargeBagOfHolding/
+
+Wisp/name/Nightshade/str/300/dex/600/int/800/hue/1109/tamable/false/bodyvalue/58/hitsmaxseed/900/hits/900/ADD,0.3/DetectingHiddenAugmentCrystal/ADD,0.3/JewelersKey/ADD,0.3/LRCdeed/ADD,0.3/DispelAugmentCrystal/ADD,0.3/MirrorOfHonesty/ADD,0.3/BankCrystal/
+
+CrystalElemental/name/Crystallus/str/650/dex/200/int/400/hue/1267/tamable/false/bodyvalue/300/hitsmaxseed/1400/hits/1400/ADD,0.3/JewelryKey/ADD,0.3/CarpentryAugmentCrystal/ADD,0.3/CartographyAugmentCrystal/ADD,0.3/ImbuingAugmentCrystal/ADD,0.3/GoldenDrakelingScaleShield/ADD,0.3/MasterKey/
+
+Harpy/name/Dreadwing/str/500/dex/550/int/450/hue/1300/tamable/false/bodyvalue/30/hitsmaxseed/1000/hits/1000/ADD,0.3/WingsOfSpirituality/ADD,0.3/ArcheryAugmentCrystal/ADD,0.3/ASHKey/ADD,0.3/EnergyHitAreaCrystal/ADD,0.3/EnergyResistAugmentCrystal/ADD,0.3/GlovesOfCommand/
+
+IronGolem/name/Ironclad/str/800/dex/100/int/150/hue/2413/tamable/false/bodyvalue/766/hitsmaxseed/2000/hits/2000/ADD,0.3/IngotKey/ADD,0.3/BlacksmithyAugmentCrystal/ADD,0.3/SmithyKey/ADD,0.3/PhysicalResistAugmentCrystal/ADD,0.3/MediumBagOfHolding/ADD,0.3/PlateLeggingsOfCommand/
+
+StoneElemental/name/Obsidian/str/750/dex/150/int/350/hue/1175/tamable/false/bodyvalue/14/hitsmaxseed/1600/hits/1600/ADD,0.3/GraniteKey/ADD,0.3/TailorKey/ADD,0.3/ReagentKey/ADD,0.3/PhysicalHitAreaCrystal/ADD,0.3/RunicToolKey/ADD,0.3/LightLordsScepter/
+
+<!-- Boss 1: Gornak the Flame Wielder -->
+<Dragon/name/Gornak the Flame Wielder/str/550/dex/450/int/500/hue/1161/tamable/false/bodyvalue/46/hitsmaxseed/1000/hits/1000/ADD,0.3/FireballAugmentCrystal/ADD,0.3/WeaponKey/ADD,0.3/FireResistAugmentCrystal/ADD,0.3/BlacksmithyAugmentCrystal/ADD,0.3/GoldenCrown/ADD,0.3/CapacityIncreaseDeed/>
+
+<!-- Boss 2: Valeria the Tempest -->
+<AirElemental/name/Valeria the Tempest/str/480/dex/500/int/520/hue/1153/tamable/false/bodyvalue/13/hitsmaxseed/900/hits/900/ADD,0.3/LightningAugmentCrystal/ADD,0.3/JewelersKey/ADD,0.3/EnergyResistAugmentCrystal/ADD,0.3/BagOfBombs/ADD,0.3/EarringSlotChangeDeed/ADD,0.3/MirrorOfKalandra/>
+
+<!-- Boss 3: Eldritch the Crypt Keeper -->
+<Lich/name/Eldritch the Crypt Keeper/str/470/dex/350/int/650/hue/1175/tamable/false/bodyvalue/24/hitsmaxseed/950/hits/950/ADD,0.3/NecromancyAugmentCrystal/ADD,0.3/ASHKey/ADD,0.3/SpiritSpeakAugmentCrystal/ADD,0.3/ArmorKey/ADD,0.3/RodOfOrcControl/ADD,0.3/BankCrystal/>
+
+<!-- Boss 4: Morgul the Enslaver -->
+<OrcLord/name/Morgul the Enslaver/str/600/dex/480/int/450/hue/1425/tamable/false/bodyvalue/17/hitsmaxseed/1100/hits/1100/ADD,0.3/SwordsmanshipTrainer/ADD,0.3/SmithyKey/ADD,0.3/TalismanSlotChangeDeed/ADD,0.3/AlchemyAugmentCrystal/ADD,0.3/GlovesOfCommand/ADD,0.3/LRCdeed/>
+
+<!-- Boss 5: Sarina the Siren -->
+<SeaSerpent/name/Sarina the Siren/str/450/dex/550/int/500/hue/2220/tamable/false/bodyvalue/77/hitsmaxseed/950/hits/950/ADD,0.3/MusicianshipAugmentCrystal/ADD,0.3/GemKey/ADD,0.3/BanishingOrb/ADD,0.3/AnimalTamingAugmentCrystal/ADD,0.3/TwinPendantOfDespise/ADD,0.3/MediumBagOfHolding/>
+
+<!-- Boss 6: Zul the Stone Heart -->
+<StoneGargoyle/name/Zul the Stone Heart/str/650/dex/400/int/350/hue/2401/tamable/false/bodyvalue/67/hitsmaxseed/1200/hits/1200/ADD,0.3/CarpentryAugmentCrystal/ADD,0.3/GraniteKey/ADD,0.3/WeaponSpeedAugmentCrystal/ADD,0.3/BootsOfCommand/ADD,0.3/Statcapdeed/ADD,0.3/LargeBagOfHolding/>
+
+<!-- Boss 7: Vortex the Energy Maelstrom -->
+<EnergyVortex/name/Vortex the Energy Maelstrom/str/300/dex/600/int/700/hue/1278/tamable/false/bodyvalue/164/hitsmaxseed/850/hits/850/ADD,0.3/EnergyHitAreaCrystal/ADD,0.3/TreasureHuntersKey/ADD,0.3/ManaLeechAugmentCrystal/ADD,0.3/WingsOfSpirituality/ADD,0.3/LightLordsScepter/ADD,0.3/MirrorOfHonesty/>
+
+<!-- Boss 8: Thorn the Forest Warden -->
+<Reaper/name/Thorn the Forest Warden/str/530/dex/400/int/470/hue/1433/tamable/false/bodyvalue/47/hitsmaxseed/1000/hits/1000/ADD,0.3/AlchemyAugmentCrystal/ADD,0.3/WoodKey/
+
+Dragon/name/Flameheart/str/750/dex/450/int/500/hue/1161/tamable/false/bodyvalue/46/hitsmaxseed/1000/hits/1000/ADD,0.3/FireballAugmentCrystal/ADD,0.3/FireResistAugmentCrystal/ADD,0.3/FireHitAreaCrystal/ADD,0.3/BlacksmithyAugmentCrystal/ADD,0.3/GoldenCrown/ADD,0.3/LargeBagOfHolding/
+
+Dragon/name/Iceshatter/str/720/dex/380/int/480/hue/1152/tamable/false/bodyvalue/49/hitsmaxseed/950/hits/950/ADD,0.3/ColdResistAugmentCrystal/ADD,0.3/ColdHitAreaCrystal/ADD,0.3/IcicleStaff/ADD,0.3/CarpentryAugmentCrystal/ADD,0.3/MirrorOfHonesty/ADD,0.3/MediumBagOfHolding/
+
+WaterElemental/name/Stormrage/str/680/dex/500/int/550/hue/1153/tamable/false/bodyvalue/13/hitsmaxseed/900/hits/900/ADD,0.3/EnergyHitAreaCrystal/ADD,0.3/EnergyResistAugmentCrystal/ADD,0.3/LightningAugmentCrystal/ADD,0.3/TailoringAugmentCrystal/ADD,0.3/BanishingRod/ADD,0.3/SmallBagOfHolding/
+
+StoneGargoyle/name/Earthcrush/str/800/dex/350/int/300/hue/1140/tamable/false/bodyvalue/67/hitsmaxseed/1200/hits/1200/ADD,0.3/GraniteKey/ADD,0.3/MiningAugmentCrystal/ADD,0.3/StrengthAugmentCrystal/ADD,0.3/LumberjackingAugmentCrystal/ADD,0.3/GoldenDrakelingScaleShield/ADD,0.3/Statcapdeed/
+
+Succubus/name/Darkwhisper/str/500/dex/550/int/650/hue/1175/tamable/false/bodyvalue/149/hitsmaxseed/850/hits/850/ADD,0.3/CurseAugmentCrystal/ADD,0.3/StealthAugmentCrystal/ADD,0.3/NecromancyAugmentCrystal/ADD,0.3/SpiritSpeakAugmentCrystal/ADD,0.3/MirrorOfKalandra/ADD,0.3/JesterHatOfCommand/
+
+Wisp/name/Glimmerwing/str/400/dex/600/int/700/hue/1281/tamable/false/bodyvalue/58/hitsmaxseed/800/hits/800/ADD,0.3/GemKey/ADD,0.3/ImbuingAugmentCrystal/ADD,0.3/JewelersKey/ADD,0.3/AlchemyAugmentCrystal/ADD,0.3/TwinPendantOfDespise/ADD,0.3/GrandmastersRobe/
+
+Reaper/name/Verdantlord/str/850/dex/300/int/400/hue/1436/tamable/false/bodyvalue/312/hitsmaxseed/1100/hits/1100/ADD,0.3/GardenersKey/ADD,0.3/CookingAugmentCrystal/ADD,0.3/HerdingAugmentCrystal/ADD,0.3/VeterinaryAugmentCrystal/ADD,0.3/BloodSword/ADD,0.3/LifeLeechAugmentCrystal/
+
+Daemon/name/Nethermind/str/700/dex/450/int/600/hue/1130/tamable/false/bodyvalue/9/hitsmaxseed/950/hits/950/ADD,0.3/PoisonResistAugmentCrystal/ADD,0.3/PoisonHitAreaCrystal/
+
+<!-- Boss 1: Grom the Crusher -->
+<Cyclops/name/GromTheCrusher/str/550/dex/250/int/200/hue/1175/tamable/false/bodyvalue/75/hitsmaxseed/1200/hits/1200/ADD,0.3/LargeBagOfHolding/ADD,0.3/GraniteKey/ADD,0.3/BlacksmithyAugmentCrystal/ADD,0.3/BloodSword/ADD,0.3/TalismanSlotChangeDeed/ADD,0.3/WeaponSpeedAugmentCrystal/>
+
+<!-- Boss 2: Vrok the Mystic -->
+<Cyclops/name/VrokTheMystic/str/300/dex/300/int/500/hue/1153/tamable/false/bodyvalue/75/hitsmaxseed/1000/hits/1000/ADD,0.3/GoldenCrown/ADD,0.3/ScribesKey/ADD,0.3/MageryAugmentCrystal/ADD,0.3/LifeLeechAugmentCrystal/ADD,0.3/MirrorOfHonesty/ADD,0.3/IcicleStaff/>
+
+<!-- Boss 3: Tharg the Enraged -->
+<Cyclops/name/ThargTheEnraged/str/650/dex/350/int/150/hue/2220/tamable/false/bodyvalue/75/hitsmaxseed/1400/hits/1400/ADD,0.3/MurderRemovalDeed/ADD,0.3/ArmorKey/ADD,0.3/Statcapdeed/ADD,0.3/BeltSlotChangeDeed/ADD,0.3/ColdHitAreaCrystal/ADD,0.3/BanishingOrb/>
+
+<!-- Boss 4: Krull the Farsighted -->
+<Cyclops/name/KrullTheFarsighted/str/400/dex/450/int/350/hue/1345/tamable/false/bodyvalue/75/hitsmaxseed/1100/hits/1100/ADD,0.3/BagOfHealth/ADD,0.3/TreasureHuntersKey/ADD,0.3/ArcheryAugmentCrystal/ADD,0.3/FireballAugmentCrystal/ADD,0.3/LightLordsScepter/ADD,0.3/DetectingHiddenAugmentCrystal/>
+
+<!-- Boss 5: Zul the Warlord -->
+<Cyclops/name/ZulTheWarlord/str/700/dex/200/int/200/hue/1110/tamable/false/bodyvalue/75/hitsmaxseed/1500/hits/1500/ADD,0.3/ASHKey/ADD,0.3/FireResistAugmentCrystal/ADD,0.3/PlateLeggingsOfCommand/ADD,0.3/WeaponKey/ADD,0.3/MasterKey/ADD,0.3/SwingSpeedAugmentCrystal/>
+
+<!-- Boss 6: Urok the Seer -->
+<Cyclops/name/UrokTheSeer/str/350/dex/400/int/450/hue/889/tamable/false/bodyvalue/75/hitsmaxseed/1050/hits/1050/ADD,0.3/MaxxiaScroll/ADD,0.3/JewelersKey/ADD,0.3/NecromancyAugmentCrystal/ADD,0.3/ChestSlotChangeDeed/ADD,0.3/TwinPendantOfDespise/ADD,0.3/MeditationAugmentCrystal/>
+
+<!-- Boss 7: Gorok the Berserker -->
+<Cyclops/name/GorokTheBerserker/str/600/dex/300/int/100/hue/667/tamable/false/bodyvalue/75/hitsmaxseed/1300/hits/1300/ADD,0.3/GoldenDrakelingScaleShield/ADD,0.3/IngotKey/ADD,0.3/TacticsAugmentCrystal/ADD,0.3/BagOfJuice/ADD,0.3/DispelAugmentCrystal/ADD,0.3/GrandmastersRobe/>
+
+<!-- Boss 8: Borg the Thunderer -->
+<Cyclops/name/BorgTheThunderer/str/500/dex/200/int/400/hue/1337/tamable/false/bodyvalue/75/hitsmaxseed/1150/hits/1150/ADD,0.3/WingsOfSpirituality/ADD,0.3/GardenersKey/
+
+Orc/name/Krag/str/600/dex/450/int/200/hue/1175/tamable/false/bodyvalue/17/hitsmaxseed/1200/hits/1200/ADD,0.3/ArmorKey/ADD,0.3/WoodKey/ADD,0.3/SwingSpeedAugmentCrystal/ADD,0.3/WeaponSpeedAugmentCrystal/ADD,0.3/BeltSlotChangeDeed/ADD,0.3/Statcapdeed/
+
+OrcShaman/name/Gruk/str/300/dex/300/int/600/hue/1109/tamable/false/bodyvalue/140/hitsmaxseed/900/hits/900/ADD,0.3/ScribesKey/ADD,0.3/JewelryKey/ADD,0.3/MageryAugmentCrystal/ADD,0.3/NecromancyAugmentCrystal/ADD,0.3/EyeOfCompassion/ADD,0.3/GoldenDrakelingScaleShield/
+
+OrcBomber/name/Ulgar/str/700/dex/350/int/150/hue/1278/tamable/false/bodyvalue/182/hitsmaxseed/1300/hits/1300/ADD,0.3/JewelersKey/ADD,0.3/BloodSword/ADD,0.3/SwordsmanshipAugmentCrystal/ADD,0.3/ResistingSpellsAugmentCrystal/ADD,0.3/PhysicalResistAugmentCrystal/ADD,0.3/MurderRemovalDeed/
+
+OrcChopper/name/Murgh/str/550/dex/400/int/250/hue/1176/tamable/false/bodyvalue/7/hitsmaxseed/1100/hits/1100/ADD,0.3/WeaponKey/ADD,0.3/GraniteKey/ADD,0.3/TacticsAugmentCrystal/ADD,0.3/ArmorKey/ADD,0.3/LRCdeed/ADD,0.3/BagOfJuice/
+
+OrcishMage/name/Vorg/str/350/dex/500/int/400/hue/1107/tamable/false/bodyvalue/138/hitsmaxseed/1000/hits/1000/ADD,0.3/PotionKey/ADD,0.3/FishingAugmentCrystal/ADD,0.3/ForensicEvaluationAugmentCrystal/ADD,0.3/AnimalTamingAugmentCrystal/ADD,0.3/LightLordsScepter/ADD,0.3/MasterKey/
+
+OrcishLord/name/Lurtz/str/350/dex/300/int/700/hue/1150/tamable/false/bodyvalue/4/hitsmaxseed/950/hits/950/ADD,0.3/ReagentKey/ADD,0.3/AlchemyAugmentCrystal/ADD,0.3/HealingAugmentCrystal/ADD,0.3/ManaLeechAugmentCrystal/ADD,0.3/RodOfOrcControl/ADD,0.3/WingsOfSpirituality/
+
+Orc/name/Gorth/str/650/dex/300/int/300/hue/1171/tamable/false/bodyvalue/34/hitsmaxseed/1250/hits/1250/ADD,0.3/SmithyKey/ADD,0.3/IngotKey/ADD,0.3/BlacksmithyAugmentCrystal/ADD,0.3/BagOfBombs/ADD,0.3/TwinPendantOfDespise/ADD,0.3/GoldenCrown/
+
+OrcishAssassin/name/Snaga/str/450/dex/550/int/350/hue/1105/tamable/false/bodyvalue/17/hitsmaxseed/1050/hits/1050/ADD,0.3/TailorKey/ADD,0.3/ASHKey/ADD,0.3/StealthAugmentCrystal
+
+AncientWyrm/name/Kukulkan/str/650/dex/300/int/550/hue/2213/tamable/true/bodyvalue/46/hitsmaxseed/1200/hits/1200/ADD,0.3/Statcapdeed/ADD,0.3/GoldenCrown/ADD,0.3/AlchemyAugmentCrystal/ADD,0.3/MirrorOfHonesty/ADD,0.3/TreasureHuntersKey/ADD,0.3/GrandmastersRobe/
+
+Daemon/name/Nakri/str/550/dex/350/int/450/hue/1157/tamable/true/bodyvalue/9/hitsmaxseed/1000/hits/1000/ADD,0.3/BanishingRod/ADD,0.3/WeaponKey/ADD,0.3/WingsOfSpirituality/ADD,0.3/EnergyResistAugmentCrystal/ADD,0.3/CapacityIncreaseDeed/ADD,0.3/ASHKey/
+
+Ettin/name/Tane/str/700/dex/200/int/200/hue/1420/tamable/true/bodyvalue/2/hitsmaxseed/1400/hits/1400/ADD,0.3/LumberjackingAugmentCrystal/ADD,0.3/WoodKey/ADD,0.3/LargeBagOfHolding/ADD,0.3/AnimalTamingAugmentCrystal/ADD,0.3/BraceletSlotChangeDeed/ADD,0.3/GardenersKey/
+
+SeaSerpent/name/Moana/str/480/dex/420/int/500/hue/297/tamable/true/bodyvalue/150/hitsmaxseed/900/hits/900/ADD,0.3/FishingAugmentCrystal/ADD,0.3/FishKey/ADD,0.3/WaterHitAreaCrystal/ADD,0.3/ScribesKey/ADD,0.3/GoldenDrakelingScaleShield/ADD,0.3/BankCrystal/
+
+SeaSerpent/name/Moana/str/480/dex/420/int/500/hue/297/tamable/true/bodyvalue/150/hitsmaxseed/900/hits/900/ADD,0.3/FishingAugmentCrystal/ADD,0.3/FishKey/ADD,0.3/WaterHitAreaCrystal/ADD,0.3/ScribesKey/ADD,0.3/GoldenDrakelingScaleShield/ADD,0.3/BankCrystal/
+
+FireElemental/name/Pele/str/530/dex/340/int/600/hue/1161/tamable/true/bodyvalue/15/hitsmaxseed/1100/hits/1100/ADD,0.3/FireballAugmentCrystal/ADD,0.3/FireResistAugmentCrystal/ADD,0.3/GraniteKey/ADD,0.3/SmithyKey/ADD,0.3/BagOfBombs/ADD,0.3/MasterKey/
+
+Succubus/name/Hina/str/420/dex/480/int/520/hue/2500/tamable/true/bodyvalue/149/hitsmaxseed/950/hits/950/ADD,0.3/DetectingHiddenAugmentCrystal/ADD,0.3/TwinPendantOfDespise/ADD,0.3/RemoveTrapAugmentCrystal/ADD,0.3/JewelersKey/ADD,0.3/LRCdeed/ADD,0.3/JewelryKey/
+
+Golem/name/Ono/str/750/dex/250/int/150/hue/2415/tamable/true/bodyvalue/752/hitsmaxseed/1300/hits/1300/ADD,0.3/ArmorKey/ADD,0.3/ArmsLoreAugmentCrystal/ADD,0.3/BanishingOrb/ADD,0.3/IngotKey/ADD,0.3/BlacksmithyAugmentCrystal/ADD,0.3/Statcapdeed/
+
+Kraken/name/Lanai/str/560/dex/280/int/470/hue/337/tamable/true/bodyvalue/77/hitsmaxseed/1050/hits/1050/ADD,0.3/MaxxiaScroll/ADD,0.3/PotionKey/
+
+
+
+
+
+
+
+
+

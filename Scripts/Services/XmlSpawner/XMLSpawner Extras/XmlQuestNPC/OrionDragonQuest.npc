@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Dragon Hunter Orion</Name>
+    <Running>True</Running>
+    <ProximityRange>4</ProximityRange>
+    <ResetRange>20</ResetRange>
+    <NoTriggerOnCarried>Dragon Scales</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>8</SpeechPace>
+    <ResetTime>0.6</ResetTime>
+    <ConfigFile>OrionDragonQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Chronos Seraphine, the legendary dragon, is causing havoc across the lands. Can you help us defeat it?</Text>
+    <Keywords>You see a seasoned warrior who looks like he's been battling against creatures from ancient times</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>2</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>2</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Dragon Hunt,5/Chronos Seraphine has been sighted near the ancient ruins. It's a dangerous task. Will you accept?;I am ready for the challenge!;Certainly</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your courage is admirable. Return with proof of your victory, and you will be handsomely rewarded.</Text>
+    <Keywords>Certainly</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Dragon Scale/TitleString/Chronos Seraphine Defeat/NoteString/Bring back evidence of defeating Chronos Seraphine to Orion for a reward./Objective1/KILLNAMED,Chronos Seraphine,1/Description1/Defeat Chronos Seraphine/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/ZeonRune/ADD/&lt;Ruby/hue/RND,1,500/name/Eye of the Dragon&gt/ADD/<bag/hue/1184/Name/Dragon Hunter's Cache/ADD/<TeleportScroll/name/Scroll of the Dragon Slayer>/ADD/<Longsword/name/Dragon's Bane Sword>/ADD/<RefreshPotion/name/Potion of Dragon Vitality>>></Action>
+	<DependsOn>2</DependsOn>
+	<Pause>2</Pause>
+	<PrePause>-1</PrePause>
+	<LockConversation>True</LockConversation>
+	<IgnoreCarried>False</IgnoreCarried>
+	<AllowNPCTrigger>False</AllowNPCTrigger>
+	<SpeechStyle>Regular</SpeechStyle>
+	<SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+	<EntryNumber>0</EntryNumber>
+	<ID>0</ID>
+	<Pause>2</Pause>
+	<PrePause>-1</PrePause>
+	<LockConversation>True</LockConversation>
+	<IgnoreCarried>False</IgnoreCarried>
+	<AllowNPCTrigger>False</AllowNPCTrigger>
+	<SpeechStyle>Regular</SpeechStyle>
+	<SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

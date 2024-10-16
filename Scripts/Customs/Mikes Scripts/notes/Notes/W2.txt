@@ -1,0 +1,7 @@
+It would not complie again and I got this error:
+
+Errors:
+ + Customs/17. Mikes Scripts/PulpyPotionPurveyor.cs:
+    CS1715: Line 13: 'Server.Mobiles.PulpyPotionPurveyor.SBInfos': type must be 'System.Collections.Generic.List<Server.Mobiles.SBInfo>' to match overridden member 'Server.Mobiles.BaseVendor.SBInfos'
+    CS0534: Line 10: 'Server.Mobiles.PulpyPotionPurveyor' does not implement inherited abstract member 'Server.Mobiles.BaseVendor.SBInfos.get'
+Scripts: One or more scripts failed to compile or no script files were found.

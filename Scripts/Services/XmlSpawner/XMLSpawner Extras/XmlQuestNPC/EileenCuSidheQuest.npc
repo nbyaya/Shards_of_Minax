@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Cu Sidhe Hunter Eileen</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Spiritwalker Evidence</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>EileenCuSidheQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>The Emerald Spiritwalker, a legendary Cu Sidhe, roams the lands. Its presence disrupts the natural order. Can you help track it down?</Text>
+    <Keywords>You see a hunter with a determined gaze, seeking help to track down a mystical beast</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Spiritwalker Hunt,4/Track and defeat the Emerald Spiritwalker to restore balance.;I'm ready for the hunt.;Absolutely</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your courage is admirable. Return with proof of your triumph, and I shall reward you generously.</Text>
+    <Keywords>Absolutely</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Spiritwalker Evidence/TitleString/Emerald Spiritwalker Defeat/NoteString/Return proof of defeating the Emerald Spiritwalker to Eileen for a reward./Objective1/KILLNAMED,Emerald Spiritwalker,1/Description1/Defeat the Emerald Spiritwalker/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/ZeonRune/ADD/&lt;Emerald/hue/RND,1,300/name/Heart of the Sidhe&gt;/ADD/&lt;bag/hue/2120/Name/Sidhe Conqueror's Cache/ADD/&lt;TeleportScroll/name/Scroll of Mystical Travel&gt;/ADD/&lt;Longsword/name/Sidhe's Bane Blade&gt;/ADD/&lt;HealPotion/name/Potion of Mystical Healing&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

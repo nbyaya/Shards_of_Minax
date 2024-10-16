@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Dark Agent Zephyr</Name>
+    <Running>True</Running>
+    <ProximityRange>4</ProximityRange>
+    <ResetRange>18</ResetRange>
+    <NoTriggerOnCarried>Assassin's Trophy</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>12</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>ZephyrAssassinationQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Gruk the Orc has crossed the Shadow Syndicate. His fate is sealed. Will you be the instrument of his demise?</Text>
+    <Keywords>You notice a shadowy figure who exudes an aura of danger and whispers of deadly tasks</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1175</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1175</SpeechHue>
+    <Gump>GUMP,Assassination Contract,5/Gruk the Orc is a blight upon this land. His elimination is non-negotiable.;I will undertake this task.;I accept</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your willingness to embrace the darkness is appreciated. Succeed, and you shall be greatly rewarded.</Text>
+    <Keywords>I accept</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Assassin's Trophy/TitleString/Gruk the Orc Assassinated/NoteString/Deliver Gruk the Orc's head to Zephyr for a reward./Objective1/KILLNAMED,Gruk the Orc,1/Description1/Assassinate Gruk the Orc/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/&lt;MaxxiaScroll/amount/3&gt;/ADD/&lt;Obsidian/hue/RND,1,300/name/Heart of Darkness&gt;/ADD/&lt;bag/hue/1109/Name/Assassin's Cache/ADD/&lt;SmokeBomb/name/Bomb of Shadows&gt;/ADD/&lt;AssassinSpike/name/Orcslayer's Spike&gt;/ADD/&lt;InvisibilityPotion/name/Potion of Veiling&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1175</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1175</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

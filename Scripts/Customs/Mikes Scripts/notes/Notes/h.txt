@@ -1,0 +1,6 @@
+It would not compile and I got this error:
+
+Errors:
+ + Customs/17. Mikes Scripts/MonsterChestC.cs:
+    CS0103: Line 42: The name 'orcBomberCount' does not exist in the current context
+    CS0103: Line 45: The name 'orcCaptainCount' does not exist in the current context

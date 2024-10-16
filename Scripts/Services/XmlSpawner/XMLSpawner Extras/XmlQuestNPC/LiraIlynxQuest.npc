@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Shadow Hunter Lira</Name>
+    <Running>True</Running>
+    <ProximityRange>4</ProximityRange>
+    <ResetRange>20</ResetRange>
+    <NoTriggerOnCarried>Shadow Remnant</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>12</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>LiraIlynxQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>The Ilynx Shades grow too numerous and threaten to engulf our land in darkness. Will you help purge this shadow?</Text>
+    <Keywords>You encounter a cloaked figure who looks ready to confront the shadows themselves</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Shadow Hunt,4/Ilynx Shades have been spotted lurking around ancient ruins. We need your blade in this fight.;I'll face these shadows!;Certainly</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Only the bravest can stand against the darkness. Bring back a token of your victory, and you shall be rewarded handsomely.</Text>
+    <Keywords>Certainly</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Shadow Remnant/TitleString/Ilynx Shade Defeat/NoteString/Return proof of defeating Ilynx Shades to Lira for a reward./Objective1/KILLNAMED,Ilynx Shade,1/Description1/Defeat an Ilynx Shade/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/MaxxiaScroll/ADD/&lt;StarSapphire/hue/RND,1,500/name/Shade's Essence&gt;/ADD/&lt;bag/hue/1107/Name/Shade Vanquisher's Cache/ADD/&lt;TeleportScroll/name/Scroll of Shadows&gt;/ADD/&lt;Kryss/name/Blade of Night&gt;/ADD/&lt;GreaterHealPotion/name/Potion of Shadow Healing&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

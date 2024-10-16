@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Bat Hunter Kiera</Name>
+    <Running>True</Running>
+    <ProximityRange>4</ProximityRange>
+    <ResetRange>15</ResetRange>
+    <NoTriggerOnCarried>Wraiven Bat Wing</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>8</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>KieraWraivenBatQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>The shadows thicken as Wraiven Bats descend upon the lands. Will you help restore the light?</Text>
+    <Keywords>You notice a silent figure with keen eyes, whispering about the darkness of Wraiven Bats</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Bat Challenge,4/Wraiven Bats are elusive, but you look capable. Will you hunt them down?;I'll take on this challenge!;I am ready</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your courage is inspiring. Bring me the wings as proof, and I shall honor your effort.</Text>
+    <Keywords>I am ready</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Wraiven Bat Wing/TitleString/Wraiven Bat Hunt/NoteString/Return proof of defeating Wraiven Bats to Kiera for a reward./Objective1/KILLNAMED,Wraiven Bat,1/Description1/Defeat a Wraiven Bat/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/MaxxiaScroll/ADD/&lt;Obsidian/hue/RND,1,250/name/Veil of the Bat&gt;/ADD/&lt;bag/hue/1103/Name/Bat's Bane Cache/ADD/&lt;NightsightPotion/name/Elixir of Night Vision&gt;/ADD/&lt;Dagger/name/Bat's Claw&gt;/ADD/&lt;HealPotion/name/Potion of Restoration&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

@@ -1,0 +1,795 @@
+These are XML spawner examples for spawning two different kinds of Ogres.  Do you understand this context?  Can you make more examples with different properties?
+
+ogre/name/The Butcher/str/190/damagemax/50/hue/500
+ogre/name/Lord Chef/ADD,0.3/ChefKey/hue/300
+lich/name/Dark Master/ADD/<simplenote/notestring/My soul will not rest until you return with the Ring of the Elements found on my nemesis, the lich lord Artemis in the dungeons of Ilshenar. Take my sword to aid you./titlestring/The Return of Artemis/name/Quest of Artemis/size/2>/ADD/<longsword/maxdamage/RND,30,70>
+
+
+ogre/name/The Butcher/str/190/damagemax/50/hue/500/tamable/true
+ogre/name/Lord Chef/ADD,0.3/ChefKey/hue/300/tamable/true
+ogre/name/Warlord Grug/str/210/dex/60/weapon/Mace/hue/700/tamable/true
+ogre/name/Healer Grom/str/180/int/80/ADD,0.4/HealingPotion/hue/450/tamable/true
+ogre/name/Mage Olof/int/100/magery/80/ADD/Spellbook/hue/350/tamable/true
+ogre/name/Scout Grok/dex/90/str/170/ADD,0.5/TreasureMap/hue/550/tamable/true
+
+
+
+
+waterelemental/name/Mud Elemental/ADD,0.3/BardsKey/str/260/dex/60/int/100/hue/3429/tamable/true/ADD,0.3/MaxxiaScroll
+waterelemental/name/Wine Elemental/ADD,0.3/BardsKey/str/220/dex/80/int/110/hue/1146/tamable/true/ADD,0.3/MaxxiaScroll
+waterelemental/name/Oil Elemental/ADD,0.3/BardsKey/str/240/dex/70/int/90/hue/1906/tamable/true/ADD,0.3/MaxxiaScroll
+waterelemental/name/Lava Elemental/ADD,0.3/BardsKey/str/280/dex/65/int/95/hue/1157/tamable/true/ADD,0.3/MaxxiaScroll
+waterelemental/name/Acid Elemental/ADD,0.3/BardsKey/str/230/dex/85/int/105/hue/1267/tamable/true/ADD,0.3/MaxxiaScroll
+waterelemental/name/Milk Elemental/ADD,0.3/BardsKey/str/210/dex/75/int/100/hue/2301/tamable/true/ADD,0.3/MaxxiaScroll
+waterelemental/name/Blood Elemental/ADD,0.3/BardsKey/str/250/dex/90/int/110/hue/37/tamable/true/ADD,0.3/MaxxiaScroll
+waterelemental/name/Mercury Elemental/ADD,0.3/BardsKey/str/220/dex/100/int/90/hue/1950/tamable/true/ADD,0.3/MaxxiaScroll
+
+
+
+horse/name/Flaming Steed/hue/1256/speed/2.0/damagemax/20/ADD,0.3/MaxxiaScroll
+horse/name/Icy Mount/hue/1152/speed/1.8/damagemax/15/ADD,0.3/MaxxiaScroll
+horse/name/Ethereal Stallion/hue/1150/speed/2.1/damagemax/10/ADD,0.3/MaxxiaScroll
+horse/name/Enchanted Mare/hue/2735/speed/2.0/damagemax/12/ADD,0.3/MaxxiaScroll
+horse/name/Thunder Charger/hue/2075/speed/1.9/damagemax/18/ADD,0.3/MaxxiaScroll
+horse/name/Moonlit Steed/hue/1109/speed/2.0/damagemax/14/ADD,0.3/MaxxiaScroll
+
+earthelemental/name/Diamond Elemental/str/600/hits/800/damagemax/80/hue/2216/tamable/true/ADD,0.3/MaxxiaScroll
+earthelemental/name/Ruby Elemental/str/550/hits/650/damagemax/75/hue/2113/tamable/true/ADD,0.3/MaxxiaScroll
+earthelemental/name/Sapphire Elemental/str/500/int/150/hits/600/damagemax/70/hue/2119/tamable/true/ADD,0.3/MaxxiaScroll
+earthelemental/name/Emerald Elemental/str/520/hits/700/damagemax/72/hue/2121/tamable/true/ADD,0.3/MaxxiaScroll
+earthelemental/name/Amethyst Elemental/str/510/int/110/hits/620/damagemax/70/hue/2126/tamable/true/ADD,0.3/MaxxiaScroll
+earthelemental/name/Opal Elemental/str/515/int/115/dex/115/hits/630/damagemax/70/hue/2118/tamable/true/ADD,0.3/MaxxiaScroll
+earthelemental/name/Onyx Elemental/str/580/hits/690/damagemax/78/hue/2056/tamable/true/ADD,0.3/MaxxiaScroll
+
+
+
+gorilla/name/Chimpanzee/str/250/dex/180/int/100/hits/300/damagemax/30/hue/2113/ADD,0.3/MaxxiaScroll
+gorilla/name/Bonobo/str/240/dex/175/int/105/hits/290/damagemax/28/hue/1256/ADD,0.3/MaxxiaScroll
+gorilla/name/Orangutan/str/280/dex/160/int/90/hits/320/damagemax/35/hue/453/ADD,0.3/MaxxiaScroll
+gorilla/name/Silverback Gorilla/str/330/dex/155/int/80/hits/400/damagemax/45/hue/2216/ADD,0.3/MaxxiaScroll
+gorilla/name/Mountain Gorilla/str/310/dex/150/int/85/hits/375/damagemax/40/hue/2121/ADD,0.3/MaxxiaScroll
+gorilla/name/Golden Monkey/str/210/dex/200/int/110/hits/250/damagemax/25/hue/2401/ADD,0.3/MaxxiaScroll
+
+
+
+
+horse/name/Land Worm/hue/300/damagemax/20/bodyvalue/150/ADD,0.3/MaxxiaScroll
+
+lich/name/Ogre Mage/int/100/magery/80/hue/2119/tamable/true/bodyvalue/1/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+lich/name/Zivir/int/100/magery/80/hue/346/tamable/true/bodyvalue/1/hitsmaxseed/700/hits/700/ADD,0.3/MaxxiaScroll
+
+wisp/name/Goblin Sorcerer/int/130/magery/90/hue/2003/tamable/true/bodyvalue/245/hitsmaxseed/250/hits/245/ADD,0.3/MaxxiaScroll
+
+spectre/name/Draconic Spectre/int/90/magery/75/hue/1150/tamable/true/bodyvalue/12/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+direwolf/name/Wolf Shaman/int/120/magery/85/hue/0/tamable/true/bodyvalue/34/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+titan/name/Shadow Titan/str/600/hitsmaxseed/800/hits/800/hue/1109/tamable/true/bodyvalue/76/ADD,0.3/MaxxiaScroll
+
+phoenix/name/Phoenix Harpy/int/85/magery/70/hue/1260/tamable/true/bodyvalue/30/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+ghost/name/Dragon Ghost/str/650/magery/60/hue/1152/tamable/true/bodyvalue/12/hitsmaxseed/800/hits/800/ADD,0.3/MaxxiaScroll
+
+rat/name/Gargantuan Rat/str/350/dex/100/hue/1153/tamable/true/bodyvalue/17/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+
+balron/name/Demonic Unicorn/int/130/magery/90/hue/1175/tamable/true/bodyvalue/192/hitsmaxseed/600/hits/600/ADD,0.3/MaxxiaScroll
+
+golem/name/Ethereal Golem/int/80/magery/70/hue/1152/tamable/true/bodyvalue/788/hitsmaxseed/700/hits/700/ADD,0.3/MaxxiaScroll
+
+snake/name/Fire Serpent/str/280/magery/50/hue/1161/tamable/true/bodyvalue/52/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+
+drake/name/Ice Drake/str/400/dex/130/hue/1154/tamable/true/bodyvalue/60/hitsmaxseed/650/hits/650/ADD,0.3/MaxxiaScroll
+
+
+
+shade/name/Draconic Shade/int/120/magery/85/hue/1109/tamable/true/bodyvalue/12/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+wight/name/Wolf Wight/int/50/magery/50/hue/1908/tamable/true/bodyvalue/25/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+lich/name/Spider Liche/int/130/magery/90/hue/2224/tamable/true/bodyvalue/28/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+ghoul/name/Ghoul Giant/int/40/magery/30/hue/1153/tamable/true/bodyvalue/18/hitsmaxseed/600/hits/600/ADD,0.3/MaxxiaScroll
+
+gazer/name/Ethereal Specter/int/110/magery/70/hue/2075/tamable/true/bodyvalue/1/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+daemon/name/Demonic Harpy/int/140/magery/95/hue/2110/tamable/true/bodyvalue/30/hitsmaxseed/550/hits/550/ADD,0.3/MaxxiaScroll
+
+lich/name/Serpentine Lich/int/125/magery/88/hue/2701/tamable/true/bodyvalue/36/hitsmaxseed/520/hits/520/ADD,0.3/MaxxiaScroll
+
+
+
+
+
+GargoyleDestroyer/name/Boneshard Gargoyle/bodyvalue/50/hitsmaxseed/500/hits/500/tamable/true/ADD,0.3/MaxxiaScroll
+
+ElderGazer/name/Boneye Seer/bodyvalue/50/hitsmaxseed/550/hits/550/tamable/true/ADD,0.3/MaxxiaScroll
+
+AncientLich/name/Phantom Lich King/bodyvalue/50/hitsmaxseed/600/hits/600/tamable/true/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Skeletal Temptress/bodyvalue/50/hitsmaxseed/450/hits/450/tamable/true/ADD,0.3/MaxxiaScroll
+
+Imp/name/Bonefiend Imp/bodyvalue/50/hitsmaxseed/300/hits/300/tamable/true/ADD,0.3/MaxxiaScroll
+
+gargoyledestroyer/name/Drakestone Guardian/bodyvalue/59/hitsmaxseed/700/hits/700/tamable/true/ADD,0.3/MaxxiaScroll
+
+eldergazer/name/Elder Wyrmseer/bodyvalue/59/int/140/magery/90/hitsmaxseed/650/hits/650/tamable/true/ADD,0.3/MaxxiaScroll
+
+ancientlich/name/Draconic Pharaoh/bodyvalue/59/int/150/magery/100/hue/2300/hitsmaxseed/750/hits/750/tamable/true/ADD,0.3/MaxxiaScroll
+
+succubus/name/Hellfire Wyrm/bodyvalue/59/int/130/hitsmaxseed/720/hits/720/tamable/true/ADD,0.3/MaxxiaScroll
+
+imp/name/Inferno Drakeling/bodyvalue/59/int/120/magery/85/hue/2500/hitsmaxseed/620/hits/620/tamable/true/ADD,0.3/MaxxiaScroll
+
+GargoyleDestroyer/name/Zombie Stoneguard/bodyvalue/3/hitsmaxseed/600/hits/500/damagemax/75/hue/1424/tamable/true/ADD,0.3/MaxxiaScroll
+
+ElderGazer/name/Decaying Seer/bodyvalue/3/int/120/magery/85/hitsmaxseed/550/hits/450/hue/1421/tamable/true/ADD,0.3/MaxxiaScroll
+
+AncientLich/name/Undying Pharaoh/bodyvalue/3/int/130/magery/95/hue/1422/hitsmaxseed/650/hits/550/tamable/true/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Enchanted Carrion/bodyvalue/3/int/115/hue/1420/hitsmaxseed/480/hits/420/damagemax/68/tamable/true/ADD,0.3/MaxxiaScroll
+
+Imp/name/Necro Sprite/bodyvalue/3/int/90/hue/1419/hitsmaxseed/350/hits/300/damagemax/58/tamable/true/ADD,0.3/MaxxiaScroll
+
+lich/name/Ogre Mage/str/210/dex/60/int/100/hue/2119/tamable/true/bodyvalue/1/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+
+
+
+SkeletalMage/name/Bog Skeletal Mage/str/190/dex/50/int/140/hue/240/tamable/true/bodyvalue/780/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+RatmanMage/name/Bog Ratman Mage/str/210/dex/70/int/130/hue/350/tamable/true/bodyvalue/780/hitsmaxseed/410/hits/410/ADD,0.3/MaxxiaScroll
+
+OrcishMage/name/Bog Orcish Mage/str/230/dex/60/int/120/hue/470/tamable/true/bodyvalue/780/hitsmaxseed/430/hits/430/ADD,0.3/MaxxiaScroll
+
+LichLord/name/Bog Lich Lord/str/250/dex/55/int/180/hue/520/tamable/true/bodyvalue/780/hitsmaxseed/480/hits/480/ADD,0.4/MaxxiaScroll
+
+OgreLord/name/Bog Ogre Lord/str/270/dex/50/int/90/hue/676/tamable/true/bodyvalue/780/hitsmaxseed/500/hits/500/ADD,0.4/MaxxiaScroll
+
+
+
+SkeletalMage/name/Skuldran the Desolate/str/220/dex/70/int/110/hue/RND,1,500/tamable/true/bodyvalue/785/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+RatmanMage/name/Ratigon the Whisperer/str/230/dex/80/int/120/hue/RND,1,500/tamable/true/bodyvalue/785/hitsmaxseed/440/hits/440/ADD,0.3/MaxxiaScroll
+
+OrcishMage/name/Orcandur the Eldritch/str/240/dex/90/int/130/hue/RND,1,500/tamable/true/bodyvalue/785/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+LichLord/name/Lichdrak the Timeless/str/250/dex/100/int/140/hue/RND,1,500/tamable/true/bodyvalue/785/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+OgreLord/name/Ogroth the Unfathomable/str/260/dex/110/int/150/hue/RND,1,500/tamable/true/bodyvalue/785/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+
+
+ogre/hue/RND,1,500/ADD,0.1/<katana/hue/500/attributes.luck/RND,50,100>
+
+
+
+
+
+ArcaneDaemon/name/Crystalan Vrothe/str/250/dex/85/int/150/hue/900/tamable/true/bodyvalue/176/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+
+ArcherGuard/name/Lysandra of Feleth/str/190/dex/110/int/75/hue/750/tamable/true/bodyvalue/176/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+
+ArcticOgreLord/name/Thrymril the Glacial/str/220/dex/90/int/90/hue/620/tamable/true/bodyvalue/176/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+
+BakeKitsune/name/Sylphine Whisperweave/str/210/dex/105/int/120/hue/580/tamable/true/bodyvalue/176/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+
+
+Balron/name/Dreadshade Embersyl/str/270/dex/80/int/160/hue/1010/tamable/true/bodyvalue/176/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+
+
+BlackSolenWorker/name/Solen Sprite/str/180/dex/110/int/120/hue/530/tamable/true/bodyvalue/176/hitsmaxseed/250/hits/250/ADD,0.3/MaxxiaScroll
+
+BladeSpirits/name/Blade Whisper/str/190/dex/120/int/130/hue/540/tamable/true/bodyvalue/176/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+BloodElemental/name/Sanguine Sylph/str/200/dex/125/int/135/hue/550/tamable/true/bodyvalue/176/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+
+Boar/name/Tusked Puck/str/160/dex/100/int/90/hue/560/tamable/true/bodyvalue/176/hitsmaxseed/200/hits/200/ADD,0.3/MaxxiaScroll
+
+BogThing/name/Marsh Wisp/str/210/dex/115/int/140/hue/570/tamable/true/bodyvalue/176/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+
+
+evilwanderinghealer/name/Cugel's Healer/str/180/dex/70/int/130/hue/620/tamable/true/bodyvalue/169/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+executioner/name/Turjan's Executor/str/250/dex/80/int/90/hue/710/tamable/true/bodyvalue/169/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+exodusminion/name/Rhialto's Minion/str/220/dex/65/int/110/hue/825/tamable/true/bodyvalue/169/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+
+exodusoverseer/name/Iucounu's Overseer/str/260/dex/75/int/95/hue/900/tamable/true/bodyvalue/169/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+
+fandancer/name/Mazirian's Dancer/str/200/dex/70/int/120/hue/1010/tamable/true/bodyvalue/169/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+
+
+
+
+
+
+
+
+
+
+
+
+CrystalElemental/name/Zephyrial Luminant/str/220/dex/50/int/120/hue/1100/tamable/true/bodyvalue/2/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+CuSidhe/name/Astral Hound/str/250/dex/55/int/95/hue/950/tamable/true/bodyvalue/2/hitsmaxseed/440/hits/440/ADD,0.3/MaxxiaScroll
+
+Cursed/name/Galaxian Cursebearer/str/230/dex/52/int/110/hue/890/tamable/true/bodyvalue/2/hitsmaxseed/430/hits/430/ADD,0.3/MaxxiaScroll
+
+Cyclops/name/Stellar Behemoth/str/240/dex/57/int/90/hue/780/tamable/true/bodyvalue/2/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+Daemon/name/Cosmic Infernal/str/260/dex/58/int/115/hue/660/tamable/true/bodyvalue/2/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+
+
+
+
+CrystalElemental/name/Crystal Skyshard/str/200/dex/85/int/95/hue/1150/tamable/true/bodyvalue/5/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+CuSidhe/name/Eaglon Sidhe/str/225/dex/80/int/90/hue/540/tamable/true/bodyvalue/5/hitsmaxseed/375/hits/375/ADD,0.3/MaxxiaScroll
+
+Cursed/name/Cursewing/str/220/dex/75/int/85/hue/480/tamable/true/bodyvalue/5/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+Cyclops/name/Cyclopean Raptor/str/235/dex/70/int/80/hue/510/tamable/true/bodyvalue/5/hitsmaxseed/390/hits/390/ADD,0.3/MaxxiaScroll
+
+Daemon/name/Daemonix Avian/str/245/dex/65/int/75/hue/450/tamable/true/bodyvalue/5/hitsmaxseed/405/hits/405/ADD,0.3/MaxxiaScroll
+
+
+
+
+
+BoneMancer
+BoneMagi/name/BoneMancer/str/180/dex/50/int/110/hue/510/tamable/true/bodyvalue/7/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+Orcish BanditLord
+Brigand/name/Orcish BanditLord/str/160/dex/70/int/60/hue/505/tamable/true/bodyvalue/7/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+Orcish MetalShaman
+BronzeElemental/name/Orcish MetalShaman/str/220/dex/40/int/90/hue/500/tamable/true/bodyvalue/7/hitsmaxseed/340/hits/340/ADD,0.3/MaxxiaScroll
+
+Orcish UrsineWarrior
+BrownBear/name/Orcish UrsineWarrior/str/150/dex/80/int/40/hue/515/tamable/true/bodyvalue/7/hitsmaxseed/260/hits/260/ADD,0.3/MaxxiaScroll
+
+Orcish HornedChampion
+Bull/name/Orcish HornedChampion/str/190/dex/50/int/50/hue/525/tamable/true/bodyvalue/7/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+
+
+
+
+
+
+
+// Gossamer Seer
+FortuneTeller/name/Gossamer Seer/str/180/dex/75/int/140/hue/720/tamable/true/bodyvalue/11/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+
+// Skittering Ravebeast
+FrenziedOstard/name/Skittering Ravebeast/str/190/dex/120/int/80/hue/620/tamable/true/bodyvalue/11/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+
+// Icy Webmorph
+FrostOoze/name/Icy Webmorph/str/170/dex/50/int/90/hue/820/tamable/true/bodyvalue/11/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+
+// Glacial Arachnid
+FrostSpider/name/Glacial Arachnid/str/200/dex/85/int/70/hue/920/tamable/true/bodyvalue/11/hitsmaxseed/330/hits/330/ADD,0.3/MaxxiaScroll
+
+
+// Frigid Trolloid Weaver
+FrostTroll/name/Frigid Trolloid Weaver/str/230/dex/55/int/60/hue/1020/tamable/true/bodyvalue/11/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+
+
+LesserHiryu/name/Drakon Hiryu/str/300/dex/90/int/150/hue/540/tamable/true/bodyvalue/12/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+Leviathan/name/Sea Drake Leviathan/str/420/dex/80/int/180/hue/560/tamable/true/bodyvalue/12/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+Lich/name/Necrodrake Lich/str/250/dex/70/int/200/hue/580/tamable/true/bodyvalue/12/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+RatmanArcher/name/Ratwing Archer/str/220/dex/100/int/130/hue/600/tamable/true/bodyvalue/12/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+RatmanMage/name/Ratwing Sorcerer/str/230/dex/85/int/160/hue/620/tamable/true/bodyvalue/12/hitsmaxseed/440/hits/440/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Satyr-Draconus/str/220/dex/75/int/115/hue/610/tamable/true/bodyvalue/12/hitsmaxseed/425/hits/425/ADD,0.3/MaxxiaScroll
+
+Savage/name/Draco-Savagium/str/240/dex/80/int/120/hue/660/tamable/true/bodyvalue/12/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+RestlessSoul/name/Soulwing Drakar/str/210/dex/70/int/110/hue/560/tamable/true/bodyvalue/12/hitsmaxseed/415/hits/415/ADD,0.3/MaxxiaScroll
+
+Revenant/name/Reven-Draga/str/230/dex/85/int/130/hue/710/tamable/true/bodyvalue/12/hitsmaxseed/440/hits/440/ADD,0.3/MaxxiaScroll
+
+RevenantLion/name/Lionflare Drakelion/str/245/dex/90/int/140/hue/720/tamable/true/bodyvalue/12/hitsmaxseed/470/hits/470/ADD,0.3/MaxxiaScroll
+
+ShadowWisp/name/Dracowisp/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+ShadowWyrm/name/Wyrmshade Draco/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Dracubus/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+Silvani/name/Dracovani/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+SilverSerpent/name/Silverdrake/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+wisp/name/Draconic Luminar/str/220/dex/70/int/110/hue/530/tamable/true/bodyvalue/12/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+wraith/name/Draken Spectre/str/240/dex/80/int/120/hue/540/tamable/true/bodyvalue/12/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+wyvern/name/Dragon Serpentius/str/260/dex/90/int/130/hue/550/tamable/true/bodyvalue/12/hitsmaxseed/550/hits/550/ADD,0.3/MaxxiaScroll
+
+yamandon/name/Dracolisk Elderon/str/280/dex/100/int/140/hue/560/tamable/true/bodyvalue/12/hitsmaxseed/600/hits/600/ADD,0.3/MaxxiaScroll
+
+yomotsuelder/name/Dragonite Ancients/str/300/dex/110/int/150/hue/570/tamable/true/bodyvalue/12/hitsmaxseed/650/hits/650/ADD,0.3/MaxxiaScroll
+
+AbysmalHorror/name/Drakonic Abyssal/str/250/dex/70/int/110/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+AcidElemental/name/Dragonic Acidling/str/260/dex/80/int/120/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+BloodElemental/name/Drakonic Bloodshade/str/270/dex/90/int/130/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/470/hits/470/ADD,0.3/MaxxiaScroll
+
+BogThing/name/Dragonmarsh Lurker/str/280/dex/100/int/140/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+ChaosDaemon/name/Chaosdrake Enigma/str/290/dex/110/int/150/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/490/hits/490/ADD,0.3/MaxxiaScroll
+
+AbysmalHorror/name/Nebulous Dread/str/800/dex/150/int/500/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/2500/hits/2500/ADD,0.3/MaxxiaScroll
+
+AcidElemental/name/Vaporous Corroder/str/750/dex/140/int/450/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/2300/hits/2300/ADD,0.3/MaxxiaScroll
+
+BloodElemental/name/AeroSanguine Apparition/str/770/dex/145/int/460/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/2400/hits/2400/ADD,0.3/MaxxiaScroll
+
+BogThing/name/Mist Marsh Phantom/str/720/dex/130/int/420/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/2200/hits/2200/ADD,0.3/MaxxiaScroll
+
+ChaosDaemon/name/Whirlwind Warlock/str/850/dex/160/int/520/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/2600/hits/2600/ADD,0.3/MaxxiaScroll
+
+CopperElemental/name/Aerocopper Goliath/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+Corpser/name/Windborne Necrotitan/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+CorrosiveSlime/name/Aerotoxin Miasma/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+CorruptedSoul/name/Zephyrshade Phantom/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+Cougar/name/Skyfang Prowler/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+DarkWisp/name/Vancian Whisper/str/150/dex/80/int/200/hue/0/tamable/true/bodyvalue/13/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+DarkWolf/name/Vancean Breezewolf/str/180/dex/100/int/80/hue/0/tamable/true/bodyvalue/13/hitsmaxseed/250/hits/250/ADD,0.3/MaxxiaScroll
+
+DarknightCreeper/name/Nightwind Creeper/str/200/dex/70/int/100/hue/0/tamable/true/bodyvalue/13/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+DeathAdder/name/Skyserpent Adder/str/160/dex/90/int/70/hue/0/tamable/true/bodyvalue/13/hitsmaxseed/200/hits/200/ADD,0.3/MaxxiaScroll
+
+DeathWatchBeetle/name/Galewatch Beetle/str/190/dex/60/int/90/hue/0/tamable/true/bodyvalue/13/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+DarkWisp/name/Glowstone Behemoth/str/180/dex/70/int/130/hue/660/tamable/true/bodyvalue/14/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+DarkWolf/name/Granite Lupine Titan/str/220/dex/80/int/90/hue/570/tamable/true/bodyvalue/14/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+DarknightCreeper/name/Nightstone Reaver/str/250/dex/55/int/110/hue/480/tamable/true/bodyvalue/14/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+DeathAdder/name/Petrified Serpent/str/190/dex/100/int/85/hue/510/tamable/true/bodyvalue/14/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+
+DeathWatchBeetle/name/Obsidian Scarab/str/200/dex/65/int/120/hue/590/tamable/true/bodyvalue/14/hitsmaxseed/390/hits/390/ADD,0.3/MaxxiaScroll
+
+Executioner/name/Terracrux Executioner/str/310/dex/80/int/120/hue/780/tamable/true/bodyvalue/14/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+ExodusMinion/name/Golithar Minion/str/290/dex/70/int/110/hue/630/tamable/true/bodyvalue/14/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+ExodusOverseer/name/Craglord Overseer/str/320/dex/90/int/130/hue/690/tamable/true/bodyvalue/14/hitsmaxseed/510/hits/510/ADD,0.3/MaxxiaScroll
+
+FanDancer/name/Lithosylph Dancer/str/270/dex/65/int/95/hue/560/tamable/true/bodyvalue/14/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+FeralTreefellow/name/Stonewood Behemoth/str/300/dex/75/int/105/hue/710/tamable/true/bodyvalue/14/hitsmaxseed/490/hits/490/ADD,0.3/MaxxiaScroll
+
+executioner/name/Pyro Executor/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+exodusminion/name/Blaze Nexus Minion/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+exodusoverseer/name/Inferno Nexus Warden/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+fandancer/name/Flame Ballet Enchantress/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+feraltreefellow/name/Charred Sylvan Behemoth/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+
+
+gargolyte/name/PyroGargoyleDestroyer/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+gargolite/name/BlazeGargoyleEnforcer/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+gazeflare/name/InfernoGazer/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+gazelight/name/EmberGazerLarva/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+ghoulfire/name/FlareGhoul/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+
+
+
+gorilla/name/Pyrogorillax/str/210/dex/80/int/90/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+greatHart/name/InfernoHart/str/180/dex/100/int/85/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+greaterDragon/name/DracoFlare/str/500/dex/70/int/150/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/600/hits/600/ADD,0.3/MaxxiaScroll
+
+greaterMongbat/name/MagmaMongbat/str/160/dex/120/int/70/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/250/hits/250/ADD,0.3/MaxxiaScroll
+
+greyWolf/name/EmberLupus/str/190/dex/110/int/80/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/290/hits/290/ADD,0.3/MaxxiaScroll
+
+Gorilla/name/Aquaranilla/str/210/dex/70/int/110/hue/530/tamable/true/bodyvalue/16/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+GreatHart/name/Aquahartian/str/220/dex/80/int/120/hue/540/tamable/true/bodyvalue/16/hitsmaxseed/430/hits/430/ADD,0.3/MaxxiaScroll
+
+GreaterDragon/name/Aquadraconis/str/230/dex/90/int/130/hue/550/tamable/true/bodyvalue/16/hitsmaxseed/440/hits/440/ADD,0.3/MaxxiaScroll
+
+GreaterMongbat/name/Aquabattus/str/240/dex/100/int/140/hue/560/tamable/true/bodyvalue/16/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+GreyWolf/name/Aquawulfen/str/250/dex/110/int/150/hue/570/tamable/true/bodyvalue/16/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+mummy/name/Nephthys Flow/str/180/dex/50/int/90/hue/450/tamable/true/bodyvalue/16/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+neira/name/Neptunia Abyss/str/250/dex/80/int/130/hue/480/tamable/true/bodyvalue/16/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+nightmare/name/Oceanic Phantasm/str/220/dex/70/int/110/hue/490/tamable/true/bodyvalue/16/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+harpy/name/Sirena Tempest/str/160/dex/65/int/95/hue/470/tamable/true/bodyvalue/16/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+harrower/name/Tidal Enigma/str/280/dex/85/int/140/hue/500/tamable/true/bodyvalue/16/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+PatchworkSkeleton/name/Aqueous Ossein/str/170/dex/55/int/90/hue/465/tamable/true/bodyvalue/16/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+PestilentBandage/name/Tidal Malaise/str/190/dex/70/int/85/hue/450/tamable/true/bodyvalue/16/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+
+Phoenix/name/Nautical Blaze/str/200/dex/75/int/95/hue/420/tamable/true/bodyvalue/16/hitsmaxseed/390/hits/390/ADD,0.3/MaxxiaScroll
+
+Pig/name/Oceanic Swine/str/150/dex/50/int/80/hue/490/tamable/true/bodyvalue/16/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+Pixie/name/Marine Spright/str/160/dex/65/int/100/hue/480/tamable/true/bodyvalue/16/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+PlagueBeastLord/name/Aquatic Plague Lord/str/450/dex/150/int/250/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/1800/hits/1800/ADD,0.3/MaxxiaScroll
+
+PlagueSpawn/name/Abyssal Waterspawn/str/420/dex/130/int/230/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/1600/hits/1600/ADD,0.3/MaxxiaScroll
+
+PoisonElemental/name/Toxic Water Wraith/str/480/dex/140/int/270/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/1900/hits/1900/ADD,0.3/MaxxiaScroll
+
+PolarBear/name/Arctic Waterbrute/str/400/dex/120/int/210/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/1500/hits/1500/ADD,0.3/MaxxiaScroll
+
+PredatorHellCat/name/Aquatic Inferno Feline/str/440/dex/160/int/240/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/1700/hits/1700/ADD,0.3/MaxxiaScroll
+
+Revenant/name/Aquatic Specter/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+RevenantLion/name/Hydrophobic Lion/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+RidableLlama/name/Water-Steed Llama/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+RidablePolarBear/name/Cryogenic Ursal/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+Ridgeback/name/Rippled Ridgeback/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+lich/name/NecroGaze/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/22/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+PlagueBeastLord/name/PestilentSeer/str/200/dex/70/int/90/hue/500/tamable/true/bodyvalue/22/hitsmaxseed/390/hits/390/ADD,0.3/MaxxiaScroll
+
+PoisonElemental/name/VenomSight/str/180/dex/80/int/95/hue/480/tamable/true/bodyvalue/22/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+
+PolarBear/name/FrostyWatcher/str/195/dex/75/int/85/hue/470/tamable/true/bodyvalue/22/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+PredatorHellCat/name/InfernoStare/str/190/dex/65/int/88/hue/460/tamable/true/bodyvalue/22/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+
+SandVortex/name/Desert Drakon/str/180/dex/70/int/90/hue/850/tamable/false/bodyvalue/33/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+Satyr/name/Lizard Piper/str/160/dex/75/int/85/hue/530/tamable/false/bodyvalue/33/hitsmaxseed/340/hits/340/ADD,0.3/MaxxiaScroll
+Succubus/name/Sirenscale Enchantress/str/190/dex/80/int/95/hue/560/tamable/false/bodyvalue/33/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+Titan/name/Lizard Colossus/str/220/dex/65/int/80/hue/890/tamable/false/bodyvalue/33/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+ToxicElemental/name/Venomtail Elemental/str/200/dex/70/int/88/hue/610/tamable/false/bodyvalue/33/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Dust Specter/str/150/dex/85/int/100/hue/520/tamable/true/bodyvalue/26/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Ethereal Pantomuse/str/180/dex/90/int/110/hue/520/tamable/true/bodyvalue/26/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Nebula Temptress/str/200/dex/80/int/120/hue/520/tamable/true/bodyvalue/26/hitsmaxseed/375/hits/375/ADD,0.3/MaxxiaScroll
+
+Titan/name/Celestial Goliath/str/230/dex/70/int/130/hue/520/tamable/true/bodyvalue/26/hitsmaxseed/425/hits/425/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Venomous Wraith/str/190/dex/95/int/115/hue/520/tamable/true/bodyvalue/26/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+SandVortex/Dessert Nomad/str/220/dex/70/int/110/hue/580/tamable/true/bodyvalue/29/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+Satyr/Forest Behemoth/str/230/dex/80/int/120/hue/590/tamable/true/bodyvalue/29/hitsmaxseed/440/hits/440/ADD,0.3/MaxxiaScroll
+
+Succubus/Nyx Enchanter/str/240/dex/90/int/130/hue/600/tamable/true/bodyvalue/29/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+Titan/Skyrend Ape/str/250/dex/100/int/140/hue/610/tamable/true/bodyvalue/29/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/Venomshade Simian/str/260/dex/110/int/150/hue/620/tamable/true/bodyvalue/29/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Zephyrion/str/180/dex/75/int/95/hue/430/tamable/true/bodyvalue/30/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Fauniara/str/160/dex/80/int/90/hue/540/tamable/true/bodyvalue/30/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Sirenavox/str/190/dex/85/int/110/hue/610/tamable/true/bodyvalue/30/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Titan/name/Celestalon/str/240/dex/70/int/105/hue/700/tamable/true/bodyvalue/30/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Venomfeather/str/200/dex/80/int/100/hue/360/tamable/true/bodyvalue/30/hitsmaxseed/340/hits/340/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Vortexian Nomad/str/190/dex/80/int/90/hue/530/tamable/false/bodyvalue/31/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Pandoran Harbinger/str/160/dex/95/int/85/hue/540/tamable/false/bodyvalue/31/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Nebular Temptress/str/180/dex/100/int/110/hue/550/tamable/false/bodyvalue/31/hitsmaxseed/340/hits/340/ADD,0.3/MaxxiaScroll
+
+Titan/name/Colossus Shade/str/230/dex/70/int/95/hue/560/tamable/false/bodyvalue/31/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Venomous Wraith/str/205/dex/85/int/105/hue/570/tamable/false/bodyvalue/31/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Zephyrian Bat/str/150/dex/75/int/85/hue/830/tamable/true/bodyvalue/39/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Celestwing Faun/str/180/dex/70/int/90/hue/540/tamable/true/bodyvalue/39/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Noctis Siren/str/170/dex/80/int/110/hue/910/tamable/true/bodyvalue/39/hitsmaxseed/310/hits/310/ADD,0.3/MaxxiaScroll
+
+Titan/name/Gargantwing Titan/str/240/dex/65/int/95/hue/570/tamable/true/bodyvalue/39/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Venombreeze Sprite/str/160/dex/78/int/100/hue/610/tamable/true/bodyvalue/39/hitsmaxseed/330/hits/330/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Zephyr Vermin/str/210/dex/70/int/80/hue/530/tamable/true/bodyvalue/44/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Ratune Minstrel/str/190/dex/85/int/90/hue/540/tamable/true/bodyvalue/44/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Vermin Sirena/str/180/dex/95/int/100/hue/550/tamable/true/bodyvalue/44/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+Titan/name/Ratitan Colossus/str/230/dex/65/int/85/hue/560/tamable/true/bodyvalue/44/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Venomous Vermin/str/220/dex/75/int/95/hue/570/tamable/true/bodyvalue/44/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Sand Arboreal Vortex/str/190/dex/70/int/110/hue/540/tamable/false/bodyvalue/47/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Sylvan Satyr Tree/str/180/dex/80/int/120/hue/560/tamable/false/bodyvalue/47/hitsmaxseed/340/hits/340/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Dendro Succubus/str/200/dex/85/int/130/hue/580/tamable/false/bodyvalue/47/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+Titan/name/Titanic Arboreal/str/220/dex/90/int/140/hue/600/tamable/false/bodyvalue/47/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Toxicanum Tree Elemental/str/210/dex/95/int/150/hue/620/tamable/false/bodyvalue/47/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Sandsting Enigma/str/250/dex/85/int/125/hue/580/tamable/true/bodyvalue/48/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Scorpionic Piper/str/220/dex/80/int/115/hue/540/tamable/true/bodyvalue/48/hitsmaxseed/430/hits/430/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Venomous Temptress/str/230/dex/90/int/130/hue/560/tamable/true/bodyvalue/48/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+Titan/name/Titanscorpion Overlord/str/260/dex/100/int/140/hue/600/tamable/true/bodyvalue/48/hitsmaxseed/470/hits/470/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Poisonclaw Entity/str/240/dex/95/int/135/hue/570/tamable/true/bodyvalue/48/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Sandslime Vortexar/str/190/dex/70/int/110/hue/520/tamable/true/bodyvalue/51/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Satyric Gel/str/180/dex/80/int/120/hue/520/tamable/true/bodyvalue/51/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Succulent Slime/str/200/dex/85/int/130/hue/520/tamable/true/bodyvalue/51/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+
+Titan/name/Titanic Muciloid/str/230/dex/65/int/140/hue/520/tamable/true/bodyvalue/51/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Toxic Gel Elemental/str/220/dex/75/int/150/hue/520/tamable/true/bodyvalue/51/hitsmaxseed/390/hits/390/ADD,0.3/MaxxiaScroll
+
+lich/name/Vortran Necrotroll/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/54/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Desertwind Trolloid/str/190/dex/55/int/95/hue/500/tamable/true/bodyvalue/54/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Trollhorned Pan/str/180/dex/65/int/85/hue/490/tamable/true/bodyvalue/54/hitsmaxseed/340/hits/340/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Trolldusa Enchantress/str/200/dex/70/int/110/hue/480/tamable/true/bodyvalue/54/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+Titan/name/Trollithium Colossus/str/220/dex/60/int/105/hue/470/tamable/true/bodyvalue/54/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Venomtroll Infusion/str/195/dex/58/int/100/hue/460/tamable/true/bodyvalue/54/hitsmaxseed/375/hits/375/ADD,0.3/MaxxiaScroll
+
+unicorn/name/Vortexian Drake/str/180/dex/75/int/120/hue/500/tamable/true/bodyvalue/33/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+satyr/name/Reptilian Piper/str/165/dex/80/int/110/hue/510/tamable/true/bodyvalue/33/hitsmaxseed/325/hits/325/ADD,0.3/MaxxiaScroll
+
+VorpalBunny/name/Scaled Marauder/str/150/dex/90/int/100/hue/495/tamable/true/bodyvalue/33/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+WailingBanshee/name/Echoing Serpent/str/190/dex/70/int/130/hue/505/tamable/true/bodyvalue/33/hitsmaxseed/375/hits/375/ADD,0.3/MaxxiaScroll
+
+wisp/name/Ethereal Skink/str/140/dex/85/int/135/hue/515/tamable/true/bodyvalue/33/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+unicorn/name/Unicarnax/str/310/dex/90/int/110/hue/1150/tamable/true/bodyvalue/76/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+satyr/name/Satyranox/str/270/dex/85/int/105/hue/450/tamable/true/bodyvalue/76/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+VorpalBunny/name/Vorptitanus/str/230/dex/70/int/95/hue/1350/tamable/true/bodyvalue/76/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+WailingBanshee/name/Banshiton/str/290/dex/80/int/120/hue/900/tamable/true/bodyvalue/76/hitsmaxseed/490/hits/490/ADD,0.3/MaxxiaScroll
+
+wisp/name/Wisptanax/str/250/dex/75/int/115/hue/750/tamable/true/bodyvalue/76/hitsmaxseed/470/hits/470/ADD,0.3/MaxxiaScroll
+
+Unicorn/name/Frogacorn/str/190/dex/80/int/110/hue/430/tamable/false/bodyvalue/81/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Satyropod/str/160/dex/70/int/90/hue/610/tamable/false/bodyvalue/81/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+VorpalBunny/name/Vorpal Ribbiter/str/130/dex/110/int/80/hue/700/tamable/true/bodyvalue/81/hitsmaxseed/250/hits/250/ADD,0.3/MaxxiaScroll
+
+WailingBanshee/name/Bansheebog/str/220/dex/60/int/120/hue/300/tamable/false/bodyvalue/81/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+
+Wisp/name/Wisplight Amphibian/str/140/dex/50/int/150/hue/200/tamable/true/bodyvalue/81/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+Unicorn/name/Ophidian Sorcerer/str/185/dex/75/int/130/hue/650/tamable/true/bodyvalue/85/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Ophidian Enchanter/str/160/dex/90/int/140/hue/560/tamable/true/bodyvalue/85/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+Vorpal/name/Ophidian Seer/str/150/dex/85/int/120/hue/610/tamable/true/bodyvalue/85/hitsmaxseed/260/hits/260/ADD,0.3/MaxxiaScroll
+
+Banshee/name/Ophidian Mystic/str/170/dex/65/int/145/hue/690/tamable/true/bodyvalue/85/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+Wisp/name/Ophidian Conjurer/str/135/dex/95/int/150/hue/720/tamable/true/bodyvalue/85/hitsmaxseed/240/hits/240/ADD,0.3/MaxxiaScroll
+
+unicorn/name/Lunagoat Magister/str/180/dex/85/int/90/hue/1150/tamable/false/bodyvalue/88/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+satyr/name/Caprotaur Mystic/str/190/dex/80/int/85/hue/1100/tamable/false/bodyvalue/88/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+vorpalbunny/name/Vorgoat Nexus/str/130/dex/95/int/75/hue/1050/tamable/false/bodyvalue/88/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+wailingbanshee/name/Bangoat Specter/str/220/dex/70/int/110/hue/1000/tamable/false/bodyvalue/88/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+wisp/name/Wisgoat Luminary/str/120/dex/90/int/130/hue/950/tamable/false/bodyvalue/88/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+unicorn/name/Unitaurnox/str/180/dex/70/int/110/hue/1350/tamable/true/bodyvalue/101/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+satyr/name/Sataurion/str/160/dex/80/int/90/hue/440/tamable/true/bodyvalue/101/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+vorpalbunny/name/Centarbite/str/150/dex/90/int/80/hue/660/tamable/true/bodyvalue/101/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+wailingbanshee/name/Wailtaurgeist/str/190/dex/65/int/115/hue/880/tamable/true/bodyvalue/101/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+wisp/name/Wisptaurium/str/170/dex/75/int/120/hue/1100/tamable/true/bodyvalue/101/hitsmaxseed/340/hits/340/ADD,0.3/MaxxiaScroll
+
+Unicorn/name/Draconicorn/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/103/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Draconyr/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/103/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+VorpalBunny/name/Dracolapin/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/103/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+WailingBanshee/name/Dracanshee/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/103/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+Wisp/name/Draconispar/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/103/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+yomotsupriest/name/Yomotsu-Lizarchon/str/190/dex/80/int/90/hue/520/tamable/true/bodyvalue/33/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+wraith/name/Wraith-Lizarian/str/180/dex/70/int/90/hue/520/tamable/true/bodyvalue/33/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+alligator/name/Alliga-Lizardon/str/170/dex/60/int/80/hue/520/tamable/true/bodyvalue/33/hitsmaxseed/340/hits/340/ADD,0.3/MaxxiaScroll
+
+bakekitsune/name/Bake-Lizune/str/160/dex/80/int/100/hue/520/tamable/true/bodyvalue/33/hitsmaxseed/330/hits/330/ADD,0.3/MaxxiaScroll
+
+barracoon/name/Barraco-Lizoon/str/200/dex/75/int/110/hue/520/tamable/true/bodyvalue/33/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+
+YomotsuPriest/name/Yomotsu-Dragon Mage/str/310/dex/90/int/150/hue/650/tamable/true/bodyvalue/103/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+Wraith/name/Wraithwyrm/str/280/dex/75/int/140/hue/630/tamable/true/bodyvalue/103/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+Alligator/name/Alligadragon Sage/str/350/dex/100/int/120/hue/600/tamable/true/bodyvalue/103/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+BakeKitsune/name/Kitsune-Dragon Mystic/str/320/dex/85/int/165/hue/670/tamable/true/bodyvalue/103/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+Barracoon/name/Barracoon Dragon Lord/str/330/dex/95/int/155/hue/680/tamable/true/bodyvalue/103/hitsmaxseed/470/hits/470/ADD,0.3/MaxxiaScroll
+
+YomotsuPriest/name/Yomotscorn Mystik/str/180/dex/70/int/130/hue/530/tamable/false/bodyvalue/122/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Wraith/name/Wraithicorn Specter/str/150/dex/80/int/120/hue/540/tamable/false/bodyvalue/122/hitsmaxseed/330/hits/330/ADD,0.3/MaxxiaScroll
+
+Alligator/name/Alligacorn Crawler/str/200/dex/50/int/90/hue/550/tamable/false/bodyvalue/122/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+
+BakeKitsune/name/Bakecorn Enchanter/str/170/dex/85/int/140/hue/560/tamable/false/bodyvalue/122/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+Barracoon/name/Barracorn Raider/str/220/dex/65/int/115/hue/570/tamable/false/bodyvalue/122/hitsmaxseed/390/hits/390/ADD,0.3/MaxxiaScroll
+
+YomotsuPriest/name/Faerielight Oracle/str/150/dex/80/int/120/hue/420/tamable/false/bodyvalue/128/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Wraith/name/Starshade Specter/str/140/dex/90/int/110/hue/720/tamable/false/bodyvalue/128/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+Alligator/name/Nebula Drake/str/160/dex/50/int/70/hue/620/tamable/false/bodyvalue/128/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+BakeKitsune/name/Astral Fox Spirit/str/130/dex/100/int/140/hue/820/tamable/false/bodyvalue/128/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+Barracoon/name/Galactic Trickster/str/190/dex/60/int/100/hue/920/tamable/false/bodyvalue/128/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

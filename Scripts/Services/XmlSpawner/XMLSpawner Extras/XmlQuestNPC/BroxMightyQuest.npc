@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Brox the Mighty</Name>
+    <Running>True</Running>
+    <ProximityRange>4</ProximityRange>
+    <ResetRange>20</ResetRange>
+    <NoTriggerOnCarried>Proof of Might</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>8</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>BroxMightyQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Brox the Mighty is unchallenged. Will you dare to face him in battle and prove your worth?</Text>
+    <Keywords>You see a formidable warrior clad in heavy armor, his eyes burning with the desire for battle</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Mighty Challenge,5/Only a true warrior can withstand Brox the Mighty. Prove yourself by defeating him.;I am ready to prove my might.;Indeed</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your courage is admirable. Bring me the proof of your victory, and you will earn your reward.</Text>
+    <Keywords>Indeed</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Proof of Might/TitleString/Brox the Mighty Defeat/NoteString/Bring proof of defeating Brox the Mighty to the quest giver for a reward./Objective1/KILLNAMED,Brox the Mighty,1/Description1/Defeat Brox the Mighty/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/MaxxiaScroll/ADD/&lt;GoldBracelet/hue/RND,1,300/name/Bracelet of Valor&gt;/ADD/&lt;bag/hue/1103/Name/Mighty Warrior's Trove/ADD/&lt;PowerScroll/name/Scroll of Fortitude&gt;/ADD/&lt;WarHammer/name/Mighty Warhammer&gt;/ADD/&lt;StrengthPotion/name/Potion of Giant Strength&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

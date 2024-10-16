@@ -1,0 +1,1964 @@
+MagmaElemental/ATTACH/XmlPoisonAppleThrow/name/Poison Bear/str/110/dex/280/int/60/hue/2174/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlPoisonAppleThrow,20,1/name/Golden Bear/str/120/dex/290/int/70/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlMagmaThrow,1/name/Silver Bear/str/130/dex/280/int/80/hue/1156/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+balron/name/MegaDemon/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/ADD,0.1/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlMagmaThrow/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlAxeLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlAxeCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlAxeBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlHeadLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlHeadCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlHeadBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlSpikeLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlSpikeCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlSpikeBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlGasLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlGasCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlGasBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlSawLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlSawCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlSawBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlTimeLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlTimeCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlTimeBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlFlaskLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlFlaskCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlFlaskBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlSkullLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlSkullCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlSkullBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlGateLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlGateCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlGateBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlDVortexLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlDVortexCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlDVortexBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlGlowLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlGlowCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlGlowBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlBladesLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlBladesCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlBladesBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlVortexLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlVortexCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlVortexBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlSparkleLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlSparkleCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlSparkleBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+
+BlackBear/ATTACH/XmlSmokeLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlSmokeCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlSmokeBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlBoulderLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlBoulderCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlBoulderBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlWaterLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlWaterLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlWaterLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlWaterLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlWaterLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlWaterLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlWaterLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlWaterLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlWaterLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlWaterLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlWaterLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlWaterLine/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlWaterCircle/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlFTreeBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlHeartBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlNutcrackerBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlDeerBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlParaBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlGateBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlTrapBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlOFlaskBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlSkeletonBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlCrankBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlMaidenBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlGuillotineBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlStoneBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlSawBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlMushroomBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlRuneBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+BlackBear/ATTACH/XmlBeeBreath/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+BlackBear/ATTACH/XmlPrismaticSpray/str/999/dex/999/int/999/hue/1159/tamable/true/hitsmaxseed/9999/hits/9999/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BlackBear/ATTACH/XmlBladeStrike,25,30/name/White Bear/str/150/dex/250/int/50/hue/1150/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlWhirlwind,20,1/name/Brown Bear/str/200/dex/200/int/50/hue/847/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlLightning,30,1/name/Green Bear/str/250/dex/150/int/50/hue/1424/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlWaterStrike,30,20/name/Purple Bear/str/300/dex/100/int/50/hue/1175/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+BrownBear/ATTACH/XmlAstralStrike,30,10/name/Winter Bear/str/200/dex/200/int/50/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+BrownBear/ATTACH/XmlFrostStrike,25,25/name/Spring Bear/str/150/dex/250/int/50/hue/63/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+BrownBear/ATTACH/XmlStaticStrike,50,5/name/Summer Bear/str/100/dex/300/int/50/hue/43/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+BrownBear/ATTACH/XmlLightning,30,1/name/Autumn Bear/str/250/dex/150/int/50/hue/1194/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+BrownBear/ATTACH/XmlStamDrain,20,1/name/Aries Bear/str/300/dex/100/int/50/hue/37/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+BrownBear/ATTACH/XmlDisarmor,1/name/Taurus Bear/str/250/dex/150/int/50/hue/1191/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+GrizzlyBear/ATTACH/XmlDisarmor,1/name/Zombie Bear/str/250/dex/100/int/50/hue/2001/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+GrizzlyBear/ATTACH/XmlManaBurn,20,2,1/name/Vampire Bear/str/200/dex/150/int/50/hue/1175/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+GrizzlyBear/ATTACH/XmlBladeStrike,25,30/name/Iron Bear/str/300/dex/80/int/40/hue/2406/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+GrizzlyBear/ATTACH/XmlAstralStrike,30,10/name/Tornado Bear/str/200/dex/120/int/60/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+GrizzlyBear/ATTACH/XmlStamDrain,20,1/name/Frost Bear/str/250/dex/100/int/50/hue/1152/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+GrizzlyBear/ATTACH/XmlManaBurn,20,2,1/name/Nightmare Bear/str/220/dex/110/int/70/hue/1175/tamable/true/hitsmaxseed/420/hits/420/ADD,0.1/MaxxiaScroll/
+
+GrizzlyBear/ATTACH/XmlLightning,30,1/name/Thunder Bear/str/230/dex/130/int/50/hue/2961/tamable/true/hitsmaxseed/440/hits/440/ADD,0.1/MaxxiaScroll/
+
+GrizzlyBear/ATTACH/XmlFrostStrike,25,25/name/Poison Bear/str/260/dex/100/int/40/hue/1272/tamable/true/hitsmaxseed/460/hits/460/ADD,0.1/MaxxiaScroll/
+
+Chicken/ATTACH/XmlLightning,30,1/name/Phoenix Chicken/str/50/dex/150/int/50/hue/1260/tamable/true/hitsmaxseed/100/hits/100/ADD,0.1/MaxxiaScroll/
+
+Chicken/ATTACH/XmlManaBurn,20,2,1/name/Nightmare Chicken/str/100/dex/100/int/100/hue/1175/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Chicken/ATTACH/XmlAstralStrike,30,10/name/Tornado Chicken/str/150/dex/50/int/50/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Chicken/ATTACH/XmlWaterStrike,30,20/name/Zombie Chicken/str/50/dex/50/int/150/hue/2207/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Chicken/ATTACH/XmlFrostStrike,25,25/name/Poison Chicken/str/75/dex 75/int 75/hue 1272/tamable true/hitsmaxseed 150/hits 150 ADD,0.1 MaxxiaScroll
+
+<!-- Luna Chicken with ArmorIgnore ability -->
+Chicken/ATTACH/XmlBladeStrike,25,30/name/Luna Chicken/str/100/dex/80/int/20/hue/1150/tamable/true/hitsmaxseed/150/hits/150/ADD,0.1/MaxxiaScroll/
+
+<!-- Sunburst Chicken with BleedAttack ability -->
+Chicken/ATTACH/XmlSmokeStrike,20,60/name/Sunburst Chicken/str/110/dex/85/int/22/hue/1151/tamable/true/hitsmaxseed/155/hits/155/ADD,0.1/MaxxiaScroll/
+
+<!-- Thunderclap Chicken with ConcussionBlow ability -->
+Chicken/ATTACH/XmlWhirlwind,20,1/name/Thunderclap Chicken/str/120/dex/90/int/25/hue/1152/tamable/true/hitsmaxseed/160/hits/160/ADD,0.1/MaxxiaScroll/
+
+<!-- Stonebeak Chicken with CrushingBlow ability -->
+Chicken/ATTACH/XmlLightning,30,1/name/Stonebeak Chicken/str/130/dex/95/int/28/hue/1153/tamable/true/hitsmaxseed/165/hits/165/ADD,0.1/MaxxiaScroll/
+
+<!-- Swiftwing Chicken with Disarm ability -->
+Chicken/ATTACH/XmlDisarmor,1/name/Swiftwing Chicken/str/140/dex/100/int/30/hue/1154/tamable/true/hitsmaxseed/170/hits/170/ADD,0.1/MaxxiaScroll/
+
+<!-- Galefeather Chicken with Dismount ability -->
+Chicken/ATTACH/XmlDisarmor,1/name/Galefeather Chicken/str/150/dex/105/int/32/hue/1155/tamable/true/hitsmaxseed/175/hits/175/ADD,0.1/MaxxiaScroll/
+
+<!-- Twinsong Chicken with DoubleStrike ability -->
+Chicken/ATTACH/XmlLightning,30,1/name/Twinsong Chicken/str/160/dex/110/int/35/hue/1156/tamable/true/hitsmaxseed/180/hits/180/ADD,0.1/MaxxiaScroll/
+
+<!-- Plaguebearer Chicken with InfectiousStrike ability -->
+Chicken/ATTACH/XmlFrostStrike,25,25/name/Plaguebearer Chicken/str/170/dex/115/int/38/hue/1157/tamable/true/hitsmaxseed/185/hits/185/ADD,0.1/MaxxiaScroll/
+
+<!-- Grimshadow Chicken with MortalStrike ability -->
+Chicken/ATTACH/XmlWaterStrike,30,20/name/Grimshadow Chicken/str/180/dex/120/int/40/hue/1158/tamable/true/hitsmaxseed/190/hits/190/ADD,0.1/MaxxiaScroll/
+
+<!-- Windrunner Chicken with MovingShot ability -->
+Chicken/ATTACH/XmlStaticStrike,50,5/name/Windrunner Chicken/str/190/dex/125/int/42/hue/1159/tamable/true/hitsmaxseed/195/hits/195/ADD,0.1/MaxxiaScroll/
+
+<!-- Frostbeak Chicken with ParalyzingBlow ability -->
+Chicken/ATTACH/XmlStamDrain,20,1/name/Frostbeak Chicken/str/200/dex/130/int/45/hue/1160/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+<!-- Nightshade Chicken with ShadowStrike ability -->
+Chicken/ATTACH/XmlManaBurn,20,2,1/name/Nightshade Chicken/str/210/dex/135/int/48/hue/1161/tamable/true/hitsmaxseed/205/hits/205/ADD,0.1/MaxxiaScroll/
+
+<!-- Cyclone Chicken with WhirlwindAttack ability -->
+Chicken/ATTACH/XmlAstralStrike,30,10/name/Cyclone Chicken/str/220/dex/140/int/50/hue/1162/tamable/true/hitsmaxseed/210/hits/210/ADD,0.1/MaxxiaScroll/
+
+
+Crane/ATTACH/XmlAstralStrike,30,10/name/Typhoon Crane/str/100/dex/300/int/50/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/XmlFrostStrike,25,25/name/Poison Crane/str/150/dex/200/int/100/hue/1266/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/XmlManaBurn,20,2,1/name/Nightfall Crane/str/200/dex/150/int/150/hue/1109/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/XmlLightning,30,1/name/Twin Crane/str/250/dex/250/int/50/hue/1157/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+
+Crane/ATTACH/XmlBladeStrike,25,30/name/Solar Crane/str/150/dex/150/int/80/hue/48/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/XmlAstralStrike,30,10/name/Lunar Crane/str/180/dex/120/int/75/hue/1152/tamable/true/hitsmaxseed/425/hits/425/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/XmlManaBurn,20,2,1/name/Mystic Crane/str/160/dex/140/int/85/hue/2943/tamable/true/hitsmaxseed/410/hits/410/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/XmlLightning,30,1/name/Aqua Crane/str/155/dex/145/int/82/hue/88/tamable/true/hitsmaxseed/405/hits/405/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/XmlFrostStrike,25,25/name/Inferno Crane/str/170/dex/130/int/78/hue/37/tamable/true/hitsmaxseed/420/hits/420/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/XmlWhirlwind,20,1/name/Zenith Crane/str/165/dex/135/int/79/hue/1174/tamable/true/hitsmaxseed/415/hits/415/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/XmlWaterStrike,30,20/name/Galaxy Crane/str/175/dex/125/int/76/hue/2928/tamable/true/hitsmaxseed/430/hits/430/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/XmlStaticStrike,50,5/name/Typhoon Crane/str/140/dex/160/int/84/hue/268/tamable/true/hitsmaxseed/395/hits/395/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/XmlDisarmor,1/name/Eclipse Crane/str/145/dex/155/int/83/hue/2075/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/XmlDisarmor,1/name/Vortex Crane/str/150/dex/150/int/80/hue/1109/tamable/true/hitsmaxseed/405/hits/405/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/XmlAstralStrike,30,10/name/Storm Eagle/str/200/dex/150/int/100/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/XmlManaBurn,20,2,1/name/Night Eagle/str/150/dex/200/int/150/hue/1109/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/XmlStaticStrike,50,5/name/Wind Eagle/str/100/dex/250/int/200/hue/1150/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/XmlFrostStrike,25,25/name/Poison Eagle/str/250/dex/100/int/50/hue/1266/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/XmlBladeStrike,25,30/name/Blizzard Eagle/str/120/dex/150/int/80/hue/1152/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/XmlSmokeStrike,20,60/name/Skyfire Eagle/str/110/dex/160/int/90/hue/1358/tamable/true/hitsmaxseed/310/hits/310/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/XmlWhirlwind,20,1/name/Thunderwing Eagle/str/125/dex/155/int/85/hue/1175/tamable/true/hitsmaxseed/315/hits/315/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/XmlLightning,30,1/name/Mystic Eagle/str/130/dex/145/int/88/hue/1260/tamable/true/hitsmaxseed/320/hits/320/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/XmlDisarmor,1/name/Nightshade Eagle/str/115/dex/150/int/95/hue/1109/tamable/true/hitsmaxseed/305/hits/305/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/XmlDisarmor,1/name/Windrider Eagle/str/120/dex/155/int/90/hue/1167/tamable/true/hitsmaxseed/310/hits/310/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/XmlLightning,30,1/name/Twinbeak Eagle/str/125/dex/145/int/87/hue/1194/tamable/true/hitsmaxseed/315/hits/315/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/XmlManaBurn,20,2,1/name/Nightmare Wolf/str/200/dex/150/int/75/hue/1175/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/XmlAstralStrike,30,10/name/Tornado Wolf/str/250/dex/125/int/50/hue/1153/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/XmlWaterStrike,30,20/name/Vampire Wolf/str/150/dex/200/int/100/hue/34/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/XmlFrostStrike,25,25/name/Zombie Wolf/str/100/dex/100/int/25/hue/1420/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/XmlLightning,30,1/name/Meteor Wolf/str/300/dex/75/int/25/hue/1255/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/XmlManaBurn,20,2,1/name/Eclipse Wolf/str/320/dex/105/int/60/hue/1175/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/XmlDisarmor,1/name/Spectral Wolf/str/290/dex/110/int/65/hue/1150/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/XmlAstralStrike,30,10/name/Cyclone Wolf/str/310/dex/120/int/55/hue/1260/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/XmlBladeStrike,25,30/name/Lunar Wolf/str/330/dex/100/int/70/hue/1154/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/XmlFrostStrike,25,25/name/Plague Wolf/str/305/dex/115/int/50/hue/1278/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/XmlStamDrain,20,1/name/Tempest Wolf/str/315/dex/105/int/60/hue/1301/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlWaterStrike,30,20/name/SagittariusBull/str/380/dex/90/int/80/hue/1157/tamable/true/hitsmaxseed/580/hits580/ADD0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlLightning,30,1/name/CapricornBull/str/360/dex/100/int/90/hue/1158/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlBladeStrike,25,30/name/AquariusBull/str/340/dex/120/int/100/hue/1161/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlDisarmor,1/name/PiscesBull/str/330/dex/130/int/110/hue/1166/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlAstralStrike,30,10/name/Taurus Bull/str/400/dex/80/int/40/hue/1175/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlManaBurn,20,2,1/name/Gemini Bull/str/300/dex/120/int/60/hue/1153/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlFrostStrike,25,25/name/Cancer Bull/str/350/dex/100/int/50/hue/1150/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlLightning,30,1/name/Libra Bull/str/320/dex/110/int/70/hue/1154/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlManaBurn,20,2,1/name/Astro Bull/str/320/dex/110/int/45/hue/1150/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlBladeStrike,25,30/name/Celestial Charger/str/350/dex/120/int/60/hue/1170/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlWhirlwind,20,1/name/Mystic Taurus/str/330/dex/105/int/70/hue/1100/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlLightning,30,1/name/Eclipse Bull/str/315/dex/115/int/55/hue/1950/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlAstralStrike,30,10/name/Lunar Behemoth/str/340/dex/100/int/65/hue/1190/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlFrostStrike,25,25/name/Solar Steed/str/360/dex/110/int/50/hue/2100/tamable/true/hitsmaxseed/610/hits/610/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlDisarmor,1/name/Nebula Nomad/str/310/dex/105/int/75/hue/2250/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlWaterStrike,30,20/name/Cosmic Calf/str/300/dex/120/int/60/hue/2350/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlLightning,30,1/name/Galactic Guardian/str/340/dex/100/int/80/hue/2450/tamable/true/hitsmaxseed/590/hits/590/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/XmlStamDrain,20,1/name/Stellar Sentinel/str/325/dex/130/int/70/hue/2550/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/XmlManaBurn,20,2,1/name/Nightmare Cow/str/200/dex/150/int/50/hue/1175/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/XmlAstralStrike,30,10/name/Tornado Cow/str/250/dex/200/int/50/hue/1153/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/XmlFrostStrike,25,25/name/Zombie Cow/str/150/dex/100/int/50/hue/1420/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/XmlLightning,30,1/name/Rocky Cow/str/300/dex/100/int/50/hue/2406/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/XmlManaBurn,20,2,1/name/Eclipse Bovine/str/320/dex/80/int/60/hue/1175/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/XmlWhirlwind,20,1/name/Mystic Ox/str/310/dex/90/int/70/hue/1288/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/XmlAstralStrike,30,10/name/Celestial Steer/str/330/dex/85/int/65/hue/1153/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/XmlFrostStrike,25,25/name/Verdant Heifer/str/300/dex/95/int/75/hue/67/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/XmlSmokeStrike,20,60/name/Crimson Calf/str/305/dex/100/int/65/hue/37/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/XmlStamDrain,20,1/name/Lunar Bull/str/325/dex/88/int/62/hue/1157/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/XmlAstralStrike,30,10/name/Tornado Cougar/str/200/dex/150/int/50/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/XmlFrostStrike,25,25/name/Venom Cougar/str/250/dex/100/int/50/hue/2126/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/XmlManaBurn,20,2,1/name/Nightfall Cougar/str/150/dex/200/int/50/hue/1109/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/XmlLightning,30,1/name/Mountain Cougar/str/300/dex/50/int/50/hue/2406/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/XmlLightning,30,1/name/Thunder Cougar/str/320/dex/105/int/55/hue/38/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/XmlFrostStrike,25,25/name/Frost Cougar/str/310/dex/110/int/60/hue/1152/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/XmlManaBurn,20,2,1/name/Mystic Cougar/str/330/dex/103/int/58/hue/295/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/XmlStaticStrike,50,5/name/Breeze Cougar/str/300/dex/115/int/57/hue/2591/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/XmlLightning,30,1/name/Stone Cougar/str/340/dex/100/int/53/hue/2401/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/XmlBladeStrike,25,30/name/Lunar Cougar/str/315/dex/108/int/56/hue/906/tamable/true/hitsmaxseed/518/hits/518/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/XmlSmokeStrike,20,60/name/Blaze Cougar/str/325/dex/107/int/54/hue/1358/tamable/true/hitsmaxseed/523/hits/523/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/XmlDisarmor,1/name/Tidal Cougar/str/312/dex/112/int/59/hue/296/tamable/true/hitsmaxseed/516/hits/516/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/XmlAstralStrike,30,10/name/Whirlwind Cougar/str/328/dex/106/int/55/hue/1153/tamable/true/hitsmaxseed/524/hits/524/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/XmlWhirlwind,20,1/name/Solar Cougar/str/318/dex/109/int/60/hue/54/tamable/true/hitsmaxseed/517/hits/517/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/XmlAstralStrike,30,10/name/Snow Leopard/str/200/dex/150/int/50/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/XmlLightning,30,1/name/Jaguar/str/250/dex/120/int/50/hue/2968/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/XmlManaBurn,20,2,1/name/Melanistic Leopard/str/220/dex/140/int/50/hue/1109/tamable/true/hitsmaxseed/420/hits/420/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/XmlWaterStrike,30,20/name/Cougar/str/230/dex/130/int/50/hue/0/tamable/true/hitsmaxseed/430/hits/430/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/XmlBladeStrike,25,30/name/Clouded Leopard/str/320/dex/110/int/55/hue/1152/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/XmlSmokeStrike,20,60/name/Jaguar/str/330/dex/115/int/60/hue/1153/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/XmlLightning,30,1/name/Snow Leopard/str/315/dex/105/int/58/hue/1154/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/XmlManaBurn,20,2,1/name/Black/str/325/dex/120/int/65/hue/1175/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/XmlStaticStrike,50,5/name/Cheetah/str/310/dex/130/int/50/hue/1901/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/XmlDisarmor,1/name/Ocelot/str/305/dex/100/int/52/hue/1902/tamable/true/hitsmaxseed/505/hits/505/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/XmlDisarmor,1/name/Margay/str/308/dex/103/int/54/hue/1903/tamable/true/hitsmaxseed/508/hits/508/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/XmlFrostStrike,25,25/name/Puma/str/321/dex/111/int/56/hue/1904/tamable/true/hitsmaxseed/521/hits/521/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/XmlWhirlwind,20,1/name/Lynx/str/313/dex/108/int/53/hue/1905/tamable/true/hitsmaxseed/513/hits/513/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/XmlAstralStrike,30,10/name/Caracal/str/318/dex/113/int/57/hue/1906/tamable/true/hitsmaxseed/518/hits/518/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/XmlAstralStrike,30,10/name/Spotted/str/200/dex/150/int/40/hue/1150/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/XmlLightning,30,1/name/Bristle/str/250/dex/120/int/35/hue/2405/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/XmlManaBurn,20,2,1/name/Nightmare/str/220/dex/140/int/45/hue/1175/tamable/true/hitsmaxseed/420/hits/420/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/XmlLightning,30,1/name/Tusk/str/280/dex/100/int/30/hue/1153/tamable/true/hitsmaxseed/480/hits/480/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/XmlBladeStrike,25,30/name/Jaguarundi/str/330/dex/120/int/45/hue/38/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/XmlSmokeStrike,20,60/name/Okapi/str/310/dex/110/int/55/hue/39/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/XmlLightning,30,1/name/Serval/str/340/dex/130/int/50/hue/40/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/XmlWhirlwind,20,1/name/Aardvark/str/300/dex/105/int/60/hue/41/tamable/true/hitsmaxseed/505/hits/505/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/XmlManaBurn,20,2,1/name/Pangolin/str/320/dex/115/int/65/hue/42/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/XmlAstralStrike,30,10/name/Cassowary/str/350/dex/125/int/50/hue/43/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/XmlDisarmor,1/name/Tarsier/str/290/dex/110/int/70/hue/44/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/XmlFrostStrike,25,25/name/Binturong/str/310/dex/105/int/60/hue/45/tamable/true/hitsmaxseed/505/hits/505/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/XmlStamDrain,20,1/name/Fossa/str/330/dex/120/int/55/hue/46/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/XmlLightning,30,1/name/Tapir/str/315/dex/110/int/60/hue/47/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/XmlAstralStrike,30,10/name/Poison Dart Frog/str/50/dex/150/int/50/hue/63/tamable/true/hitsmaxseed/100/hits/100/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/XmlFrostStrike,25,25/name/Goliath Frog/str/150/dex/50/int/50/hue/68/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/XmlLightning,30,1/name/Glass Frog/str/50/dex/100/int/100/hue/1153/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/XmlWaterStrike,30,20/name/Horned Frog/str/100/dex/100/int/50/hue/2213/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/XmlFrostStrike,25,25/name/Dart Frog/str/80/dex/110/int/55/hue/115/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/XmlLightning,30,1/name/Bison Toad/str/150/dex/70/int/40/hue/44/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/XmlLightning,30,1/name/Leopard Toad/str/100/dex/130/int/45/hue/53/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/XmlManaBurn,20,2,1/name/Peacock Toad/str/90/dex/120/int/60/hue/126/tamable/true/hitsmaxseed/230/hits/230/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/XmlBladeStrike,25,30/name/Panda Toad/str/120/dex/85/int/55/hue/2001/tamable/true/hitsmaxseed/270/hits/270/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/XmlStaticStrike,50,5/name/Gazelle Frog/str/75/dex/140/int/50/hue/58/tamable/true/hitsmaxseed/220/hits/220/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/XmlWaterStrike,30,20/name/Lion Toad/str/140/dex/90/int/50/hue/48/tamable/true/hitsmaxseed/280/hits/280/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/XmlAstralStrike,30,10/name/Alpaca/str/100/dex/150/int/50/hue/1153/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/XmlLightning,30,1/name/Ibex/str/150/dex/100/int/50/hue/1102/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/XmlManaBurn,20,2,1/name/Saiga Antelope/str/100/dex/100/int/50/hue/2406/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/XmlStaticStrike,50,5/name/Gazelle/str/100/dex/200/int/50/hue/1150/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/XmlBladeStrike,25,30/name/Okapi Goat/str/230/dex/150/int/40/hue/263/tamable/true/hitsmaxseed/420/hits/420/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/XmlSmokeStrike,20,60/name/Fennec Goat/str/180/dex/170/int/45/hue/1154/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/XmlWhirlwind,20,1/name/Cassowary Goat/str/260/dex/130/int/35/hue/923/tamable/true/hitsmaxseed/480/hits/480/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/XmlLightning,30,1/name/Coati Goat/str/210/dex/160/int/60/hue/1122/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/XmlDisarmor,1/name/Serval Goat/str/220/dex/165/int/50/hue/694/tamable/true/hitsmaxseed/410/hits/410/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/XmlDisarmor,1/name/Axolotl Goat/str/190/dex/155/int/55/hue/292/tamable/true/hitsmaxseed/370/hits/370/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/XmlLightning,30,1/name/Numbat Goat/str/200/dex/150/int/65/hue/791/tamable/true/hitsmaxseed/380/hits/380/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/XmlFrostStrike,25,25/name/Kinkajou Goat/str/205/dex/145/int/70/hue/54/tamable/true/hitsmaxseed/390/hits/390/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/XmlWaterStrike,30,20/name/Bongo Goat/str/250/dex/140/int/45/hue/854/tamable/true/hitsmaxseed/460/hits/460/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/XmlStaticStrike,50,5/name/Tarsier Goat/str/185/dex/175/int/60/hue/499/tamable/true/hitsmaxseed/360/hits/360/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlAstralStrike,30,10/name/Orangutan/str/250/dex/150/int/75/hue/43/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlLightning,30,1/name/Mandrill/str/200/dex/200/int/50/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlManaBurn,20,2,1/name/Baboon/str/150/dex/250/int/100/hue/1175/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlWaterStrike,30,20/name/Gorilla King/str/350/dex/100/int/50/hue/1150/tamable/true/hitsmaxseed/600/hits/600/DROP,0.2/Gold,5000/DROP,0.1/CrownOfTalKeesh/
+
+Gorilla/ATTACH/XmlLightning,30,1/name/Silverback Gorilla/str/300/dex/150/int/50/hue/1152/tamable/true/hitsmaxseed/500/hits/500/DROP,0.2/Gold,2500/DROP,0.1/SilverbackHide/
+
+Gorilla/ATTACH/XmlBladeStrike,25,30/name/Silverback Gorilla/str/350/dex/110/int/60/hue/1905/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlWhirlwind,20,1/name/Golden Mandrill/str/330/dex/105/int/55/hue/2213/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlManaBurn,20,2,1/name/Ghostly Lemur/str/310/dex/100/int/65/hue/1153/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlAstralStrike,30,10/name/Red Howler Monkey/str/320/dex/115/int/58/hue/33/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlStamDrain,20,1/name/Azure Macaque/str/335/dex/108/int/57/hue/1266/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlWaterStrike,30,20/name/Ebony Baboon/str/340/dex/102/int/53/hue/1175/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlLightning,30,1/name/Jungle Capuchin/str/315/dex/113/int/64/hue/68/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/XmlAstralStrike,30,10/name/Albino Deer/str/200/dex/150/int/50/hue/1150/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/XmlLightning,30,1/name/Antelope/str/250/dex/200/int/50/hue/0/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/XmlManaBurn,20,2,1/name/Pudu Deer/str/150/dex/200/int/50/hue/443/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/XmlManaBurn,20,2,1/name/Okapi Stalker/str/320/dex/110/int/60/hue/1150/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/XmlLightning,30,1/name/Snow Lynx/str/310/dex/120/int/55/hue/1152/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/XmlStaticStrike,50,5/name/Saharan Gazelle/str/290/dex/130/int/65/hue/1045/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/XmlWaterStrike,30,20/name/Mongolian Ibex/str/340/dex/105/int/50/hue/1138/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/XmlAstralStrike,30,10/name/Arctic Muskox/str/330/dex/110/int/57/hue/1153/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/XmlFrostStrike,25,25/name/Savannah Serval/str/315/dex/115/int/62/hue/1120/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+
+
+GreatHart/ATTACH/XmlDisarm,1/name/Amazonian Tapir/str/325/dex/108/int/58/hue/1040/tamable/true/hitsmaxseed/532/hits/532/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/XmlWhirlwind,20,1/name/Alpaca/str/150/dex/150/int/50/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/XmlTheftStrike,1/name/Bongo/str/200/dex/100/int/50/hue/443/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/XmlCursedTouch,5,5/name/Cheetah/str/100/dex/200/int/50/hue/1175/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/XmlLifeDrain,20,1/name/Dhole/str/150/dex/150/int/50/hue/337/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/XmlStamDrain,20,1/name/Eland/str/250/dex/100/int/50/hue/296/tamable/true/hitsmaxseed/500/hits/500 ADD,0.1 MaxxiaScroll/
+
+Hind/ATTACH/XmlDisarmor,1/name/Bengal Tiger/str/280/dex/125/int/45/hue/1153/tamable/true/hitsmaxseed/475/hits/475/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/XmlWhirlwind,20,1/name/Arctic Snow Hind/str/260/dex/110/int/55/hue/1152/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/XmlCursedTouch,5,5/name/Jungle Panther/str/290/dex/135/int/40/hue/1175/tamable/true/hitsmaxseed/480/hits/480/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/XmlBlastStrike,50,30/name/Golden Gazelle/str/265/dex/120/int/50/hue/2213/tamable/true/hitsmaxseed/460/hits/460/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/XmlMinionStrike,skeleton,30/name/Venomous Viper Hind/str/275/dex/130/int/50/hue/1272/tamable/true/hitsmaxseed/470/hits/470/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/XmlBlastStrike,50,30/name/Majestic Moose/str/295/dex/115/int/45/hue/443/tamable/true/hitsmaxseed/490/hits/490/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/XmlDisarm,1/name/Sahara Desert Hind/str/270/dex/120/int/55/hue/1150/tamable/true/hitsmaxseed/465/hits/465/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/XmlWhirlwind,20,1/name/Alpaca/str/200/dex/150/int/50/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/XmlTheftStrike,1/name/Guanaco/str/250/dex/200/int/50/hue/443/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/XmlCursedTouch,5,5/name/Vicuña/str/150/dex/250/int/50/hue/1109/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/XmlDisarmor,1/name/Ocelot Llama/str/330/dex/120/int/60/hue/53/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/XmlBlastStrike,50,30/name/Pangolin Llama/str/340/dex/90/int/55/hue/89/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/XmlCursedTouch,5,5/name/Peacock/str/310/dex/110/int/70/hue/115/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/XmlTheftStrike,1/name/Jaguar Llama/str/320/dex/130/int/60/hue/25/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/XmlDisarm,1/name/Cassowary Llama/str/350/dex/100/int/50/hue/42/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/XmlManaBurn,20,2,1/name/Koala/str/300/dex/90/int/65/hue/150/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/XmlMinionStrike,skeleton,30/name/Mamba Llama/str/310/dex/120/int/55/hue/38/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/XmlBlastStrike,50,30/name/Gazelle Llama/str/315/dex/140/int/50/hue/70/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/XmlWhirlwind,20,1/name/Raven Llama/str/300/dex/110/int/65/hue/15/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/XmlLifeDrain,20,1/name/Hippopotamus/str/360/dex/80/int/60/hue/45/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/XmlWhirlwind,20,1/name/Babirusa/str/200/dex/150/int/40/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/XmlTheftStrike,1/name/Warthog/str/250/dex/120/int/35/hue/2213/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/XmlCursedTouch,5,5/name/Javelina/str/220/dex/130/int/45/hue/1109/tamable/true/hitsmaxseed/420/hits/420/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/XmlMinionStrike,skeleton,30/name/Capybara/str/230/dex/140/int/50/hue/2968/tamable/true/hitsmaxseed/430/hits/430/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/XmlDisarmor,1/name/Peccary Pig/str/220/dex/85/int/40/hue/2233/tamable/true/hitsmaxseed/380/hits/380/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/XmlTheftStrike,1/name/Warthog/str/240/dex/80/int/35/hue/1125/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/XmlWhirlwind,20,1/name/Visayan Warty Pig/str/210/dex/90/int/38/hue/1154/tamable/true/hitsmaxseed/370/hits/370/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/XmlCursedTouch,5,5/name/Babirusa/str/230/dex/88/int/36/hue/1196/tamable/true/hitsmaxseed/390/hits/390/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/XmlDisarm,1/name/Javelina/str/215/dex/87/int/39/hue/1150/tamable/true/hitsmaxseed/375/hits/375/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/XmlBlastStrike,50,30/name/Giant Forest Hog/str/250/dex/82/int/34/hue/1170/tamable/true/hitsmaxseed/410/hits/410/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/XmlStamDrain,20,1/name/Red River Hog/str/220/dex/89/int/37/hue/1308/tamable/true/hitsmaxseed/380/hits/380/ADD,0.1/MaxxiaScroll/
+
+Sheep/ATTACH/XmlWhirlwind,20,1/name/Alpaca/str/100/dex/150/int/50/hue/1153/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Sheep/ATTACH/XmlTheftStrike,1/name/Bighorn Sheep/str/150/dex/100/int/50/hue/1150/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+Sheep/ATTACH/XmlCursedTouch,5,5/name/Jacob Sheep/str/100/dex/100/int/100/hue/1109/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Sheep/ATTACH/XmlBlastStrike,50,30/name/Dall Sheep/str/100/dex/200/int/50/hue/1152/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+<!-- The Okapi Strider -->
+Sheep/ATTACH/XmlDisarmor,1/name/Okapi Strider/str/280/dex/95/int/60/hue/38/tamable/true/hitsmaxseed/480/hits/480/ADD,0.1/MaxxiaScroll/
+
+<!-- The Mandrill Mystic -->
+Sheep/ATTACH/XmlManaBurn,20,2,1/name/Mandrill Mystic/str/265/dex/105/int/70/hue/39/tamable/true/hitsmaxseed/460/hits/460/ADD,0.1/MaxxiaScroll/
+
+<!-- The Pangolin Defender -->
+Sheep/ATTACH/XmlBlastStrike,50,30/name/Pangolin Defender/str/290/dex/90/int/50/hue/40/tamable/true/hitsmaxseed/470/hits/470/ADD,0.1/MaxxiaScroll/
+
+<!-- The Cassowary Charger -->
+Sheep/ATTACH/XmlTheftStrike,1/name/Cassowary Charger/str/275/dex/100/int/55/hue/41/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+<!-- The Gecko Gripper -->
+Sheep/ATTACH/XmlDisarm,1/name/Gecko Gripper/str/260/dex/110/int/65/hue/42/tamable/true/hitsmaxseed/440/hits/440/ADD,0.1/MaxxiaScroll/
+
+<!-- The Capybara Cavalier -->
+Sheep/ATTACH/XmlDisarm,1/name/Capybara Cavalier/str/255/dex/95/int/70/hue/43/tamable/true/hitsmaxseed/435/hits/435/ADD,0.1/MaxxiaScroll/
+
+<!-- The Aardvark Assailer -->
+Sheep/ATTACH/XmlMinionStrike,skeleton,30/name/Aardvark Assailer/str/270/dex/100/int/60/hue/44/tamable/true/hitsmaxseed/460/hits/460/ADD,0.1/MaxxiaScroll/
+
+<!-- The Kinkajou Knocker -->
+Sheep/ATTACH/XmlLifeDrain,20,1/name/Kinkajou Knocker/str/265/dex/105/int/55/hue/45/tamable/true/hitsmaxseed/445/hits/445/ADD,0.1/MaxxiaScroll/
+
+<!-- The Tapir Tracker -->
+Sheep/ATTACH/XmlBlastStrike,50,30/name/Tapir Tracker/str/250/dex/110/int/65/hue/46/tamable/true/hitsmaxseed/425/hits/425/ADD,0.1/MaxxiaScroll/
+
+<!-- The Sunfish Stunner -->
+Sheep/ATTACH/XmlStaticStrike,50,5/name/Sunfish Stunner/str/275/dex/95/int/60/hue/47/tamable/true/hitsmaxseed/455/hits/455/ADD,0.1/MaxxiaScroll/
+
+<!-- The Ocelot Operative -->
+Sheep/ATTACH/XmlCursedTouch,5,5/name/Ocelot Operative/str/260/dex/105/int/70/hue/48/tamable/true/hitsmaxseed/445/hits/445/ADD,0.1/MaxxiaScroll/
+
+<!-- The Jerboa Jumper -->
+Sheep/ATTACH/XmlWhirlwind,20,1/name/Jerboa Jumper/str/250/dex/115/int/60/hue/49/tamable/true/hitsmaxseed/425/hits/425/ADD,0.1/MaxxiaScroll/
+
+
+Walrus/ATTACH/XmlWhirlwind,20,1/name/Blizzard Walrus/str/250/dex/80/int/40/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/XmlTheftStrike,1/name/Tusk Walrus/str/300/dex/100/int/50/hue/2405/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/XmlCursedTouch,5,5/name/Nightfall Walrus/str/200/dex/120/int/60/hue/1109/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/XmlBlastStrike,50,30/name/Rocky Walrus/str/350/dex/70/int/30/hue/2406/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/XmlDisarmor,1/name/Atlantic Walrus/str/320/dex/105/int/55/hue/1150/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/XmlStamDrain,20,1/name/Pacific Walrus/str/330/dex/110/int/60/hue/1175/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/XmlManaBurn,20,2,1/name/Tusked Walrus/str/310/dex/95/int/57/hue/1190/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/XmlBlastStrike,50,30/name/Arctic Walrus/str/315/dex/98/int/53/hue/1205/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/XmlDisarm,1/name/Iceberg Walrus/str/325/dex/108/int/50/hue/1220/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/XmlDisarm,1/name/Snowbank Walrus/str/335/dex/112/int/56/hue/1235/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/XmlTheftStrike,1/name/Glacial Walrus/str/340/dex/115/int/59/hue/1250/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/XmlMinionStrike,skeleton,30/name/Frostbite Walrus/str/345/dex/118/int/61/hue/1265/tamable/true/hitsmaxseed/545/hits/545/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/XmlLifeDrain,20,1/name/Tundra Walrus/str/350/dex/120/int/64/hue/1280/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/XmlBlastStrike,50,30/name/Boreal Walrus/str/355/dex/125/int/66/hue/1295/tamable/true/hitsmaxseed/555/hits/555/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/XmlStaticStrike,50,5/name/Icy Glide Walrus/str/360/dex/130/int/68/hue/1310/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/XmlCursedTouch,5,5/name/Blizzard Walrus/str/365/dex/135/int/70/hue/1325/tamable/true/hitsmaxseed/565/hits/565/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/XmlWhirlwind,20,1/name/Tempest Walrus/str/370/dex/140/int/72/hue/1340/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/XmlDisarmor,1/name/Scarab Beetle/str/200/dex/150/int/50/hue/2219/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/XmlTheftStrike,1/name/Ladybug Beetle/str/150/dex/200/int/50/hue/38/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/XmlWhirlwind,20,1/name/Stag Beetle/str/250/dex/100/int/50/hue/1150/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/XmlCursedTouch,5,5/name/Firefly Beetle/str/100/dex/250/int/50/hue/1266/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/XmlBlastStrike,50,30/name/Titan Beetle/str/450/dex/60/int/40/hue/45/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/XmlCursedTouch,5,5/name/Firefly Beetle/str/250/dex/120/int/70/hue/53/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/XmlManaBurn,20,2,1/name/Horned Rhino Beetle/str/400/dex/80/int/50/hue/1/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/XmlDisarmor,1/name/Goliath Stag Beetle/str/420/dex/90/int/40/hue/14/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/XmlMinionStrike,skeleton,30/name/Deathwatch Beetle/str/300/dex/110/int/60/hue/22/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/XmlTheftStrike,1/name/Flamingo/str/100/dex/200/int/50/hue/34/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/XmlCursedTouch,5,5/name/Ostrich/str/150/dex/150/int/50/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/XmlWhirlwind,20,1/name/Rhea/str/200/dex/100/int/50/hue/1109/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/XmlLifeDrain,20,1/name/Cassowary/str/250/dex/100/int/50/hue/1175/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/XmlDisarmor,1/name/Emu Ostard/str/320/dex/110/int/55/hue/58/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/XmlStamDrain,20,1/name/Flamingo Ostard/str/280/dex/105/int/52/hue/38/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/XmlManaBurn,20,2,1/name/Condor Ostard/str/330/dex/115/int/57/hue/25/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/XmlBlastStrike,50,30/name/Albatross Ostard/str/300/dex/120/int/50/hue/60/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/XmlMinionStrike,skeleton,30/name/Vulture Ostard/str/310/dex/108/int/53/hue/29/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/XmlLifeDrain,20,1/name/Pelican Ostard/str/295/dex/113/int/51/hue/44/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/XmlBlastStrike,50,30/name/Hawk Ostard/str/325/dex/119/int/56/hue/50/tamable/true/hitsmaxseed/555/hits/555/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/XmlStaticStrike,50,5/name/Owl Ostard/str/315/dex/111/int/54/hue/23/tamable/true/hitsmaxseed/545/hits/545/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/XmlCursedTouch,5,5/name/Eagle Ostard/str/335/dex/117/int/58/hue/70/tamable/true/hitsmaxseed/565/hits/565/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/XmlWhirlwind,20,1/name/Falcon Ostard/str/320/dex/116/int/55/hue/45/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/XmlTheftStrike,1/name/Zebra/str/200/dex/150/int/50/hue/1175/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/XmlWhirlwind,20,1/name/Pegasus/str/250/dex/200/int/100/hue/1153/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/XmlCursedTouch,5,5/name/Nightmare/str/300/dex/250/int/150/hue/1172/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/XmlLifeDrain,20,1/name/Centaur/str/350/dex/300/int/200/hue/1109/tamable/true/hitsmaxseed/700/hits/700/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/XmlTheftStrike,1/name/Zebra Horse/str/250/dex/120/int/30/hue/400/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/XmlManaBurn,20,2,1/name/Palomino Mustang/str/270/dex/110/int/35/hue/2213/tamable/true/hitsmaxseed/480/hits/480/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/XmlCursedTouch,5,5/name/Nightshade Stallion/str/230/dex/115/int/40/hue/1109/tamable/true/hitsmaxseed/430/hits/430/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/XmlBlastStrike,50,30/name/Thunderhoof Clydesdale/str/290/dex/95/int/25/hue/1150/tamable/true/hitsmaxseed/490/hits/490/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/XmlWhirlwind,20,1/name/Silvermane Arabian/str/240/dex/125/int/35/hue/1153/tamable/true/hitsmaxseed/460/hits/460/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/XmlMinionStrike,skeleton,30/name/Wildfire Mustang/str/250/dex/120/int/30/hue/1358/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/XmlStaticStrike,50,5/name/Frostmane Stallion/str/255/dex/110/int/35/hue/1152/tamable/true/hitsmaxseed/470/hits/470/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/XmlDisarmor,1/name/Mystic Unicorn/str/260/dex/105/int/40/hue/2731/tamable/true/hitsmaxseed/465/hits/465/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/XmlDisarm,1/name/Dune Pegasus/str/245/dex/115/int/40/hue/2965/tamable/true/hitsmaxseed/455/hits/455/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/XmlLifeDrain,20,1/name/Goldenmane Thoroughbred/str/255/dex/120/int/30/hue/2218/tamable/true/hitsmaxseed/470/hits/470/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlTheftStrike,1/name,Blaze Dragon/str,400/dex,120/int,60/hue,33/tamable,true/hitsmaxseed,600/hits,600/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlBlastStrike,50,30/name,Frost Wyvern/str,350/dex,110/int,70/hue,1153/tamable,true/hitsmaxseed,550/hits,550/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlLifeDrain,20,1/name,Poison Drake/str,300/dex,130/int,80/hue,1272/tamable,true/hitsmaxseed,500/hits,500/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlDisarm,1/name,Thunder Serpent/str,450/dex,100/int,50/hue,88/tamable,true/hitsmaxseed,650/hits,650/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlStamDrain,20,1/name,Blood Dragon/str,400/dex,140/int,40/hue,38/tamable,true/hitsmaxseed,600/hits,600/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlWhirlwind,20,1/name,Wind Wyrm/str,350/dex,150/int,60/hue,1154/tamable,true/hitsmaxseed,550/hits,550/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlPoisonStrike,10,60/name,Venom Serpent/str,300/dex,120/int,70/hue,1278/tamable,true/hitsmaxseed,500/hits,500/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlBladeStrike,25,30/name,Lunar Dragon/str 450/dex 110/int 50/hue 1157/tamable true/hitsmaxseed 650/hits 650/ADD 0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlTheftStrike,1/name/Raptor Hiryu/str/450/dex/160/int/70/hue/53/tamable/true/hitsmaxseed/700/hits/700/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlMinionStrike,skeleton,30/name/Cobra Hiryu/str/420/dex/170/int/60/hue/67/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlDisarm,1/name/Pegasus Hiryu/str/460/dex/150/int/80/hue/115/tamable/true/hitsmaxseed/720/hits/720/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlManaBurn,20,2,1/name/Thunder Hiryu/str/480/dex/140/int/75/hue/83/tamable/true/hitsmaxseed/750/hits/750/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlCursedTouch,5,5/name/Panther Hiryu/str/430/dex/165/int/65/hue/1905/tamable/true/hitsmaxseed/680/hits/680/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlBlastStrike,50,30/name/Mammoth Hiryu/str/500/dex/130/int/85/hue/2305/tamable/true/hitsmaxseed/780/hits/780/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlDisarmor,1/name/Lion Hiryu/str/440/dex/160/int/70/hue/1420/tamable/true/hitsmaxseed/690/hits/690/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlBlastStrike,50,30/name/Gazelle Hiryu/str/410/dex/175/int/55/hue/1153/tamable/true/hitsmaxseed/660/hits/660/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlLifeDrain,20,1/name/Shark Hiryu/str/470/dex/145/int/60/hue/1157/tamable/true/hitsmaxseed/730/hits/730/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlWhirlwind,20,1/name/Phoenix Hiryu/str/460/dex/155/int/90/hue/38/tamable/true/hitsmaxseed/710/hits/710/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/XmlWhirlwind,20,1/name/Zephyr Kirin/str/200/dex/150/int/100/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/XmlTheftStrike,1/name/Crimson Kirin/str/250/dex/120/int/80/hue/33/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/XmlCursedTouch,5,5/name/Eclipse Kirin/str/180/dex/180/int/120/hue/1175/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/XmlLifeDrain,20,1/name/Doom Kirin/str/300/dex/100/int/60/hue/1172/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/XmlDisarmor,1/name/Lunar Kirin/str/350/dex/150/int/80/hue/1155/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/XmlStamDrain,20,1/name/Celestial Stag/str/320/dex/130/int/70/hue/1153/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/XmlManaBurn,20,2,1/name/Solar Horse/str/330/dex/120/int/75/hue/1165/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/XmlBlastStrike,50,30/name/Mystic Pegasus/str/340/dex/140/int/90/hue/1175/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/XmlDisarm,1/name/Eclipse Unicorn/str/360/dex/125/int/85/hue/1120/tamable/true/hitsmaxseed/590/hits/590/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/XmlDisarm,1/name/Nebula Zebra/str/335/dex/145/int/80/hue/1105/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/XmlTheftStrike,1/name/Twilight Charger/str/345/dex/135/int/65/hue/1135/tamable/true/hitsmaxseed/565/hits/565/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/XmlMinionStrike,skeleton,30/name/Galactic Gazelle/str/315/dex/138/int/72/hue/1145/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/XmlLifeDrain,20,1/name/Cosmic Colt/str/330/dex/128/int/77/hue/1157/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/XmlBlastStrike,50,30/name/Astral Antelope/str/320/dex/142/int/68/hue/1128/tamable/true/hitsmaxseed/545/hits/545/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/XmlStaticStrike,50,5/name/Starlight Steed/str/310/dex/132/int/70/hue/1118/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/XmlCursedTouch,5,5/name/Quasar Quagga/str/325/dex/130/int/78/hue/1170/tamable/true/hitsmaxseed/555/hits/555/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/XmlWhirlwind,20,1/name/Nova Nokota/str/340/dex/136/int/82/hue/1140/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/XmlDisarmor,1/name/Black Dragon/str/400/dex/80/int/60/hue/1/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/XmlWhirlwind,20,1/name/Tornado Dragon/str/350/dex/120/int/50/hue/1153/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/XmlCursedTouch,5,5/name/Nightmare Dragon/str/300/dex/100/int/70/hue/1175/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/XmlLifeDrain,20,1/name/Doom Dragon/str/450/dex/90/int/40/hue/1172/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/XmlDisarmor,1/name/Caiman Dragon/str/400/dex/110/int/60/hue/200/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/XmlStamDrain,20,1/name/Marsh Serpent Dragon/str/420/dex/105/int/55/hue/250/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/XmlManaBurn,20,2,1/name/Mire Alligator Dragon/str/450/dex/100/int/50/hue/350/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/XmlBlastStrike,50,30/name/Bog Panther Dragon/str/410/dex/120/int/58/hue/450/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/XmlDisarm,1/name/Silt Tiger Dragon/str/390/dex/130/int/57/hue/500/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/XmlDisarm,1/name/Fenland Falcon Dragon/str/400/dex/115/int/59/hue/600/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/XmlTheftStrike,1/name/Peat Wolf Dragon/str/410/dex/110/int/56/hue/650/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/XmlMinionStrike,skeleton,30/name/Slough Lynx Dragon/str/420/dex/105/int/54/hue/700/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/XmlLifeDrain,20,1/name/Bayou Bat Dragon/str/405/dex/115/int/55/hue/750/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/XmlBlastStrike,50,30/name/Estuary Eagle Dragon/str/395/dex/120/int/53/hue/800/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/XmlStaticStrike,50,5/name/Delta Deer Dragon/str/430/dex/110/int/52/hue/850/tamable/true/hitsmaxseed/545/hits/545/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/XmlCursedTouch,5,5/name/Quagmire Quokka Dragon/str/400/dex/115/int/58/hue/900/tamable/true/hitsmaxseed/525/hits/525/ADD,0
+
+Unicorn/ATTACH/XmlDisarmor,1/name/Leo Unicorn/str/320/dex/105/int/60/hue/2102/tamable/true/hitsmaxseed/530/hits/520/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/XmlMinionStrike,skeleton,30/name/Cobra Unicorn/str/310/dex/115/int/55/hue/1154/tamable/true/hitsmaxseed/515/hits/505/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/XmlBlastStrike,50,30/name/Eagle Unicorn/str/315/dex/110/int/58/hue/1252/tamable/true/hitsmaxseed/525/hits/515/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/XmlBlastStrike,50,30/name/Rhino Unicorn/str/330/dex/95/int/52/hue/2301/tamable/true/hitsmaxseed/540/hits/530/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/XmlCursedTouch,5,5/name/Panther Unicorn/str/318/dex/112/int/57/hue/1901/tamable/true/hitsmaxseed/528/hits/518/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/XmlTheftStrike,1/name/Wolf Unicorn/str/320/dex/108/int/56/hue/2207/tamable/true/hitsmaxseed/530/hits/520/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/XmlDisarm,1/name/Gazelle Unicorn/str/312/dex/120/int/53/hue/2450/tamable/true/hitsmaxseed/522/hits/512/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/XmlWhirlwind,20,1/name/Zephyr Unicorn/str/200/dex/150/int/100/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/XmlCursedTouch,5,5/name/Nightmare Unicorn/str/250/dex/120/int/80/hue/1175/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/XmlTheftStrike,1/name/Twinhorn Unicorn/str/300/dex/100/int/50/hue/1150/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/XmlLifeDrain,20,1/name/Doom Unicorn/str/350/dex/80/int/40/hue/1172/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/XmlBlastStrike,50,30/name/Rocky Unicorn/str/400/dex/60/int/30/hue/2406/tamable/true/hitsmaxseed/600/hits/600 ADD,0.1 MaxxiaScroll/
+
+Alligator/ATTACH/XmlWhirlwind,20,1/name/Crocosaurus/str/400/dex/80/int/40/hue/63/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/XmlTheftStrike,1/name/Gatoraconda/str/350/dex/120/int/30/hue/68/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/XmlLifeDrain,20,1/name/Caiman King/str/450/dex/70/int/50/hue/1153/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/XmlMinionStrike,skeleton,30/name/Gharial Queen/str/300/dex/100/int/60/hue/2968/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/XmlDisarmor,1/name/Nile Alligator/str/320/dex/95/int/55/hue/23/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/XmlStamDrain,20,1/name/Everglades Alligator/str/310/dex/110/int/50/hue/45/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/XmlManaBurn,20,2,1/name/Caiman Alligator/str/330/dex/90/int/60/hue/58/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/XmlBlastStrike,50,30/name/Gharial Alligator/str/340/dex/85/int/65/hue/65/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/XmlDisarm,1/name/Spectacled Alligator/str/315/dex/105/int/70/hue/78/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/XmlDisarm,1/name/Black Caiman/str/325/dex/115/int/55/hue/88/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/XmlTheftStrike,1/name/American Alligator/str/330/dex/100/int/60/hue/100/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/XmlMinionStrike,skeleton,30/name/Slender-snouted Alligator/str/310/dex/110/int/65/hue/110/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/XmlLifeDrain,20,1/name/Morelet's Alligator/str/340/dex/95/int/70/hue/125/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/XmlBlastStrike,50,30/name/Saltwater Alligator/str/320/dex/105/int/60/hue/135/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/XmlTheftStrike,1/name/Anaconda/str/200/dex/150/int/40/hue/68/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/XmlMinionStrike,skeleton,30/name/Cobra/str/180/dex/120/int/50/hue/52/tamable/true/hitsmaxseed/360/hits/360/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/XmlCursedTouch,5,5/name/Viper/str/160/dex/140/int/60/hue/1175/tamable/true/hitsmaxseed/320/hits/320/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/XmlBlastStrike,50,30/name/Python/str/220/dex/100/int/30/hue/1153/tamable/true/hitsmaxseed/440/hits/440/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/XmlMinionStrike,skeleton,30/name/Cobra Serpent/str/350/dex/120/int/60/hue/38/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/XmlBlastStrike,50,30/name/Python Serpent/str/400/dex/90/int/55/hue/39/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/XmlCursedTouch,5,5/name/Viper Serpent/str/320/dex/130/int/70/hue/40/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/XmlDisarm,1/name/Rattlesnake Serpent/str/330/dex/115/int/65/hue/41/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/XmlWhirlwind,20,1/name/Anaconda Serpent/str/420/dex/85/int/50/hue/42/tamable/true/hitsmaxseed/670/hits/670/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/XmlStaticStrike,50,5/name/Mamba Serpent/str/340/dex/125/int/75/hue/43/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/XmlDisarmor,1/name/Coral Serpent/str/310/dex/135/int/80/hue/44/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/XmlTheftStrike,1/name/Plague Rat/str/100/dex/200/int/50/hue/1175/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/XmlMinionStrike,skeleton,30/name/Poison Rat/str/150/dex/150/int/50/hue/1272/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/XmlCursedTouch,5,5/name/Night Rat/str/200/dex/100/int/50/hue/1109/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/XmlBlastStrike,50,30/name/Giant Mole Rat/str/250/dex/50/int/50/hue/1153/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/XmlDisarmor,1/name/Prairie Vole/str/100/dex/180/int/60/hue/842/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/XmlStamDrain,20,1/name/Porcupine Rat/str/130/dex/150/int/40/hue/1001/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/XmlManaBurn,20,2,1/name/Hamster Warrior/str/90/dex/160/int/70/hue/22/tamable/true/hitsmaxseed/220/hits/220/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/XmlBlastStrike,50,30/name/Beaver Scout/str/110/dex/130/int/80/hue/848/tamable/true/hitsmaxseed/290/hits/290/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/XmlDisarm,1/name/Flying Squirrel/str/95/dex/200/int/50/hue/41/tamable/true/hitsmaxseed/240/hits/240/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/XmlDisarm,1/name/Groundhog Defender/str/105/dex/140/int/55/hue/1124/tamable/true/hitsmaxseed/280/hits/280/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/XmlTheftStrike,1/name/Chipmunk Striker/str/100/dex/190/int/60/hue/193/tamable/true/hitsmaxseed/260/hits/260/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/XmlMinionStrike,skeleton,30/name/Rabbit Raider/str/90/dex/210/int/50/hue/0/tamable/true/hitsmaxseed/230/hits/230/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/XmlLifeDrain,20,1/name/Jerboa Assassin/str/80/dex/220/int/40/hue/1153/tamable/true/hitsmaxseed/210/hits/210/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/XmlBlastStrike,50,30/name/Guinea Pig Guardian/str/120/dex/120/int/70/hue/2300/tamable/true/hitsmaxseed/270/hits/270/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/XmlStaticStrike,50,5/name/Muskrat Marauder/str/115/dex/130/int/60/hue/1128/tamable/true/hitsmaxseed/275/hits/275/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/XmlCursedTouch,5,5/name/Chinchilla Chaser/str/85/dex/180/int/65/hue/1910/tamable/true/hitsmaxseed/235/hits/235/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/XmlWhirlwind,20,1/name/Capybara Captain/str/140/dex/120/int/50/hue/1150/tamable/true/hitsmaxseed/310/hits/310/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlTheftStrike,1/name,Swift Hare/str,50/dex,200/int,25/hue,1153/tamable,true/hitsmaxseed,100/hits,100/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlStamDrain,20,1/name,Blood Bunny/str,75/dex,150/int,25/hue,33/tamable,true/hitsmaxseed,150/hits,150/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlBlastStrike,50,30/name,Rocky Rabbit/str,100/dex,100/int,25/hue,1102/tamable,true/hitsmaxseed,200/hits,200/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlLifeDrain,20,1/name,Doom Bunny/str,150/dex,75/int,25/hue,1175/tamable,true/hitsmaxseed,300/hits,300/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlDisarm,1/name,Rider Rabbit/str,50/dex,175/int,25/hue,1150/tamable,true/hitsmaxseed,125/hits,125/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlDisarmor,1/name/Snow Hare/str/150/dex/180/int/30/hue/1153/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlStamDrain,20,1/name/Desert Cottontail/str/160/dex/170/int/40/hue/2731/tamable/true/hitsmaxseed/260/hits/260/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlManaBurn,20,2,1/name/Swamp Rabbit/str/170/dex/160/int/50/hue/67/tamable/true/hitsmaxseed/270/hits/270/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlBlastStrike,50,30/name/Mountain Hopper/str/180/dex/150/int/60/hue/902/tamable/true/hitsmaxseed/280/hits/280/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlDisarm,1/name/Golden Jackrabbit/str/190/dex/140/int/70/hue/2213/tamable/true/hitsmaxseed/290/hits/290/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlDisarm,1/name/Arctic Hare/str/200/dex/130/int/80/hue/1152/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlTheftStrike,1/name/Twilight Bunny/str/210/dex/120/int/90/hue/2603/tamable/true/hitsmaxseed/310/hits/310/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlMinionStrike,skeleton,30/name/Marsh Loper/str/220/dex/110/int/100/hue/2965/tamable/true/hitsmaxseed/320/hits/320/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlLifeDrain,20,1/name/Meadow Leaper/str/230/dex/100/int/110/hue/2943/tamable/true/hitsmaxseed/330/hits/330/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlBlastStrike,50,30/name/Dusk Runner/str/240/dex/90/int/120/hue/2604/tamable/true/hitsmaxseed/340/hits/340/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlStaticStrike,50,5/name/Forest Skipper/str/250/dex/80/int/130/hue/66/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlCursedTouch,5,5/name/Moonlit Hopper/str/260/dex/70/int/140/hue/1151/tamable/true/hitsmaxseed/360/hits/360/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlWhirlwind,20,1/name/Prairie Dasher/str/270/dex/60/int/150/hue/2310/tamable/true/hitsmaxseed/370/hits/370/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/XmlTheftStrike,1/name/Leo Cat/str/100/dex/200/int/50/hue/2213/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/XmlCursedTouch,5,5/name/Night Cat/str/150/dex/150/int/50/hue/1109/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/XmlWhirlwind,20,1/name/Tornado Cat/str/200/dex/100/int/50/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/XmlBlastStrike,50,30/name/Rocky Cat/str/250/dex/50/int/50/hue/2406/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/XmlDisarmor,1/name/Bengal Cat/str/120/dex/150/int/75/hue/1154/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/XmlTheftStrike,1/name/Sahara Lynx/str/130/dex/145/int/80/hue/1165/tamable/true/hitsmaxseed/260/hits/260/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/XmlWhirlwind,20,1/name/Nile Serval/str/125/dex/155/int/70/hue/1167/tamable/true/hitsmaxseed/255/hits/255/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/XmlCursedTouch,5,5/name/Snow Pouncer/str/115/dex/160/int/90/hue/1152/tamable/true/hitsmaxseed/240/hits/240/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/XmlManaBurn,20,2,1/name/Jungle Ocelot/str/110/dex/165/int/85/hue/1176/tamable/true/hitsmaxseed/230/hits/230/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/XmlBlastStrike,50,30/name/Cheetah Runner/str/105/dex/170/int/80/hue/1905/tamable/true/hitsmaxseed/220/hits/220/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/XmlStamDrain,20,1/name/Cougar Claw/str/135/dex/140/int/70/hue/1932/tamable/true/hitsmaxseed/270/hits/270/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/XmlTheftStrike,1/name/Alpha Wolf/str/200/dex/150/int/50/hue/2306/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/XmlCursedTouch,5,5/name/Night Hound/str/150/dex/200/int/50/hue/1175/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/XmlBlastStrike,50,30/name/Bulldog/str/250/dex/100/int/50/hue/1153/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/XmlWhirlwind,20,1/name/Hurricane Husky/str/200/dex/200/int/50/hue/1150/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/XmlTheftStrike,1/name/Husky Striker/str/110/dex/150/int/30/hue/1152/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/XmlBlastStrike,50,30/name/Bulldog Crusher/str/180/dex/90/int/40/hue/1153/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/XmlBlastStrike,50,30/name/Greyhound Runner/str/100/dex/180/int/30/hue/902/tamable/true/hitsmaxseed/190/hits/190/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/XmlCursedTouch,5,5/name/Doberman Shadow/str/150/dex/160/int/35/hue/1150/tamable/true/hitsmaxseed/230/hits/230/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/XmlDisarmor,1/name/Rottweiler Defender/str/170/dex/140/int/40/hue/1151/tamable/true/hitsmaxseed/240/hits/240/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/XmlDisarm,1/name/Chihuahua Disarmer/str/50/dex/190/int/70/hue/903/tamable/true/hitsmaxseed/140/hits/140/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/XmlStamDrain,20,1/name/Mastiff Bleeder/str/200/dex/120/int/35/hue/1105/tamable/true/hitsmaxseed/260/hits/260/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/XmlMinionStrike,skeleton,30/name/Terrier Infector/str/90/dex/170/int/65/hue/1106/tamable/true/hitsmaxseed/180/hits/180/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/XmlWhirlwind,20,1/name/Shiba Whirlwind/str/120/dex/155/int/60/hue/1107/tamable/true/hitsmaxseed/210/hits/210/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/XmlDisarm,1/name/Golden Dismounter/str/140/dex/150/int/55/hue/2213/tamable/true/hitsmaxseed/220/hits/220/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/XmlWhirlwind,20,1/name/Tarantula/str/200/dex/150/int/100/hue/1175/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/XmlMinionStrike,skeleton,30/name/BlackWidow/str/250/dex/125/int/75/hue/1908/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/XmlCursedTouch,5,5/name/BrownRecluse/str/150/dex/200/int/50/hue/2413/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/XmlBlastStrike,50,30/name/GoliathBirdeater/str/300/dex/100/int/25/hue/1109/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/XmlDisarmor,1/name/Golden Silk Spider/str/310/dex/115/int/65/hue/2213/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/XmlManaBurn,20,2,1/name/Bane Orb Weaver/str/320/dex/120/int/60/hue/1109/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/XmlCursedTouch,5,5/name/Violet Tarantula/str/330/dex/125/int/55/hue/2603/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/XmlWhirlwind,20,1/name/Emerald Huntsman/str/340/dex/110/int/70/hue/67/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/XmlStamDrain,20,1/name/Crimson Recluse/str/350/dex/100/int/75/hue/2117/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/XmlTheftStrike,1/name/Azure Jumper/str/360/dex/130/int/80/hue/1301/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/XmlMinionStrike,skeleton,30/name/Obsidian Black Widow/str/370/dex/105/int/85/hue/1175/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/XmlDisarm,1/name/Silver Wolf Spider/str/380/dex/115/int/90/hue/2406/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/XmlDisarm,1/name/Jade Trapdoor Spider/str/390/dex/110/int/95/hue/1419/tamable/true/hitsmaxseed/590/hits/590/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/XmlStaticStrike,50,5/name/Ruby Goliath Birdeater/str/400/dex/120/int/100/hue/2116/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/XmlDisarmor,1/name/Black Widow/str/200/dex/150/int/50/hue/1175/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/XmlMinionStrike,skeleton,30/name/Green Mamba/str/150/dex/200/int/50/hue/67/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/XmlBlastStrike,50,30/name/King Crab/str/250/dex/100/int/50/hue/33/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/XmlCursedTouch,5,5/name/Dark Scorpion/str/200/dex/200/int/50/hue/1109/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/XmlDisarmor,1/name/Red Claw Scorpion/str/320/dex/110/int/55/hue/32/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/XmlStamDrain,20,1/name/Golden Desert Scorpion/str/330/dex/115/int/60/hue/50/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/XmlManaBurn,20,2,1/name/Black Emperor Scorpion/str/340/dex/120/int/65/hue/1/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/XmlBlastStrike,50,30/name/Jungle Green Scorpion/str/350/dex/125/int/70/hue/71/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/XmlDisarm,1/name/Blue Stripe Scorpion/str/360/dex/130/int/75/hue/85/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/XmlDisarm,1/name/White Tail Scorpion/str/370/dex/135/int/80/hue/1152/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/XmlTheftStrike,1/name/Spotted Brown Scorpion/str/380/dex/140/int/85/hue/1021/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/XmlMinionStrike,skeleton,30/name/Orange Sand Scorpion/str/390/dex/145/int/90/hue/44/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/XmlLifeDrain,20,1/name/Cyan Ice Scorpion/str/400/dex/150/int/95/hue/115/tamable/true/hitsmaxseed/590/hits/590/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/XmlBlastStrike,50,30/name/Silver Rock Scorpion/str/410/dex/155/int/100/hue/1153/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+These are XML spawner examples for spawning two different kinds of Ogres.  Do you understand this context?  Can you make more examples with different properties?
+
+ogre/name/The Butcher/str/190/damagemax/50/hue/500
+ogre/name/Lord Chef/ADD,0.3/ChefKey/hue/300
+lich/name/Dark Master/ADD/<simplenote/notestring/My soul will not rest until you return with the Ring of the Elements found on my nemesis, the lich lord Artemis in the dungeons of Ilshenar. Take my sword to aid you./titlestring/The Return of Artemis/name/Quest of Artemis/size/2>/ADD/<longsword/maxdamage/RND,30,70>
+
+
+ogre/name/The Butcher/str/190/damagemax/50/hue/500/tamable/true
+ogre/name/Lord Chef/ADD,0.3/ChefKey/hue/300/tamable/true
+ogre/name/Warlord Grug/str/210/dex/60/weapon/Mace/hue/700/tamable/true
+ogre/name/Healer Grom/str/180/int/80/ADD,0.4/HealingPotion/hue/450/tamable/true
+ogre/name/Mage Olof/int/100/magery/80/ADD/Spellbook/hue/350/tamable/true
+ogre/name/Scout Grok/dex/90/str/170/ADD,0.5/TreasureMap/hue/550/tamable/true
+
+
+
+
+waterelemental/name/Mud Elemental/ADD,0.3/BardsKey/str/260/dex/60/int/100/hue/3429/tamable/true/ADD,0.3/MaxxiaScroll
+waterelemental/name/Wine Elemental/ADD,0.3/BardsKey/str/220/dex/80/int/110/hue/1146/tamable/true/ADD,0.3/MaxxiaScroll
+waterelemental/name/Oil Elemental/ADD,0.3/BardsKey/str/240/dex/70/int/90/hue/1906/tamable/true/ADD,0.3/MaxxiaScroll
+waterelemental/name/Lava Elemental/ADD,0.3/BardsKey/str/280/dex/65/int/95/hue/1157/tamable/true/ADD,0.3/MaxxiaScroll
+waterelemental/name/Acid Elemental/ADD,0.3/BardsKey/str/230/dex/85/int/105/hue/1267/tamable/true/ADD,0.3/MaxxiaScroll
+waterelemental/name/Milk Elemental/ADD,0.3/BardsKey/str/210/dex/75/int/100/hue/2301/tamable/true/ADD,0.3/MaxxiaScroll
+waterelemental/name/Blood Elemental/ADD,0.3/BardsKey/str/250/dex/90/int/110/hue/37/tamable/true/ADD,0.3/MaxxiaScroll
+waterelemental/name/Mercury Elemental/ADD,0.3/BardsKey/str/220/dex/100/int/90/hue/1950/tamable/true/ADD,0.3/MaxxiaScroll
+
+
+
+horse/name/Flaming Steed/hue/1256/speed/2.0/damagemax/20/ADD,0.3/MaxxiaScroll
+horse/name/Icy Mount/hue/1152/speed/1.8/damagemax/15/ADD,0.3/MaxxiaScroll
+horse/name/Ethereal Stallion/hue/1150/speed/2.1/damagemax/10/ADD,0.3/MaxxiaScroll
+horse/name/Enchanted Mare/hue/2735/speed/2.0/damagemax/12/ADD,0.3/MaxxiaScroll
+horse/name/Thunder Charger/hue/2075/speed/1.9/damagemax/18/ADD,0.3/MaxxiaScroll
+horse/name/Moonlit Steed/hue/1109/speed/2.0/damagemax/14/ADD,0.3/MaxxiaScroll
+
+earthelemental/name/Diamond Elemental/str/600/hits/800/damagemax/80/hue/2216/tamable/true/ADD,0.3/MaxxiaScroll
+earthelemental/name/Ruby Elemental/str/550/hits/650/damagemax/75/hue/2113/tamable/true/ADD,0.3/MaxxiaScroll
+earthelemental/name/Sapphire Elemental/str/500/int/150/hits/600/damagemax/70/hue/2119/tamable/true/ADD,0.3/MaxxiaScroll
+earthelemental/name/Emerald Elemental/str/520/hits/700/damagemax/72/hue/2121/tamable/true/ADD,0.3/MaxxiaScroll
+earthelemental/name/Amethyst Elemental/str/510/int/110/hits/620/damagemax/70/hue/2126/tamable/true/ADD,0.3/MaxxiaScroll
+earthelemental/name/Opal Elemental/str/515/int/115/dex/115/hits/630/damagemax/70/hue/2118/tamable/true/ADD,0.3/MaxxiaScroll
+earthelemental/name/Onyx Elemental/str/580/hits/690/damagemax/78/hue/2056/tamable/true/ADD,0.3/MaxxiaScroll
+
+
+
+gorilla/name/Chimpanzee/str/250/dex/180/int/100/hits/300/damagemax/30/hue/2113/ADD,0.3/MaxxiaScroll
+gorilla/name/Bonobo/str/240/dex/175/int/105/hits/290/damagemax/28/hue/1256/ADD,0.3/MaxxiaScroll
+gorilla/name/Orangutan/str/280/dex/160/int/90/hits/320/damagemax/35/hue/453/ADD,0.3/MaxxiaScroll
+gorilla/name/Silverback Gorilla/str/330/dex/155/int/80/hits/400/damagemax/45/hue/2216/ADD,0.3/MaxxiaScroll
+gorilla/name/Mountain Gorilla/str/310/dex/150/int/85/hits/375/damagemax/40/hue/2121/ADD,0.3/MaxxiaScroll
+gorilla/name/Golden Monkey/str/210/dex/200/int/110/hits/250/damagemax/25/hue/2401/ADD,0.3/MaxxiaScroll
+
+
+
+
+horse/name/Land Worm/hue/300/damagemax/20/bodyvalue/150/ADD,0.3/MaxxiaScroll
+
+lich/name/Ogre Mage/int/100/magery/80/hue/2119/tamable/true/bodyvalue/1/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+lich/name/Zivir/int/100/magery/80/hue/346/tamable/true/bodyvalue/1/hitsmaxseed/700/hits/700/ADD,0.3/MaxxiaScroll
+
+wisp/name/Goblin Sorcerer/int/130/magery/90/hue/2003/tamable/true/bodyvalue/245/hitsmaxseed/250/hits/245/ADD,0.3/MaxxiaScroll
+
+spectre/name/Draconic Spectre/int/90/magery/75/hue/1150/tamable/true/bodyvalue/12/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+direwolf/name/Wolf Shaman/int/120/magery/85/hue/0/tamable/true/bodyvalue/34/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+titan/name/Shadow Titan/str/600/hitsmaxseed/800/hits/800/hue/1109/tamable/true/bodyvalue/76/ADD,0.3/MaxxiaScroll
+
+phoenix/name/Phoenix Harpy/int/85/magery/70/hue/1260/tamable/true/bodyvalue/30/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+ghost/name/Dragon Ghost/str/650/magery/60/hue/1152/tamable/true/bodyvalue/12/hitsmaxseed/800/hits/800/ADD,0.3/MaxxiaScroll
+
+rat/name/Gargantuan Rat/str/350/dex/100/hue/1153/tamable/true/bodyvalue/17/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+
+balron/name/Demonic Unicorn/int/130/magery/90/hue/1175/tamable/true/bodyvalue/192/hitsmaxseed/600/hits/600/ADD,0.3/MaxxiaScroll
+
+golem/name/Ethereal Golem/int/80/magery/70/hue/1152/tamable/true/bodyvalue/788/hitsmaxseed/700/hits/700/ADD,0.3/MaxxiaScroll
+
+snake/name/Fire Serpent/str/280/magery/50/hue/1161/tamable/true/bodyvalue/52/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+
+drake/name/Ice Drake/str/400/dex/130/hue/1154/tamable/true/bodyvalue/60/hitsmaxseed/650/hits/650/ADD,0.3/MaxxiaScroll
+
+
+
+shade/name/Draconic Shade/int/120/magery/85/hue/1109/tamable/true/bodyvalue/12/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+wight/name/Wolf Wight/int/50/magery/50/hue/1908/tamable/true/bodyvalue/25/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+lich/name/Spider Liche/int/130/magery/90/hue/2224/tamable/true/bodyvalue/28/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+ghoul/name/Ghoul Giant/int/40/magery/30/hue/1153/tamable/true/bodyvalue/18/hitsmaxseed/600/hits/600/ADD,0.3/MaxxiaScroll
+
+gazer/name/Ethereal Specter/int/110/magery/70/hue/2075/tamable/true/bodyvalue/1/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+daemon/name/Demonic Harpy/int/140/magery/95/hue/2110/tamable/true/bodyvalue/30/hitsmaxseed/550/hits/550/ADD,0.3/MaxxiaScroll
+
+lich/name/Serpentine Lich/int/125/magery/88/hue/2701/tamable/true/bodyvalue/36/hitsmaxseed/520/hits/520/ADD,0.3/MaxxiaScroll
+
+
+
+
+
+GargoyleDestroyer/name/Boneshard Gargoyle/bodyvalue/50/hitsmaxseed/500/hits/500/tamable/true/ADD,0.3/MaxxiaScroll
+
+ElderGazer/name/Boneye Seer/bodyvalue/50/hitsmaxseed/550/hits/550/tamable/true/ADD,0.3/MaxxiaScroll
+
+AncientLich/name/Phantom Lich King/bodyvalue/50/hitsmaxseed/600/hits/600/tamable/true/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Skeletal Temptress/bodyvalue/50/hitsmaxseed/450/hits/450/tamable/true/ADD,0.3/MaxxiaScroll
+
+Imp/name/Bonefiend Imp/bodyvalue/50/hitsmaxseed/300/hits/300/tamable/true/ADD,0.3/MaxxiaScroll
+
+gargoyledestroyer/name/Drakestone Guardian/bodyvalue/59/hitsmaxseed/700/hits/700/tamable/true/ADD,0.3/MaxxiaScroll
+
+eldergazer/name/Elder Wyrmseer/bodyvalue/59/int/140/magery/90/hitsmaxseed/650/hits/650/tamable/true/ADD,0.3/MaxxiaScroll
+
+ancientlich/name/Draconic Pharaoh/bodyvalue/59/int/150/magery/100/hue/2300/hitsmaxseed/750/hits/750/tamable/true/ADD,0.3/MaxxiaScroll
+
+succubus/name/Hellfire Wyrm/bodyvalue/59/int/130/hitsmaxseed/720/hits/720/tamable/true/ADD,0.3/MaxxiaScroll
+
+imp/name/Inferno Drakeling/bodyvalue/59/int/120/magery/85/hue/2500/hitsmaxseed/620/hits/620/tamable/true/ADD,0.3/MaxxiaScroll
+
+GargoyleDestroyer/name/Zombie Stoneguard/bodyvalue/3/hitsmaxseed/600/hits/500/damagemax/75/hue/1424/tamable/true/ADD,0.3/MaxxiaScroll
+
+ElderGazer/name/Decaying Seer/bodyvalue/3/int/120/magery/85/hitsmaxseed/550/hits/450/hue/1421/tamable/true/ADD,0.3/MaxxiaScroll
+
+AncientLich/name/Undying Pharaoh/bodyvalue/3/int/130/magery/95/hue/1422/hitsmaxseed/650/hits/550/tamable/true/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Enchanted Carrion/bodyvalue/3/int/115/hue/1420/hitsmaxseed/480/hits/420/damagemax/68/tamable/true/ADD,0.3/MaxxiaScroll
+
+Imp/name/Necro Sprite/bodyvalue/3/int/90/hue/1419/hitsmaxseed/350/hits/300/damagemax/58/tamable/true/ADD,0.3/MaxxiaScroll
+
+lich/name/Ogre Mage/str/210/dex/60/int/100/hue/2119/tamable/true/bodyvalue/1/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+
+
+
+SkeletalMage/name/Bog Skeletal Mage/str/190/dex/50/int/140/hue/240/tamable/true/bodyvalue/780/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+RatmanMage/name/Bog Ratman Mage/str/210/dex/70/int/130/hue/350/tamable/true/bodyvalue/780/hitsmaxseed/410/hits/410/ADD,0.3/MaxxiaScroll
+
+OrcishMage/name/Bog Orcish Mage/str/230/dex/60/int/120/hue/470/tamable/true/bodyvalue/780/hitsmaxseed/430/hits/430/ADD,0.3/MaxxiaScroll
+
+LichLord/name/Bog Lich Lord/str/250/dex/55/int/180/hue/520/tamable/true/bodyvalue/780/hitsmaxseed/480/hits/480/ADD,0.4/MaxxiaScroll
+
+OgreLord/name/Bog Ogre Lord/str/270/dex/50/int/90/hue/676/tamable/true/bodyvalue/780/hitsmaxseed/500/hits/500/ADD,0.4/MaxxiaScroll
+
+
+
+SkeletalMage/name/Skuldran the Desolate/str/220/dex/70/int/110/hue/RND,1,500/tamable/true/bodyvalue/785/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+RatmanMage/name/Ratigon the Whisperer/str/230/dex/80/int/120/hue/RND,1,500/tamable/true/bodyvalue/785/hitsmaxseed/440/hits/440/ADD,0.3/MaxxiaScroll
+
+OrcishMage/name/Orcandur the Eldritch/str/240/dex/90/int/130/hue/RND,1,500/tamable/true/bodyvalue/785/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+LichLord/name/Lichdrak the Timeless/str/250/dex/100/int/140/hue/RND,1,500/tamable/true/bodyvalue/785/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+OgreLord/name/Ogroth the Unfathomable/str/260/dex/110/int/150/hue/RND,1,500/tamable/true/bodyvalue/785/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+
+
+ogre/hue/RND,1,500/ADD,0.1/<katana/hue/500/attributes.luck/RND,50,100>
+
+
+
+
+
+ArcaneDaemon/name/Crystalan Vrothe/str/250/dex/85/int/150/hue/900/tamable/true/bodyvalue/176/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+
+ArcherGuard/name/Lysandra of Feleth/str/190/dex/110/int/75/hue/750/tamable/true/bodyvalue/176/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+
+ArcticOgreLord/name/Thrymril the Glacial/str/220/dex/90/int/90/hue/620/tamable/true/bodyvalue/176/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+
+BakeKitsune/name/Sylphine Whisperweave/str/210/dex/105/int/120/hue/580/tamable/true/bodyvalue/176/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+
+
+Balron/name/Dreadshade Embersyl/str/270/dex/80/int/160/hue/1010/tamable/true/bodyvalue/176/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+
+
+BlackSolenWorker/name/Solen Sprite/str/180/dex/110/int/120/hue/530/tamable/true/bodyvalue/176/hitsmaxseed/250/hits/250/ADD,0.3/MaxxiaScroll
+
+BladeSpirits/name/Blade Whisper/str/190/dex/120/int/130/hue/540/tamable/true/bodyvalue/176/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+BloodElemental/name/Sanguine Sylph/str/200/dex/125/int/135/hue/550/tamable/true/bodyvalue/176/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+
+Boar/name/Tusked Puck/str/160/dex/100/int/90/hue/560/tamable/true/bodyvalue/176/hitsmaxseed/200/hits/200/ADD,0.3/MaxxiaScroll
+
+BogThing/name/Marsh Wisp/str/210/dex/115/int/140/hue/570/tamable/true/bodyvalue/176/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+
+
+evilwanderinghealer/name/Cugel's Healer/str/180/dex/70/int/130/hue/620/tamable/true/bodyvalue/169/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+executioner/name/Turjan's Executor/str/250/dex/80/int/90/hue/710/tamable/true/bodyvalue/169/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+exodusminion/name/Rhialto's Minion/str/220/dex/65/int/110/hue/825/tamable/true/bodyvalue/169/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+
+exodusoverseer/name/Iucounu's Overseer/str/260/dex/75/int/95/hue/900/tamable/true/bodyvalue/169/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+
+fandancer/name/Mazirian's Dancer/str/200/dex/70/int/120/hue/1010/tamable/true/bodyvalue/169/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+
+
+
+
+
+
+
+
+
+
+
+
+CrystalElemental/name/Zephyrial Luminant/str/220/dex/50/int/120/hue/1100/tamable/true/bodyvalue/2/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+CuSidhe/name/Astral Hound/str/250/dex/55/int/95/hue/950/tamable/true/bodyvalue/2/hitsmaxseed/440/hits/440/ADD,0.3/MaxxiaScroll
+
+Cursed/name/Galaxian Cursebearer/str/230/dex/52/int/110/hue/890/tamable/true/bodyvalue/2/hitsmaxseed/430/hits/430/ADD,0.3/MaxxiaScroll
+
+Cyclops/name/Stellar Behemoth/str/240/dex/57/int/90/hue/780/tamable/true/bodyvalue/2/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+Daemon/name/Cosmic Infernal/str/260/dex/58/int/115/hue/660/tamable/true/bodyvalue/2/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+
+
+
+
+CrystalElemental/name/Crystal Skyshard/str/200/dex/85/int/95/hue/1150/tamable/true/bodyvalue/5/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+CuSidhe/name/Eaglon Sidhe/str/225/dex/80/int/90/hue/540/tamable/true/bodyvalue/5/hitsmaxseed/375/hits/375/ADD,0.3/MaxxiaScroll
+
+Cursed/name/Cursewing/str/220/dex/75/int/85/hue/480/tamable/true/bodyvalue/5/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+Cyclops/name/Cyclopean Raptor/str/235/dex/70/int/80/hue/510/tamable/true/bodyvalue/5/hitsmaxseed/390/hits/390/ADD,0.3/MaxxiaScroll
+
+Daemon/name/Daemonix Avian/str/245/dex/65/int/75/hue/450/tamable/true/bodyvalue/5/hitsmaxseed/405/hits/405/ADD,0.3/MaxxiaScroll
+
+
+
+
+
+BoneMancer
+BoneMagi/name/BoneMancer/str/180/dex/50/int/110/hue/510/tamable/true/bodyvalue/7/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+Orcish BanditLord
+Brigand/name/Orcish BanditLord/str/160/dex/70/int/60/hue/505/tamable/true/bodyvalue/7/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+Orcish MetalShaman
+BronzeElemental/name/Orcish MetalShaman/str/220/dex/40/int/90/hue/500/tamable/true/bodyvalue/7/hitsmaxseed/340/hits/340/ADD,0.3/MaxxiaScroll
+
+Orcish UrsineWarrior
+BrownBear/name/Orcish UrsineWarrior/str/150/dex/80/int/40/hue/515/tamable/true/bodyvalue/7/hitsmaxseed/260/hits/260/ADD,0.3/MaxxiaScroll
+
+Orcish HornedChampion
+Bull/name/Orcish HornedChampion/str/190/dex/50/int/50/hue/525/tamable/true/bodyvalue/7/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+
+
+
+
+
+
+
+// Gossamer Seer
+FortuneTeller/name/Gossamer Seer/str/180/dex/75/int/140/hue/720/tamable/true/bodyvalue/11/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+
+// Skittering Ravebeast
+FrenziedOstard/name/Skittering Ravebeast/str/190/dex/120/int/80/hue/620/tamable/true/bodyvalue/11/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+
+// Icy Webmorph
+FrostOoze/name/Icy Webmorph/str/170/dex/50/int/90/hue/820/tamable/true/bodyvalue/11/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+
+// Glacial Arachnid
+FrostSpider/name/Glacial Arachnid/str/200/dex/85/int/70/hue/920/tamable/true/bodyvalue/11/hitsmaxseed/330/hits/330/ADD,0.3/MaxxiaScroll
+
+
+// Frigid Trolloid Weaver
+FrostTroll/name/Frigid Trolloid Weaver/str/230/dex/55/int/60/hue/1020/tamable/true/bodyvalue/11/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+
+
+LesserHiryu/name/Drakon Hiryu/str/300/dex/90/int/150/hue/540/tamable/true/bodyvalue/12/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+Leviathan/name/Sea Drake Leviathan/str/420/dex/80/int/180/hue/560/tamable/true/bodyvalue/12/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+Lich/name/Necrodrake Lich/str/250/dex/70/int/200/hue/580/tamable/true/bodyvalue/12/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+RatmanArcher/name/Ratwing Archer/str/220/dex/100/int/130/hue/600/tamable/true/bodyvalue/12/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+RatmanMage/name/Ratwing Sorcerer/str/230/dex/85/int/160/hue/620/tamable/true/bodyvalue/12/hitsmaxseed/440/hits/440/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Satyr-Draconus/str/220/dex/75/int/115/hue/610/tamable/true/bodyvalue/12/hitsmaxseed/425/hits/425/ADD,0.3/MaxxiaScroll
+
+Savage/name/Draco-Savagium/str/240/dex/80/int/120/hue/660/tamable/true/bodyvalue/12/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+RestlessSoul/name/Soulwing Drakar/str/210/dex/70/int/110/hue/560/tamable/true/bodyvalue/12/hitsmaxseed/415/hits/415/ADD,0.3/MaxxiaScroll
+
+Revenant/name/Reven-Draga/str/230/dex/85/int/130/hue/710/tamable/true/bodyvalue/12/hitsmaxseed/440/hits/440/ADD,0.3/MaxxiaScroll
+
+RevenantLion/name/Lionflare Drakelion/str/245/dex/90/int/140/hue/720/tamable/true/bodyvalue/12/hitsmaxseed/470/hits/470/ADD,0.3/MaxxiaScroll
+
+ShadowWisp/name/Dracowisp/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+ShadowWyrm/name/Wyrmshade Draco/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Dracubus/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+Silvani/name/Dracovani/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+SilverSerpent/name/Silverdrake/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+wisp/name/Draconic Luminar/str/220/dex/70/int/110/hue/530/tamable/true/bodyvalue/12/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+wraith/name/Draken Spectre/str/240/dex/80/int/120/hue/540/tamable/true/bodyvalue/12/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+wyvern/name/Dragon Serpentius/str/260/dex/90/int/130/hue/550/tamable/true/bodyvalue/12/hitsmaxseed/550/hits/550/ADD,0.3/MaxxiaScroll
+
+yamandon/name/Dracolisk Elderon/str/280/dex/100/int/140/hue/560/tamable/true/bodyvalue/12/hitsmaxseed/600/hits/600/ADD,0.3/MaxxiaScroll
+
+yomotsuelder/name/Dragonite Ancients/str/300/dex/110/int/150/hue/570/tamable/true/bodyvalue/12/hitsmaxseed/650/hits/650/ADD,0.3/MaxxiaScroll
+
+AbysmalHorror/name/Drakonic Abyssal/str/250/dex/70/int/110/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+AcidElemental/name/Dragonic Acidling/str/260/dex/80/int/120/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+BloodElemental/name/Drakonic Bloodshade/str/270/dex/90/int/130/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/470/hits/470/ADD,0.3/MaxxiaScroll
+
+BogThing/name/Dragonmarsh Lurker/str/280/dex/100/int/140/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+ChaosDaemon/name/Chaosdrake Enigma/str/290/dex/110/int/150/hue/520/tamable/true/bodyvalue/12/hitsmaxseed/490/hits/490/ADD,0.3/MaxxiaScroll
+
+AbysmalHorror/name/Nebulous Dread/str/800/dex/150/int/500/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/2500/hits/2500/ADD,0.3/MaxxiaScroll
+
+AcidElemental/name/Vaporous Corroder/str/750/dex/140/int/450/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/2300/hits/2300/ADD,0.3/MaxxiaScroll
+
+BloodElemental/name/AeroSanguine Apparition/str/770/dex/145/int/460/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/2400/hits/2400/ADD,0.3/MaxxiaScroll
+
+BogThing/name/Mist Marsh Phantom/str/720/dex/130/int/420/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/2200/hits/2200/ADD,0.3/MaxxiaScroll
+
+ChaosDaemon/name/Whirlwind Warlock/str/850/dex/160/int/520/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/2600/hits/2600/ADD,0.3/MaxxiaScroll
+
+CopperElemental/name/Aerocopper Goliath/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+Corpser/name/Windborne Necrotitan/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+CorrosiveSlime/name/Aerotoxin Miasma/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+CorruptedSoul/name/Zephyrshade Phantom/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+Cougar/name/Skyfang Prowler/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/13/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+DarkWisp/name/Vancian Whisper/str/150/dex/80/int/200/hue/0/tamable/true/bodyvalue/13/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+DarkWolf/name/Vancean Breezewolf/str/180/dex/100/int/80/hue/0/tamable/true/bodyvalue/13/hitsmaxseed/250/hits/250/ADD,0.3/MaxxiaScroll
+
+DarknightCreeper/name/Nightwind Creeper/str/200/dex/70/int/100/hue/0/tamable/true/bodyvalue/13/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+DeathAdder/name/Skyserpent Adder/str/160/dex/90/int/70/hue/0/tamable/true/bodyvalue/13/hitsmaxseed/200/hits/200/ADD,0.3/MaxxiaScroll
+
+DeathWatchBeetle/name/Galewatch Beetle/str/190/dex/60/int/90/hue/0/tamable/true/bodyvalue/13/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+DarkWisp/name/Glowstone Behemoth/str/180/dex/70/int/130/hue/660/tamable/true/bodyvalue/14/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+DarkWolf/name/Granite Lupine Titan/str/220/dex/80/int/90/hue/570/tamable/true/bodyvalue/14/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+DarknightCreeper/name/Nightstone Reaver/str/250/dex/55/int/110/hue/480/tamable/true/bodyvalue/14/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+DeathAdder/name/Petrified Serpent/str/190/dex/100/int/85/hue/510/tamable/true/bodyvalue/14/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+
+DeathWatchBeetle/name/Obsidian Scarab/str/200/dex/65/int/120/hue/590/tamable/true/bodyvalue/14/hitsmaxseed/390/hits/390/ADD,0.3/MaxxiaScroll
+
+Executioner/name/Terracrux Executioner/str/310/dex/80/int/120/hue/780/tamable/true/bodyvalue/14/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+ExodusMinion/name/Golithar Minion/str/290/dex/70/int/110/hue/630/tamable/true/bodyvalue/14/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+ExodusOverseer/name/Craglord Overseer/str/320/dex/90/int/130/hue/690/tamable/true/bodyvalue/14/hitsmaxseed/510/hits/510/ADD,0.3/MaxxiaScroll
+
+FanDancer/name/Lithosylph Dancer/str/270/dex/65/int/95/hue/560/tamable/true/bodyvalue/14/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+FeralTreefellow/name/Stonewood Behemoth/str/300/dex/75/int/105/hue/710/tamable/true/bodyvalue/14/hitsmaxseed/490/hits/490/ADD,0.3/MaxxiaScroll
+
+executioner/name/Pyro Executor/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+exodusminion/name/Blaze Nexus Minion/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+exodusoverseer/name/Inferno Nexus Warden/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+fandancer/name/Flame Ballet Enchantress/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+feraltreefellow/name/Charred Sylvan Behemoth/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+
+
+gargolyte/name/PyroGargoyleDestroyer/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+gargolite/name/BlazeGargoyleEnforcer/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+gazeflare/name/InfernoGazer/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+gazelight/name/EmberGazerLarva/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+ghoulfire/name/FlareGhoul/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+
+
+
+gorilla/name/Pyrogorillax/str/210/dex/80/int/90/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+greatHart/name/InfernoHart/str/180/dex/100/int/85/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+greaterDragon/name/DracoFlare/str/500/dex/70/int/150/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/600/hits/600/ADD,0.3/MaxxiaScroll
+
+greaterMongbat/name/MagmaMongbat/str/160/dex/120/int/70/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/250/hits/250/ADD,0.3/MaxxiaScroll
+
+greyWolf/name/EmberLupus/str/190/dex/110/int/80/hue/520/tamable/true/bodyvalue/15/hitsmaxseed/290/hits/290/ADD,0.3/MaxxiaScroll
+
+Gorilla/name/Aquaranilla/str/210/dex/70/int/110/hue/530/tamable/true/bodyvalue/16/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+GreatHart/name/Aquahartian/str/220/dex/80/int/120/hue/540/tamable/true/bodyvalue/16/hitsmaxseed/430/hits/430/ADD,0.3/MaxxiaScroll
+
+GreaterDragon/name/Aquadraconis/str/230/dex/90/int/130/hue/550/tamable/true/bodyvalue/16/hitsmaxseed/440/hits/440/ADD,0.3/MaxxiaScroll
+
+GreaterMongbat/name/Aquabattus/str/240/dex/100/int/140/hue/560/tamable/true/bodyvalue/16/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+GreyWolf/name/Aquawulfen/str/250/dex/110/int/150/hue/570/tamable/true/bodyvalue/16/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+mummy/name/Nephthys Flow/str/180/dex/50/int/90/hue/450/tamable/true/bodyvalue/16/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+neira/name/Neptunia Abyss/str/250/dex/80/int/130/hue/480/tamable/true/bodyvalue/16/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+nightmare/name/Oceanic Phantasm/str/220/dex/70/int/110/hue/490/tamable/true/bodyvalue/16/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+harpy/name/Sirena Tempest/str/160/dex/65/int/95/hue/470/tamable/true/bodyvalue/16/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+harrower/name/Tidal Enigma/str/280/dex/85/int/140/hue/500/tamable/true/bodyvalue/16/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+PatchworkSkeleton/name/Aqueous Ossein/str/170/dex/55/int/90/hue/465/tamable/true/bodyvalue/16/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+PestilentBandage/name/Tidal Malaise/str/190/dex/70/int/85/hue/450/tamable/true/bodyvalue/16/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+
+Phoenix/name/Nautical Blaze/str/200/dex/75/int/95/hue/420/tamable/true/bodyvalue/16/hitsmaxseed/390/hits/390/ADD,0.3/MaxxiaScroll
+
+Pig/name/Oceanic Swine/str/150/dex/50/int/80/hue/490/tamable/true/bodyvalue/16/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+Pixie/name/Marine Spright/str/160/dex/65/int/100/hue/480/tamable/true/bodyvalue/16/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+PlagueBeastLord/name/Aquatic Plague Lord/str/450/dex/150/int/250/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/1800/hits/1800/ADD,0.3/MaxxiaScroll
+
+PlagueSpawn/name/Abyssal Waterspawn/str/420/dex/130/int/230/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/1600/hits/1600/ADD,0.3/MaxxiaScroll
+
+PoisonElemental/name/Toxic Water Wraith/str/480/dex/140/int/270/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/1900/hits/1900/ADD,0.3/MaxxiaScroll
+
+PolarBear/name/Arctic Waterbrute/str/400/dex/120/int/210/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/1500/hits/1500/ADD,0.3/MaxxiaScroll
+
+PredatorHellCat/name/Aquatic Inferno Feline/str/440/dex/160/int/240/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/1700/hits/1700/ADD,0.3/MaxxiaScroll
+
+Revenant/name/Aquatic Specter/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+RevenantLion/name/Hydrophobic Lion/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+RidableLlama/name/Water-Steed Llama/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+RidablePolarBear/name/Cryogenic Ursal/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+Ridgeback/name/Rippled Ridgeback/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/16/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+lich/name/NecroGaze/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/22/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+PlagueBeastLord/name/PestilentSeer/str/200/dex/70/int/90/hue/500/tamable/true/bodyvalue/22/hitsmaxseed/390/hits/390/ADD,0.3/MaxxiaScroll
+
+PoisonElemental/name/VenomSight/str/180/dex/80/int/95/hue/480/tamable/true/bodyvalue/22/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+
+PolarBear/name/FrostyWatcher/str/195/dex/75/int/85/hue/470/tamable/true/bodyvalue/22/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+PredatorHellCat/name/InfernoStare/str/190/dex/65/int/88/hue/460/tamable/true/bodyvalue/22/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+
+SandVortex/name/Desert Drakon/str/180/dex/70/int/90/hue/850/tamable/true/bodyvalue/33/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+Satyr/name/Lizard Piper/str/160/dex/75/int/85/hue/530/tamable/true/bodyvalue/33/hitsmaxseed/340/hits/340/ADD,0.3/MaxxiaScroll
+Succubus/name/Sirenscale Enchantress/str/190/dex/80/int/95/hue/560/tamable/true/bodyvalue/33/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+Titan/name/Lizard Colossus/str/220/dex/65/int/80/hue/890/tamable/true/bodyvalue/33/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+ToxicElemental/name/Venomtail Elemental/str/200/dex/70/int/88/hue/610/tamable/true/bodyvalue/33/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Dust Specter/str/150/dex/85/int/100/hue/520/tamable/true/bodyvalue/26/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Ethereal Pantomuse/str/180/dex/90/int/110/hue/520/tamable/true/bodyvalue/26/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Nebula Temptress/str/200/dex/80/int/120/hue/520/tamable/true/bodyvalue/26/hitsmaxseed/375/hits/375/ADD,0.3/MaxxiaScroll
+
+Titan/name/Celestial Goliath/str/230/dex/70/int/130/hue/520/tamable/true/bodyvalue/26/hitsmaxseed/425/hits/425/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Venomous Wraith/str/190/dex/95/int/115/hue/520/tamable/true/bodyvalue/26/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+SandVortex/Dessert Nomad/str/220/dex/70/int/110/hue/580/tamable/true/bodyvalue/29/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+Satyr/Forest Behemoth/str/230/dex/80/int/120/hue/590/tamable/true/bodyvalue/29/hitsmaxseed/440/hits/440/ADD,0.3/MaxxiaScroll
+
+Succubus/Nyx Enchanter/str/240/dex/90/int/130/hue/600/tamable/true/bodyvalue/29/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+Titan/Skyrend Ape/str/250/dex/100/int/140/hue/610/tamable/true/bodyvalue/29/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/Venomshade Simian/str/260/dex/110/int/150/hue/620/tamable/true/bodyvalue/29/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Zephyrion/str/180/dex/75/int/95/hue/430/tamable/true/bodyvalue/30/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Fauniara/str/160/dex/80/int/90/hue/540/tamable/true/bodyvalue/30/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Sirenavox/str/190/dex/85/int/110/hue/610/tamable/true/bodyvalue/30/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Titan/name/Celestalon/str/240/dex/70/int/105/hue/700/tamable/true/bodyvalue/30/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Venomfeather/str/200/dex/80/int/100/hue/360/tamable/true/bodyvalue/30/hitsmaxseed/340/hits/340/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Vortexian Nomad/str/190/dex/80/int/90/hue/530/tamable/true/bodyvalue/31/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Pandoran Harbinger/str/160/dex/95/int/85/hue/540/tamable/true/bodyvalue/31/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Nebular Temptress/str/180/dex/100/int/110/hue/550/tamable/true/bodyvalue/31/hitsmaxseed/340/hits/340/ADD,0.3/MaxxiaScroll
+
+Titan/name/Colossus Shade/str/230/dex/70/int/95/hue/560/tamable/true/bodyvalue/31/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Venomous Wraith/str/205/dex/85/int/105/hue/570/tamable/true/bodyvalue/31/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Zephyrian Bat/str/150/dex/75/int/85/hue/830/tamable/true/bodyvalue/39/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Celestwing Faun/str/180/dex/70/int/90/hue/540/tamable/true/bodyvalue/39/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Noctis Siren/str/170/dex/80/int/110/hue/910/tamable/true/bodyvalue/39/hitsmaxseed/310/hits/310/ADD,0.3/MaxxiaScroll
+
+Titan/name/Gargantwing Titan/str/240/dex/65/int/95/hue/570/tamable/true/bodyvalue/39/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Venombreeze Sprite/str/160/dex/78/int/100/hue/610/tamable/true/bodyvalue/39/hitsmaxseed/330/hits/330/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Zephyr Vermin/str/210/dex/70/int/80/hue/530/tamable/true/bodyvalue/44/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Ratune Minstrel/str/190/dex/85/int/90/hue/540/tamable/true/bodyvalue/44/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Vermin Sirena/str/180/dex/95/int/100/hue/550/tamable/true/bodyvalue/44/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+Titan/name/Ratitan Colossus/str/230/dex/65/int/85/hue/560/tamable/true/bodyvalue/44/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Venomous Vermin/str/220/dex/75/int/95/hue/570/tamable/true/bodyvalue/44/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Sand Arboreal Vortex/str/190/dex/70/int/110/hue/540/tamable/true/bodyvalue/47/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Sylvan Satyr Tree/str/180/dex/80/int/120/hue/560/tamable/true/bodyvalue/47/hitsmaxseed/340/hits/340/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Dendro Succubus/str/200/dex/85/int/130/hue/580/tamable/true/bodyvalue/47/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+Titan/name/Titanic Arboreal/str/220/dex/90/int/140/hue/600/tamable/true/bodyvalue/47/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Toxicanum Tree Elemental/str/210/dex/95/int/150/hue/620/tamable/true/bodyvalue/47/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Sandsting Enigma/str/250/dex/85/int/125/hue/580/tamable/true/bodyvalue/48/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Scorpionic Piper/str/220/dex/80/int/115/hue/540/tamable/true/bodyvalue/48/hitsmaxseed/430/hits/430/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Venomous Temptress/str/230/dex/90/int/130/hue/560/tamable/true/bodyvalue/48/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+Titan/name/Titanscorpion Overlord/str/260/dex/100/int/140/hue/600/tamable/true/bodyvalue/48/hitsmaxseed/470/hits/470/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Poisonclaw Entity/str/240/dex/95/int/135/hue/570/tamable/true/bodyvalue/48/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Sandslime Vortexar/str/190/dex/70/int/110/hue/520/tamable/true/bodyvalue/51/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Satyric Gel/str/180/dex/80/int/120/hue/520/tamable/true/bodyvalue/51/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Succulent Slime/str/200/dex/85/int/130/hue/520/tamable/true/bodyvalue/51/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+
+Titan/name/Titanic Muciloid/str/230/dex/65/int/140/hue/520/tamable/true/bodyvalue/51/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Toxic Gel Elemental/str/220/dex/75/int/150/hue/520/tamable/true/bodyvalue/51/hitsmaxseed/390/hits/390/ADD,0.3/MaxxiaScroll
+
+lich/name/Vortran Necrotroll/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/54/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+SandVortex/name/Desertwind Trolloid/str/190/dex/55/int/95/hue/500/tamable/true/bodyvalue/54/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Trollhorned Pan/str/180/dex/65/int/85/hue/490/tamable/true/bodyvalue/54/hitsmaxseed/340/hits/340/ADD,0.3/MaxxiaScroll
+
+Succubus/name/Trolldusa Enchantress/str/200/dex/70/int/110/hue/480/tamable/true/bodyvalue/54/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+Titan/name/Trollithium Colossus/str/220/dex/60/int/105/hue/470/tamable/true/bodyvalue/54/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+ToxicElemental/name/Venomtroll Infusion/str/195/dex/58/int/100/hue/460/tamable/true/bodyvalue/54/hitsmaxseed/375/hits/375/ADD,0.3/MaxxiaScroll
+
+unicorn/name/Vortexian Drake/str/180/dex/75/int/120/hue/500/tamable/true/bodyvalue/33/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+satyr/name/Reptilian Piper/str/165/dex/80/int/110/hue/510/tamable/true/bodyvalue/33/hitsmaxseed/325/hits/325/ADD,0.3/MaxxiaScroll
+
+VorpalBunny/name/Scaled Marauder/str/150/dex/90/int/100/hue/495/tamable/true/bodyvalue/33/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+WailingBanshee/name/Echoing Serpent/str/190/dex/70/int/130/hue/505/tamable/true/bodyvalue/33/hitsmaxseed/375/hits/375/ADD,0.3/MaxxiaScroll
+
+wisp/name/Ethereal Skink/str/140/dex/85/int/135/hue/515/tamable/true/bodyvalue/33/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+unicorn/name/Unicarnax/str/310/dex/90/int/110/hue/1150/tamable/true/bodyvalue/76/hitsmaxseed/500/hits/500/ADD,0.3/MaxxiaScroll
+
+satyr/name/Satyranox/str/270/dex/85/int/105/hue/450/tamable/true/bodyvalue/76/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+VorpalBunny/name/Vorptitanus/str/230/dex/70/int/95/hue/1350/tamable/true/bodyvalue/76/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+WailingBanshee/name/Banshiton/str/290/dex/80/int/120/hue/900/tamable/true/bodyvalue/76/hitsmaxseed/490/hits/490/ADD,0.3/MaxxiaScroll
+
+wisp/name/Wisptanax/str/250/dex/75/int/115/hue/750/tamable/true/bodyvalue/76/hitsmaxseed/470/hits/470/ADD,0.3/MaxxiaScroll
+
+Unicorn/name/Frogacorn/str/190/dex/80/int/110/hue/430/tamable/true/bodyvalue/81/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Satyropod/str/160/dex/70/int/90/hue/610/tamable/true/bodyvalue/81/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+VorpalBunny/name/Vorpal Ribbiter/str/130/dex/110/int/80/hue/700/tamable/true/bodyvalue/81/hitsmaxseed/250/hits/250/ADD,0.3/MaxxiaScroll
+
+WailingBanshee/name/Bansheebog/str/220/dex/60/int/120/hue/300/tamable/true/bodyvalue/81/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+
+Wisp/name/Wisplight Amphibian/str/140/dex/50/int/150/hue/200/tamable/true/bodyvalue/81/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+Unicorn/name/Ophidian Sorcerer/str/185/dex/75/int/130/hue/650/tamable/true/bodyvalue/85/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Ophidian Enchanter/str/160/dex/90/int/140/hue/560/tamable/true/bodyvalue/85/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+Vorpal/name/Ophidian Seer/str/150/dex/85/int/120/hue/610/tamable/true/bodyvalue/85/hitsmaxseed/260/hits/260/ADD,0.3/MaxxiaScroll
+
+Banshee/name/Ophidian Mystic/str/170/dex/65/int/145/hue/690/tamable/true/bodyvalue/85/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+Wisp/name/Ophidian Conjurer/str/135/dex/95/int/150/hue/720/tamable/true/bodyvalue/85/hitsmaxseed/240/hits/240/ADD,0.3/MaxxiaScroll
+
+unicorn/name/Lunagoat Magister/str/180/dex/85/int/90/hue/1150/tamable/true/bodyvalue/88/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+satyr/name/Caprotaur Mystic/str/190/dex/80/int/85/hue/1100/tamable/true/bodyvalue/88/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+vorpalbunny/name/Vorgoat Nexus/str/130/dex/95/int/75/hue/1050/tamable/true/bodyvalue/88/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+wailingbanshee/name/Bangoat Specter/str/220/dex/70/int/110/hue/1000/tamable/true/bodyvalue/88/hitsmaxseed/380/hits/380/ADD,0.3/MaxxiaScroll
+
+wisp/name/Wisgoat Luminary/str/120/dex/90/int/130/hue/950/tamable/true/bodyvalue/88/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+unicorn/name/Unitaurnox/str/180/dex/70/int/110/hue/1350/tamable/true/bodyvalue/101/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+satyr/name/Sataurion/str/160/dex/80/int/90/hue/440/tamable/true/bodyvalue/101/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+vorpalbunny/name/Centarbite/str/150/dex/90/int/80/hue/660/tamable/true/bodyvalue/101/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+wailingbanshee/name/Wailtaurgeist/str/190/dex/65/int/115/hue/880/tamable/true/bodyvalue/101/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+wisp/name/Wisptaurium/str/170/dex/75/int/120/hue/1100/tamable/true/bodyvalue/101/hitsmaxseed/340/hits/340/ADD,0.3/MaxxiaScroll
+
+Unicorn/name/Draconicorn/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/103/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+Satyr/name/Draconyr/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/103/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+VorpalBunny/name/Dracolapin/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/103/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+WailingBanshee/name/Dracanshee/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/103/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+Wisp/name/Draconispar/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/103/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+yomotsupriest/name/Yomotsu-Lizarchon/str/190/dex/80/int/90/hue/520/tamable/true/bodyvalue/33/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+wraith/name/Wraith-Lizarian/str/180/dex/70/int/90/hue/520/tamable/true/bodyvalue/33/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+alligator/name/Alliga-Lizardon/str/170/dex/60/int/80/hue/520/tamable/true/bodyvalue/33/hitsmaxseed/340/hits/340/ADD,0.3/MaxxiaScroll
+
+bakekitsune/name/Bake-Lizune/str/160/dex/80/int/100/hue/520/tamable/true/bodyvalue/33/hitsmaxseed/330/hits/330/ADD,0.3/MaxxiaScroll
+
+barracoon/name/Barraco-Lizoon/str/200/dex/75/int/110/hue/520/tamable/true/bodyvalue/33/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+
+YomotsuPriest/name/Yomotsu-Dragon Mage/str/310/dex/90/int/150/hue/650/tamable/true/bodyvalue/103/hitsmaxseed/450/hits/450/ADD,0.3/MaxxiaScroll
+
+Wraith/name/Wraithwyrm/str/280/dex/75/int/140/hue/630/tamable/true/bodyvalue/103/hitsmaxseed/420/hits/420/ADD,0.3/MaxxiaScroll
+
+Alligator/name/Alligadragon Sage/str/350/dex/100/int/120/hue/600/tamable/true/bodyvalue/103/hitsmaxseed/480/hits/480/ADD,0.3/MaxxiaScroll
+
+BakeKitsune/name/Kitsune-Dragon Mystic/str/320/dex/85/int/165/hue/670/tamable/true/bodyvalue/103/hitsmaxseed/460/hits/460/ADD,0.3/MaxxiaScroll
+
+Barracoon/name/Barracoon Dragon Lord/str/330/dex/95/int/155/hue/680/tamable/true/bodyvalue/103/hitsmaxseed/470/hits/470/ADD,0.3/MaxxiaScroll
+
+YomotsuPriest/name/Yomotscorn Mystik/str/180/dex/70/int/130/hue/530/tamable/true/bodyvalue/122/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Wraith/name/Wraithicorn Specter/str/150/dex/80/int/120/hue/540/tamable/true/bodyvalue/122/hitsmaxseed/330/hits/330/ADD,0.3/MaxxiaScroll
+
+Alligator/name/Alligacorn Crawler/str/200/dex/50/int/90/hue/550/tamable/true/bodyvalue/122/hitsmaxseed/370/hits/370/ADD,0.3/MaxxiaScroll
+
+BakeKitsune/name/Bakecorn Enchanter/str/170/dex/85/int/140/hue/560/tamable/true/bodyvalue/122/hitsmaxseed/360/hits/360/ADD,0.3/MaxxiaScroll
+
+Barracoon/name/Barracorn Raider/str/220/dex/65/int/115/hue/570/tamable/true/bodyvalue/122/hitsmaxseed/390/hits/390/ADD,0.3/MaxxiaScroll
+
+YomotsuPriest/name/Faerielight Oracle/str/150/dex/80/int/120/hue/420/tamable/true/bodyvalue/128/hitsmaxseed/350/hits/350/ADD,0.3/MaxxiaScroll
+
+Wraith/name/Starshade Specter/str/140/dex/90/int/110/hue/720/tamable/true/bodyvalue/128/hitsmaxseed/300/hits/300/ADD,0.3/MaxxiaScroll
+
+Alligator/name/Nebula Drake/str/160/dex/50/int/70/hue/620/tamable/true/bodyvalue/128/hitsmaxseed/320/hits/320/ADD,0.3/MaxxiaScroll
+
+BakeKitsune/name/Astral Fox Spirit/str/130/dex/100/int/140/hue/820/tamable/true/bodyvalue/128/hitsmaxseed/280/hits/280/ADD,0.3/MaxxiaScroll
+
+Barracoon/name/Galactic Trickster/str/190/dex/60/int/100/hue/920/tamable/true/bodyvalue/128/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+

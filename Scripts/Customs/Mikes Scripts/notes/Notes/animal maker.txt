@@ -1,0 +1,18 @@
+I would like your help creating a set of XML codes (see below for example) to spawn new unique tamable monsters for my Ultima Online free shard challenge.  Below is an example of using a BrownBear to make a unique monster called Aries Bear with the special ability BleedAttack.  Can you make a bunch more using the Golem as a base?  They should have unique stats and one ability to go with their name/hue.  Please keep the loot the same for each one, a MaxxiaScroll.  Please give the new monsters a made up very unususal name reminicent of a Jack Vance creature, make up new words that don't exist.  These are the xmlweaponability:
+
+ArmorIgnore
+BleedAttack
+ConcussionBlow
+CrushingBlow
+Disarm
+Dismount
+DoubleStrike
+InfectiousStrike
+MortalStrike
+MovingShot
+ParalyzingBlow
+ShadowStrike
+WhirlwindAttack
+
+
+BrownBear/ATTACH/xmlweaponability,ParalyzingBlow/name/Aries Bear/str/300/dex/100/int/50/hue/37/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/

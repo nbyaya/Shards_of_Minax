@@ -1,0 +1,6 @@
+I would like your help creating some new NPCs for my Ultima Online free shard challenge.  I would like to make 5 unique looking NPCs that are weird alien races.  Below is an example of a male and female in the correct format.  Please give them unique SkinHue for their races.
+
+XMLQuestNPC,1/Str/60/Dex/50/Int/130/Hits/70/TalkText/*You see a revenant, her gaze filled with ancient wisdom*/Name/Lilith the Revenant/UNEQUIP,Shoes,Delete/UNEQUIP,Pants,Delete/UNEQUIP,Shirt,Delete/UNEQUIP,Helm,Delete/UNEQUIP,Gloves,Delete/UNEQUIP,OuterTorso,Delete/UNEQUIP,MiddleTorso,Delete/Hue/1150/EQUIP/<Robe/Hue/1157>/EQUIP/<Sandals/Hue/1155>/EQUIP/<MageHat/Hue/1156>/EQUIP/<Spellbook/name/Lilith's Grimoire>/Direction/NorthEast/ConfigFile/LilithTheRevenant/LoadConfig/True/
+
+XMLQuestNPC,0/Str/140/Dex/90/Int/30/Hits/100/TalkText/*You see a barbarian, his presence chilling the air around*/Name/Ulf the Frostborn/UNEQUIP,Shoes,Delete/UNEQUIP,Pants,Delete/UNEQUIP,Shirt,Delete/UNEQUIP,Helm,Delete/UNEQUIP,Gloves,Delete/UNEQUIP,OuterTorso,Delete/UNEQUIP,MiddleTorso,Delete/Hue/1152/EQUIP/<StuddedLegs/Hue/1154>/EQUIP/<StuddedChest/Hue/1154>/EQUIP/<StuddedGloves/Hue/1154>/EQUIP/<VikingSword/name/Ulf's Blade>/Direction/NorthWest/ConfigFile/UlfTheFrostborn/LoadConfig/True/
+

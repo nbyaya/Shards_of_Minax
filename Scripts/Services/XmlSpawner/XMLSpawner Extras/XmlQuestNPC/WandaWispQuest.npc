@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Wisp Hunter Wanda</Name>
+    <Running>True</Running>
+    <ProximityRange>4</ProximityRange>
+    <ResetRange>18</ResetRange>
+    <NoTriggerOnCarried>Wisp Essence</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>12</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>WandaWispQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>The Zylthrix Wisps are disrupting the ethereal balance. We need someone to help restore order. Will you take on this task?</Text>
+    <Keywords>You notice a woman with an eerie glow about her, seeking assistance in wisp eradication</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Wisp Hunt,4/Our realm is threatened by the mischievous Zylthrix Wisps. Can you help us by diminishing their numbers?;I am ready for the challenge!;I will do it</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your courage is inspiring. Return with evidence of your deeds, and I will reward you handsomely.</Text>
+    <Keywords>I will do it</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Wisp Essence/TitleString/Zylthrix Wisp Conquest/NoteString/Prove your mettle by defeating Zylthrix Wisps and present the proof to Wanda for a reward./Objective1/KILLNAMED,Zylthrix Wisp,1/Description1/Vanquish a Zylthrix Wisp/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/MaxxiaScroll/ADD/&lt;Moonstone/hue/RND,1,300/name/Soul of the Wisp&gt;/ADD/&lt;bag/hue/2120/Name/Wisp Hunter's Cache/ADD/&lt;TeleportScroll/name/Scroll of Relocation&gt;/ADD/&lt;Kryss/name/Wisplight Dagger&gt;/ADD/&lt;RefreshPotion/name/Elixir of Ethereal Energy&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

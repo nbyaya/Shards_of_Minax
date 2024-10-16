@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Dark Agent Armand</Name>
+    <Running>True</Running>
+    <ProximityRange>4</ProximityRange>
+    <ResetRange>20</ResetRange>
+    <NoTriggerOnCarried>Assassination Evidence</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>8</SpeechPace>
+    <ResetTime>0.3</ResetTime>
+    <ConfigFile>ArmandAssassinationQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>There is one who bakes bread with a bitterness that corrupts our city. Will you silence Bob the Baker?</Text>
+    <Keywords>You notice a shadowy figure who seems to have a deadly request</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Dark Deed,4/Bob the Baker is a menace under the guise of gentility. His end must come swiftly; can you deliver it?;I will do what must be done.;Agreed</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Good. Let none witness your work. Bring me proof of his silence, and you will be rewarded handsomely.</Text>
+    <Keywords>Agreed</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Assassination Evidence/TitleString/Bob the Baker's Demise/NoteString/Bring evidence of Bob the Baker's demise to Armand for a reward./Objective1/KILLNAMED,Bob the Baker,1/Description1/Silence Bob the Baker/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/&lt;MaxxiaScroll/amount/3&gt;/ADD/&lt;BagOfSending/hue/RND,1,300/name/Bag of Shadows&gt;/ADD/&lt;bag/hue/1173/Name/Assassin's Trove/ADD/&lt;SmokeBomb/name/Bomb of Nightfall&gt;/ADD/&lt;Dagger/name/Dagger of Quietus&gt;/ADD/&lt;PoisonPotion/name/Potion of the Unseen&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

@@ -1,0 +1,17 @@
+I would like you help making some new XML spawner codes for unique legendary animals for my RunUO shard.  Below is an example of 8 different bear variations with a different powers.  Could you please make 8 legendary Bull?  Use the same XML attach powers for the new animals as are used in the bear examples.  Please give each new animal unique name and a hue number selected from 2700 to 3000.
+
+BlackBear/ATTACH/XmlBladeStrike,25,30/name/Blue Bear/str/899/dex/1100/int/1043/hue/2973/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlWhirlwind,20,1/name/Golden Bear/str/954/dex/999/int/899/hue/2974/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlDisarmor,1/name/Silver Bear/str/1043/dex/906/int/999/hue/2861/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlStaticStrike,50,5/name/Green Bear/str/1100/dex/1043/int/967/hue/2850/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlBladeStrike,25,30/name/White Bear/str/799/dex/906/int/954/hue/2837/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlWhirlwind,20,1/name/Brown Bear/str/str/967/dex/999/int/1203/hue/2812/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlLightning,30,1/name/Green Bear/str/906/dex/799/int/999/hue/2782/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlWaterStrike,30,20/name/Purple Bear/str/879/dex/999/int/1100/hue/2762/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/

@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Master Assassin Vek</Name>
+    <Running>False</Running>
+    <ProximityRange>2</ProximityRange>
+    <ResetRange>15</ResetRange>
+    <NoTriggerOnCarried>Assassin's Token</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>8</SpeechPace>
+    <ResetTime>0.3</ResetTime>
+    <ConfigFile>VekCulinaryAssassination</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Culinary Catherine's concoctions are... displeasing. Remove her from existence, will you?</Text>
+    <Keywords>You notice a sinister figure lurking in the shadows, exuding a malevolent aura</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>0.5</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1153</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>0.5</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1153</SpeechHue>
+    <Gump>GUMP,Assassination Contract,3/Catherine must be silenced. Accept, and your rewards will be plentiful.;I'll do it;I shall decline</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your willingness to embrace the darkness is... admirable. Return with proof, and you shall be rewarded.</Text>
+    <Keywords>I'll do it</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Assassin's Token/TitleString/Culinary Catherine's Demise/NoteString/Bring evidence of Culinary Catherine's demise to Vek for a reward./Objective1/ASSASSINATE,Culinary Catherine,1/Description1/Silence Culinary Catherine/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/&lt;MaxxiaScroll/amount/3&gt;/ADD/&lt;Ruby/hue/RND,1,300/name/Blood Ruby&gt;/ADD/&lt;bag/hue/1109/Name/Assassin's Cache/ADD/&lt;SmokeBomb/name/Bomb of Veiling&gt;/ADD/&lt;AssassinSpike/name/Spike of Ending&gt;/ADD/&lt;Pouch/name/Pouch of Concealment&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>0.5</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1153</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>0.5</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1153</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

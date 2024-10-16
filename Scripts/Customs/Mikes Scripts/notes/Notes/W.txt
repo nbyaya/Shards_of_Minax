@@ -1,0 +1,6 @@
+It would not complie and I got this error:
+
+Errors:
+ + Customs/17. Mikes Scripts/PulpyPotionPurveyor.cs:
+    CS0246: Line 10: The type or namespace name 'ArrayList' could not be found (are you missing a using directive or an assembly reference?)
+    CS0246: Line 11: The type or namespace name 'ArrayList' could not be found (are you missing a using directive or an assembly reference?)

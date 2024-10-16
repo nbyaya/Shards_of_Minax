@@ -1,0 +1,432 @@
+<Cloak/name/Necromancer's Cape/hue/RND,500,1500/ClothingAttributes.SelfRepair/4/attributes.bonusint/20/attributes.LowerManaCost/10/skillbonuses.skill_1_name/Necromancy/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/SpiritSpeak/skillbonuses.skill_2_value/20/ElementalAttributes.Cold/15/ElementalAttributes.Energy/10/>
+
+<Boots/name/Miner's Sturdy Boots/hue/RND,600,1600/ClothingAttributes.DurabilityBonus/3/attributes.bonusstr/10/skillbonuses.skill_1_name/Mining/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Lumberjacking/skillbonuses.skill_2_value/15/ElementalAttributes.Physical/20/ElementalAttributes.Fire/5/>
+
+<FullApron/name/Tailor's Fancy Apron/hue/RND,300,1200/ClothingAttributes.LowerStatReq/3/attributes.bonusdex/10/attributes.RegenMana/2/skillbonuses.skill_1_name/Tailoring/skillbonuses.skill_1_value/20/ElementalAttributes.Cold/5/ElementalAttributes.Physical/15/>
+
+<FeatheredHat/name/Mystic's Feathered Hat/hue/RND,1,1000/attributes.bonusint/15/attributes.EnhancePotions/10/skillbonuses.skill_1_name/Magery/skillbonuses.skill_1_value/15/skillbonuses.skill_2_name/Meditation/skillbonuses.skill_2_value/20/ElementalAttributes.Energy/20/ElementalAttributes.Poison/10/>
+
+<Robe/name/Dark Lords Robe/hue/RND,1,1908/ClothingAttributes.SelfRepair/5/attributes.bonusdex/50/attributes.bonusint/10/skillbonuses.skill_1_name/MagicResist/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Swords/skillbonuses.skill_2_value/20/ElementalAttributes.Cold/10/ElementalAttributes.Energy/10/ElementalAttributes.Fire/10/ElementalAttributes.Physical/10/ElementalAttributes.Poison/10/>
+
+<FullApron/name/Chef's Gourmet Apron/hue/RND,250,750/ClothingAttributes.SelfRepair/4/attributes.bonusint/5/attributes.RegenStam/2/skillbonuses.skill_1_name/Cooking/skillbonuses.skill_1_value/25/ElementalAttributes.Fire/15/ElementalAttributes.Physical/10/>
+
+<Shoes/name/Baker's Soft Shoes/hue/RND,200,700/attributes.bonusdex/8/attributes.LowerManaCost/5/skillbonuses.skill_1_name/Cooking/skillbonuses.skill_1_value/20/ElementalAttributes.Cold/10/ElementalAttributes.Fire/10/>
+
+<BodySash/name/Sommelier's Body Sash/hue/RND,400,1200/attributes.bonusint/7/attributes.Luck/10/skillbonuses.skill_1_name/TasteID/skillbonuses.skill_1_value/20/ElementalAttributes.Cold/10/ElementalAttributes.Fire/10/>
+
+<Kilt/name/Fishmonger's Kilt/hue/RND,500,1500/attributes.bonusdex/5/attributes.RegenHits/2/skillbonuses.skill_1_name/Fishing/skillbonuses.skill_1_value/20/ElementalAttributes.Cold/20/ElementalAttributes.Water/10/>
+
+<Muffler/name/Barista's Muffler/hue/RND,350,850/attributes.bonusint/6/attributes.RegenMana/2/skillbonuses.skill_1_name/Cooking/skillbonuses.skill_1_value/15/ElementalAttributes.Fire/15/ElementalAttributes.Energy/5/>
+
+<Cloak/name/Angler's Seabreeze Cloak/hue/RND,400,900/ClothingAttributes.SelfRepair/3/attributes.bonusdex/10/attributes.LowerManaCost/5/skillbonuses.skill_1_name/Fishing/skillbonuses.skill_1_value/25/ElementalAttributes.Cold/20/ElementalAttributes.Water/15/>
+
+<Boots/name/Mariner's Lucky Boots/hue/RND,600,1600/attributes.Luck/20/attributes.bonusstam/5/skillbonuses.skill_1_name/Fishing/skillbonuses.skill_1_value/15/ElementalAttributes.Physical/10/ElementalAttributes.Water/10/>
+
+<WideBrimHat/name/Fisherman's Sun Hat/hue/RND,300,800/ClothingAttributes.LowerStatReq/2/attributes.bonusint/5/attributes.RegenStam/2/skillbonuses.skill_1_name/Fishing/skillbonuses.skill_1_value/20/ElementalAttributes.Energy/5/ElementalAttributes.Fire/10/>
+
+<Tunic/name/Deep Sea Tunic/hue/RND,500,1500/attributes.DetectHidden/15/attributes.bonusmana/10/skillbonuses.skill_1_name/Fishing/skillbonuses.skill_1_value/25/ElementalAttributes.Water/20/ElementalAttributes.Energy/10/>
+
+<Sandals/name/Tidecaller's Sandals/hue/RND,350,900/attributes.SpellDamage/5/attributes.bonusdex/7/skillbonuses.skill_1_name/Fishing/skillbonuses.skill_1_value/20/ElementalAttributes.Water/15/>
+
+<Bandana/name/Ore Seeker's Bandana/hue/RND,200,900/ClothingAttributes.SelfRepair/4/attributes.bonusstr/5/skillbonuses.skill_1_name/ItemID/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Mining/skillbonuses.skill_2_value/15/ElementalAttributes.Physical/20/>
+
+<Shoes/name/Gloves of Stonemasonry/hue/RND,600,1600/ClothingAttributes.DurabilityBonus/4/attributes.LowerRegCost/5/skillbonuses.skill_1_name/Mining/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/25/ElementalAttributes.Fire/5/>
+
+<Boots/name/Boots of the Deep Caverns/hue/RND,500,1500/ClothingAttributes.LowerStatReq/3/attributes.bonusdex/7/attributes.RegenStam/2/skillbonuses.skill_1_name/Mining/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/20/ElementalAttributes.Energy/5/>
+
+<Tunic/name/Vest of the Vein Seeker/hue/RND,300,1300/ClothingAttributes.DurabilityBonus/3/attributes.Luck/20/skillbonuses.skill_1_name/Mining/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/ItemID/skillbonuses.skill_2_value/10/ElementalAttributes.Cold/10/ElementalAttributes.Physical/15/>
+
+<Bascinet/name/Helmet of the Ore Whisperer/hue/RND,400,1400/ClothingAttributes.SelfRepair/5/attributes.NightSight/1/skillbonuses.skill_1_name/Mining/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/ItemID/skillbonuses.skill_2_value/15/ElementalAttributes.Fire/10/ElementalAttributes.Physical/20/>
+
+<Tunic/name/Smith's Protective Tunic/hue/RND,600,1600/ClothingAttributes.DurabilityBonus/4/attributes.bonusstr/20/skillbonuses.skill_1_name/Blacksmith/skillbonuses.skill_1_value/25/ElementalAttributes.Fire/20/ElementalAttributes.Physical/15/>
+
+<Boots/name/Forge Master's Boots/hue/RND,600,1650/ClothingAttributes.LowerStatReq/3/attributes.bonusdex/10/skillbonuses.skill_1_name/Blacksmith/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/20/ElementalAttributes.Fire/10/>
+
+<Bandana/name/Blacksmith's Reinforced Gloves/hue/RND,500,1500/ClothingAttributes.SelfRepair/4/attributes.bonusdex/15/attributes.WeaponDamage/5/skillbonuses.skill_1_name/Blacksmith/skillbonuses.skill_1_value/20/ElementalAttributes.Fire/15/ElementalAttributes.Physical/10/>
+
+<Cap/name/Hammerlord's Cap/hue/RND,400,1400/attributes.bonusstr/15/attributes.CastSpeed/1/skillbonuses.skill_1_name/Blacksmith/skillbonuses.skill_1_value/25/ElementalAttributes.Energy/10/ElementalAttributes.Physical/15/>
+
+<Cloak/name/Molten Cloak/hue/RND,200,800/ClothingAttributes.DurabilityBonus/5/attributes.RegenHits/2/skillbonuses.skill_1_name/Blacksmith/skillbonuses.skill_1_value/20/ElementalAttributes.Fire/25/ElementalAttributes.Physical/10/>
+
+<Tunic/name/Carpenter's Stalwart Tunic/hue/RND,700,1650/ClothingAttributes.SelfRepair/3/attributes.bonusdex/10/attributes.DefendChance/5/skillbonuses.skill_1_name/Carpentry/skillbonuses.skill_1_value/25/ElementalAttributes.Physical/20/ElementalAttributes.Cold/10/>
+
+<Shoes/name/Artisan's Timber Shoes/hue/RND,650,1600/ClothingAttributes.LowerStatReq/3/attributes.bonusstr/5/skillbonuses.skill_1_name/Carpentry/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Lumberjacking/skillbonuses.skill_2_value/15/ElementalAttributes.Energy/10/ElementalAttributes.Fire/5/>
+
+<Cap/name/Woodworker's Insightful Cap/hue/RND,500,1400/attributes.bonusint/10/attributes.CastSpeed/1/skillbonuses.skill_1_name/Carpentry/skillbonuses.skill_1_value/20/ElementalAttributes.Cold/10/ElementalAttributes.Energy/15/>
+
+<Bandana/name/Craftsman's Protective Gloves/hue/RND,720,1670/ClothingAttributes.DurabilityBonus/4/attributes.RegenStam/2/skillbonuses.skill_1_name/Carpentry/skillbonuses.skill_1_value/15/skillbonuses.skill_2_name/ArmsLore/skillbonuses.skill_2_value/10/ElementalAttributes.Physical/15/ElementalAttributes.Poison/5/>
+
+<FullApron/name/Sawyer's Mighty Apron/hue/RND,730,1690/attributes.bonusstr/10/attributes.RegenHits/2/skillbonuses.skill_1_name/Carpentry/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/20/ElementalAttributes.Fire/10/>
+
+<Tunic/name/Lumberjack's Rugged Tunic/hue/RND,700,1600/ClothingAttributes.DurabilityBonus/4/attributes.bonusstr/10/attributes.BonusStam/5/skillbonuses.skill_1_name/Lumberjacking/skillbonuses.skill_1_value/25/ElementalAttributes.Physical/20/>
+
+<Boots/name/Logger's Sturdy Boots/hue/RND,600,1700/ClothingAttributes.SelfRepair/3/skillbonuses.skill_1_name/Lumberjacking/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/25/>
+
+<Bandana/name/Woodcutter's Protective Gloves/hue/RND,550,1450/attributes.bonusdex/10/skillbonuses.skill_1_name/Lumberjacking/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/10/>
+
+<WideBrimHat/name/Forester's Wide-Brim Hat/hue/RND,500,1500/attributes.RegenMana/2/skillbonuses.skill_1_name/Lumberjacking/skillbonuses.skill_1_value/15/>
+
+<Muffler/name/Timberland Muffler/hue/RND,520,1520/attributes.RegenStam/3/skillbonuses.skill_1_name/Lumberjacking/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/15/>
+
+<Tunic/name/Alchemist's Brewmaster Tunic/hue/RND,250,1250/attributes.bonusint/15/attributes.EnhancePotions/20/skillbonuses.skill_1_name/Alchemy/skillbonuses.skill_1_value/25/ElementalAttributes.Fire/10/ElementalAttributes.Poison/20/>
+
+<Muffler/name/Mixmaster's Muffler/hue/RND,350,1350/attributes.bonusdex/10/attributes.RegenStam/5/skillbonuses.skill_1_name/Alchemy/skillbonuses.skill_1_value/20/ElementalAttributes.Poison/15/ElementalAttributes.Energy/10/>
+
+<Kilt/name/Elixir Expert's Kilt/hue/RND,150,1150/attributes.LowerManaCost/10/attributes.RegenMana/3/skillbonuses.skill_1_name/Alchemy/skillbonuses.skill_1_value/20/ElementalAttributes.Energy/15/ElementalAttributes.Poison/10/>
+
+<PlainDress/name/Potionmaster's Plain Dress/hue/RND,200,1200/attributes.bonusint/10/attributes.EnhancePotions/15/skillbonuses.skill_1_name/Alchemy/skillbonuses.skill_1_value/20/ElementalAttributes.Cold/20/ElementalAttributes.Fire/10/>
+
+<Cap/name/Concoction Curator's Cap/hue/RND,100,1100/attributes.CastSpeed/1/attributes.Luck/20/skillbonuses.skill_1_name/Alchemy/skillbonuses.skill_1_value/25/ElementalAttributes.Fire/15/>
+
+<LeatherGloves/name/Fletcher's Precision Gloves/hue/RND,300,1300/ClothingAttributes.SelfRepair/4/attributes.bonusdex/20/attributes.Luck/10/skillbonuses.skill_1_name/Fletching/skillbonuses.skill_1_value/25/ElementalAttributes.Physical/10/ElementalAttributes.Cold/5/>
+
+<Bandana/name/Bowyer's Insightful Bandana/hue/RND,400,1400/attributes.bonusint/15/attributes.CastSpeed/1/skillbonuses.skill_1_name/Fletching/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/DetectHidden/skillbonuses.skill_2_value/15/ElementalAttributes.Energy/15/>
+
+<LeatherGloves/name/Fletcher's Precision Gloves/hue/RND,300,1300/ClothingAttributes.SelfRepair/4/attributes.bonusdex/20/attributes.Luck/10/skillbonuses.skill_1_name/Fletching/skillbonuses.skill_1_value/25/ElementalAttributes.Physical/10/ElementalAttributes.Cold/5/>
+
+<Bandana/name/Bowyer's Insightful Bandana/hue/RND,400,1400/attributes.bonusint/15/attributes.CastSpeed/1/skillbonuses.skill_1_name/Fletching/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/DetectHidden/skillbonuses.skill_2_value/15/ElementalAttributes.Energy/15/>
+
+<Tunic/name/Quivermaster's Tunic/hue/RND,500,1500/ClothingAttributes.DurabilityBonus/3/attributes.RegenStam/2/skillbonuses.skill_1_name/Fletching/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Archery/skillbonuses.skill_2_value/10/ElementalAttributes.Physical/20/>
+
+<Boots/name/Arrowsmith's Sturdy Boots/hue/RND,600,1600/attributes.WeaponSpeed/5/attributes.AttackChance/10/skillbonuses.skill_1_name/Fletching/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/15/ElementalAttributes.Fire/5/>
+
+<Cloak/name/Bowcrafter's Protective Cloak/hue/RND,450,1450/ClothingAttributes.LowerStatReq/3/attributes.DefendChance/10/skillbonuses.skill_1_name/Fletching/skillbonuses.skill_1_value/25/ElementalAttributes.Energy/10/ElementalAttributes.Poison/15/>
+F
+
+<Tunic/name/Grappler's Tunic/hue/RND,100,1100/ClothingAttributes.SelfRepair/3/attributes.bonusstr/20/attributes.DefendChance/10/skillbonuses.skill_1_name/Wrestling/skillbonuses.skill_1_value/25/ElementalAttributes.Physical/20/>
+
+<Mask/name/Luchador's Mask/hue/RND,10,1000/attributes.bonusdex/15/attributes.Luck/20/skillbonuses.skill_1_name/Wrestling/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/15/ElementalAttributes.Energy/10/>
+
+<Sandals/name/Ringmaster's Sandals/hue/RND,400,1400/attributes.bonusstam/10/attributes.NightSight/1/skillbonuses.skill_1_name/Wrestling/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/10/>
+
+<Muffler/name/Submission Artist's Muffler/hue/RND,300,1300/attributes.AttackChance/10/attributes.RegenStam/2/skillbonuses.skill_1_name/Wrestling/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/10/ElementalAttributes.Cold/10/>
+
+<Sash/name/Warrior's Belt/hue/RND,500,1500/attributes.bonusHits/15/skillbonuses.skill_1_name/Wrestling/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/15/>
+
+<Robe/name/Mender's Divine Robe/hue/RND,200,1200/attributes.bonusint/15/attributes.RegenMana/5/skillbonuses.skill_1_name/Healing/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Anatomy/skillbonuses.skill_2_value/15/ElementalAttributes.Energy/20/ElementalAttributes.Physical/10/>
+
+<Sandals/name/Healer's Blessed Sandals/hue/RND,250,1250/attributes.LowerManaCost/10/skillbonuses.skill_1_name/Healing/skillbonuses.skill_1_value/20/ElementalAttributes.Poison/20/ElementalAttributes.Energy/10/>
+
+<Sash/name/Cleric's Sacred Sash/hue/RND,220,1220/attributes.RegenMana/3/skillbonuses.skill_1_name/Healing/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Meditation/skillbonuses.skill_2_value/15/ElementalAttributes.Energy/15/ElementalAttributes.Physical/5/>
+
+<StrawHat/name/Herbalist's Protective Hat/hue/RND,280,1280/attributes.bonusdex/10/skillbonuses.skill_1_name/Alchemy/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Healing/skillbonuses.skill_2_value/15/ElementalAttributes.Poison/20/>
+
+<BearMask/name/Surgeon's Insightful Mask/hue/RND,240,1240/attributes.bonusint/10/attributes.RegenHits/3/skillbonuses.skill_1_name/Healing/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Anatomy/skillbonuses.skill_2_value/20/ElementalAttributes.Poison/15/ElementalAttributes.Physical/10/>
+
+<Tunic/name/Beastmaster's Tunic/hue/RND,250,1250/ClothingAttributes.SelfRepair/3/attributes.bonusint/10/attributes.RegenStam/5/skillbonuses.skill_1_name/AnimalLore/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Veterinary/skillbonuses.skill_2_value/25/ElementalAttributes.Physical/10/ElementalAttributes.Energy/10/>
+
+<Sandals/name/Whispering Sandals/hue/RND,400,1400/ClothingAttributes.MageArmor/1/attributes.bonusdex/5/attributes.NightSight/1/skillbonuses.skill_1_name/AnimalLore/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Veterinary/skillbonuses.skill_2_value/20/ElementalAttributes.Cold/5/ElementalAttributes.Energy/15/>
+
+<FurCape/name/Healer's Fur Cape/hue/RND,500,1500/ClothingAttributes.LowerStatReq/2/attributes.bonusstr/5/attributes.bonusint/10/skillbonuses.skill_1_name/Veterinary/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/AnimalLore/skillbonuses.skill_2_value/15/ElementalAttributes.Physical/20/ElementalAttributes.Fire/10/>
+
+<Muffler/name/Nature's Muffler/hue/RND,350,1350/ClothingAttributes.DurabilityBonus/3/attributes.bonusdex/10/attributes.DefendChance/5/skillbonuses.skill_1_name/AnimalLore/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Veterinary/skillbonuses.skill_2_value/20/ElementalAttributes.Cold/15/ElementalAttributes.Energy/5/>
+
+<WizardsHat/name/Ranger's Hat/hue/RND,100,1100/ClothingAttributes.Reactiveparalyze/1/attributes.bonusint/10/attributes.LowerRegCost/5/skillbonuses.skill_1_name/AnimalLore/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Veterinary/skillbonuses.skill_2_value/20/ElementalAttributes.Physical/15/ElementalAttributes.Poison/10/>
+
+<Tunic/name/Beastmaster's Tunic/hue/RND,250,1250/ClothingAttributes.SelfRepair/3/attributes.bonusdex/10/skillbonuses.skill_1_name/AnimalTaming/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/AnimalLore/skillbonuses.skill_2_value/20/ElementalAttributes.Physical/20/>
+
+<Muffler/name/Herder's Muffler/hue/RND,400,1300/ClothingAttributes.LowerStatReq/3/attributes.bonusint/10/skillbonuses.skill_1_name/Herding/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/AnimalTaming/skillbonuses.skill_2_value/15/ElementalAttributes.Cold/15/>
+
+<Sandals/name/Whisperer's Sandals/hue/RND,500,1400/ClothingAttributes.MageArmor/1/attributes.bonusdex/5/skillbonuses.skill_1_name/AnimalTaming/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Stealth/skillbonuses.skill_2_value/10/ElementalAttributes.Energy/10/>
+
+<WizardsHat/name/Ranger's Hat/hue/RND,100,1100/attributes.bonusstr/5/attributes.NightSight/1/skillbonuses.skill_1_name/AnimalTaming/skillbonuses.skill_1_value/20/ElementalAttributes.Energy/5/ElementalAttributes.Fire/5/>
+
+<Kilt/name/Tamer's Kilt/hue/RND,300,1350/attributes.bonusdex/10/attributes.RegenStam/3/skillbonuses.skill_1_name/AnimalTaming/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Veterinary/skillbonuses.skill_2_value/15/ElementalAttributes.Physical/10/>
+
+<Robe/name/Sorceress's Midnight Robe/hue/RND,400,1500/ClothingAttributes.SelfRepair/4/attributes.bonusint/20/attributes.CastSpeed/1/attributes.SpellDamage/10/skillbonuses.skill_1_name/Magery/skillbonuses.skill_1_value/25/ElementalAttributes.Energy/20/>
+
+<WizardsHat/name/Witch's Brewed Hat/hue/RND,200,900/attributes.RegenMana/3/attributes.EnhancePotions/15/skillbonuses.skill_1_name/Alchemy/skillbonuses.skill_1_value/20/ElementalAttributes.Poison/25/>
+
+<Shoes/name/Spellweaver's Enchanted Shoes/hue/RND,100,1000/attributes.LowerManaCost/10/attributes.SpellChanneling/1/skillbonuses.skill_1_name/Spellweaving/skillbonuses.skill_1_value/20/ElementalAttributes.Energy/15/>
+
+<Sash/name/Seer's Mystic Sash/hue/RND,150,800/attributes.bonusint/15/attributes.SpellDamage/8/skillbonuses.skill_1_name/Inscribe/skillbonuses.skill_1_value/20/ElementalAttributes.Cold/10/>
+
+<Cloak/name/Elementalist's Protective Cloak/hue/RND,500,1700/attributes.CastRecovery/2/attributes.NightSight/1/skillbonuses.skill_1_name/Magery/skillbonuses.skill_1_value/20/ElementalAttributes.Cold/15/ElementalAttributes.Fire/15/ElementalAttributes.Energy/15/>
+
+<Tunic/name/Minstrel's Tuned Tunic/hue/RND,300,1300/ClothingAttributes.SelfRepair/3/attributes.bonusdex/10/attributes.bonusint/5/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Provocation/skillbonuses.skill_2_value/15/ElementalAttributes.Energy/10/ElementalAttributes.Physical/5/>
+
+<Bandana/name/Beggar's Lucky Bandana/hue/RND,700,1700/attributes.Luck/20/skillbonuses.skill_1_name/Begging/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/DetectHidden/skillbonuses.skill_2_value/10/ElementalAttributes.Physical/10/>
+
+<Shoes/name/Harmonist's Soft Shoes/hue/RND,400,1400/ClothingAttributes.LowerStatReq/2/attributes.bonusstam/5/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/15/skillbonuses.skill_2_name/Peacemaking/skillbonuses.skill_2_value/15/ElementalAttributes.Cold/10/>
+
+<Muffler/name/Balladeer's Muffler/hue/RND,250,1250/ClothingAttributes.SelfRepair/3/attributes.bonusint/7/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/15/skillbonuses.skill_2_name/Discordance/skillbonuses.skill_2_value/10/ElementalAttributes.Energy/10/>
+
+<Cap/name/Street Performer's Cap/hue/RND,100,1500/attributes.AttackChance/5/attributes.Luck/15/skillbonuses.skill_1_name/Begging/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Musicianship/skillbonuses.skill_2_value/10/ElementalAttributes.Physical/10/ElementalAttributes.Fire/5/>
+
+<FancyDress/name/Courtisan's Refined Gown/hue/RND,200,700/attributes.bonusint/10/attributes.Luck/20/skillbonuses.skill_1_name/Peacemaking/skillbonuses.skill_1_value/20/ElementalAttributes.Cold/10/ElementalAttributes.Energy/5/>
+
+<FeatheredHat/name/Intriguer's Feathered Hat/hue/RND,300,1300/attributes.bonusdex/15/attributes.NightSight/1/skillbonuses.skill_1_name/DetectHidden/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/5/ElementalAttributes.Poison/10/>
+
+<Cloak/name/Ambassador's Cloak/hue/RND,50,950/attributes.bonusstr/10/attributes.CastSpeed/1/skillbonuses.skill_1_name/Discordance/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Provocation/skillbonuses.skill_2_value/15/ElementalAttributes.Fire/10/ElementalAttributes.Energy/10/>
+
+<Shoes/name/Seductress' Silken Shoes/hue/RND,400,1400/attributes.bonusdex/5/attributes.SpellChanneling/1/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/20/ElementalAttributes.Cold/5/ElementalAttributes.Energy/15/>
+
+<Tunic/name/Diplomat's Tunic/hue/RND,250,1150/attributes.bonusint/20/attributes.LowerManaCost/10/skillbonuses.skill_1_name/Negotiation (or another skill fitting your server)/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/10/ElementalAttributes.Fire/5/>
+
+<PlainDress/name/Courtesan's Graceful Kimono/hue/RND,100,1500/attributes.bonusdex/10/attributes.bonusint/10/skillbonuses.skill_1_name/Provocation/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Musicianship/skillbonuses.skill_2_value/20/ElementalAttributes.Energy/10/ElementalAttributes.Physical/5/>
+
+<Sandals/name/Whispering Sandals/hue/RND,300,1400/attributes.bonusdex/15/attributes.NightSight/1/skillbonuses.skill_1_name/Stealth/skillbonuses.skill_1_value/20/ElementalAttributes.Cold/5/ElementalAttributes.Energy/10/>
+
+<Muffler/name/Melodious Muffler/hue/RND,400,1600/attributes.bonusint/10/attributes.CastSpeed/1/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Discordance/skillbonuses.skill_2_value/15/ElementalAttributes.Fire/5/ElementalAttributes.Energy/15/>
+
+<BodySash/name/Gaze-Capturing Veil/hue/RND,200,1300/attributes.bonusint/10/attributes.Luck/20/skillbonuses.skill_1_name/Begging/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Peacemaking/skillbonuses.skill_2_value/15/ElementalAttributes.Cold/5/ElementalAttributes.Energy/15/>
+
+<Skirt/name/Dancer's Enchanted Skirt/hue/RND,50,1400/attributes.bonusdex/20/attributes.WeaponSpeed/5/skillbonuses.skill_1_name/Anatomy/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/DetectHidden/skillbonuses.skill_2_value/15/ElementalAttributes.Physical/10/ElementalAttributes.Fire/5/>
+
+<Tunic/name/Forester's Tunic/hue/RND,150,1000/ClothingAttributes.SelfRepair/3/attributes.bonusdex/10/skillbonuses.skill_1_name/Camping/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Tracking/skillbonuses.skill_2_value/15/ElementalAttributes.Physical/10/ElementalAttributes.Fire/5/>
+
+<Boots/name/Adventurer's Boots/hue/RND,250,1150/ClothingAttributes.LowerStatReq/2/attributes.bonusstam/10/skillbonuses.skill_1_name/Camping/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/15/ElementalAttributes.Energy/5/>
+
+<WideBrimHat/name/Scout's Wide Brim Hat/hue/RND,350,1200/attributes.NightSight/1/skillbonuses.skill_1_name/DetectHidden/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Camping/skillbonuses.skill_2_value/15/ElementalAttributes.Energy/10/ElementalAttributes.Cold/5/>
+
+<BodySash/name/Fisherman's Vest/hue/RND,400,1300/attributes.bonusint/8/skillbonuses.skill_1_name/Fishing/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Cooking/skillbonuses.skill_2_value/10/ElementalAttributes.Water/10/ElementalAttributes.Physical/5/>
+
+<Cloak/name/Naturalist's Cloak/hue/RND,450,1400/ClothingAttributes.SelfRepair/2/attributes.bonusmana/10/skillbonuses.skill_1_name/AnimalLore/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/AnimalTaming/skillbonuses.skill_2_value/10/ElementalAttributes.Cold/10/ElementalAttributes.Physical/5/>
+
+<Cloak/name/Rogue's Shadow Cloak/hue/RND,1100,1800/ClothingAttributes.SelfRepair/3/attributes.bonusdex/15/attributes.NightSight/1/skillbonuses.skill_1_name/Stealth/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Hiding/skillbonuses.skill_2_value/20/ElementalAttributes.Physical/10/>
+
+<Shoes/name/Thief's Silent Shoes/hue/RND,900,1700/ClothingAttributes.LowerStatReq/2/attributes.bonusdex/10/skillbonuses.skill_1_name/Stealth/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/RemoveTrap/skillbonuses.skill_2_value/15/ElementalAttributes.Physical/5/>
+
+<LeatherGloves/name/Snooper's Soft Gloves/hue/RND,600,1600/attributes.bonusdex/10/attributes.LowerManaCost/5/skillbonuses.skill_1_name/Snooping/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Stealing/skillbonuses.skill_2_value/20/ElementalAttributes.Cold/5/>
+
+<SkullCap/name/Assassin's Masked Cap/hue/RND,1,1000/attributes.NightSight/1/attributes.bonusdex/10/skillbonuses.skill_1_name/Stealth/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Ninjitsu/skillbonuses.skill_2_value/20/ElementalAttributes.Energy/10/>
+
+<Tunic/name/Pickpocket's Sleek Tunic/hue/RND,300,1200/ClothingAttributes.SelfRepair/2/attributes.bonusdex/15/attributes.RegenStam/2/skillbonuses.skill_1_name/Snooping/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Stealing/skillbonuses.skill_2_value/25/ElementalAttributes.Physical/15/>
+
+<NinjaTabi/name/Shadow Walker's Tabi/hue/RND,500,1500/ClothingAttributes.SelfRepair/3/attributes.bonusdex/15/attributes.NightSight/1/skillbonuses.skill_1_name/Stealth/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Ninjitsu/skillbonuses.skill_2_value/20/ElementalAttributes.Energy/10/ElementalAttributes.Physical/15/>
+
+<Cloak/name/Silent Night Cloak/hue/RND,600,1600/ClothingAttributes.SelfRepair/4/attributes.bonusdex/10/attributes.LowerManaCost/5/skillbonuses.skill_1_name/Hiding/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Stealth/skillbonuses.skill_2_value/15/ElementalAttributes.Cold/10/ElementalAttributes.Physical/20/>
+
+<Kasa/name/Ninja's Kasa/hue/RND,300,1400/ClothingAttributes.LowerStatReq/3/attributes.bonusint/10/attributes.RegenStam/2/skillbonuses.skill_1_name/Ninjitsu/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Focus/skillbonuses.skill_2_value/20/ElementalAttributes.Energy/20/>
+
+<Bandana/name/Assassin's Bandana/hue/RND,1,1000/attributes.bonusdex/20/attributes.AttackChance/10/skillbonuses.skill_1_name/Ninjitsu/skillbonuses.skill_1_value/15/skillbonuses.skill_2_name/Fencing/skillbonuses.skill_2_value/15/ElementalAttributes.Energy/10/ElementalAttributes.Physical/10/>
+
+<Sash/name/Whispering Wind Sash/hue/RND,300,1300/ClothingAttributes.DurabilityBonus/4/attributes.bonusstr/10/attributes.WeaponSpeed/5/skillbonuses.skill_1_name/Ninjitsu/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Parry/skillbonuses.skill_2_value/15/ElementalAttributes.Cold/10/ElementalAttributes.Energy/15/>
+
+<Tunic/name/Beastmaster's Tunic/hue/RND,700,1700/ClothingAttributes.SelfRepair/4/attributes.bonusdex/15/attributes.bonusint/10/skillbonuses.skill_1_name/AnimalTaming/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Herding/skillbonuses.skill_2_value/20/ElementalAttributes.Physical/15/ElementalAttributes.Energy/10/>
+
+<Boots/name/Whisperer's Boots/hue/RND,750,1750/ClothingAttributes.LowerStatReq/3/attributes.bonusstr/5/attributes.bonusdex/15/skillbonuses.skill_1_name/AnimalTaming/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Stealth/skillbonuses.skill_2_value/10/ElementalAttributes.Physical/20/>
+
+<Kilt/name/Shepherd's Kilt/hue/RND,800,1800/ClothingAttributes.DurabilityBonus/4/attributes.bonusint/10/skillbonuses.skill_1_name/Herding/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/AnimalLore/skillbonuses.skill_2_value/20/ElementalAttributes.Cold/10/ElementalAttributes.Physical/15/>
+
+<Cap/name/Ranger's Cap/hue/RND,850,1850/attributes.bonusdex/10/attributes.bonusint/5/skillbonuses.skill_1_name/AnimalTaming/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Tracking/skillbonuses.skill_2_value/15/ElementalAttributes.Energy/15/ElementalAttributes.Poison/10/>
+
+<Muffler/name/Nature's Muffler/hue/RND,900,1900/ClothingAttributes.SelfRepair/5/attributes.bonusint/10/attributes.NightSight/1/skillbonuses.skill_1_name/AnimalTaming/skillbonuses.skill_1_value/15/skillbonuses.skill_2_name/TasteID/skillbonuses.skill_2_value/20/ElementalAttributes.Cold/20/>
+
+<Tunic/name/Beastmaster's Tunic/hue/RND,450,1450/ClothingAttributes.SelfRepair/3/attributes.bonusdex/10/skillbonuses.skill_1_name/AnimalTaming/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/AnimalLore/skillbonuses.skill_2_value/20/ElementalAttributes.Physical/10/ElementalAttributes.Energy/15/>
+
+<Boots/name/Explorer's Boots/hue/RND,750,1550/ClothingAttributes.LowerStatReq/4/attributes.bonusint/5/skillbonuses.skill_1_name/Cartography/skillbonuses.skill_1_value/25/ElementalAttributes.Cold/10/ElementalAttributes.Physical/20/>
+
+<Robe/name/Scribe's Robe/hue/RND,200,1200/ClothingAttributes.MageArmor/1/attributes.bonusint/15/skillbonuses.skill_1_name/Inscribe/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Magery/skillbonuses.skill_2_value/20/ElementalAttributes.Energy/15/ElementalAttributes.Cold/10/>
+
+<WideBrimHat/name/Cartographer's Hat/hue/RND,600,1400/attributes.CastRecovery/2/skillbonuses.skill_1_name/Cartography/skillbonuses.skill_1_value/25/ElementalAttributes.Fire/5/ElementalAttributes.Physical/20/>
+
+<Muffler/name/Tamer's Muffler/hue/RND,250,1300/ClothingAttributes.SelfRepair/3/attributes.Luck/20/skillbonuses.skill_1_name/AnimalTaming/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Veterinary/skillbonuses.skill_2_value/20/ElementalAttributes.Poison/15/ElementalAttributes.Cold/10/>
+
+<Tunic/name/Cartographer's Exploratory Tunic/hue/RND,300,1300/ClothingAttributes.SelfRepair/3/attributes.bonusdex/10/attributes.bonusint/5/skillbonuses.skill_1_name/Cartography/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Tracking/skillbonuses.skill_2_value/15/ElementalAttributes.Energy/10/ElementalAttributes.Physical/10/>
+
+<Sandals/name/Scribe's Enlightened Sandals/hue/RND,250,1150/attributes.bonusint/10/attributes.RegenMana/3/skillbonuses.skill_1_name/Inscribe/skillbonuses.skill_1_value/25/ElementalAttributes.Fire/10/ElementalAttributes.Energy/10/>
+
+<Cap/name/Navigator's Protective Cap/hue/RND,400,1400/ClothingAttributes.LowerStatReq/4/attributes.NightSight/1/skillbonuses.skill_1_name/Cartography/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/DetectHidden/skillbonuses.skill_2_value/10/ElementalAttributes.Cold/10/ElementalAttributes.Physical/15/>
+
+<Robe/name/Scriptorium Master's Robe/hue/RND,450,1450/ClothingAttributes.SelfRepair/4/attributes.bonusint/15/attributes.SpellChanneling/1/skillbonuses.skill_1_name/Inscribe/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Magery/skillbonuses.skill_2_value/10/ElementalAttributes.Energy/20/ElementalAttributes.Fire/5/>
+
+<Muffler/name/Mapmaker's Insightful Muffler/hue/RND,320,1320/attributes.bonusint/10/attributes.Luck/10/skillbonuses.skill_1_name/Cartography/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Stealth/skillbonuses.skill_2_value/15/ElementalAttributes.Cold/15/ElementalAttributes.Physical/10/>
+
+<Tunic/name/Thief's Shadow Tunic/hue/RND,1100,1900/attributes.bonusdex/15/attributes.NightSight/1/skillbonuses.skill_1_name/Stealing/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Hiding/skillbonuses.skill_2_value/20/ElementalAttributes.Physical/20/ElementalAttributes.Cold/5/>
+
+<Shoes/name/Sneak's Silent Shoes/hue/RND,1000,1800/attributes.bonusdex/10/attributes.DefendChance/10/skillbonuses.skill_1_name/Stealth/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Snooping/skillbonuses.skill_2_value/15/ElementalAttributes.Physical/10/ElementalAttributes.Energy/5/>
+
+<Cloak/name/Bandit's Hidden Cloak/hue/RND,1200,2000/attributes.LowerRegCost/10/attributes.NightSight/1/skillbonuses.skill_1_name/Hiding/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Stealing/skillbonuses.skill_2_value/20/ElementalAttributes.Cold/15/ElementalAttributes.Physical/10/>
+
+<BearMask/name/Rogue's Deceptive Mask/hue/RND,900,1600/attributes.bonusdex/5/attributes.ReflectPhysical/10/skillbonuses.skill_1_name/Snooping/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Stealth/skillbonuses.skill_2_value/20/ElementalAttributes.Energy/15/ElementalAttributes.Fire/5/>
+
+<Gloves/name/Pickpocket's Nimble Gloves/hue/RND,800,1700/attributes.bonusdex/15/attributes.AttackChance/5/skillbonuses.skill_1_name/Stealing/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/RemoveTrap/skillbonuses.skill_2_value/15/ElementalAttributes.Physical/10/ElementalAttributes.Cold/10/>
+
+<Shoes/name/Urbanite's Sneakers/hue/RND,200,700/attributes.bonusdex/10/attributes.BonusStam/5/skillbonuses.skill_1_name/Stealth/skillbonuses.skill_1_value/15/ElementalAttributes.Physical/10/ElementalAttributes.Energy/5/>
+
+<LongPants/name/Street Artist's Baggy Pants/hue/RND,300,1100/attributes.Luck/20/attributes.BonusMana/5/skillbonuses.skill_1_name/Begging/skillbonuses.skill_1_value/15/skillbonuses.skill_2_name/Provocation/skillbonuses.skill_2_value/10/ElementalAttributes.Physical/10/ElementalAttributes.Fire/5/>
+
+<Sundress/name/Couturier's Sundress/hue/RND,100,600/attributes.EnhancePotions/15/attributes.RegenMana/3/skillbonuses.skill_1_name/Tailoring/skillbonuses.skill_1_value/20/ElementalAttributes.Fire/10/ElementalAttributes.Cold/10/>
+
+<Bandana/name/Tech Guru's Glasses/hue/RND,1,50/attributes.bonusint/15/attributes.LowerManaCost/10/skillbonuses.skill_1_name/Inscribe/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/ItemID/skillbonuses.skill_2_value/15/ElementalAttributes.Energy/20/>
+
+<Cap/name/Pop Star's Glittering Cap/hue/RND,500,1500/attributes.BonusDex/5/attributes.IncreasedKarmaLoss/-5/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Provocation/skillbonuses.skill_2_value/10/ElementalAttributes.Energy/10/ElementalAttributes.Cold/5/>
+
+<Shoes/name/Swing Dancer's Shoes/hue/RND,100,1500/attributes.bonusdex/10/attributes.Luck/20/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/15/skillbonuses.skill_2_name/Provocation/skillbonuses.skill_2_value/15/ElementalAttributes.Energy/10/ElementalAttributes.Physical/5/>
+
+<PlainDress/name/Starlet's Fancy Dress/hue/RND,500,1000/attributes.bonusint/15/attributes.SpellDamage/5/skillbonuses.skill_1_name/Magery/skillbonuses.skill_1_value/15/ElementalAttributes.Energy/10/ElementalAttributes.Fire/5/>
+
+<Cap/name/War Hero's Cap/hue/RND,600,1600/attributes.bonusstr/10/attributes.DefendChance/15/skillbonuses.skill_1_name/Parry/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/20/ElementalAttributes.Fire/10/>
+
+<Muffler/name/Jazz Musician's Muffler/hue/RND,300,1400/attributes.bonusdex/5/attributes.Luck/20/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Discordance/skillbonuses.skill_2_value/15/ElementalAttributes.Cold/20/>
+
+<Surcoat/name/Film Noir Detective's Trench Coat/hue/RND,1,900/attributes.NightSight/1/attributes.bonusint/10/skillbonuses.skill_1_name/DetectHidden/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Stealth/skillbonuses.skill_2_value/20/ElementalAttributes.Physical/15/ElementalAttributes.Energy/5/>
+
+<CloseHelm/name/Rockabilly Rebel Jacket/hue/RND,1,1000/ClothingAttributes.LowerStatReq/4/attributes.bonusstr/15/attributes.DefendChance/10/skillbonuses.skill_1_name/Provocation/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/25/>
+
+<Skirt/name/Poodle Skirt of Charm/hue/RND,200,1200/attributes.Luck/20/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/25/ElementalAttributes.Energy/15/>
+
+<Shoes/name/Bobby Soxer's Shoes/hue/RND,1,500/attributes.bonusdex/10/attributes.RegenStam/3/ElementalAttributes.Energy/20/>
+
+<WizardsHat/name/Dapper Fedora of Insight/hue/RND,300,1100/attributes.bonusint/12/attributes.RegenMana/3/skillbonuses.skill_1_name/Tactics/skillbonuses.skill_1_value/20/ElementalAttributes.Fire/10/>
+
+<PlainDress/name/Pin-Up Halter Dress/hue/RND,400,1300/attributes.Luck/15/attributes.NightSight/1/skillbonuses.skill_1_name/Peacemaking/skillbonuses.skill_1_value/15/ElementalAttributes.Cold/15/ElementalAttributes.Poison/10/>
+
+<Tunic/name/Mod-Style Tunic/hue/RND,250,750/attributes.bonusdex/10/attributes.CastSpeed/1/ClothingAttributes.SelfRepair/3/skillbonuses.skill_1_name/Magery/skillbonuses.skill_1_value/10/ElementalAttributes.Energy/15/ElementalAttributes.Physical/10/>
+
+<Sandals/name/Hippie's Peaceful Sandals/hue/RND,500,1200/attributes.RegenMana/3/attributes.Luck/20/skillbonuses.skill_1_name/AnimalTaming/skillbonuses.skill_1_value/10/skillbonuses.skill_2_name/Herding/skillbonuses.skill_2_value/10/ElementalAttributes.Cold/5/ElementalAttributes.Energy/15/>
+
+<Cap/name/Beatnik's Beret/hue/RND,1,50/attributes.bonusint/15/attributes.LowerManaCost/5/skillbonuses.skill_1_name/Inscribe/skillbonuses.skill_1_value/15/skillbonuses.skill_2_name/Focus/skillbonuses.skill_2_value/20/ElementalAttributes.Fire/10/ElementalAttributes.Physical/10/>
+
+<ThighBoots/name/Go-Go Boots of Agility/hue/RND,950,980/attributes.bonusdex/20/attributes.WeaponSpeed/5/ClothingAttributes.LowerStatReq/3/skillbonuses.skill_1_name/Stealth/skillbonuses.skill_1_value/15/ElementalAttributes.Energy/20/ElementalAttributes.Physical/10/>
+
+<WizardsHat/name/Psychedelic Wizard's Hat/hue/RND,100,1100/attributes.bonusint/20/attributes.SpellDamage/10/skillbonuses.skill_1_name/Magery/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Spellweaving/skillbonuses.skill_2_value/10/ElementalAttributes.Chaos/15/ElementalAttributes.Energy/15/>
+
+<ThighBoots/name/Disco Diva Boots/hue/RND,200,999/ClothingAttributes.LowerStatReq/3/attributes.bonusdex/15/attributes.Luck/10/skillbonuses.skill_1_name/Provocation/skillbonuses.skill_1_value/15/ElementalAttributes.Energy/10/ElementalAttributes.Fire/5/>
+
+<LongPants/name/Groovy Bell-Bottom Pants/hue/RND,250,1100/attributes.bonusstam/10/attributes.NightSight/1/skillbonuses.skill_1_name/Stealth/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/15/>
+
+<FancyShirt/name/Psychedelic Tie-Dye Shirt/hue/RND,100,1500/attributes.bonusint/10/attributes.RegenMana/3/skillbonuses.skill_1_name/Magery/skillbonuses.skill_1_value/15/ElementalAttributes.Energy/20/>
+
+<Bandana/name/Hippie Peace Bandana/hue/RND,300,1300/attributes.bonusmana/10/attributes.LowerRegCost/5/skillbonuses.skill_1_name/Peacemaking/skillbonuses.skill_1_value/20/ElementalAttributes.Cold/10/>
+
+<PlainDress/name/Flower Child Sundress/hue/RND,350,1400/ClothingAttributes.MageArmor/1/attributes.RegenHits/2/skillbonuses.skill_1_name/AnimalTaming/skillbonuses.skill_1_value/15/skillbonuses.skill_2_name/Healing/skillbonuses.skill_2_value/20/ElementalAttributes.Poison/10/>
+
+<FancyShirt/name/Glam Rocker's Jacket/hue/RND,150,1150/ClothingAttributes.DurabilityBonus/4/attributes.bonusdex/10/attributes.Luck/20/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/20/ElementalAttributes.Energy/15/ElementalAttributes.Fire/5/>
+
+<ThighBoots/name/Aerobics Instructor's Legwarmers/hue/RND,300,1300/attributes.BonusStam/15/attributes.RegenStam/5/skillbonuses.skill_1_name/Parry/skillbonuses.skill_1_value/15/ElementalAttributes.Physical/20/ElementalAttributes.Cold/10/>
+
+<Bandana/name/Pop Star's Fingerless Gloves/hue/RND,600,1600/ClothingAttributes.SelfRepair/4/attributes.bonusdex/20/skillbonuses.skill_1_name/Provocation/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/15/>
+
+<Cap/name/Breakdancer's Cap/hue/RND,50,1000/attributes.BonusDex/15/attributes.DefendChance/10/skillbonuses.skill_1_name/Stealth/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/20/>
+
+<BodySash/name/New Wave Neon Shades/hue/RND,700,1700/attributes.BonusInt/10/attributes.NightSight/1/skillbonuses.skill_1_name/DetectHidden/skillbonuses.skill_1_value/20/ElementalAttributes.Energy/25/>
+
+<Bandana/name/Grunge Bandana/hue/RND,250,750/attributes.bonusdex/10/attributes.AttackChance/5/skillbonuses.skill_1_name/Focus/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Provocation/skillbonuses.skill_2_value/15/ElementalAttributes.Physical/5/ElementalAttributes.Energy/10/>
+
+<LongPants/name/Baggy Hip-Hop Pants/hue/RND,700,1700/attributes.bonusstam/15/attributes.NightSight/1/skillbonuses.skill_1_name/Stealth/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Dancing/skillbonuses.skill_2_value/10/ElementalAttributes.Physical/10/ElementalAttributes.Poison/5/>
+
+<Shoes/name/Platform Sneakers/hue/RND,400,1300/attributes.bonusdex/12/attributes.WeaponSpeed/10/ElementalAttributes.Energy/10/ElementalAttributes.Fire/5/>
+
+<FancyShirt/name/Crop Top Mystic/hue/RND,50,950/attributes.bonusint/10/attributes.SpellDamage/8/skillbonuses.skill_1_name/Magery/skillbonuses.skill_1_value/15/skillbonuses.skill_2_name/Inscribe/skillbonuses.skill_2_value/12/ElementalAttributes.Energy/10/ElementalAttributes.Cold/5/>
+
+<Tunic/name/Denim Jacket of Reflection/hue/RND,500,1500/attributes.ReflectPhysical/10/attributes.DefendChance/7/skillbonuses.skill_1_name/Parry/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/15/ElementalAttributes.Fire/5/>
+
+<Bandana/name/Pop Star's Sparkling Bandana/hue/RND,250,1250/attributes.NightSight/1/attributes.Luck/20/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/20/ElementalAttributes.Energy/10/ElementalAttributes.Physical/5/>
+
+<LongPants/name/Skater's Baggy Pants/hue/RND,400,1400/attributes.bonusdex/15/ClothingAttributes.LowerStatReq/3/skillbonuses.skill_1_name/Stealth/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/10/ElementalAttributes.Fire/5/>
+
+<FancyDress/name/Boho Chic Sundress/hue/RND,600,1600/attributes.RegenMana/2/attributes.CastRecovery/1/skillbonuses.skill_1_name/Meditation/skillbonuses.skill_1_value/20/ElementalAttributes.Energy/15/ElementalAttributes.Poison/5/>
+
+<Cap/name/Trucker's Iconic Cap/hue/RND,300,1300/attributes.bonusint/10/attributes.Focus/5/skillbonuses.skill_1_name/Alchemy/skillbonuses.skill_1_value/15/ElementalAttributes.Energy/5/ElementalAttributes.Cold/10/>
+
+<BodySash/name/Emo Scene Hairpin/hue/RND,700,1700/attributes.ReflectPhysical/5/ClothingAttributes.MageArmor/1/skillbonuses.skill_1_name/MagicResist/skillbonuses.skill_1_value/20/ElementalAttributes.Chaos/10/ElementalAttributes.Physical/10/>
+
+<Robe/name/Witch's Bewitching Robe/hue/RND,1,500/ClothingAttributes.SelfRepair/5/attributes.bonusint/20/attributes.SpellDamage/10/skillbonuses.skill_1_name/Magery/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Alchemy/skillbonuses.skill_2_value/15/ElementalAttributes.Energy/20/ElementalAttributes.Poison/15/>
+
+<Cloak/name/Vampire's Midnight Cloak/hue/RND,490,600/attributes.NightSight/1/attributes.bonusdex/15/skillbonuses.skill_1_name/Stealth/skillbonuses.skill_1_value/30/skillbonuses.skill_2_name/Necromancy/skillbonuses.skill_2_value/20/ElementalAttributes.Cold/20/ElementalAttributes.Energy/10/>
+
+<Robe/name/Ghostly Shroud/hue/RND,800,900/ClothingAttributes.MageArmor/1/attributes.RegenMana/3/skillbonuses.skill_1_name/SpiritSpeak/skillbonuses.skill_1_value/30/ElementalAttributes.Cold/25/ElementalAttributes.Physical/10/>
+
+<WideBrimHat/name/Pumpkin King's Crown/hue/RND,35,38/attributes.bonusstr/10/attributes.RegenStam/2/skillbonuses.skill_1_name/AnimalLore/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Cooking/skillbonuses.skill_2_value/20/ElementalAttributes.Fire/15/ElementalAttributes.Cold/20/>
+
+<BodySash/name/Mummy's Wrappings/hue/RND,650,750/attributes.DefendChance/15/attributes.LowerRegCost/10/skillbonuses.skill_1_name/Poisoning/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Necromancy/skillbonuses.skill_2_value/20/ElementalAttributes.Physical/25/ElementalAttributes.Poison/30/>
+
+<Robe/name/Santa's Enchanted Robe/hue/RND,30,35/ClothingAttributes.SelfRepair/5/attributes.bonusint/15/attributes.Luck/20/skillbonuses.skill_1_name/Peacemaking/skillbonuses.skill_1_value/25/ElementalAttributes.Cold/20/ElementalAttributes.Fire/15/>
+
+<Boots/name/Elven Snow Boots/hue/RND,1150,1200/ClothingAttributes.LowerStatReq/4/attributes.bonusdex/12/skillbonuses.skill_1_name/Stealth/skillbonuses.skill_1_value/20/ElementalAttributes.Cold/25/>
+
+<SkullCap/name/Reindeer Fur Cap/hue/RND,45,55/ClothingAttributes.SelfRepair/3/attributes.bonusstam/10/skillbonuses.skill_1_name/AnimalTaming/skillbonuses.skill_1_value/20/ElementalAttributes.Cold/20/ElementalAttributes.Physical/15/>
+
+<Muffler/name/Mistletoe Muffler/hue/RND,60,70/attributes.bonusdex/8/attributes.bonuscharma/10/skillbonuses.skill_1_name/Provocation/skillbonuses.skill_1_value/15/ElementalAttributes.Cold/20/>
+
+<WizardsHat/name/Starlight Wizard's Hat/hue/RND,1100,1130/attributes.bonusint/20/attributes.SpellDamage/10/skillbonuses.skill_1_name/Magery/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Meditation/skillbonuses.skill_2_value/15/ElementalAttributes.Energy/25/>
+
+<Cloak/name/Festive Countdown Cloak/hue/RND,250,1000/attributes.bonusint/10/attributes.Luck/20/skillbonuses.skill_1_name/Magery/skillbonuses.skill_1_value/10/skillbonuses.skill_2_name/Provocation/skillbonuses.skill_2_value/10/ElementalAttributes.Energy/20/>
+
+<Boots/name/Midnight Reveler's Boots/hue/RND,100,900/attributes.bonusdex/15/attributes.NightSight/1/ElementalAttributes.Physical/10/ElementalAttributes.Energy/5/>
+
+<Tunic/name/Champagne Toast Tunic/hue/RND,300,1100/attributes.Luck/10/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/20/ElementalAttributes.Cold/5/ElementalAttributes.Fire/10/>
+
+<WizardsHat/name/Starlight Wizard's Hat/hue/RND,1,500/attributes.SpellChanneling/1/attributes.bonusmana/10/skillbonuses.skill_1_name/Spellweaving/skillbonuses.skill_1_value/15/ElementalAttributes.Energy/20/ElementalAttributes.Cold/10/>
+
+<Sash/name/Resolution Keeper's Sash/hue/RND,150,850/attributes.RegenStam/2/attributes.Focus/10/skillbonuses.skill_1_name/Meditation/skillbonuses.skill_1_value/15/ElementalAttributes.Physical/10/>
+
+<FeatheredHat/name/Leprechaun's Lucky Hat/hue/RND,600,650/ClothingAttributes.SelfRepair/5/attributes.Luck/50/skillbonuses.skill_1_name/Begging/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Stealing/skillbonuses.skill_2_value/15/ElementalAttributes.Physical/10/ElementalAttributes.Cold/10/>
+
+<Robe/name/Celtic Druid's Robe/hue/RND,500,550/ClothingAttributes.MageArmor/1/attributes.bonusint/20/attributes.RegenMana/3/skillbonuses.skill_1_name/AnimalTaming/skillbonuses.skill_1_value/15/skillbonuses.skill_2_name/Herding/skillbonuses.skill_2_value/15/ElementalAttributes.Energy/15/ElementalAttributes.Poison/10/>
+
+<Muffler/name/Bard of Erin's Muffler/hue/RND,700,750/ClothingAttributes.LowerRegCost/5/attributes.bonusdex/10/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Peacemaking/skillbonuses.skill_2_value/20/ElementalAttributes.Cold/15/ElementalAttributes.Energy/10/>
+
+<Tunic/name/Warrior of Ulster's Tunic/hue/RND,450,480/ClothingAttributes.DurabilityBonus/4/attributes.BonusStr/15/attributes.DefendChance/10/skillbonuses.skill_1_name/Swords/skillbonuses.skill_1_value/25/ElementalAttributes.Physical/20/ElementalAttributes.Fire/10/>
+
+<Shoes/name/Shanachie's Storytelling Shoes/hue/RND,400,430/attributes.BonusInt/10/attributes.RegenStam/2/skillbonuses.skill_1_name/Provocation/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Tracking/skillbonuses.skill_2_value/10/ElementalAttributes.Cold/5/ElementalAttributes.Energy/10/>
+
+<CloseHelm/name/Knight's Helm of the Round Table/hue/RND,400,1400/ClothingAttributes.DurabilityBonus/4/attributes.bonusstr/10/skillbonuses.skill_1_name/Chivalry/skillbonuses.skill_1_value/25/ElementalAttributes.Physical/25/ElementalAttributes.Fire/10/>
+
+<Tunic/name/Bard's Tunic of Stonehenge/hue/RND,250,1250/ClothingAttributes.SelfRepair/3/attributes.bonusdex/5/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/20/ElementalAttributes.Energy/15/>
+
+<DeerMask/name/Sherlock's Sleuthing Cap/hue/RND,550,1600/attributes.bonusint/15/skillbonuses.skill_1_name/DetectHidden/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/ItemID/skillbonuses.skill_2_value/15/ElementalAttributes.Cold/10/>
+
+<Robe/name/Greenwich Mage's Robe/hue/RND,1,500/attributes.LowerManaCost/10/attributes.CastSpeed/1/skillbonuses.skill_1_name/Magery/skillbonuses.skill_1_value/20/ElementalAttributes.Energy/20/>
+
+<ThighBoots/name/Royal Guard's Boots/hue/RND,600,1600/ClothingAttributes.DurabilityBonus/5/attributes.DefendChance/10/skillbonuses.skill_1_name/Swords/skillbonuses.skill_1_value/20/ElementalAttributes.Physical/20/>
+
+<Tunic/name/Samurai's Honorable Tunic/hue/RND,700,1700/ClothingAttributes.DurabilityBonus/5/attributes.bonusstr/15/skillbonuses.skill_1_name/Bushido/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Swords/skillbonuses.skill_2_value/20/ElementalAttributes.Physical/20/>
+
+<NinjaTabi/name/Ninja's Stealthy Tabi/hue/RND,800,1800/attributes.bonusdex/20/skillbonuses.skill_1_name/Ninjitsu/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Stealth/skillbonuses.skill_2_value/20/ElementalAttributes.Energy/15/>
+
+<Kasa/name/Geisha's Graceful Kasa/hue/RND,1,900/attributes.EnhancePotions/10/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Discordance/skillbonuses.skill_2_value/15/ElementalAttributes.Fire/10/>
+
+<Surcoat/name/Shogun's Authoritative Surcoat/hue/RND,500,1500/attributes.bonusstr/10/skillbonuses.skill_1_name/Chivalry/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/20/ElementalAttributes.Physical/15/ElementalAttributes.Energy/15/>
+
+<Robe/name/Monk's Meditative Robe/hue/RND,200,1200/attributes.bonusint/15/skillbonuses.skill_1_name/Meditation/skillbonuses.skill_1_value/25/skillbonuses.skill_2_name/Focus/skillbonuses.skill_2_value/20/ElementalAttributes.Chaos/10/ElementalAttributes.Energy/15/>
+
+<Robe/name/Technomancer's Hoodie/hue/RND,800,1900/ClothingAttributes.MageArmor/1/attributes.CastSpeed/10/attributes.bonusint/20/skillbonuses.skill_1_name/Inscribe/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Magery/skillbonuses.skill_2_value/15/ElementalAttributes.Energy/20/ElementalAttributes.Physical/10/>
+
+<FeatheredHat/name/Hacker's VR Goggles/hue/RND,900,1800/ClothingAttributes.NightSight/1/attributes.AttackChance/15/attributes.bonusdex/10/skillbonuses.skill_1_name/DetectHidden/skillbonuses.skill_1_value/25/ElementalAttributes.Energy/20/ElementalAttributes.Chaos/10/>
+
+<NinjaTabi/name/Cyberpunk NinjaTabi/hue/RND,750,1700/attributes.bonusdex/15/attributes.DefendChance/10/skillbonuses.skill_1_name/Ninjitsu/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Stealth/skillbonuses.skill_2_value/20/ElementalAttributes.Energy/15/ElementalAttributes.Physical/10/>
+
+<Sash/name/Neon Street Sash/hue/RND,850,1600/attributes.bonusstam/10/attributes.RegenStam/3/skillbonuses.skill_1_name/Parry/skillbonuses.skill_1_value/20/ElementalAttributes.Energy/20/ElementalAttributes.Fire/5/>
+
+<Cloak/name/Data Mage's Digital Cloak/hue/RND,950,1800/attributes.SpellChanneling/1/attributes.CastRecovery/5/skillbonuses.skill_1_name/Magery/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Lockpicking/skillbonuses.skill_2_value/20/ElementalAttributes.Energy/25/ElementalAttributes.Chaos/10/>
+
+<Robe/name/Scholar's Robe/hue/RND,200,1200/ClothingAttributes.SelfRepair/3/attributes.bonusint/15/attributes.LowerManaCost/8/skillbonuses.skill_1_name/Inscribe/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/EvalInt/skillbonuses.skill_2_value/15/ElementalAttributes.Energy/15/ElementalAttributes.Physical/10/>
+
+<Kilt/name/Curator's Kilt/hue/RND,250,1250/ClothingAttributes.DurabilityBonus/2/attributes.bonusdex/10/attributes.Focus/10/skillbonuses.skill_1_name/ItemID/skillbonuses.skill_1_value/20/ElementalAttributes.Cold/10/ElementalAttributes.Physical/15/>
+
+<Shoes/name/Archivist's Shoes/hue/RND,300,1300/attributes.NightSight/1/attributes.LowerRegCost/7/skillbonuses.skill_1_name/Alchemy/skillbonuses.skill_1_value/15/ElementalAttributes.Energy/10/ElementalAttributes.Physical/10/>
+
+<Cap/name/Preserver's Cap/hue/RND,350,1350/ClothingAttributes.Reactiveparalyze/2/attributes.bonusstr/5/attributes.Luck/20/skillbonuses.skill_1_name/Tinkering/skillbonuses.skill_1_value/15/skillbonuses.skill_2_name/Carpentry/skillbonuses.skill_2_value/10/ElementalAttributes.Fire/5/ElementalAttributes.Physical/15/>
+
+<Sash/name/Lorekeeper's Sash/hue/RND,400,1400/ClothingAttributes.MageArmor/1/attributes.bonusmana/10/attributes.SpellChanneling/1/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Parry/skillbonuses.skill_2_value/10/ElementalAttributes.Cold/10/ElementalAttributes.Energy/15/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

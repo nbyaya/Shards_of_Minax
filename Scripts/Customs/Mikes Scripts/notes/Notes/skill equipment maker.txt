@@ -1,0 +1,115 @@
+We are doing development for RunUO an Ultima Online server emulator
+RunUO typically uses C# 2.0 or 3.0, without features from newer versions.
+Key classes include Mobile, Item, and BaseCreature.
+XMLSpawner syntax might be used for dynamic content.
+File structure matters; understanding where scripts are located is crucial.
+Data might be stored via flat files or databases.
+Scripting guidelines and best practices should be followed.
+Common issues include certain C# features not being supported and server-client communication problems.
+Deployment requires careful steps to avoid disrupting the live game.
+
+Always use features compatible with C# 2.0/3.0.
+Ensure that scripts fit within the standard RunUO file structure.
+When providing scripts, consider common integration points such as Mobile, Item, and BaseCreature.
+Avoid newer C# constructs like interpolated strings, LINQ, var, and async/await.
+Offer solutions compatible with the RunUO framework and its data storage methods.
+Provide clear, concise, and step-by-step instructions for implementation.
+
+I would like your help to make some new equipment that gives bonuses based on skill level.  Below is an example of gloves that give a bonus to strength and resists based on RemoveTrap skill.  I would like a new item that is leather gorget with a bonus to physical and poison resist based on RemoveTrap skill.
+
+using System;
+using Server;
+using Server.Items;
+using Server.Mobiles;
+
+public class TrapGloves : LeatherGloves // Inherits from LeatherGloves or BaseArmor
+{
+    public override int LabelNumber { get { return 1061591; } } // Label number for identification, change as needed
+    
+    [Constructable]
+    public TrapGloves() : base()
+    {
+        Name = "Gloves of Trap Finding"; // Name your item
+        // Optionally, set some base properties, like Weight, if you want them to differ from standard leather gloves
+    }
+	
+	public override void AddNameProperties(ObjectPropertyList list)
+	{
+		base.AddNameProperties(list);
+		list.Add("Bonus to STR and Resists from TrapFinding");
+	}
+
+	public override void OnAdded(object parent)
+	{
+		base.OnAdded(parent);
+
+		if (parent is Mobile)
+		{
+			Mobile wearer = (Mobile)parent;
+			double trapFindingSkill = wearer.Skills[SkillName.RemoveTrap].Value; 
+
+			int hpBonus = (int)trapFindingSkill;
+			int resistBonus = (int)(trapFindingSkill / 10);
+
+			// Assuming 1 STR = 2 HP for simplification, adjust based on your server's balance
+			int strBonus = hpBonus / 2;
+
+			if (wearer.RawStr + strBonus > wearer.StatCap) // Ensure we don't exceed the stat cap
+			{
+				strBonus = wearer.StatCap - wearer.RawStr;
+			}
+
+			wearer.RawStr += strBonus; // Adjust strength to give HP bonus
+
+			this.PhysicalBonus += resistBonus;
+			this.FireBonus += resistBonus;
+			this.ColdBonus += resistBonus;
+			this.PoisonBonus += resistBonus;
+			this.EnergyBonus += resistBonus;
+		}
+	}
+
+	public override void OnRemoved(object parent)
+	{
+		base.OnRemoved(parent);
+
+		if (parent is Mobile)
+		{
+			Mobile wearer = (Mobile)parent;
+			double trapFindingSkill = wearer.Skills[SkillName.DetectHidden].Value; // Replace with actual Trap Finding skill
+
+			int hpBonus = (int)trapFindingSkill;
+			int resistBonus = (int)(trapFindingSkill / 10);
+
+			int strBonus = hpBonus / 2;
+
+			wearer.RawStr -= strBonus; // Reverse the STR bonus
+
+			this.PhysicalBonus -= resistBonus;
+			this.FireBonus -= resistBonus;
+			this.ColdBonus -= resistBonus;
+			this.PoisonBonus -= resistBonus;
+			this.EnergyBonus -= resistBonus;
+		}
+	}
+
+
+    public TrapGloves(Serial serial) : base(serial)
+    {
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+
+        writer.Write((int)0); // version
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+
+        int version = reader.ReadInt();
+    }
+}
+

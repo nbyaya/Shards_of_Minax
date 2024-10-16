@@ -1,0 +1,73 @@
+The following is an example of an XML quest to collect 50 Apple for Apple Collector Anna, and she rewards the player with a MaxxiaScroll and some unique items.  First is the config for the XML spawner to spawn Anna, followed by annas config file.  Could you please make a similar quest in the same format for collecting Ham?  Keep in mind the TalkText on the XML spawner config comes from the player not the NPC. Players should always get a MaxxiaScroll as a reward.
+
+
+XMLQuestNPC,0/Name/Apple Collector Anna/Title/The Orchardist/Female/True/BodyValue/401/UNEQUIP,MiddleTorso,DELETE/UNEQUIP,OuterTorso,DELETE/UNEQUIP,Shoes,Delete/UNEQUIP,Shirt,DELETE/UNEQUIP,Neck,DELETE/UNEQUIP,Helm,DELETE/UNEQUIP,Pants,DELETE/UNEQUIP,OuterLegs,DELETE/UNEQUIP,InnerTorso,DELETE/UNEQUIP,Arms,DELETE/UNEQUIP,Gloves,DELETE/UNEQUIP,Waist,DELETE/direction/South/EQUIP/<PlainDress/hue/33>/EQUIP/<Bonnet/hue/44>/EQUIP/<Boots/hue/23>/STR/80/EQUIP/<ShepherdsCrook/name/Anna's Apple Collector Stick>/ConfigFile/AnnaAppleQuest/LoadConfig/True/TalkText/You see a woman in red that seems to need Apples
+
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Apple Collector Anna</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Apple Bounty</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>AnnaAppleQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Hello, traveler! The orchard has yielded an amazing apple harvest this season. Would you be interested in helping me collect some?</Text>
+    <Keywords>You see a woman in red that seems to need Apples</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Apple Bounty,4/Apples are scattered all over the orchard. I'll reward you handsomely for every batch you bring me.;Sounds fun!;Sure</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Thank you! Bring the apples to me once you've collected enough. Happy harvesting!</Text>
+    <Keywords>Sure</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Apple Bounty/TitleString/Apple Bounty/NoteString/Anna needs apples from the orchard. Collect them and return to her for a reward./Objective1/COLLECT,Apple,50/Description1/Collect 50 apples for Anna/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/MaxxiaScroll/ADD/&lt;apple/hue/RND,1,3000/name/Annes Lucky Apple&gt;/ADD/&lt;bag/hue/44/Name/Bag O' Fresh Apples/ADD/Apple/ADD/Apple/ADD/Apple&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

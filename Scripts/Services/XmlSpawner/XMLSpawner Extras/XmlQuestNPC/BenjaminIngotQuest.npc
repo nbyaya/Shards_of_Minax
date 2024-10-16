@@ -1,0 +1,54 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Blacksmith Benjamin</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Dull Copper Ingot Bounty</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>BenjaminIngotQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Good day, traveler! I'm in dire need of Dull Copper Ingots for my next project. Would you be willing to help me collect some?</Text>
+    <Keywords>Hello, can you assist me in gathering Dull Copper Ingots today?</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Dull Copper Ingot Bounty,4/Find Dull Copper Ingots in mines or buy them from other blacksmiths. I'll reward you generously for every batch you bring.;Sounds interesting!;Of course</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Thank you! Once you've gathered enough, please bring the Dull Copper Ingots to me. Safe travels and mining!</Text>
+    <Keywords>Of course</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Dull Copper Ingot Bounty/TitleString/Dull Copper Ingot Bounty/NoteString/Benjamin needs Dull Copper Ingots for his blacksmithing. Gather them and return to him for a reward./Objective1/COLLECT,DullCopperIngot,50/Description1/Collect 50 Dull Copper Ingots for Benjamin/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/MaxxiaScroll/ADD,0.2/{RNDSTRLIST,SmithsHammer,MetalShield,BagOfMetalBits}/ADD/&lt;bag/hue/22/Name/Bag O' Blacksmith Supplies/ADD/DullCopperIngot/ADD/DullCopperIngot/ADD/DullCopperIngot&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</Speech

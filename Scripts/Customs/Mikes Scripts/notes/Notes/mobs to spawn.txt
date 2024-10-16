@@ -1,0 +1,77 @@
+
+
+<!-- Lyra Succubus with InfectiousStrike ability -->
+
+<!-- Nova Succubus with MortalStrike ability -->
+
+<!-- Vega Succubus with MovingShot ability -->
+
+<!-- Electra Succubus with ShadowStrike ability -->
+
+<!-- Cassiopeia Succubus with WhirlwindAttack ability -->
+
+
+
+
+
+
+
+<!-- Shade named Astral Shade with the special ability ArmorIgnore -->
+
+<!-- Shade named Bleeding Wraith with the special ability BleedAttack -->
+
+<!-- Shade named Concussion Phantom with the special ability ConcussionBlow -->
+
+<!-- Shade named Crushshade with the special ability CrushingBlow -->
+
+<!-- Shade named Disarming Shadow with the special ability Disarm -->
+
+<!-- Shade named Equestrian Ghost with the special ability Dismount -->
+
+<!-- Shade named Double Phantom with the special ability DoubleStrike -->
+
+<!-- Shade named Plague Wraith with the special ability InfectiousStrike -->
+
+<!-- Shade named Deathshade with the special ability MortalStrike -->
+
+<!-- Shade named Swift Ghost with the special ability MovingShot -->
+
+<!-- Shade named Paralyzing Wisp with the special ability ParalyzingBlow -->
+
+<!-- Shade named Nightstalker with the special ability ShadowStrike -->
+
+<!-- Shade named Cyclone Spirit with the special ability WhirlwindAttack -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,126 @@
+I would like your help making a new NPC for my RunUO challenge shard.  Could you make a black knight?  I have a lawyer NPC that I would like you to use for inspiraton:
+
+using System;
+using Server.Items;
+using Server.Targeting;
+
+namespace Server.Mobiles
+{
+    [CorpseName( "a lawyer's corpse" )]
+    public class Lawyer : BaseCreature
+    {
+        private TimeSpan m_SpeechDelay = TimeSpan.FromSeconds( 15.0 ); // time between lawyer speech
+        public DateTime m_NextSpeechTime;
+
+        [Constructable]
+        public Lawyer() : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
+        {
+            Hue = Utility.RandomSkinHue();
+
+            if ( Female = Utility.RandomBool() )
+            {
+                Body = 0x191;
+                Name = NameList.RandomName("female");
+                Title = "the Lawyer";
+            }
+            else
+            {
+                Body = 0x190;
+                Name = NameList.RandomName("male");
+                Title = "the Lawyer";
+            }
+
+            AddItem( new Robe( Utility.RandomBlueHue() ) );
+            AddItem( new Shoes( Utility.RandomNeutralHue() ) );
+
+            Item hair = new Item( Utility.RandomList( 0x203B, 0x203C, 0x203D, 0x2044, 0x2045, 0x204A ) );
+            hair.Hue = Utility.RandomHairHue();
+            hair.Layer = Layer.Hair;
+            hair.Movable = false;
+            AddItem( hair );
+
+            if( !this.Female )
+            {
+                Item beard = new Item( Utility.RandomList( 0x203E, 0x203F, 0x2040, 0x2041, 0x204B, 0x204C ) );
+                beard.Hue = hair.Hue;
+                beard.Layer = Layer.FacialHair;
+                beard.Movable = false;
+                AddItem( beard );
+            }
+
+            SetStr( 100, 120 );
+            SetDex( 90, 110 );
+            SetInt( 250, 275 );
+
+            SetHits( 80, 100 );
+
+            VirtualArmor = 30;
+
+            SpeechHue = Utility.RandomDyedHue();
+
+            SetDamage( 5, 10 );
+
+            SetSkill( SkillName.MagicResist, 90.0, 100.0 );
+            SetSkill( SkillName.Tactics, 50.1, 65.0 );
+            SetSkill( SkillName.Swords, 50.1, 60.0 );
+            SetSkill( SkillName.Magery, 90.0, 100.0 );
+
+            Fame = 5000;
+            Karma = 5000;
+
+            m_NextSpeechTime = DateTime.Now + m_SpeechDelay;
+        }
+
+        public override bool AlwaysMurderer{ get{ return false; } }
+        public override bool CanRummageCorpses{ get{ return false; } }
+        public override bool ShowFameTitle{ get{ return false; } }
+        public override bool ClickTitle { get { return true; } }
+
+        public override void OnThink()
+        {
+            if ( DateTime.Now >= m_NextSpeechTime )
+            {
+                Mobile combatant = this.Combatant;
+
+                if ( combatant != null && combatant.Map == this.Map && combatant.InRange( this, 8 ) )
+                {
+                    int phrase = Utility.Random( 4 );
+
+                    switch ( phrase )
+                    {
+                        case 0: this.Say( true, "I object!" ); break;
+                        case 1: this.Say( true, "You'll be hearing from my associates!" ); break;
+                        case 2: this.Say( true, "Do you have any idea who I am?" ); break;
+                        case 3: this.Say( true, "Consider yourself served!" ); break;
+                    }
+
+                    m_NextSpeechTime = DateTime.Now + m_SpeechDelay;
+                }
+
+                base.OnThink();
+            }            
+        }
+
+        public override void GenerateLoot()
+        {
+            PackGold( 250, 500 );
+
+        }
+
+        public Lawyer( Serial serial ) : base( serial )
+        {
+        }
+
+        public override void Serialize( GenericWriter writer )
+        {
+            base.Serialize( writer );
+            writer.Write( (int) 0 );
+        }
+
+        public override void Deserialize( GenericReader reader )
+        {
+            base.Deserialize( reader );
+            int version = reader.ReadInt();
+        }
+    }
+}

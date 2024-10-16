@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Swift Hunter Kael</Name>
+    <Running>True</Running>
+    <ProximityRange>4</ProximityRange>
+    <ResetRange>18</ResetRange>
+    <NoTriggerOnCarried>Vorn Trophy</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>9</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>KaelVornQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Vorn the Swift has been evading every trap set for him. We need someone with the skill to track and hunt him down. Are you ready for the hunt?</Text>
+    <Keywords>You notice an agile hunter, his eyes scanning for a notorious speedster, Vorn the Swift</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Vorn Chase,4/Vorn the Swift is elusive. Tracking him will be a challenge. Accept the hunt?;I'll track him down.;Absolutely</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Excellent! Your courage is inspiring. Bring me a token of your victory, and I'll see you rewarded fittingly.</Text>
+    <Keywords>Absolutely</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Vorn Trophy/TitleString/Vorn the Swift Defeated/NoteString/Return proof of defeating Vorn the Swift to Kael for a reward./Objective1/KILLNAMED,Vorn the Swift,1/Description1/Hunt and defeat Vorn the Swift/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/&lt;MaxxiaScroll/amount/5&gt;/ADD/&lt;Emerald/hue/RND,1,300/name/Swift Victory Gem&gt;/ADD/&lt;bag/hue/2123/Name/Swift Hunter's Cache/ADD/&lt;TeleportScroll/name/Scroll of Quickening&gt;/ADD/&lt;ShortSword/name/Swiftblade&gt;/ADD/&lt;RefreshPotion/name/Potion of Alacrity&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

@@ -1,0 +1,39 @@
+Can you create a runUO script that creats a command that will find every instance of FillableWoodenChest in the world and set its GumpID to 74?  Below is an example of a similar scrip that changes LibraryBookcase to GumpID 77 for reference.
+
+using System;
+using Server;
+using Server.Items;
+using Server.Mobiles;
+using Server.Commands;
+
+namespace Server.Scripts.Commands
+{
+    public class UpdateBookcaseGumpID
+    {
+        public static void Initialize()
+        {
+            CommandSystem.Register("UpdateBookcaseGumps", AccessLevel.Administrator, new CommandEventHandler(UpdateBookcaseGumpID_OnCommand));
+        }
+
+        [Usage("UpdateBookcaseGumps")]
+        [Description("Updates GumpID of all LibraryBookcase items in the world to 77.")]
+        private static void UpdateBookcaseGumpID_OnCommand(CommandEventArgs e)
+        {
+            Mobile m = e.Mobile;
+
+            int count = 0;
+			foreach (Item item in World.Items.Values)
+			{
+				if (item is LibraryBookcase)
+				{
+					LibraryBookcase bookcase = (LibraryBookcase)item;
+					bookcase.GumpID = 77;
+					count++;
+				}
+			}
+
+
+            m.SendMessage("Updated {0} LibraryBookcase items' GumpID to 77.", count);
+        }
+    }
+}

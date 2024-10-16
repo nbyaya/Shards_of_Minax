@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Shadow Enforcer Nyx</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Assassin's Token</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>NyxAssassinationQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Master Zalazar has crossed the Shadow Syndicate for the last time. His fate is sealed. Do you dare to be the instrument of his demise?</Text>
+    <Keywords>You see a figure shrouded in darkness who seems to command the night itself</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1175</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1175</SpeechHue>
+    <Gump>GUMP,Assassination Contract,4/Our sources have located Master Zalazar. Your task is to eliminate him silently.;I am ready to serve the shadows.;I will do it</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your courage is noted. Prove your deed with his signet ring, and the Shadow Syndicate will reward you handsomely.</Text>
+    <Keywords>I will do it</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Assassin's Token/TitleString/Master Zalazar's Demise/NoteString/Bring back Master Zalazar's signet ring to Nyx for a reward./Objective1/ASSASSINATE,Master Zalazar,1/Description1/Eliminate Master Zalazar/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/&lt;MaxxiaScroll/amount/3&gt;/ADD/&lt;GoldCoins/amount/RND,5000,10000/name/Blood Money&gt;/ADD/&lt;bag/hue/1109/Name/Assassin's Spoils/ADD/&lt;SmokeBomb/name/Escape Cloud&gt;/ADD/&lt;Dagger/name/Nightfall Blade&gt;/ADD/&lt;InvisibilityPotion/name/Potion of Shadows&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1175</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1175</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

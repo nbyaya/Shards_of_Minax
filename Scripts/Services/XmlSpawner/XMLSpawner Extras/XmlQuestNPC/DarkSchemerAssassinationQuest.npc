@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>The Dark Schemer</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Proof of Death</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>DarkSchemerAssassinationQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Chef Samantha has cooked her last meal. Will you serve her just desserts?</Text>
+    <Keywords>You encounter a cloaked figure who whispers of dark deeds and retribution</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1177</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1177</SpeechHue>
+    <Gump>GUMP,Assassination Contract,4/Samantha must be removed in silence. Are you the instrument of her demise?;I'll do what must be done.;Silently</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your cold resolve pleases me. Bring evidence of the deed, and your reward shall be rich.</Text>
+    <Keywords>Silently</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Proof of Death/TitleString/Assassination of Chef Samantha/NoteString/Return proof of Chef Samantha's demise to The Dark Schemer for a reward./Objective1/KILLNAMED,Chef Samantha,1/Description1/Assassinate Chef Samantha/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/&lt;MaxxiaScroll/amount/3&gt;/ADD/&lt;BagOfSending/hue/RND,1,300/name/Bag of Shadows&gt;/ADD/&lt;bag/hue/1177/Name/Assassin's Cache/ADD/&lt;SmokeBomb/name/Bomb of Nightfall&gt;/ADD/&lt;PoisonPotion/name/Potion of Silent Death&gt;/ADD/&lt;Kryss/name/Blade of Betrayal&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1177</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1177</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

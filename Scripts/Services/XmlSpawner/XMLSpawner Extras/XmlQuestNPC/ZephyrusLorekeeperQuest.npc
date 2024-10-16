@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Shadow Enchanter Zephyrus</Name>
+    <Running>True</Running>
+    <ProximityRange>4</ProximityRange>
+    <ResetRange>20</ResetRange>
+    <NoTriggerOnCarried>Lorekeeper's Ledger</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>8</SpeechPace>
+    <ResetTime>1</ResetTime>
+    <ConfigFile>ZephyrusLorekeeperQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>There is a keeper of lore, Lorenzo, whose existence troubles my masters. Will you silence him... permanently?</Text>
+    <Keywords>You encounter a shadowy figure cloaked in darkness, exuding a chilling presence of malevolence</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>0x455</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>0x455</SpeechHue>
+    <Gump>GUMP,The Silent Task,4/Lorenzo, the Lorekeeper, must be removed from this realm. Do you accept the shadows' embrace?;I shall do it.;I am ready.</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Excellent... ensure no tales of this affair reach the light of day. Lorenzo's ledger shall be proof enough of the deed.</Text>
+    <Keywords>I am ready.</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Lorekeeper's Ledger/TitleString/Lorenzo the Lorekeeper's Demise/NoteString/Bring Lorenzo's Ledger to Zephyrus as proof of assassination for a reward./Objective1/ASSASSINATE,Lorenzo the Lorekeeper,1/Description1/Assassinate Lorenzo the Lorekeeper/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/&lt;MaxxiaScroll/amount/3&gt;/ADD/&lt;Pouch/hue/RND,1,300/name/Whisper's Bounty&gt;/ADD/&lt;bag/hue/1905/Name/Dark Deeds Trove/ADD/&lt;SmokeBomb/name/Shadow's Veil&gt;/ADD/&lt;AssassinSpike/name/Silence's Edge&gt;/ADD/&lt;NightshadePotion/name/Elixir of the Dark Arts&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>0x455</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>0x455</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

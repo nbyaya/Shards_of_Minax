@@ -1,0 +1,195 @@
+Deceit (Opposite of Honesty) - Located northeast of Britain and is filled with undead creatures, traps, and secret passages.
+
+Despise (Opposite of Compassion) - Found northwest of Britain, it is a home to various monsters representing hate and loathing.
+
+Destard (Opposite of Valor) - Located west of Trinsic, this dungeon houses dragons, drakes, and other monstrous creatures.
+
+Wrong (Opposite of Justice) - Situated east of Yew, it's a prison-themed dungeon filled with criminals, rogues, and other nefarious beings.
+
+Covetous (Opposite of Sacrifice) - Positioned near Vesper, it's themed around materialism and greed, housing various treasure-seeking creatures.
+
+Shame (Opposite of Honor) - Located to the south of Minoc, it's filled with elementals and creatures representing the shame of not living up to one's potential.
+
+Hythloth (Opposite of Spirituality) - Its entrances are found across the lands (like near Trinsic and Destard), and it's home to daemons and infernal creatures, representing a lack of spiritual grounding.
+
+Pride (Opposite of Humility) - This isn't an original anti-virtue dungeon from the early days of UO, but "Pride" is often considered the opposite of Humility in the broader Ultima lore.
+
+
+
+
+Honesty - Moonglow
+Compassion - Britain
+Valor - Jhelom
+Justice - Yew
+Sacrifice - Minoc
+Honor - Trinsic
+Spirituality - Skara Brae
+Humility - New Magincia
+
+"Ultima I: The First Age of Darkness" is the first game in the legendary Ultima series, created by Richard Garriott (Lord British). In this game, the primary goal is to defeat the evil wizard Mondain. Here's a brief summary of the main tasks players must accomplish to complete the game:
+
+1. Character Creation: Start by creating a character, choosing a class, and distributing attribute points.
+
+2. Quests from Kings: Each of the eight kingdoms has a king who will give you a quest. Completing these quests will earn you gems and increase your attributes.
+
+3. Space Travel: One of the unique features of Ultima I is the ability to journey into outer space. By acquiring a rocket ship (either by purchasing it or stealing it), players can destroy enemy ships in space to level up quickly.
+
+4. Time Machine: The main plot involves traveling back in time to defeat Mondain before he becomes invulnerable with the use of a gem. To do this, you'll need to find a time machine.
+
+5. Dungeons: Throughout the land, there are dungeons filled with monsters, traps, and treasures. Delving into them is essential for gaining experience, finding necessary items, and accomplishing certain quests.
+
+6. The Four Gems: After completing quests for the kings, you should have four gems. These are crucial for progressing later in the game.
+
+7. Destroy Mondain's Gem: Before confronting Mondain, you'll need to find and destroy his gem, which grants him immortality. This is done by using the time machine to travel back to when Mondain was still vulnerable and then using the four gems you've collected.
+
+8. Final Battle: After destroying the gem, you can confront and defeat Mondain.
+
+Once Mondain is defeated, the game ends, and the player is celebrated as the hero of the land.
+
+Keep in mind that "Ultima I" was released in the early days of computer RPGs, so its mechanics and graphics are quite primitive compared to modern standards. However, it laid the foundation for one of the most influential RPG series in gaming history.
+
+
+
+"Ultima II: The Revenge of the Enchantress" is an early computer role-playing game developed by Richard Garriott and released in 1982. Here's a concise summary of what you need to accomplish to beat the game:
+
+1. Gathering Equipment and Gaining Strength:
+    - When starting out, it's essential to increase your character's strength, hit points, and gather equipment. This often involves grinding by fighting weaker monsters.
+  
+2. Time Gates:
+    - Throughout the game, there are various time gates that transport you to different time periods. Travel between these eras is essential to progress in the game.
+
+3. Acquiring a Vehicle: 
+    - Early on, it's beneficial to get a vehicle (like the raft) to traverse water. Later in the game, you'll need more advanced vehicles like the airplane and rocket to access specific locations.
+
+4. Retrieve the Key Items:
+    - Quicksword: Found in the past on Earth, it's necessary to defeat Minax, the game's antagonist.
+    - Ring: Acquired from a pirate on the planet Pluto, it makes the final battles easier.
+    - Blue Tassels: Essential to fly the airplane.
+
+5. Explore Other Planets:
+    - Using a rocket, travel to other planets in the solar system to gather essential items and information.
+
+6. Final Confrontation:
+    - With the Quicksword and other equipment in hand, find Minax in the Time of Legends. She is located in a castle in this era.
+    - Engage and defeat Minax to beat the game.
+
+Remember, "Ultima II" was developed during the early days of computer RPGs, so its gameplay and progression can be non-linear and somewhat cryptic. Reading the game's manual and maybe consulting guides can help if you find yourself stuck.
+
+
+
+
+
+"Ultima III: Exodus" is a classic role-playing game from the early 1980s and is the third installment in the Ultima series. Here's a concise summary of the key objectives you need to accomplish to beat the game:
+
+1. Party Creation: As with many RPGs, your first task is to create a party of adventurers. You'll need to select their classes and attributes. It's a good idea to have a balanced party that can handle both combat and magic.
+
+2. Gathering Information: Throughout the game, you'll need to converse with various NPCs to gather hints, clues, and lore. This information will be crucial for completing quests and finding important items.
+
+3. Acquire Key Items: Several items are essential to finish the game:
+   - The four cards (Sol, Moons, Love, and Death)
+   - The Mystic Weapons and Armor
+   - The Silver Horn
+   - The Mark of the Snake, Force, King, and Fire
+
+4. Visit Dungeons: Delve into various dungeons to obtain necessary items, increase experience points, and solve puzzles. Key dungeons include the Mines of Morinia, Time Lord's Castle, and the Great Stygian Abyss.
+
+5. Defeat Exodus: The primary antagonist is a hybrid being named Exodus. To defeat him, you must not engage in traditional combat but instead use the cards you've collected in a specific order.
+
+6. Ambrosia: This hidden land is essential for character progression. By visiting shrines in Ambrosia, characters can raise their core attributes. Also, it's in Ambrosia where you'll find the necessary items to forge the Mystic Weapons and Armor.
+
+7. Use Moon Gates: Moon Gates are essential for fast travel. Learning their phases and where they lead is crucial for efficient navigation.
+
+8. Combat Strategy: Combat in Ultima III is turn-based. It's important to understand the strengths and weaknesses of your party, as well as those of your enemies. Magic, positioning, and equipment all play roles in combat success.
+
+9. Final Objective: Once you've gathered the necessary items, head to the Isle of Fire, enter the Great Stygian Abyss, and confront Exodus. Use the cards in the correct sequence to destroy him.
+
+10. Escape: After defeating Exodus, you'll need to leave the Abyss quickly to finish the game.
+
+Keep in mind that while this is a concise summary, "Ultima III: Exodus" is full of nuanced challenges, puzzles, and mysteries. Engaging with the world, exploring thoroughly, and piecing together clues is a significant part of the experience.
+
+
+
+
+"Ultima IV: Quest of the Avatar" is a seminal role-playing game developed by Origin Systems and released in 1985. The game diverges from the typical "defeat the main antagonist" objective found in many RPGs. Instead, the primary goal is to become an Avatar, a symbol of pure virtue in the world of Britannia.
+
+Here's a brief summary of the main objectives to beat "Ultima IV":
+
+1. Character Creation: Begin by answering a series of moral questions to determine your starting character class.
+ 
+2. Mastering the Eight Virtues: The player must strive to master the Eight Virtues of the Avatar: Honesty, Compassion, Valor, Justice, Sacrifice, Honor, Spirituality, and Humility. Mastery is achieved by acting in accordance with each virtue and collecting the respective rune.
+
+3. Seek Out Companions: Throughout your journey, you will encounter various characters who will join you in your quest to become the Avatar. Each of these companions represents one of the eight professions and virtues.
+
+4. Collecting the Mantras: For each virtue, there's a corresponding mantra (a word of power). These mantras must be learned and later used in meditation at shrines.
+
+5. Visiting the Shrines: There are eight shrines in Britannia, each corresponding to a virtue. At these shrines, you meditate on the virtues using the mantras to gain partial Avatarhood in each.
+
+6. Acquiring the Codex of Ultimate Wisdom: To access the Codex, you will need several key items:
+   - Bell, Book, and Candle: These are three essential tools used to enter the Stygian Abyss.
+   - Stones: There are eight colored stones corresponding to the eight virtues. These are needed in the Abyss.
+   - Mystic Arms and Armor: These provide protection and are a sign of your dedication to the quest.
+   
+7. Navigating the Stygian Abyss: This is the final dungeon of the game. With the Bell, Book, and Candle, and by placing the correct stones on the correct altar pedestals inside, you can descend to the bottom.
+
+8. Reading the Codex: At the end of the Abyss, you will find the Codex of Ultimate Wisdom. Reading it will grant you the understanding you need to become the Avatar.
+
+9. Return to Lord British: Once you've achieved Avatarhood, return to Castle Britannia and speak with Lord British to conclude the game.
+
+Remember, the game emphasizes moral choices, and many puzzles and challenges are solved not through combat, but by upholding the Eight Virtues.
+
+
+
+
+
+"Ultima V: Warriors of Destiny" is a classic role-playing game and the fifth installment in the main Ultima series. Here's a brief summary of the main objectives you need to accomplish to beat the game:
+
+1. Understand the Current Situation: The game begins with Britannia under the oppressive rule of Lord Blackthorn. Your goal is to free the land from his rule and rescue Lord British, the true ruler of Britannia.
+
+2. Reunite with Companions: As you explore Britannia, you'll want to find and recruit your companions from previous games (e.g., Iolo, Shamino, and Dupre).
+
+3. Find the Words of Power: For each of the eight dungeons, there is a Word of Power that allows entrance to the deepest level. You'll need to gather information and clues from various townsfolk and books to find these words.
+
+4. Enter the Underworld: Delve deep into the dungeons, overcoming various challenges, to gain access to the underworld. Here, you will find the shard of the Gem of Immortality, which plays a crucial role in the climax.
+
+5. Shadowlords: There are three Shadowlords representing Falsehood, Hatred, and Cowardice. Throughout the game, you'll encounter them and must figure out how to defeat them. Each can be defeated using a specific shard from the Gem of Immortality, which needs to be thrown into the Flame of its opposing virtue.
+
+6. Retrieve Lord British's Crown, Scepter, and Amulet: These items have been stolen, and you'll need to locate and retrieve them to help in the rescue of Lord British.
+
+7. Rescue Lord British: Deep in the Stygian Abyss, you'll find Lord British imprisoned. You must navigate the abyss, which is the most challenging dungeon in the game, and free him using the Amulet, Crown, and Scepter.
+
+8. Final Confrontation with Blackthorn: Once Lord British is rescued, you'll return to Britannia for the final confrontation with Lord Blackthorn. With the help of your companions and Lord British, you'll aim to overthrow the tyrant and restore peace to the realm.
+
+Throughout your journey, upholding the Virtues (like Honesty, Valor, and Compassion) will be crucial. Actions and decisions that align with these virtues will help you in your quest.
+
+This is a high-level summary, and there are many side quests, challenges, and nuances to explore within the game. However, these are the primary objectives to focus on to beat Ultima V.
+
+
+
+
+"Ultima VI: The False Prophet" is a role-playing video game released in 1990 as part of the Ultima series. In the game, the player assumes the role of the Avatar, the protagonist of the series, and is tasked with resolving the conflict between humans and the Gargoyles, a race from another world.
+
+Here's a brief summary of the main objectives you need to accomplish to beat Ultima VI:
+
+1. Intro: The game begins with the Avatar being summoned to Britannia by his old companions, only to find Britannia being invaded by the Gargoyles.
+  
+2. Gathering Companions: As you journey, you can recruit various companions to aid you in your quest.
+
+3. Learning Gargoyle Language: To communicate with the Gargoyles and understand their motivations, you'll need to learn their language. This involves finding a Gargoyle's Grammar book and a Translator lens.
+
+4. Finding Moonstones: These stones are essential for using the Moongates. You'll have to locate them throughout the land.
+
+5. Rune Quests: Each major town has a Rune which represents one of the Eight Virtues. You'll need to recover these Runes as they're being held by the Gargoyles.
+
+6. Shrines: Once you have the Rune for a particular Virtue, you can meditate at its corresponding Shrine to gain insights. However, most Shrines are surrounded by "silver snakes" which block access, and you'll need to find a way to dispel them.
+
+7. Codex: The Codex is a book of ultimate wisdom, which both the Gargoyles and humans revere. The main objective is to retrieve the Codex from the Void, but to do so, you need three artifacts: the Book of Prophecy, the Vortex Lens, and the Vortex Cube.
+
+8. Discovering the Gargoyles' Perspective: As you progress, you'll realize the Gargoyles are not just invaders but are acting based on their prophecies. They believe the Avatar is the "False Prophet" who would bring about their race's destruction. It's crucial to understand their side of the story and find a peaceful resolution.
+
+9. Final Resolution: The end goal is to return the Codex to the Void, ensuring it remains accessible to both races. You'll need to use the artifacts you've collected to achieve this and establish peace between the Gargoyles and humans.
+
+Throughout the game, exploration, puzzle-solving, and character interaction play significant roles. The Avatar's actions should be in line with the Eight Virtues to successfully navigate the challenges and achieve the best outcome.
+
+
+
+

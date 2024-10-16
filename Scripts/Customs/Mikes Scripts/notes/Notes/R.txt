@@ -1,0 +1,93 @@
+I'm trying to come up with werid and interesting NPCs to include in my UO free shard.  I am going with a science fantasy time compression theme so there should be people from all eras and fantasy worlds.  This is whay I have so far.  I really like old pop culture references and stuff from D&D.
+
+WastelandBiker
+HostileDruid
+HostilePrincess
+Musketeer
+Lawyer
+Assassin
+TwistedCultist
+MischievousWitch
+Cannibal
+Bard
+Jester
+EvilClown
+BountyHunter
+Necromancer
+EvilAlchemist
+MushroomWitch
+StarCitizen
+Cowboy
+StarfleetOfficer
+Sith
+RetroAndroid
+GlamRockMage
+SilentMovieMonk
+DinoRider
+AncientAstronaut
+DiscoDruid
+GothicNovelist
+NinjaLibrarian
+PirateOfTheStars
+NoirDetective
+CyberpunkSorcerer
+FlapperElementalist
+RetroFuturist
+BmovieBeastmaster
+DuelistPoet
+RenaissanceMechanic
+PsychedelicShaman
+WildWestWizard
+CavemanScientist
+
+
+
+SteampunkSamurai: A warrior clad in ornate clockwork armor, wielding a katana infused with steam-powered tech.
+
+BluesSingingGorgon: A gorgon with a mesmerizing voice, singing tales of tragedy.
+
+NeoVictorianVampire: An undead that feeds on the energy of machines rather than blood.
+
+BaroqueBarbarian: A savage warrior adorned in intricate, gilded armor and ruffles.
+
+JazzAgeJuggernaut: A giant with a saxophone that can cause earthquakes with its sound.
+
+PunkRockPaladin: A righteous knight, tattooed and with a mohawk, riding a motorcycle steed.
+
+RetroRobotRomancer: An old-school tin robot with a penchant for poetry and love tales.
+
+SkaSkald: A storyteller who narrates heroic epics with an upbeat tempo and a horn section.
+
+GreaserGryphonRider: A rebel who soars the skies on a mythical beast, always up for a drag race.
+
+PulpyPotionPurveyor: A character right out of a 1930s pulp magazine, selling exotic elixirs with exaggerated claims.
+
+VaudevilleValkyrie: A warrior maiden performing in variety shows, showcasing her combat skills.
+
+MotownMermaid: A sea siren with soulful tunes capable of charming the most hardened sailor.
+
+MedievalMeteorologist: A weather forecaster using ancient relics and tomes to predict storms and tempests.
+
+SurferSummoner: A wave rider who can call forth sea monsters from the depths.
+
+PinupPandemonium: A beauty from the 50s, causing chaos and mischief wherever she goes.
+
+CountryCowgirlCyclops: A one-eyed lass with a twang, lassoing mystical beasts on the frontier.
+
+HippieHoplite: A peaceful warrior from ancient Greece, advocating for love and understanding.
+
+RapRanger: A protector of the forests, delivering his message in fresh rhymes.
+
+Swingin'Sorceress: A spellcaster who dances to jazz tunes while casting enchantments.
+
+FunkFungiFamiliar: A groovy mushroom spirit, aiding magic-users with its spore-filled wisdom.
+
+GraffitiGargoyle: A stony guardian by day, street artist by night, painting urban prophecies.
+
+RaveRogue: A thief moving to techno beats, leaving neon trails in his wake.
+
+CabaretKraken: A tentacled performer from the deep, taking the stage with its many arms.
+
+RockabillyRevenant: An undead with slicked-back hair, haunting jukeboxes.
+
+ReggaeRunesmith: A chilled artisan etching powerful symbols to reggae rhythms.

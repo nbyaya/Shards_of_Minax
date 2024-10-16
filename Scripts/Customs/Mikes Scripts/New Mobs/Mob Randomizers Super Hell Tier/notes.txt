@@ -1,0 +1,19 @@
+			SetStr( 800, 1200 );
+			SetDex( 177, 255 );
+			SetInt( 151, 250 );
+
+			SetHits( 4000, 8000 );
+
+			SetDamage( 40, 50 );
+
+			SetSkill( SkillName.Anatomy, 100.1, 250.0 );
+			SetSkill( SkillName.EvalInt, 100.1, 250.0 );
+			SetSkill( SkillName.Magery, 100.5, 250.0 );
+			SetSkill( SkillName.Meditation, 100.1, 250.0 );
+			SetSkill( SkillName.MagicResist, 100.5, 250.0 );
+			SetSkill( SkillName.Tactics, 100.1, 250.0 );
+			SetSkill( SkillName.Wrestling, 100.1, 250.0 );
+
+			Tamable = true;
+			ControlSlots = Utility.RandomMinMax(6, 15);
+			MinTameSkill = Utility.RandomMinMax(300, 400);

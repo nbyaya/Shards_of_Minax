@@ -1,0 +1,32 @@
+Balron/name/Deceivon/str/800/dex/300/int/450/hue/1185/tamable/true/bodyvalue/40/hitsmaxseed/1900/hits/1900/ADD,0.3/MaxxiaScroll/ADD,1/HonestyRune/
+
+Balron/name/Malhart/str/800/dex/300/int/450/hue/1171/tamable/true/bodyvalue/40/hitsmaxseed/1900/hits/1900/ADD,0.3/MaxxiaScroll/ADD,1/CompassionRune/
+
+Balron/name/Cowardar/str/800/dex/300/int/450/hue/1174/tamable/true/bodyvalue/40/hitsmaxseed/1900/hits/1900/ADD,0.3/MaxxiaScroll/ADD,1/ValorRune/
+
+Balron/name/Treacharn/str/800/dex/300/int/450/hue/1176/tamable/true/bodyvalue/40/hitsmaxseed/1900/hits/1900/ADD,0.3/MaxxiaScroll/ADD,1/JusticeRune/
+
+Balron/name/Selfisar/str/800/dex/300/int/450/hue/1177/tamable/true/bodyvalue/40/hitsmaxseed/1900/hits/1900/ADD,0.3/MaxxiaScroll/ADD,1/SacrificeRune/
+
+Balron/name/Betraegor/str/800/dex/300/int/450/hue/1178/tamable/true/bodyvalue/40/hitsmaxseed/1900/hits/1900/ADD,0.3/MaxxiaScroll/ADD,1/HonorRune/
+
+Balron/name/Materiar/str/800/dex/300/int/450/hue/1179/tamable/true/bodyvalue/40/hitsmaxseed/1900/hits/1900/ADD,0.3/MaxxiaScroll/ADD,1/SpiritualityRune/
+
+Balron/name/Pridelon/str/800/dex/300/int/450/hue/1180/tamable/true/bodyvalue/40/hitsmaxseed/1900/hits/1900/ADD,0.3/MaxxiaScroll/ADD,1/HumilityRune/
+
+
+Deceit (Opposite of Honesty) - Located northeast of Britain and is filled with undead creatures, traps, and secret passages.
+
+Despise (Opposite of Compassion) - Found northwest of Britain, it is a home to various monsters representing hate and loathing.
+
+Destard (Opposite of Valor) - Located west of Trinsic, this dungeon houses dragons, drakes, and other monstrous creatures.
+
+Wrong (Opposite of Justice) - Situated east of Yew, it's a prison-themed dungeon filled with criminals, rogues, and other nefarious beings.
+
+Covetous (Opposite of Sacrifice) - Positioned near Vesper, it's themed around materialism and greed, housing various treasure-seeking creatures.
+
+Shame (Opposite of Honor) - Located to the south of Minoc, it's filled with elementals and creatures representing the shame of not living up to one's potential.
+
+Hythloth (Opposite of Spirituality) - Its entrances are found across the lands (like near Trinsic and Destard), and it's home to daemons and infernal creatures, representing a lack of spiritual grounding.
+
+Pride (Opposite of Humility) - This isn't an original anti-virtue dungeon from the early days of UO, but "Pride" is often considered the opposite of Humility in the broader Ultima lore.

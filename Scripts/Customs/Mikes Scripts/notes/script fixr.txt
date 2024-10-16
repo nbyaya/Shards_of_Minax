@@ -1,0 +1,213 @@
+Can you help me fix the bug in my ServUO script?  This is the error:
+
+Errors:
+ + Customs/Mikes Scripts/New Mobs/Unique Monsters/Squirrel/FlyingSquirrel.cs:
+    CS0115: Line 172: 'FlyingSquirrel.OnDamage(int, Mobile)': no suitable method found to override
+Scripts: One or more scripts failed to compile or no script files were found.
+
+This is the code causing the issues:
+	
+        public override void OnDamage(int amount, Mobile from)
+        {
+            base.OnDamage(amount, from);
+
+            // Trigger dodge chance on taking damage
+            Dodge();
+        }			
+
+			
+This is the script:
+
+using System;
+using Server;
+using Server.Mobiles;
+using Server.Network;
+using Server.Targeting;
+using Server.Spells;
+
+namespace Server.Mobiles
+{
+    [CorpseName("a flying squirrel corpse")]
+    public class FlyingSquirrel : BaseCreature
+    {
+        private DateTime m_NextGlideAttack;
+        private DateTime m_NextSonicSqueak;
+        private DateTime m_NextWingGust;
+        private bool m_AbilitiesInitialized; // Flag to track if abilities have been initialized
+
+        [Constructable]
+        public FlyingSquirrel()
+            : base(AIType.AI_Melee, FightMode.Aggressor, 10, 1, 0.2, 0.4)
+        {
+            Name = "a flying squirrel";
+            Body = 0x116; // Squirrel body
+            Hue = 1153; // Gray hue with unique color
+
+            SetStr(100, 120);
+            SetDex(90, 110);
+            SetInt(50, 70);
+
+            SetHits(80, 100);
+
+            SetDamage(10, 18);
+
+            SetDamageType(ResistanceType.Physical, 100);
+
+            SetResistance(ResistanceType.Physical, 40, 50);
+            SetResistance(ResistanceType.Fire, 20, 30);
+            SetResistance(ResistanceType.Cold, 25, 35);
+            SetResistance(ResistanceType.Poison, 20, 30);
+            SetResistance(ResistanceType.Energy, 25, 35);
+
+            SetSkill(SkillName.MagicResist, 60.0, 80.0);
+            SetSkill(SkillName.Tactics, 70.0, 90.0);
+            SetSkill(SkillName.Wrestling, 70.0, 90.0);
+
+            Fame = 2500;
+            Karma = -2500;
+
+            VirtualArmor = 35;
+
+            Tamable = false;
+
+            m_AbilitiesInitialized = false; // Initialize flag
+        }
+
+        public FlyingSquirrel(Serial serial)
+            : base(serial)
+        {
+        }
+
+        public override void OnThink()
+        {
+            base.OnThink();
+
+            if (Combatant != null)
+            {
+                if (!m_AbilitiesInitialized)
+                {
+                    Random rand = new Random();
+                    m_NextGlideAttack = DateTime.UtcNow + TimeSpan.FromSeconds(rand.Next(5, 15));
+                    m_NextSonicSqueak = DateTime.UtcNow + TimeSpan.FromSeconds(rand.Next(10, 25));
+                    m_NextWingGust = DateTime.UtcNow + TimeSpan.FromSeconds(rand.Next(15, 30));
+                    m_AbilitiesInitialized = true; // Set the flag to prevent re-initializing
+                }
+
+                if (DateTime.UtcNow >= m_NextGlideAttack)
+                {
+                    GlideAttack();
+                }
+
+                if (DateTime.UtcNow >= m_NextSonicSqueak)
+                {
+                    SonicSqueak();
+                }
+
+                if (DateTime.UtcNow >= m_NextWingGust)
+                {
+                    WingGust();
+                }
+            }
+        }
+
+        private void GlideAttack()
+        {
+            PublicOverheadMessage(MessageType.Regular, 0x3B2, true, "* The Flying Squirrel glides through the air with a fierce dive attack! *");
+            PlaySound(0x208); // Gliding sound
+
+            // Create a streak of motion effect
+            Effects.SendLocationEffect(Location, Map, 0x37B9, 20, 10); // Streak effect
+
+            if (Combatant != null)
+            {
+                AOS.Damage(Combatant, this, Utility.RandomMinMax(20, 30), 0, 0, 100, 0, 0); // High damage
+                Combatant.SendMessage("You are struck by the Flying Squirrel's powerful dive attack!");
+                // Knockback effect
+                Combatant.MoveToWorld(new Point3D(Combatant.X + Utility.Random(2, 4), Combatant.Y + Utility.Random(2, 4), Combatant.Z), Map);
+            }
+
+            m_NextGlideAttack = DateTime.UtcNow + TimeSpan.FromSeconds(40); // Cooldown for GlideAttack
+        }
+
+        private void SonicSqueak()
+        {
+            PublicOverheadMessage(MessageType.Regular, 0x3B2, true, "* The Flying Squirrel emits a deafening squeak! *");
+            PlaySound(0x1C6); // Loud squeak sound
+
+            // Create a loud sound wave effect
+            Effects.PlaySound(Location, Map, 0x207); // Sound wave effect
+
+            foreach (Mobile m in GetMobilesInRange(5))
+            {
+                if (m != this && m.Alive && CanBeHarmful(m))
+                {
+                    DoHarmful(m);
+                    m.SendMessage("You are disoriented by the Flying Squirrel's sonic squeak!");
+                    // Temporary confusion effect (e.g., reduce skills or prevent actions)
+                    m.SendMessage("You feel a wave of confusion washing over you!");
+
+                    // Reduce skills temporarily
+                    m.Skills[SkillName.Tactics].Base -= 10;
+                    m.Skills[SkillName.Wrestling].Base -= 10;
+                }
+            }
+
+            m_NextSonicSqueak = DateTime.UtcNow + TimeSpan.FromSeconds(50); // Cooldown for SonicSqueak
+        }
+
+        private void WingGust()
+        {
+            PublicOverheadMessage(MessageType.Regular, 0x3B2, true, "* The Flying Squirrel creates a gust of wind that pushes you back! *");
+            PlaySound(0x1D4); // Wind gust sound
+
+            // Create a gust of wind effect
+            Effects.SendLocationEffect(Location, Map, 0x375A, 20, 10); // Gust effect
+
+            foreach (Mobile m in GetMobilesInRange(3))
+            {
+                if (m != this && m.Alive && CanBeHarmful(m))
+                {
+                    DoHarmful(m);
+                    // Push back effect
+                    m.MoveToWorld(new Point3D(m.X + Utility.Random(2, 4), m.Y + Utility.Random(2, 4), m.Z), Map);
+                    m.SendMessage("You are pushed back by the gust of wind!");
+                }
+            }
+
+            m_NextWingGust = DateTime.UtcNow + TimeSpan.FromSeconds(45); // Cooldown for WingGust
+        }
+
+        private void Dodge()
+        {
+            // Make the squirrel dodge an attack
+            if (Utility.RandomDouble() < 0.25) // 25% chance to dodge
+            {
+                PublicOverheadMessage(MessageType.Regular, 0x3B2, true, "* The Flying Squirrel nimbly dodges your attack! *");
+                PlaySound(0x1C3); // Dodge sound
+                // Reduce damage taken
+                this.VirtualArmor += 10;
+            }
+        }
+
+        public override void OnDamage(int amount, Mobile from)
+        {
+            base.OnDamage(amount, from);
+
+            // Trigger dodge chance on taking damage
+            Dodge();
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+            m_AbilitiesInitialized = false; // Reset flag on deserialize
+        }
+    }
+}

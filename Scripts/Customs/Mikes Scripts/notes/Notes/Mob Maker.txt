@@ -1,0 +1,9 @@
+This is an ogre mage I made by creating a lich and giving it the body of an Ogre with more hit points and modified stats.  Can you come up with some more interesting monsters by combining each of the following list of monsters with body type 33 (Lizardman)?  Please give the new monsters unusual science fantasy names like a Jack vance novel.  Please don't change the loot, all of them should drop Maxxia scrolls.
+
+lich/name/Ogre Mage/str/210/dex/60/int/100/hue/520/tamable/true/bodyvalue/1/hitsmaxseed/400/hits/400/ADD,0.3/MaxxiaScroll
+
+YomotsuPriest
+Wraith
+Alligator
+BakeKitsune
+Barracoon

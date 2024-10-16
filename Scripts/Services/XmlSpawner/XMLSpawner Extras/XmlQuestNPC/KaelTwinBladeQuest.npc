@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Knight Commander Kael</Name>
+    <Running>True</Running>
+    <ProximityRange>4</ProximityRange>
+    <ResetRange>18</ResetRange>
+    <NoTriggerOnCarried>Knightly Emblem</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>8</SpeechPace>
+    <ResetTime>0.7</ResetTime>
+    <ConfigFile>KaelTwinBladeQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Reports suggest a Twin Blade Knight has been seen near the old ruins. Can you handle such a foe?</Text>
+    <Keywords>You notice a stern figure clad in gleaming armor, seemingly on the lookout for skilled warriors</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1.5</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1.5</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Knight Hunt,4/We need a brave soul to challenge the Twin Blade Knight. Dare you face him?;I am ready for this trial.;Absolutely</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>May your sword be swift and your shield steadfast. Return with proof of your victory for a just reward.</Text>
+    <Keywords>Absolutely</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Knightly Emblem/TitleString/Twin Blade Knight Vanquished/NoteString/Bring evidence of the Twin Blade Knight's defeat to Kael for your reward./Objective1/KILLNAMED,Twin Blade Knight,1/Description1/Vanquish the Twin Blade Knight/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/MaxxiaScroll/ADD/&lt;Gem/hue/RND,400,700/name/Knight's Valor Stone&gt;/ADD/&lt;bag/hue/1102/Name/Knight's Victory Cache/ADD/&lt;TeleportScroll/name/Scroll of Valor&gt;/ADD/&lt;Broadsword/name/Blade of Triumph&gt;/ADD/&lt;HealPotion/name/Potion of Knight's Vigor&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>2</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1.5</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

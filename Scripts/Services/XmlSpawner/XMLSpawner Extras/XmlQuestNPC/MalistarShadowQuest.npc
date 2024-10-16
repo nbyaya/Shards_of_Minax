@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Dark Conjuror Malistar</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <NoTriggerOnCarried>Assassin's Token</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.5</ResetTime>
+    <ConfigFile>MalistarShadowQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Gravemold the Shadow lurks in the depths, a blight upon this world. Will you silence him... forever?</Text>
+    <Keywords>You see a cloaked figure who whispers of dark deeds and darker rewards</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1175</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1175</SpeechHue>
+    <Gump>GUMP,Assassination Contract,4/The shadow that is Gravemold must be extinguished. Are you the assassin I seek?;I will do what must be done.;Silence is my ally.</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Excellent... let the darkness guide you. Bring me proof of the deed, and you shall be handsomely rewarded.</Text>
+    <Keywords>Silence is my ally.</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Assassin's Token/TitleString/Gravemold's Demise/NoteString/Bring evidence of Gravemold the Shadow's death to Malistar for a reward./Objective1/KILLNAMED,Gravemold the Shadow,1/Description1/Silence Gravemold the Shadow/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/&lt;MaxxiaScroll/amount/3&gt;/ADD/&lt;Obsidian/hue/RND,1,300/name/Shadow's Essence&gt;/ADD/&lt;bag/hue/1936/Name/Dark Assassin's Trove/ADD/&lt;SmokeBomb/name/Bomb of Shrouding&gt;/ADD/&lt;Dagger/name/Nightfall's Sting&gt;/ADD/&lt;InvisibilityPotion/name/Potion of Shadows&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1175</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>1175</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

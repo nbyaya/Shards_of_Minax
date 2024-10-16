@@ -1,0 +1,6 @@
+I would like your help creating some new NPCs for my Ultima Online free shard challenge.  I would like to make 5 unique looking NPCs that are humanoid monsters.  Below is an example of a male and female knight in the correct format.  Please give them unique SkinHue for their races.
+
+XMLQuestNPC,1/Str/100/Dex/100/Int/60/Hits/70/TalkText/*You see a noble and elegant knight in Chain armor*/Name/Lady Guinevere/UNEQUIP,Shoes,Delete/UNEQUIP,Pants,Delete/UNEQUIP,Shirt,Delete/UNEQUIP,Helm,Delete/UNEQUIP,Gloves,Delete/UNEQUIP,OuterTorso,Delete/UNEQUIP,MiddleTorso,Delete/EQUIP/<ChainLegs/Hue/1908>/EQUIP/<ChainChest/Hue/1908>/EQUIP/<ChainCoif/Hue/1908>/EQUIP/<PlateGloves/Hue/1908>/EQUIP/<Boots/Hue/1908>/EQUIP/<Broadsword/name/Lady Guinevere's Sword>/Direction/West/ConfigFile/LadyGuinevere/LoadConfig/True/
+
+XMLQuestNPC,0/Str/120/Dex/80/Int/40/Hits/80/TalkText/*You see a swift and agile knight in leather armor*/Name/Sir Lancealot/UNEQUIP,Shoes,Delete/UNEQUIP,Pants,Delete/UNEQUIP,Shirt,Delete/UNEQUIP,Helm,Delete/UNEQUIP,Gloves,Delete/UNEQUIP,OuterTorso,Delete/UNEQUIP,MiddleTorso,Delete/EQUIP/<LeatherLegs/Hue/1153>/EQUIP/<LeatherChest/Hue/1153>/EQUIP/<LeatherGloves/Hue/1153>/EQUIP/<LeatherCap/Hue/1153>/EQUIP/<Boots/Hue/1153>/EQUIP/<Lance/name/Sir Lancealot's Lance>/Direction/North/ConfigFile/SirLancealot/LoadConfig/True/
+

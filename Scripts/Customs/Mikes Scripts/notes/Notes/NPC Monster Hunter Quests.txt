@@ -1,0 +1,459 @@
+WaterElemental/ATTACH/xmlweaponability,ArmorIgnore/name/Hydra Elemental/str/350/dex/120/int/70/hue/1155/tamable/true/hitsmaxseed/1600/hits/1600/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/xmlweaponability,MovingShot/name/Vorn the Swift/hue/1196/tamable/true/str/300/dex/250/int/50/hitsmaxseed/1400/hits/1400/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/xmlweaponability,CrushingBlow/name/Gold Elemental/str/320/dex/120/int/70/hue/2213/tamable/true/hitsmaxseed/1520/hits/1520/ADD,0.1/MaxxiaScroll/
+
+Gazer/xmlweaponability,MortalStrike/name/Umbra Gazer/str/330/dex/105/int/61/hue/180/tamable/true/hitsmaxseed/1530/hits/1530/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/xmlweaponability,Dismount/name/Iron Elemental/str/340/dex/140/int/90/hue/2426/tamable/true/hitsmaxseed/1540/hits/1540/ADD,0.1/MaxxiaScroll/
+
+MongBat/ATTACH/xmlweaponability,MortalStrike/name/Flynnoth Bat/str/145/dex/115/int/60/hue/3000/tamable/true/hitsmaxseed/1255/hits/1255/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/xmlweaponability,ParalyzingBlow/name/Xyrvak Paralyzer/str/305/dex/109/int/59/hue/102/tamable/true/hitsmaxseed/1525/hits/1525/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/xmlweaponability,ParalyzingBlow/name/Stonegaze Ettin/str/455/dex/103/int/52/hue/1173/tamable/true/hitsmaxseed/1605/hits/1605/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/xmlweaponability,Disarm/name/Silent Knight/str/325/dex/102/int/58/hue/902/tamable/true/hitsmaxseed/1555/hits/1555/ADD,0.1/MaxxiaScroll/
+
+Shade/ATTACH/xmlweaponability,MortalStrike/name/Deathshade/str/415/dex/78/int/67/hue/1110/tamable/true/hitsmaxseed/1560/hits/1560/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/xmlweaponability,Disarm/name/Ilynx Shade/str/220/dex/150/int/85/hue/750/tamable/true/hitsmaxseed/1400/hits/1400/ADD,0.1/MaxxiaScroll/
+
+Ratman/ATTACH/xmlweaponability,BleedAttack/name/Rixar Rat/str/175/dex/175/int/75/hue/1243/tamable/true/hitsmaxseed/1375/hits/1375 ADD,0.1 MaxxiaScroll/
+
+MongBat/ATTACH/xmlweaponability,BleedAttack/name/Thallion Bat/str/140/dex/120/int/60/hue/160/tamable/true/hitsmaxseed/1250/hits/1250/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/xmlweaponability,ConcussionBlow/name/Argon Elemental/str/520/dex/125/int/65/hue/1122/tamable/true/hitsmaxseed/1620/hits/1620/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/xmlweaponability,Dismount/name/Graxel Brute/str/320/dex/87/int/53/hue/48/tamable/true/hitsmaxseed/1540/hits/1540/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/xmlweaponability,ShadowStrike/name/Glimar Shade/str/350/dex/200/int/100/hue/1900/tamable/true/hitsmaxseed/1550/hits/1550/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/xmlweaponability,MortalStrike/name/Doom Ettin/str/500/dex/70/int/60/hue/1109/tamable/true/hitsmaxseed/1700/hits/1700/ADD,0.1/MaxxiaScroll/
+
+Gazer/xmlweaponability,ConcussionBlow/name/Nebula Gazer/str/330/dex/105/int/58/hue/120/tamable/true/hitsmaxseed/1530/hits/1530/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/xmlweaponability,CrushingBlow/name/Rock Elemental/str/450/dex/50/int/50/hue/2406/tamable/true/hitsmaxseed/1900/hits/1900/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/xmlweaponability,DoubleStrike/name/Jalvrek Duelist/str/310/dex/115/int/53/hue/82/tamable/true/hitsmaxseed/1530/hits/1530/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/xmlweaponability,CrushingBlow/name/Brox the Mighty/hue/2405/tamable/true/str/500/dex/100/int/25/hitsmaxseed/1800/hits/1800
+
+Cyclops/ATTACH/xmlweaponability,DoubleStrike/name/Blaze Cyclops/str/400/dex/150/int/100/hue/1260/tamable/true/hitsmaxseed/1800/hits/1800/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/xmlweaponability,DoubleStrike/name/Fury Ettin/str/440/dex/130/int/51/hue/1155/tamable/true/hitsmaxseed/1600/hits/1600/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/xmlweaponability,WhirlwindAttack/name/Zorax Beast/str/400/dex/150/int/75/hue/115/tamable/true/hitsmaxseed/1600/hits/1600/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/xmlweaponability,MovingShot/name/Veltrix Mirage/str/250/dex/140/int/70/hue/1250/tamable/true/hitsmaxseed/1420/hits/1420/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/xmlweaponability,ShadowStrike/name/Nightshade Ettin/str/435/dex/112/int/59/hue/1165/tamable/true/hitsmaxseed/1595/hits/1595/ADD,0.1/MaxxiaScroll/
+
+Pixie/ATTACH/xmlweaponability,ParalyzingBlow/name/Spectralume/str/210/dex/180/int/110/hue/310/tamable/true/hitsmaxseed/1360/hits/1360/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/xmlweaponability,DoubleStrike/name/Twinstrike Lich/str/470/dex/130/int/155/hue/1156/tamable/true/hitsmaxseed/1660/hits/1660/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/xmlweaponability,CrushingBlow/name/Vaxlimore Specter/str/480/dex/105/int/53/hue/64/tamable/true/hitsmaxseed/1650/hits/1650/ADD,0.1/MaxxiaScroll/
+
+Shade/ATTACH/xmlweaponability,ConcussionBlow/name/Concussion Phantom/str/390/dex/90/int/70/hue/1104/tamable/true/hitsmaxseed/1545/hits/1545/ADD,0.1/MaxxiaScroll/
+
+MongBat/ATTACH/xmlweaponability,ArmorIgnore/name/Xyrinna Bat/str/110/dex/150/int/70/hue/1150/tamable/true/hitsmaxseed/1230/hits/1230/ADD,0.1/MaxxiaScroll/
+
+Ratman/ATTACH/xmlweaponability,ShadowStrike/name/Nixil Rat/str/150/dex/200/int/100/hue/1198/tamable/true/hitsmaxseed/1350/hits/1350/ADD,0.1/MaxxiaScroll/
+
+Pixie/ATTACH/xmlweaponability,BleedAttack/name/Glimterelle/str/230/dex/160/int/115/hue/45/tamable/true/hitsmaxseed/1340/hits/1340/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/xmlweaponability,InfectiousStrike/name/Crystophene Revenant/str/440/dex/110/int/58/hue/91/tamable/true/hitsmaxseed/1625/hits/1625/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/xmlweaponability,DoubleStrike/name/Tidal Gargoyle/str/355/dex/115/int/75/hue/47/tamable/true/hitsmaxseed/1610/hits/1610/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/xmlweaponability,ConcussionBlow/name/Concuss Ogre/str/540/dex/75/int/50/hue/510/tamable/true/hitsmaxseed/1620/hits/1620/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/xmlweaponability,Dismount/name/Dragon Gargoyle/str/200/dex/100/int/150/hue/48/tamable/true/hitsmaxseed/1400/hits/1400 ADD,0.1 MaxxiaScroll/
+
+AirElemental/ATTACH/xmlweaponability,WhirlwindAttack/name/Ammonia Elemental/str/535/dex/121/int/69/hue/1138/tamable/true/hitsmaxseed/1635/hits/1635/ADD,0.1/MaxxiaScroll/
+
+MongBat/ATTACH/xmlweaponability,MovingShot/name/Vyndrial Bat/str/120/dex/140/int/65/hue/1100/tamable/true/hitsmaxseed/1230/hits/1230/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/xmlweaponability,CrushingBlow/name/Stoneheart Daemon/str/530/dex/110/int/65/hue/2946/tamable/true/hitsmaxseed/1640/hits/1640/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/xmlweaponability,MovingShot/name/Strelnox Brute/str/328/dex/86/int/56/hue/34/tamable/true/hitsmaxseed/1560/hits/1560/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/xmlweaponability,BleedAttack/name/Bloodthirst Lich/str/420/dex/110/int/160/hue/1151/tamable/true/hitsmaxseed/1610/hits/1610/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/xmlweaponability,ArmorIgnore/name/Phantom Lich/str/200/dex/80/int/400/hue/1153/tamable/true/hitsmaxseed/1300/hits/1300/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/xmlweaponability,ShadowStrike/name/Shadowy Ogre/str/520/dex/90/int/65/hue/555/tamable/true/hitsmaxseed/1710/hits/1710/ADD,0.1/MaxxiaScroll/
+
+Succubus/ATTACH/xmlweaponability,DoubleStrike/name/Sapphire Succubus/str/150/dex/200/int/150/hue/88/tamable/true/hitsmaxseed/1450/hits/1450/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/xmlweaponability,ArmorIgnore/name/Zombrax/hue/1154/str/200/dex/80/int/40/tamable/true/hitsmaxseed/1400/hits/1400/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/xmlweaponability,ParalyzingBlow/name/Sulfur Elemental/str/515/dex/127/int/68/hue/1148/tamable/true/hitsmaxseed/1615/hits/1615/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/xmlweaponability,DoubleStrike/name/Twin Blade Knight/str/315/dex/110/int/56/hue/1285/tamable/true/hitsmaxseed/1545/hits/1545/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/xmlweaponability,CrushingBlow/name/Frenzor Brute/str/330/dex/80/int/50/hue/85/tamable/true/hitsmaxseed/1525/hits/1525/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/xmlweaponability,InfectiousStrike/name/Flame Gargoyle/str/340/dex/105/int/90/hue/42/tamable/true/hitsmaxseed/1560/hits/1560/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/xmlweaponability,ConcussionBlow/name/Wave Crusher/str/340/dex/100/int/80/hue/1177/tamable/true/hitsmaxseed/1580/hits/1580/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/xmlweaponability,CrushingBlow/name/Inferno Elemental/str/500/dex/100/int/50/hue/1450/tamable/true/hitsmaxseed/1600/hits/1600/ADD,0.1/MaxxiaScroll/
+
+Skeleton/ATTACH/xmlweaponability,InfectiousStrike/name/Brelzor Skeleton/str/315/dex/112/int/58/hue/63/tamable/true/hitsmaxseed/1565/hits/1565/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/xmlweaponability,Dismount/name/RiderThrow Ogre/str/500/dex/90/int/65/hue/525/tamable/true/hitsmaxseed/1650/hits/1650/ADD,0.1/MaxxiaScroll/
+
+MongBat/ATTACH/xmlweaponability,Disarm/name/Wraiven Bat/str/105/dex/140/int/80/hue/700/tamable/true/hitsmaxseed/1215/hits/1215/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/xmlweaponability,ShadowStrike/name/Nitrogen Nymph/str/150/dex/200/int/150/hue/1153/tamable/true/hitsmaxseed/1300/hits/1300/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/xmlweaponability,Dismount/name/Borvix Rider/str/305/dex/112/int/58/hue/77/tamable/true/hitsmaxseed/1525/hits/1525/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/xmlweaponability,Disarm/name/Xenon Elemental/str/530/dex/115/int/60/hue/1133/tamable/true/hitsmaxseed/1630/hits/1630/ADD,0.1/MaxxiaScroll/
+
+Succubus/ATTACH/xmlweaponability,Disarm/name/Solara Succubus/str/360/dex/115/int/85/hue/1005/tamable/true/hitsmaxseed/1710/hits/1710/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/xmlweaponability,ArmorIgnore/name/Steel Ettin/str/450/dex/120/int/60/hue/1150/tamable/true/hitsmaxseed/1600/hits/1600/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/xmlweaponability,DoubleStrike/name/Lunar Tide/str/320/dex/115/int/95/hue/1201/tamable/true/hitsmaxseed/1570/hits/1570/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/xmlweaponability,MovingShot/name/Carbon Elemental/str/505/dex/124/int/59/hue/1144/tamable/true/hitsmaxseed/1605/hits/1605/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/xmlweaponability,Disarm/name/Blaze Elemental/str/375/dex/135/int/75/hue/1550/tamable/true/hitsmaxseed/1540/hits/1540/ADD,0.1/MaxxiaScroll/
+
+Ratman/ATTACH/xmlweaponability,ShadowStrike/name/Glimtok Shade/str/250/dex/120/int/70/hue/58/tamable/true/hitsmaxseed/1620/hits/1620/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/xmlweaponability,ArmorIgnore/name/Raxxon Brute/str/320/dex/85/int/60/hue/115/tamable/true/hitsmaxseed/1520/hits/1520/ADD,0.1/MaxxiaScroll/
+
+Succubus/ATTACH/xmlweaponability,ArmorIgnore/name/Venus Succubus/str/350/dex/120/int/80/hue/1001/tamable/true/hitsmaxseed/1700/hits/1700/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/xmlweaponability,CrushingBlow/name/Celestial Gargoyle/str/340/dex/110/int/80/hue/46/tamable/true/hitsmaxseed/1590/hits/1590/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/xmlweaponability,ShadowStrike/name/Eclipse Elemental/str/350/dex/200/int/150/hue/1175/tamable/true/hitsmaxseed/1700/hits/1700/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/xmlweaponability,BleedAttack/name/Crimson Daemon/str/520/dex/115/int/55/hue/2118/tamable/true/hitsmaxseed/1620/hits/1620/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/xmlweaponability,BleedAttack/name/Ruby Elemental/str/370/dex/170/int/120/hue/1645/tamable/true/hitsmaxseed/1570/hits/1570/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/xmlweaponability,InfectiousStrike/name/Krax the Plagued/hue/2212/tamable/true/str/450/dex/100/int/50/hitsmaxseed/1700/hits/1700/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/xmlweaponability,ConcussionBlow/name/Ember Elemental/str/450/dex/110/int/70/hue/1350/tamable/true/hitsmaxseed/1570/hits/1570/ADD,0.1/MaxxiaScroll/
+
+Succubus/ATTACH/xmlweaponability,ShadowStrike/name/Emerald Succubus/str/100/dex/250/int/200/hue/68/tamable/true/hitsmaxseed/1500/hits/1500/ADD,0.1/MaxxiaScroll/
+
+Ratman/ATTACH/xmlweaponability,WhirlwindAttack/name/Ferlax Whirl/str/210/dex/160/int/65/hue/73/tamable/true/hitsmaxseed/1640/hits/1640/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/xmlweaponability,MovingShot/name/Skylon Runner/str/300/dex/250/int/125/hue/88/tamable/true/hitsmaxseed/1500/hits/1500/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/xmlweaponability,WhirlwindAttack/name/Zorax the Whirling/hue/1153/tamable/true/str/400/dex/150/int/75/hitsmaxseed/1600/hits/1600/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/xmlweaponability,InfectiousStrike/name/Emerald Elemental/str/390/dex/190/int/140/hue/1272/tamable/true/hitsmaxseed/1590/hits/1590/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/xmlweaponability,CrushingBlow/name/Crusher Knight/str/350/dex/50/int/50/hue/1175/tamable/true/hitsmaxseed/1600/hits/1600/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/xmlweaponability,CrushingBlow/name/Tsunami Elemental/str/450/dex/100/int/50/hue/1266/tamable/true/hitsmaxseed/1900/hits/1900/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/xmlweaponability,Disarm/name/Disarmer Lich/str/450/dex/105/int/165/hue/1154/tamable/true/hitsmaxseed/1640/hits/1640/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/xmlweaponability,WhirlwindAttack/name/Vortex Knight/str/327/dex/104/int/55/hue/1270/tamable/true/hitsmaxseed/1557/hits/1557/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/xmlweaponability,BleedAttack/name/Crimson Knight/str/310/dex/110/int/60/hue/37/tamable/true/hitsmaxseed/1540/hits/1540/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/xmlweaponability,ShadowStrike/name/Shadowlord Cyclops/str/490/dex/80/int/90/hue/1109/tamable/true/hitsmaxseed/1660/hits/1660/ADD,0.1/MaxxiaScroll/
+
+Pixie/ATTACH/xmlweaponability,InfectiousStrike/name/Stellavire/str/225/dex/165/int/115/hue/205/tamable/true/hitsmaxseed/1345/hits/1345/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/xmlweaponability,WhirlwindAttack/name/Whirlwind Lich/str/530/dex/105/int/135/hue/1162/tamable/true/hitsmaxseed/1720/hits/1720/ADD,0.1/MaxxiaScroll/
+
+Shade/ATTACH/xmlweaponability,ParalyzingBlow/name/Paralyzing Wisp/str/395/dex/82/int/73/hue/1112/tamable/true/hitsmaxseed/1545/hits/1545/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/xmlweaponability,BleedAttack/name/Blood Ettin/str/420/dex/110/int/55/hue/37/tamable/true/hitsmaxseed/1580/hits/1580/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/xmlweaponability,MortalStrike/name/Deathbringer Cyclops/str/515/dex/82/int/78/hue/1175/tamable/true/hitsmaxseed/1710/hits/1710/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/xmlweaponability,Dismount/name/Scorch Elemental/str/425/dex/125/int/80/hue/1650/tamable/true/hitsmaxseed/1560/hits/1560/ADD,0.1/MaxxiaScroll/
+
+Gazer/xmlweaponability,CrushingBlow/name/Pulsar Gazer/str/315/dex/115/int/57/hue/130/tamable/true/hitsmaxseed/1515/hits/1515/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/xmlweaponability,CrushingBlow/name/Rock Cyclops/str/300/dex/200/int/100/hue/2406/tamable/true/hitsmaxseed/1600/hits/1600 ADD,0.1 MaxxiaScroll/
+
+AirElemental/ATTACH/xmlweaponability,InfectiousStrike/name/Methane Elemental/str/495/dex/128/int/57/hue/1135/tamable/true/hitsmaxseed/1595/hits/1595/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/xmlweaponability,DoubleStrike/name/Copper Elemental/str/330/dex/130/int/80/hue/2415/tamable/true/hitsmaxseed/1530/hits/1530/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/xmlweaponability,MovingShot/name/Zenith Gargoyle/str/350/dex/120/int/70/hue/49/tamable/true/hitsmaxseed/1600/hits/1600/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/xmlweaponability,Disarm/name/Dagger Knight/str/200/dex/200/int/50/hue/1109/tamable/true/hitsmaxseed/1300/hits/1300/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/xmlweaponability,Dismount/name/Radon Elemental/str/550/dex/120/int/75/hue/1155/tamable/true/hitsmaxseed/1650/hits/1650/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/xmlweaponability,WhirlwindAttack/name/Stormfury Daemon/str/620/dex/65/int/110/hue/2581/tamable/true/hitsmaxseed/1730/hits/1730/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/xmlweaponability,DoubleStrike/name/Zephylox Ethereal/str/270/dex/120/int/65/hue/950/tamable/true/hitsmaxseed/1440/hits/1440/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/xmlweaponability,Dismount/name/Wind Gargoyle/str/335/dex/125/int/65/hue/45/tamable/true/hitsmaxseed/1550/hits/1550/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/xmlweaponability,MovingShot/name/Vyron Wisp/str/200/dex/100/int/100/hue/1196/tamable/true/hitsmaxseed/1500/hits/1500/ADD,0.1/MaxxiaScroll/
+
+Pixie/ATTACH/xmlweaponability,ConcussionBlow/name/Nexylight/str/215/dex/175/int/110/hue/95/tamable/true/hitsmaxseed/1355/hits/1355/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/xmlweaponability,ArmorIgnore/name/Zylthrix Wisp/str/250/dex/110/int/80/hue/300/tamable/true/hitsmaxseed/1400/hits/1400/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/xmlweaponability,MortalStrike/name/Nexlor Spectre/str/325/dex/87/int/78/hue/1280/tamable/true/hitsmaxseed/1553/hits/1533/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/xmlweaponability,MovingShot/name/Wanderer Ettin/str/420/dex/125/int/57/hue/1265/tamable/true/hitsmaxseed/1580/hits/1580/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/xmlweaponability,BleedAttack/name/Grivik Mauler/str/310/dex/110/int/55/hue/47/tamable/true/hitsmaxseed/1530/hits/1530/ADD,0.1/MaxxiaScroll/
+
+MongBat/ATTACH/xmlweaponability,CrushingBlow/name/Zoltrix Bat/str/150/dex/110/int/55/hue/498/tamable/true/hitsmaxseed/1260/hits/1260/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/xmlweaponability,BleedAttack/name/Crimson Cyclops/str/480/dex/80/int/80/hue/33/tamable/true/hitsmaxseed/1620/hits/1620/ADD,0.1/MaxxiaScroll/
+
+
+XMLQuestNPC,0/Name/Elemental Slayer Evan/Title/The Stormbreaker/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1175>/EQUIP/<WideBrimHat/hue/1173>/EQUIP/<ThighBoots/hue/1172>/STR/90/EQUIP/<QuarterStaff/name/Evan's Elemental Bane>/ConfigFile/EvanElementalQuest/LoadConfig/True/TalkText/You see a man in storm-worn attire who seems to seek aid against the elements
+
+XMLQuestNPC,1/Name/Gale Strider Lana/Title/The Wind Whisperer/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<Robe/hue/2120>/EQUIP/<FloppyHat/hue/2122>/EQUIP/<Boots/hue/2121>/STR/85/EQUIP/<ShepherdsCrook/name/Lana's Wind Shepherd>/ConfigFile/LanaWindQuest/LoadConfig/True/TalkText/You see a woman clad in garments that flutter like leaves in a breeze, her eyes fixed on the horizon
+
+XMLQuestNPC,1/Name/Hydra Hunter Hailey/Title/The Hydra Vanquisher/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/2115>/EQUIP/<FloppyHat/hue/2123>/EQUIP/<Boots/hue/2122>/STR/95/EQUIP/<BladedStaff/name/Hailey's Hydra Harrier>/ConfigFile/HaileyHydraQuest/LoadConfig/True/TalkText/You notice a determined woman with a steely gaze, ready to end the threat of the hydras
+
+XMLQuestNPC,0/Name/Swift Hunter Kael/Title/The Vorn Vanquisher/Male/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<LeatherChest/hue/2125>/EQUIP/<LeatherGloves/hue/2123>/EQUIP/<Boots/hue/2122>/STR/95/EQUIP/<Bow/name/Kael's Vorn Slayer>/ConfigFile/KaelVornQuest/LoadConfig/True/TalkText/You notice an agile hunter, his eyes scanning for a notorious speedster, Vorn the Swift
+
+XMLQuestNPC,0/Name/Gold Hunter Garrett/Title/The Auric Avenger/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/2123>/EQUIP/<WideBrimHat/hue/2121>/EQUIP/<ThighBoots/hue/2122>/STR/95/EQUIP/<QuarterStaff/name/Garrett's Goldseeker>/ConfigFile/GarrettGoldElementalQuest/LoadConfig/True/TalkText/You see a man adorned in gold-trimmed robes who looks determined to rid the land of a lustrous threat
+
+XMLQuestNPC,0/Name/Gazer Slayer Gavin/Title/The Umbra's Bane/Male/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<Robe/hue/1905>/EQUIP/<Bandana/hue/1903>/EQUIP/<Boots/hue/1902>/STR/95/EQUIP/<GnarledStaff/name/Gavin's Gazer Grinder>/ConfigFile/GavinUmbraGazerQuest/LoadConfig/True/TalkText/You encounter a stern figure glaring intently at the dark, as if seeing through the unseen.
+
+XMLQuestNPC,1/Name/Iron Slayer Irene/Title/The Ironbreaker/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1103>/EQUIP/<FloppyHat/hue/1101>/EQUIP/<Boots/hue/1100>/STR/100/EQUIP/<WarMace/name/Irene's Ironbane>/ConfigFile/IreneIronQuest/LoadConfig/True/TalkText/You see a woman clad in iron, looking determined and ready for battle
+
+XMLQuestNPC,0/Name/Bat Hunter Byron/Title/The Silent Wing/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<LeatherChest/hue/1905>/EQUIP/<Cloak/hue/1109>/EQUIP/<Boots/hue/1176>/STR/85/EQUIP/<Bow/name/Byron's Bat Bow>/ConfigFile/ByronBatQuest/LoadConfig/True/TalkText/You notice a solitary figure, his eyes scanning the skies for the flutter of wings.
+
+XMLQuestNPC,0/Name/Venom Hunter Vance/Title/The Paralyzer's Bane/Male/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<Tunic/hue/2125>/EQUIP/<SkullCap/hue/2123>/EQUIP/<Boots/hue/2122>/STR/95/EQUIP/<BladedStaff/name/Vance's Paralyzer Nullifier>/ConfigFile/VanceParalyzerQuest/LoadConfig/True/TalkText/You notice a determined individual with antidotes strapped to his belt, eyeing the wilderness with resolve
+
+XMLQuestNPC,0/Name/Ettin Hunter Eli/Title/The Stonewarden/Male/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Cloak/hue/1109>/EQUIP/<BoonieHat/hue/1107>/EQUIP/<Boots/hue/1106>/STR/95/EQUIP/<WarMace/name/Eli's Ettin Crusher>/ConfigFile/EliEttinQuest/LoadConfig/True/TalkText/You notice a rugged warrior with a gaze as hard as the stone beasts he hunts
+
+XMLQuestNPC,1/Name/Knight Tracker Aria/Title/The Silent Sentinel/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<Robe/hue/1105>/EQUIP/<FeatheredHat/hue/1103>/EQUIP/<Boots/hue/1102>/STR/95/EQUIP/<Longsword/name/Aria's Knightly Blade>/ConfigFile/AriaSilentKnightQuest/LoadConfig/True/TalkText/You see a determined woman, her focus as quiet as the grave, ready to vanquish a silent menace
+
+XMLQuestNPC,1/Name/Shadow Hunter Kayla/Title/The Deathshade's Bane/Female/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<LeatherNinjaJacket/hue/1905>/EQUIP/<LeatherNinjaPants/hue/1906>/EQUIP/<NinjaTabi/hue/1907>/STR/95/EQUIP/<Kryss/name/Kayla's Deathshade Piercer>/ConfigFile/KaylaDeathshadeQuest/LoadConfig/True/TalkText/You see a fierce warrior, her eyes scanning the shadows for her next target
+
+XMLQuestNPC,1/Name/Shadow Hunter Lira/Title/The Shade Vanquisher/Female/True/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<Boots/hue/1107>/EQUIP/<LeatherGloves/hue/1106>/STR/85/EQUIP/<RadiantScimitar/name/Lira's Ilynx Bane>/ConfigFile/LiraIlynxQuest/LoadConfig/True/TalkText/You encounter a cloaked figure who looks ready to confront the shadows themselves
+
+XMLQuestNPC,0/Name/Rat Catcher Remmy/Title/The Rat's Bane/Male/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<Tunic/hue/1103>/EQUIP/<ShortPants/hue/1102>/EQUIP/<Boots/hue/1101>/STR/85/EQUIP/<Shepherd'sCrook/name/Remmy's Rat Ruler>/ConfigFile/RemmyRatQuest/LoadConfig/True/TalkText/You notice a figure setting traps and eyeing the shadows with a determined scowl
+
+XMLQuestNPC,1/Name/Bat Hunter Bella/Title/The Night Whisperer/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<Cloak/hue/1109>/EQUIP/<Bonnet/hue/1107>/EQUIP/<Boots/hue/1106>/STR/85/EQUIP/<Bow/name/Bella's Bat Bow>/ConfigFile/BellaBatQuest/LoadConfig/True/TalkText/You see a vigilant woman with a bow, her eyes scanning the skies for bats
+
+XMLQuestNPC,0/Name/Elemental Slayer Aric/Title/The Argon Nemesis/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1150>/EQUIP/<Cloak/hue/1148>/EQUIP/<Boots/hue/1147>/STR/95/EQUIP/<BladedStaff/name/Aric's Elemental Edge>/ConfigFile/AricArgonQuest/LoadConfig/True/TalkText/You see a warrior whose presence seems to warp the air around him, seeking assistance
+
+XMLQuestNPC,1/Name/Brute Hunter Bria/Title/The Graxel Nemesis/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<LeatherBustierArms/hue/1195>/EQUIP/<Skirt/hue/1194>/EQUIP/<Boots/hue/1193>/STR/85/EQUIP/<Bow/name/Bria's Graxel Bow>/ConfigFile/BriaGraxelQuest/LoadConfig/True/TalkText/You notice a rugged hunter, her eyes scanning for the ferocious Graxel Brutes
+
+XMLQuestNPC,1/Name/Shadow Hunter Kayla/Title/The Gloom Banisher/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<ElvenBoots/hue/1107>/EQUIP/<LeatherGloves/hue/1106>/STR/85/EQUIP/<RepeatingCrossbow/name/Kayla's Shade Piercer>/ConfigFile/KaylaGlimarQuest/LoadConfig/True/TalkText/Before you stands a determined hunter, her eyes scanning the shadows for her next target.
+
+XMLQuestNPC,0/Name/Ettin Hunter Edric/Title/The Ettinbane/Male/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<LeatherTunic/hue/1105>/EQUIP/<LongPants/hue/1103>/EQUIP/<Boots/hue/1102>/STR/95/EQUIP/<HeavyCrossbow/name/Edric's Ettin Piercer>/ConfigFile/EdricEttinQuest/LoadConfig/True/TalkText/You see a rugged figure, his eyes scanning the horizon for the monstrous Ettins
+
+XMLQuestNPC,0/Name/Galactic Seeker Zara/Title/The Starbound/Male/False/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<ElvenBoots/hue/1107>/EQUIP/<Cloak/hue/1106>/STR/95/EQUIP/<BlackStaff/name/Zara's Cosmic Staff>/ConfigFile/ZaraNebulaQuest/LoadConfig/True/TalkText/You see a traveler of the cosmos who seems to be searching for a champion to face celestial threats
+
+XMLQuestNPC,0/Name/Boulder Breaker Brian/Title/The Earthshaker/Male/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<Robe/hue/1195>/EQUIP/<FeatheredHat/hue/1193>/EQUIP/<Boots/hue/1192>/STR/100/EQUIP/<WarHammer/name/Brian's Elemental Crusher>/ConfigFile/BrianRockElementalQuest/LoadConfig/True/TalkText/You see a rugged figure, his gear dusted with stone and dirt, who looks like he could use some help.
+
+XMLQuestNPC,1/Name/Duelist Hunter Fiona/Title/The Duelist's Bane/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<LeatherBustier/hue/1122>/EQUIP/<Skirt/hue/1103>/EQUIP/<Boots/hue/1102>/STR/85/EQUIP/<Rapier/name/Fiona's Duelist Foil>/ConfigFile/FionaDuelistQuest/LoadConfig/True/TalkText/Before you stands a determined warrior, her eyes scanning for skilled fighters to end a duelist's tyranny.
+
+XMLQuestNPC,0/Name/Brox the Mighty/Title/The Mountain Crusher/Male/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<PlateChest/hue/1103>/EQUIP/<PlateArms/hue/1102>/EQUIP/<PlateGloves/hue/1102>/EQUIP/<PlateLegs/hue/1103>/EQUIP/<PlateHelm/hue/1100>/EQUIP/<VikingSword/name/Brox's Mountain Cleaver>/STR/110/EQUIP/<HeavyShield/name/Brox's Wall>/ConfigFile/BroxMightyQuest/LoadConfig/True/TalkText/You see a formidable warrior clad in heavy armor, his eyes burning with the desire for battle
+
+XMLQuestNPC,0/Name/Pyre Master Quinn/Title/The Flame Warden/Male/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<Robe/hue/1166>/EQUIP/<SkullCap/hue/1164>/EQUIP/<Boots/hue/1163>/STR/95/EQUIP/<BladedStaff/name/Quinn's Inferno Scepter>/ConfigFile/QuinnBlazeCyclopsQuest/LoadConfig/True/TalkText/You notice a figure cloaked in heat, seeking assistance to subdue a fiery menace
+
+XMLQuestNPC,0/Name/Giant Slayer Greg/Title/The Ettinbane/Male/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<ChainChest/hue/1105>/EQUIP/<PlatemailArms/hue/1103>/EQUIP/<RingmailGloves/hue/1102>/STR/100/EQUIP/<Halberd/name/Greg's Giant Reaper>/ConfigFile/GregEttinQuest/LoadConfig/True/TalkText/You see a battle-hardened warrior looking for assistance to bring down a monstrous ettin
+
+XMLQuestNPC,1/Name/Beast Slayer Zara/Title/The Savagebane/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<StuddedArmorSet/hue/2001>/EQUIP/<SkullCap/hue/1175>/EQUIP/<LeatherBoots/hue/1172>/STR/95/EQUIP/<DoubleAxe/name/Zara's Beast Cleaver>/ConfigFile/ZaraBeastQuest/LoadConfig/True/TalkText/You see a determined woman, her gaze as fierce as the beasts she hunts
+
+XMLQuestNPC,1/Name/Mirage Hunter Maya/Title/The Illusion Breaker/Female/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<Robe/hue/2075>/EQUIP/<FloppyHat/hue/2073>/EQUIP/<Boots/hue/2072>/STR/95/EQUIP/<Bow/name/Maya's Mirage Piercer>/ConfigFile/MayaMirageQuest/LoadConfig/True/TalkText/You notice a sharp-eyed huntress, peering through the mirage, waiting for a skilled hunter
+
+XMLQuestNPC,1/Name/Ettin Hunter Elaine/Title/The Ettinbane/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<LeatherChest/hue/1122>/EQUIP/<SkullCap/hue/1109>/EQUIP/<Boots/hue/1108>/STR/85/EQUIP/<Longsword/name/Elaine's Ettin Slayer>/ConfigFile/ElaineEttinQuest/LoadConfig/True/TalkText/You notice a rugged warrior, her gaze set firmly on the surrounding wilderness with intent to cull its dangers.
+
+XMLQuestNPC,1/Name/Spectral Hunter Lena/Title/The Lightbringer/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<Boots/hue/1108>/EQUIP/<LongSkirt/hue/1107>/STR/95/EQUIP/<RadiantStaff/name/Lena's Spectral Bane>/ConfigFile/LenaSpectralQuest/LoadConfig/True/TalkText/You encounter a cloaked figure who is peering into the spectral mists with intent.
+
+XMLQuestNPC,0/Name/Undead Hunter Ulysses/Title/The Lichbane/Male/True/BodyValue/402/UNEQUIP,All/Direction/West/EQUIP/<Robe/hue/1902>/EQUIP/<Tricorne/hue/1903>/EQUIP/<Boots/hue/1901>/STR/95/EQUIP/<Broadsword/name/Ulysses's Lichslayer>/ConfigFile/UlyssesLichQuest/LoadConfig/True/TalkText/You notice a grave figure scanning the horizon, possibly seeking help in his unending war against the undead
+
+XMLQuestNPC,0/Name/Specter Hunter Soren/Title/The Ghost's Bane/Male/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<Robe/hue/1905>/EQUIP/<TricorneHat/hue/1903>/EQUIP/<Boots/hue/1902>/STR/95/EQUIP/<Cutlass/name/Soren's Specter Cutter>/ConfigFile/SorenSpecterQuest/LoadConfig/True/TalkText/You notice a grim figure eyeing the ethereal mists, his gaze piercing through the supernatural
+
+XMLQuestNPC,1/Name/Phantom Hunter Kayla/Title/The Echoing Silence/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Cloak/hue/1109>/EQUIP/<Bonnet/hue/1110>/EQUIP/<Boots/hue/1111>/STR/85/EQUIP/<Bow/name/Kayla's Phantom Piercer>/ConfigFile/KaylaPhantomQuest/LoadConfig/True/TalkText/You notice a focused huntress, her eyes scanning for unseen threats
+
+XMLQuestNPC,0/Name/Bat Hunter Bryn/Title/The Silent Wing/Male/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<LeatherTunic/hue/1105>/EQUIP/<SkullCap/hue/1103>/EQUIP/<Boots/hue/1102>/STR/85/EQUIP/<Bow/name/Bryn's Bat Bane>/ConfigFile/BrynBatQuest/LoadConfig/True/TalkText/You see a focused man whose eyes follow the flutter of shadows
+
+XMLQuestNPC,0/Name/Rat Hunter Ray/Title/The Nixil Vanquisher/Male/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<LeatherTunic/hue/2123>/EQUIP/<LongPants/hue/1067>/EQUIP/<Boots/hue/1070>/STR/85/EQUIP/<Longsword/name/Ray's Rat Repellent>/ConfigFile/RayRatQuest/LoadConfig/True/TalkText/You see a rugged individual, eyes sharp for the scurry of vermin...
+
+XMLQuestNPC,1/Name/Glittering Sabrina/Title/The Luminous Seeker/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<ElegantGown/hue/1150>/EQUIP/<JeweledTiara/hue/1152>/EQUIP/<Sandals/hue/1151>/STR/85/EQUIP/<Wand/name/Sabrina's Glimterelle Wand>/ConfigFile/SabrinaGlimterelleQuest/LoadConfig/True/TalkText/You encounter a woman radiating a faint, shimmering light, looking determined yet in need of assistance
+
+XMLQuestNPC,1/Name/Crystal Huntress Selene/Title/The Revenant's Bane/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<Robe/hue/1385>/EQUIP/<Bonnet/hue/1386>/EQUIP/<Boots/hue/1387>/STR/85/EQUIP/<Bow/name/Selene's Crystalline Bow>/ConfigFile/SeleneCrystopheneQuest/LoadConfig/True/TalkText/You notice a fierce woman with a glinting bow, eyeing the horizon for crystalline shadows
+
+XMLQuestNPC,1/Name/Tidehunter Tara/Title/The Tidal Whisperer/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<Cloak/hue/2225>/EQUIP/<FloppyHat/hue/2218>/EQUIP/<Boots/hue/2219>/STR/85/EQUIP/<Trident/name/Tara's Tidal Defender>/ConfigFile/TaraTidalQuest/LoadConfig/True/TalkText/You see a fierce-looking woman who appears to have a deep connection with the sea
+
+XMLQuestNPC,1/Name/Ogre Hunter Olga/Title/The Ogre Bane/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<LeatherChest/hue/1102>/EQUIP/<LeatherGorget/hue/1103>/EQUIP/<LeatherLegs/hue/1104>/STR/85/EQUIP/<WarMace/name/Olga's Ogre Crusher>/ConfigFile/OlgaOgreQuest/LoadConfig/True/TalkText/You see a battle-hardened warrior eyeing the horizon for Ogres
+
+XMLQuestNPC,0/Name/Gargoyle Hunter Gabriel/Title/The Dragonbane/Male/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<PlatemailChest/hue/1109>/EQUIP/<PlatemailLegs/hue/1108>/EQUIP/<NorseHelm/hue/1107>/STR/100/EQUIP/<BroadSword/name/Gabriel's Gargoyle Slayer>/ConfigFile/GabrielGargoyleQuest/LoadConfig/True/TalkText/You notice a stalwart figure clad in armor, who seems to be searching for a fearless warrior
+
+XMLQuestNPC,1/Name/Elemental Hunter Aria/Title/The Pungent Vanquisher/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<Robe/hue/2120>/EQUIP/<FeatheredHat/hue/2122>/EQUIP/<Boots/hue/2121>/STR/85/EQUIP/<Staff/name/Aria's Ammonia Neutralizer>/ConfigFile/AriaAmmoniaQuest/LoadConfig/True/TalkText/You notice a woman with a sharp gaze, surrounded by alchemical tools, seeking assistance
+
+XMLQuestNPC,0/Name/Bat Hunter Bryn/Title/The Silent Wing/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<LeatherChest/hue/1122>/EQUIP/<Cloak/hue/1109>/EQUIP/<Boots/hue/1175>/STR/85/EQUIP/<CompositeBow/name/Bryn's Bat Bane>/ConfigFile/BrynBatQuestB/LoadConfig/True/TalkText/You encounter a shadowy figure, weapons bristling, eyes scanning the skies for Vyndrial Bats
+
+XMLQuestNPC,0/Name/Daemon Hunter Dante/Title/The Stone's Bane/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Surcoat/hue/1102>/EQUIP/<Cloak/hue/1103>/EQUIP/<Boots/hue/1101>/STR/100/EQUIP/<Longsword/name/Dante's Daemon Dismissal>/ConfigFile/DanteDaemonQuest/LoadConfig/True/TalkText/You encounter a stern figure cloaked in dark garments, his eyes burning with a purposeful fire
+
+XMLQuestNPC,0/Name/Beast Hunter Bael/Title/The Strelnox Vanquisher/Male/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<StuddedArmorChest/hue/1195>/EQUIP/<StuddedArmorGloves/hue/1194>/EQUIP/<StuddedArmorArms/hue/1194>/EQUIP/<StuddedArmorLegs/hue/1195>/EQUIP/<StuddedArmorGorget/hue/1193>/EQUIP/<Boots/hue/1176>/STR/95/EQUIP/<HeavyCrossbow/name/Bael's Strelnox Piercer>/ConfigFile/BaelStrelnoxQuest/LoadConfig/True/TalkText/You encounter a rugged figure, his eyes scanning the horizon for the fearsome Strelnox Brute
+
+XMLQuestNPC,0/Name/Lich Hunter Liam/Title/The Lichbane/Male/True/BodyValue/400/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1905>/EQUIP/<FeatheredHat/hue/1910>/EQUIP/<Boots/hue/1906>/STR/100/EQUIP/<HeavyCrossbow/name/Liam's Lich Piercer>/ConfigFile/LiamLichQuest/LoadConfig/True/TalkText/You notice a grim figure clad in dark garb, an ominous presence seeking a warrior against the undead
+
+XMLQuestNPC,0/Name/Lich Hunter Liam/Title/The Shadowbane/Male/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<Cloak/hue/1109>/EQUIP/<BoneHelm/hue/1108>/EQUIP/<Boots/hue/1107>/STR/95/EQUIP/<SilverSword/name/Liam's Lichbane>/ConfigFile/LiamLichQuest2/LoadConfig/True/TalkText/You notice a determined figure, eyes ablaze with vengeance, seeking the fall of the undead.
+
+XMLQuestNPC,1/Name/Shadow Slayer Sarah/Title/The Darkness Vanquisher/Female/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<Boots/hue/1176>/EQUIP/<LeatherGloves/hue/1174>/STR/85/EQUIP/<MagicSword/name/Sarah's Ogre Bane>/ConfigFile/SarahShadowOgreQuest/LoadConfig/True/TalkText/You see a fierce warrior who seeks help in pushing back the encroaching darkness
+
+XMLQuestNPC,1/Name/Mystic Maribel/Title/The Sapphire Seer/Female/True/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1155>/EQUIP/<FloppyHat/hue/1163>/EQUIP/<Boots/hue/1162>/STR/85/EQUIP/<GnarledStaff/name/Maribel's Mystic Stave>/ConfigFile/MaribelSuccubusQuest/LoadConfig/True/TalkText/You see a woman cloaked in sapphire garments, her eyes reflecting a deep knowledge of arcane mysteries.
+
+XMLQuestNPC,1/Name/Zombie Hunter Zara/Title/The Undead's Bane/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<LeatherChest/hue/1986>/EQUIP/<Skirt/hue/1109>/EQUIP/<Boots/hue/1175>/STR/85/EQUIP/<Crossbow/name/Zara's Zombie Piercer>/ConfigFile/ZaraZombraxQuest/LoadConfig/True/TalkText/You encounter a focused woman with a gaze as sharp as her crossbow, seeking assistance in her undead hunt.
+
+XMLQuestNPC,0/Name/Toxic Warden Wyatt/Title/The Fume Fighter/Male/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<Robe/hue/1905>/EQUIP/<Cloak/hue/1903>/EQUIP/<Boots/hue/1902>/STR/95/EQUIP/<QuarterStaff/name/Wyatt's Elemental Nullifier>/ConfigFile/WyattSulfurElementalQuest/LoadConfig/True/TalkText/You see a stout figure, masked against the toxic miasma, seeking assistance
+
+XMLQuestNPC,0/Name/Knight Commander Kael/Title/The Blade's Edge/Male/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<PlateChest/hue/1100>/EQUIP/<CloseHelm/hue/1102>/EQUIP/<PlateLegs/hue/1100>/STR/95/EQUIP/<Longsword/name/Kael's Knightly Blade>/ConfigFile/KaelTwinBladeQuest/LoadConfig/True/TalkText/You notice a stern figure clad in gleaming armor, seemingly on the lookout for skilled warriors.
+
+XMLQuestNPC,0/Name/Beast Hunter Bob/Title/The Frenzor's Bane/Male/True/BodyValue/402/UNEQUIP,All/Direction/North/EQUIP/<LeatherChest/hue/1120>/EQUIP/<SkullCap/hue/1109>/EQUIP/<Boots/hue/1108>/STR/95/EQUIP/<Longsword/name/Bob's Brute Slayer>/ConfigFile/BobFrenzorQuest/LoadConfig/True/TalkText/You see a rugged figure who looks determined to eradicate a monstrous threat
+
+XMLQuestNPC,1/Name/Inferno Vanquisher Iris/Title/The Flame Warden/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1153>/EQUIP/<Bonnet/hue/1151>/EQUIP/<Boots/hue/1150>/STR/95/EQUIP/<BladedStaff/name/Iris's Flame Queller>/ConfigFile/IrisInfernoQuest/LoadConfig/True/TalkText/You see a fiery-spirited warrior who seems to seek aid against fiery beasts
+
+XMLQuestNPC,1/Name/Tidal Sage Marina/Title/The Ocean's Guardian/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<Robe/hue/2116>/EQUIP/<FloppyHat/hue/2122>/EQUIP/<Boots/hue/2117>/STR/85/EQUIP/<GnarledStaff/name/Marina's Tidal Staff>/ConfigFile/MarinaWaveQuest/LoadConfig/True/TalkText/You notice a wise-looking woman, gazing towards the sea with a concerned expression
+
+XMLQuestNPC,1/Name/Pyre Warden Elaine/Title/The Flame Sentinel/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1357>/EQUIP/<FloppyHat/hue/1356>/EQUIP/<Boots/hue/1355>/STR/100/EQUIP/<BladedStaff/name/Elaine's Flame Cutter>/ConfigFile/ElaineInfernoQuest/LoadConfig/True/TalkText/You see a fiery figure, guarding against the spreading inferno with a determined gaze
+
+XMLQuestNPC,1/Name/Skeleton Hunter Sarah/Title/The Bone Collector/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1110>/EQUIP/<Cloak/hue/1109>/EQUIP/<Boots/hue/1108>/STR/85/EQUIP/<WarMace/name/Sarah's Bonecrusher>/ConfigFile/SarahSkeletonQuest/LoadConfig/True/TalkText/You see a focused woman surrounded by fragments of bone, looking for assistance in her endless battle against the undead
+
+XMLQuestNPC,1/Name/Ogre Slayer Olivia/Title/The Bold/Woman/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<Breastplate/hue/2105>/EQUIP/<Cloak/hue/1109>/EQUIP/<HighBoots/hue/1108>/STR/95/EQUIP/<Halberd/name/Olivia's Ogre Queller>/ConfigFile/OliviaOgreQuest/LoadConfig/True/TalkText/You see a battle-hardened warrior who seeks vengeance against the brutish ogres
+
+XMLQuestNPC,0/Name/Bat Hunter Kiera/Title/The Silent Wing/Male/False/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<LeatherChest/hue/1105>/EQUIP/<LeatherGloves/hue/1103>/EQUIP/<LeatherLegs/hue/1104>/STR/85/EQUIP/<Bow/name/Kiera's Bat Snipe>/ConfigFile/KieraWraivenBatQuest/LoadConfig/True/TalkText/You notice a silent figure with keen eyes, whispering about the darkness of Wraiven Bats
+
+XMLQuestNPC,1/Name/Cryo Crusader Kayla/Title/The Chill Vanquisher/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<FurCape/hue/1150>/EQUIP/<Bonnet/hue/1152>/EQUIP/<Boots/hue/1151>/STR/85/EQUIP/<FrostStaff/name/Kayla's Chill Bane>/ConfigFile/KaylaNitrogenQuest/LoadConfig/True/TalkText/You encounter a warrior clad in furs, her breath forming a mist as she speaks of battling cold elementals
+
+XMLQuestNPC,0/Name/Borvix Hunter Kael/Title/The Borvix Nemesis/Male/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<LeatherChest/hue/1123>/EQUIP/<Cloak/hue/1109>/EQUIP/<Boots/hue/1108>/STR/95/EQUIP/<Longsword/name/Kael's Borvix Cleaver>/ConfigFile/KaelBorvixQuest/LoadConfig/True/TalkText/You notice a rugged figure who looks determined to eradicate the Borvix menace.
+
+XMLQuestNPC,1/Name/Elemental Hunter Xara/Title/The Xenon Extinguisher/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<Cloak/hue/1176>/EQUIP/<Bonnet/hue/1174>/EQUIP/<Boots/hue/1171>/STR/95/EQUIP/<Bow/name/Xara's Xenon Vanquisher>/ConfigFile/XaraXenonQuest/LoadConfig/True/TalkText/You encounter a fierce warrior dedicated to purging the land of Xenon Elementals
+
+XMLQuestNPC,1/Name/Twilight Hunter Kayla/Title/The Duskblade/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<LeatherBustier/hue/1107>/EQUIP/<Skirt/hue/1106>/EQUIP/<ThighBoots/hue/1105>/STR/95/EQUIP/<RadiantScimitar/name/Kayla's Lightbringer>/ConfigFile/KaylaSuccubusQuest/LoadConfig/True/TalkText/You see a determined warrior, her eyes scanning the horizon for threats from the twilight realm.
+
+XMLQuestNPC,0/Name/Ironheart Alaric/Title/The Steel Warden/Male/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<PlatemailChest/hue/2406>/EQUIP/<CloseHelm/hue/2405>/EQUIP/<PlateGloves/hue/2407>/STR/100/EQUIP/<WarHammer/name/Alaric's Ettin Crusher>/ConfigFile/AlaricSteelEttinQuest/LoadConfig/True/TalkText/You encounter a stalwart knight, seeking assistance to quell a metal monstrosity.
+
+XMLQuestNPC,1/Name/Lunar Huntress Lyla/Title/The Moon's Shadow/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<HoodedShroudOfShadows/hue/1150>/EQUIP/<Boots/hue/1152>/EQUIP/<LongSkirt/hue/1151>/STR/85/EQUIP/<Bow/name/Lyla's Lunar Longbow>/ConfigFile/LylaLunarTideQuest/LoadConfig/True/TalkText/Before you stands a solitary figure, bathed in moonlight, seeking assistance in a celestial battle
+
+XMLQuestNPC,1/Name/Carbon Slayer Cara/Title/The Carbon Crusher/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Cloak/hue/1905>/EQUIP/<Bonnet/hue/1906>/EQUIP/<Boots/hue/1907>/STR/85/EQUIP/<QuarterStaff/name/Cara's Carbon Nullifier>/ConfigFile/CaraCarbonQuest/LoadConfig/True/TalkText/You encounter a determined warrior focused on reducing the Carbon Elemental threat
+
+XMLQuestNPC,0/Name/Inferno Slayer Ian/Title/The Flamequencher/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1175>/EQUIP/<WideBrimHat/hue/1173>/EQUIP/<ThighBoots/hue/1172>/STR/90/EQUIP/<QuarterStaff/name/Ian's Inferno Bane>/ConfigFile/IanInfernoQuest/LoadConfig/True/TalkText/You see a man clad in char-resistant gear, seeking help to extinguish the fiery threat
+
+XMLQuestNPC,1/Name/Shade Hunter Selena/Title/The Glimtok Vanquisher/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1905>/EQUIP/<FloppyHat/hue/1906>/EQUIP/<Boots/hue/1904>/STR/95/EQUIP/<Bow/name/Selena's Shade Piercer>/ConfigFile/SelenaShadeQuest/LoadConfig/True/TalkText/You see a determined woman, her eyes scanning the shadows for her next target
+
+XMLQuestNPC,0/Name/Brute Slayer Bryan/Title/The Brute Bane/Male/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<ChainChest/hue/1100>/EQUIP/<Cloak/hue/1103>/EQUIP/<Boots/hue/1102>/STR/100/EQUIP/<HeavyMace/name/Bryan's Brute Crusher>/ConfigFile/BryanBruteQuest/LoadConfig/True/TalkText/You see a battle-hardened warrior eyeing you with a determined look, seeking help with a menacing threat
+
+XMLQuestNPC,1/Name/Vanquisher Selena/Title/The Venus's Bane/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<HoodedShroudOfShadows/hue/1150>/EQUIP/<Boots/hue/1170>/EQUIP/<Cloak/hue/1109>/STR/85/EQUIP/<Bardiche/name/Selena's Succubus Slayer>/ConfigFile/SelenaVenusQuest/LoadConfig/True/TalkText/You notice a shadowy figure poised with a venomous grace, seeking assistance to vanquish a seductive evil
+
+XMLQuestNPC,0/Name/Gargoyle Hunter Gavin/Title/The Celestial Foe's Bane/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<FullPlate/hue/1234>/EQUIP/<CloseHelm/hue/1233>/EQUIP/<PlateGloves/hue/1232>/STR/100/EQUIP/<Lance/name/Gavin's Gargoyle Piercer>/ConfigFile/GavinGargoyleQuest/LoadConfig/True/TalkText/Before you stands a battle-hardened warrior gazing upwards, as if searching the skies for a winged menace.
+
+XMLQuestNPC,1/Name/Lunar Slayer Luna/Title/The Shadowbane/Female/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<Robe/hue/1100>/EQUIP/<FloppyHat/hue/1102>/EQUIP/<Boots/hue/1101>/STR/95/EQUIP/<BladedStaff/name/Luna's Eclipse Piercer>/ConfigFile/LunaEclipseQuest/LoadConfig/True/TalkText/You see a woman cloaked in lunar radiance, seeking a warrior to challenge the darkness.
+
+XMLQuestNPC,0/Name/Daemon Hunter Dante/Title/The Inferno Vanquisher/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/2075>/EQUIP/<Bandana/hue/1176>/EQUIP/<Boots/hue/1175>/STR/100/EQUIP/<RadiantScimitar/name/Dante's Daemon Dismissal>/ConfigFile/DanteDaemonQuest2/LoadConfig/True/TalkText/You see a fierce warrior with a fiery aura, seeking a hero to quell the nether blaze
+
+XMLQuestNPC,0/Name/Gemstone Hunter Garrett/Title/The Jewel's Bane/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1150>/EQUIP/<Cloak/hue/1152>/EQUIP/<Boots/hue/1151>/STR/95/EQUIP/<Longsword/name/Garrett's Ruby Cutter>/ConfigFile/GarrettRubyQuest/LoadConfig/True/TalkText/You see a man with a gleam in his eye, looking for help to extinguish a fiery threat
+
+XMLQuestNPC,0/Name/Plaguebearer Quinn/Title/The Plague Doctor/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<Robe/hue/2222>/EQUIP/<PlagueMask/hue/2211>/EQUIP/<Boots/hue/2210>/STR/85/EQUIP/<GnarledStaff/name/Quinn's Plaguebringer>/ConfigFile/QuinnPlagueQuest/LoadConfig/True/TalkText/You see a figure cloaked in garb to ward off disease, who seems to be looking for a cure
+
+XMLQuestNPC,1/Name/Elemental Slayer Fiona/Title/The Flame Warden/Female/True/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1153>/EQUIP/<FloppyHat/hue/1151>/EQUIP/<Boots/hue/1150>/STR/85/EQUIP/<MageStaff/name/Fiona's Elemental Ward>/ConfigFile/FionaElementalQuest/LoadConfig/True/TalkText/You see a flame-hardened warrior who looks to extinguish a fiery threat
+
+XMLQuestNPC,1/Name/Succubus Hunter Sable/Title/The Emerald Shadow/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<LeatherBustier/hue/2125>/EQUIP/<Skirt/hue/2123>/EQUIP/<Boots/hue/2122>/STR/95/EQUIP/<Bow/name/Sable's Succubus Snare>/ConfigFile/SableSuccubusQuest/LoadConfig/True/TalkText/You encounter a shadowy figure who appears to be hunting dangerous seductresses
+
+XMLQuestNPC,1/Name/Tempest Tracker Tara/Title/Whirlwind Warden/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/2001>/EQUIP/<Bonnet/hue/2003>/EQUIP/<Boots/hue/2002>/STR/85/EQUIP/<Bow/name/Tara's Gale Striker>/ConfigFile/TaraFerlaxWhirlQuest/LoadConfig/True/TalkText/You notice a focused huntress, her eyes scanning the skies for signs of turmoil.
+
+XMLQuestNPC,0/Name/Skylon Hunter Kael/Title/The Sky Piercer/Male/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<LeatherChest/hue/2101>/EQUIP/<LeatherGloves/hue/2103>/EQUIP/<Boots/hue/2102>/STR/95/EQUIP/<Longbow/name/Kael's Skythorn>/ConfigFile/KaelSkylonQuest/LoadConfig/True/TalkText/You see a skilled hunter, eyes fixed on the skies, ready for the hunt
+
+XMLQuestNPC,1/Name/Wind Slayer Wenda/Title/The Gale Harbinger/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/2101>/EQUIP/<FloppyHat/hue/2102>/EQUIP/<Boots/hue/2103>/STR/95/EQUIP/<BladedStaff/name/Wenda's Wind Cutter>/ConfigFile/WendaZoraxQuest/LoadConfig/True/TalkText/You see a determined figure standing against the howling wind, looking for help to combat a whirling menace
+
+XMLQuestNPC,1/Name/Emerald Slayer Erin/Title/The Verdant Vanquisher/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/2125>/EQUIP/<FloppyHat/hue/2123>/EQUIP/<Boots/hue/2122>/STR/85/EQUIP/<GnarledStaff/name/Erin's Elemental Staff>/ConfigFile/ErinEmeraldQuest/LoadConfig/True/TalkText/You notice a determined woman clad in emerald hues, eyeing the surroundings for elemental disturbances
+
+XMLQuestNPC,1/Name/Knight Slayer Kendra/Title/The Crusher's Bane/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<PlateChest/hue/1100>/EQUIP/<CloseHelm/hue/1102>/EQUIP/<PlateLegs/hue/1101>/STR/95/EQUIP/<VikingSword/name/Kendra's Knight Cutter>/ConfigFile/KendraCrusherQuest/LoadConfig/True/TalkText/You see a formidable warrior who has sworn vengeance against the Crusher Knights
+
+XMLQuestNPC,1/Name/Tsunami Slayer Tara/Title/The Wavecrusher/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<Robe/hue/2225>/EQUIP/<FloppyHat/hue/2223>/EQUIP/<Boots/hue/2222>/STR/95/EQUIP/<Staff/name/Tara's Tidal Bane>/ConfigFile/TaraTsunamiQuest/LoadConfig/True/TalkText/You see a sea-soaked woman who appears to be gathering brave souls to stand against the watery onslaught
+
+XMLQuestNPC,1/Name/Lichbane Laura/Title/The Lich Conqueror/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<Boots/hue/1107>/EQUIP/<Shortsword/name/Laura's Lich Slayer>/STR/100/ConfigFile/LauraLichQuest/LoadConfig/True/TalkText/You see a determined warrior, her eyes burning with a fierce resolve to destroy the undead
+
+XMLQuestNPC,1/Name/Knight Vanquisher Kiera/Title/The Gale's End/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Cloak/hue/1175>/EQUIP/<FeatheredHat/hue/1173>/EQUIP/<Boots/hue/1172>/STR/95/EQUIP/<Lance/name/Kiera's Vortex Piercer>/ConfigFile/KieraVortexQuest/LoadConfig/True/TalkText/You approach a formidable woman whose eyes are set to quell a chaotic storm
+
+XMLQuestNPC,1/Name/Knight Slayer Kara/Title/The Crimsonbane/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<PlatemailChest/hue/1157>/EQUIP/<PlatemailLegs/hue/1156>/EQUIP/<PlatemailArms/hue/1156>/EQUIP/<PlatemailGloves/hue/1157>/EQUIP/<PlatemailGorget/hue/1156>/STR/95/EQUIP/<Longsword/name/Kara's Knight Cutter>/ConfigFile/KaraCrimsonQuest/LoadConfig/True/TalkText/You come across a fierce warrior looking to put an end to the Crimson Knight's tyranny
+
+XMLQuestNPC,1/Name/Darkness Vanquisher Selene/Title/The Cyclopsbane/Female/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<Sandals/hue/1107>/EQUIP/<Skirt/hue/1108>/STR/95/EQUIP/<BlackStaff/name/Selene's Shadow Piercer>/ConfigFile/SeleneCyclopsQuest/LoadConfig/True/TalkText/You see a cloaked figure who seems to be preparing for a dark confrontation
+
+XMLQuestNPC,0/Name/Celestial Hunter Orion/Title/The Stellar Tracker/Male/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Cloak/hue/1176>/EQUIP/<TricornHat/hue/1174>/EQUIP/<Boots/hue/1171>/STR/100/EQUIP/<Longsword/name/Orion's Starblade>/ConfigFile/OrionStellavireQuest/LoadConfig/True/TalkText/You notice a figure gazing at the heavens, seeking help to vanquish a celestial threat
+
+XMLQuestNPC,1/Name/Lich Hunter Lydia/Title/The Galebreaker/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1176>/EQUIP/<FloppyHat/hue/1174>/EQUIP/<Boots/hue/1171>/STR/95/EQUIP/<BladedStaff/name/Lydia's Lich Bane>/ConfigFile/LydiaLichQuest/LoadConfig/True/TalkText/You encounter a determined warrior, Lydia, who seeks help vanquishing a spectral menace.
+
+XMLQuestNPC,1/Name/Wisp Hunter Wendy/Title/The Lightbringer/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1195>/EQUIP/<FloppyHat/hue/1193>/EQUIP/<Boots/hue/1192>/STR/85/EQUIP/<ShepherdsCrook/name/Wendy's Wisp Wand>/ConfigFile/WendyWispQuest/LoadConfig/True/TalkText/You encounter a vigilant soul, eyes ablaze with determination to dissipate darkness
+
+XMLQuestNPC,0/Name/Giant Slayer Gregor/Title/The Ettinbane/Male/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<PlateChest/hue/1150>/EQUIP/<PlateArms/hue/1150>/EQUIP/<PlateGloves/hue/1150>/EQUIP/<PlateLegs/hue/1150>/EQUIP/<PlateHelm/hue/1150>/STR/100/EQUIP/<Bardiche/name/Gregor's Giant Cleaver>/ConfigFile/GregorEttinQuest/LoadConfig/True/TalkText/You see a battle-hardened warrior who seems to be searching for a capable hunter
+
+XMLQuestNPC,1/Name/Cyclops Hunter Kyra/Title/The Cyclops Vanquisher/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<LeatherChest/hue/1100>/EQUIP/<LeatherSkirt/hue/1100>/EQUIP/<LeatherBoots/hue/1100>/STR/100/EQUIP/<Bow/name/Kyra's Cyclops Bane>/ConfigFile/KyraCyclopsQuest/LoadConfig/True/TalkText/You see a fierce warrior scanning the horizon for her giant prey
+
+XMLQuestNPC,1/Name/Inferno Slayer Iris/Title/The Flame Warden/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1165>/EQUIP/<Bonnet/hue/1166>/EQUIP/<Boots/hue/1164>/STR/100/EQUIP/<BladedStaff/name/Iris's Flame Quencher>/ConfigFile/IrisInfernoQuest2/LoadConfig/True/TalkText/You notice a figure clad in flame-retardant garb, looking to extinguish a fiery threat
+
+XMLQuestNPC,0/Name/Astronomer Aiden/Title/The Star Seeker/Male/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1306>/EQUIP/<Wizard's Hat/hue/1328>/EQUIP/<Boots/hue/1309>/STR/85/EQUIP/<Staff/name/Aiden's Astral Staff>/ConfigFile/AidenAstralQuest/LoadConfig/True/TalkText/You see an astronomer gazing intently at the sky, muttering about celestial disturbances.
+
+XMLQuestNPC,0/Name/Boulder Breaker Bob/Title/The Mountain's Bane/Male/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<LeatherChest/hue/1195>/EQUIP/<LeatherGloves/hue/1193>/EQUIP/<Boots/hue/1192>/STR/95/EQUIP/<WarHammer/name/Bob's Cyclopean Smasher>/ConfigFile/BobRockCyclopsQuest/LoadConfig/True/TalkText/Before you stands a sturdy figure, his gaze set upon the rocky horizon
+
+XMLQuestNPC,0/Name/Elemental Slayer Arin/Title/The Green Warden/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/2120>/EQUIP/<WideBrimHat/hue/2118>/EQUIP/<ThighBoots/hue/2119>/STR/90/EQUIP/<BladedStaff/name/Arin's Elemental Edge>/ConfigFile/ArinMethaneQuest/LoadConfig/True/TalkText/You see a figure clad in garments of deep green, whose eyes burn with a need to restore balance
+
+XMLQuestNPC,0/Name/Metal Slayer Martin/Title/The Copperbane/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/2106>/EQUIP/<FeatheredHat/hue/2129>/EQUIP/<Boots/hue/2117>/STR/90/EQUIP/<Hammer/name/Martin's Metal Molder>/ConfigFile/MartinCopperQuest/LoadConfig/True/TalkText/You see a rugged figure with a steely gaze, ready to take down metallic monstrosities
+
+XMLQuestNPC,0/Name/Gargoyle Hunter Gavin/Title/The Zenith Bane/Male/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1905>/EQUIP/<Cloak/hue/1903>/EQUIP/<Boots/hue/1902>/STR/100/EQUIP/<WarMace/name/Gavin's Gargoyle Crusher>/ConfigFile/GavinGargoyleQuest2/LoadConfig/True/TalkText/You come across a hardened warrior eyeing the skies with a determined glare
+
+XMLQuestNPC,1/Name/Knight Slayer Karen/Title/The Dagger's Bane/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<LongDress/hue/1100>/EQUIP/<FloppyHat/hue/1102>/EQUIP/<Boots/hue/1101>/STR/85/EQUIP/<Broadsword/name/Karen's Knight Cutter>/ConfigFile/KarenDaggerKnightQuest/LoadConfig/True/TalkText/You see a fierce warrior who seeks to end the tyranny of the Dagger Knights
+
+XMLQuestNPC,0/Name/Elemental Slayer Rynn/Title/The Radiant Shield/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<Cloak/hue/1125>/EQUIP/<Bascinet/hue/1123>/EQUIP/<Boots/hue/1122>/STR/95/EQUIP/<WarMace/name/Rynn's Radon Crusher>/ConfigFile/RynnRadonQuest/LoadConfig/True/TalkText/You see a warrior gleaming with protective gear, determined to quell a radiating threat.
+
+XMLQuestNPC,0/Name/Daemon Vanquisher Darius/Title/The Daemon's Bane/Male/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<Cloak/hue/1176>/EQUIP/<BoneHelm/hue/1174>/EQUIP/<Boots/hue/1171>/STR/95/EQUIP/<RadiantScimitar/name/Darius's Daemon Cutter>/ConfigFile/DariusDaemonQuest/LoadConfig/True/TalkText/Before you stands a stern figure radiating a fierce resolve to banish daemonic threats.
+
+XMLQuestNPC,1/Name/Wind Warden Wynne/Title/The Gale Guardian/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/2101>/EQUIP/<FeatheredHat/hue/2103>/EQUIP/<Boots/hue/2102>/STR/85/EQUIP/<WindStaff/name/Wynne's Zephyr Wrath>/ConfigFile/WynneEtherealQuest/LoadConfig/True/TalkText/You see a guardian of the winds, her eyes reflecting a determination to restore balance
+
+XMLQuestNPC,0/Name/Wind Hunter Kael/Title/Gargoyle's Bane/Male/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<Robe/hue/1175>/EQUIP/<FeatheredHat/hue/1173>/EQUIP/<Boots/hue/1172>/STR/85/EQUIP/<Spear/name/Kael's Wind Piercer>/ConfigFile/KaelGargoyleQuest/LoadConfig/True/TalkText/You see a seasoned hunter, his eyes scanning the skies for the gargoyle's menace
+
+XMLQuestNPC,1/Name/Wisp Hunter Wendy/Title/The Wisp Whisperer/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<LeatherChest/hue/1150>/EQUIP/<Skirt/hue/1152>/EQUIP/<Boots/hue/1151>/STR/85/EQUIP/<Longsword/name/Wendy's Wisp Cutter>/ConfigFile/WendyWispQuest2/LoadConfig/True/TalkText/You notice a determined woman with a gleaming blade, eyeing the ethereal lights warily
+
+XMLQuestNPC,1/Name/Nexylight Hunter Nora/Title/The Nexylight Nemesis/Female/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<LeatherChest/hue/2123>/EQUIP/<Skirt/hue/2122>/EQUIP/<Boots/hue/2121>/STR/85/EQUIP/<Longsword/name/Nora's Nexylight Cutter>/ConfigFile/NoraNexylightQuest/LoadConfig/True/TalkText/You notice a fierce warrior peering into the darkness, determined to extinguish Nexylight creatures
+
+XMLQuestNPC,1/Name/Wisp Hunter Wanda/Title/The Wisp Whisperer/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/2100>/EQUIP/<Bonnet/hue/2120>/EQUIP/<Boots/hue/2119>/STR/85/EQUIP/<ShepherdsCrook/name/Wanda's Wisp Wand>/ConfigFile/WandaWispQuest/LoadConfig/True/TalkText/You notice a woman with an eerie glow about her, seeking assistance in wisp eradication
+
+XMLQuestNPC,1/Name/Necromancer Nyx/Title/The Spectre's Bane/Female/True/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1905>/EQUIP/<BoneHelm/hue/1109>/EQUIP/<Boots/hue/1175>/STR/100/EQUIP/<GnarledStaff/name/Nyx's Spectre Sunderer>/ConfigFile/NyxSpectreQuest/LoadConfig/True/TalkText/Before you stands a shadowy figure, her eyes ablaze with a dark purpose to vanquish spectres
+
+XMLQuestNPC,0/Name/Ettin Hunter Eldon/Title/The Ettin Vanquisher/Male/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<LeatherTunic/hue/2125>/EQUIP/<LeatherCap/hue/2123>/EQUIP/<Boots/hue/2122>/STR/85/EQUIP/<Longsword/name/Eldon's Ettin Cutter>/ConfigFile/EldonEttinQuest/LoadConfig/True/TalkText/You see a rugged hunter, eyeing the hills with a fierce determination
+
+XMLQuestNPC,1/Name/Mauler Hunter Mira/Title/The Grivik Vanquisher/Female/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<Cloak/hue/1105>/EQUIP/<Bonnet/hue/1103>/EQUIP/<Boots/hue/1102>/STR/85/EQUIP/<Longsword/name/Mira's Grivik Cutter>/ConfigFile/MiraGrivikQuest/LoadConfig/True/TalkText/You notice a fierce warrior with a determined look, preparing to battle ferocious beasts.
+
+XMLQuestNPC,1/Name/Bat Slayer Barbara/Title/The Echoing Silence/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<LeatherChest/hue/1100>/EQUIP/<Cloak/hue/1101>/EQUIP/<Boots/hue/1102>/STR/85/EQUIP/<Sword/name/Barbara's Bat Beheader>/ConfigFile/BarbaraBatQuest/LoadConfig/True/TalkText/You notice a figure shrouded in dark garments, poised and ready for the hunt.
+
+XMLQuestNPC,0/Name/Cyclops Hunter Caden/Title/The Cyclops Bane/Male/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<Robe/hue/1195>/EQUIP/<Bandana/hue/1196>/EQUIP/<Sandals/hue/1197>/STR/95/EQUIP/<BroadSword/name/Caden's Cyclops Slayer>/ConfigFile/CadenCyclopsQuest/LoadConfig/True/TalkText/You see a rugged warrior scanning the horizon, searching for those who would dare to face the Crimson Cyclops.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

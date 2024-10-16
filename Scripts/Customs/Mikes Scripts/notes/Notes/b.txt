@@ -1,0 +1,1 @@
+Could you please make a RunUO plug-in that add a unique Virtue Rune for each of the eight virtues of Ultima (Honesty Compassion Valor Justice Sacrifice Honor Spirituality Humility)?  The runes don't need to do anything, they will simply be quest items.

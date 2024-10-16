@@ -1,0 +1,49 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Dark Conjurer Aria</Name>
+    <Running>True</Running>
+    <ProximityRange>4</ProximityRange>
+    <ResetRange>20</ResetRange>
+    <NoTriggerOnCarried>Lich Remnant</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>12</SpeechPace>
+    <ResetTime>0.6</ResetTime>
+    <ConfigFile>AriaLichQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>A grave threat looms. A powerful Ancient Lich, Venomous Necroshade, threatens the realm. Will you confront this menace?</Text>
+    <Keywords>You see a mysterious figure shrouded in darkness, seeking assistance in a grave matter</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1.2</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1.2</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Whisper</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Necroshade Hunt,4/Venomous Necroshade, the Ancient Lich, must be vanquished. Accept this quest and rid us of this curse.;I will face this challenge!;Indeed</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your courage is admirable. Bring me a remnant of the Lich, and you shall be greatly rewarded.</Text>
+    <Keywords>Indeed</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Lich Remnant/TitleString/Venomous Necroshade Defeat/NoteString/Bring proof of defeating Venomous Necroshade to Aria for a reward./Objective1/KILLNAMED,Venomous Necroshade,1/Description1/Defeat Venomous Necroshade/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/ZeonRune/ADD/&lt;Emerald/hue/RND,1,300/name/Soul of Necroshade&gt;/ADD/&lt;bag/hue/1109/Name/Shadow Conqueror's Cache/ADD/&lt;TeleportScroll/name/Scroll of Shadows&gt;/ADD/&lt;BoneHarvester/name/Lich's Bane Blade&gt;/ADD/&lt;GreaterCurePotion/name/Potion of Lich's Bane&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1.2</

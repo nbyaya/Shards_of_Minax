@@ -1,0 +1,64 @@
+I would like you help to moddify my gambling vendor NPC.  Right now you double click on them and it brings up a gump with a random item to buy.  I want to check if the players has at least 500gp before the item gump is brought up.  If they have at least 500gp I want 500gp deducted from their invantory.  If they don't have enugh gold the NPC says they are too broke to gamble:
+
+using Server.Mobiles;
+
+namespace Server.Custom.SpecialVendor
+{
+    public class SpecialVendorMobile : BaseCreature
+    {
+        [Constructable]
+        public SpecialVendorMobile() : base(AIType.AI_Vendor, FightMode.None, 2, 1, 0.5, 2)
+        {
+            // Set the NPC's attributes here
+			Hue = Utility.RandomSkinHue();          
+            Body = 0x190;
+            Name = "Item Gambler";            
+
+            
+            // Abilities and stats
+            SetStr(300, 400);
+            SetDex(70, 95);
+            SetInt(170, 220);
+            SetHits(260, 310);
+            
+            VirtualArmor = 30;
+            
+            SpeechHue = Utility.RandomDyedHue();
+            SetDamage(10, 14);
+
+            SetSkill(SkillName.MagicResist, 75.1, 95.0);
+            SetSkill(SkillName.Tactics, 70.1, 95.0);
+            SetSkill(SkillName.Magery, 80.0, 95.0);
+        }
+
+        public override void OnDoubleClick(Mobile from)
+        {
+            if (from.InRange(this.Location, 4))
+            {
+                from.SendGump(new SpecialVendorGump(from));
+            }
+            else
+            {
+                from.SendMessage("You are too far away.");
+            }
+        }
+		
+        public SpecialVendorMobile(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0);
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
+
+        // ... (other code)
+    }
+}

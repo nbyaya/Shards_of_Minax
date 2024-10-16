@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Dread Lord Damian</Name>
+    <Running>True</Running>
+    <ProximityRange>5</ProximityRange>
+    <ResetRange>20</ResetRange>
+    <NoTriggerOnCarried>Assassin's Proof</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>5</SpeechPace>
+    <ResetTime>1</ResetTime>
+    <ConfigFile>DamianAssassinQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>Shadows gather and the night whispers of a target ripe for the taking. Will you become the assassin I seek?</Text>
+    <Keywords>You see a dark figure shrouded in malevolence, whispering offers of forbidden power</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>2</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>2</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Assassination Contract,4/Spectral Sarah must be eliminated. Her existence offends the shadows.;I will do this deed.;I accept the contract</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>Your darkness is appreciated. Bring me proof of Sarah's demise, and you shall be rewarded handsomely.</Text>
+    <Keywords>I accept the contract</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Assassin's Proof/TitleString/Spectral Sarah Assassination/NoteString/Return proof of assassinating Spectral Sarah to Damian for a reward./Objective1/KILLNAMED,Spectral Sarah,1/Description1/Assassinate Spectral Sarah/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/&lt;MaxxiaScroll/amount/3&gt;/ADD/&lt;SoulCrystal/hue/RND,1,300/name/Essence of Sarah&gt;/ADD/&lt;bag/hue/1173/Name/Shadow Operative's Cache/ADD/&lt;InvisibilityPotion/name/Potion of Concealment&gt;/ADD/&lt;AssassinSpike/name/Sarah's Silent Shiv&gt;/ADD/&lt;PoisonPotion/name/Potion of Silent Death&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>2</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>2</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

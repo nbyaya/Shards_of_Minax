@@ -1,0 +1,36 @@
+I would like your help creating a new NPC for my Ultima Online free shard challenge.  I am trying to recreate the feel of a classic Ultima game with NPCs who have dialoge trees which you much solve by writing down key words and entering them into the text parser.  Below is a sample NPC (Slithe the Warrior) to show you what I mean.  First is the XML spawner coe then followed by his configuration file that stores his dialogue.  The players will know to ask every NPC about the key words "name" "health" and "job" and from there they will learn other key words to get more information.  In Slithe's case they learn to ask about battle.  The NPC will some times ask a question of the player, and they can respond fo additional dialogue.  Please make up a new creative wrestler NPC in this style.
+
+
+
+XMLQuestNPC,0/Str/150/Hits/100/Blessed/True/TalkText/Hail, adventurer! Are you seeking a worthy challenge?/Name/Slithe the Warrior/UNEQUIP,Shoes,Delete/UNEQUIP,Pants,Delete/UNEQUIP,Shirt,Delete/UNEQUIP,Helm,Delete/UNEQUIP,Gloves,Delete/UNEQUIP,OuterTorso,Delete/UNEQUIP,MiddleTorso,Delete/EQUIP/<PlateChest/Hue/1316>/EQUIP/<PlateArms/Hue/1316>/EQUIP/<Cloak/Hue/1316>/EQUIP/<PlateLegs/Hue/1316>/EQUIP/<Bascinet/Hue/1316>/EQUIP/<PlateGorget/Hue/1316>/EQUIP/<PlateGloves/Hue/1316>/EQUIP/<Broadsword/name/Slithe's Blade>/Direction/East/ConfigFile/SilththeWarrior/LoadConfig/True
+
+
+
+<Name>Slithe
+<ConfigFile>SilththeWarrior
+<SpeechEntries>5
+
+<EntryNumber>0
+<DependsOn>-1
+Keyword: name
+Text: I am Slithe the Warrior!
+
+<EntryNumber>10
+<DependsOn>-1
+Keyword: health
+Text: Only minor wounds!
+
+<EntryNumber>20
+<DependsOn>-1
+Keyword: job
+Text: I fight battles!
+
+<EntryNumber>30
+<DependsOn>-1
+Keyword: battles
+Text: True valor is seen not in the force of arms, but in the force of will! Art thou valiant?
+
+<EntryNumber>40
+<DependsOn>30
+Keyword: yes
+Text: Then never flee unless the need is dire!

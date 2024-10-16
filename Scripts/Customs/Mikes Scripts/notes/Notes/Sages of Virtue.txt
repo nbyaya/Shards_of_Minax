@@ -1,0 +1,17 @@
+XMLQuestNPC,0/Str/100/Hits/80/Blessed/True/TalkText/Hail, seeker of truth! Dost thou wish to understand the deeper mysteries of the world?/Name/The Sage of Truth/UNEQUIP,Shoes,Delete/UNEQUIP,Pants,Delete/UNEQUIP,Robe,Delete/EQUIP/<Robe/hue/2460>/Direction/South/ConfigFile/TheSageofTruth/LoadConfig/True
+
+XMLQuestNPC,0/Str/90/Hits/70/Blessed/True/TalkText/Greetings, traveler! Are you searching for wisdom about love?/Name/The Sage of Love/UNEQUIP,Shoes,Delete/UNEQUIP,Pants,Delete/UNEQUIP,Shirt,Delete/UNEQUIP,Helm,Delete/UNEQUIP,Gloves,Delete/UNEQUIP,OuterTorso,Delete/UNEQUIP,MiddleTorso,Delete/EQUIP/<Robe/Hue/2273>/EQUIP/<Sandals/Hue/1153>/EQUIP/<WideBrimHat/Hue/1153>/Direction/North/ConfigFile/SageOfLove/LoadConfig/True
+
+XMLQuestNPC,0/Str/110/Hits/90/Blessed/True/TalkText/Hail, traveler! Are you seeking wisdom and guidance?/Name/The Sage of Courage/UNEQUIP,Shoes,Delete/UNEQUIP,Pants,Delete/UNEQUIP,Shirt,Delete/UNEQUIP,Helm,Delete/UNEQUIP,Gloves,Delete/UNEQUIP,OuterTorso,Delete/UNEQUIP,MiddleTorso,Delete/EQUIP/<Robe/Hue/2250>/EQUIP/<Sandals/Hue/1055>/EQUIP/<WizardHat/Hue/1055>/Direction/East/ConfigFile/TheSageOfCourage/LoadConfig/True
+
+
+
+XMLQuestNPC,0/Str/120/Hits/80/Blessed/True/TalkText/Greetings, seeker. Do you quest for enlightenment?/Name/Bodhisattva of Truth/UNEQUIP,Shoes,Delete/UNEQUIP,Pants,Delete/UNEQUIP,Shirt,Delete/UNEQUIP,Helm,Delete/UNEQUIP,Gloves,Delete/UNEQUIP,OuterTorso,Delete/UNEQUIP,MiddleTorso,Delete/EQUIP/<Robe/Hue/2848>/EQUIP/<ThighBoots/Hue/1153>/Direction/North/ConfigFile/BodhisattvaOfTruth/LoadConfig/True
+
+XMLQuestNPC,0/Str/120/Hits/90/Blessed/True/TalkText/Greetings, seeker! Art thou in search of love's true meaning?/Name/Bodhisattva of Love/UNEQUIP,Shoes,Delete/UNEQUIP,Pants,Delete/UNEQUIP,Shirt,Delete/UNEQUIP,Helm,Delete/UNEQUIP,Gloves,Delete/UNEQUIP,OuterTorso,Delete/UNEQUIP,MiddleTorso,Delete/EQUIP/<Robe/Hue/2820>/Direction/North/ConfigFile/BodhisattvaOfLove/LoadConfig/True
+
+XMLQuestNPC,0/Str/180/Hits/110/Blessed/True/TalkText/Greetings, seeker of truth! Art thou on the path of courage?/Name/Bodhisattva of Courage/UNEQUIP,Shoes,Delete/UNEQUIP,Pants,Delete/UNEQUIP,Shirt,Delete/UNEQUIP,Helm,Delete/UNEQUIP,Gloves,Delete/UNEQUIP,OuterTorso,Delete/UNEQUIP,MiddleTorso,Delete/EQUIP/<Robe/Hue/2609>/EQUIP/<Sandals/Hue/1153>/Direction/East/ConfigFile/BodhisattvaofCourage/LoadConfig/True
+
+
+XMLQuestNPC,1/Str/180/Hits/110/Blessed/True/TalkText/*You see a mysterious witch*/Name/Malidrex/UNEQUIP,Shoes,Delete/UNEQUIP,Pants,Delete/UNEQUIP,Shirt,Delete/UNEQUIP,Helm,Delete/UNEQUIP,Gloves,Delete/UNEQUIP,OuterTorso,Delete/UNEQUIP,MiddleTorso,Delete/EQUIP/<Robe/name/Robe of Invincibility/Hue/2574>/EQUIP/<Sandals/name/Sandals of Levitation/Hue/2559>/EQUIP/<JesterHatofCommand/name/Hat of Eyes/Hue/2476>/EQUIP/<quarterstaff/name/Staff of Apocalypse (999 Charges)/Hue/2460>/Direction/East/ConfigFile/Malidrex/LoadConfig/True
+

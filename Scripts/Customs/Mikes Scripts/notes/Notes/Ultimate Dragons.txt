@@ -1,0 +1,194 @@
+GreaterDragon/ATTACH/XmlDisarm,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,GreaterDragon,99/name/Apotheosia Drakon/str/1899/dex/2100/int/2043/hue/2505/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+GreaterDragon/ATTACH/XmlManaBurn,20,2,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,AncientLich,99/name/Chronos Seraphine/str/1899/dex/2100/int/2043/hue/2773/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+GreaterDragon/ATTACH/XmlManaDrain,20,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,AncientWyrm,99/name/Ragnarok Wyrm/str/1899/dex/2100/int/2043/hue/2873/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+GreaterDragon/ATTACH/XmlBlazeStrike,20,30/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,ArcaneDaemon,99/name/Celestial Leviathor/str/1899/dex/2100/int/2043/hue/2935/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+GreaterDragon/ATTACH/XmlFrostStrike,25,25/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,CuSidhe,99/name/Arcane Netherdrake/str/1899/dex/2100/int/2043/hue/2981/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+GreaterDragon/ATTACH/XmlPoisonStrike,10,60/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,Balron,99/name/Infinity Dracarnum/str/1899/dex/2100/int/2043/hue/2974/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+GreaterDragon/ATTACH/XmlSmokeStrike,20,60/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,ElderGazer,99/name/Sovereign Draconis/str/1899/dex/2100/int/2043/hue/2945/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+GreaterDragon/ATTACH/XmlBlastStrike,50,30/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,Hiryu,99/name/Astral Phoenixith/str/1899/dex/2100/int/2043/hue/2979/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlDisarm,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,GreaterDragon,99/name/Gargantua Sentinel/str/1899/dex/2100/int/2043/hue/2510/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+ 
+
+Gargoyle/ATTACH/XmlManaBurn,20,2,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,AncientLich,99/name/Titanic Guardian/str/1899/dex/2100/int/2043/hue/2780/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+ 
+
+Gargoyle/ATTACH/XmlManaDrain,20,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,AncientWyrm,99/name/Mystic Gargoyle/str/1899/dex/2100/int/2043/hue/2880/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+ 
+
+Gargoyle/ATTACH/XmlBlazeStrike,20,30/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,ArcaneDaemon,99/name/Flameheart Gargoyle/str/1899/dex/2100/int/2043/hue/2940/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+ 
+
+Gargoyle/ATTACH/XmlFrostStrike,25,25/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,CuSidhe,99/name/Iceblade Gargoyle/str/1899/dex/2100/int/2043/hue/2990/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+ 
+
+Gargoyle/ATTACH/XmlPoisonStrike,10,60/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,Balron,99/name/Venomwing Gargoyle/str/1899/dex/2100/int/2043/hue/2980/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+ 
+
+Gargoyle/ATTACH/XmlSmokeStrike,20,60/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,ElderGazer,99/name/Shadowcrest Gargoyle/str/1899/dex/2100/int/2043/hue/2950/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+ 
+
+Gargoyle/ATTACH/XmlBlastStrike,50,30/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,Hiryu,99/name/Starshatter Gargoyle/str/1899/dex/2100/int/2043/hue/2985/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+Balron/ATTACH/XmlDisarm,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,GreaterDragon,99/name/Abyssal Tormentor/str/1899/dex/2100/int/2043/hue/2507/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+ 
+
+Balron/ATTACH/XmlManaBurn,20,2,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,AncientLich,99/name/Infernal Overlord/str/1899/dex/2100/int/2043/hue/2775/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+ 
+
+Balron/ATTACH/XmlManaDrain,20,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,AncientWyrm,99/name/Demonic Enforcer/str/1899/dex/2100/int/2043/hue/2871/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+ 
+
+Balron/ATTACH/XmlBlazeStrike,20,30/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,ArcaneDaemon,99/name/Hellfire Monarch/str/1899/dex/2100/int/2043/hue/2933/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+ 
+
+Balron/ATTACH/XmlFrostStrike,25,25/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,CuSidhe,99/name/Chilling Tyrant/str/1899/dex/2100/int/2043/hue/2983/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+ 
+
+Balron/ATTACH/XmlPoisonStrike,10,60/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,Balron,99/name/Venomous Fiend/str/1899/dex/2100/int/2043/hue/2972/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+ 
+
+Balron/ATTACH/XmlSmokeStrike,20,60/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,ElderGazer,99/name/Shadow Sovereign/str/1899/dex/2100/int/2043/hue/2947/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+ 
+
+Balron/ATTACH/XmlBlastStrike,50,30/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,Hiryu,99/name/Blazing Despot/str/1899/dex/2100/int/2043/hue/2977/tamable/true/MintameSkill/295/hitsmaxseed/
+
+CuSidhe/ATTACH/XmlDisarm,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,GreaterDragon,99/name/Emerald Spiritwalker/str/1899/dex/2100/int/2043/hue/2508/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+CuSidhe/ATTACH/XmlManaBurn,20,2,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,AncientLich,99/name/Crimson Dreamweaver/str/1899/dex/2100/int/2043/hue/2776/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+CuSidhe/ATTACH/XmlManaDrain,20,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,AncientWyrm,99/name/Azure Starhound/str/1899/dex/2100/int/2043/hue/2876/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+CuSidhe/ATTACH/XmlBlazeStrike,20,30/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,ArcaneDaemon,99/name/Golden Sunfury/str/1899/dex/2100/int/2043/hue/2938/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+CuSidhe/ATTACH/XmlFrostStrike,25,25/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,CuSidhe,99/name/Silver Moonshard/str/1899/dex/2100/int/2043/hue/2984/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+CuSidhe/ATTACH/XmlPoisonStrike,10,60/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,Balron,99/name/Violet Shadowbane/str/1899/dex/2100/int/2043/hue/2977/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+CuSidhe/ATTACH/XmlSmokeStrike,20,60/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,ElderGazer,99/name/Indigo Starwhisper/str/1899/dex/2100/int/2043/hue/2948/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+CuSidhe/ATTACH/XmlBlastStrike,50,30/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,Hiryu,99/name/Opal Nightstalker/str/1899/dex/2100/int/2043/hue/2982/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+Hiryu/ATTACH/XmlDisarm,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,GreaterDragon,99/name/Ethereal Stormwing/str/1910/dex/2150/int/2000/hue/2510/tamable/true/MintameSkill/300/hitsmaxseed/3100/hits/3100/ADD/MaxxiaScroll/
+ 
+
+Hiryu/ATTACH/XmlManaBurn,20,2,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,AncientLich,99/name/Mystic Galewing/str/1920/dex/2120/int/2070/hue/2780/tamable/true/MintameSkill/305/hitsmaxseed/3200/hits/3200/ADD/MaxxiaScroll/
+ 
+
+Hiryu/ATTACH/XmlManaDrain,20,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,AncientWyrm,99/name/Cosmic Windrider/str/1905/dex/2090/int/2050/hue/2880/tamable/true/MintameSkill/298/hitsmaxseed/3050/hits/3050/ADD/MaxxiaScroll/
+ 
+Hiryu/ATTACH/XmlBlazeStrike,20,30/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,ArcaneDaemon,99/name/Solar Skyterror/str/1930/dex/2080/int/2030/hue/2940/tamable/true/MintameSkill/310/hitsmaxseed/3150/hits/3150/ADD/MaxxiaScroll/
+ 
+
+Hiryu/ATTACH/XmlFrostStrike,25,25/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,CuSidhe,99/name/Frostwind Harbinger/str/1895/dex/2130/int/2060/hue/2990/tamable/true/MintameSkill/290/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+ 
+
+Hiryu/ATTACH/XmlPoisonStrike,10,60/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,Balron,99/name/Venomous Skyblade/str/1940/dex/2110/int/2020/hue/2980/tamable/true/MintameSkill/315/hitsmaxseed/3200/hits/3200/ADD/MaxxiaScroll/
+ 
+
+Hiryu/ATTACH/XmlSmokeStrike,20,60/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,ElderGazer,99/name/Shadowflame Skyserpent/str/1925/dex/2140/int/2080/hue/2950/tamable/true/MintameSkill/299/hitsmaxseed/3100/hits/3100/ADD/MaxxiaScroll/
+ 
+
+Hiryu/ATTACH/XmlBlastStrike,50,30/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,Hiryu,99/name/Starfire Drake/str/1915/dex/2160/int/2090/hue/2985/tamable/true/MintameSkill/303/hitsmaxseed/3150/hits/3150/ADD/MaxxiaScroll/
+
+AncientLich/ATTACH/XmlDisarm,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,GreaterDragon,99/name/Eternal Sorcerex/str/1795/dex/1980/int/2200/hue/2512/tamable/true/MintameSkill/295/hitsmaxseed/2900/hits/2900/ADD/MaxxiaScroll/
+
+AncientLich/ATTACH/XmlManaBurn,20,2,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,AncientLich,99/name/Chronomaster Nexus/str/1795/dex/1980/int/2200/hue/2780/tamable/true/MintameSkill/295/hitsmaxseed/2900/hits/2900/ADD/MaxxiaScroll/
+
+AncientLich/ATTACH/XmlManaDrain,20,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,AncientWyrm,99/name/Rift Necromancer/str/1795/dex/1980/int/2200/hue/2880/tamable/true/MintameSkill/295/hitsmaxseed/2900/hits/2900/ADD/MaxxiaScroll/
+
+AncientLich/ATTACH/XmlBlazeStrike,20,30/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,ArcaneDaemon,99/name/Infernal Magus/str/1795/dex/1980/int/2200/hue/2940/tamable/true/MintameSkill/295/hitsmaxseed/2900/hits/2900/ADD/MaxxiaScroll/
+
+AncientLich/ATTACH/XmlFrostStrike,25,25/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,CuSidhe,99/name/Cryptic Frostweaver/str/1795/dex/1980/int/2200/hue/2990/tamable/true/MintameSkill/295/hitsmaxseed/2900/hits/2900/ADD/MaxxiaScroll/
+
+AncientLich/ATTACH/XmlPoisonStrike,10,60/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,Balron,99/name/Venomous Necroshade/str/1795/dex/1980/int/2200/hue/2980/tamable/true/MintameSkill/295/hitsmaxseed/2900/hits/2900/ADD/MaxxiaScroll/
+
+AncientLich/ATTACH/XmlSmokeStrike,20,60/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,ElderGazer,99/name/Abyssal Darkcaster/str/1795/dex/1980/int/2200/hue/2950/tamable/true/MintameSkill/295/hitsmaxseed/2900/hits/2900/ADD/MaxxiaScroll/
+
+AncientLich/ATTACH/XmlBlastStrike,50,30/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,Hiryu,99/name/Shadowflare Enchanter/str/1795/dex/1980/int/2200/hue/2985/tamable/true/MintameSkill/295/hitsmaxseed/2900/hits/2900/ADD/MaxxiaScroll/
+
+AncientWyrm/ATTACH/XmlDisarm,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,GreaterDragon,99/name/Aurum Draconis/str/1950/dex/2050/int/2100/hue/2510/tamable/true/MintameSkill/300/hitsmaxseed/3100/hits/3100/ADD/MaxxiaScroll/
+
+AncientWyrm/ATTACH/XmlManaBurn,20,2,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,AncientLich,99/name/Eternum Serpentis/str/1920/dex/2120/int/2070/hue/2780/tamable/true/MintameSkill/300/hitsmaxseed/3200/hits/3200/ADD/MaxxiaScroll/
+
+AncientWyrm/ATTACH/XmlManaDrain,20,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,AncientWyrm,99/name/Cosmic Infernus/str/1900/dex/2150/int/2050/hue/2880/tamable/true/MintameSkill/305/hitsmaxseed/3050/hits/3050/ADD/MaxxiaScroll/
+
+AncientWyrm/ATTACH/XmlBlazeStrike,20,30/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,ArcaneDaemon,99/name/Flameheart Leviathan/str/1930/dex/2080/int/2090/hue/2940/tamable/true/MintameSkill/310/hitsmaxseed/3150/hits/3150/ADD/MaxxiaScroll/
+
+AncientWyrm/ATTACH/XmlFrostStrike,25,25/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,CuSidhe,99/name/Glacial Skyterror/str/1970/dex/2030/int/2080/hue/2990/tamable/true/MintameSkill/295/hitsmaxseed/3000/hits/3000/ADD/MaxxiaScroll/
+
+AncientWyrm/ATTACH/XmlPoisonStrike,10,60/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,Balron,99/name/Venomous Worldshaker/str/1940/dex/2090/int/2060/hue/2980/tamable/true/MintameSkill/305/hitsmaxseed/3080/hits/3080/ADD/MaxxiaScroll/
+
+AncientWyrm/ATTACH/XmlSmokeStrike,20,60/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,ElderGazer,99/name/Mystic Shadowflame/str/1960/dex/2060/int/2120/hue/2950/tamable/true/MintameSkill/310/hitsmaxseed/3120/hits/3120/ADD/MaxxiaScroll/
+
+AncientWyrm/ATTACH/XmlBlastStrike,50,30/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,Hiryu,99/name/Starfire Basilisk/str/1980/dex/2040/int/2130/hue/2985/tamable/true/MintameSkill/300/hitsmaxseed/3070/hits/3070/ADD/MaxxiaScroll/
+
+ElderGazer/ATTACH/XmlDisarm,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,GreaterDragon,99/name/Ethereal Stare/str/1925/dex/2120/int/2070/hue/2510/tamable/true/MintameSkill/300/hitsmaxseed/3050/hits/3050/ADD/MaxxiaScroll/
+
+ElderGazer/ATTACH/XmlManaBurn,20,2,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,AncientLich,99/name/Omniscient Gaze/str/1910/dex/2150/int/2095/hue/2780/tamable/true/MintameSkill/298/hitsmaxseed/3020/hits/3020/ADD/MaxxiaScroll/
+
+ElderGazer/ATTACH/XmlManaDrain,20,1/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,AncientWyrm,99/name/Void Watcher/str/1935/dex/2135/int/2060/hue/2880/tamable/true/MintameSkill/305/hitsmaxseed/3075/hits/3075/ADD/MaxxiaScroll/
+
+ElderGazer/ATTACH/XmlBlazeStrike,20,30/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,ArcaneDaemon,99/name/Cosmic Observer/str/1900/dex/2110/int/2085/hue/2940/tamable/true/MintameSkill/296/hitsmaxseed/3005/hits/3005/ADD/MaxxiaScroll/
+
+ElderGazer/ATTACH/XmlFrostStrike,25,25/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,CuSidhe,99/name/Abyssal Seer/str/1940/dex/2140/int/2050/hue/2990/tamable/true/MintameSkill/310/hitsmaxseed/3090/hits/3090/ADD/MaxxiaScroll/
+
+ElderGazer/ATTACH/XmlPoisonStrike,10,60/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,Balron,99/name/Nether Sentinel/str/1920/dex/2105/int/2080/hue/2975/tamable/true/MintameSkill/299/hitsmaxseed/3030/hits/3030/ADD/MaxxiaScroll/
+
+ElderGazer/ATTACH/XmlSmokeStrike,20,60/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,ElderGazer,99/name/Infernal Vision/str/1915/dex/2125/int/2100/hue/2950/tamable/true/MintameSkill/301/hitsmaxseed/3040/hits/3040/ADD/MaxxiaScroll/
+
+ElderGazer/ATTACH/XmlBlastStrike,50,30/ATTACH/XmlWindGust,1/ATTACH/XmlLifeDrain,20,1/ATTACH/XmlMinionStrike,Hiryu,99/name/Galactic Beholder/str/1930/dex/2130/int/2075/hue/2985/tamable/true/MintameSkill/307/hitsmaxseed/3080/hits/3080/ADD/MaxxiaScroll/
+
+/ATTACH/XmlWindGust,1
+/ATTACH/XmlEarthquakeStrike,20
+/ATTACH/XmlDisarm,1
+/ATTACH/XmlDisarmor,1
+/ATTACH/XmlTheftStrike,1
+/ATTACH/XmlCursedTouch,5,5
+/ATTACH/XmlLightning,30,1
+/ATTACH/XmlManaBurn,20,2,1
+/ATTACH/XmlWhirlwind,20,1
+/ATTACH/XmlLifeDrain,20,1
+/ATTACH/XmlStamDrain,20,1
+/ATTACH/XmlManaDrain,20,1
+/ATTACH/XmlMinionStrike,skeleton,30
+/ATTACH/XmlBlazeStrike,20,30
+/ATTACH/XmlAstralStrike,30,10
+/ATTACH/XmlFrostStrike,25,25
+/ATTACH/XmlPoisonStrike,10,60
+/ATTACH/XmlStaticStrike,50,5
+/ATTACH/XmlBladeStrike,25,30
+/ATTACH/XmlSmokeStrike,20,60
+/ATTACH/XmlBlastStrike,50,30
+/ATTACH/XmlWaterStrike,30,20
+
+
+
+
+
+
+
+
+
+Apotheosia Drakon
+Chronos Seraphine
+Nebula Primevalis
+Ragnarok Wyrm
+Celestial Leviathor
+Zenithal Dracarion
+Solstice Serpentis
+Arcane Netherdrake
+Eonfire Colossus
+Cosmos Eternalis
+Astral Phoenixith
+Infinity Dracarnum
+Primal Ascendant
+Aetherium Scion
+Sovereign Draconis

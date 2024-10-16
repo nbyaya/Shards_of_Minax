@@ -1,0 +1,6 @@
+it would not compile and I got this error:
+
+Errors:
+ + Customs/17. Mikes Scripts/RingOfFarCommand.cs:
+    CS1061: Line 15: 'Server.Mobile' does not contain a definition for 'Speech' and no extension method 'Speech' accepting a first argument of type 'Server.Mobile' could be found (are you missing a using directive or an assembly reference?)
+    CS1061: Line 26: 'Server.Mobile' does not contain a definition for 'Speech' and no extension method 'Speech' accepting a first argument of type 'Server.Mobile' could be found (are you missing a using directive or an assembly reference?)

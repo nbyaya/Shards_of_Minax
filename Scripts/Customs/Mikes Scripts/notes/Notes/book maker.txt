@@ -1,0 +1,190 @@
+This is an example of a book from my UO shard.  Could you write a new book called "the Eclipsed Moon"?
+
+using System;
+using Server;
+
+namespace Server.Items
+{
+    public class MisadventuresOfABumblingMage : BlueBook
+    {
+        public static readonly BookContent Content = new BookContent
+        (
+            "Misadventures of a Bumbling Mage", "Astaro the Clumsy",
+            new BookPageInfo
+            (
+                "I write these words",
+                "with a charred quill,",
+                "a remnant of the last",
+                "experiment gone awry.",
+                "I am Astaro, known to",
+                "many as the Bumbling",
+                "Mage. My tale is one of",
+                "misguided spells and"
+            ),
+            new BookPageInfo
+            (
+                "unintended mishaps.",
+                "It is not a story of",
+                "heroism or great",
+                "conquest, but one of",
+                "perseverance despite",
+                "countless errors.",
+                "",
+                "It all began with a"
+            ),
+            new BookPageInfo
+            (
+                "simple levitation",
+                "spell that turned into",
+                "an unexpected",
+                "explosion. Who knew",
+                "bat wings were so",
+                "volatile? From that",
+                "moment forth, my path",
+                "was set in a most"
+            ),
+            new BookPageInfo
+            (
+                "peculiar direction.",
+                "This volume holds",
+                "my misadventures,",
+                "as a caution and",
+                "entertainment to",
+                "aspiring wizards.",
+                "May you learn from",
+                "my plentiful errors."
+            ),
+            new BookPageInfo
+            (
+                "My journey took me",
+                "to the depths of",
+                "dungeons where I",
+                "mistook a dragon for",
+                "a salamander—oh, how",
+                "fire does not tickle!",
+                "To the forests where",
+                "enchanted trees"
+            ),
+            new BookPageInfo
+            (
+                "chased me for",
+                "accidentally giving",
+                "them legs. And let's",
+                "not speak of the time",
+                "I turned the mayor's",
+                "wine into toads.",
+                "An honest mistake",
+                "during a toast."
+            ),
+            new BookPageInfo
+            (
+                "Through misfired",
+                "spells that stuck",
+                "beards to faces,",
+                "and conjured",
+                "rainclouds indoors,",
+                "to the summoning of",
+                "a demon with a",
+                "surprisingly keen"
+            ),
+            new BookPageInfo
+            (
+                "interest in gardening,",
+                "my journey has been",
+                "nothing if not",
+                "varied. But worry",
+                "not, for each blunder",
+                "was a stepping stone",
+                "to the next... disaster.",
+                ""
+            ),
+            new BookPageInfo
+            (
+                "Yet, here I am,",
+                "still standing—though",
+                "often with singed",
+                "robes and a dazed",
+                "expression. The life",
+                "of a mage is fraught",
+                "with peril, especially",
+                "for one's dignity."
+            ),
+            new BookPageInfo
+            (
+                "Mayhaps one day,",
+                "I shall master the",
+                "arcane arts with",
+                "grace. Until then,",
+                "I shall embrace my",
+                "title with a clumsy",
+                "smile. For every",
+                "spell cast astray"
+            ),
+            new BookPageInfo
+            (
+                "is but an adventure",
+                "awaiting to unfold.",
+                "Remember me, Astaro",
+                "the Clumsy, not for",
+                "my triumphs, but for",
+                "the laughter my",
+                "follies may bring."
+            ),
+            new BookPageInfo
+            (
+                // These pages left intentionally blank.
+            ),
+            new BookPageInfo
+            (
+            ),
+            new BookPageInfo
+            (
+            ),
+            new BookPageInfo
+            (
+                "Astaro the Clumsy",
+                DateTime.Now.ToString("t"),
+                DateTime.Now.ToString("d"),
+                "May your spells fly",
+                "true...er than mine."
+            )
+        );
+
+        public override BookContent DefaultContent { get { return Content; } }
+
+        [Constructable]
+        public MisadventuresOfABumblingMage() : base(false)
+        {
+            // Set the hue to a random color between 1 and 3000
+			Hue = Utility.RandomMinMax(1, 3000);
+        }
+
+        public override void AddNameProperty(ObjectPropertyList list)
+        {
+            list.Add("Misadventures of a Bumbling Mage");
+        }
+
+        public override void OnSingleClick(Mobile from)
+        {
+            LabelTo(from, "Misadventures of a Bumbling Mage");
+        }
+
+        public MisadventuresOfABumblingMage(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+
+            writer.WriteEncodedInt((int)0); // version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+
+            int version = reader.ReadEncodedInt();
+        }
+    }
+}

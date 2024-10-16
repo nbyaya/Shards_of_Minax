@@ -1,0 +1,126 @@
+The following is an example of a socket gem for the XML Sockets sysetm in RunUO.  Could you use it for reference and make a new socket gem which give the item it is socketed into a new ability called Blood Swarm.  Blood Swarm summons a blood elemental every second when the item is equiped, up to the maximum of the holders pet control slots.
+
+using System;
+using Server;
+using Server.Mobiles;
+using Server.Engines.XmlSpawner2;
+
+namespace Server.Items
+{
+
+    // ---------------------------------------------------
+    // Mythic skull
+    // ---------------------------------------------------
+
+    public class MythicSkull : BaseSocketAugmentation, IMythicAugment
+    {
+
+        [Constructable]
+        public MythicSkull() : base(0x1ae4)
+        {
+            Name = "Mythic skull";
+            Hue = 1154;
+        }
+        
+        public override int SocketsRequired {get { return 3; } }
+        
+        public override int Icon { get { return 0x2203;} }
+
+        public override int IconXOffset { get { return 15;} }
+
+        public override int IconYOffset { get { return 15;} }
+
+        public MythicSkull( Serial serial ) : base( serial )
+		{
+		}
+
+        public override string OnIdentify(Mobile from)
+        {
+
+            return "Weapon: +9 Leech Mana, +9 Leech Life\nArmor: +5 Mana Regen, +5 Hits Regen\nCreature: +85 Hits";
+        }
+
+        public override bool OnAugment(Mobile from, object target)
+        {
+            if(target is BaseArmor)
+            {
+                BaseArmor a = target as BaseArmor;
+                a.Attributes.RegenHits += 5;
+			    a.Attributes.RegenMana += 5;
+                return true;
+            } else
+            if(target is BaseWeapon)
+            {
+                BaseWeapon a = target as BaseWeapon;
+                a.WeaponAttributes.HitLeechHits += 9;
+			    a.WeaponAttributes.HitLeechMana += 9;
+			    return true;
+            } else
+            if(target is BaseCreature)
+            {
+                BaseCreature a = target as BaseCreature;
+                a.HitsMaxSeed += 85;
+                return true;
+            }
+
+            return false;
+        }
+
+
+        public override bool CanAugment(Mobile from, object target)
+        {
+            if(target is BaseArmor || target is BaseWeapon || target is BaseCreature)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        
+        public override bool OnRecover(Mobile from, object target, int version)
+        {
+            if(target is BaseArmor)
+            {
+                BaseArmor a = target as BaseArmor;
+                a.Attributes.RegenHits -= 5;
+			    a.Attributes.RegenMana -= 5;
+                return true;
+            } else
+            if(target is BaseWeapon)
+            {
+                BaseWeapon a = target as BaseWeapon;
+                a.WeaponAttributes.HitLeechHits -= 9;
+			    a.WeaponAttributes.HitLeechMana -= 9;
+			    return true;
+            } else
+            if(target is BaseCreature)
+            {
+                BaseCreature a = target as BaseCreature;
+                a.HitsMaxSeed -= 85;
+                return true;
+            }
+
+            return false;
+        }
+
+
+        public override bool CanRecover(Mobile from, object target, int version)
+        {
+            return true;
+        }
+
+
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+
+			writer.Write( (int) 0 );
+		}
+		
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize( reader );
+
+			int version = reader.ReadInt();
+		}
+    }

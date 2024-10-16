@@ -1,0 +1,3 @@
+Orc/name/Skarn/hitsmaxseed/9999/hits/9999/
+
+platehelm/ATTACH/XmlPassiveSummon,AcidElemental,99/NAME/Acid Summoner/

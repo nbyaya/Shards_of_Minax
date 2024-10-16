@@ -1,0 +1,272 @@
+BlackBear/ATTACH/XmlBladeStrike,25,30/name/Blue Bear/str/899/dex/1100/int/1043/hue/2973/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlWhirlwind,20,1/name/Golden Bear/str/954/dex/999/int/899/hue/2974/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlDisarmor,1/name/Silver Bear/str/1043/dex/906/int/999/hue/2861/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlStaticStrike,50,5/name/Green Bear/str/1100/dex/1043/int/967/hue/2850/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlBladeStrike,25,30/name/White Bear/str/799/dex/906/int/954/hue/2837/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlWhirlwind,20,1/name/Brown Bear/str/str/967/dex/999/int/1203/hue/2812/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlLightning,30,1/name/Green Bear/str/906/dex/799/int/999/hue/2782/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+BlackBear/ATTACH/XmlWaterStrike,30,20/name/Purple Bear/str/879/dex/999/int/1100/hue/2762/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cow/ATTACH/XmlBladeStrike,25,30/name/Cerulean Ox/str/899/dex/1100/int/1043/hue/2973/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cow/ATTACH/XmlWhirlwind,20,1/name/Aurum Heifer/str/954/dex/999/int/899/hue/2974/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cow/ATTACH/XmlDisarmor,1/name/Argent Bull/str/1043/dex/906/int/999/hue/2861/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cow/ATTACH/XmlStaticStrike,50,5/name/Emerald Cow/str/1100/dex/1043/int/967/hue/2850/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cow/ATTACH/XmlBladeStrike,25,30/name/Alabaster Steer/str/799/dex/906/int/954/hue/2837/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cow/ATTACH/XmlWhirlwind,20,1/name/Umbra Cow/str/967/dex/999/int/1203/hue/2812/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cow/ATTACH/XmlLightning,30,1/name/Verdant Bovine/str/906/dex/799/int/999/hue/2782/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cow/ATTACH/XmlWaterStrike,30,20/name/Amethyst Heifer/str/879/dex/999/int/1100/hue/2762/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Bull/ATTACH/XmlBladeStrike,25,30/name/Azure Bull/str/899/dex/1100/int/1043/hue/2973/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Bull/ATTACH/XmlWhirlwind,20,1/name/Gilded Bull/str/954/dex/999/int/899/hue/2974/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Bull/ATTACH/XmlDisarmor,1/name/Argent Bull/str/1043/dex/906/int/999/hue/2861/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Bull/ATTACH/XmlStaticStrike,50,5/name/Emerald Bull/str/1100/dex/1043/int/967/hue/2850/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Bull/ATTACH/XmlBladeStrike,25,30/name/Ivory Bull/str/799/dex/906/int/954/hue/2837/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Bull/ATTACH/XmlWhirlwind,20,1/name/Umbra Bull/str/967/dex/999/int/1203/hue/2812/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Bull/ATTACH/XmlLightning,30,1/name/Viridian Bull/str/906/dex/799/int/999/hue/2782/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Bull/ATTACH/XmlWaterStrike,30,20/name/Amethyst Bull/str/879/dex/999/int/1100/hue/2762/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Chicken/ATTACH/XmlBladeStrike,25,30/name/Azure Chicken/str/899/dex/1100/int/1043/hue/2701/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Chicken/ATTACH/XmlWhirlwind,20,1/name/Goldenrod Chicken/str/954/dex/999/int/899/hue/2722/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Chicken/ATTACH/XmlDisarmor,1/name/Silver Lining Chicken/str/1043/dex/906/int/999/hue/2743/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Chicken/ATTACH/XmlStaticStrike,50,5/name/Emerald Chicken/str/1100/dex/1043/int/967/hue/2764/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Chicken/ATTACH/XmlBladeStrike,25,30/name/Ivory Chicken/str/799/dex/906/int/954/hue/2785/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Chicken/ATTACH/XmlWhirlwind,20,1/name/Umber Chicken/str/967/dex/999/int/1203/hue/2806/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Chicken/ATTACH/XmlLightning,30,1/name/Viridian Chicken/str/906/dex/799/int/999/hue/2827/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Chicken/ATTACH/XmlWaterStrike,30,20/name/Amethyst Chicken/str/879/dex/999/int/1100/hue/2848/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Sheep/ATTACH/XmlBladeStrike,25,30/name/Azure Ewe/str/899/dex/1100/int/1043/hue/2700/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Sheep/ATTACH/XmlWhirlwind,20,1/name/Golden Fleece/str/954/dex/999/int/899/hue/2725/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Sheep/ATTACH/XmlDisarmor,1/name/Silver Ram/str/1043/dex/906/int/999/hue/2750/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Sheep/ATTACH/XmlStaticStrike,50,5/name/Emerald Lamb/str/1100/dex/1043/int/967/hue/2775/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Sheep/ATTACH/XmlBladeStrike,25,30/name/Ivory Ram/str/799/dex/906/int/954/hue/2800/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Sheep/ATTACH/XmlWhirlwind,20,1/name/Umber Ewe/str/967/dex/999/int/1203/hue/2825/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Sheep/ATTACH/XmlLightning,30,1/name/Jade Ram/str/906/dex/799/int/999/hue/2850/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Sheep/ATTACH/XmlWaterStrike,30,20/name/Amethyst Lamb/str/879/dex/999/int/1100/hue/2875/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Goat/ATTACH/XmlBladeStrike,25,30/name/Azure Goat/str/899/dex/1100/int/1043/hue/2973/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Goat/ATTACH/XmlWhirlwind,20,1/name/Golden Fleece Goat/str/954/dex/999/int/899/hue/2974/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Goat/ATTACH/XmlDisarmor,1/name/Silver Horn Goat/str/1043/dex/906/int/999/hue/2861/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Goat/ATTACH/XmlStaticStrike,50,5/name/Emerald Goat/str/1100/dex/1043/int/967/hue/2850/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Goat/ATTACH/XmlBladeStrike,25,30/name/Pearl Goat/str/799/dex/906/int/954/hue/2837/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Goat/ATTACH/XmlWhirlwind,20,1/name/Chestnut Goat/str/967/dex/999/int/1203/hue/2812/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Goat/ATTACH/XmlLightning,30,1/name/Jade Goat/str/906/dex/799/int/999/hue/2782/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Goat/ATTACH/XmlWaterStrike,30,20/name/Amethyst Goat/str/879/dex/999/int/1100/hue/2762/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Pig/ATTACH/XmlBladeStrike,25,30/name/Cobalt Hog/str/899/dex/1100/int/1043/hue/2973/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Pig/ATTACH/XmlWhirlwind,20,1/name/Gilded Swine/str/954/dex/999/int/899/hue/2974/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Pig/ATTACH/XmlDisarmor,1/name/Argent Pig/str/1043/dex/906/int/999/hue/2861/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Pig/ATTACH/XmlStaticStrike,50,5/name/Emerald Pig/str/1100/dex/1043/int/967/hue/2850/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Pig/ATTACH/XmlBladeStrike,25,30/name/Pearl Hog/str/799/dex/906/int/954/hue/2837/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Pig/ATTACH/XmlWhirlwind,20,1/name/Umbra Swine/str/967/dex/999/int/1203/hue/2812/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Pig/ATTACH/XmlLightning,30,1/name/Jade Pig/str/906/dex/799/int/999/hue/2782/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Pig/ATTACH/XmlWaterStrike,30,20/name/Amethyst Hog/str/879/dex/999/int/1100/hue/2762/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlBladeStrike,25,30/name/Azure Rabbit/str/899/dex/1100/int/1043/hue/2973/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlWhirlwind,20,1/name/Goldenrod Rabbit/str/954/dex/999/int/899/hue/2974/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlDisarmor,1/name/Argent Rabbit/str/1043/dex/906/int/999/hue/2861/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlStaticStrike,50,5/name/Emerald Rabbit/str/1100/dex/1043/int/967/hue/2850/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlBladeStrike,25,30/name/Ivory Rabbit/str/799/dex/906/int/954/hue/2837/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlWhirlwind,20,1/name/Sienna Rabbit/str/967/dex/999/int/1203/hue/2812/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlLightning,30,1/name/Jade Rabbit/str/906/dex/799/int/999/hue/2782/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Rabbit/ATTACH/XmlWaterStrike,30,20/name/Amethyst Rabbit/str/879/dex/999/int/1100/hue/2762/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cat/ATTACH/XmlBladeStrike,25,30/name/Azure Panther/str/899/dex/1100/int/1043/hue/2701/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cat/ATTACH/XmlWhirlwind,20,1/name/Golden Lynx/str/954/dex/999/int/899/hue/2722/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cat/ATTACH/XmlDisarmor,1/name/Silver Puma/str/1043/dex/906/int/999/hue/2743/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cat/ATTACH/XmlStaticStrike,50,5/name/Emerald Jaguar/str/1100/dex/1043/int/967/hue/2764/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cat/ATTACH/XmlBladeStrike,25,30/name/Ivory Tiger/str/799/dex/906/int/954/hue/2785/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cat/ATTACH/XmlWhirlwind,20,1/name/Umber Bobcat/str/967/dex/999/int/1203/hue/2806/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cat/ATTACH/XmlLightning,30,1/name/Verdant Cheetah/str/906/dex/799/int/999/hue/2827/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cat/ATTACH/XmlWaterStrike,30,20/name/Amethyst Leopard/str/879/dex/999/int/1100/hue/2848/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Dog/ATTACH/XmlBladeStrike,25,30/name/Azure Hound/str/899/dex/1100/int/1043/hue/2973/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Dog/ATTACH/XmlWhirlwind,20,1/name/Gilded Mastiff/str/954/dex/999/int/899/hue/2974/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Dog/ATTACH/XmlDisarmor,1/name/Argent Shepherd/str/1043/dex/906/int/999/hue/2861/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Dog/ATTACH/XmlStaticStrike,50,5/name/Emerald Wolf/str/1100/dex/1043/int/967/hue/2850/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Dog/ATTACH/XmlBladeStrike,25,30/name/Ivory Terrier/str/799/dex/906/int/954/hue/2837/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Dog/ATTACH/XmlWhirlwind,20,1/name/Umbra Spaniel/str/967/dex/999/int/1203/hue/2812/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Dog/ATTACH/XmlLightning,30,1/name/Verdant Bulldog/str/906/dex/799/int/999/hue/2782/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Dog/ATTACH/XmlWaterStrike,30,20/name/Amethyst Pooch/str/879/dex/999/int/1100/hue/2762/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Horse/ATTACH/XmlBladeStrike,25,30/name/Cerulean Steed/str/899/dex/1100/int/1043/hue/2973/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Horse/ATTACH/XmlWhirlwind,20,1/name/Golden Charger/str/954/dex/999/int/899/hue/2974/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Horse/ATTACH/XmlDisarmor,1/name/Silver Stallion/str/1043/dex/906/int/999/hue/2861/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Horse/ATTACH/XmlStaticStrike,50,5/name/Emerald Mare/str/1100/dex/1043/int/967/hue/2850/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Horse/ATTACH/XmlBladeStrike,25,30/name/Ivory Courser/str/799/dex/906/int/954/hue/2837/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Horse/ATTACH/XmlWhirlwind,20,1/name/Umber Warhorse/str/967/dex/999/int/1203/hue/2812/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Horse/ATTACH/XmlLightning,30,1/name/Jade Mustang/str/906/dex/799/int/999/hue/2782/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Horse/ATTACH/XmlWaterStrike,30,20/name/Amethyst Equine/str/879/dex/999/int/1100/hue/2762/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cougar/ATTACH/XmlBladeStrike,25,30/name/Crimson Cougar/str/899/dex/1100/int/1043/hue/2701/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cougar/ATTACH/XmlWhirlwind,20,1/name/Azure Cougar/str/954/dex/999/int/899/hue/2722/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cougar/ATTACH/XmlDisarmor,1/name/Silver Cougar/str/1043/dex/906/int/999/hue/2743/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cougar/ATTACH/XmlStaticStrike,50,5/name/Emerald Cougar/str/1100/dex/1043/int/967/hue/2764/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cougar/ATTACH/XmlBladeStrike,25,30/name/Ivory Cougar/str/799/dex/906/int/954/hue/2785/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cougar/ATTACH/XmlWhirlwind,20,1/name/Umbra Cougar/str/967/dex/999/int/1203/hue/2806/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cougar/ATTACH/XmlLightning,30,1/name/Viridian Cougar/str/906/dex/799/int/999/hue/2827/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Cougar/ATTACH/XmlWaterStrike,30,20/name/Amethyst Cougar/str/879/dex/999/int/1100/hue/2848/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlBladeStrike,25,30/name/Mountain Gorilla/str/899/dex/1100/int/1043/hue/2700/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlWhirlwind,20,1/name/Western Lowland Gorilla/str/954/dex/999/int/899/hue/2725/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlDisarmor,1/name/Cross River Gorilla/str/1043/dex/906/int/999/hue/2750/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlStaticStrike,50,5/name/Eastern Lowland Gorilla/str/1100/dex/1043/int/967/hue/2775/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlBladeStrike,25,30/name/Bwindi Gorilla/str/799/dex/906/int/954/hue/2800/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlWhirlwind,20,1/name/Grauer's Gorilla/str/967/dex/999/int/1203/hue/2825/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlLightning,30,1/name/Nigerian Gorilla/str/906/dex/799/int/999/hue/2850/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Gorilla/ATTACH/XmlWaterStrike,30,20/name/Silverback Gorilla/str/879/dex/999/int/1100/hue/2875/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+GreatHart/ATTACH/XmlBladeStrike,25,30/name/Barasingha/str/899/dex/1100/int/1043/hue/2701/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+GreatHart/ATTACH/XmlWhirlwind,20,1/name/Père David's Deer/str/954/dex/999/int/899/hue/2722/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+GreatHart/ATTACH/XmlDisarmor,1/name/Thorold's Deer/str/1043/dex/906/int/999/hue/2743/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+GreatHart/ATTACH/XmlStaticStrike,50,5/name/Red Deer/str/1100/dex/1043/int/967/hue/2764/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+GreatHart/ATTACH/XmlBladeStrike,25,30/name/Sambar Deer/str/799/dex/906/int/954/hue/2785/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+GreatHart/ATTACH/XmlWhirlwind,20,1/name/White-tailed Deer/str/967/dex/999/int/1203/hue/2806/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+GreatHart/ATTACH/XmlLightning,30,1/name/Fallow Deer/str/906/dex/799/int/999/hue/2827/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+GreatHart/ATTACH/XmlWaterStrike,30,20/name/Mule Deer/str/879/dex/999/int/1100/hue/2848/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Hart/ATTACH/XmlBladeStrike,25,30/name/Ghiolt Hart/str/899/dex/1100/int/1043/hue/2700/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Hart/ATTACH/XmlWhirlwind,20,1/name/Davant Hart/str/954/dex/999/int/899/hue/2725/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Hart/ATTACH/XmlDisarmor,1/name/Vantir Hart/str/1043/dex/906/int/999/hue/2750/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Hart/ATTACH/XmlStaticStrike,50,5/name/Quelcy Hart/str/1100/dex/1043/int/967/hue/2775/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Hart/ATTACH/XmlBladeStrike,25,30/name/Pylar Hart/str/799/dex/906/int/954/hue/2800/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Hart/ATTACH/XmlWhirlwind,20,1/name/Grolm Hart/str/967/dex/999/int/1203/hue/2825/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Hart/ATTACH/XmlLightning,30,1/name/Drusas Hart/str/906/dex/799/int/999/hue/2850/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Hart/ATTACH/XmlWaterStrike,30,20/name/Sklar Hart/str/879/dex/999/int/1100/hue/2875/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Llama/ATTACH/XmlBladeStrike,25,30/name/Vandor Llama/str/899/dex/1100/int/1043/hue/2973/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Llama/ATTACH/XmlWhirlwind,20,1/name/Jharkal Llama/str/954/dex/999/int/899/hue/2974/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Llama/ATTACH/XmlDisarmor,1/name/Ghyle Llama/str/1043/dex/906/int/999/hue/2861/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Llama/ATTACH/XmlStaticStrike,50,5/name/Araminta Llama/str/1100/dex/1043/int/967/hue/2850/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Llama/ATTACH/XmlBladeStrike,25,30/name/Nyssa Llama/str/799/dex/906/int/954/hue/2837/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Llama/ATTACH/XmlWhirlwind,20,1/name/Suldrun Llama/str/967/dex/999/int/1203/hue/2812/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Llama/ATTACH/XmlLightning,30,1/name/Viole Falushe Llama/str/906/dex/799/int/999/hue/2782/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+Llama/ATTACH/XmlWaterStrike,30,20/name/Navarth Llama/str/879/dex/999/int/1100/hue/2762/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+SilverSerpent/ATTACH/XmlBladeStrike,25,30/name/Yog-Sothoth Serpent/str/899/dex/1100/int/1043/hue/2973/tamable/true/MintameSkill/195/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+SilverSerpent/ATTACH/XmlWhirlwind,20,1/name/Cthulhu Serpent/str/954/dex/999/int/899/hue/2974/tamable/true/MintameSkill/225/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+SilverSerpent/ATTACH/XmlDisarmor,1/name/Nyarlathotep Serpent/str/1043/dex/906/int/999/hue/2861/tamable/true/MintameSkill/185/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+SilverSerpent/ATTACH/XmlStaticStrike,50,5/name/Shub-Niggurath Serpent/str/1100/dex/1043/int/967/hue/2850/tamable/true/MintameSkill/215/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+SilverSerpent/ATTACH/XmlBladeStrike,25,30/name/Azathoth Serpent/str/799/dex/906/int/954/hue/2837/tamable/true/MintameSkill/220/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+SilverSerpent/ATTACH/XmlWhirlwind,20,1/name/Dagon Serpent/str/967/dex/999/int/1203/hue/2812/tamable/true/MintameSkill/190/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+SilverSerpent/ATTACH/XmlLightning,30,1/name/Tsathoggua Serpent/str/906/dex/799/int/999/hue/2782/tamable/true/MintameSkill/210/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+
+SilverSerpent/ATTACH/XmlWaterStrike,30,20/name/R'lyeh Serpent/str/879/dex/999/int/1100/hue/2762/tamable/true/MintameSkill/200/hitsmaxseed/1000/hits/1000/ADD/MaxxiaScroll/
+

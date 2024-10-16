@@ -1,0 +1,9 @@
+It would not compile and I got this error:
+
+Errors:
+ + Customs/17. Mikes Scripts/NoirDetective.cs:
+    CS1056: Line 87: Unexpected character '$'
+    CS1056: Line 91: Unexpected character '$'
+    CS1056: Line 98: Unexpected character '$'
+    CS1056: Line 102: Unexpected character '$'
+Scripts: One or more scripts failed to compile or no script files were found.

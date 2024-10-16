@@ -1,0 +1,1014 @@
+BlackBear/ATTACH/xmlweaponability,ArmorIgnore/name/Blue Bear/str/110/dex/280/int/60/hue/1150/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+BlackBear/ATTACH/xmlweaponability,ConcussionBlow/name/Golden Bear/str/120/dex/290/int/70/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+BlackBear/ATTACH/xmlweaponability,Disarm/name/Silver Bear/str/130/dex/280/int/80/hue/1156/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+BlackBear/ATTACH/xmlweaponability,MovingShot/name/Green Bear/str/140/dex/270/int/90/hue/1159/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+BlackBear/ATTACH/xmlweaponability,ArmorIgnore/name/White Bear/str/150/dex/250/int/50/hue/1150/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+BlackBear/ATTACH/xmlweaponability,ConcussionBlow/name/Brown Bear/str/200/dex/200/int/50/hue/847/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+BlackBear/ATTACH/xmlweaponability,DoubleStrike/name/Green Bear/str/250/dex/150/int/50/hue/1424/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+BlackBear/ATTACH/xmlweaponability,MortalStrike/name/Purple Bear/str/300/dex/100/int/50/hue/1175/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+BrownBear/ATTACH/xmlweaponability,WhirlwindAttack/name/Winter Bear/str/200/dex/200/int/50/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+BrownBear/ATTACH/xmlweaponability,InfectiousStrike/name/Spring Bear/str/150/dex/250/int/50/hue/63/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+BrownBear/ATTACH/xmlweaponability,MovingShot/name/Summer Bear/str/100/dex/300/int/50/hue/43/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+BrownBear/ATTACH/xmlweaponability,CrushingBlow/name/Autumn Bear/str/250/dex/150/int/50/hue/1194/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+BrownBear/ATTACH/xmlweaponability,ParalyzingBlow/name/Aries Bear/str/300/dex/100/int/50/hue/37/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+BrownBear/ATTACH/xmlweaponability,Disarm/name/Taurus Bear/str/250/dex/150/int/50/hue/1191/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+GrizzlyBear/ATTACH/xmlweaponability,Dismount/name/Zombie Bear/str/250/dex/100/int/50/hue/2001/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+GrizzlyBear/ATTACH/xmlweaponability,ShadowStrike/name/Vampire Bear/str/200/dex/150/int/50/hue/1175/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+GrizzlyBear/ATTACH/xmlweaponability,ArmorIgnore/name/Iron Bear/str/300/dex/80/int/40/hue/2406/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+GrizzlyBear/ATTACH/xmlweaponability,WhirlwindAttack/name/Tornado Bear/str/200/dex/120/int/60/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+GrizzlyBear/ATTACH/xmlweaponability,ParalyzingBlow/name/Frost Bear/str/250/dex/100/int/50/hue/1152/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+GrizzlyBear/ATTACH/xmlweaponability,ShadowStrike/name/Nightmare Bear/str/220/dex/110/int/70/hue/1175/tamable/true/hitsmaxseed/420/hits/420/ADD,0.1/MaxxiaScroll/
+
+GrizzlyBear/ATTACH/xmlweaponability,DoubleStrike/name/Thunder Bear/str/230/dex/130/int/50/hue/2961/tamable/true/hitsmaxseed/440/hits/440/ADD,0.1/MaxxiaScroll/
+
+GrizzlyBear/ATTACH/xmlweaponability,InfectiousStrike/name/Poison Bear/str/260/dex/100/int/40/hue/1272/tamable/true/hitsmaxseed/460/hits/460/ADD,0.1/MaxxiaScroll/
+
+Chicken/ATTACH/xmlweaponability,DoubleStrike/name/Phoenix Chicken/str/50/dex/150/int/50/hue/1260/tamable/true/hitsmaxseed/100/hits/100/ADD,0.1/MaxxiaScroll/
+
+Chicken/ATTACH/xmlweaponability,ShadowStrike/name/Nightmare Chicken/str/100/dex/100/int/100/hue/1175/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Chicken/ATTACH/xmlweaponability,WhirlwindAttack/name/Tornado Chicken/str/150/dex/50/int/50/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Chicken/ATTACH/xmlweaponability,MortalStrike/name/Zombie Chicken/str/50/dex/50/int/150/hue/2207/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Chicken/ATTACH/xmlweaponability,InfectiousStrike/name/Poison Chicken/str/75/dex 75/int 75/hue 1272/tamable true/hitsmaxseed 150/hits 150 ADD,0.1 MaxxiaScroll
+
+<!-- Luna Chicken with ArmorIgnore ability -->
+Chicken/ATTACH/xmlweaponability,ArmorIgnore/name/Luna Chicken/str/100/dex/80/int/20/hue/1150/tamable/true/hitsmaxseed/150/hits/150/ADD,0.1/MaxxiaScroll/
+
+<!-- Sunburst Chicken with BleedAttack ability -->
+Chicken/ATTACH/xmlweaponability,BleedAttack/name/Sunburst Chicken/str/110/dex/85/int/22/hue/1151/tamable/true/hitsmaxseed/155/hits/155/ADD,0.1/MaxxiaScroll/
+
+<!-- Thunderclap Chicken with ConcussionBlow ability -->
+Chicken/ATTACH/xmlweaponability,ConcussionBlow/name/Thunderclap Chicken/str/120/dex/90/int/25/hue/1152/tamable/true/hitsmaxseed/160/hits/160/ADD,0.1/MaxxiaScroll/
+
+<!-- Stonebeak Chicken with CrushingBlow ability -->
+Chicken/ATTACH/xmlweaponability,CrushingBlow/name/Stonebeak Chicken/str/130/dex/95/int/28/hue/1153/tamable/true/hitsmaxseed/165/hits/165/ADD,0.1/MaxxiaScroll/
+
+<!-- Swiftwing Chicken with Disarm ability -->
+Chicken/ATTACH/xmlweaponability,Disarm/name/Swiftwing Chicken/str/140/dex/100/int/30/hue/1154/tamable/true/hitsmaxseed/170/hits/170/ADD,0.1/MaxxiaScroll/
+
+<!-- Galefeather Chicken with Dismount ability -->
+Chicken/ATTACH/xmlweaponability,Dismount/name/Galefeather Chicken/str/150/dex/105/int/32/hue/1155/tamable/true/hitsmaxseed/175/hits/175/ADD,0.1/MaxxiaScroll/
+
+<!-- Twinsong Chicken with DoubleStrike ability -->
+Chicken/ATTACH/xmlweaponability,DoubleStrike/name/Twinsong Chicken/str/160/dex/110/int/35/hue/1156/tamable/true/hitsmaxseed/180/hits/180/ADD,0.1/MaxxiaScroll/
+
+<!-- Plaguebearer Chicken with InfectiousStrike ability -->
+Chicken/ATTACH/xmlweaponability,InfectiousStrike/name/Plaguebearer Chicken/str/170/dex/115/int/38/hue/1157/tamable/true/hitsmaxseed/185/hits/185/ADD,0.1/MaxxiaScroll/
+
+<!-- Grimshadow Chicken with MortalStrike ability -->
+Chicken/ATTACH/xmlweaponability,MortalStrike/name/Grimshadow Chicken/str/180/dex/120/int/40/hue/1158/tamable/true/hitsmaxseed/190/hits/190/ADD,0.1/MaxxiaScroll/
+
+<!-- Windrunner Chicken with MovingShot ability -->
+Chicken/ATTACH/xmlweaponability,MovingShot/name/Windrunner Chicken/str/190/dex/125/int/42/hue/1159/tamable/true/hitsmaxseed/195/hits/195/ADD,0.1/MaxxiaScroll/
+
+<!-- Frostbeak Chicken with ParalyzingBlow ability -->
+Chicken/ATTACH/xmlweaponability,ParalyzingBlow/name/Frostbeak Chicken/str/200/dex/130/int/45/hue/1160/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+<!-- Nightshade Chicken with ShadowStrike ability -->
+Chicken/ATTACH/xmlweaponability,ShadowStrike/name/Nightshade Chicken/str/210/dex/135/int/48/hue/1161/tamable/true/hitsmaxseed/205/hits/205/ADD,0.1/MaxxiaScroll/
+
+<!-- Cyclone Chicken with WhirlwindAttack ability -->
+Chicken/ATTACH/xmlweaponability,WhirlwindAttack/name/Cyclone Chicken/str/220/dex/140/int/50/hue/1162/tamable/true/hitsmaxseed/210/hits/210/ADD,0.1/MaxxiaScroll/
+
+
+Crane/ATTACH/xmlweaponability,WhirlwindAttack/name/Typhoon Crane/str/100/dex/300/int/50/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/xmlweaponability,InfectiousStrike/name/Poison Crane/str/150/dex/200/int/100/hue/1266/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/xmlweaponability,ShadowStrike/name/Nightfall Crane/str/200/dex/150/int/150/hue/1109/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/xmlweaponability,DoubleStrike/name/Twin Crane/str/250/dex/250/int/50/hue/1157/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+
+Crane/ATTACH/xmlweaponability,ArmorIgnore/name/Solar Crane/str/150/dex/150/int/80/hue/48/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/xmlweaponability,WhirlwindAttack/name/Lunar Crane/str/180/dex/120/int/75/hue/1152/tamable/true/hitsmaxseed/425/hits/425/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/xmlweaponability,ShadowStrike/name/Mystic Crane/str/160/dex/140/int/85/hue/2943/tamable/true/hitsmaxseed/410/hits/410/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/xmlweaponability,DoubleStrike/name/Aqua Crane/str/155/dex/145/int/82/hue/88/tamable/true/hitsmaxseed/405/hits/405/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/xmlweaponability,InfectiousStrike/name/Inferno Crane/str/170/dex/130/int/78/hue/37/tamable/true/hitsmaxseed/420/hits/420/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/xmlweaponability,ConcussionBlow/name/Zenith Crane/str/165/dex/135/int/79/hue/1174/tamable/true/hitsmaxseed/415/hits/415/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/xmlweaponability,MortalStrike/name/Galaxy Crane/str/175/dex/125/int/76/hue/2928/tamable/true/hitsmaxseed/430/hits/430/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/xmlweaponability,MovingShot/name/Typhoon Crane/str/140/dex/160/int/84/hue/268/tamable/true/hitsmaxseed/395/hits/395/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/xmlweaponability,Disarm/name/Eclipse Crane/str/145/dex/155/int/83/hue/2075/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Crane/ATTACH/xmlweaponability,Dismount/name/Vortex Crane/str/150/dex/150/int/80/hue/1109/tamable/true/hitsmaxseed/405/hits/405/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/xmlweaponability,WhirlwindAttack/name/Storm Eagle/str/200/dex/150/int/100/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/xmlweaponability,ShadowStrike/name/Night Eagle/str/150/dex/200/int/150/hue/1109/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/xmlweaponability,MovingShot/name/Wind Eagle/str/100/dex/250/int/200/hue/1150/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/xmlweaponability,InfectiousStrike/name/Poison Eagle/str/250/dex/100/int/50/hue/1266/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/xmlweaponability,ArmorIgnore/name/Blizzard Eagle/str/120/dex/150/int/80/hue/1152/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/xmlweaponability,BleedAttack/name/Skyfire Eagle/str/110/dex/160/int/90/hue/1358/tamable/true/hitsmaxseed/310/hits/310/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/xmlweaponability,ConcussionBlow/name/Thunderwing Eagle/str/125/dex/155/int/85/hue/1175/tamable/true/hitsmaxseed/315/hits/315/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/xmlweaponability,CrushingBlow/name/Mystic Eagle/str/130/dex/145/int/88/hue/1260/tamable/true/hitsmaxseed/320/hits/320/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/xmlweaponability,Disarm/name/Nightshade Eagle/str/115/dex/150/int/95/hue/1109/tamable/true/hitsmaxseed/305/hits/305/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/xmlweaponability,Dismount/name/Windrider Eagle/str/120/dex/155/int/90/hue/1167/tamable/true/hitsmaxseed/310/hits/310/ADD,0.1/MaxxiaScroll/
+
+Eagle/ATTACH/xmlweaponability,DoubleStrike/name/Twinbeak Eagle/str/125/dex/145/int/87/hue/1194/tamable/true/hitsmaxseed/315/hits/315/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/xmlweaponability,ShadowStrike/name/Nightmare Wolf/str/200/dex/150/int/75/hue/1175/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/xmlweaponability,WhirlwindAttack/name/Tornado Wolf/str/250/dex/125/int/50/hue/1153/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/xmlweaponability,MortalStrike/name/Vampire Wolf/str/150/dex/200/int/100/hue/34/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/xmlweaponability,InfectiousStrike/name/Zombie Wolf/str/100/dex/100/int/25/hue/1420/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/xmlweaponability,CrushingBlow/name/Meteor Wolf/str/300/dex/75/int/25/hue/1255/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/xmlweaponability,ShadowStrike/name/Eclipse Wolf/str/320/dex/105/int/60/hue/1175/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/xmlweaponability,Disarm/name/Spectral Wolf/str/290/dex/110/int/65/hue/1150/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/xmlweaponability,WhirlwindAttack/name/Cyclone Wolf/str/310/dex/120/int/55/hue/1260/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/xmlweaponability,ArmorIgnore/name/Lunar Wolf/str/330/dex/100/int/70/hue/1154/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/xmlweaponability,InfectiousStrike/name/Plague Wolf/str/305/dex/115/int/50/hue/1278/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+DireWolf/ATTACH/xmlweaponability,ParalyzingBlow/name/Tempest Wolf/str/315/dex/105/int/60/hue/1301/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,MortalStrike/name/SagittariusBull/str/380/dex/90/int/80/hue/1157/tamable/true/hitsmaxseed/580/hits580/ADD0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,CrushingBlow/name/CapricornBull/str/360/dex/100/int/90/hue/1158/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,ArmorIgnore/name/AquariusBull/str/340/dex/120/int/100/hue/1161/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,Disarm/name/PiscesBull/str/330/dex/130/int/110/hue/1166/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,WhirlwindAttack/name/Taurus Bull/str/400/dex/80/int/40/hue/1175/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,ShadowStrike/name/Gemini Bull/str/300/dex/120/int/60/hue/1153/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,InfectiousStrike/name/Cancer Bull/str/350/dex/100/int/50/hue/1150/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,DoubleStrike/name/Libra Bull/str/320/dex/110/int/70/hue/1154/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,ShadowStrike/name/Astro Bull/str/320/dex/110/int/45/hue/1150/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,ArmorIgnore/name/Celestial Charger/str/350/dex/120/int/60/hue/1170/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,ConcussionBlow/name/Mystic Taurus/str/330/dex/105/int/70/hue/1100/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,DoubleStrike/name/Eclipse Bull/str/315/dex/115/int/55/hue/1950/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,WhirlwindAttack/name/Lunar Behemoth/str/340/dex/100/int/65/hue/1190/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,InfectiousStrike/name/Solar Steed/str/360/dex/110/int/50/hue/2100/tamable/true/hitsmaxseed/610/hits/610/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,Dismount/name/Nebula Nomad/str/310/dex/105/int/75/hue/2250/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,MortalStrike/name/Cosmic Calf/str/300/dex/120/int/60/hue/2350/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,CrushingBlow/name/Galactic Guardian/str/340/dex/100/int/80/hue/2450/tamable/true/hitsmaxseed/590/hits/590/ADD,0.1/MaxxiaScroll/
+
+Bull/ATTACH/xmlweaponability,ParalyzingBlow/name/Stellar Sentinel/str/325/dex/130/int/70/hue/2550/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/xmlweaponability,ShadowStrike/name/Nightmare Cow/str/200/dex/150/int/50/hue/1175/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/xmlweaponability,WhirlwindAttack/name/Tornado Cow/str/250/dex/200/int/50/hue/1153/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/xmlweaponability,InfectiousStrike/name/Zombie Cow/str/150/dex/100/int/50/hue/1420/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/xmlweaponability,CrushingBlow/name/Rocky Cow/str/300/dex/100/int/50/hue/2406/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/xmlweaponability,ShadowStrike/name/Eclipse Bovine/str/320/dex/80/int/60/hue/1175/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/xmlweaponability,ConcussionBlow/name/Mystic Ox/str/310/dex/90/int/70/hue/1288/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/xmlweaponability,WhirlwindAttack/name/Celestial Steer/str/330/dex/85/int/65/hue/1153/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/xmlweaponability,InfectiousStrike/name/Verdant Heifer/str/300/dex/95/int/75/hue/67/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/xmlweaponability,BleedAttack/name/Crimson Calf/str/305/dex/100/int/65/hue/37/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Cow/ATTACH/xmlweaponability,ParalyzingBlow/name/Lunar Bull/str/325/dex/88/int/62/hue/1157/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/xmlweaponability,WhirlwindAttack/name/Tornado Cougar/str/200/dex/150/int/50/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/xmlweaponability,InfectiousStrike/name/Venom Cougar/str/250/dex/100/int/50/hue/2126/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/xmlweaponability,ShadowStrike/name/Nightfall Cougar/str/150/dex/200/int/50/hue/1109/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/xmlweaponability,CrushingBlow/name/Mountain Cougar/str/300/dex/50/int/50/hue/2406/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/xmlweaponability,DoubleStrike/name/Thunder Cougar/str/320/dex/105/int/55/hue/38/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/xmlweaponability,InfectiousStrike/name/Frost Cougar/str/310/dex/110/int/60/hue/1152/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/xmlweaponability,ShadowStrike/name/Mystic Cougar/str/330/dex/103/int/58/hue/295/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/xmlweaponability,MovingShot/name/Breeze Cougar/str/300/dex/115/int/57/hue/2591/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/xmlweaponability,CrushingBlow/name/Stone Cougar/str/340/dex/100/int/53/hue/2401/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/xmlweaponability,ArmorIgnore/name/Lunar Cougar/str/315/dex/108/int/56/hue/906/tamable/true/hitsmaxseed/518/hits/518/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/xmlweaponability,BleedAttack/name/Blaze Cougar/str/325/dex/107/int/54/hue/1358/tamable/true/hitsmaxseed/523/hits/523/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/xmlweaponability,Dismount/name/Tidal Cougar/str/312/dex/112/int/59/hue/296/tamable/true/hitsmaxseed/516/hits/516/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/xmlweaponability,WhirlwindAttack/name/Whirlwind Cougar/str/328/dex/106/int/55/hue/1153/tamable/true/hitsmaxseed/524/hits/524/ADD,0.1/MaxxiaScroll/
+
+Cougar/ATTACH/xmlweaponability,ConcussionBlow/name/Solar Cougar/str/318/dex/109/int/60/hue/54/tamable/true/hitsmaxseed/517/hits/517/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/xmlweaponability,WhirlwindAttack/name/Snow Leopard/str/200/dex/150/int/50/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/xmlweaponability,DoubleStrike/name/Jaguar/str/250/dex/120/int/50/hue/2968/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/xmlweaponability,ShadowStrike/name/Melanistic Leopard/str/220/dex/140/int/50/hue/1109/tamable/true/hitsmaxseed/420/hits/420/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/xmlweaponability,MortalStrike/name/Cougar/str/230/dex/130/int/50/hue/0/tamable/true/hitsmaxseed/430/hits/430/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/xmlweaponability,ArmorIgnore/name/Clouded Leopard/str/320/dex/110/int/55/hue/1152/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/xmlweaponability,BleedAttack/name/Jaguar/str/330/dex/115/int/60/hue/1153/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/xmlweaponability,DoubleStrike/name/Snow Leopard/str/315/dex/105/int/58/hue/1154/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/xmlweaponability,ShadowStrike/name/Black/str/325/dex/120/int/65/hue/1175/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/xmlweaponability,MovingShot/name/Cheetah/str/310/dex/130/int/50/hue/1901/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/xmlweaponability,Disarm/name/Ocelot/str/305/dex/100/int/52/hue/1902/tamable/true/hitsmaxseed/505/hits/505/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/xmlweaponability,Dismount/name/Margay/str/308/dex/103/int/54/hue/1903/tamable/true/hitsmaxseed/508/hits/508/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/xmlweaponability,InfectiousStrike/name/Puma/str/321/dex/111/int/56/hue/1904/tamable/true/hitsmaxseed/521/hits/521/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/xmlweaponability,ConcussionBlow/name/Lynx/str/313/dex/108/int/53/hue/1905/tamable/true/hitsmaxseed/513/hits/513/ADD,0.1/MaxxiaScroll/
+
+Panther/ATTACH/xmlweaponability,WhirlwindAttack/name/Caracal/str/318/dex/113/int/57/hue/1906/tamable/true/hitsmaxseed/518/hits/518/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/xmlweaponability,WhirlwindAttack/name/Spotted/str/200/dex/150/int/40/hue/1150/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/xmlweaponability,DoubleStrike/name/Bristle/str/250/dex/120/int/35/hue/2405/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/xmlweaponability,ShadowStrike/name/Nightmare/str/220/dex/140/int/45/hue/1175/tamable/true/hitsmaxseed/420/hits/420/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/xmlweaponability,CrushingBlow/name/Tusk/str/280/dex/100/int/30/hue/1153/tamable/true/hitsmaxseed/480/hits/480/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/xmlweaponability,ArmorIgnore/name/Jaguarundi/str/330/dex/120/int/45/hue/38/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/xmlweaponability,BleedAttack/name/Okapi/str/310/dex/110/int/55/hue/39/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/xmlweaponability,DoubleStrike/name/Serval/str/340/dex/130/int/50/hue/40/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/xmlweaponability,ConcussionBlow/name/Aardvark/str/300/dex/105/int/60/hue/41/tamable/true/hitsmaxseed/505/hits/505/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/xmlweaponability,ShadowStrike/name/Pangolin/str/320/dex/115/int/65/hue/42/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/xmlweaponability,WhirlwindAttack/name/Cassowary/str/350/dex/125/int/50/hue/43/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/xmlweaponability,Dismount/name/Tarsier/str/290/dex/110/int/70/hue/44/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/xmlweaponability,InfectiousStrike/name/Binturong/str/310/dex/105/int/60/hue/45/tamable/true/hitsmaxseed/505/hits/505/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/xmlweaponability,ParalyzingBlow/name/Fossa/str/330/dex/120/int/55/hue/46/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+Boar/ATTACH/xmlweaponability,CrushingBlow/name/Tapir/str/315/dex/110/int/60/hue/47/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/xmlweaponability,WhirlwindAttack/name/Poison Dart Frog/str/50/dex/150/int/50/hue/63/tamable/true/hitsmaxseed/100/hits/100/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/xmlweaponability,InfectiousStrike/name/Goliath Frog/str/150/dex/50/int/50/hue/68/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/xmlweaponability,DoubleStrike/name/Glass Frog/str/50/dex/100/int/100/hue/1153/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/xmlweaponability,MortalStrike/name/Horned Frog/str/100/dex/100/int/50/hue/2213/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/xmlweaponability,InfectiousStrike/name/Dart Frog/str/80/dex/110/int/55/hue/115/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/xmlweaponability,CrushingBlow/name/Bison Toad/str/150/dex/70/int/40/hue/44/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/xmlweaponability,DoubleStrike/name/Leopard Toad/str/100/dex/130/int/45/hue/53/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/xmlweaponability,ShadowStrike/name/Peacock Toad/str/90/dex/120/int/60/hue/126/tamable/true/hitsmaxseed/230/hits/230/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/xmlweaponability,ArmorIgnore/name/Panda Toad/str/120/dex/85/int/55/hue/2001/tamable/true/hitsmaxseed/270/hits/270/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/xmlweaponability,MovingShot/name/Gazelle Frog/str/75/dex/140/int/50/hue/58/tamable/true/hitsmaxseed/220/hits/220/ADD,0.1/MaxxiaScroll/
+
+BullFrog/ATTACH/xmlweaponability,MortalStrike/name/Lion Toad/str/140/dex/90/int/50/hue/48/tamable/true/hitsmaxseed/280/hits/280/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/xmlweaponability,WhirlwindAttack/name/Alpaca/str/100/dex/150/int/50/hue/1153/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/xmlweaponability,DoubleStrike/name/Ibex/str/150/dex/100/int/50/hue/1102/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/xmlweaponability,ShadowStrike/name/Saiga Antelope/str/100/dex/100/int/50/hue/2406/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/xmlweaponability,MovingShot/name/Gazelle/str/100/dex/200/int/50/hue/1150/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/xmlweaponability,ArmorIgnore/name/Okapi Goat/str/230/dex/150/int/40/hue/263/tamable/true/hitsmaxseed/420/hits/420/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/xmlweaponability,BleedAttack/name/Fennec Goat/str/180/dex/170/int/45/hue/1154/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/xmlweaponability,ConcussionBlow/name/Cassowary Goat/str/260/dex/130/int/35/hue/923/tamable/true/hitsmaxseed/480/hits/480/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/xmlweaponability,CrushingBlow/name/Coati Goat/str/210/dex/160/int/60/hue/1122/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/xmlweaponability,Disarm/name/Serval Goat/str/220/dex/165/int/50/hue/694/tamable/true/hitsmaxseed/410/hits/410/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/xmlweaponability,Dismount/name/Axolotl Goat/str/190/dex/155/int/55/hue/292/tamable/true/hitsmaxseed/370/hits/370/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/xmlweaponability,DoubleStrike/name/Numbat Goat/str/200/dex/150/int/65/hue/791/tamable/true/hitsmaxseed/380/hits/380/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/xmlweaponability,InfectiousStrike/name/Kinkajou Goat/str/205/dex/145/int/70/hue/54/tamable/true/hitsmaxseed/390/hits/390/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/xmlweaponability,MortalStrike/name/Bongo Goat/str/250/dex/140/int/45/hue/854/tamable/true/hitsmaxseed/460/hits/460/ADD,0.1/MaxxiaScroll/
+
+Goat/ATTACH/xmlweaponability,MovingShot/name/Tarsier Goat/str/185/dex/175/int/60/hue/499/tamable/true/hitsmaxseed/360/hits/360/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/xmlweaponability,WhirlwindAttack/name/Orangutan/str/250/dex/150/int/75/hue/43/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/xmlweaponability,DoubleStrike/name/Mandrill/str/200/dex/200/int/50/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/xmlweaponability,ShadowStrike/name/Baboon/str/150/dex/250/int/100/hue/1175/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/xmlweaponability,MortalStrike/name/Gorilla King/str/350/dex/100/int/50/hue/1150/tamable/false/hitsmaxseed/600/hits/600/DROP,0.2/Gold,5000/DROP,0.1/CrownOfTalKeesh/
+
+Gorilla/ATTACH/xmlweaponability,CrushingBlow/name/Silverback Gorilla/str/300/dex/150/int/50/hue/1152/tamable/false/hitsmaxseed/500/hits/500/DROP,0.2/Gold,2500/DROP,0.1/SilverbackHide/
+
+Gorilla/ATTACH/xmlweaponability,ArmorIgnore/name/Silverback Gorilla/str/350/dex/110/int/60/hue/1905/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/xmlweaponability,ConcussionBlow/name/Golden Mandrill/str/330/dex/105/int/55/hue/2213/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/xmlweaponability,ShadowStrike/name/Ghostly Lemur/str/310/dex/100/int/65/hue/1153/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/xmlweaponability,WhirlwindAttack/name/Red Howler Monkey/str/320/dex/115/int/58/hue/33/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/xmlweaponability,ParalyzingBlow/name/Azure Macaque/str/335/dex/108/int/57/hue/1266/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/xmlweaponability,MortalStrike/name/Ebony Baboon/str/340/dex/102/int/53/hue/1175/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+Gorilla/ATTACH/xmlweaponability,DoubleStrike/name/Jungle Capuchin/str/315/dex/113/int/64/hue/68/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/xmlweaponability,WhirlwindAttack/name/Albino Deer/str/200/dex/150/int/50/hue/1150/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/xmlweaponability,DoubleStrike/name/Antelope/str/250/dex/200/int/50/hue/0/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/xmlweaponability,ShadowStrike/name/Pudu Deer/str/150/dex/200/int/50/hue/443/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/xmlweaponability,ShadowStrike/name/Okapi Stalker/str/320/dex/110/int/60/hue/1150/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/xmlweaponability,DoubleStrike/name/Snow Lynx/str/310/dex/120/int/55/hue/1152/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/xmlweaponability,MovingShot/name/Saharan Gazelle/str/290/dex/130/int/65/hue/1045/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/xmlweaponability,MortalStrike/name/Mongolian Ibex/str/340/dex/105/int/50/hue/1138/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/xmlweaponability,WhirlwindAttack/name/Arctic Muskox/str/330/dex/110/int/57/hue/1153/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/xmlweaponability,InfectiousStrike/name/Savannah Serval/str/315/dex/115/int/62/hue/1120/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+GreatHart/ATTACH/xmlweaponability,Disarm/name/Amazonian Tapir/str/325/dex/108/int/58/hue/1040/tamable/true/hitsmaxseed/532/hits/532/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/xmlweaponability,WhirlwindAttack/name/Alpaca/str/150/dex/150/int/50/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/xmlweaponability,DoubleStrike/name/Bongo/str/200/dex/100/int/50/hue/443/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/xmlweaponability,ShadowStrike/name/Cheetah/str/100/dex/200/int/50/hue/1175/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/xmlweaponability,MortalStrike/name/Dhole/str/150/dex/150/int/50/hue/337/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/xmlweaponability,BleedAttack/name/Eland/str/250/dex/100/int/50/hue/296/tamable/true/hitsmaxseed/500/hits/500 ADD,0.1 MaxxiaScroll/
+
+Hind/ATTACH/xmlweaponability,ArmorIgnore/name/Bengal Tiger/str/280/dex/125/int/45/hue/1153/tamable/true/hitsmaxseed/475/hits/475/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/xmlweaponability,WhirlwindAttack/name/Arctic Snow Hind/str/260/dex/110/int/55/hue/1152/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/xmlweaponability,ShadowStrike/name/Jungle Panther/str/290/dex/135/int/40/hue/1175/tamable/true/hitsmaxseed/480/hits/480/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/xmlweaponability,MovingShot/name/Golden Gazelle/str/265/dex/120/int/50/hue/2213/tamable/true/hitsmaxseed/460/hits/460/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/xmlweaponability,InfectiousStrike/name/Venomous Viper Hind/str/275/dex/130/int/50/hue/1272/tamable/true/hitsmaxseed/470/hits/470/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/xmlweaponability,CrushingBlow/name/Majestic Moose/str/295/dex/115/int/45/hue/443/tamable/true/hitsmaxseed/490/hits/490/ADD,0.1/MaxxiaScroll/
+
+Hind/ATTACH/xmlweaponability,Disarm/name/Sahara Desert Hind/str/270/dex/120/int/55/hue/1150/tamable/true/hitsmaxseed/465/hits/465/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/xmlweaponability,WhirlwindAttack/name/Alpaca/str/200/dex/150/int/50/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/xmlweaponability,DoubleStrike/name/Guanaco/str/250/dex/200/int/50/hue/443/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/xmlweaponability,ShadowStrike/name/Vicuña/str/150/dex/250/int/50/hue/1109/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/xmlweaponability,ArmorIgnore/name/Ocelot Llama/str/330/dex/120/int/60/hue/53/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/xmlweaponability,CrushingBlow/name/Pangolin Llama/str/340/dex/90/int/55/hue/89/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/xmlweaponability,ShadowStrike/name/Peacock/str/310/dex/110/int/70/hue/115/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/xmlweaponability,DoubleStrike/name/Jaguar Llama/str/320/dex/130/int/60/hue/25/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/xmlweaponability,Disarm/name/Cassowary Llama/str/350/dex/100/int/50/hue/42/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/xmlweaponability,ConcussionBlow/name/Koala/str/300/dex/90/int/65/hue/150/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/xmlweaponability,InfectiousStrike/name/Mamba Llama/str/310/dex/120/int/55/hue/38/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/xmlweaponability,MovingShot/name/Gazelle Llama/str/315/dex/140/int/50/hue/70/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/xmlweaponability,WhirlwindAttack/name/Raven Llama/str/300/dex/110/int/65/hue/15/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Llama/ATTACH/xmlweaponability,MortalStrike/name/Hippopotamus/str/360/dex/80/int/60/hue/45/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/xmlweaponability,WhirlwindAttack/name/Babirusa/str/200/dex/150/int/40/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/xmlweaponability,DoubleStrike/name/Warthog/str/250/dex/120/int/35/hue/2213/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/xmlweaponability,ShadowStrike/name/Javelina/str/220/dex/130/int/45/hue/1109/tamable/true/hitsmaxseed/420/hits/420/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/xmlweaponability,InfectiousStrike/name/Capybara/str/230/dex/140/int/50/hue/2968/tamable/true/hitsmaxseed/430/hits/430/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/xmlweaponability,ArmorIgnore/name/Peccary Pig/str/220/dex/85/int/40/hue/2233/tamable/true/hitsmaxseed/380/hits/380/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/xmlweaponability,DoubleStrike/name/Warthog/str/240/dex/80/int/35/hue/1125/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/xmlweaponability,WhirlwindAttack/name/Visayan Warty Pig/str/210/dex/90/int/38/hue/1154/tamable/true/hitsmaxseed/370/hits/370/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/xmlweaponability,ShadowStrike/name/Babirusa/str/230/dex/88/int/36/hue/1196/tamable/true/hitsmaxseed/390/hits/390/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/xmlweaponability,Disarm/name/Javelina/str/215/dex/87/int/39/hue/1150/tamable/true/hitsmaxseed/375/hits/375/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/xmlweaponability,CrushingBlow/name/Giant Forest Hog/str/250/dex/82/int/34/hue/1170/tamable/true/hitsmaxseed/410/hits/410/ADD,0.1/MaxxiaScroll/
+
+Pig/ATTACH/xmlweaponability,BleedAttack/name/Red River Hog/str/220/dex/89/int/37/hue/1308/tamable/true/hitsmaxseed/380/hits/380/ADD,0.1/MaxxiaScroll/
+
+Sheep/ATTACH/xmlweaponability,WhirlwindAttack/name/Alpaca/str/100/dex/150/int/50/hue/1153/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Sheep/ATTACH/xmlweaponability,DoubleStrike/name/Bighorn Sheep/str/150/dex/100/int/50/hue/1150/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+Sheep/ATTACH/xmlweaponability,ShadowStrike/name/Jacob Sheep/str/100/dex/100/int/100/hue/1109/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Sheep/ATTACH/xmlweaponability,MovingShot/name/Dall Sheep/str/100/dex/200/int/50/hue/1152/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+<!-- The Okapi Strider -->
+Sheep/ATTACH/xmlweaponability,ArmorIgnore/name/Okapi Strider/str/280/dex/95/int/60/hue/38/tamable/true/hitsmaxseed/480/hits/480/ADD,0.1/MaxxiaScroll/
+
+<!-- The Mandrill Mystic -->
+Sheep/ATTACH/xmlweaponability,ConcussionBlow/name/Mandrill Mystic/str/265/dex/105/int/70/hue/39/tamable/true/hitsmaxseed/460/hits/460/ADD,0.1/MaxxiaScroll/
+
+<!-- The Pangolin Defender -->
+Sheep/ATTACH/xmlweaponability,CrushingBlow/name/Pangolin Defender/str/290/dex/90/int/50/hue/40/tamable/true/hitsmaxseed/470/hits/470/ADD,0.1/MaxxiaScroll/
+
+<!-- The Cassowary Charger -->
+Sheep/ATTACH/xmlweaponability,DoubleStrike/name/Cassowary Charger/str/275/dex/100/int/55/hue/41/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+<!-- The Gecko Gripper -->
+Sheep/ATTACH/xmlweaponability,Disarm/name/Gecko Gripper/str/260/dex/110/int/65/hue/42/tamable/true/hitsmaxseed/440/hits/440/ADD,0.1/MaxxiaScroll/
+
+<!-- The Capybara Cavalier -->
+Sheep/ATTACH/xmlweaponability,Dismount/name/Capybara Cavalier/str/255/dex/95/int/70/hue/43/tamable/true/hitsmaxseed/435/hits/435/ADD,0.1/MaxxiaScroll/
+
+<!-- The Aardvark Assailer -->
+Sheep/ATTACH/xmlweaponability,InfectiousStrike/name/Aardvark Assailer/str/270/dex/100/int/60/hue/44/tamable/true/hitsmaxseed/460/hits/460/ADD,0.1/MaxxiaScroll/
+
+<!-- The Kinkajou Knocker -->
+Sheep/ATTACH/xmlweaponability,MortalStrike/name/Kinkajou Knocker/str/265/dex/105/int/55/hue/45/tamable/true/hitsmaxseed/445/hits/445/ADD,0.1/MaxxiaScroll/
+
+<!-- The Tapir Tracker -->
+Sheep/ATTACH/xmlweaponability,MovingShot/name/Tapir Tracker/str/250/dex/110/int/65/hue/46/tamable/true/hitsmaxseed/425/hits/425/ADD,0.1/MaxxiaScroll/
+
+<!-- The Sunfish Stunner -->
+Sheep/ATTACH/xmlweaponability,ParalyzingBlow/name/Sunfish Stunner/str/275/dex/95/int/60/hue/47/tamable/true/hitsmaxseed/455/hits/455/ADD,0.1/MaxxiaScroll/
+
+<!-- The Ocelot Operative -->
+Sheep/ATTACH/xmlweaponability,ShadowStrike/name/Ocelot Operative/str/260/dex/105/int/70/hue/48/tamable/true/hitsmaxseed/445/hits/445/ADD,0.1/MaxxiaScroll/
+
+<!-- The Jerboa Jumper -->
+Sheep/ATTACH/xmlweaponability,WhirlwindAttack/name/Jerboa Jumper/str/250/dex/115/int/60/hue/49/tamable/true/hitsmaxseed/425/hits/425/ADD,0.1/MaxxiaScroll/
+
+
+Walrus/ATTACH/xmlweaponability,WhirlwindAttack/name/Blizzard Walrus/str/250/dex/80/int/40/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/xmlweaponability,DoubleStrike/name/Tusk Walrus/str/300/dex/100/int/50/hue/2405/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/xmlweaponability,ShadowStrike/name/Nightfall Walrus/str/200/dex/120/int/60/hue/1109/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/xmlweaponability,CrushingBlow/name/Rocky Walrus/str/350/dex/70/int/30/hue/2406/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/xmlweaponability,ArmorIgnore/name/Atlantic Walrus/str/320/dex/105/int/55/hue/1150/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/xmlweaponability,BleedAttack/name/Pacific Walrus/str/330/dex/110/int/60/hue/1175/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/xmlweaponability,ConcussionBlow/name/Tusked Walrus/str/310/dex/95/int/57/hue/1190/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/xmlweaponability,CrushingBlow/name/Arctic Walrus/str/315/dex/98/int/53/hue/1205/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/xmlweaponability,Disarm/name/Iceberg Walrus/str/325/dex/108/int/50/hue/1220/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/xmlweaponability,Dismount/name/Snowbank Walrus/str/335/dex/112/int/56/hue/1235/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/xmlweaponability,DoubleStrike/name/Glacial Walrus/str/340/dex/115/int/59/hue/1250/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/xmlweaponability,InfectiousStrike/name/Frostbite Walrus/str/345/dex/118/int/61/hue/1265/tamable/true/hitsmaxseed/545/hits/545/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/xmlweaponability,MortalStrike/name/Tundra Walrus/str/350/dex/120/int/64/hue/1280/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/xmlweaponability,MovingShot/name/Boreal Walrus/str/355/dex/125/int/66/hue/1295/tamable/true/hitsmaxseed/555/hits/555/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/xmlweaponability,ParalyzingBlow/name/Icy Glide Walrus/str/360/dex/130/int/68/hue/1310/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/xmlweaponability,ShadowStrike/name/Blizzard Walrus/str/365/dex/135/int/70/hue/1325/tamable/true/hitsmaxseed/565/hits/565/ADD,0.1/MaxxiaScroll/
+
+Walrus/ATTACH/xmlweaponability,WhirlwindAttack/name/Tempest Walrus/str/370/dex/140/int/72/hue/1340/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/xmlweaponability,ArmorIgnore/name/Scarab Beetle/str/200/dex/150/int/50/hue/2219/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/xmlweaponability,DoubleStrike/name/Ladybug Beetle/str/150/dex/200/int/50/hue/38/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/xmlweaponability,WhirlwindAttack/name/Stag Beetle/str/250/dex/100/int/50/hue/1150/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/xmlweaponability,ShadowStrike/name/Firefly Beetle/str/100/dex/250/int/50/hue/1266/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/xmlweaponability,CrushingBlow/name/Titan Beetle/str/450/dex/60/int/40/hue/45/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/xmlweaponability,ShadowStrike/name/Firefly Beetle/str/250/dex/120/int/70/hue/53/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/xmlweaponability,ConcussionBlow/name/Horned Rhino Beetle/str/400/dex/80/int/50/hue/1/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/xmlweaponability,ArmorIgnore/name/Goliath Stag Beetle/str/420/dex/90/int/40/hue/14/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+Beetle/ATTACH/xmlweaponability,InfectiousStrike/name/Deathwatch Beetle/str/300/dex/110/int/60/hue/22/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/xmlweaponability,DoubleStrike/name/Flamingo/str/100/dex/200/int/50/hue/34/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/xmlweaponability,ShadowStrike/name/Ostrich/str/150/dex/150/int/50/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/xmlweaponability,WhirlwindAttack/name/Rhea/str/200/dex/100/int/50/hue/1109/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/xmlweaponability,MortalStrike/name/Cassowary/str/250/dex/100/int/50/hue/1175/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/xmlweaponability,ArmorIgnore/name/Emu Ostard/str/320/dex/110/int/55/hue/58/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/xmlweaponability,BleedAttack/name/Flamingo Ostard/str/280/dex/105/int/52/hue/38/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/xmlweaponability,ConcussionBlow/name/Condor Ostard/str/330/dex/115/int/57/hue/25/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/xmlweaponability,CrushingBlow/name/Albatross Ostard/str/300/dex/120/int/50/hue/60/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/xmlweaponability,InfectiousStrike/name/Vulture Ostard/str/310/dex/108/int/53/hue/29/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/xmlweaponability,MortalStrike/name/Pelican Ostard/str/295/dex/113/int/51/hue/44/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/xmlweaponability,MovingShot/name/Hawk Ostard/str/325/dex/119/int/56/hue/50/tamable/true/hitsmaxseed/555/hits/555/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/xmlweaponability,ParalyzingBlow/name/Owl Ostard/str/315/dex/111/int/54/hue/23/tamable/true/hitsmaxseed/545/hits/545/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/xmlweaponability,ShadowStrike/name/Eagle Ostard/str/335/dex/117/int/58/hue/70/tamable/true/hitsmaxseed/565/hits/565/ADD,0.1/MaxxiaScroll/
+
+FrenziedOstard/ATTACH/xmlweaponability,WhirlwindAttack/name/Falcon Ostard/str/320/dex/116/int/55/hue/45/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/xmlweaponability,DoubleStrike/name/Zebra/str/200/dex/150/int/50/hue/1175/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/xmlweaponability,WhirlwindAttack/name/Pegasus/str/250/dex/200/int/100/hue/1153/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/xmlweaponability,ShadowStrike/name/Nightmare/str/300/dex/250/int/150/hue/1172/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/xmlweaponability,MortalStrike/name/Centaur/str/350/dex/300/int/200/hue/1109/tamable/true/hitsmaxseed/700/hits/700/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/xmlweaponability,DoubleStrike/name/Zebra Horse/str/250/dex/120/int/30/hue/400/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/xmlweaponability,ConcussionBlow/name/Palomino Mustang/str/270/dex/110/int/35/hue/2213/tamable/true/hitsmaxseed/480/hits/480/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/xmlweaponability,ShadowStrike/name/Nightshade Stallion/str/230/dex/115/int/40/hue/1109/tamable/true/hitsmaxseed/430/hits/430/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/xmlweaponability,CrushingBlow/name/Thunderhoof Clydesdale/str/290/dex/95/int/25/hue/1150/tamable/true/hitsmaxseed/490/hits/490/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/xmlweaponability,WhirlwindAttack/name/Silvermane Arabian/str/240/dex/125/int/35/hue/1153/tamable/true/hitsmaxseed/460/hits/460/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/xmlweaponability,InfectiousStrike/name/Wildfire Mustang/str/250/dex/120/int/30/hue/1358/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/xmlweaponability,ParalyzingBlow/name/Frostmane Stallion/str/255/dex/110/int/35/hue/1152/tamable/true/hitsmaxseed/470/hits/470/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/xmlweaponability,ArmorIgnore/name/Mystic Unicorn/str/260/dex/105/int/40/hue/2731/tamable/true/hitsmaxseed/465/hits/465/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/xmlweaponability,Dismount/name/Dune Pegasus/str/245/dex/115/int/40/hue/2965/tamable/true/hitsmaxseed/455/hits/455/ADD,0.1/MaxxiaScroll/
+
+Horse/ATTACH/xmlweaponability,MortalStrike/name/Goldenmane Thoroughbred/str/255/dex/120/int/30/hue/2218/tamable/true/hitsmaxseed/470/hits/470/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,DoubleStrike/name,Blaze Dragon/str,400/dex,120/int,60/hue,33/tamable,true/hitsmaxseed,600/hits,600/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,CrushingBlow/name,Frost Wyvern/str,350/dex,110/int,70/hue,1153/tamable,true/hitsmaxseed,550/hits,550/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,MortalStrike/name,Poison Drake/str,300/dex,130/int,80/hue,1272/tamable,true/hitsmaxseed,500/hits,500/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,Dismount/name,Thunder Serpent/str,450/dex,100/int,50/hue,88/tamable,true/hitsmaxseed,650/hits,650/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,BleedAttack/name,Blood Dragon/str,400/dex,140/int,40/hue,38/tamable,true/hitsmaxseed,600/hits,600/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,WhirlwindAttack/name,Wind Wyrm/str,350/dex,150/int,60/hue,1154/tamable,true/hitsmaxseed,550/hits,550/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,AuraOfNausea/name,Venom Serpent/str,300/dex,120/int,70/hue,1278/tamable,true/hitsmaxseed,500/hits,500/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,AuraOfEnergy/name,Lunar Dragon/str 450/dex 110/int 50/hue 1157/tamable true/hitsmaxseed 650/hits 650/ADD 0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,DoubleStrike/name/Raptor Hiryu/str/450/dex/160/int/70/hue/53/tamable/true/hitsmaxseed/700/hits/700/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,InfectiousStrike/name/Cobra Hiryu/str/420/dex/170/int/60/hue/67/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,Dismount/name/Pegasus Hiryu/str/460/dex/150/int/80/hue/115/tamable/true/hitsmaxseed/720/hits/720/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,ConcussionBlow/name/Thunder Hiryu/str/480/dex/140/int/75/hue/83/tamable/true/hitsmaxseed/750/hits/750/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,ShadowStrike/name/Panther Hiryu/str/430/dex/165/int/65/hue/1905/tamable/true/hitsmaxseed/680/hits/680/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,CrushingBlow/name/Mammoth Hiryu/str/500/dex/130/int/85/hue/2305/tamable/true/hitsmaxseed/780/hits/780/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,ArmorIgnore/name/Lion Hiryu/str/440/dex/160/int/70/hue/1420/tamable/true/hitsmaxseed/690/hits/690/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,MovingShot/name/Gazelle Hiryu/str/410/dex/175/int/55/hue/1153/tamable/true/hitsmaxseed/660/hits/660/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,MortalStrike/name/Shark Hiryu/str/470/dex/145/int/60/hue/1157/tamable/true/hitsmaxseed/730/hits/730/ADD,0.1/MaxxiaScroll/
+
+Hiryu/ATTACH/xmlweaponability,WhirlwindAttack/name/Phoenix Hiryu/str/460/dex/155/int/90/hue/38/tamable/true/hitsmaxseed/710/hits/710/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/xmlweaponability,WhirlwindAttack/name/Zephyr Kirin/str/200/dex/150/int/100/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/xmlweaponability,DoubleStrike/name/Crimson Kirin/str/250/dex/120/int/80/hue/33/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/xmlweaponability,ShadowStrike/name/Eclipse Kirin/str/180/dex/180/int/120/hue/1175/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/xmlweaponability,MortalStrike/name/Doom Kirin/str/300/dex/100/int/60/hue/1172/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/xmlweaponability,ArmorIgnore/name/Lunar Kirin/str/350/dex/150/int/80/hue/1155/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/xmlweaponability,BleedAttack/name/Celestial Stag/str/320/dex/130/int/70/hue/1153/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/xmlweaponability,ConcussionBlow/name/Solar Horse/str/330/dex/120/int/75/hue/1165/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/xmlweaponability,CrushingBlow/name/Mystic Pegasus/str/340/dex/140/int/90/hue/1175/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/xmlweaponability,Disarm/name/Eclipse Unicorn/str/360/dex/125/int/85/hue/1120/tamable/true/hitsmaxseed/590/hits/590/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/xmlweaponability,Dismount/name/Nebula Zebra/str/335/dex/145/int/80/hue/1105/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/xmlweaponability,DoubleStrike/name/Twilight Charger/str/345/dex/135/int/65/hue/1135/tamable/true/hitsmaxseed/565/hits/565/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/xmlweaponability,InfectiousStrike/name/Galactic Gazelle/str/315/dex/138/int/72/hue/1145/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/xmlweaponability,MortalStrike/name/Cosmic Colt/str/330/dex/128/int/77/hue/1157/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/xmlweaponability,MovingShot/name/Astral Antelope/str/320/dex/142/int/68/hue/1128/tamable/true/hitsmaxseed/545/hits/545/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/xmlweaponability,ParalyzingBlow/name/Starlight Steed/str/310/dex/132/int/70/hue/1118/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/xmlweaponability,ShadowStrike/name/Quasar Quagga/str/325/dex/130/int/78/hue/1170/tamable/true/hitsmaxseed/555/hits/555/ADD,0.1/MaxxiaScroll/
+
+Kirin/ATTACH/xmlweaponability,WhirlwindAttack/name/Nova Nokota/str/340/dex/136/int/82/hue/1140/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/xmlweaponability,ArmorIgnore/name/Black Dragon/str/400/dex/80/int/60/hue/1/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/xmlweaponability,WhirlwindAttack/name/Tornado Dragon/str/350/dex/120/int/50/hue/1153/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/xmlweaponability,ShadowStrike/name/Nightmare Dragon/str/300/dex/100/int/70/hue/1175/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/xmlweaponability,MortalStrike/name/Doom Dragon/str/450/dex/90/int/40/hue/1172/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/xmlweaponability,ArmorIgnore/name/Caiman Dragon/str/400/dex/110/int/60/hue/200/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/xmlweaponability,BleedAttack/name/Marsh Serpent Dragon/str/420/dex/105/int/55/hue/250/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/xmlweaponability,ConcussionBlow/name/Mire Alligator Dragon/str/450/dex/100/int/50/hue/350/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/xmlweaponability,CrushingBlow/name/Bog Panther Dragon/str/410/dex/120/int/58/hue/450/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/xmlweaponability,Disarm/name/Silt Tiger Dragon/str/390/dex/130/int/57/hue/500/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/xmlweaponability,Dismount/name/Fenland Falcon Dragon/str/400/dex/115/int/59/hue/600/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/xmlweaponability,DoubleStrike/name/Peat Wolf Dragon/str/410/dex/110/int/56/hue/650/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/xmlweaponability,InfectiousStrike/name/Slough Lynx Dragon/str/420/dex/105/int/54/hue/700/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/xmlweaponability,MortalStrike/name/Bayou Bat Dragon/str/405/dex/115/int/55/hue/750/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/xmlweaponability,MovingShot/name/Estuary Eagle Dragon/str/395/dex/120/int/53/hue/800/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/xmlweaponability,ParalyzingBlow/name/Delta Deer Dragon/str/430/dex/110/int/52/hue/850/tamable/true/hitsmaxseed/545/hits/545/ADD,0.1/MaxxiaScroll/
+
+SwampDragon/ATTACH/xmlweaponability,ShadowStrike/name/Quagmire Quokka Dragon/str/400/dex/115/int/58/hue/900/tamable/true/hitsmaxseed/525/hits/525/ADD,0
+
+Unicorn/ATTACH/xmlweaponability,ArmorIgnore/name/Leo Unicorn/str/320/dex/105/int/60/hue/2102/tamable/true/hitsmaxseed/530/hits/520/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/xmlweaponability,InfectiousStrike/name/Cobra Unicorn/str/310/dex/115/int/55/hue/1154/tamable/true/hitsmaxseed/515/hits/505/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/xmlweaponability,MovingShot/name/Eagle Unicorn/str/315/dex/110/int/58/hue/1252/tamable/true/hitsmaxseed/525/hits/515/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/xmlweaponability,CrushingBlow/name/Rhino Unicorn/str/330/dex/95/int/52/hue/2301/tamable/true/hitsmaxseed/540/hits/530/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/xmlweaponability,ShadowStrike/name/Panther Unicorn/str/318/dex/112/int/57/hue/1901/tamable/true/hitsmaxseed/528/hits/518/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/xmlweaponability,DoubleStrike/name/Wolf Unicorn/str/320/dex/108/int/56/hue/2207/tamable/true/hitsmaxseed/530/hits/520/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/xmlweaponability,Dismount/name/Gazelle Unicorn/str/312/dex/120/int/53/hue/2450/tamable/true/hitsmaxseed/522/hits/512/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/xmlweaponability,WhirlwindAttack/name/Zephyr Unicorn/str/200/dex/150/int/100/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/xmlweaponability,ShadowStrike/name/Nightmare Unicorn/str/250/dex/120/int/80/hue/1175/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/xmlweaponability,DoubleStrike/name/Twinhorn Unicorn/str/300/dex/100/int/50/hue/1150/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/xmlweaponability,MortalStrike/name/Doom Unicorn/str/350/dex/80/int/40/hue/1172/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Unicorn/ATTACH/xmlweaponability,CrushingBlow/name/Rocky Unicorn/str/400/dex/60/int/30/hue/2406/tamable/true/hitsmaxseed/600/hits/600 ADD,0.1 MaxxiaScroll/
+
+Alligator/ATTACH/xmlweaponability,WhirlwindAttack/name/Crocosaurus/str/400/dex/80/int/40/hue/63/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/xmlweaponability,DoubleStrike/name/Gatoraconda/str/350/dex/120/int/30/hue/68/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/xmlweaponability,MortalStrike/name/Caiman King/str/450/dex/70/int/50/hue/1153/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/xmlweaponability,InfectiousStrike/name/Gharial Queen/str/300/dex/100/int/60/hue/2968/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/xmlweaponability,ArmorIgnore/name/Nile Alligator/str/320/dex/95/int/55/hue/23/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/xmlweaponability,BleedAttack/name/Everglades Alligator/str/310/dex/110/int/50/hue/45/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/xmlweaponability,ConcussionBlow/name/Caiman Alligator/str/330/dex/90/int/60/hue/58/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/xmlweaponability,CrushingBlow/name/Gharial Alligator/str/340/dex/85/int/65/hue/65/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/xmlweaponability,Disarm/name/Spectacled Alligator/str/315/dex/105/int/70/hue/78/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/xmlweaponability,Dismount/name/Black Caiman/str/325/dex/115/int/55/hue/88/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/xmlweaponability,DoubleStrike/name/American Alligator/str/330/dex/100/int/60/hue/100/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/xmlweaponability,InfectiousStrike/name/Slender-snouted Alligator/str/310/dex/110/int/65/hue/110/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/xmlweaponability,MortalStrike/name/Morelet's Alligator/str/340/dex/95/int/70/hue/125/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Alligator/ATTACH/xmlweaponability,MovingShot/name/Saltwater Alligator/str/320/dex/105/int/60/hue/135/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/xmlweaponability,DoubleStrike/name/Anaconda/str/200/dex/150/int/40/hue/68/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/xmlweaponability,InfectiousStrike/name/Cobra/str/180/dex/120/int/50/hue/52/tamable/true/hitsmaxseed/360/hits/360/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/xmlweaponability,ShadowStrike/name/Viper/str/160/dex/140/int/60/hue/1175/tamable/true/hitsmaxseed/320/hits/320/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/xmlweaponability,CrushingBlow/name/Python/str/220/dex/100/int/30/hue/1153/tamable/true/hitsmaxseed/440/hits/440/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/xmlweaponability,InfectiousStrike/name/Cobra Serpent/str/350/dex/120/int/60/hue/38/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/xmlweaponability,CrushingBlow/name/Python Serpent/str/400/dex/90/int/55/hue/39/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/xmlweaponability,ShadowStrike/name/Viper Serpent/str/320/dex/130/int/70/hue/40/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/xmlweaponability,Disarm/name/Rattlesnake Serpent/str/330/dex/115/int/65/hue/41/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/xmlweaponability,WhirlwindAttack/name/Anaconda Serpent/str/420/dex/85/int/50/hue/42/tamable/true/hitsmaxseed/670/hits/670/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/xmlweaponability,ParalyzingBlow/name/Mamba Serpent/str/340/dex/125/int/75/hue/43/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+GiantSerpent/ATTACH/xmlweaponability,ArmorIgnore/name/Coral Serpent/str/310/dex/135/int/80/hue/44/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/xmlweaponability,DoubleStrike/name/Plague Rat/str/100/dex/200/int/50/hue/1175/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/xmlweaponability,InfectiousStrike/name/Poison Rat/str/150/dex/150/int/50/hue/1272/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/xmlweaponability,ShadowStrike/name/Night Rat/str/200/dex/100/int/50/hue/1109/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/xmlweaponability,CrushingBlow/name/Giant Mole Rat/str/250/dex/50/int/50/hue/1153/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/xmlweaponability,ArmorIgnore/name/Prairie Vole/str/100/dex/180/int/60/hue/842/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/xmlweaponability,BleedAttack/name/Porcupine Rat/str/130/dex/150/int/40/hue/1001/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/xmlweaponability,ConcussionBlow/name/Hamster Warrior/str/90/dex/160/int/70/hue/22/tamable/true/hitsmaxseed/220/hits/220/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/xmlweaponability,CrushingBlow/name/Beaver Scout/str/110/dex/130/int/80/hue/848/tamable/true/hitsmaxseed/290/hits/290/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/xmlweaponability,Disarm/name/Flying Squirrel/str/95/dex/200/int/50/hue/41/tamable/true/hitsmaxseed/240/hits/240/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/xmlweaponability,Dismount/name/Groundhog Defender/str/105/dex/140/int/55/hue/1124/tamable/true/hitsmaxseed/280/hits/280/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/xmlweaponability,DoubleStrike/name/Chipmunk Striker/str/100/dex/190/int/60/hue/193/tamable/true/hitsmaxseed/260/hits/260/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/xmlweaponability,InfectiousStrike/name/Rabbit Raider/str/90/dex/210/int/50/hue/0/tamable/true/hitsmaxseed/230/hits/230/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/xmlweaponability,MortalStrike/name/Jerboa Assassin/str/80/dex/220/int/40/hue/1153/tamable/true/hitsmaxseed/210/hits/210/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/xmlweaponability,MovingShot/name/Guinea Pig Guardian/str/120/dex/120/int/70/hue/2300/tamable/true/hitsmaxseed/270/hits/270/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/xmlweaponability,ParalyzingBlow/name/Muskrat Marauder/str/115/dex/130/int/60/hue/1128/tamable/true/hitsmaxseed/275/hits/275/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/xmlweaponability,ShadowStrike/name/Chinchilla Chaser/str/85/dex/180/int/65/hue/1910/tamable/true/hitsmaxseed/235/hits/235/ADD,0.1/MaxxiaScroll/
+
+GiantRat/ATTACH/xmlweaponability,WhirlwindAttack/name/Capybara Captain/str/140/dex/120/int/50/hue/1150/tamable/true/hitsmaxseed/310/hits/310/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,DoubleStrike/name,Swift Hare/str,50/dex,200/int,25/hue,1153/tamable,true/hitsmaxseed,100/hits,100/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,BleedAttack/name,Blood Bunny/str,75/dex,150/int,25/hue,33/tamable,true/hitsmaxseed,150/hits,150/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,CrushingBlow/name,Rocky Rabbit/str,100/dex,100/int,25/hue,1102/tamable,true/hitsmaxseed,200/hits,200/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,MortalStrike/name,Doom Bunny/str,150/dex,75/int,25/hue,1175/tamable,true/hitsmaxseed,300/hits,300/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,Dismount/name,Rider Rabbit/str,50/dex,175/int,25/hue,1150/tamable,true/hitsmaxseed,125/hits,125/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,ArmorIgnore/name/Snow Hare/str/150/dex/180/int/30/hue/1153/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,BleedAttack/name/Desert Cottontail/str/160/dex/170/int/40/hue/2731/tamable/true/hitsmaxseed/260/hits/260/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,ConcussionBlow/name/Swamp Rabbit/str/170/dex/160/int/50/hue/67/tamable/true/hitsmaxseed/270/hits/270/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,CrushingBlow/name/Mountain Hopper/str/180/dex/150/int/60/hue/902/tamable/true/hitsmaxseed/280/hits/280/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,Disarm/name/Golden Jackrabbit/str/190/dex/140/int/70/hue/2213/tamable/true/hitsmaxseed/290/hits/290/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,Dismount/name/Arctic Hare/str/200/dex/130/int/80/hue/1152/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,DoubleStrike/name/Twilight Bunny/str/210/dex/120/int/90/hue/2603/tamable/true/hitsmaxseed/310/hits/310/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,InfectiousStrike/name/Marsh Loper/str/220/dex/110/int/100/hue/2965/tamable/true/hitsmaxseed/320/hits/320/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,MortalStrike/name/Meadow Leaper/str/230/dex/100/int/110/hue/2943/tamable/true/hitsmaxseed/330/hits/330/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,MovingShot/name/Dusk Runner/str/240/dex/90/int/120/hue/2604/tamable/true/hitsmaxseed/340/hits/340/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,ParalyzingBlow/name/Forest Skipper/str/250/dex/80/int/130/hue/66/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,ShadowStrike/name/Moonlit Hopper/str/260/dex/70/int/140/hue/1151/tamable/true/hitsmaxseed/360/hits/360/ADD,0.1/MaxxiaScroll/
+
+Rabbit/ATTACH/xmlweaponability,WhirlwindAttack/name/Prairie Dasher/str/270/dex/60/int/150/hue/2310/tamable/true/hitsmaxseed/370/hits/370/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/xmlweaponability,DoubleStrike/name/Leo Cat/str/100/dex/200/int/50/hue/2213/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/xmlweaponability,ShadowStrike/name/Night Cat/str/150/dex/150/int/50/hue/1109/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/xmlweaponability,WhirlwindAttack/name/Tornado Cat/str/200/dex/100/int/50/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/xmlweaponability,CrushingBlow/name/Rocky Cat/str/250/dex/50/int/50/hue/2406/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/xmlweaponability,ArmorIgnore/name/Bengal Cat/str/120/dex/150/int/75/hue/1154/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/xmlweaponability,DoubleStrike/name/Sahara Lynx/str/130/dex/145/int/80/hue/1165/tamable/true/hitsmaxseed/260/hits/260/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/xmlweaponability,WhirlwindAttack/name/Nile Serval/str/125/dex/155/int/70/hue/1167/tamable/true/hitsmaxseed/255/hits/255/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/xmlweaponability,ShadowStrike/name/Snow Pouncer/str/115/dex/160/int/90/hue/1152/tamable/true/hitsmaxseed/240/hits/240/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/xmlweaponability,ConcussionBlow/name/Jungle Ocelot/str/110/dex/165/int/85/hue/1176/tamable/true/hitsmaxseed/230/hits/230/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/xmlweaponability,MovingShot/name/Cheetah Runner/str/105/dex/170/int/80/hue/1905/tamable/true/hitsmaxseed/220/hits/220/ADD,0.1/MaxxiaScroll/
+
+Cat/ATTACH/xmlweaponability,BleedAttack/name/Cougar Claw/str/135/dex/140/int/70/hue/1932/tamable/true/hitsmaxseed/270/hits/270/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/xmlweaponability,DoubleStrike/name/Alpha Wolf/str/200/dex/150/int/50/hue/2306/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/xmlweaponability,ShadowStrike/name/Night Hound/str/150/dex/200/int/50/hue/1175/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/xmlweaponability,CrushingBlow/name/Bulldog/str/250/dex/100/int/50/hue/1153/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/xmlweaponability,WhirlwindAttack/name/Hurricane Husky/str/200/dex/200/int/50/hue/1150/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/xmlweaponability,DoubleStrike/name/Husky Striker/str/110/dex/150/int/30/hue/1152/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/xmlweaponability,CrushingBlow/name/Bulldog Crusher/str/180/dex/90/int/40/hue/1153/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/xmlweaponability,MovingShot/name/Greyhound Runner/str/100/dex/180/int/30/hue/902/tamable/true/hitsmaxseed/190/hits/190/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/xmlweaponability,ShadowStrike/name/Doberman Shadow/str/150/dex/160/int/35/hue/1150/tamable/true/hitsmaxseed/230/hits/230/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/xmlweaponability,ArmorIgnore/name/Rottweiler Defender/str/170/dex/140/int/40/hue/1151/tamable/true/hitsmaxseed/240/hits/240/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/xmlweaponability,Disarm/name/Chihuahua Disarmer/str/50/dex/190/int/70/hue/903/tamable/true/hitsmaxseed/140/hits/140/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/xmlweaponability,BleedAttack/name/Mastiff Bleeder/str/200/dex/120/int/35/hue/1105/tamable/true/hitsmaxseed/260/hits/260/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/xmlweaponability,InfectiousStrike/name/Terrier Infector/str/90/dex/170/int/65/hue/1106/tamable/true/hitsmaxseed/180/hits/180/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/xmlweaponability,WhirlwindAttack/name/Shiba Whirlwind/str/120/dex/155/int/60/hue/1107/tamable/true/hitsmaxseed/210/hits/210/ADD,0.1/MaxxiaScroll/
+
+Dog/ATTACH/xmlweaponability,Dismount/name/Golden Dismounter/str/140/dex/150/int/55/hue/2213/tamable/true/hitsmaxseed/220/hits/220/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/xmlweaponability,WhirlwindAttack/name/Tarantula/str/200/dex/150/int/100/hue/1175/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/xmlweaponability,InfectiousStrike/name/BlackWidow/str/250/dex/125/int/75/hue/1908/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/xmlweaponability,ShadowStrike/name/BrownRecluse/str/150/dex/200/int/50/hue/2413/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/xmlweaponability,CrushingBlow/name/GoliathBirdeater/str/300/dex/100/int/25/hue/1109/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/xmlweaponability,ArmorIgnore/name/Golden Silk Spider/str/310/dex/115/int/65/hue/2213/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/xmlweaponability,ConcussionBlow/name/Bane Orb Weaver/str/320/dex/120/int/60/hue/1109/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/xmlweaponability,ShadowStrike/name/Violet Tarantula/str/330/dex/125/int/55/hue/2603/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/xmlweaponability,WhirlwindAttack/name/Emerald Huntsman/str/340/dex/110/int/70/hue/67/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/xmlweaponability,BleedAttack/name/Crimson Recluse/str/350/dex/100/int/75/hue/2117/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/xmlweaponability,DoubleStrike/name/Azure Jumper/str/360/dex/130/int/80/hue/1301/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/xmlweaponability,InfectiousStrike/name/Obsidian Black Widow/str/370/dex/105/int/85/hue/1175/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/xmlweaponability,Disarm/name/Silver Wolf Spider/str/380/dex/115/int/90/hue/2406/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/xmlweaponability,Dismount/name/Jade Trapdoor Spider/str/390/dex/110/int/95/hue/1419/tamable/true/hitsmaxseed/590/hits/590/ADD,0.1/MaxxiaScroll/
+
+GiantSpider/ATTACH/xmlweaponability,ParalyzingBlow/name/Ruby Goliath Birdeater/str/400/dex/120/int/100/hue/2116/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/xmlweaponability,ArmorIgnore/name/Black Widow/str/200/dex/150/int/50/hue/1175/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/xmlweaponability,InfectiousStrike/name/Green Mamba/str/150/dex/200/int/50/hue/67/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/xmlweaponability,CrushingBlow/name/King Crab/str/250/dex/100/int/50/hue/33/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/xmlweaponability,ShadowStrike/name/Dark Scorpion/str/200/dex/200/int/50/hue/1109/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/xmlweaponability,ArmorIgnore/name/Red Claw Scorpion/str/320/dex/110/int/55/hue/32/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/xmlweaponability,BleedAttack/name/Golden Desert Scorpion/str/330/dex/115/int/60/hue/50/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/xmlweaponability,ConcussionBlow/name/Black Emperor Scorpion/str/340/dex/120/int/65/hue/1/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/xmlweaponability,CrushingBlow/name/Jungle Green Scorpion/str/350/dex/125/int/70/hue/71/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/xmlweaponability,Disarm/name/Blue Stripe Scorpion/str/360/dex/130/int/75/hue/85/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/xmlweaponability,Dismount/name/White Tail Scorpion/str/370/dex/135/int/80/hue/1152/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/xmlweaponability,DoubleStrike/name/Spotted Brown Scorpion/str/380/dex/140/int/85/hue/1021/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/xmlweaponability,InfectiousStrike/name/Orange Sand Scorpion/str/390/dex/145/int/90/hue/44/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/xmlweaponability,MortalStrike/name/Cyan Ice Scorpion/str/400/dex/150/int/95/hue/115/tamable/true/hitsmaxseed/590/hits/590/ADD,0.1/MaxxiaScroll/
+
+Scorpion/ATTACH/xmlweaponability,MovingShot/name/Silver Rock Scorpion/str/410/dex/155/int/100/hue/1153/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

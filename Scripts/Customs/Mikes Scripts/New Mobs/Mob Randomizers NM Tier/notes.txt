@@ -1,0 +1,28 @@
+
+            Hue = Utility.RandomMinMax(1501, 2000);
+ 
+			SetStr( 800, 1200 );
+			SetDex( 177, 255 );
+			SetInt( 151, 250 );
+			
+			SetHits( 2000, 4000 );
+			
+			SetDamage( 30, 40 );
+
+			SetResistance( ResistanceType.Physical, 65, 80 );
+			SetResistance( ResistanceType.Fire, 60, 80 );
+			SetResistance( ResistanceType.Cold, 50, 60 );
+			SetResistance( ResistanceType.Poison, 100 );
+			SetResistance( ResistanceType.Energy, 40, 50 );
+
+			SetSkill( SkillName.Anatomy, 25.1, 80.0 );
+			SetSkill( SkillName.EvalInt, 90.1, 120.0 );
+			SetSkill( SkillName.Magery, 95.5, 120.0 );
+			SetSkill( SkillName.Meditation, 25.1, 80.0 );
+			SetSkill( SkillName.MagicResist, 100.5, 180.0 );
+			SetSkill( SkillName.Tactics, 90.1, 120.0 );
+			SetSkill( SkillName.Wrestling, 90.1, 120.0 );
+
+			Tamable = true;
+			ControlSlots = Utility.RandomMinMax(5, 10);
+			MinTameSkill = Utility.RandomMinMax(200, 300);

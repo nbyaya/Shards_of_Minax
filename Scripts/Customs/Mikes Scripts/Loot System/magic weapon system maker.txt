@@ -1,0 +1,120 @@
+I would like your help creating RandomMagicWeaponA, a new RunUO script with different Attributes and WeaponAttributes. Below is RandomMagicWeapon as an example, a RunUO script for creating some random skill jewlery.  It has tiers of rarity, with bonus to HitLightning and HitHarm at high level, HitFireball and HitMagicarrow at mid level, HitColdArea at uncommon and the most common only has damage. I would like the new magic weapon script to have a similar structure but with different kinds of bonus at each tier for variety:
+
+using System;
+using Server;
+using Server.Items;
+
+public class RandomMagicWeapon : BaseWeapon
+{
+    // List of possible prefixes and suffixes for the weapon name
+    private static string[] prefixes = { "Mighty", "Powerful", "Mystic", "Enchanted", "Arcane" };
+    private static string[] suffixes = { "Promise", "Destiny", "Legacy", "Fury", "Whisper" };
+
+    // Random number generator
+    private static Random rand = new Random();
+
+    // Array of weapon types
+    private static Type[] weaponTypes = new Type[]
+	{
+		typeof(Broadsword), typeof(Cutlass), typeof(Katana), typeof(Longsword), typeof(Scimitar), typeof(VikingSword),
+		typeof(Axe), typeof(BattleAxe), typeof(DoubleAxe), typeof(ExecutionersAxe), typeof(LargeBattleAxe), typeof(TwoHandedAxe),
+		typeof(WarAxe), typeof(Club), typeof(HammerPick), typeof(Mace), typeof(Maul), typeof(WarHammer), typeof(WarMace),
+		typeof(Bardiche), typeof(Halberd), typeof(Lance), typeof(Pike), typeof(ShortSpear), typeof(Spear), typeof(WarFork),
+		typeof(CompositeBow), typeof(Crossbow), typeof(HeavyCrossbow), typeof(RepeatingCrossbow), typeof(Bow),
+		typeof(Dagger), typeof(Kryss), typeof(SkinningKnife), typeof(ShortSpear), typeof(Spear), typeof(Pitchfork),
+		typeof(BlackStaff), typeof(GnarledStaff), typeof(QuarterStaff), typeof(ShepherdsCrook),
+		// Special weapons (if applicable to your server)
+		typeof(BladedStaff), typeof(Scythe), typeof(Scepter),
+		typeof(MagicWand) // If you want to include magical staves or wands
+	};
+
+
+    [Constructable]
+    public RandomMagicWeapon() : base(GetRandomItemID())
+    {
+        Type selectedType = weaponTypes[rand.Next(weaponTypes.Length)];
+        BaseWeapon tempWeapon = (BaseWeapon)Activator.CreateInstance(selectedType);
+
+        // Generate a random name for the weapon
+        string name = prefixes[rand.Next(prefixes.Length)] + " " + suffixes[rand.Next(suffixes.Length)];
+        this.Name = name;
+
+        // Initialize weapon attributes
+        InitializeWeaponAttributes(tempWeapon);
+        
+		this.Hue = rand.Next(1, 3001); // Generates a random number between 1 and 3000
+        // Clean up the temporary weapon instance
+        tempWeapon.Delete();
+    }
+
+	private void InitializeWeaponAttributes(BaseWeapon tempWeapon)
+	{
+		// Set common attributes
+		this.Attributes.AttackChance = rand.Next(10, 50);
+		this.Attributes.DefendChance = rand.Next(10, 50);
+		this.Attributes.WeaponSpeed = rand.Next(20, 50);
+		this.Attributes.SpellChanneling = 1;
+
+		// Tiered system for weapon damage
+		double tierChance = rand.NextDouble(); // Generate a random double between 0.0 and 1.0
+		if (tierChance < 0.05) // Very rare
+		{
+			this.MinDamage = rand.Next(1, 80); // Higher minimum damage for very rare weapons
+			this.MaxDamage = rand.Next(80, 350); // Maximum damage reaches up to 500
+			this.WeaponAttributes.HitLightning = rand.Next(40, 51); // High chance of Lightning
+			this.WeaponAttributes.HitHarm = rand.Next(20, 31); // Chance to cast Harm
+
+		}
+		else if (tierChance < 0.2) // Rare
+		{
+			this.MinDamage = rand.Next(1, 70);
+			this.MaxDamage = rand.Next(70, 200);
+			this.WeaponAttributes.HitFireball = rand.Next(20, 41); // Chance of Fireball
+			this.WeaponAttributes.HitMagicArrow = rand.Next(10, 21); // Chance to cast Magic Arrow
+			
+		}
+		else if (tierChance < 0.5) // Uncommon
+		{
+			this.MinDamage = rand.Next(1, 50);
+			this.MaxDamage = rand.Next(50, 150);
+			this.WeaponAttributes.HitColdArea = rand.Next(10, 26);
+		}
+		else // Common
+		{
+			this.MinDamage = rand.Next(1, 30);
+			this.MaxDamage = rand.Next(30, 100);
+		}
+
+		// Optionally adjust speed based on tier to balance gameplay, if desired
+		// E.g., very rare weapons could be slightly slower to offset their high damage
+	}
+
+// Adjustments to other parts of the class aren't necessary for the tiered system,
+// but ensure your class structure and other methods properly support these changes.
+
+
+    private static int GetRandomItemID()
+    {
+        // Instantiate a temporary object to get its ItemID
+        Type selectedType = weaponTypes[rand.Next(weaponTypes.Length)];
+        BaseWeapon tempWeapon = (BaseWeapon)Activator.CreateInstance(selectedType);
+        int itemID = tempWeapon.ItemID;
+
+        // No need to delete here, as it will be deleted after attributes initialization
+        return itemID;
+    }
+
+    public RandomMagicWeapon(Serial serial) : base(serial) { }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0); // version
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}

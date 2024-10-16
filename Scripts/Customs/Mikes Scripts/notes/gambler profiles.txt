@@ -1,0 +1,14 @@
+
+
+
+
+DeedGamblerMobile/Name/Rex Regal/Title/The Real Estate Tycoon/EQUIP/<FancyShirt/hue/0>/EQUIP/<ThighBoots/hue/0>/EQUIP/<Tie/hue/32>/EQUIP/<Slacks/hue/0>/EQUIP/<Spellbook/hue/0/name/Rex's Property Portfolio>/Blessed/True/
+
+
+SeedGamblerMobile/Name/Farmer Giles/Title/The Harvester/EQUIP/<Shirt/hue/38>/EQUIP/<StrawHat/hue/21>/EQUIP/<LongPants/hue/32>/EQUIP/<LeatherBoots/hue/25>/STR/90/EQUIP/<Pitchfork/hue/16/name/Giles' Trusty Pitchfork>/Blessed/True/
+
+
+ArtifactGamblerMobile/Name/Dr. Relic Hunter/Title/The Archaeologist/EQUIP/<WideBrimHat/hue/12>/EQUIP/<fancyShirt/hue/45>/EQUIP/<Pants/hue/45>/EQUIP/<Boots/hue/12>/STR/100/EQUIP/<Whip/hue/23/name/Reliable Whip>/Blessed/True/ConfigFile/RelicHunterConfig/LoadConfig/True/TalkText/What hidden treasures can we unearth today?/
+
+
+TreasureGamblerMobile/Name/Captain Goldbeard/Title/The Treasure Hunter/EQUIP/<FancyShirt/hue/38>/EQUIP/<TricornHat/hue/38>/EQUIP/<ThighBoots/hue/38>/EQUIP/<Pants/hue/33>/EQUIP/<Sash/hue/38>/STR/120/EQUIP/<Cutlass/hue/33/name/Goldbeard's Cutlass>/Blessed/True/

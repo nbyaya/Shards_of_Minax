@@ -1,0 +1,90 @@
+The following is a RunUO script for making a random horse with a random name (created from two word banks), random hue, and random stats.  Please make a new script for making random undead, keeping in mind the body values for undead are 0x18 0x1A 0x32 0x38 0x39 0x94 0x9A 0x9B
+
+using System;
+using Server;
+using Server.Items;
+using Server.Mobiles;
+
+namespace Server.Mobiles
+{
+    [CorpseName("corpse of a unique mount")]
+    public class RandomRidable : BaseCreature
+    {
+        private static readonly int[] ridableBodies = new int[] { 0xC8, 0xE2, 0x3E9, 0x3EA }; // Horse and llama body values
+        private static readonly string[] wordBank1 = new string[]
+        {
+            "Swift", "Majestic", "Noble", "Gallant", "Fierce",
+            "Elegant", "Graceful", "Brave", "Spirit", "Mystic",
+            "Ancient", "Mythic", "Enchanted", "Wise", "Valiant",
+            "Bold", "Legendary", "Stalwart", "Vigilant", "Radiant"
+        };
+
+        private static readonly string[] wordBank2 = new string[]
+        {
+            "Steed", "Mare", "Stallion", "Courser", "Charger",
+            "Destrier", "Palfrey", "Rouncey", "Gelding", "Pony",
+            "Mustang", "Colt", "Fillie", "Palomino", "Dapple",
+            "Roan", "Clydesdale", "Friesian", "Appaloosa", "Arabian"
+        };
+
+        private static readonly AIType[] aiTypes = new AIType[]
+        {
+            AIType.AI_Animal, // Adjust AI types suitable for ridables
+            AIType.AI_Melee,
+        };
+
+        private static readonly FightMode[] fightModes = new FightMode[]
+        {
+            FightMode.Closest,
+            FightMode.Aggressor
+        };
+
+        [Constructable]
+        public RandomRidable() : base(AIType.AI_Animal, FightMode.Closest, 10, 1, 0.2, 0.4)
+        {
+            Body = ridableBodies[Utility.Random(ridableBodies.Length)];
+            Hue = Utility.RandomMinMax(1, 3000);
+            Name = wordBank1[Utility.Random(wordBank1.Length)] + " " + wordBank2[Utility.Random(wordBank2.Length)];
+
+            SetStr(Utility.RandomMinMax(50, 500));
+            SetDex(Utility.RandomMinMax(50, 500));
+            SetInt(Utility.RandomMinMax(50, 500));
+            SetHits(Utility.RandomMinMax(100, 500));
+
+            AI = aiTypes[Utility.Random(aiTypes.Length)];
+            FightMode = fightModes[Utility.Random(fightModes.Length)];
+
+            SetSkill(SkillName.Wrestling, Utility.RandomMinMax(30, 100));
+            SetSkill(SkillName.Tactics, Utility.RandomMinMax(30, 100));
+            // Include other skills relevant to mounts if necessary
+
+            SetResistance(ResistanceType.Physical, Utility.RandomMinMax(20, 50));
+            SetResistance(ResistanceType.Fire, Utility.RandomMinMax(20, 50));
+            SetResistance(ResistanceType.Cold, Utility.RandomMinMax(20, 50));
+            SetResistance(ResistanceType.Poison, Utility.RandomMinMax(20, 50));
+            SetResistance(ResistanceType.Energy, Utility.RandomMinMax(20, 50));
+
+			Tamable = true;
+			ControlSlots = Utility.RandomMinMax(1, 5);
+			MinTameSkill = Utility.RandomMinMax(1, 100);
+
+            PackItem(new Gold(Utility.RandomMinMax(10, 750)));
+        }
+
+        public RandomRidable(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
+    }
+}

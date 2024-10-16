@@ -1,0 +1,71 @@
+Certainly! In the context of Ultima Online and the RunUO framework, hues are used to color items, creatures, and various game objects. While I can't directly access the hue file (`hues.mul`) from the Ultima Online client, I can provide a list of general interesting and unique hues based on common usage and player feedback.
+
+Basic Hues:
+0: Normal (no hue)
+1-1000: Regular colors. This range includes many shades of the basic colors.
+1102-1150: Metallic hues (gold, silver, bronze, etc.)
+1151-1254: Glowing hues (typically neon colors)
+Notable hues for specific items or events:
+1201: Valorite (ore and ingots)
+1153: Shadow (ore and ingots)
+1161: Agapite (ore and ingots)
+1260-1268: Semi-bright armor hues.
+1301-1354: Bright neon weapon hues.
+1355-1424: Muted weapon hues.
+1425-1454: Metallic bright hues.
+1908-1919: Tokuno dye colors.
+1920-2007: Fresh paint hues.
+2008-2018: Faded paint hues.
+2019-2075: Lunar dye colors.
+2076-2110: Plant hues (for plant system).
+2111-2224: Pigment hues (various brightness levels).
+2701: Black for cloaks.
+2952: Reward cloth hue (deep blue).
+
+
+1. **Metallic & Ores**:
+   - Copper: 2419
+   - Bronze: 2426
+   - Gold: 2213
+   - Agapite: 2424
+   - Verite: 2207
+   - Valorite: 2219
+
+2. **Gems**:
+   - Ruby: 2113
+   - Emerald: 2121
+   - Sapphire: 2119
+   - Diamond: 2216
+   - Amethyst: 2126
+
+3. **Neon Colors**:
+   - Neon Pink: 2118
+   - Neon Blue: 1153
+   - Neon Green: 1278
+   - Neon Yellow: 1281
+
+4. **Pastels**:
+   - Pastel Blue: 1150
+   - Pastel Pink: 1157
+   - Pastel Green: 1152
+   - Pastel Yellow: 1156
+
+5. **Dark Shades**:
+   - Dark Red: 37
+   - Dark Blue: 2
+   - Dark Green: 66
+   - Dark Yellow: 58
+
+6. **Special & Rare**:
+   - Ice Blue: 1152
+   - Fire Red: 37
+   - Black: 1
+   - White: 1153
+   - Transparent: 0 (Not typically a color but can make items invisible)
+
+7. **Other Favorites**:
+   - Blood Red: 37
+   - Pure Black: 2056
+   - Pure White: 2064
+
+It's essential to note that the hue values and their appearances might vary slightly depending on the specific client version and custom hue modifications on different servers. It would be a good idea to check these values in the `hues.mul` file or a hue viewing tool for your specific server or shard to ensure they look as intended.

@@ -1,0 +1,192 @@
+
+using System;
+using System.Collections.Generic;
+using Server;
+using Server.Mobiles;
+using Server.Spells;
+
+namespace Server.Items
+{
+    // A custom item that spawns a random monster when used
+    public class RandomMonsterSpawner : Item
+    {
+        // A range of possible body values for the monster
+        private const int MinBody = 1; // the minimum body value
+        private const int MaxBody = 319; // the maximum body value
+
+        // A range of possible hues for the monster
+        private const int MinHue = 1; // the minimum hue value
+        private const int MaxHue = 3000; // the maximum hue value
+
+        // A list of possible AI types for the monster
+        private static readonly AIType[] AITypes = new AIType[]
+        {
+            AIType.AI_Melee, AIType.AI_Mage, AIType.AI_Animal, // ... add more types here
+            AIType.AI_Berserk, AIType.AI_NecroMage
+        };
+
+        // A list of possible fight modes for the monster
+        private static readonly FightMode[] FightModes = new FightMode[]
+        {
+            FightMode.Closest, FightMode.Aggressor, FightMode.Weakest, // ... add more modes here
+            FightMode.Evil
+        };
+
+        // A list of possible words for the first part of the monster's name
+        private static readonly string[] NameWords1 = new string[]
+        {
+            "Blood", "Fire", "Shadow", // ... add more words here
+            "Doom", "Chaos"
+        };
+
+        // A list of possible words for the second part of the monster's name
+        private static readonly string[] NameWords2 = new string[]
+        {
+            "Fang", "Claw", "Eye", // ... add more words here
+            "Lord", "King"
+        };
+
+        // A random number generator
+        private static readonly Random Random = new Random();
+
+        // The constructor
+        public RandomMonsterSpawner() : base(0x1f13) // a pile of skulls as the item graphic
+        {
+            Name = "Random Monster Spawner";
+            Movable = false; // make the item immovable
+        }
+
+        // The method that handles the use of the item
+        public override void OnDoubleClick(Mobile from)
+        {
+            if (from == null || from.Deleted || !from.Alive) return; // check if the user is valid
+
+            if (!IsChildOf(from.Backpack)) // check if the item is in the user's backpack
+            {
+                from.SendMessage("You must have the item in your backpack to use it."); // send a message to the user
+                return;
+            }
+
+            BaseCreature monster = new BaseCreature(); // create a new base creature instance
+
+            // Generate a random body value within the range
+            int body = Random.Next(MinBody, MaxBody + 1);
+
+            // Validate the body value
+            if (!IsValidBody(body))
+            {
+                from.SendMessage("The body value {0} is invalid. Please try again.", body); // send a message to the user
+                return;
+            }
+
+            // Assign the body value to the monster
+            monster.Body = body;
+
+            // Generate a random hue value within the range
+            int hue = Random.Next(MinHue, MaxHue + 1);
+
+            // Validate the hue value
+            if (!IsValidHue(hue))
+            {
+                from.SendMessage("The hue value {0} is invalid. Please try again.", hue); // send a message to the user
+                return;
+            }
+
+            // Assign the hue value to the monster
+            monster.Hue = hue;
+
+            // Assign a random AI type to the monster
+            monster.AI = AITypes[Random.Next(AITypes.Length)];
+
+            // Assign a random fight mode to the monster
+            monster.FightMode = FightModes[Random.Next(FightModes.Length)];
+
+            // Assign a random name to the monster
+            monster.Name = NameWords1[Random.Next(NameWords1.Length)] + " " + NameWords2[Random.Next(NameWords2.Length)];
+
+            // Assign random stats, skills, and attributes
+            monster.SetStr(Random.Next(100, 500));
+            monster.SetDex(Random.Next(50, 250));
+            monster.SetInt(Random.Next(50, 250));
+
+            monster.SetDamage(Random.Next(10, 50));
+
+            monster.SetDamageType(ResistanceType.Physical, Random.Next(0, 100));
+            monster.SetDamageType(ResistanceType.Fire, Random.Next(0, 100));
+            monster.SetDamageType(ResistanceType.Cold, Random.Next(0, 100));
+            monster.SetDamageType(ResistanceType.Poison, Random.Next(0, 100));
+            monster.SetDamageType(ResistanceType.Energy, Random.Next(0, 100));
+
+            monster.SetResistance(ResistanceType.Physical, Random.Next(0, 100));
+            monster.SetResistance(ResistanceType.Fire, Random.Next(0, 100));
+            monster.SetResistance(ResistanceType.Cold, Random.Next(0, 100));
+            monster.SetResistance(ResistanceType.Poison, Random.Next(0, 100));
+            monster.SetResistance(ResistanceType.Energy, Random.Next(0, 100));
+
+            monster.SetSkill(SkillName.Wrestling, Random.Next(0, 100));
+            monster.SetSkill(SkillName.Tactics, Random.Next(0, 100));
+            monster.SetSkill(SkillName.MagicResist, Random.Next(0, 100));
+            monster.SetSkill(SkillName.Magery, Random.Next(0, 100));
+            monster.SetSkill(SkillName.EvalInt, Random.Next(0, 100));
+            monster.SetSkill(SkillName.Meditation, Random.Next(0, 100));
+
+            monster.Fame = Random.Next(0, 10000);
+            monster.Karma = Random.Next(-10000, 10000);
+
+            monster.VirtualArmor = Random.Next(0, 100);
+
+            monster.ControlSlots = Random.Next(0, 5);
+
+            monster.Tamable = Random.NextDouble() < 0.5; // 50% chance to be tamable
+
+            // Add some random loot to the monster
+            int lootCount = Random.Next(1, 5); // random number of loot items
+            for (int i = 0; i < lootCount; i++)
+            {
+                Item loot = Loot.RandomArmorOrShieldOrWeapon(); // get a random armor, shield, or weapon
+                if (loot != null) monster.PackItem(loot); // add it to the monster's inventory
+            }
+
+            // Spawn the monster near the user
+            Point3D location = from.Location; // get the user's location
+            Map map = from.Map; // get the user's map
+
+            // Find a valid location within 3 tiles of the user
+            for (int i = 0; i < 10; i++) // try 10 times
+            {
+                int x = location.X + Random.Next(-3, 4); // random x coordinate
+                int y = location.Y + Random.Next(-3, 4); // random y coordinate
+                int z = map.GetAverageZ(x, y); // get the average z coordinate
+
+                if (map.CanSpawnMobile(new Point2D(x, y), z)) // check if the location is valid
+                {
+                    location = new Point3D(x, y, z); // update the location
+                    break; // stop the loop
+                }
+            }
+
+            monster.MoveToWorld(location, map); // move the monster to the location
+
+            from.SendMessage("You have spawned a random monster: {0}.", monster.Name); // send a message to the user
+            this.Delete(); // delete the item
+        }
+        // The serialization constructor
+        public RandomMonsterSpawner(Serial serial) : base(serial)
+        {
+        }
+
+        // The serialization method
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write(0); // version
+        }
+
+        // The deserialization method
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
+    }
+}

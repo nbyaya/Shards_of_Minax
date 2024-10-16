@@ -1,0 +1,877 @@
+BoneKnight/ATTACH/XmlMinionStrike,skeleton,30/name/Twin Blade Knight/str/315/dex/110/int/56/hue/1285/tamable/true/hitsmaxseed/545/hits/545/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/XmlSmokeStrike,20,60/name/Venomous Knight/str/328/dex/108/int/54/hue/44/tamable/true/hitsmaxseed/558/hits/558/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/XmlEarthquakeStrike,20/name/Reaper Knight/str/332/dex/103/int/53/hue/38/tamable/true/hitsmaxseed/562/hits/562/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/XmlBlastStrike,50,30/name/Lunar Knight/str/314/dex/107/int/59/hue/1153/tamable/true/hitsmaxseed/544/hits/544/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/XmlBlazeStrike,20,30/name/Frozen Knight/str/322/dex/106/int/58/hue/1152/tamable/true/hitsmaxseed/552/hits/552/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/XmlCursedTouch,5,5/name/Shadow Blade Knight/str/319/dex/109/int/57/hue/1107/tamable/true/hitsmaxseed/549/hits/549/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/XmlWindGust,1/name/Vortex Knight/str/327/dex/104/int/55/hue/1270/tamable/true/hitsmaxseed/557/hits/557/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/XmlMinionStrike,skeleton,30/name/Blaze Cyclops/str/400/dex/150/int/100/hue/1260/tamable/true/hitsmaxseed/800/hits/800/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/XmlCursedTouch,5,5/name/Night Cyclops/str/350/dex/200/int/150/hue/1175/tamable/true/hitsmaxseed/700/hits/700/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/XmlWindGust,1/name/Tornado Cyclops/str/450/dex/100/int/50/hue/1153/tamable/true/hitsmaxseed/900/hits/900/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/XmlEarthquakeStrike,20/name/Doom Cyclops/str/500/dex/50/int/50/hue/1172/tamable/true/hitsmaxseed/1000/hits/1000/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/XmlTheftStrike,1/name/Rock Cyclops/str/300/dex/200/int/100/hue/2406/tamable/true/hitsmaxseed/600/hits/600 ADD,0.1 MaxxiaScroll/
+
+Cyclops/ATTACH/XmlDisarm,1/name/Spectre Cyclops/str/500/dex/75/int/75/hue/1150/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/XmlWhirlwind,20,1/name/Crimson Cyclops/str/480/dex/80/int/80/hue/33/tamable/true/hitsmaxseed/620/hits/620/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/XmlTheftStrike,1/name/Titan Cyclops/str/520/dex/70/int/70/hue/2500/tamable/true/hitsmaxseed/640/hits/640/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/XmlBlastStrike,50,30/name/Windchaser Cyclops/str/470/dex/90/int/70/hue/1260/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/XmlCursedTouch,5,5/name/Shadowlord Cyclops/str/490/dex/80/int/90/hue/1109/tamable/true/hitsmaxseed/660/hits/660/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/XmlWindGust,1/name/Galeforce Cyclops/str/500/dex/85/int/65/hue/1153/tamable/true/hitsmaxseed/670/hits/670/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/XmlSmokeStrike,20,60/name/Venomous Cyclops/str/495/dex/85/int/75/hue/67/tamable/true/hitsmaxseed/680/hits/680/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/XmlMinionStrike,skeleton,30/name/Duskblade Cyclops/str/505/dex/88/int/72/hue/1910/tamable/true/hitsmaxseed/690/hits/690/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/XmlFrostStrike,25,25/name/Stonebreaker Cyclops/str/510/dex/83/int/77/hue/2401/tamable/true/hitsmaxseed/700/hits/700/ADD,0.1/MaxxiaScroll/
+
+Cyclops/ATTACH/XmlEarthquakeStrike,20/name/Deathbringer Cyclops/str/515/dex/82/int/78/hue/1175/tamable/true/hitsmaxseed/710/hits/710/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlWindGust,1/name/Tornado Ettin/str/400/dex/80/int/40/hue/1153/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlSmokeStrike,20,60/name/Poison Ettin/str/350/dex/90/int/50/hue/1272/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlMinionStrike,skeleton,30/name/Fury Ettin/str/450/dex/100/int/30/hue/1175/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlEarthquakeStrike,20/name/Doom Ettin/str/500/dex/70/int/60/hue/1109/tamable/true/hitsmaxseed/700/hits/700/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlCursedTouch,5,5/name/Nightmare Ettin/str/300/dex/120/int/80/hue/1172/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlDisarm,1/name/Steel Ettin/str/450/dex/120/int/60/hue/1150/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlWhirlwind,20,1/name/Blood Ettin/str/420/dex/110/int/55/hue/37/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlFrostStrike,25,25/name/Thunder Ettin/str/460/dex/105/int/53/hue/1365/tamable/true/hitsmaxseed/610/hits/610/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlTheftStrike,1/name/Mountain Ettin/str/480/dex/100/int/50/hue/1175/tamable/true/hitsmaxseed/620/hits/620/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlDisarmor,1/name/Guardian Ettin/str/430/dex/115/int/52/hue/38/tamable/true/hitsmaxseed/590/hits/590/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlDisarm,1/name/Pathfinder Ettin/str/415/dex/120/int/58/hue/1153/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlMinionStrike,skeleton,30/name/Fury Ettin/str/440/dex/130/int/51/hue/1155/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlSmokeStrike,20,60/name/Plague Ettin/str/425/dex/110/int/56/hue/1270/tamable/true/hitsmaxseed/575/hits/575/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlEarthquakeStrike,20/name/Reaper Ettin/str/460/dex/105/int/54/hue/1172/tamable/true/hitsmaxseed/610/hits/610/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlBlastStrike,50,30/name/Wanderer Ettin/str/420/dex/125/int/57/hue/1265/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlBlazeStrike,20,30/name/Stonegaze Ettin/str/455/dex/103/int/52/hue/1173/tamable/true/hitsmaxseed/605/hits/605/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlCursedTouch,5,5/name/Nightshade Ettin/str/435/dex/112/int/59/hue/1165/tamable/true/hitsmaxseed/595/hits/595/ADD,0.1/MaxxiaScroll/
+
+Ettin/ATTACH/XmlWindGust,1/name/Tornado Ettin/str/450/dex/118/int/55/hue/1158/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlWindGust,1/name/Tornado Ogre/str/400/dex/80/int/40/hue/1153/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlSmokeStrike,20,60/name/Poison Ogre/str/350/dex/90/int/50/hue/1272/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlMinionStrike,skeleton,30/name/Fury Ogre/str/450/dex/100/int/30/hue/1175/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlEarthquakeStrike,20/name/Doom Ogre/str/500/dex/70/int/20/hue/1109/tamable/true/hitsmaxseed/700/hits/700/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlDisarm,1/name/ArmorBreak Ogre/str/500/dex/85/int/60/hue/500/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlWhirlwind,20,1/name/Bleeding Ogre/str/520/dex/80/int/55/hue/505/tamable/true/hitsmaxseed/610/hits/610/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlFrostStrike,25,25/name/Concuss Ogre/str/540/dex/75/int/50/hue/510/tamable/true/hitsmaxseed/620/hits/620/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlFrostStrike,25,25/name/Concuss Ogre/str/540/dex/75/int/50/hue/510/tamable/true/hitsmaxseed/620/hits/620/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlTheftStrike,1/name/Crusher Ogre/str/560/dex/70/int/45/hue/515/tamable/true/hitsmaxseed/630/hits/630/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlTheftStrike,1/name/Crusher Ogre/str/560/dex/70/int/45/hue/515/tamable/true/hitsmaxseed/630/hits/630/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlDisarmor,1/name/Disarming Ogre/str/580/dex/65/int/40/hue/520/tamable/true/hitsmaxseed/640/hits/640/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlDisarm,1/name/RiderThrow Ogre/str/500/dex/90/int/65/hue/525/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlMinionStrike,skeleton,30/name/TwinStrike Ogre/str/520/dex/95/int/60/hue/530/tamable/true/hitsmaxseed/660/hits/660/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlEarthquakeStrike,20/name/Deathly Ogre/str/560/dex/75/int/50/hue/540/tamable/true/hitsmaxseed/680/hits/680/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlBlastStrike,50,30/name/QuickStep Ogre/str/580/dex/70/int/45/hue/545/tamable/true/hitsmaxseed/690/hits/690/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlBlazeStrike,20,30/name/Paralyzer Ogre/str/600/dex/65/int/40/hue/550/tamable/true/hitsmaxseed/700/hits/700/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlCursedTouch,5,5/name/Shadowy Ogre/str/520/dex/90/int/65/hue/555/tamable/true/hitsmaxseed/710/hits/710/ADD,0.1/MaxxiaScroll/
+
+Ogre/ATTACH/XmlWindGust,1/name/Whirlwind Ogre/str/540/dex/85/int/60/hue/560/tamable/true/hitsmaxseed/720/hits/720/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlWindGust,1/name/Zarlon Beast/str/400/dex/150/int/75/hue/115/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlCursedTouch,5,5/name/Glimmer Fiend/str/350/dex/200/int/100/hue/295/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlSmokeStrike,20,60/name/Virax Worm/str/450/dex/100/int/50/hue/54/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlBlastStrike,50,30/name/Skylon Runner/str/300/dex/250/int/125/hue/88/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlTheftStrike,1/name/Raxor Brute/str/500/dex/50/int/25/hue/23/tamable/true/hitsmaxseed/700/hits700//ADD,0.1MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlDisarm,1/name/Zorax Beast/str/200/dex/150/int/75/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlWindGust,1/name/Vraxar Demon/str/250/dex/100/int/100/hue/1175/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlCursedTouch,5,5/name/Norax Shade/str/150/dex/200/int/50/hue/1109/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlBlastStrike,50,30/name/Dorax Hunter/str/100/dex/250/int/75/hue/2406/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlDisarm,1/name/Zantrophor Beast/str/450/dex/110/int/55/hue/45/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlWhirlwind,20,1/name/Malvarex Phantom/str/420/dex/120/int/60/hue/52/tamable/true/hitsmaxseed/620/hits/620/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlFrostStrike,25,25/name/Thrilvorian Shade/str/460/dex/115/int/57/hue/58/tamable/true/hitsmaxseed/640/hits/640/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlTheftStrike,1/name/Vaxlimore Specter/str/480/dex/105/int/53/hue/64/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlDisarmor,1/name/Galrindar Apparition/str/435/dex/112/int/59/hue/70/tamable/true/hitsmaxseed/630/hits/630/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlDisarm,1/name/Jalviron Entity/str/455/dex/108/int/56/hue/77/tamable/true/hitsmaxseed/610/hits/610/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlMinionStrike,skeleton,30/name/Phrylonor Wraith/str/470/dex/100/int/52/hue/84/tamable/true/hitsmaxseed/660/hits/660/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlSmokeStrike,20,60/name/Crystophene Revenant/str/440/dex/110/int/58/hue/91/tamable/true/hitsmaxseed/625/hits/625/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlEarthquakeStrike,20/name/Zephylixor Ghost/str/450/dex/105/int/55/hue/97/tamable/true/hitsmaxseed/615/hits/615/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlBlastStrike,50,30/name/Triphylar Spectral/str/460/dex/102/int/54/hue/103/tamable/true/hitsmaxseed/635/hits/635/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlBlazeStrike,20,30/name/Kalvandar Illusion/str/430/dex/113/int/61/hue/110/tamable/true/hitsmaxseed/605/hits/605/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlCursedTouch,5,5/name/Nylvorax Mirage/str/445/dex/109/int/57/hue/117/tamable/true/hitsmaxseed/645/hits/645/ADD,0.1/MaxxiaScroll/
+
+HeadlessOne/ATTACH/XmlWindGust,1/name/Valphyre Eidolon/str/455/dex/104/int/56/hue/124/tamable/true/hitsmaxseed/620/hits/620/ADD,0.1/MaxxiaScroll/
+
+Skeleton/ATTACH/XmlDisarm,1/name/Zorloth Skeleton/str/320/dex/105/int/53/hue/45/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+Skeleton/ATTACH/XmlWhirlwind,20,1/name/Grivlon Skeleton/str/330/dex/95/int/58/hue/47/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+Skeleton/ATTACH/XmlFrostStrike,25,25/name/Tremvox Skeleton/str/310/dex/110/int/56/hue/50/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+Skeleton/ATTACH/XmlTheftStrike,1/name/Plarix Skeleton/str/335/dex/92/int/54/hue/52/tamable/true/hitsmaxseed/545/hits/545/ADD,0.1/MaxxiaScroll/
+
+Skeleton/ATTACH/XmlDisarmor,1/name/Venthral Skeleton/str/340/dex/90/int/55/hue/55/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Skeleton/ATTACH/XmlDisarm,1/name/Lormex Skeleton/str/325/dex/108/int/59/hue/58/tamable/true/hitsmaxseed/555/hits/555/ADD,0.1/MaxxiaScroll/
+
+Skeleton/ATTACH/XmlMinionStrike,skeleton,30/name/Criphox Skeleton/str/330/dex/100/int/57/hue/60/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+Skeleton/ATTACH/XmlSmokeStrike,20,60/name/Brelzor Skeleton/str/315/dex/112/int/58/hue/63/tamable/true/hitsmaxseed/565/hits/565/ADD,0.1/MaxxiaScroll/
+
+Skeleton/ATTACH/XmlEarthquakeStrike,20/name/Stenlox Skeleton/str/340/dex/105/int/52/hue/65/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+Skeleton/ATTACH/XmlWindGust,1/name/Zarlon Bonecrusher/str/200/dex/150/int/50/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Skeleton/ATTACH/XmlCursedTouch,5,5/name/Glimmering Shade/str/150/dex/200/int/100/hue/2951/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Skeleton/ATTACH/XmlSmokeStrike,20,60/name/Virulent Scourge/str/250/dex/100/int/75/hue/2126/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Skeleton/ATTACH/XmlTheftStrike,1/name/Skullsmasher/str/300/dex/125/int/25/hue/1175/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Ratman/ATTACH/XmlDisarm,1/name/Ratlar Zephyr/str/220/dex/140/int/60/hue/115/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Ratman/ATTACH/XmlCursedTouch,5,5/name/Glimtok Shade/str/250/dex/120/int/70/hue/58/tamable/true/hitsmaxseed/620/hits/620/ADD,0.1/MaxxiaScroll/
+
+Ratman/ATTACH/XmlWindGust,1/name/Ferlax Whirl/str/210/dex/160/int/65/hue/73/tamable/true/hitsmaxseed/640/hits/640/ADD,0.1/MaxxiaScroll/
+
+Ratman/ATTACH/XmlWhirlwind,20,1/name/Crimstot Fang/str/230/dex/150/int/80/hue/89/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+Ratman/ATTACH/XmlDisarmor,1/name/Blortar Grip/str/240/dex/130/int/75/hue/45/tamable/true/hitsmaxseed/630/hits/630/ADD,0.1/MaxxiaScroll/
+
+Ratman/ATTACH/XmlDisarm,1/name/Zarvix Rat/str/200/dex/150/int/75/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Ratman/ATTACH/XmlWindGust,1/name/Glimar Rat/str/250/dex/100/int/50/hue/1175/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Ratman/ATTACH/XmlCursedTouch,5,5/name/Nixil Rat/str/150/dex/200/int/100/hue/1198/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Ratman/ATTACH/XmlEarthquakeStrike,20/name/Vraxil Rat/str/300/dex/50/int/25/hue/1220/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Ratman/ATTACH/XmlWhirlwind,20,1/name/Rixar Rat/str/175/dex/175/int/75/hue/1243/tamable/true/hitsmaxseed/375/hits/375 ADD,0.1 MaxxiaScroll/
+
+Zombie/ATTACH/XmlDisarm,1/name/Zombrax/hue/1154/str/200/dex/80/int/40/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/XmlWhirlwind,20,1/name/Zorlak/hue/1175/str/220/dex/70/int/50/tamable/true/hitsmaxseed/420/hits/420/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/XmlTheftStrike,1/name/Zygor/hue/1196/str/240/dex/60/int/60/tamable/true/hitsmaxseed/440/hits/440/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/XmlDisarmor,1/name/Zalix/hue/1217/str/180/dex/90/int/30/tamable/true/hitsmaxseed/360/hits/360/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/XmlDisarm,1/name/Vexlon Shade/str/320/dex/90/int/70/hue/1245/tamable/true/hitsmaxseed/550/hits/525/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/XmlWhirlwind,20,1/name/Craglorn Wight/str/310/dex/85/int/75/hue/1289/tamable/true/hitsmaxseed/540/hits/520/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/XmlFrostStrike,25,25/name/Glimdor Specter/str/340/dex/80/int/65/hue/1230/tamable/true/hitsmaxseed/565/hits/545/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/XmlTheftStrike,1/name/Thraxlon Ghoul/str/330/dex/88/int/72/hue/1270/tamable/true/hitsmaxseed/555/hits/530/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/XmlDisarmor,1/name/Jexlor Phantom/str/315/dex/92/int/68/hue/1255/tamable/true/hitsmaxseed/545/hits/525/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/XmlDisarm,1/name/Gravlox Banshee/str/305/dex/95/int/80/hue/1260/tamable/true/hitsmaxseed/535/hits/515/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/XmlMinionStrike,skeleton,30/name/Drynlor Revenant/str/335/dex/83/int/62/hue/1240/tamable/true/hitsmaxseed/560/hits/540/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/XmlSmokeStrike,20,60/name/Vraxnor Wraith/str/320/dex/86/int/74/hue/1295/tamable/true/hitsmaxseed/550/hits/530/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/XmlEarthquakeStrike,20/name/Nexlor Spectre/str/325/dex/87/int/78/hue/1280/tamable/true/hitsmaxseed/553/hits/533/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/XmlBlastStrike,50,30/name/Zyglon Shade/str/328/dex/89/int/70/hue/1275/tamable/true/hitsmaxseed/552/hits/532/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/XmlBlazeStrike,20,30/name/Lexvon Ghast/str/330/dex/85/int/76/hue/1235/tamable/true/hitsmaxseed/554/hits/534/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/XmlCursedTouch,5,5/name/Crixlor Lich/str/317/dex/91/int/73/hue/1265/tamable/true/hitsmaxseed/547/hits/527/ADD,0.1/MaxxiaScroll/
+
+Zombie/ATTACH/XmlWindGust,1/name/Blaxnor Fiend/str/322/dex/93/int/77/hue/1250/tamable/true/hitsmaxseed/551/hits/531/ADD,0.1/MaxxiaScroll/
+
+
+OrcCaptain/ATTACH/XmlWindGust,1/name/Zorax the Whirling/hue/1153/tamable/true/str/400/dex/150/int/75/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/XmlCursedTouch,5,5/name/Glim the Shadowy/hue/1175/tamable/true/str/350/dex/200/int/100/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/XmlBlastStrike,50,30/name/Vorn the Swift/hue/1196/tamable/true/str/300/dex/250/int/50/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/XmlSmokeStrike,20,60/name/Krax the Plagued/hue/2212/tamable/true/str/450/dex/100/int/50/hitsmaxseed/700/hits/700/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/XmlTheftStrike,1/name/Brox the Mighty/hue/2405/tamable/true/str/500/dex/100/int/25/hitsmaxseed/800/hits/800
+ADD,0.1
+MaxxiaScroll/
+
+OrcCaptain/ATTACH/XmlDisarm,1/name/Vorlis Brute/str/320/dex/105/int/60/hue/52/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/XmlWhirlwind,20,1/name/Grivik Mauler/str/310/dex/110/int/55/hue/47/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/XmlFrostStrike,25,25/name/Zephyral Basher/str/315/dex/103/int/58/hue/61/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/XmlTheftStrike,1/name/Vandrex Crusher/str/330/dex/100/int/50/hue/66/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/XmlDisarmor,1/name/Klivar Enforcer/str/320/dex/108/int/54/hue/72/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/XmlDisarm,1/name/Borvix Rider/str/305/dex/112/int/58/hue/77/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/XmlMinionStrike,skeleton,30/name/Jalvrek Duelist/str/310/dex/115/int/53/hue/82/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/XmlSmokeStrike,20,60/name/Flivarn Infector/str/325/dex/105/int/55/hue/87/tamable/true/hitsmaxseed/545/hits/545/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/XmlEarthquakeStrike,20/name/Ghorlix Slayer/str/335/dex/102/int/50/hue/92/tamable/true/hitsmaxseed/555/hits/555/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/XmlBlastStrike,50,30/name/Lyrvarn Strider/str/315/dex/110/int/57/hue/97/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/XmlBlazeStrike,20,30/name/Xyrvak Paralyzer/str/305/dex/109/int/59/hue/102/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/XmlCursedTouch,5,5/name/Orvixx Shadow/str/320/dex/107/int/56/hue/107/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+OrcCaptain/ATTACH/XmlWindGust,1/name/Talvrek Cyclone/str/330/d
+
+OrcBrute/ATTACH/XmlDisarm,1/name/Raxxon Brute/str/320/dex/85/int/60/hue/115/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/XmlWhirlwind,20,1/name/Glimthor Brute/str/310/dex/90/int/55/hue/58/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/XmlFrostStrike,25,25/name/Zenthial Brute/str/325/dex/88/int/57/hue/23/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/XmlTheftStrike,1/name/Frenzor Brute/str/330/dex/80/int/50/hue/85/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/XmlDisarmor,1/name/Vortigon Brute/str/315/dex/95/int/60/hue/76/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/XmlDisarm,1/name/Graxel Brute/str/320/dex/87/int/53/hue/48/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/XmlMinionStrike,skeleton,30/name/Plyntor Brute/str/335/dex/82/int/58/hue/19/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/XmlSmokeStrike,20,60/name/Threxial Brute/str/310/dex/90/int/62/hue/67/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/XmlEarthquakeStrike,20/name/Quilzar Brute/str/305/dex/93/int/52/hue/28/tamable/true/hitsmaxseed/545/hits/545/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/XmlBlastStrike,50,30/name/Strelnox Brute/str/328/dex/86/int/56/hue/34/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/XmlCursedTouch,5,5/name/Blintar Brute/str/315/dex/92/int/53/hue/44/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/XmlWindGust,1/name/Kraxian Brute/str/340/dex/80/int/55/hue/91/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/XmlWindGust,1/name/Zorax Beast/str/400/dex/150/int/75/hue/115/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/XmlCursedTouch,5,5/name/Glimar Shade/str/350/dex/200/int/100/hue/1900/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/XmlTheftStrike,1/name/Kragar Smash/str/450/dex/100/int/50/hue/1175/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+OrcBrute/ATTACH/XmlEarthquakeStrike,20/name/Vraxar Doom/str/500/dex/125/int/25/hue/2075/tamable/true/hitsmaxseed/700/hits/700/ADD,0.1/MaxxiaScroll/
+
+<!-- Xyrinna Bat -->
+MongBat/ATTACH/XmlDisarm,1/name/Xyrinna Bat/str/110/dex/150/int/70/hue/1150/tamable/true/hitsmaxseed/230/hits/230/ADD,0.1/MaxxiaScroll/
+
+<!-- Thallion Bat -->
+MongBat/ATTACH/XmlWhirlwind,20,1/name/Thallion Bat/str/140/dex/120/int/60/hue/160/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+<!-- Grivven Bat -->
+MongBat/ATTACH/XmlFrostStrike,25,25/name/Grivven Bat/str/100/dex/130/int/85/hue/482/tamable/true/hitsmaxseed/220/hits/220/ADD,0.1/MaxxiaScroll/
+
+<!-- Zoltrix Bat -->
+MongBat/ATTACH/XmlTheftStrike,1/name/Zoltrix Bat/str/150/dex/110/int/55/hue/498/tamable/true/hitsmaxseed/260/hits/260/ADD,0.1/MaxxiaScroll/
+
+<!-- Wraiven Bat -->
+MongBat/ATTACH/XmlDisarmor,1/name/Wraiven Bat/str/105/dex/140/int/80/hue/700/tamable/true/hitsmaxseed/215/hits/215/ADD,0.1/MaxxiaScroll/
+
+<!-- Prynnia Bat -->
+MongBat/ATTACH/XmlDisarm,1/name/Prynnia Bat/str/135/dex/125/int/65/hue/2000/tamable/true/hitsmaxseed/245/hits/245/ADD,0.1/MaxxiaScroll/
+
+<!-- Drallex Bat -->
+MongBat/ATTACH/XmlMinionStrike,skeleton,30/name/Drallex Bat/str/125/dex/135/int/75/hue/1155/tamable/true/hitsmaxseed/235/hits/235/ADD,0.1/MaxxiaScroll/
+
+<!-- Qyrix Bat -->
+MongBat/ATTACH/XmlSmokeStrike,20,60/name/Qyrix Bat/str/130/dex/130/int/70/hue/1200/tamable/true/hitsmaxseed/240/hits/240/ADD,0.1/MaxxiaScroll/
+
+<!-- Flynnoth Bat -->
+MongBat/ATTACH/XmlEarthquakeStrike,20/name/Flynnoth Bat/str/145/dex/115/int/60/hue/3000/tamable/true/hitsmaxseed/255/hits/255/ADD,0.1/MaxxiaScroll/
+
+<!-- Vyndrial Bat -->
+MongBat/ATTACH/XmlBlastStrike,50,30/name/Vyndrial Bat/str/120/dex/140/int/65/hue/1100/tamable/true/hitsmaxseed/230/hits/230/ADD,0.1/MaxxiaScroll/
+
+<!-- Krivella Bat -->
+MongBat/ATTACH/XmlCursedTouch,5,5/name/Krivella Bat/str/110/dex/150/int/75/hue/333/tamable/true/hitsmaxseed/225/hits/225/ADD,0.1/MaxxiaScroll/
+
+<!-- Lyrinth Bat -->
+MongBat/ATTACH/XmlWindGust,1/name/Lyrinth Bat/str/140/dex/120/int/70/hue/777/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+MongBat/ATTACH/XmlWindGust,1/name/Zypho Bat/str/100/dex/200/int/100/hue/1153/tamable/true/hitsmaxseed/200/hits/200/ADD,0.1/MaxxiaScroll/
+
+MongBat/ATTACH/XmlCursedTouch,5,5/name/Glimo Bat/str/150/dex/150/int/50/hue/1175/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+MongBat/ATTACH/XmlMinionStrike,skeleton,30/name/Kylo Bat/str/200/dex/100/int/50/hue/1197/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+MongBat/ATTACH/XmlEarthquakeStrike,20/name/Vyro Bat/str/250/dex/50/int/50/hue/1219/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+1. Flixora Pixie
+
+Pixie/ATTACH/XmlDisarm,1/name/Flixora Pixie/str/220/dex/170/int/120/hue/135/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+
+2. Glimterelle
+
+Pixie/ATTACH/XmlWhirlwind,20,1/name/Glimterelle/str/230/dex/160/int/115/hue/45/tamable/true/hitsmaxseed/340/hits/340/ADD,0.1/MaxxiaScroll/
+
+
+3. Nexylight
+
+Pixie/ATTACH/XmlFrostStrike,25,25/name/Nexylight/str/215/dex/175/int/110/hue/95/tamable/true/hitsmaxseed/355/hits/355/ADD,0.1/MaxxiaScroll/
+
+
+4. Talvia Whisper
+
+Pixie/ATTACH/XmlTheftStrike,1/name/Talvia Whisper/str/225/dex/165/int/115/hue/255/tamable/true/hitsmaxseed/345/hits/345/ADD,0.1/MaxxiaScroll/
+
+
+5. Zephyrolume
+
+Pixie/ATTACH/XmlDisarmor,1/name/Zephyrolume/str/210/dex/180/int/120/hue/67/tamable/true/hitsmaxseed/360/hits/360/ADD,0.1/MaxxiaScroll/
+
+
+6. Moonshrial
+
+Pixie/ATTACH/XmlDisarm,1/name/Moonshrial/str/230/dex/160/int/120/hue/78/tamable/true/hitsmaxseed/340/hits/340/ADD,0.1/MaxxiaScroll/
+
+
+7. Eclixshade
+
+Pixie/ATTACH/XmlMinionStrike,skeleton,30/name/Eclixshade/str/220/dex/170/int/110/hue/188/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+
+8. Stellavire
+
+Pixie/ATTACH/XmlSmokeStrike,20,60/name/Stellavire/str/225/dex/165/int/115/hue/205/tamable/true/hitsmaxseed/345/hits/345/ADD,0.1/MaxxiaScroll/
+
+
+9. Vaporlyn
+
+Pixie/ATTACH/XmlEarthquakeStrike,20/name/Vaporlyn/str/215/dex/175/int/115/hue/122/tamable/true/hitsmaxseed/355/hits/355/ADD,0.1/MaxxiaScroll/
+
+
+10. Flarefrost
+
+Pixie/ATTACH/XmlBlastStrike,50,30/name/Flarefrost/str/220/dex/170/int/120/hue/288/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+
+11. Spectralume
+
+Pixie/ATTACH/XmlBlazeStrike,20,30/name/Spectralume/str/210/dex/180/int/110/hue/310/tamable/true/hitsmaxseed/360/hits/360/ADD,0.1/MaxxiaScroll/
+
+
+12. Twilightgale
+
+Pixie/ATTACH/XmlCursedTouch,5,5/name/Twilightgale/str/215/dex/175/int/120/hue/390/tamable/true/hitsmaxseed/355/hits/355/ADD,0.1/MaxxiaScroll/
+
+
+13. Starshimmer
+
+Pixie/ATTACH/XmlWindGust,1/name/Starshimmer/str/230/dex/160/int/115/hue/500/tamable/true/hitsmaxseed/340/hits/340/ADD,0.1/MaxxiaScroll/
+
+Pixie/ATTACH/XmlWindGust,1/name/Zimba Flit/str/50/dex/200/int/150/hue/1153/tamable/true/hitsmaxseed/100/hits/100/ADD,0.1/MaxxiaScroll/
+
+Pixie/ATTACH/XmlCursedTouch,5,5/name/Nyra Glint/str/75/dex/175/int/125/hue/1175/tamable/true/hitsmaxseed/125/hits/125/ADD,0.1/MaxxiaScroll/
+
+Pixie/ATTACH/XmlMinionStrike,skeleton,30/name/Lira Flick/str/100/dex/150/int/100/hue/1198/tamable/true/hitsmaxseed/150/hits/150/ADD,0.1/MaxxiaScroll/
+
+Pixie/ATTACH/XmlEarthquakeStrike,20/name/Rima Flash/str/125/dex/125/int/75/hue/1201/tamable/true/hitsmaxseed/175/hits/175/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlDisarm,1/name/Zylthrix Wisp/str/250/dex/110/int/80/hue/300/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlWhirlwind,20,1/name/Gravlux Sprite/str/230/dex/120/int/90/hue/450/tamable/true/hitsmaxseed/420/hits/420/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlFrostStrike,25,25/name/Tharnox Lumina/str/240/dex/130/int/70/hue/550/tamable/true/hitsmaxseed/410/hits/410/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlTheftStrike,1/name/Vortryn Specter/str/260/dex/140/int/60/hue/650/tamable/true/hitsmaxseed/430/hits/430/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlDisarmor,1/name/Ilynx Shade/str/220/dex/150/int/85/hue/750/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlDisarm,1/name/Quarnyx Phantom/str/240/dex/100/int/90/hue/850/tamable/true/hitsmaxseed/410/hits/410/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlMinionStrike,skeleton,30/name/Zephylox Ethereal/str/270/dex/120/int/65/hue/950/tamable/true/hitsmaxseed/440/hits/440/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlSmokeStrike,20,60/name/Maltrix Spirit/str/235/dex/110/int/75/hue/1050/tamable/true/hitsmaxseed/405/hits/405/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlEarthquakeStrike,20/name/Glythorix Gleam/str/245/dex/135/int/80/hue/1150/tamable/true/hitsmaxseed/415/hits/415/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlBlastStrike,50,30/name/Veltrix Mirage/str/250/dex/140/int/70/hue/1250/tamable/true/hitsmaxseed/420/hits/420/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlBlazeStrike,20,30/name/Nartholix Nimbus/str/230/dex/130/int/85/hue/1350/tamable/true/hitsmaxseed/410/hits/410/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlCursedTouch,5,5/name/Kortryx Shadow/str/240/dex/125/int/75/hue/1450/tamable/true/hitsmaxseed/410/hits/410/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlWindGust,1/name/Lyntrix Vortex/str/260/dex/120/int/70/hue/1550/tamable/true/hitsmaxseed/430/hits/430/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlWindGust,1/name/Zyphor Wisp/str/100/dex/200/int/150/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlCursedTouch,5,5/name/Glimar Wisp/str/150/dex/150/int/100/hue/1175/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlBlastStrike,50,30/name/Vyron Wisp/str/200/dex/100/int/100/hue/1196/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlSmokeStrike,20,60/name/Sylox Wisp/str/100/dex/100/int/200/hue/1201/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Wisp/ATTACH/XmlTheftStrike,1/name/Kryx Wisp/str/250/dex/50/int/50/hue/1266/tamable/true/hitsmaxseed/700/hits/700.
+
+WaterElemental/ATTACH/XmlWhirlwind,20,1/name/Typhoon Elemental/str/400/dex/150/int/100/hue/1153/tamable/true/hitsmaxseed/800/hits/800/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/XmlPoisonStrike,10,60/name/Eclipse Elemental/str/350/dex/200/int/150/hue/1175/tamable/true/hitsmaxseed/700/hits/700/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/XmlLifeDrain,20,1/name/Tsunami Elemental/str/450/dex/100/int/50/hue/1266/tamable/true/hitsmaxseed/900/hits/900/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/XmlAstralStrike,30,10/name/Jetstream Elemental/str/300/dex/250/int/100/hue/2963/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/XmlDisarmor,1/name/Hydra Elemental/str/350/dex/120/int/70/hue/1155/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/XmlBladeStrike,25,30/name/Tidal Guardian/str/320/dex/130/int/65/hue/1166/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/XmlStamDrain,20,1/name/Wave Crusher/str/340/dex/100/int/80/hue/1177/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/XmlLifeDrain,20,1/name/Abyssal Vortex/str/330/dex/110/int/90/hue/1188/tamable/true/hitsmaxseed/590/hits/590/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/XmlDisarm,1/name/Maelstrom Warden/str/310/dex/140/int/85/hue/1199/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/XmlDisarmor,1/name/Tsunami Stalker/str/345/dex/125/int/75/hue/1200/tamable/true/hitsmaxseed/605/hits/605/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/XmlLightning,30,1/name/Lunar Tide/str/320/dex/115/int/95/hue/1201/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/XmlPoisonStrike,10,60/name/Reef Ripper/str/335/dex/120/int/80/hue/1202/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/XmlWaterStrike,30,20/name/Nautical Nightmare/str/350/dex/110/int/85/hue/1203/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/XmlAstralStrike,30,10/name/Oceanic Outrider/str/330/dex/130/int/70/hue/1204/tamable/true/hitsmaxseed/590/hits/590/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/XmlStaticStrike,50,5/name/Aqua Assailant/str/340/dex/120/int/90/hue/1205/tamable/true/hitsmaxseed/590/hits/590/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/XmlPoisonStrike,10,60/name/Coral Caster/str/325/dex/115/int/100/hue/1206/tamable/true/hitsmaxseed/575/hits/575/ADD,0.1/MaxxiaScroll/
+
+WaterElemental/ATTACH/XmlWhirlwind,20,1/name/Whirlpool Warrior/str/360/dex/110/int/80/hue/1207/tamable/true/hitsmaxseed/610/hits/610/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/XmlDisarmor,1/name/Iron Golem/str/400/dex/80/int/40/hue/2419/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/XmlLightning,30,1/name/Copper Colossus/str/350/dex/120/int/50/hue/2413/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/XmlPoisonStrike,10,60/name/Silver Sentinel/str/300/dex/150/int/60/hue/1150/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/XmlLifeDrain,20,1/name/Golden Guardian/str/450/dex/100/int/70/hue/2213/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/XmlDisarmor,1/name/Silver Elemental/str/310/dex/110/int/60/hue/1152/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/XmlLifeDrain,20,1/name/Gold Elemental/str/320/dex/120/int/70/hue/2213/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/XmlLightning,30,1/name/Copper Elemental/str/330/dex/130/int/80/hue/2415/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/XmlDisarmor,1/name/Iron Elemental/str/340/dex/140/int/90/hue/2426/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/XmlPoisonStrike,10,60/name/Obsidian Elemental/str/350/dex/150/int/100/hue/1175/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/XmlDisarm,1/name/Quartz Elemental/str/360/dex/160/int/110/hue/1150/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/XmlBladeStrike,25,30/name/Ruby Elemental/str/370/dex/170/int/120/hue/1645/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/XmlStaticStrike,50,5/name/Sapphire Elemental/str/380/dex/180/int/130/hue/1266/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+EarthElemental/ATTACH/XmlPoisonStrike,10,60/name/Emerald Elemental/str/390/dex/190/int/140/hue/1272/tamable/true/hitsmaxseed/590/hits/590/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/XmlWhirlwind,20,1/name/Chlorine Cloud/str/200/dex/150/int/100/hue/63/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/XmlPoisonStrike,10,60/name/Methane Monster/str/250/dex/100/int/50/hue/296/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/XmlPoisonStrike,10,60/name/Nitrogen Nymph/str/150/dex/200/int/150/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/XmlLifeDrain,20,1/name/Oxygen Ogre/str/300/dex/50/int/50/hue/1150/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/XmlDisarmor,1/name/Helium Elemental/str/500/dex/130/int/60/hue/1150/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/XmlBladeStrike,25,30/name/Neon Elemental/str/480/dex/120/int/55/hue/1175/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/XmlStamDrain,20,1/name/Argon Elemental/str/520/dex/125/int/65/hue/1122/tamable/true/hitsmaxseed/620/hits/620/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/XmlLifeDrain,20,1/name/Krypton Elemental/str/540/dex/110/int/70/hue/1125/tamable/true/hitsmaxseed/640/hits/640/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/XmlDisarm,1/name/Xenon Elemental/str/530/dex/115/int/60/hue/1133/tamable/true/hitsmaxseed/630/hits/630/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/XmlDisarmor,1/name/Radon Elemental/str/550/dex/120/int/75/hue/1155/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/XmlLightning,30,1/name/Ozone Elemental/str/510/dex/130/int/65/hue/1120/tamable/true/hitsmaxseed/610/hits/610/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/XmlPoisonStrike,10,60/name/Methane Elemental/str/495/dex/128/int/57/hue/1135/tamable/true/hitsmaxseed/595/hits/595/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/XmlWaterStrike,30,20/name/Nitrous Elemental/str/500/dex/126/int/63/hue/1128/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/XmlAstralStrike,30,10/name/Carbon Elemental/str/505/dex/124/int/59/hue/1144/tamable/true/hitsmaxseed/605/hits/605/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/XmlStaticStrike,50,5/name/Sulfur Elemental/str/515/dex/127/int/68/hue/1148/tamable/true/hitsmaxseed/615/hits/615/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/XmlPoisonStrike,10,60/name/Chlorine Elemental/str/525/dex/123/int/72/hue/1153/tamable/true/hitsmaxseed/625/hits/625/ADD,0.1/MaxxiaScroll/
+
+AirElemental/ATTACH/XmlWhirlwind,20,1/name/Ammonia Elemental/str/535/dex/121/int/69/hue/1138/tamable/true/hitsmaxseed/635/hits/635/ADD,0.1/MaxxiaScroll/
+
+
+FireElemental/ATTACH/XmlWhirlwind,20,1/name/Blaze Elemental/str/400/dex/200/int/100/hue/1260/tamable/true/hitsmaxseed/800/hits/800/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/XmlPoisonStrike,10,60/name/Poison Elemental/str/300/dex/150/int/150/hue/1272/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/XmlPoisonStrike,10,60/name/Dark Elemental/str/350/dex/100/int/200/hue/1175/tamable/true/hitsmaxseed/700/hits/700/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/XmlLifeDrain,20,1/name/Rock Elemental/str/450/dex/50/int/50/hue/2406/tamable/true/hitsmaxseed/900/hits/900/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/XmlAstralStrike,30,10/name/Wind Elemental/str/ 250/dex/ 250/int/ 100/hue/ 1153/tamable/ true/hitsmaxseed/ 500/hits/ 500 ADD,0.1 MaxxiaScroll
+
+FireElemental/ATTACH/XmlDisarmor,1/name/Pyro Elemental/str/400/dex/120/int/60/hue/1155/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/XmlBladeStrike,25,30/name/Flare Elemental/str/350/dex/130/int/65/hue/1255/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/XmlStamDrain,20,1/name/Ember Elemental/str/450/dex/110/int/70/hue/1350/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/XmlLifeDrain,20,1/name/Inferno Elemental/str/500/dex/100/int/50/hue/1450/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/XmlDisarm,1/name/Blaze Elemental/str/375/dex/135/int/75/hue/1550/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/XmlDisarmor,1/name/Scorch Elemental/str/425/dex/125/int/80/hue/1650/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/XmlLightning,30,1/name/Magma Elemental/str/460/dex/115/int/85/hue/1750/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/XmlPoisonStrike,10,60/name/Char Elemental/str/415/dex/140/int/90/hue/1850/tamable/true/hitsmaxseed/555/hits/555/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/XmlWaterStrike,30,20/name/Hellfire Elemental/str/480/dex/105/int/55/hue/1950/tamable/true/hitsmaxseed/590/hits/590/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/XmlAstralStrike,30,10/name/Flame Elemental/str/390/dex/145/int/95/hue/2050/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/XmlStaticStrike,50,5/name/Heat Elemental/str/465/dex/110/int/60/hue/2150/tamable/true/hitsmaxseed/585/hits/585/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/XmlPoisonStrike,10,60/name/Burn Elemental/str/430/dex/135/int/65/hue/2250/tamable/true/hitsmaxseed/565/hits/565/ADD,0.1/MaxxiaScroll/
+
+FireElemental/ATTACH/XmlWhirlwind,20,1/name/Fury Elemental/str/440/dex/120/int/70/hue/2350/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlDisarmor,1/name/Phantom Lich/str/200/dex/80/int/400/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlBladeStrike,25,30/name/Blood Lich/str/250/dex/100/int/350/hue/33/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlLifeDrain,20,1/name/Bone Lich/str/300/dex/120/int/300/hue/1150/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlDisarm,1/name/Spectral Lich/str/150/dex/60/int/450/hue/1152/tamable/true/hitsmaxseed/250/hits/250/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlLightning,30,1/name/Twin Liches (two liches)/str 200/dex 100/int 400/hue 1154/tamable true/hitsmaxseed 300/hits 300/scale 0.5 (make them smaller)/ADD,0.1 MaxxiaScroll/
+
+Lich/ATTACH/XmlPoisonStrike,10,60/name/PoisonLich/str/250/dex/100/int/350/hue/1272/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlWaterStrike,30,20/name/DoomLich/str/300/dex/120/int/300/hue/1175/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlPoisonStrike,10,60/name/NightmareLich/str/200/dex80/int400/hue/1172/tamabletrue/hitsmaxseed/300/hits/300/sound/362/ADD,0.1MaxxiaScroll/
+
+Lich/ATTACH/XmlWhirlwind,20,1/name/Wind Lich /str 150/dex 60/int 450/hue 1156/tamable true/hitsmaxseed 250/hits 250/speed 0.3 (make them faster)/ADD,0.1 MaxxiaScroll/
+
+Lich/ATTACH/XmlDisarmor,1/name/Armorbane Lich/str/400/dex/120/int/180/hue/1150/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlBladeStrike,25,30/name/Bloodthirst Lich/str/420/dex/110/int/160/hue/1151/tamable/true/hitsmaxseed/610/hits/610/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlStamDrain,20,1/name/Thunderhead Lich/str/430/dex/100/int/170/hue/1152/tamable/true/hitsmaxseed/620/hits/620/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlLifeDrain,20,1/name/Crushshade Lich/str/440/dex/95/int/175/hue/1153/tamable/true/hitsmaxseed/630/hits/630/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlDisarm,1/name/Disarmer Lich/str/450/dex/105/int/165/hue/1154/tamable/true/hitsmaxseed/640/hits/640/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlDisarmor,1/name/Mountbane Lich/str/460/dex/90/int/190/hue/1155/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlLightning,30,1/name/Twinstrike Lich/str/470/dex/130/int/155/hue/1156/tamable/true/hitsmaxseed/660/hits/660/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlPoisonStrike,10,60/name/Plaguebearer Lich/str/480/dex/85/int/200/hue/1157/tamable/true/hitsmaxseed/670/hits/670/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlWaterStrike,30,20/name/Deathknell Lich/str/490/dex/80/int/210/hue/1158/tamable/true/hitsmaxseed/680/hits/680/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlAstralStrike,30,10/name/Wandering Lich/str/500/dex/125/int/140/hue/1159/tamable/true/hitsmaxseed/690/hits/690/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlStaticStrike,50,5/name/Paralyzer Lich/str/510/dex/115/int/145/hue/1160/tamable/true/hitsmaxseed/700/hits/700/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlPoisonStrike,10,60/name/Shadow Lich/str/520/dex/110/int/150/hue/1161/tamable/true/hitsmaxseed/710/hits/710/ADD,0.1/MaxxiaScroll/
+
+Lich/ATTACH/XmlWhirlwind,20,1/name/Whirlwind Lich/str/530/dex/105/int/135/hue/1162/tamable/true/hitsmaxseed/720/hits/720/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlDisarmor,1/name/Inferno Daemon/str/500/dex/150/int/100/hue/33/tamable/true/hitsmaxseed/1000/hits/1000/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlBladeStrike,25,30/name/Blood Daemon/str/450/dex/120/int/80/hue/38/tamable/true/hitsmaxseed/900/hits/900/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlLifeDrain,20,1/name/Crusher Daemon/str/600/dex/100/int/50/hue/1175/tamable/true/hitsmaxseed/1200/hits/1200/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlDisarm,1/name/Snatcher Daemon/str/400/dex/200/int/150/hue/1153/tamable/true/hitsmaxseed/800/hits/800/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlDisarmor,1/name/Rider Daemon/str/550/dex/130/int/70/hue/1157/tamable/true/hitsmaxseed/1100/hits/1100/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlDisarmor,1/name/Abyssal Daemon/str/500/dex/120/int/60/hue/1101/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlBladeStrike,25,30/name/Crimson Daemon/str/520/dex/115/int/55/hue/2118/tamable/true/hitsmaxseed/620/hits/620/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlStamDrain,20,1/name/Turbulent Daemon/str/510/dex/130/int/50/hue/1153/tamable/true/hitsmaxseed/630/hits/630/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlLifeDrain,20,1/name/Stoneheart Daemon/str/530/dex/110/int/65/hue/2946/tamable/true/hitsmaxseed/640/hits/640/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlDisarm,1/name/Silencing Daemon/str/540/dex/105/int/70/hue/2421/tamable/true/hitsmaxseed/650/hits/650/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlDisarmor,1/name/Groundbreaker Daemon/str/550/dex/100/int/75/hue/2535/tamable/true/hitsmaxseed/660/hits/660/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlLightning,30,1/name/Twilight Daemon/str/560/dex/95/int/80/hue/2591/tamable/true/hitsmaxseed/670/hits/670/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlPoisonStrike,10,60/name/Venomtail Daemon/str/570/dex/90/int/85/hue/1260/tamable/true/hitsmaxseed/680/hits/680/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlWaterStrike,30,20/name/Fateseer Daemon/str/580/dex/85/int/90/hue/2813/tamable/true/hitsmaxseed/690/hits/690/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlAstralStrike,30,10/name/Galespeed Daemon/str/590/dex/80/int/95/hue/2600/tamable/true/hitsmaxseed/700/hits/700/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlStaticStrike,50,5/name/Frosttouch Daemon/str/600/dex/75/int/100/hue/1152/tamable/true/hitsmaxseed/710/hits/710/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlPoisonStrike,10,60/name/Nightshade Daemon/str/610/dex/70/int/105/hue/1175/tamable/true/hitsmaxseed/720/hits/720/ADD,0.1/MaxxiaScroll/
+
+Daemon/ATTACH/XmlWhirlwind,20,1/name/Stormfury Daemon/str/620/dex/65/int/110/hue/2581/tamable/true/hitsmaxseed/730/hits/730/ADD,0.1/MaxxiaScroll/
+
+Gazer/ATTACH/XmlWhirlwind,20,1/name/Cyclone Gazer/str/200/dex/150/int/100/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Gazer/ATTACH/XmlPoisonStrike,10,60/name/Nightmare Gazer/str/250/dex/100/int/150/hue/1175/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Gazer/ATTACH/XmlWaterStrike,30,20/name/Doom Gazer/str/300/dex/50/int/200/hue/1172/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Gazer/ATTACH/XmlPoisonStrike,10,60/name/Poison Gazer/str/150/dex/200/int/100/hue/1272/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+<!-- Gazer Variant: Orion Gazer -->
+<Gazer/XmlDisarmor,1/name/Orion Gazer/str/320/dex/110/int/60/hue/100/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/>
+
+<!-- Gazer Variant: Nova Gazer -->
+<Gazer/XmlBladeStrike,25,30/name/Nova Gazer/str/310/dex/120/int/55/hue/110/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/>
+
+<!-- Gazer Variant: Nebula Gazer -->
+<Gazer/XmlStamDrain,20,1/name/Nebula Gazer/str/330/dex/105/int/58/hue/120/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/>
+
+<!-- Gazer Variant: Pulsar Gazer -->
+<Gazer/XmlLifeDrain,20,1/name/Pulsar Gazer/str/315/dex/115/int/57/hue/130/tamable/true/hitsmaxseed/515/hits/515/ADD,0.1/MaxxiaScroll/>
+
+<!-- Gazer Variant: Quasar Gazer -->
+<Gazer/XmlDisarm,1/name/Quasar Gazer/str/340/dex/100/int/62/hue/140/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/>
+
+<!-- Gazer Variant: Radiant Gazer -->
+<Gazer/XmlDisarmor,1/name/Radiant Gazer/str/325/dex/108/int/56/hue/150/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/>
+
+<!-- Gazer Variant: Stellar Gazer -->
+<Gazer/XmlLightning,30,1/name/Stellar Gazer/str/335/dex/112/int/59/hue/160/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/>
+
+<!-- Gazer Variant: Tempest Gazer -->
+<Gazer/XmlPoisonStrike,10,60/name/Tempest Gazer/str/320/dex/110/int/60/hue/170/tamable/true/hitsmaxseed/520/hits/520/ADD,0.1/MaxxiaScroll/>
+
+<!-- Gazer Variant: Umbra Gazer -->
+<Gazer/XmlWaterStrike,30,20/name/Umbra Gazer/str/330/dex/105/int/61/hue/180/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/>
+
+<!-- Gazer Variant: Vortex Gazer -->
+<Gazer/XmlAstralStrike,30,10/name/Vortex Gazer/str/310/dex/118/int/55/hue/190/tamable/true/hitsmaxseed/510/hits/510/ADD,0.1/MaxxiaScroll/>
+
+<!-- Gazer Variant: Warp Gazer -->
+<Gazer/XmlStaticStrike,50,5/name/Warp Gazer/str/335/dex/107/int/58/hue/200/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/>
+
+<!-- Gazer Variant: Xeno Gazer -->
+<Gazer/XmlPoisonStrike,10,60/name/Xeno Gazer/str/340/dex/102/int/63/hue/210/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/>
+
+<!-- Gazer Variant: Zenith Gazer -->
+<Gazer/XmlWhirlwind,20,1/name/Zenith Gazer/str/325/dex/111/int/57/hue/220/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/>
+
+Succubus/ATTACH/XmlDisarmor,1/name/Scarlet Succubus/str/200/dex/150/int/100/hue/33/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Succubus/ATTACH/XmlLightning,30,1/name/Sapphire Succubus/str/150/dex/200/int/150/hue/88/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Succubus/ATTACH/XmlPoisonStrike,10,60/name/Emerald Succubus/str/100/dex/250/int/200/hue/68/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Succubus/ATTACH/XmlWaterStrike,30,20/name/Violet Succubus/str/250/dex/100/int/250/hue/23/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+<!-- Venus Succubus with ArmorIgnore ability -->
+Succubus/ATTACH/XmlDisarmor,1/name/Venus Succubus/str/350/dex/120/int/80/hue/1001/tamable/true/hitsmaxseed/700/hits/700/ADD,0.1/MaxxiaScroll/
+
+<!-- Gaia Succubus with BleedAttack ability -->
+Succubus/ATTACH/XmlBladeStrike,25,30/name/Gaia Succubus/str/400/dex/110/int/70/hue/1002/tamable/true/hitsmaxseed/720/hits/720/ADD,0.1/MaxxiaScroll/
+
+<!-- Hera Succubus with ConcussionBlow ability -->
+Succubus/ATTACH/XmlStamDrain,20,1/name/Hera Succubus/str/330/dex/130/int/90/hue/1003/tamable/true/hitsmaxseed/680/hits/680/ADD,0.1/MaxxiaScroll/
+
+<!-- Luna Succubus with CrushingBlow ability -->
+Succubus/ATTACH/XmlLifeDrain,20,1/name/Luna Succubus/str/380/dex/140/int/60/hue/1004/tamable/true/hitsmaxseed/750/hits/750/ADD,0.1/MaxxiaScroll/
+
+<!-- Solara Succubus with Disarm ability -->
+Succubus/ATTACH/XmlDisarm,1/name/Solara Succubus/str/360/dex/115/int/85/hue/1005/tamable/true/hitsmaxseed/710/hits/710/ADD,0.1/MaxxiaScroll/
+
+<!-- Stella Succubus with Dismount ability -->
+Succubus/ATTACH/XmlDisarmor,1/name/Stella Succubus/str/340/dex/125/int/95/hue/1006/tamable/true/hitsmaxseed/690/hits/690/ADD,0.1/MaxxiaScroll/
+
+<!-- Orion Succubus with DoubleStrike ability -->
+Succubus/ATTACH/XmlLightning,30,1/name/Orion Succubus/str/390/dex/110/int/80/hue/1007/tamable/true/hitsmaxseed/730/hits/730/ADD,0.1/MaxxiaScroll/
+
+<!-- Lyra Succubus with InfectiousStrike ability -->
+Succubus/ATTACH/XmlPoisonStrike,10,60/name/Lyra Succubus/str/375/dex/135/int/70/hue/1008/tamable/true/hitsmaxseed/740/hits/740/ADD,0.1/MaxxiaScroll/
+
+<!-- Nova Succubus with MortalStrike ability -->
+Succubus/ATTACH/XmlWaterStrike,30,20/name/Nova Succubus/str/365/dex/120/int/75/hue/1009/tamable/true/hitsmaxseed/705/hits/705/ADD,0.1/MaxxiaScroll/
+
+<!-- Vega Succubus with MovingShot ability -->
+Succubus/ATTACH/XmlAstralStrike,30,10/name/Vega Succubus/str/355/dex/130/int/65/hue/1010/tamable/true/hitsmaxseed/715/hits/715/ADD,0.1/MaxxiaScroll/
+
+<!-- Electra Succubus with ShadowStrike ability -->
+Succubus/ATTACH/XmlPoisonStrike,10,60/name/Electra Succubus/str/385/dex/125/int/70/hue/1011/tamable/true/hitsmaxseed/735/hits/735/ADD,0.1/MaxxiaScroll/
+
+<!-- Cassiopeia Succubus with WhirlwindAttack ability -->
+Succubus/ATTACH/XmlWhirlwind,20,1/name/Cassiopeia Succubus/str/395/dex/115/int/90/hue/1012/tamable/true/hitsmaxseed/745/hits/745/ADD,0.1/MaxxiaScroll/
+
+
+Shade/ATTACH/XmlDisarmor,1/name/Shadow Shade/str/200/dex/150/int/100/hue/1109/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Shade/ATTACH/XmlBladeStrike,25,30/name/Blood Shade/str/250/dex/100/int/50/hue/33/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Shade/ATTACH/XmlLifeDrain,20,1/name/Crusher Shade/str/300/dex/50/int/50/hue/1175/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Shade/ATTACH/XmlDisarm,1/name/Sneaky Shade/str/150/dex/200/int/100/hue/1153/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+Shade/ATTACH/XmlDisarmor,1/name/Rider Shade/str/200/dex/100/int/50/hue/1157/tamable/true/hitsmaxseed/ 400/hits 400 ADD 0.1 MaxxiaScroll
+
+<!-- Shade named Astral Shade with the special ability ArmorIgnore -->
+Shade/ATTACH/XmlDisarmor,1/name/Astral Shade/str/400/dex/80/int/60/hue/1102/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+<!-- Shade named Bleeding Wraith with the special ability BleedAttack -->
+Shade/ATTACH/XmlBladeStrike,25,30/name/Bleeding Wraith/str/380/dex/85/int/65/hue/1103/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+<!-- Shade named Concussion Phantom with the special ability ConcussionBlow -->
+Shade/ATTACH/XmlStamDrain,20,1/name/Concussion Phantom/str/390/dex/90/int/70/hue/1104/tamable/true/hitsmaxseed/545/hits/545/ADD,0.1/MaxxiaScroll/
+
+<!-- Shade named Crushshade with the special ability CrushingBlow -->
+Shade/ATTACH/XmlLifeDrain,20,1/name/Crushshade/str/410/dex/75/int/65/hue/1105/tamable/true/hitsmaxseed/555/hits/555/ADD,0.1/MaxxiaScroll/
+
+<!-- Shade named Disarming Shadow with the special ability Disarm -->
+Shade/ATTACH/XmlDisarm,1/name/Disarming Shadow/str/375/dex/95/int/70/hue/1106/tamable/true/hitsmaxseed/530/hits/530/ADD,0.1/MaxxiaScroll/
+
+<!-- Shade named Equestrian Ghost with the special ability Dismount -->
+Shade/ATTACH/XmlDisarmor,1/name/Equestrian Ghost/str/365/dex/100/int/75/hue/1107/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+<!-- Shade named Double Phantom with the special ability DoubleStrike -->
+Shade/ATTACH/XmlLightning,30,1/name/Double Phantom/str/400/dex/80/int/60/hue/1108/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+<!-- Shade named Plague Wraith with the special ability InfectiousStrike -->
+Shade/ATTACH/XmlPoisonStrike,10,60/name/Plague Wraith/str/385/dex/85/int/70/hue/1109/tamable/true/hitsmaxseed/535/hits/535/ADD,0.1/MaxxiaScroll/
+
+<!-- Shade named Deathshade with the special ability MortalStrike -->
+Shade/ATTACH/XmlWaterStrike,30,20/name/Deathshade/str/415/dex/78/int/67/hue/1110/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+<!-- Shade named Swift Ghost with the special ability MovingShot -->
+Shade/ATTACH/XmlAstralStrike,30,10/name/Swift Ghost/str/370/dex/105/int/75/hue/1111/tamable/true/hitsmaxseed/525/hits/525/ADD,0.1/MaxxiaScroll/
+
+<!-- Shade named Paralyzing Wisp with the special ability ParalyzingBlow -->
+Shade/ATTACH/XmlStaticStrike,50,5/name/Paralyzing Wisp/str/395/dex/82/int/73/hue/1112/tamable/true/hitsmaxseed/545/hits/545/ADD,0.1/MaxxiaScroll/
+
+<!-- Shade named Nightstalker with the special ability ShadowStrike -->
+Shade/ATTACH/XmlPoisonStrike,10,60/name/Nightstalker/str/405/dex/80/int/65/hue/1113/tamable/true/hitsmaxseed/552/hits/552/ADD,0.1/MaxxiaScroll/
+
+<!-- Shade named Cyclone Spirit with the special ability WhirlwindAttack -->
+Shade/ATTACH/XmlWhirlwind,20,1/name/Cyclone Spirit/str/390/dex/88/int/72/hue/1114/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+
+
+Gargoyle/ATTACH/XmlDisarmor,1/name/Blaze Gargoyle/str/200/dex/150/int/100/hue/1260/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlBladeStrike,25,30/name/Blood Gargoyle/str/250/dex/100/int/50/hue/33/tamable/true/hitsmaxseed/450/hits/450/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlLifeDrain,20,1/name/Crystal Gargoyle/str/300/dex/50/int/50/hue/1153/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlDisarm,1/name/Dark Gargoyle/str/150/dex/200/int/100/hue/1175/tamable/true/hitsmaxseed/350/hits/350/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlDisarmor,1/name/Dragon Gargoyle/str/200/dex/100/int/150/hue/48/tamable/true/hitsmaxseed/400/hits/400 ADD,0.1 MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlLightning,30,1/name/Emerald Gargoyle/str/250/dex/150/int/50/hue/68 tamable/true/hitsmaxseed/450/hits/450/ADD,0.1 MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlDisarmor,1/name/Solar Gargoyle/str/350/dex/115/int/70/hue/48/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlBladeStrike,25,30/name/Lunar Gargoyle/str/330/dex/120/int/60/hue/44/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlStamDrain,20,1/name/Terra Gargoyle/str/375/dex/105/int/55/hue/41/tamable/true/hitsmaxseed/620/hits/620/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlLifeDrain,20,1/name/Celestial Gargoyle/str/340/dex/110/int/80/hue/46/tamable/true/hitsmaxseed/590/hits/590/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlDisarm,1/name/Void Gargoyle/str/360/dex/100/int/85/hue/43/tamable/true/hitsmaxseed/580/hits/580/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlDisarmor,1/name/Wind Gargoyle/str/335/dex/125/int/65/hue/45/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlLightning,30,1/name/Tidal Gargoyle/str/355/dex/115/int/75/hue/47/tamable/true/hitsmaxseed/610/hits/610/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlPoisonStrike,10,60/name/Flame Gargoyle/str/340/dex/105/int/90/hue/42/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlWaterStrike,30,20/name/Shadow Gargoyle/str/370/dex/95/int/80/hue/40/tamable/true/hitsmaxseed/630/hits/630/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlAstralStrike,30,10/name/Zenith Gargoyle/str/350/dex/120/int/70/hue/49/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlStaticStrike,50,5/name/Stone Gargoyle/str/380/dex/100/int/60/hue/38/tamable/true/hitsmaxseed/640/hits/640/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlPoisonStrike,10,60/name/Eclipse Gargoyle/str/330/dex/110/int/85/hue/39/tamable/true/hitsmaxseed/570/hits/570/ADD,0.1/MaxxiaScroll/
+
+Gargoyle/ATTACH/XmlWhirlwind,20,1/name/Cyclone Gargoyle/str/360/dex/105/int/75/hue/50/tamable/true/hitsmaxseed/590/hits/590/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/XmlDisarmor,1/name/Blade Knight/str/250/dex/150/int/50/hue/1153/tamable/true/hitsmaxseed/400/hits/400/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/XmlBladeStrike,25,30/name/Blood Knight/str/300/dex/100/int/50/hue/33/tamable/true/hitsmaxseed/500/hits/500/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/XmlLifeDrain,20,1/name/Crusher Knight/str/350/dex/50/int/50/hue/1175/tamable/true/hitsmaxseed/600/hits/600/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/XmlDisarm,1/name/Dagger Knight/str/200/dex/200/int/50/hue/1109/tamable/true/hitsmaxseed/300/hits/300/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/XmlDisarmor,1/name/Spectral Knight/str/320/dex/105/int/55/hue/1150/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/XmlBladeStrike,25,30/name/Crimson Knight/str/310/dex/110/int/60/hue/37/tamable/true/hitsmaxseed/540/hits/540/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/XmlStamDrain,20,1/name/Mystic Knight/str/315/dex/115/int/65/hue/1258/tamable/true/hitsmaxseed/545/hits/545/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/XmlLifeDrain,20,1/name/Phantom Knight/str/330/dex/95/int/57/hue/1109/tamable/true/hitsmaxseed/560/hits/560/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/XmlDisarm,1/name/Silent Knight/str/325/dex/102/int/58/hue/902/tamable/true/hitsmaxseed/555/hits/555/ADD,0.1/MaxxiaScroll/
+
+BoneKnight/ATTACH/XmlDisarmor,1/name/Eclipse Knight/str/320/dex/105/int/59/hue/1175/tamable/true/hitsmaxseed/550/hits/550/ADD,0.1/MaxxiaScroll/
+
+
+

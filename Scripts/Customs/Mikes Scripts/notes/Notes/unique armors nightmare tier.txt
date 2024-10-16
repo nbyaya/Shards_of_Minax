@@ -1,0 +1,304 @@
+<PlateChest/name/Spectral Guardian's Chest/hue/RND,1,3000/BaseArmorrating/RND,50,75/AbsorptionAttributes.EaterEnergy/25/ArmorAttributes.SelfRepair/10/ArmorAttributes.DurabilityBonus/50/attributes.bonusstr/15/attributes.bonusint/5/skillbonuses.skill_1_name/SpiritSpeak/skillbonuses.skill_1_value/10/skillbonuses.skill_2_name/Necromancy/skillbonuses.skill_2_value/10/PhysicalBonus/5/FireBonus/15/ColdBonus/10/EnergyBonus/20/PoisonBonus/5/ATTACH/XmlLevelItem>
+
+<LeatherGloves/name/Archmage's Gloves/hue/RND,1,3000/BaseArmorrating/RND,10,50/AbsorptionAttributes.CastingFocus/5/ArmorAttributes.MageArmor/1/attributes.bonusint/20/attributes.RegenMana/2/attributes.CastSpeed/1/skillbonuses.skill_1_name/Magery/skillbonuses.skill_1_value/15/skillbonuses.skill_2_name/EvalInt/skillbonuses.skill_2_value/15/PhysicalBonus/8/EnergyBonus/8/FireBonus/8/ColdBonus/8/PoisonBonus/8/ATTACH/XmlLevelItem>
+
+<LeatherNinjaPants/name/Shadowdancer's Pants/hue/RND,1,3000/BaseArmorrating/RND,15,60/ArmorAttributes.LowerStatReq/20/attributes.bonusdex/25/attributes.NightSight/1/skillbonuses.skill_1_name/Stealth/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Ninjitsu/skillbonuses.skill_2_value/15/skillbonuses.skill_3_name/Hiding/skillbonuses.skill_3_value/10/PhysicalBonus/10/ColdBonus/5/FireBonus/5/EnergyBonus/15/PoisonBonus/5/ATTACH/XmlLevelItem>
+
+<Buckler/name/Dragonscale Buckler/hue/RND,500,750/BaseArmorrating/RND,25,50/AbsorptionAttributes.EaterFire/30/ArmorAttributes.SelfRepair/5/attributes.ReflectPhysical/5/skillbonuses.skill_1_name/Parry/skillbonuses.skill_1_value/20/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/10/PhysicalBonus/15/ColdBonus/0/FireBonus/25/EnergyBonus/10/PoisonBonus/0/ATTACH/XmlLevelItem>
+
+<PlateHelm/name/Crusader's Helmet/hue/RND,1,3000/BaseArmorrating/RND,40,70/ArmorAttributes.ReactiveParalyze/1/attributes.BonusStr/10/attributes.BonusHits/5/skillbonuses.skill_1_name/Chivalry/skillbonuses.skill_1_value/10/skillbonuses.skill_2_name/Focus/skillbonuses.skill_2_value/5/skillbonuses.skill_3_name/Healing/skillbonuses.skill_3_value/5/skillbonuses.skill_4_name/Tactics/skillbonuses.skill_4_value/5/PhysicalBonus/12/FireBonus/5/ColdBonus/5/EnergyBonus/5/PoisonBonus/13/ATTACH/XmlLevelItem>
+
+<PlateHelm/name/Helm of the Abyss/hue/RND,1,3000/BaseArmorrating/RND,65,75/ArmorAttributes.LowerStatReq/50/ArmorAttributes.DurabilityBonus/100/attributes.AttackChance/15/attributes.BonusHits/40/attributes.DefendChance/15/attributes.RegenHits/5/skillbonuses.skill_1_name/Tactics/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Anatomy/skillbonuses.skill_2_value/30/PhysicalBonus/20/FireBonus/15/ColdBonus/15/EnergyBonus/20/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<PlateChest/name/Chestplate of Eternal Flame/hue/RND,1,3000/BaseArmorrating/RND,70,75/ArmorAttributes.MageArmor/1/ArmorAttributes.SelfRepair/10/attributes.Luck/100/attributes.BonusStr/20/attributes.ReflectPhysical/10/skillbonuses.skill_1_name/Magery/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/EvalInt/skillbonuses.skill_2_value/40/skillbonuses.skill_3_name/ResistSpells/skillbonuses.skill_3_value/30/PhysicalBonus/10/FireBonus/25/ColdBonus/10/EnergyBonus/10/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateGloves/name/Gauntlets of the Master Artisan/hue/RND,1,3000/BaseArmorrating/RND,60,70/ArmorAttributes.LowerStatReq/40/attributes.BonusDex/20/attributes.BonusInt/20/attributes.EnhancePotions/25/attributes.CastSpeed/1/attributes.CastRecovery/1/skillbonuses.skill_1_name/Blacksmith/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tailoring/skillbonuses.skill_2_value/30/skillbonuses.skill_3_name/Tinkering/skillbonuses.skill_3_value/30/PhysicalBonus/15/ColdBonus/10/FireBonus/15/EnergyBonus/15/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<PlateLegs/name/Greaves of the Fallen Stars/hue/RND,1,3000/BaseArmorrating/RND,65,75/AbsorptionAttributes.EaterEnergy/40/ArmorAttributes.LowerStatReq/30/attributes.BonusStam/35/attributes.BonusMana/35/attributes.NightSight/1/skillbonuses.skill_1_name/Chivalry/skillbonuses.skill_1_value/40/skillbonuses.skill_2_name/Bushido/skillbonuses.skill_2_value/50/skillbonuses.skill_3_name/Ninjitsu/skillbonuses.skill_3_value/30/PhysicalBonus/18/FireBonus/12/ColdBonus/12/EnergyBonus/18/PoisonBonus/12/ATTACH/XmlLevelItem>
+
+<PlateChest/name/Chef's Aegis Apron/hue/488/BaseArmorrating/RND,65,75/AbsorptionAttributes.EaterFire/40/ArmorAttributes.DurabilityBonus/100/ArmorAttributes.LowerStatReq/50/attributes.BonusStr/20/attributes.Luck/200/attributes.EnhancePotions/50/skillbonuses.skill_1_name/Cooking/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/TasteID/skillbonuses.skill_2_value/40/PhysicalBonus/20/FireBonus/20/ColdBonus/15/EnergyBonus/25/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<LeatherGloves/name/Sous-chef's Precision Gloves/hue/1153/BaseArmorrating/RND,18,22/ArmorAttributes.SelfRepair/10/attributes.BonusDex/30/attributes.BonusInt/20/attributes.ReflectPhysical/15/attributes.DefendChance/15/skillbonuses.skill_1_name/Cooking/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Fishing/skillbonuses.skill_2_value/30/skillbonuses.skill_3_name/Alchemy/skillbonuses.skill_3_value/30/PhysicalBonus/10/FireBonus/10/ColdBonus/25/EnergyBonus/10/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<LeatherChest/name/Baker's Resilient Apron/hue/1174/BaseArmorrating/RND,35,45/ArmorAttributes.MageArmor/1/ArmorAttributes.SelfRepair/20/attributes.BonusStr/25/attributes.LowerManaCost/15/attributes.EnhancePotions/25/skillbonuses.skill_1_name/Cooking/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/TasteID/skillbonuses.skill_2_value/40/skillbonuses.skill_3_name/ItemID/skillbonuses.skill_3_value/30/PhysicalBonus/15/FireBonus/5/ColdBonus/20/EnergyBonus/15/PoisonBonus/20/ATTACH/XmlLevelItem>
+
+<ChainLegs/name/Grillmaster's Chain Leggings/hue/1137/BaseArmorrating/RND,30,40/ArmorAttributes.LowerStatReq/30/attributes.BonusStam/25/attributes.BonusStr/20/attributes.AttackChance/15/skillbonuses.skill_1_name/Cooking/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Fishing/skillbonuses.skill_2_value/30/skillbonuses.skill_3_name/Carpentry/skillbonuses.skill_3_value/30/PhysicalBonus/20/FireBonus/20/ColdBonus/10/EnergyBonus/10/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<Helmet/name/Alchemist's Vision Helmet/hue/RND,1,3000/BaseArmorrating/RND,60,75/ArmorAttributes.LowerStatReq/50/ArmorAttributes.SelfRepair/10/attributes.BonusInt/25/attributes.RegenMana/5/attributes.Luck/200/skillbonuses.skill_1_name/Alchemy/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/TasteID/skillbonuses.skill_2_value/30/PhysicalBonus/10/FireBonus/10/ColdBonus/10/EnergyBonus/15/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<PlateChest/name/Philosopher's Stone PlateChest/hue/RND,1,3000/BaseArmorrating/RND,65,80/ArmorAttributes.DurabilityBonus/100/ArmorAttributes.MageArmor/1/attributes.BonusMana/40/attributes.LowerManaCost/20/attributes.LowerRegCost/20/skillbonuses.skill_1_name/Alchemy/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Magery/skillbonuses.skill_2_value/30/PhysicalBonus/15/FireBonus/5/ColdBonus/15/EnergyBonus/10/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<LeatherGloves/name/Elixir's Grasp Gloves/hue/RND,1,3000/BaseArmorrating/RND,20,50/ArmorAttributes.LowerStatReq/40/attributes.CastSpeed/1/attributes.BonusDex/30/attributes.EnhancePotions/50/skillbonuses.skill_1_name/Alchemy/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Healing/skillbonuses.skill_2_value/30/PhysicalBonus/8/EnergyBonus/12/FireBonus/8/ColdBonus/12/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<LeatherLegs/name/Transmutation ThighBoots/hue/RND,1,3000/BaseArmorrating/RND,30,60/attributes.NightSight/1/attributes.BonusStam/30/attributes.ReflectPhysical/15/skillbonuses.skill_1_name/Alchemy/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Inscribe/skillbonuses.skill_2_value/30/PhysicalBonus/10/FireBonus/15/ColdBonus/5/EnergyBonus/10/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<RingmailArms/name/Potionmaster's RingmailArms/hue/RND,1,3000/BaseArmorrating/RND,45,65/ArmorAttributes.MageArmor/1/attributes.BonusHits/50/attributes.RegenHits/5/skillbonuses.skill_1_name/Alchemy/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/ItemID/skillbonuses.skill_2_value/30/PhysicalBonus/12/FireBonus/8/ColdBonus/8/EnergyBonus/12/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<Buckler/name/Mystic's Guard Buckler/hue/RND,1,3000/BaseArmorrating/RND,40,55/ArmorAttributes.SelfRepair/10/attributes.SpellChanneling/1/attributes.DefendChance/15/skillbonuses.skill_1_name/Alchemy/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/MagicResist/skillbonuses.skill_2_value/30/PhysicalBonus/10/ColdBonus/10/FireBonus/10/EnergyBonus/15/PoisonBonus/5/ATTACH/XmlLevelItem>
+
+<PlateChest/name/Grandmaster's Parrying Chest/hue/RND,1,3000/BaseArmorrating/RND,70,100/AbsorptionAttributes.ResonanceKinetic/20/ArmorAttributes.LowerStatReq/50/ArmorAttributes.DurabilityBonus/100/attributes.BonusDex/25/attributes.DefendChance/15/skillbonuses.skill_1_name/Parry/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/30/PhysicalBonus/20/ColdBonus/15/FireBonus/10/EnergyBonus/25/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<Buckler/name/Defender's Enchanted Buckler/hue/RND,1,3000/BaseArmorrating/RND,60,90/AbsorptionAttributes.CastingFocus/10/ArmorAttributes.SelfRepair/20/attributes.AttackChance/15/attributes.BonusStr/20/skillbonuses.skill_1_name/Parry/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Wrestling/skillbonuses.skill_2_value/30/PhysicalBonus/25/EnergyBonus/10/FireBonus/20/ColdBonus/15/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateArms/name/Warden of the West's Arms/hue/RND,2001,3000/BaseArmorrating/RND,65,95/ArmorAttributes.MageArmor/1/ArmorAttributes.ReactiveParalyze/1/attributes.BonusStam/20/attributes.ReflectPhysical/10/skillbonuses.skill_1_name/Parry/skillbonuses.skill_1_value/45/skillbonuses.skill_2_name/Swords/skillbonuses.skill_2_value/30/PhysicalBonus/18/FireBonus/12/ColdBonus/18/EnergyBonus/12/PoisonBonus/20/ATTACH/XmlLevelItem>
+
+<PlateLegs/name/Champion's Leggings of Parry/hue/RND,3001,4000/BaseArmorrating/RND,65,95/ArmorAttributes.LowerStatReq/30/attributes.BonusDex/30/attributes.DefendChance/20/skillbonuses.skill_1_name/Parry/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Anatomy/skillbonuses.skill_2_value/35/PhysicalBonus/20/EnergyBonus/15/FireBonus/10/ColdBonus/20/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<PlateHelm/name/Duelist's Full Helm/hue/RND,4001,5000/BaseArmorrating/RND,55,85/AbsorptionAttributes.EaterKinetic/15/ArmorAttributes.MageArmor/1/attributes.BonusHits/30/attributes.AttackChance/10/skillbonuses.skill_1_name/Parry/skillbonuses.skill_1_value/45/skillbonuses.skill_2_name/Fencing/skillbonuses.skill_2_value/30/PhysicalBonus/15/EnergyBonus/20/FireBonus/15/ColdBonus/10/PoisonBonus/20/ATTACH/XmlLevelItem>
+
+<PlateGloves/name/Guardian's Platemail Gloves/hue/RND,5001,6000/BaseArmorrating/RND,50,80/ArmorAttributes.LowerStatReq/40/ArmorAttributes.SelfRepair/15/attributes.BonusStr/20/attributes.DefendChance/25/skillbonuses.skill_1_name/Parry/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/30/PhysicalBonus/12/EnergyBonus/18/FireBonus/12/ColdBonus/18/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<LeatherChest/name/Mendicant's Mystic Robe/hue/RND,800,950/BaseArmorrating/RND,65,85/AbsorptionAttributes.EaterEnergy/40/ArmorAttributes.SelfRepair/20/ArmorAttributes.DurabilityBonus/100/attributes.LowerManaCost/20/attributes.LowerRegCost/20/skillbonuses.skill_1_name/Begging/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Magery/skillbonuses.skill_2_value/30/PhysicalBonus/15/FireBonus/20/ColdBonus/15/EnergyBonus/25/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<PlateGorget/name/Pauper's Plate Gorget/hue/RND,100,200/BaseArmorrating/RND,70,90/ArmorAttributes.LowerStatReq/50/attributes.AttackChance/15/attributes.DefendChance/15/skillbonuses.skill_1_name/Begging/skillbonuses.skill_1_value/40/skillbonuses.skill_2_name/DetectHidden/skillbonuses.skill_2_value/30/PhysicalBonus/20/FireBonus/15/ColdBonus/10/EnergyBonus/20/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<LeatherLegs/name/Beggar's Bond Leggings/hue/RND,300,450/BaseArmorrating/RND,55,80/attributes.BonusDex/25/attributes.BonusStam/20/attributes.EnhancePotions/25/skillbonuses.skill_1_name/Begging/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Stealth/skillbonuses.skill_2_value/30/PhysicalBonus/18/FireBonus/12/ColdBonus/22/EnergyBonus/18/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateArms/name/Vagrant's Vambraces/hue/RND,650,850/BaseArmorrating/RND,60,85/ArmorAttributes.SelfRepair/10/attributes.BonusHits/30/attributes.RegenHits/5/skillbonuses.skill_1_name/Begging/skillbonuses.skill_1_value/45/skillbonuses.skill_2_name/ArmsLore/skillbonuses.skill_2_value/30/PhysicalBonus/25/FireBonus/10/ColdBonus/20/EnergyBonus/15/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateHelm/name/Sovereign's Streetwise Helmet/hue/RND,50,150/BaseArmorrating/RND,60,90/ArmorAttributes.MageArmor/1/attributes.NightSight/1/attributes.ReflectPhysical/20/skillbonuses.skill_1_name/Begging/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/35/PhysicalBonus/10/FireBonus/25/ColdBonus/15/EnergyBonus/20/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<BronzeShield/name/Almsman's Aegis/hue/RND,500,700/BaseArmorrating/RND,65,85/ArmorAttributes.LowerStatReq/40/attributes.SpellChanneling/1/attributes.DefendChance/20/skillbonuses.skill_1_name/Begging/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Parry/skillbonuses.skill_2_value/35/PhysicalBonus/20/FireBonus/20/ColdBonus/10/EnergyBonus/20/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<PlateChest/name/Forge Master's Chest/hue/RND,100,200/BaseArmorrating/RND,60,80/ArmorAttributes.DurabilityBonus/100/ArmorAttributes.LowerStatReq/50/attributes.BonusStr/25/attributes.BonusStam/20/attributes.EnhancePotions/25/skillbonuses.skill_1_name/Blacksmith/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/ArmsLore/skillbonuses.skill_2_value/30/PhysicalBonus/20/FireBonus/15/ColdBonus/10/EnergyBonus/25/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateLegs/name/Anvil's Guard Legs/hue/RND,200,300/BaseArmorrating/RND,55,75/ArmorAttributes.SelfRepair/20/ArmorAttributes.MageArmor/1/attributes.BonusStr/20/attributes.RegenHits/5/attributes.LowerManaCost/15/skillbonuses.skill_1_name/Tinkering/skillbonuses.skill_1_value/40/skillbonuses.skill_2_name/Carpentry/skillbonuses.skill_2_value/30/PhysicalBonus/25/FireBonus/10/ColdBonus/20/EnergyBonus/15/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateGloves/name/Smith's Precision Gauntlets/hue/RND,300,400/BaseArmorrating/RND,45,65/ArmorAttributes.SelfRepair/15/ArmorAttributes.LowerStatReq/30/attributes.AttackChance/15/attributes.WeaponDamage/20/skillbonuses.skill_1_name/Fletching/skillbonuses.skill_1_value/30/skillbonuses.skill_2_name/Lumberjacking/skillbonuses.skill_2_value/30/PhysicalBonus/15/FireBonus/20/ColdBonus/15/EnergyBonus/10/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<PlateHelm/name/Hammerstrike Helm/hue/RND,400,500/BaseArmorrating/RND,50,70/ArmorAttributes.DurabilityBonus/80/attributes.BonusDex/15/attributes.BonusHits/10/attributes.WeaponSpeed/10/skillbonuses.skill_1_name/Mining/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/ItemID/skillbonuses.skill_2_value/30/PhysicalBonus/20/FireBonus/25/ColdBonus/15/EnergyBonus/10/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<ChainCoif/name/Bellows-Powered Coif/hue/RND,500,600/BaseArmorrating/RND,40,60/ArmorAttributes.LowerStatReq/40/ArmorAttributes.SelfRepair/10/attributes.BonusStam/20/attributes.RegenStam/10/skillbonuses.skill_1_name/Tailoring/skillbonuses.skill_1_value/40/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/30/PhysicalBonus/15/ColdBonus/10/FireBonus/30/EnergyBonus/20/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<BronzeShield/name/Molten Shaper's Shield/hue/RND,600,700/BaseArmorrating/RND,55,75/AbsorptionAttributes.EaterFire/50/ArmorAttributes.ReactiveParalyze/1/attributes.DefendChance/20/attributes.ReflectPhysical/15/skillbonuses.skill_1_name/Blacksmith/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Parry/skillbonuses.skill_2_value/30/PhysicalBonus/25/FireBonus/35/ColdBonus/5/EnergyBonus/15/PoisonBonus/5/ATTACH/XmlLevelItem>
+
+<PlateChest/name/Samurai's Destiny Hauberk/hue/RND,300,800/BaseArmorrating/RND,70,100/AbsorptionAttributes.EaterKinetic/40/ArmorAttributes.DurabilityBonus/100/ArmorAttributes.LowerStatReq/50/attributes.BonusStr/30/attributes.BonusStam/30/skillbonuses.skill_1_name/Bushido/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/40/PhysicalBonus/20/FireBonus/15/ColdBonus/10/EnergyBonus/25/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<PlateLegs/name/Kensei's Resolve Greaves/hue/RND,300,800/BaseArmorrating/RND,65,95/ArmorAttributes.MageArmor/1/ArmorAttributes.SelfRepair/20/attributes.BonusDex/35/attributes.BonusHits/20/skillbonuses.skill_1_name/Bushido/skillbonuses.skill_1_value/40/skillbonuses.skill_2_name/Parry/skillbonuses.skill_2_value/30/PhysicalBonus/25/FireBonus/10/ColdBonus/15/EnergyBonus/15/PoisonBonus/20/ATTACH/XmlLevelItem>
+
+<PlateHelm/name/Shogun's Wisdom Kabuto/hue/RND,300,800/BaseArmorrating/RND,60,90/ArmorAttributes.ReactiveParalyze/1/attributes.BonusInt/25/attributes.RegenMana/5/skillbonuses.skill_1_name/Bushido/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/30/skillbonuses.skill_3_name/Meditation/skillbonuses.skill_3_value/30/PhysicalBonus/15/ColdBonus/20/FireBonus/20/EnergyBonus/15/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<PlateArms/name/Ronin's Spirit Kote/hue/RND,300,800/BaseArmorrating/RND,55,85/attributes.BonusStr/20/attributes.BonusStam/20/ArmorAttributes.SelfRepair/15/skillbonuses.skill_1_name/Bushido/skillbonuses.skill_1_value/45/skillbonuses.skill_2_name/Anatomy/skillbonuses.skill_2_value/30/skillbonuses.skill_3_name/Healing/skillbonuses.skill_3_value/30/PhysicalBonus/18/FireBonus/22/ColdBonus/18/EnergyBonus/12/PoisonBonus/20/ATTACH/XmlLevelItem>
+
+<PlateGorget/name/Warlord's Embrace Yodare-Kake/hue/RND,300,800/BaseArmorrating/RND,50,80/ArmorAttributes.LowerStatReq/30/attributes.BonusStr/15/attributes.BonusHits/20/ArmorAttributes.DurabilityBonus/75/skillbonuses.skill_1_name/Bushido/skillbonuses.skill_1_value/45/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/30/PhysicalBonus/20/FireBonus/20/ColdBonus/15/EnergyBonus/20/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<PlateGloves/name/Daimyo's Honor Tekko/hue/RND,300,800/BaseArmorrating/RND,50,80/attributes.BonusDex/20/attributes.AttackChance/15/ArmorAttributes.LowerStatReq/40/ArmorAttributes.SelfRepair/10/skillbonuses.skill_1_name/Bushido/skillbonuses.skill_1_value/40/skillbonuses.skill_2_name/Wrestling/skillbonuses.skill_2_value/30/PhysicalBonus/17/FireBonus/17/ColdBonus/17/EnergyBonus/17/PoisonBonus/17/ATTACH/XmlLevelItem>
+
+<PlateChest/name/Archon's Mystic Robe/hue/RND,1,3000/BaseArmorrating/RND,60,75/AbsorptionAttributes.CastingFocus/10/ArmorAttributes.MageArmor/1/ArmorAttributes.LowerStatReq/50/attributes.bonusint/25/attributes.LowerManaCost/20/attributes.SpellDamage/15/skillbonuses.skill_1_name/Magery/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/EvalInt/skillbonuses.skill_2_value/50/skillbonuses.skill_3_name/Inscribe/skillbonuses.skill_3_value/30/PhysicalBonus/10/FireBonus/20/ColdBonus/20/EnergyBonus/20/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateLegs/name/Sorcerer's Enchanted Leggings/hue/RND,1,3000/BaseArmorrating/RND,55,70/ArmorAttributes.MageArmor/1/ArmorAttributes.SelfRepair/20/attributes.BonusMana/40/attributes.RegenMana/5/attributes.CastSpeed/2/skillbonuses.skill_1_name/Meditation/skillbonuses.skill_1_value/40/skillbonuses.skill_2_name/Spellweaving/skillbonuses.skill_2_value/40/PhysicalBonus/15/FireBonus/15/ColdBonus/15/EnergyBonus/25/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<BoneHelm/name/Invoker's Crown/hue/RND,1,3000/BaseArmorrating/RND,40,65/ArmorAttributes.MageArmor/1/ArmorAttributes.LowerStatReq/50/attributes.bonusint/30/attributes.CastRecovery/3/attributes.SpellDamage/20/skillbonuses.skill_1_name/Necromancy/skillbonuses.skill_1_value/40/skillbonuses.skill_2_name/SpiritSpeak/skillbonuses.skill_2_value/30/skillbonuses.skill_3_name/Magery/skillbonuses.skill_3_value/50/PhysicalBonus/12/ColdBonus/18/FireBonus/12/EnergyBonus/25/PoisonBonus/13/ATTACH/XmlLevelItem>
+
+<LeatherGloves/name/Elementalist's Gauntlets/hue/RND,1,3000/BaseArmorrating/RND,20,50/ArmorAttributes.MageArmor/1/ArmorAttributes.SelfRepair/15/attributes.CastSpeed/3/attributes.RegenMana/5/attributes.LowerRegCost/20/skillbonuses.skill_1_name/Spellweaving/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/EvalInt/skillbonuses.skill_2_value/40/PhysicalBonus/10/EnergyBonus/20/FireBonus/20/ColdBonus/15/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<ChainLegs/name/Seer's Linked Sandals/hue/RND,1,3000/BaseArmorrating/RND,45,60/ArmorAttributes.MageArmor/1/ArmorAttributes.LowerStatReq/40/attributes.BonusInt/35/attributes.LowerManaCost/15/attributes.EnhancePotions/25/skillbonuses.skill_1_name/Alchemy/skillbonuses.skill_1_value/30/skillbonuses.skill_2_name/Magery/skillbonuses.skill_2_value/50/skillbonuses.skill_3_name/Meditation/skillbonuses.skill_3_value/40/PhysicalBonus/10/EnergyBonus/15/FireBonus/10/ColdBonus/20/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<BronzeShield/name/Mystic's Aegis/hue/RND,1,3000/BaseArmorrating/RND,35,55/AbsorptionAttributes.EaterEnergy/20/ArmorAttributes.LowerStatReq/30/attributes.SpellChanneling/1/attributes.ReflectPhysical/15/attributes.DefendChance/20/skillbonuses.skill_1_name/Parry/skillbonuses.skill_1_value/30/skillbonuses.skill_2_name/Magery/skillbonuses.skill_2_value/50/PhysicalBonus/20/ColdBonus/10/FireBonus/15/EnergyBonus/25/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<LeatherChest/name/Bard's Mythical Tunic/hue/RND,1,3000/BaseArmorrating/RND,55,70/AbsorptionAttributes.ResonanceEnergy/20/ArmorAttributes.SelfRepair/10/ArmorAttributes.DurabilityBonus/100/attributes.BonusDex/25/attributes.BonusMana/20/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Provocation/skillbonuses.skill_2_value/40/PhysicalBonus/12/EnergyBonus/18/FireBonus/12/ColdBonus/12/PoisonBonus/12/ATTACH/XmlLevelItem>
+
+<PlateLegs/name/Virtuoso's Greaves/hue/RND,1,3000/BaseArmorrating/RND,60,80/ArmorAttributes.LowerStatReq/50/attributes.BonusStam/25/attributes.Luck/150/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Discordance/skillbonuses.skill_2_value/40/PhysicalBonus/15/ColdBonus/15/FireBonus/15/EnergyBonus/20/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<RingmailArms/name/Minstrel's Armguards/hue/RND,1,3000/BaseArmorrating/RND,45,65/ArmorAttributes.SelfRepair/12/ArmorAttributes.MageArmor/1/attributes.EnhancePotions/25/attributes.RegenMana/3/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/45/skillbonuses.skill_2_name/Peacemaking/skillbonuses.skill_2_value/40/PhysicalBonus/10/EnergyBonus/15/FireBonus/15/ColdBonus/10/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<ChainCoif/name/Harmonic Helm/hue/RND,1,3000/BaseArmorrating/RND,40,55/AbsorptionAttributes.EaterCold/25/attributes.NightSight/1/attributes.BonusInt/20/attributes.CastSpeed/1/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/45/skillbonuses.skill_2_name/BardingLore/skillbonuses.skill_2_value/30/PhysicalBonus/12/FireBonus/18/EnergyBonus/15/ColdBonus/20/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<StuddedGloves/name/Choir's Handwear/hue/RND,1,3000/BaseArmorrating/RND,30,50/ArmorAttributes.LowerStatReq/40/attributes.BonusHits/20/attributes.SpellDamage/15/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Magery/skillbonuses.skill_2_value/30/PhysicalBonus/10/EnergyBonus/12/FireBonus/10/ColdBonus/10/PoisonBonus/18/ATTACH/XmlLevelItem>
+
+<PlateDo/name/Maestro's Do/hue/RND,1,3000/BaseArmorrating/RND,65,85/ArmorAttributes.ReactiveParalyze/1/attributes.AttackChance/15/attributes.BonusStr/30/skillbonuses.skill_1_name/Musicianship/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Parry/skillbonuses.skill_2_value/30/PhysicalBonus/20/FireBonus/15/ColdBonus/15/EnergyBonus/10/PoisonBonus/20/ATTACH/XmlLevelItem>
+
+<PlateChest/name/Blademaster's Chestplate/hue/RND,100,800/BaseArmorrating/RND,65,85/ArmorAttributes.DurabilityBonus/100/ArmorAttributes.LowerStatReq/50/attributes.BonusStr/30/attributes.BonusStam/20/attributes.AttackChance/15/skillbonuses.skill_1_name/Swords/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/40/PhysicalBonus/20/FireBonus/15/ColdBonus/15/EnergyBonus/25/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateArms/name/Sword Saint's Armguards/hue/RND,100,800/BaseArmorrating/RND,60,80/ArmorAttributes.SelfRepair/10/attributes.BonusDex/25/attributes.DefendChance/20/attributes.WeaponDamage/50/skillbonuses.skill_1_name/Swords/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Anatomy/skillbonuses.skill_2_value/30/PhysicalBonus/15/EnergyBonus/15/ColdBonus/10/FireBonus/20/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateLegs/name/Duelist's Legplates/hue/RND,100,800/BaseArmorrating/RND,60,80/ArmorAttributes.LowerStatReq/30/attributes.BonusHits/40/attributes.BonusDex/20/skillbonuses.skill_1_name/Swords/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/40/skillbonuses.skill_3_name/Parry/skillbonuses.skill_3_value/30/PhysicalBonus/20/FireBonus/10/ColdBonus/20/EnergyBonus/10/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateHelm/name/Gladiator's Helmet/hue/RND,100,800/BaseArmorrating/RND,55,75/ArmorAttributes.ReactiveParalyze/1/attributes.BonusStr/20/attributes.RegenStam/5/skillbonuses.skill_1_name/Swords/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/30/PhysicalBonus/25/FireBonus/15/ColdBonus/15/EnergyBonus/10/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<PlateGorget/name/Warlord's Gorget/hue/RND,100,800/BaseArmorrating/RND,50,70/ArmorAttributes.LowerStatReq/40/attributes.BonusStr/15/attributes.RegenHits/3/skillbonuses.skill_1_name/Swords/skillbonuses.skill_1_value/45/skillbonuses.skill_2_name/Healing/skillbonuses.skill_2_value/30/PhysicalBonus/15/ColdBonus/10/FireBonus/20/EnergyBonus/15/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateGloves/name/Knight's Gauntlets/hue/RND,100,800/BaseArmorrating/RND,55,75/ArmorAttributes.MageArmor/1/attributes.BonusStam/25/attributes.Luck/100/skillbonuses.skill_1_name/Swords/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/40/PhysicalBonus/20/FireBonus/15/ColdBonus/15/EnergyBonus/10/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateChest/name/Warlord's Chestguard/hue/RND,1,3000/BaseArmorrating/RND,70,100/ArmorAttributes.LowerStatReq/50/ArmorAttributes.DurabilityBonus/100/ArmorAttributes.SelfRepair/10/attributes.BonusStr/25/attributes.BonusHits/30/attributes.DefendChance/20/skillbonuses.skill_1_name/Macing/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/40/PhysicalBonus/15/FireBonus/10/ColdBonus/10/EnergyBonus/15/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateArms/name/Grandmaster's Armguards/hue/RND,1,3000/BaseArmorrating/RND,60,90/ArmorAttributes.LowerStatReq/40/ArmorAttributes.MageArmor/1/attributes.BonusDex/20/attributes.BonusStam/25/attributes.AttackChance/15/skillbonuses.skill_1_name/Macing/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Anatomy/skillbonuses.skill_2_value/30/PhysicalBonus/12/ColdBonus/12/FireBonus/8/EnergyBonus/18/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<StuddedHelm/name/Mauler's Helm of Mastery/hue/RND,1,3000/BaseArmorrating/RND,50,80/ArmorAttributes.LowerStatReq/30/ArmorAttributes.ReactiveParalyze/1/attributes.BonusStr/15/attributes.RegenHits/5/attributes.NightSight/1/skillbonuses.skill_1_name/Macing/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/ResistingSpells/skillbonuses.skill_2_value/40/PhysicalBonus/15/ColdBonus/10/FireBonus/10/EnergyBonus/15/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateGloves/name/Crusher's Gauntlets/hue/RND,1,3000/BaseArmorrating/RND,50,85/ArmorAttributes.SelfRepair/15/ArmorAttributes.LowerStatReq/20/attributes.BonusStr/25/attributes.WeaponDamage/50/skillbonuses.skill_1_name/Macing/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/35/PhysicalBonus/18/FireBonus/5/ColdBonus/10/EnergyBonus/10/PoisonBonus/7/ATTACH/XmlLevelItem>
+
+<PlateLegs/name/Macebearer's Leggings/hue/RND,1,3000/BaseArmorrating/RND,65,95/ArmorAttributes.LowerStatReq/45/ArmorAttributes.SelfRepair/20/attributes.BonusStam/30/attributes.BonusStr/20/attributes.DefendChance/20/skillbonuses.skill_1_name/Macing/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/30/PhysicalBonus/20/ColdBonus/5/FireBonus/15/EnergyBonus/10/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<RingmailGloves/name/Macefighter's Grips/hue/RND,1,3000/BaseArmorrating/RND,55,85/ArmorAttributes.DurabilityBonus/80/ArmorAttributes.MageArmor/1/attributes.BonusDex/15/attributes.AttackChance/25/attributes.WeaponSpeed/30/skillbonuses.skill_1_name/Macing/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Parry/skillbonuses.skill_2_value/35/PhysicalBonus/10/FireBonus/20/ColdBonus/10/EnergyBonus/15/PoisonBonus/5/ATTACH/XmlLevelItem>
+
+<PlateHelm/name/Duelist's Vision Helm/hue/RND,1,3000/BaseArmorrating/RND,65,75/AbsorptionAttributes.ResonanceKinetic/20/ArmorAttributes.LowerStatReq/50/attributes.bonusdex/30/attributes.RegenStam/10/skillbonuses.skill_1_name/Fencing/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Parry/skillbonuses.skill_2_value/40/PhysicalBonus/15/ColdBonus/10/FireBonus/10/EnergyBonus/15/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateGorget/name/Master Fencer's Gorget/hue/RND,100,700/BaseArmorrating/RND,60,70/ArmorAttributes.SelfRepair/10/ArmorAttributes.MageArmor/1/attributes.AttackChance/20/attributes.DefendChance/20/skillbonuses.skill_1_name/Tactics/skillbonuses.skill_1_value/30/skillbonuses.skill_2_name/Anatomy/skillbonuses.skill_2_value/50/PhysicalBonus/12/FireBonus/12/ColdBonus/12/EnergyBonus/12/PoisonBonus/12/ATTACH/XmlLevelItem>
+
+<LeatherArms/name/Rapier Master's Arms/hue/RND,1,3000/BaseArmorrating/RND,40,60/ArmorAttributes.DurabilityBonus/100/attributes.bonusdex/40/attributes.ReflectPhysical/15/skillbonuses.skill_1_name/Fencing/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Anatomy/skillbonuses.skill_2_value/40/PhysicalBonus/18/ColdBonus/8/FireBonus/8/EnergyBonus/16/PoisonBonus/8/ATTACH/XmlLevelItem>
+
+<PlateLegs/name/En Garde Legs/hue/RND,1,3000/BaseArmorrating/RND,70,85/ArmorAttributes.ReactiveParalyze/1/attributes.BonusStam/20/attributes.BonusHits/10/skillbonuses.skill_1_name/Fencing/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/45/PhysicalBonus/15/FireBonus/15/ColdBonus/10/EnergyBonus/10/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<PlateChest/name/Blade Dancer's Chest/hue/RND,1,3000/BaseArmorrating/RND,75,85/AbsorptionAttributes.EaterKinetic/25/ArmorAttributes.SelfRepair/20/attributes.BonusStr/20/attributes.LowerManaCost/10/skillbonuses.skill_1_name/Fencing/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Parry/skillbonuses.skill_2_value/40/PhysicalBonus/20/FireBonus/10/ColdBonus/10/EnergyBonus/15/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<LightPlateJingasa/name/Sabreur's Jingasa/hue/RND,250,1000/BaseArmorrating/RND,60,70/ArmorAttributes.LowerStatReq/30/attributes.DefendChance/25/attributes.AttackChance/15/skillbonuses.skill_1_name/Fencing/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/45/PhysicalBonus/20/ColdBonus/5/FireBonus/5/EnergyBonus/20/PoisonBonus/5/ATTACH/XmlLevelItem>
+
+<LeatherNinjaHood/name/Luchador's Mask/hue/RND,200,850/BaseArmorrating/RND,55,85/ArmorAttributes.LowerStatReq/50/ArmorAttributes.SelfRepair/20/attributes.BonusDex/30/attributes.ReflectPhysical/20/attributes.NightSight/1/skillbonuses.skill_1_name/Wrestling/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/40/PhysicalBonus/20/ColdBonus/15/FireBonus/15/EnergyBonus/20/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<PlateChest/name/Grapple King's Chestguard/hue/RND,100,500/BaseArmorrating/RND,70,90/ArmorAttributes.DurabilityBonus/100/ArmorAttributes.MageArmor/1/attributes.BonusStr/50/attributes.BonusHits/40/attributes.DefendChance/15/skillbonuses.skill_1_name/Wrestling/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Anatomy/skillbonuses.skill_2_value/30/PhysicalBonus/25/FireBonus/25/ColdBonus/25/EnergyBonus/25/PoisonBonus/25/ATTACH/XmlLevelItem>
+
+<PlateLegs/name/Rudo's Reinforced Greaves/hue/RND,300,750/BaseArmorrating/RND,60,80/ArmorAttributes.LowerStatReq/30/ArmorAttributes.SelfRepair/15/attributes.BonusStam/35/attributes.BonusStr/25/attributes.IncreasedKarmaLoss/5/skillbonuses.skill_1_name/Wrestling/skillbonuses.skill_1_value/45/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/30/PhysicalBonus/20/FireBonus/10/ColdBonus/10/EnergyBonus/15/PoisonBonus/20/ATTACH/XmlLevelItem>
+
+<PlateHaidate/name/Technico's Tassets/hue/RND,10,250/BaseArmorrating/RND,60,80/ArmorAttributes.ReactiveParalyze/1/attributes.BonusDex/40/attributes.RegenStam/5/attributes.LowerManaCost/20/skillbonuses.skill_1_name/Wrestling/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Dexterity/skillbonuses.skill_2_value/35/PhysicalBonus/18/ColdBonus/18/FireBonus/18/EnergyBonus/18/PoisonBonus/18/ATTACH/XmlLevelItem>
+
+<PlateArms/name/Piledriver's Pauldrons/hue/RND,400,900/BaseArmorrating/RND,55,75/ArmorAttributes.DurabilityBonus/75/ArmorAttributes.SelfRepair/10/attributes.AttackChance/25/attributes.BonusStr/20/attributes.WeaponSpeed/10/skillbonuses.skill_1_name/Wrestling/skillbonuses.skill_1_value/45/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/30/PhysicalBonus/15/FireBonus/20/ColdBonus/15/EnergyBonus/20/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<LeatherNinjaBelt/name/Champion's Championship Belt/hue/RND,10,500/BaseArmorrating/RND,50,70/ArmorAttributes.LowerStatReq/40/attributes.Luck/200/attributes.BonusHits/30/attributes.EnhancePotions/25/skillbonuses.skill_1_name/Wrestling/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/ResistingSpells/skillbonuses.skill_2_value/30/PhysicalBonus/20/ColdBonus/20/FireBonus/20/EnergyBonus/20/PoisonBonus/20/ATTACH/XmlLevelItem>
+
+<LeatherNinjaHood/name/Mantle of Shadows/hue/RND,1100,1199/BaseArmorrating/RND,60,80/ArmorAttributes.LowerStatReq/50/ArmorAttributes.SelfRepair/10/attributes.NightSight/1/attributes.BonusDex/25/attributes.RegenStam/5/skillbonuses.skill_1_name/Hiding/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Stealth/skillbonuses.skill_2_value/50/skillbonuses.skill_3_name/Ninjitsu/skillbonuses.skill_3_value/50/PhysicalBonus/15/ColdBonus/10/FireBonus/10/EnergyBonus/20/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<LeatherNinjaJacket/name/Veil of the Nightwalker/hue/RND,1200,1300/BaseArmorrating/RND,70,90/ArmorAttributes.LowerStatReq/50/ArmorAttributes.MageArmor/1/attributes.AttackChance/15/attributes.DefendChance/15/attributes.BonusStam/20/skillbonuses.skill_1_name/Hiding/skillbonuses.skill_1_value/40/skillbonuses.skill_2_name/Stealth/skillbonuses.skill_2_value/40/skillbonuses.skill_3_name/Ninjitsu/skillbonuses.skill_3_value/40/PhysicalBonus/18/EnergyBonus/25/FireBonus/15/ColdBonus/15/PoisonBonus/18/ATTACH/XmlLevelItem>
+
+<LeatherNinjaPants/name/Whispering Wind Leggings/hue/RND,1301,1400/BaseArmorrating/RND,65,85/ArmorAttributes.LowerStatReq/50/attributes.BonusDex/30/attributes.RegenStam/7/skillbonuses.skill_1_name/Hiding/skillbonuses.skill_1_value/45/skillbonuses.skill_2_name/Stealth/skillbonuses.skill_2_value/45/skillbonuses.skill_3_name/Ninjitsu/skillbonuses.skill_3_value/45/PhysicalBonus/20/ColdBonus/12/FireBonus/12/EnergyBonus/22/PoisonBonus/20/ATTACH/XmlLevelItem>
+
+<LeatherNinjaBelt/name/Silent Steps/hue/RND,1401,1500/BaseArmorrating/RND,55,75/ArmorAttributes.LowerStatReq/50/attributes.BonusDex/35/attributes.Luck/100/skillbonuses.skill_1_name/Hiding/skillbonuses.skill_1_value/30/skillbonuses.skill_2_name/Stealth/skillbonuses.skill_2_value/50/skillbonuses.skill_3_name/Ninjitsu/skillbonuses.skill_3_value/30/PhysicalBonus/17/ColdBonus/10/FireBonus/18/EnergyBonus/20/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<LeatherGloves/name/Gauntlets of Secrecy/hue/RND,1501,1600/BaseArmorrating/RND,50,70/ArmorAttributes.LowerStatReq/50/attributes.BonusDex/20/attributes.RegenStam/8/skillbonuses.skill_1_name/Hiding/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Stealth/skillbonuses.skill_2_value/40/skillbonuses.skill_3_name/Ninjitsu/skillbonuses.skill_3_value/40/PhysicalBonus/15/ColdBonus/15/FireBonus/10/EnergyBonus/25/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<NinjaTabi/name/Shadow Master's Treads/hue/RND,1601,1700/BaseArmorrating/RND,60,80/ArmorAttributes.LowerStatReq/50/attributes.BonusDex/25/attributes.BonusInt/10/attributes.RegenStam/10/skillbonuses.skill_1_name/Hiding/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Stealth/skillbonuses.skill_2_value/50/skillbonuses.skill_3_name/Ninjitsu/skillbonuses.skill_3_value/50/PhysicalBonus/20/ColdBonus/20/FireBonus/10/EnergyBonus/30/PoisonBonus/20/ATTACH/XmlLevelItem>
+
+<PlateChest/name/Necromancer's Chest of Eternity/hue/RND,666,999/BaseArmorrating/RND,65,85/ArmorAttributes.LowerStatReq/50/ArmorAttributes.DurabilityBonus/100/ArmorAttributes.SelfRepair/20/attributes.bonusint/30/attributes.RegenMana/10/attributes.RegenHits/5/skillbonuses.skill_1_name/Necromancy/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/SpiritSpeak/skillbonuses.skill_2_value/40/PhysicalBonus/20/ColdBonus/15/FireBonus/10/EnergyBonus/25/PoisonBonus/20/ATTACH/XmlLevelItem>
+
+<BoneLegs/name/Gravekeeper's BoneLegs/hue/RND,333,666/BaseArmorrating/RND,60,80/AbsorptionAttributes.EaterPoison/40/ArmorAttributes.MageArmor/1/attributes.bonusstr/25/attributes.bonusdex/15/attributes.Luck/200/skillbonuses.skill_1_name/Poisoning/skillbonuses.skill_1_value/45/skillbonuses.skill_2_name/Necromancy/skillbonuses.skill_2_value/30/PhysicalBonus/15/ColdBonus/25/FireBonus/10/EnergyBonus/15/PoisonBonus/30/ATTACH/XmlLevelItem>
+
+<LeatherGloves/name/Spiritcaller's Gloves/hue/RND,444,777/BaseArmorrating/RND,20,40/AbsorptionAttributes.ResonanceEnergy/20/ArmorAttributes.MageArmor/1/attributes.CastSpeed/2/attributes.CastRecovery/2/attributes.bonusint/20/skillbonuses.skill_1_name/SpiritSpeak/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/MagicResist/skillbonuses.skill_2_value/30/PhysicalBonus/10/ColdBonus/20/FireBonus/10/EnergyBonus/30/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<BoneArms/name/Venomweaver's Arms/hue/RND,111,444/BaseArmorrating/RND,55,75/ArmorAttributes.LowerStatReq/30/attributes.bonusdex/20/attributes.EnhancePotions/25/attributes.LowerManaCost/10/skillbonuses.skill_1_name/Poisoning/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Alchemy/skillbonuses.skill_2_value/30/PhysicalBonus/15/ColdBonus/10/FireBonus/15/EnergyBonus/20/PoisonBonus/35/ATTACH/XmlLevelItem>
+
+<LeatherCap/name/Deathwhisper's Cap/hue/RND,222,888/BaseArmorrating/RND,25,45/ArmorAttributes.SelfRepair/15/attributes.bonusint/25/attributes.RegenMana/8/attributes.NightSight/1/skillbonuses.skill_1_name/SpiritSpeak/skillbonuses.skill_1_value/45/skillbonuses.skill_2_name/Necromancy/skillbonuses.skill_2_value/35/PhysicalBonus/12/ColdBonus/18/FireBonus/12/EnergyBonus/22/PoisonBonus/16/ATTACH/XmlLevelItem>
+
+<BoneChest/name/Dreadlord's BoneChest/hue/RND,555,999/BaseArmorrating/RND,70,90/AbsorptionAttributes.EaterCold/20/ArmorAttributes.LowerStatReq/40/attributes.AttackChance/15/attributes.DefendChance/15/attributes.Luck/150/skillbonuses.skill_1_name/Necromancy/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/SpiritSpeak/skillbonuses.skill_2_value/40/skillbonuses.skill_3_name/Poisoning/skillbonuses.skill_3_value/35/PhysicalBonus/20/ColdBonus/20/FireBonus/15/EnergyBonus/20/PoisonBonus/25/ATTACH/XmlLevelItem>
+
+<PlateChest/name/Beastmaster's Chest/hue/RND,1,3000/BaseArmorrating/RND,60,80/ArmorAttributes.LowerStatReq/50/ArmorAttributes.DurabilityBonus/100/attributes.bonusstr/20/attributes.bonusdex/15/attributes.bonusint/10/skillbonuses.skill_1_name/AnimalTaming/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/AnimalLore/skillbonuses.skill_2_value/50/PhysicalBonus/15/FireBonus/15/ColdBonus/15/EnergyBonus/15/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<LeatherGloves/name/Falconer's Gloves/hue/RND,1,3000/BaseArmorrating/RND,20,40/ArmorAttributes.MageArmor/1/attributes.AttackChance/15/attributes.DefendChance/15/attributes.RegenStam/3/skillbonuses.skill_1_name/AnimalTaming/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Peacemaking/skillbonuses.skill_2_value/40/PhysicalBonus/10/EnergyBonus/10/FireBonus/20/ColdBonus/10/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<ChainLegs/name/Harmony's Leggings/hue/RND,1,3000/BaseArmorrating/RND,40,60/ArmorAttributes.LowerStatReq/40/attributes.Luck/200/attributes.BonusStam/20/skillbonuses.skill_1_name/AnimalLore/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Peacemaking/skillbonuses.skill_2_value/40/skillbonuses.skill_3_name/AnimalTaming/skillbonuses.skill_3_value/30/PhysicalBonus/12/ColdBonus/18/FireBonus/12/EnergyBonus/12/PoisonBonus/12/ATTACH/XmlLevelItem>
+
+<WoodenShield/name/Druid's Protector/hue/RND,1,3000/BaseArmorrating/RND,30,55/ArmorAttributes.ReactiveParalyze/1/ArmorAttributes.SelfRepair/10/attributes.SpellChanneling/1/skillbonuses.skill_1_name/AnimalTaming/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/AnimalLore/skillbonuses.skill_2_value/30/skillbonuses.skill_3_name/Peacemaking/skillbonuses.skill_3_value/30/PhysicalBonus/10/FireBonus/10/ColdBonus/20/EnergyBonus/15/PoisonBonus/5/ATTACH/XmlLevelItem>
+
+<BoneArms/name/Peacekeeper's Arms/hue/RND,1,3000/BaseArmorrating/RND,35,55/ArmorAttributes.LowerStatReq/30/ArmorAttributes.MageArmor/1/attributes.BonusDex/25/attributes.BonusHits/15/skillbonuses.skill_1_name/Peacemaking/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/AnimalTaming/skillbonuses.skill_2_value/40/skillbonuses.skill_3_name/AnimalLore/skillbonuses.skill_3_value/30/PhysicalBonus/10/EnergyBonus/10/FireBonus/15/ColdBonus/15/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<NorseHelm/name/Serenity's Helm/hue/RND,1,3000/BaseArmorrating/RND,50,70/ArmorAttributes.SelfRepair/20/attributes.ReflectPhysical/15/attributes.NightSight/1/skillbonuses.skill_1_name/AnimalLore/skillbonuses.skill_1_value/40/skillbonuses.skill_2_name/AnimalTaming/skillbonuses.skill_2_value/40/skillbonuses.skill_3_name/Peacemaking/skillbonuses.skill_3_value/40/PhysicalBonus/20/ColdBonus/10/FireBonus/10/EnergyBonus/20/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateHelm/name/Timberlord's Helm/hue/RND,200,300/BaseArmorrating/RND,60,80/ArmorAttributes.LowerStatReq/50/ArmorAttributes.DurabilityBonus/100/attributes.BonusStr/25/attributes.BonusStam/15/attributes.Luck/200/skillbonuses.skill_1_name/Lumberjacking/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Strength/skillbonuses.skill_2_value/30/PhysicalBonus/15/ColdBonus/10/EnergyBonus/20/FireBonus/15/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateChest/name/Miner's PlateChest/hue/RND,400,500/BaseArmorrating/RND,70,90/ArmorAttributes.LowerStatReq/40/ArmorAttributes.DurabilityBonus/100/attributes.BonusStr/30/attributes.RegenStam/5/attributes.Luck/250/skillbonuses.skill_1_name/Mining/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Strength/skillbonuses.skill_2_value/40/PhysicalBonus/20/FireBonus/10/ColdBonus/10/EnergyBonus/15/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<LeatherLegs/name/Angler's Waders/hue/RND,100,200/BaseArmorrating/RND,30,60/ArmorAttributes.LowerStatReq/30/attributes.BonusDex/20/attributes.EnhancePotions/50/attributes.Luck/300/skillbonuses.skill_1_name/Fishing/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/30/PhysicalBonus/10/FireBonus/10/ColdBonus/20/EnergyBonus/10/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateGloves/name/Forester's Gauntlets/hue/RND,300,400/BaseArmorrating/RND,50,70/ArmorAttributes.SelfRepair/10/ArmorAttributes.MageArmor/1/attributes.BonusStr/20/attributes.BonusHits/10/attributes.AttackChance/15/skillbonuses.skill_1_name/Lumberjacking/skillbonuses.skill_1_value/40/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/30/PhysicalBonus/15/FireBonus/20/ColdBonus/15/EnergyBonus/10/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<RingmailArms/name/Prospector's Arms/hue/RND,600,700/BaseArmorrating/RND,40,60/ArmorAttributes.SelfRepair/10/ArmorAttributes.LowerStatReq/20/attributes.BonusStr/15/attributes.RegenHits/3/attributes.AttackChance/20/skillbonuses.skill_1_name/Mining/skillbonuses.skill_1_value/45/skillbonuses.skill_2_name/Blacksmith/skillbonuses.skill_2_value/30/PhysicalBonus/12/ColdBonus/8/EnergyBonus/15/FireBonus/15/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<ChainChest/name/Fishmaster's Hauberk/hue/RND,50,150/BaseArmorrating/RND,55,75/ArmorAttributes.DurabilityBonus/100/ArmorAttributes.LowerStatReq/50/attributes.BonusDex/15/attributes.BonusStam/20/attributes.DefendChance/20/skillbonuses.skill_1_name/Fishing/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/AnimalTaming/skillbonuses.skill_2_value/30/PhysicalBonus/10/EnergyBonus/15/FireBonus/10/ColdBonus/20/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<LeatherNinjaHood/name/Ranger's Hood of Precision/hue/RND,1,3000/BaseArmorrating/RND,60,85/ArmorAttributes.LowerStatReq/50/ArmorAttributes.DurabilityBonus/100/attributes.AttackChance/20/attributes.BonusDex/25/attributes.NightSight/1/skillbonuses.skill_1_name/Archery/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/30/PhysicalBonus/15/EnergyBonus/15/FireBonus/10/ColdBonus/20/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<LeatherChest/name/Marksman's Leather Chestguard/hue/RND,1,3000/BaseArmorrating/RND,70,95/ArmorAttributes.SelfRepair/10/attributes.BonusHits/20/attributes.BonusStam/15/attributes.DefendChance/15/skillbonuses.skill_1_name/Archery/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Anatomy/skillbonuses.skill_2_value/30/skillbonuses.skill_3_name/Healing/skillbonuses.skill_3_value/30/PhysicalBonus/10/EnergyBonus/10/FireBonus/20/ColdBonus/10/PoisonBonus/20/ATTACH/XmlLevelItem>
+
+<StuddedLegs/name/Archer's Studded Leggings of Agility/hue/RND,1,3000/BaseArmorrating/RND,65,90/ArmorAttributes.LowerStatReq/30/attributes.BonusDex/30/attributes.ReflectPhysical/15/attributes.EnhancePotions/25/skillbonuses.skill_1_name/Archery/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/40/PhysicalBonus/12/EnergyBonus/18/FireBonus/12/ColdBonus/18/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<LeatherGloves/name/Hawkeye's Gauntlets/hue/RND,1,3000/BaseArmorrating/RND,55,80/ArmorAttributes.MageArmor/1/attributes.AttackChance/25/attributes.BonusDex/20/skillbonuses.skill_1_name/Archery/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/30/skillbonuses.skill_3_name/Tracking/skillbonuses.skill_3_value/30/PhysicalBonus/15/ColdBonus/10/FireBonus/15/EnergyBonus/15/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<RingmailArms/name/Bowmaster's Ringmail Arms/hue/RND,1,3000/BaseArmorrating/RND,75,100/ArmorAttributes.SelfRepair/10/attributes.BonusStam/25/attributes.WeaponDamage/20/skillbonuses.skill_1_name/Archery/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Tactics/skillbonuses.skill_2_value/35/skillbonuses.skill_3_name/AnimalTaming/skillbonuses.skill_3_value/30/PhysicalBonus/10/EnergyBonus/15/FireBonus/20/ColdBonus/15/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateGloves/name/Forester's Plate Boots/hue/RND,1,3000/BaseArmorrating/RND,70,90/ArmorAttributes.LowerStatReq/40/ArmorAttributes.DurabilityBonus/80/attributes.BonusDex/20/attributes.LowerManaCost/15/skillbonuses.skill_1_name/Archery/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Stealth/skillbonuses.skill_2_value/30/skillbonuses.skill_3_name/Tracking/skillbonuses.skill_3_value/30/PhysicalBonus/20/ColdBonus/10/FireBonus/10/EnergyBonus/20/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<PlateHelm/name/Master Tinkerer's Helmet/hue/RND,1,3000/BaseArmorrating/RND,60,80/ArmorAttributes.DurabilityBonus/100/ArmorAttributes.LowerStatReq/50/attributes.BonusInt/25/attributes.BonusDex/15/skillbonuses.skill_1_name/Tinkering/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/RemoveTrap/skillbonuses.skill_2_value/40/skillbonuses.skill_3_name/Lockpicking/skillbonuses.skill_3_value/40/PhysicalBonus/20/FireBonus/15/ColdBonus/15/EnergyBonus/25/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<PlateGorget/name/Safecracker's Gorget/hue/RND,1,3000/BaseArmorrating/RND,55,75/ArmorAttributes.SelfRepair/10/ArmorAttributes.LowerStatReq/40/attributes.EnhancePotions/25/attributes.RegenStam/5/skillbonuses.skill_1_name/Tinkering/skillbonuses.skill_1_value/40/skillbonuses.skill_2_name/RemoveTrap/skillbonuses.skill_2_value/50/skillbonuses.skill_3_name/Lockpicking/skillbonuses.skill_3_value/40/PhysicalBonus/10/ColdBonus/20/FireBonus/20/EnergyBonus/10/PoisonBonus/20/ATTACH/XmlLevelItem>
+
+<PlateChest/name/Lockmaster's Chestplate/hue/RND,1,3000/BaseArmorrating/RND,70,90/ArmorAttributes.MageArmor/1/ArmorAttributes.SelfRepair/12/attributes.BonusStr/20/attributes.AttackChance/15/skillbonuses.skill_1_name/Tinkering/skillbonuses.skill_1_value/40/skillbonuses.skill_2_name/RemoveTrap/skillbonuses.skill_2_value/30/skillbonuses.skill_3_name/Lockpicking/skillbonuses.skill_3_value/50/PhysicalBonus/25/FireBonus/10/ColdBonus/10/EnergyBonus/15/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<LeatherArms/name/Disarming Leather Arms/hue/RND,1,3000/BaseArmorrating/RND,40,60/ArmorAttributes.LowerStatReq/30/ArmorAttributes.DurabilityBonus/80/attributes.DefendChance/20/attributes.RegenMana/10/skillbonuses.skill_1_name/Tinkering/skillbonuses.skill_1_value/30/skillbonuses.skill_2_name/RemoveTrap/skillbonuses.skill_2_value/50/skillbonuses.skill_3_name/Lockpicking/skillbonuses.skill_3_value/40/PhysicalBonus/15/FireBonus/15/ColdBonus/25/EnergyBonus/5/PoisonBonus/20/ATTACH/XmlLevelItem>
+
+<PlateLegs/name/Artificer's Leggings/hue/RND,1,3000/BaseArmorrating/RND,65,85/ArmorAttributes.SelfRepair/8/ArmorAttributes.MageArmor/1/attributes.BonusStam/15/attributes.BonusHits/10/skillbonuses.skill_1_name/Tinkering/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/RemoveTrap/skillbonuses.skill_2_value/30/skillbonuses.skill_3_name/Lockpicking/skillbonuses.skill_3_value/30/PhysicalBonus/20/FireBonus/10/ColdBonus/15/EnergyBonus/20/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<PlateGloves/name/Gadgeteer's Gauntlets/hue/RND,1,3000/BaseArmorrating/RND,50,70/ArmorAttributes.SelfRepair/15/ArmorAttributes.ReactiveParalyze/1/attributes.BonusDex/20/attributes.CastSpeed/1/skillbonuses.skill_1_name/Tinkering/skillbonuses.skill_1_value/30/skillbonuses.skill_2_name/RemoveTrap/skillbonuses.skill_2_value/30/skillbonuses.skill_3_name/Lockpicking/skillbonuses.skill_3_value/50/PhysicalBonus/10/ColdBonus/20/FireBonus/20/EnergyBonus/10/PoisonBonus/20/ATTACH/XmlLevelItem>
+
+<LeatherNinjaHood/name/Master Thief's Hood/hue/RND,1,3000/BaseArmorrating/RND,30,60/ArmorAttributes.LowerStatReq/50/ArmorAttributes.DurabilityBonus/100/attributes.BonusDex/30/attributes.Luck/200/skillbonuses.skill_1_name/Snooping/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Stealing/skillbonuses.skill_2_value/50/skillbonuses.skill_3_name/Stealth/skillbonuses.skill_3_value/30/PhysicalBonus/15/ColdBonus/10/FireBonus/15/EnergyBonus/20/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<LeatherChest/name/Shadowlurker's Chestguard/hue/RND,1,3000/BaseArmorrating/RND,50,80/ArmorAttributes.MageArmor/1/attributes.EnhancePotions/25/attributes.RegenStam/5/attributes.BonusStr/20/skillbonuses.skill_1_name/Hiding/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Snooping/skillbonuses.skill_2_value/40/skillbonuses.skill_3_name/Stealing/skillbonuses.skill_3_value/40/PhysicalBonus/20/ColdBonus/20/FireBonus/10/EnergyBonus/25/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<LeatherGloves/name/Prowler's Gloves/hue/RND,1,3000/BaseArmorrating/RND,20,40/ArmorAttributes.SelfRepair/10/attributes.AttackChance/15/attributes.DefendChance/15/attributes.BonusHits/10/skillbonuses.skill_1_name/Stealing/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Snooping/skillbonuses.skill_2_value/45/skillbonuses.skill_3_name/DetectHidden/skillbonuses.skill_3_value/30/PhysicalBonus/10/ColdBonus/5/FireBonus/15/EnergyBonus/20/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<LeatherLegs/name/Bandit's Legs/hue/RND,1,3000/BaseArmorrating/RND,30,60/ArmorAttributes.LowerStatReq/40/attributes.BonusStam/25/attributes.NightSight/1/skillbonuses.skill_1_name/Stealing/skillbonuses.skill_1_value/45/skillbonuses.skill_2_name/Snooping/skillbonuses.skill_2_value/50/skillbonuses.skill_3_name/Lockpicking/skillbonuses.skill_3_value/30/PhysicalBonus/10/EnergyBonus/25/FireBonus/15/ColdBonus/15/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<RingmailArms/name/Footpad's Arms/hue/RND,1,3000/BaseArmorrating/RND,40,70/ArmorAttributes.DurabilityBonus/80/attributes.WeaponSpeed/20/attributes.WeaponDamage/25/skillbonuses.skill_1_name/Stealing/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Snooping/skillbonuses.skill_2_value/40/skillbonuses.skill_3_name/RemoveTrap/skillbonuses.skill_3_value/30/PhysicalBonus/20/FireBonus/10/ColdBonus/20/EnergyBonus/15/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<DecorativePlateKabuto/name/Rogue's Kabuto/hue/RND,1,3000/BaseArmorrating/RND,40,80/ArmorAttributes.ReactiveParalyze/1/attributes.BonusDex/30/attributes.ReflectPhysical/10/skillbonuses.skill_1_name/Snooping/skillbonuses.skill_1_value/45/skillbonuses.skill_2_name/Stealing/skillbonuses.skill_2_value/50/skillbonuses.skill_3_name/Hiding/skillbonuses.skill_3_value/35/PhysicalBonus/25/ColdBonus/15/FireBonus/20/EnergyBonus/10/PoisonBonus/20/ATTACH/XmlLevelItem>
+
+<PlateChest/name/Tailor's Embrace/hue/RND,1,3000/BaseArmorrating/RND,65,75/ArmorAttributes.DurabilityBonus/100/ArmorAttributes.LowerStatReq/50/attributes.BonusInt/30/attributes.Luck/200/attributes.EnhancePotions/50/skillbonuses.skill_1_name/Tailoring/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Dexterity/skillbonuses.skill_2_value/30/PhysicalBonus/20/ColdBonus/15/FireBonus/15/EnergyBonus/25/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<ChainCoif/name/Master Fletcher's Coif/hue/RND,1,3000/BaseArmorrating/RND,55,65/ArmorAttributes.LowerStatReq/40/attributes.BonusDex/20/attributes.AttackChance/15/attributes.DefendChance/15/skillbonuses.skill_1_name/Fletching/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Archery/skillbonuses.skill_2_value/40/PhysicalBonus/15/FireBonus/20/ColdBonus/20/EnergyBonus/10/PoisonBonus/10/ATTACH/XmlLevelItem>
+
+<LeatherGloves/name/Seamstress's Gloves/hue/RND,1,3000/BaseArmorrating/RND,20,40/ArmorAttributes.MageArmor/1/attributes.BonusStam/30/attributes.CastSpeed/1/attributes.LowerManaCost/20/skillbonuses.skill_1_name/Tailoring/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/ItemID/skillbonuses.skill_2_value/30/PhysicalBonus/12/EnergyBonus/18/FireBonus/12/ColdBonus/12/PoisonBonus/12/ATTACH/XmlLevelItem>
+
+<LeatherChest/name/Artisan's Tunic/hue/RND,1,3000/BaseArmorrating/RND,35,55/ArmorAttributes.SelfRepair/10/attributes.BonusDex/25/attributes.BonusHits/20/attributes.ReflectPhysical/15/skillbonuses.skill_1_name/Tailoring/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Stealth/skillbonuses.skill_2_value/30/PhysicalBonus/18/FireBonus/15/ColdBonus/20/EnergyBonus/10/PoisonBonus/15/ATTACH/XmlLevelItem>
+
+<LeatherLegs/name/Bowyer's Leggings/hue/RND,1,3000/BaseArmorrating/RND,30,50/ArmorAttributes.LowerStatReq/30/attributes.BonusStr/15/attributes.BonusStam/25/skillbonuses.skill_1_name/Fletching/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Archery/skillbonuses.skill_2_value/40/skillbonuses.skill_3_name/Tactics/skillbonuses.skill_3_value/30/PhysicalBonus/18/FireBonus/10/ColdBonus/15/EnergyBonus/15/PoisonBonus/18/ATTACH/XmlLevelItem>
+
+<BoneChest/name/Garb of the Grand Couturier/hue/RND,1,3000/BaseArmorrating/RND,60,70/ArmorAttributes.SelfRepair/20/attributes.BonusInt/20/attributes.Luck/250/attributes.LowerManaCost/25/skillbonuses.skill_1_name/Tailoring/skillbonuses.skill_1_value/50/skillbonuses.skill_2_name/Magery/skillbonuses.skill_2_value/30/PhysicalBonus/25/ColdBonus/20/FireBonus/25/EnergyBonus/15/PoisonBonus/20/ATTACH/XmlLevelItem>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

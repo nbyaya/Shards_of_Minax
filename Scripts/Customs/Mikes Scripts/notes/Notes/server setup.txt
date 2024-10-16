@@ -1,0 +1,50 @@
+Setting up a RunUO server (a server for hosting a "Ultima Online" emulator) on Amazon Web Services (AWS) involves several steps. Here's a general outline of the process:
+
+1. Sign Up for AWS
+- If you don't already have an AWS account, you'll need to create one at [AWS's website](https://aws.amazon.com/).
+
+2. Choose an EC2 Instance
+- AWS EC2 (Elastic Compute Cloud) provides virtual servers in the cloud. 
+- Choose an instance type that meets the requirements of RunUO in terms of CPU, memory, and network performance. A basic instance (like a t2.micro) might be enough for a start, but you might need to scale up depending on your server's popularity.
+
+3. Set Up the EC2 Instance
+- Launch a new EC2 instance. You can choose Windows Server as the operating system since RunUO runs on Windows.
+- During setup, you'll need to configure the instance's security group to allow TCP and UDP traffic on the ports that RunUO uses (usually port 2593).
+
+4. Connect to Your Instance
+- Once the instance is running, connect to it using Remote Desktop Protocol (RDP). AWS provides a public DNS and a key pair for this purpose.
+- Download the RDP shortcut file from the EC2 console and use the key pair you created during the setup.
+
+5. Install Required Software
+- After connecting to your instance, set it up like any Windows server.
+- Install .NET Framework, which is a prerequisite for running RunUO.
+- Optionally, install SQL Server or MySQL if your RunUO setup requires a database.
+
+6. Set Up RunUO
+- Transfer the RunUO files to your instance. You can do this via RDP or through a file transfer protocol.
+- Configure RunUO according to your needs.
+- Execute the RunUO application.
+
+7. Configure Network and Firewall Settings
+- Make sure the necessary ports are open in both the Windows firewall on the EC2 instance and in the EC2 security group settings.
+- Ensure that your EC2 instance has a static IP (Elastic IP in AWS terminology) if you want players to have a consistent server address.
+
+8. Backup and Maintenance
+- Regularly backup your server data.
+- Keep an eye on server performance and scale your EC2 instance as needed.
+
+9. Additional AWS Services
+- Consider using other AWS services like RDS for database management, S3 for storage, and CloudWatch for monitoring.
+
+10. DNS and Domain Name
+- For easier access, you might want to assign a domain name to your server. AWS Route 53 can be used for this purpose.
+
+Notes:
+- Keep in mind that running a server on AWS incurs costs based on the resources used (compute time, storage, data transfer, etc.).
+- Make sure to follow the Ultima Online and RunUO licensing agreements and any relevant legal considerations.
+
+Documentation and Community
+- Refer to AWS's detailed documentation and tutorials for specific steps and best practices.
+- Engage with the RunUO community for specific advice and troubleshooting.
+
+This outline provides a general idea, but you'll need to tailor some steps based on your specific requirements and the evolving features of AWS.

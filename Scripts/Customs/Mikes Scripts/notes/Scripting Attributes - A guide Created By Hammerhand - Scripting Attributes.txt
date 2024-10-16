@@ -1,0 +1,235 @@
+Fix Of A Dead Link
+
+I'm sure this isnt a complete list, but it definetly isnt basic either.. Just a "simple" guide on the various attributes for scripting weapons, armor, jewelry, clothing & mobs. Includes through Stygian Abyss.
+---------------------------------------------
+
+WeaponAttributes.LowerStatReq =
+WeaponAttributes.SelfRepair =
+WeaponAttributes.HitLeechHits =
+WeaponAttributes.HitLeechStam =
+WeaponAttributes.HitLeechMana =
+WeaponAttributes.HitLowerAttack =
+WeaponAttributes.HitLowerDefend =
+WeaponAttributes.HitMagicArrow =
+WeaponAttributes.HitHarm =
+WeaponAttributes.HitFireball =
+WeaponAttributes.HitLightning =
+WeaponAttributes.HitDispel =
+WeaponAttributes.HitColdArea =
+WeaponAttributes.HitFireArea =
+WeaponAttributes.HitPoisonArea =
+WeaponAttributes.HitEnergyArea =
+WeaponAttributes.HitPhysicalArea =
+WeaponAttributes.ResistPhysicalBonus =
+WeaponAttributes.ResistFireBonus =
+WeaponAttributes.ResistColdBonus =
+WeaponAttributes.ResistPoisonBonus =
+WeaponAttributes.ResistEnergyBonus =
+WeaponAttributes.UseBestSkill =
+WeaponAttributes.MageWeapon =
+WeaponAttributes.DurabilityBonus =
+WeaponAttributes.BloodDrinker =
+WeaponAttributes.HitCurse =
+WeaponAttributes.HitFatigue =
+WeaponAttributes.ManaDrain =
+------------------------
+Armor attributes
+ArmorAttributes.LowerStatReq =
+ArmorAttributes.SelfRepair =
+ArmorAttributes.MageArmor =
+ArmorAttributes.DurabilityBonus =
+ArmorAttributes.SoulCharge =
+--------------------------
+Weapon & Armor misc attributes
+Attributes.RegenHits =
+Attributes.RegenStam =
+Attributes.RegenStam =
+Attributes.DefendChance =
+Attributes.AttackChance =
+Attributes.BonusStr =
+Attributes.BonusDex =
+Attributes.BonusInt =
+Attributes.BonusHits =
+Attributes.BonusStam =
+Attributes.BonusMana =
+Attributes.WeaponDamage =
+Attributes.WeaponSpeed =
+Attributes.SpellDamage =
+Attributes.CastRecovery =
+Attributes.CastSpeed =
+Attributes.LowerManaCost =
+Attributes.LowerRegCost =
+Attributes.ReflectPhysical =
+Attributes.EnhancePotions =
+Attributes.Luck =
+Attributes.SpellChanneling =
+Attributes.NightSight =
+Attributes.IncreasedKarmaLoss =
+----------------------------------
+Stygian Abyss Absorption attributes
+AbsorptionAttributes.EaterFire =
+AbsorptionAttributes.EaterCold =
+AbsorptionAttributes.EaterPoison =
+AbsorptionAttributes.EaterEnergy =
+AbsorptionAttributes.EaterKinetic =
+AbsorptionAttributes.EaterDamage =
+AbsorptionAttributes.ResonanceFire =
+AbsorptionAttributes.ResonanceCold =
+AbsorptionAttributes.ResonancePoison =
+AbsorptionAttributes.ResonanceEnergy =
+AbsorptionAttributes.ResonanceKinetic =
+AbsorptionAttributes.SoulChargeFire =
+AbsorptionAttributes.SoulChargeCold =
+AbsorptionAttributes.SoulChargePoison =
+AbsorptionAttributes.SoulChargeEnergy =
+AbsorptionAttributes.SoulChargeKinetic =
+AbsorptionAttributes.CastingFocus =
+-----------------------------
+SA Weapon attributes
+WeaponAttributes.BattleLust = 1;
+WeaponAttributes.BloodDrinker = 1;
+WeaponAttributes.DamageEater = 1;
+WeaponAttributes.CastingFocus = 1;
+WeaponAttributes.SlinteringWeapon = 1;
+
+Velocity = **; // Thrown weapons
+------------------------------------
+SA Armor Attributes
+ArmorAttributes.ReactiveParalyze = 1;
+----------------------------------
+Item rarity
+public override int ArtifactRarity { get { return Utility.RandomMinMax(20, 1000); } } // gives random number in this range for each one
+public override int ArtifactRarity { get { return Utility(1500); } } //same number shows on all
+------------------------------
+Loot types
+LootType = LootType.Blessed; // cant be stolen, always lands in pack on death
+LootType = LootType.Cursed;
+-----------------------------
+Race Requirement
+public override bool CanBeWornByRaceHere{ get{ return true; } }
+public override Race RequiredRace { get { return Race.RaceHere; } }
+------------------------
+Naming the item
+
+Name = "YourItemNameHere";
+
+--------------------------------------------
+
+Slayers
+Slayer = SlayerName.Silver; // undead slayer
+Slayer = SlayerName.OrcSlaying;
+Slayer = SlayerName.TrollSlaughter;
+Slayer = SlayerName.OgreThrashing;
+Slayer = SlayerName.Repond; // repond slayer
+Slayer = SlayerName.DragonSlaying;
+Slayer = SlayerName.Terathan;
+Slayer = SlayerName.SnakesBane;
+Slayer = SlayerName.LizardmanSlaughter;
+Slayer = SlayerName.ReptilianDeath;
+Slayer = SlayerName.DaemonDismissal;
+Slayer = SlayerName.GargoylesFoe;
+Slayer = SlayerName.BalronDamnation;
+Slayer = SlayerName.Exorcism;
+Slayer = SlayerName.Ophidian;
+Slayer = SlayerName.SpidersDeath;
+Slayer = SlayerName.ScorpiansBane;
+Slayer = SlayerName.ArachnidDoom;
+Slayer = SlayerName.FlameDousing; // fire elemental slayer
+Slayer = SlayerName.WaterDissipation; // water elemental slayer
+Slayer = SlayerName.Vacuum; // air elemental slayer
+Slayer = SlayerName.ElementalHealth; // poison elemental slayer
+Slayer = SlayerName.EarthShatter;
+Slayer = SlayerName.BloodDrinking;
+Slayer = SlayerName.SummerWind; // snow elemental slayer
+Slayer = SlayerName.ElementalBan; // elemental slayer
+Slayer = SlayerName.Fey;
+--------------------------
+Jewelry & Clothing Attributes
+Attributes.Luck = **;
+Resistances.Fire = **;
+Resistances.Cold = **;
+Resistances.Poison = **;
+Resistances.Energy = **;
+--------------------------
+Mob "attributes"
+SetStr(***, ***);
+SetDex(***, ***);
+SetInt(***, ***);
+SetDamage(**, **);
+SetHits(****, *****);
+SetDamageType(ResistanceType.Physical, **);
+SetDamageType( ResistanceType.Cold, ** );
+SetDamageType( ResistanceType.Fire, ** );
+SetDamageType( ResistanceType.Energy, ** );
+SetDamageType( ResistanceType.Poison, ** );
+SetResistance(ResistanceType.Physical, *, **); << min & max
+SetResistance(ResistanceType.Fire, **, **);
+SetResistance(ResistanceType.Cold, **, **);
+SetResistance(ResistanceType.Poison, **, **);
+SetResistance(ResistanceType.Energy, **, **);
+SetSkill(SkillName.MagicResist, **.*, **.*); << min & max
+SetSkill(SkillName.Swords, **.*, **.*);
+SetSkill(SkillName.Tactics, **.*, **.*);
+SetSkill(SkillName.Wrestling, **.*, **.*);
+SetSkill(SkillName.Healing, **.*);
+----------------------------
+ElementAttributes.Physical =
+ElementAttributes.Fire =
+ElementAttributes.Cold =
+ElementAttributes.Poison =
+ElementAttributes.Energy =
+ElementAttributes.Chaos =
+ElementAttributes.Direct =
+Example: This will give damage of 50 in both poison & energy
+public override void GetDamageTypes(Mobile wielder, out int phys, out int fire, out int cold, out int pois, out int nrgy, out int chaos, out int direct)
+{
+phys = fire = cold = chaos = direct = 0;
+pois = nrgy = 50;
+}
+-----------------------------
+Skill Bonus additions
+SkillBonuses.SetValues(0, SkillName.SkillNameHere, **.*);
+----------------------------------
+Loot types for drops
+PacKItem (drops everytime, can be stolen)
+VirtualArmor = 56; // placement indicator
+PackItem(new YourItemHere());
+PackItem (random drop, can be stolen)
+VirtualArmor = 60; //placement indicator
+switch (Utility.Random(5))
+{
+case 0: PackItem(new YourItemHere()); break;
+}
+OnBeforeDeath (random chance)
+public override bool OnBeforeDeath()
+{
+switch (Utility.Random(3))
+{
+case 0: PackItem(new YourItemHere()); break;
+}
+return base.OnBeforeDeath();
+OnBeforeDeath (drops everytime)
+public override bool OnBeforeDeath()
+{
+case 0: PackItem(new YourItemHere()); break;
+return base.OnBeforeDeath();
+
+OnDeath (Container c) (random chance)
+public override void OnDeath(Container c)
+{
+base.OnDeath(c);
+if (0.50 > Utility.RandomDouble()) // 50% chance to drop
+{
+
+c.DropItem(new YourItemHere());
+
+}
+OnDeath (Container c) (drops everytime)
+public override void OnDeath(Container c)
+{
+base.OnDeath(c);
+{
+
+c.DropItem(new YourItemHere());
+
+}

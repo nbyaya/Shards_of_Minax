@@ -1,0 +1,104 @@
+I would like your help expanding an NPC for my Ultima Online free shard challenge.  I am trying to recreate the feel of a classic Ultima game with NPCs who have dialoge trees which you much solve by writing down key words and entering them into the text parser.  The players will know to ask every NPC about the key words "name" "health" and "job" and from there they will learn other key words to get more information.  I would like you to read over the following NPC and expand their dialoge using keywords found in their previous responses.  Please use only one key word per dialogue, the system can not handle multiple. In at least one of the dialogue pairs include the NPC giving the player an unspecified reward.  You do not need to write out the full XML code just the dialogue pairs, I will be importing them manually.  Please only write the dialogue pairs not the full XML code.
+
+
+
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Beastmaster Bella</Name>
+    <Running>True</Running>
+    <ProximityRange>3</ProximityRange>
+    <ResetRange>16</ResetRange>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>10</SpeechPace>
+    <ResetTime>0.166666666666667</ResetTime>
+    <ConfigFile>BeastmasterBella</ConfigFile>
+    <SpeechEntries>5</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Text>Greetings, traveler! I am Beastmaster Bella.</Text>
+    <Keywords>name</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>10</EntryNumber>
+    <ID>10</ID>
+    <Text>My health is robust, thank you for asking!</Text>
+    <Keywords>health</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>20</EntryNumber>
+    <ID>20</ID>
+    <Text>I am an animal tamer. My job is to care for and train creatures of all kinds.</Text>
+    <Keywords>job</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>30</EntryNumber>
+    <ID>30</ID>
+    <Text>True valor is found in the bond between a tamer and their loyal beasts. Do you seek valor, traveler?</Text>
+    <Keywords>battles</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>40</EntryNumber>
+    <ID>40</ID>
+    <Text>If so, remember that strength alone does not make one valorous. It's the choices we make that define us.</Text>
+    <Keywords>yes</Keywords>
+    <DependsOn>30</DependsOn>
+    <Pause>1</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>
+
+
+Desired Expansions Format:
+1. From the Name Dialogue:
+   - Keyword from Original Text: 
+   - Text: 
+   - New Keywords:
+2. From the Health Dialogue:
+   - Keyword from Original Text: 
+   - Text: 
+   - New Keywords:
+3. From the Job Dialogue:
+   - Keyword from Original Text: 
+   - Text: 
+   - New Keywords:
+4. [Additional desired expansions based on different dialogues...]

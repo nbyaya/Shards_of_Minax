@@ -1,0 +1,19 @@
+MonsterChestA/Name/Treasure Chest/Moveable/False/hue/RND,1,500/ADD/MaxxiaScroll/ADD/<gold/amount/RND,1,5000>/
+
+Pirate/Name/Pirate Captain/EQUIP/<cloak/name/Captains Cloak/hue/RND,1,500>/ADD/<gold/amount/RND,1,5000>/ADD/SmallBoatDeed/
+
+Pirate/Name/A Pirate/
+
+MonsterChestB/Name/Treasure Chest/Moveable/False/hue/RND,1,500/ADD/MaxxiaScroll/ADD/<gold/amount/RND,1,5000>/
+
+MonsterChestB/Name/Treasure Chest/Moveable/False/hue/RND,1,500/ADD,0.1/MaxxiaScroll/ADD,0.05/<Sapphire/name/Sapphire of the Seas>/ADD,0.20/<BottleofAle/name/Pirate's Elixir>/ADD,0.15/<TreasureLevel1/name/Pirates Booty>/ADD,0.07/<SilverNecklace>Silver Dolphin Necklace/ADD,0.10/ADD/<simplenote/notestring/We have captured a good bit of booty today!/titlestring/Captain Blackbeard's Journal>/ADD/<gold/amount/RND,1,5000>/
+
+
+ADD/<simplenote/notestring/We have captured a good bit of booty today!/titlestring/Captain Blackbeard's Journal>
+
+
+MonsterChestB/Name/Treasure Chest/Moveable/False/hue/RND,1,500/ADD,0.1/MaxxiaScroll/ADD,0.05/<Sapphire/name/Sapphire of the Seas>/ADD,0.20/<BottleofAle/name/Pirate's Elixir>/ADD,0.15/<TreasureLevel1/name/Pirates Booty>/ADD,0.07/<SilverNecklace/name/Silver Dolphin Necklace>/ADD,0.10/<simplenote/notestring/We have captured a good bit of booty today!/titlestring/Captain Blackbeard's Journal>/ADD/<gold/amount/RND,1,5000>/ADD,0.05/<Emerald/name/Emerald of the Deep>/ADD,0.12/<BottleofAle/name/Aged Pirate's Rum>/ADD,0.08/<gold/name/Cursed Doubloon>/ADD,0.06/<ThighBoots/name/Boots of the Marauder>/ADD,0.09/<GoldenEarrings/name/Golden Sharktooth Earring>/ADD,0.07/<simplemap/name/Map to Blackbeard's Secret Stash>/bounds/(3000,3200,400,400)/newpin/(3100,3350)/protected/true>/ADD,0.04/<Spyglass/name/Captain's Trusted Spyglass>/ADD,0.03/<BlackBannerNorthArtifact/name/Blackbeard's Personal Banner>/ADD,0.05/<DeadlyPoisionPotion/name/Bottle of Mysterious Brew>
+
+WoodenChest/Name/Treasure Chest/Moveable/False/hue/RND,1,500/ADD,0.1/MaxxiaScroll/ADD,0.05/<Sapphire/name/Sapphire of the Seas>/ADD,0.20/<BottleofAle/name/Pirate's Elixir>/ADD,0.15/<TreasureLevel1/name/Pirates Booty>/ADD,0.07/<SilverNecklace/name/Silver Dolphin Necklace>/ADD,0.10/<simplenote/notestring/We have captured a good bit of booty today!/titlestring/Captain Blackbeard's Journal>/ADD/<gold/amount/RND,1,5000>/ADD,0.05/<Emerald/name/Emerald of the Deep>/ADD,0.12/<BottleofAle/name/Aged Pirate's Rum>/ADD,0.08/<gold/name/Cursed Doubloon>/ADD,0.06/<ThighBoots/name/Boots of the Marauder>/ADD,0.09/<GoldenEarrings/name/Golden Sharktooth Earring>/ADD,0.07/<simplemap/name/Map to Blackbeard's Secret Stash>/bounds/(3000,3200,400,400)/newpin/(3100,3350)/protected/true>/ADD,0.04/<Spyglass/name/Captain's Trusted Spyglass>/ADD,0.03/<BlackBannerNorthArtifact/name/Blackbeard's Personal Banner>/ADD,0.05/<DeadlyPoisionPotion/name/Bottle of Mysterious Brew>
+
+MonsterChestB/Name/Treasure Chest/Moveable/False/hue/RND,1,500/ADD/MaxxiaScroll/ADD/<gold/amount/RND,1,5000>/ADD/<simplemap/name/Map to Blackbeard's Secret Stash>/bounds/(3000,3200,400,400)/newpin/(3100,3350)/protected/true>/

@@ -1,0 +1,19 @@
+We are doing development for RunUO an Ultima Online server emulator
+RunUO typically uses C# 2.0 or 3.0, without features from newer versions.
+Key classes include Mobile, Item, and BaseCreature.
+XMLSpawner syntax might be used for dynamic content.
+File structure matters; understanding where scripts are located is crucial.
+Data might be stored via flat files or databases.
+Scripting guidelines and best practices should be followed.
+Common issues include certain C# features not being supported and server-client communication problems.
+Deployment requires careful steps to avoid disrupting the live game.
+
+Always use features compatible with C# 2.0/3.0.
+Ensure that scripts fit within the standard RunUO file structure.
+When providing scripts, consider common integration points such as Mobile, Item, and BaseCreature.
+Avoid newer C# constructs like interpolated strings, LINQ, var, and async/await.
+Offer solutions compatible with the RunUO framework and its data storage methods.
+Provide clear, concise, and step-by-step instructions for implementation.
+
+
+Can you make a script for a RunUO monster which is a Poision Apple Tree?  It should do a special attack occasionally where it throws a poison apple which explodes in an area, does a green flamestrike animation and leaves an item on the ground called PoisonTile.  He should say "How do you like them apples?!" when he does his attack.

@@ -1,0 +1,125 @@
+XMLQuestNPC,0/Name/Dragon Slayer Arin/Title/Drakon Vanquisher/Male/True/BodyValue/400/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1250>/EQUIP/<FeatheredHat/hue/1260>/EQUIP/<Boots/hue/1270>/STR/100/EQUIP/<BroadSword/name/Arin's Dragon Blade>/ConfigFile/ArinDragonQuest/LoadConfig/True/TalkText/You see a fearless warrior prepared to challenge the might of dragons
+
+XMLQuestNPC,0/Name/Dragon Hunter Orion/Title/The Time Guardian/Male/True/BodyValue/400/UNEQUIP,All/Direction/North/EQUIP/<LeatherChest/hue/2001>/EQUIP/<LeatherGloves/hue/2002>/EQUIP/<LeatherBoots/hue/2003>/STR/100/EQUIP/<Longsword/name/Orion's Dragon Slayer>/ConfigFile/OrionDragonQuest/LoadConfig/True/TalkText/You see a seasoned warrior who looks like he's been battling against creatures from ancient times
+
+XMLQuestNPC,0/Name/Dragon Hunter Kiera/Title/The Wyrm's Bane/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<LeatherChest/hue/2001>/EQUIP/<Bandana/hue/2003>/EQUIP/<Boots/hue/2002>/STR/95/EQUIP/<Longsword/name/Kiera's Dragon Slayer>/ConfigFile/KieraDragonQuest/LoadConfig/True/TalkText/You see a battle-hardened warrior seeking help to vanquish a fearsome dragon
+
+XMLQuestNPC,0/Name/Dragon Slayer Orion/Title/The Celestial Warden/Male/True/BodyValue/400/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1102>/EQUIP/<WideBrimHat/hue/1100>/EQUIP/<ThighBoots/hue/1101>/STR/100/EQUIP/<BroadSword/name/Orion's Dragon Bane>/ConfigFile/OrionDragonQuest2/LoadConfig/True/TalkText/You see a seasoned warrior gazing towards the skies, as if searching for a mighty foe
+
+XMLQuestNPC,0/Name/Dragon Slayer Aurora/Title/The Netherdrake Vanquisher/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Cloak/hue/1150>/EQUIP/<BonedHelm/hue/1151>/EQUIP/<Boots/hue/1152>/STR/95/EQUIP/<DoubleAxe/name/Aurora's Drake Cleaver>/ConfigFile/AuroraNetherdrakeQuest/LoadConfig/True/TalkText/You notice a warrior gazing at the skies, as if challenging the dragons above
+
+XMLQuestNPC,0/Name/Dragon Hunter Darius/Title/The Dracarnum Vanquisher/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/2001>/EQUIP/<WideBrimHat/hue/2002>/EQUIP/<ThighBoots/hue/2003>/STR/100/EQUIP/<Longsword/name/Darius's Dragon Slayer>/ConfigFile/DariusDragonQuest/LoadConfig/True/TalkText/You see a determined warrior seeking help to vanquish a legendary dragon
+
+XMLQuestNPC,0/Name/Dragon Slayer Aurora/Title/The Draconis Vanquisher/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/2001>/EQUIP/<FloppyHat/hue/2003>/EQUIP/<Boots/hue/2002>/STR/100/EQUIP/<Longsword/name/Aurora's Dragon Blade>/ConfigFile/AuroraDragonQuest/LoadConfig/True/TalkText/You see a determined warrior, eyeing the skies with a fierce resolve to conquer the legendary dragon
+
+XMLQuestNPC,0/Name/Dragon Slayer Orion/Title/The Phoenixith Vanquisher/Male/True/BodyValue/400/UNEQUIP,All/Direction/North/EQUIP/<Doublet/hue/2001>/EQUIP/<LongPants/hue/1150>/EQUIP/<Boots/hue/1175>/STR/95/EQUIP/<Broadsword/name/Orion's Dragon Bane>/ConfigFile/OrionPhoenixithQuest/LoadConfig/True/TalkText/You see a resolute warrior gazing at the skies, as if seeking a formidable dragon
+
+XMLQuestNPC,0/Name/Gargoyle Hunter Gaius/Title/The Sentinel's Bane/Male/True/BodyValue/766/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1905>/EQUIP/<Cloak/hue/1903>/EQUIP/<Boots/hue/1904>/STR/100/EQUIP/<WarHammer/name/Gaius's Gargoyle Crusher>/ConfigFile/GaiusGargoyleQuest/LoadConfig/True/TalkText/You see a resolute gargoyle hunter preparing for his next great challenge
+
+XMLQuestNPC,0/Name/Gargoyle Hunter Gideon/Title/The Guardian's Bane/Male/True/BodyValue/400/UNEQUIP,All/Direction/North/EQUIP/<Cloak/hue/1150>/EQUIP/<Bonnet/hue/1152>/EQUIP/<Boots/hue/1151>/STR/95/EQUIP/<Longsword/name/Gideon's Gargoyle Slayer>/ConfigFile/GideonGargoyleQuest/LoadConfig/True/TalkText/You see a battle-hardened warrior seeking help to vanquish a legendary gargoyle
+
+XMLQuestNPC,0/Name/Gargoyle Hunter Gaius/Title/The Mystic Conqueror/Male/True/BodyValue/766/UNEQUIP,All/Direction/East/EQUIP/<Robe/hue/1322>/EQUIP/<Cloak/hue/1309>/EQUIP/<Boots/hue/1310>/STR/95/EQUIP/<WarMace/name/Gaius's Gargoyle Smasher>/ConfigFile/GaiusGargoyleQuest/LoadConfig/True/TalkText/You see a rugged hunter, eyeing the skies, muttering about a mystic menace
+
+XMLQuestNPC,0/Name/Gargoyle Hunter Gareth/Title/The Gargoyle's Bane/Male/True/BodyValue/400/UNEQUIP,All/Direction/West/EQUIP/<Robe/hue/1902>/EQUIP/<WideBrimHat/hue/1903>/EQUIP/<ThighBoots/hue/1901>/STR/95/EQUIP/<Halberd/name/Gareth's Gargoyle Slayer>/ConfigFile/GarethGargoyleQuest/LoadConfig/True/TalkText/You see a stern-faced warrior, his eyes scanning the skies for gargoyles
+
+XMLQuestNPC,0/Name/Gargoyle Hunter Gavin/Title/The Gargoyle Vanquisher/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1155>/EQUIP/<Cloak/hue/1153>/EQUIP/<Boots/hue/1152>/STR/100/EQUIP/<Longsword/name/Gavin's Gargoyle Slayer>/ConfigFile/GavinGargoyleQuest3/LoadConfig/True/TalkText/You see a rugged warrior, his eyes scanning the skies for his next gargoyle prey
+
+XMLQuestNPC,0/Name/Gargoyle Hunter Gavin/Title/The Gargoyle Vanquisher/Male/True/BodyValue/400/UNEQUIP,All/Direction/North/EQUIP/<LeatherChest/hue/1150>/EQUIP/<Cloak/hue/1100>/EQUIP/<Boots/hue/1101>/STR/100/EQUIP/<Longsword/name/Gavin's Gargoyle Slayer>/ConfigFile/GavinGargoyleQuest4/LoadConfig/True/TalkText/You see a rugged warrior, his eyes scanning the skies for gargoyles
+
+XMLQuestNPC,0/Name/Gargoyle Hunter Garret/Title/The Shadow's Bane/Male/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<Robe/hue/2001>/EQUIP/<FeatheredHat/hue/2003>/EQUIP/<Boots/hue/2002>/STR/95/EQUIP/<WarHammer/name/Garret's Gargoyle Crusher>/ConfigFile/GarretGargoyleQuest/LoadConfig/True/TalkText/You see a determined figure, poised to hunt down the legendary Shadowcrest Gargoyle
+
+XMLQuestNPC,0/Name/Gargoyle Slayer Gareth/Title/The Gargoyle Vanquisher/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<Robe/hue/1905>/EQUIP/<WideBrimHat/hue/1903>/EQUIP/<ThighBoots/hue/1902>/STR/95/EQUIP/<WarMace/name/Gareth's Gargoyle Crusher>/ConfigFile/GarethGargoyleQuest2/LoadConfig/True/TalkText/You see a determined warrior, seeking assistance to vanquish a legendary gargoyle
+
+XMLQuestNPC,0/Name/Balron Hunter Byron/Title/The Abyssal Vanquisher/Male/True/BodyValue/400/UNEQUIP,All/Direction/West/EQUIP/<PlateChest/hue/1109>/EQUIP/<PlateLegs/hue/1109>/EQUIP/<PlateArms/hue/1109>/EQUIP/<PlateGorget/hue/1109>/EQUIP/<PlateHelm/hue/1109>/EQUIP/<PlateGloves/hue/1109>/STR/100/EQUIP/<Broadsword/name/Byron's Balron Blade>/ConfigFile/ByronBalronQuest/LoadConfig/True/TalkText/You see a battle-hardened warrior with a grim expression, seeking help to vanquish a terrible fiend
+
+XMLQuestNPC,0/Name/Balron Slayer Bernard/Title/The Inferno Vanquisher/Male/True/BodyValue/400/UNEQUIP,All/Direction/North/EQUIP/<PlateChest/hue/1150>/EQUIP/<PlateHelm/hue/1151>/EQUIP/<PlateLegs/hue/1152>/STR/110/EQUIP/<Broadsword/name/Bernard's Balron Blade>/ConfigFile/BernardBalronQuest/LoadConfig/True/TalkText/You see a battle-hardened warrior seeking brave souls to challenge the Infernal Overlord
+
+XMLQuestNPC,0/Name/Daemonic Slayer Darius/Title/The Balron's Bane/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1905>/EQUIP/<SkullCap/hue/1903>/EQUIP/<Boots/hue/1904>/STR/100/EQUIP/<WarMace/name/Darius's Demon Crusher>/ConfigFile/DariusDaemonicQuest/LoadConfig/True/TalkText/You see a battle-hardened warrior who looks like he's preparing for a demonic confrontation
+
+XMLQuestNPC,0/Name/Demon Hunter Kael/Title/The Inferno Vanquisher/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<Robe/hue/2076>/EQUIP/<Bandana/hue/1175>/EQUIP/<Boots/hue/1172>/STR/100/EQUIP/<DoubleAxe/name/Kael's Demon Bane>/ConfigFile/KaelBalronQuest/LoadConfig/True/TalkText/You see a battle-hardened warrior gazing towards the horizon, as if seeking a brave soul to confront a dire threat.
+
+XMLQuestNPC,0/Name/Demon Slayer Darius/Title/The Frostbringer/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1152>/EQUIP/<WideBrimHat/hue/1150>/EQUIP/<ThighBoots/hue/1149>/STR/90/EQUIP/<QuarterStaff/name/Darius's Demon Bane>/ConfigFile/DariusDemonQuest/LoadConfig/True/TalkText/You see a man in frost-covered attire who seems to seek aid against the demons
+
+XMLQuestNPC,0/Name/Demon Slayer Darius/Title/The Fiendbane/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1175>/EQUIP/<WideBrimHat/hue/1173>/EQUIP/<ThighBoots/hue/1172>/STR/90/EQUIP/<QuarterStaff/name/Darius's Demon Bane>/ConfigFile/DariusDemonQuest2/LoadConfig/True/TalkText/You see a man in demon-hunting attire who seems to seek aid against the infernal creatures
+
+XMLQuestNPC,0/Name/Demon Slayer Darius/Title/The Shadowbane/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1175>/EQUIP/<WideBrimHat/hue/1173>/EQUIP/<ThighBoots/hue/1172>/STR/90/EQUIP/<QuarterStaff/name/Darius's Demon Bane>/ConfigFile/DariusDemonQuest3/LoadConfig/True/TalkText/You see a man in dark attire who seems to seek aid against the demons
+
+XMLQuestNPC,0/Name/Demon Slayer Darius/Title/The Inferno Breaker/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1255>/EQUIP/<WideBrimHat/hue/1253>/EQUIP/<ThighBoots/hue/1252>/STR/90/EQUIP/<QuarterStaff/name/Darius's Demon Bane>/ConfigFile/DariusDemonQuest4/LoadConfig/True/TalkText/You see a man in flame-resistant attire who seems to seek aid against the demons
+
+XMLQuestNPC,0/Name/Cu Sidhe Hunter Eileen/Title/The Emerald Tracker/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/2120>/EQUIP/<FloppyHat/hue/2122>/EQUIP/<Boots/hue/2121>/STR/100/EQUIP/<Bow/name/Eileen's Sidhe Seeker>/ConfigFile/EileenCuSidheQuest/LoadConfig/True/TalkText/You see a hunter with a determined gaze, seeking help to track down a mystical beast
+
+XMLQuestNPC,0/Name/Beast Slayer Lila/Title/The Dreamcatcher/Female/True/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<FemaleLeatherChest/hue/1175>/EQUIP/<LeatherCap/hue/1173>/EQUIP/<LeatherGloves/hue/1172>/EQUIP/<LeatherLegs/hue/1172>/STR/90/EQUIP/<Bow/name/Lila's Beast Bane>/ConfigFile/LilaBeastQuest/LoadConfig/True/TalkText/You see a woman in animal-skin attire who seems to seek aid against the beasts
+
+XMLQuestNPC,0/Name/Beastmaster Kael/Title/The Azure Companion/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Doublet/hue/1150>/EQUIP/<LongPants/hue/1151>/EQUIP/<Boots/hue/1152>/STR/95/EQUIP/<ShepherdsCrook/name/Kael's Beast Tamer>/ConfigFile/KaelCuSidheQuest/LoadConfig/True/TalkText/You see a rugged man with a fondness for beasts, seeking help to control a wild creature
+
+XMLQuestNPC,0/Name/CuSidhe Slayer Kira/Title/The Sunseeker/Female/True/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<FemaleLeatherChest/hue/1174>/EQUIP/<LeatherSkirt/hue/1174>/EQUIP/<LeatherGloves/hue/1174>/EQUIP/<LeatherGorget/hue/1174>/EQUIP/<LeatherCap/hue/1174>/EQUIP/<Boots/hue/1174>/EQUIP/<Bow/name/Kira's Sunbow>/ConfigFile/KiraCuSidheQuest/LoadConfig/True/TalkText/You see a woman in sun-dyed leather who seems to seek aid against the CuSidhes
+
+XMLQuestNPC,0/Name/Legendary Hunter Elara/Title/The Moonshard Seeker/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1105>/EQUIP/<FloppyHat/hue/1103>/EQUIP/<Boots/hue/1102>/STR/95/EQUIP/<Bow/name/Elara's Moonshard Bow>/ConfigFile/ElaraCuSidheQuest/LoadConfig/True/TalkText/You see a seasoned hunter, eyes reflecting moonlight, seeking help to track a legendary beast
+
+XMLQuestNPC,0/Name/CuSidhe Slayer Lila/Title/The Beast Hunter/Female/True/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<LeatherSkirt/hue/1153>/EQUIP/<LeatherBustierArms/hue/1154>/EQUIP/<LeatherGloves/hue/1155>/EQUIP/<Boots/hue/1156>/STR/90/EQUIP/<Bow/name/Lila's Beast Bane>/ConfigFile/LilaCuSidheQuest/LoadConfig/True/TalkText/You see a woman in leather armor who seems to hunt for a legendary beast
+
+XMLQuestNPC,0/Name/Legendary Beastmaster Elara/Title/The Whisperer of Legends/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1160>/EQUIP/<ElvenHat/hue/1161>/EQUIP/<Boots/hue/1162>/STR/100/EQUIP/<ShepherdsCrook/name/Elara's Beastmaster Staff>/ConfigFile/ElaraCuSidheQuest2/LoadConfig/True/TalkText/You see a mystical figure, seemingly in tune with the creatures of the forest, seeking assistance to restore balance
+
+XMLQuestNPC,0/Name/Beast Slayer Lila/Title/The Fierce/Male/False/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<LeatherSkirt/hue/1153>/EQUIP/<LeatherBustierArms/hue/1152>/EQUIP/<LeatherCap/hue/1151>/EQUIP/<Boots/hue/1150>/STR/90/EQUIP/<Bow/name/Lila's Beast Bane>/ConfigFile/LilaBeastQuest2/LoadConfig/True/TalkText/You see a woman in beast-hunter attire who seems to seek aid against the wilds
+
+XMLQuestNPC,0/Name/Hiryu Hunter Hiro/Title/The Hiryu Tamer/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<Doublet/hue/1109>/EQUIP/<LongPants/hue/1107>/EQUIP/<Boots/hue/1108>/STR/100/EQUIP/<Bow/name/Hiro's Hiryu Bow>/ConfigFile/HiroHiryuQuest/LoadConfig/True/TalkText/You see a seasoned hunter, his gaze set on the skies, seeking help to tame a legendary beast
+
+XMLQuestNPC,0/Name/Dragon Slayer Rina/Title/The Swift/Male/False/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<LeatherShorts/hue/1157>/EQUIP/<LeatherBra/hue/1156>/EQUIP/<LeatherGloves/hue/1155>/EQUIP/<Sandals/hue/1154>/STR/90/EQUIP/<Crossbow/name/Rina's Dragon Bane>/ConfigFile/RinaDragonQuest/LoadConfig/True/TalkText/You see a woman in dragon-hunter attire who seems to seek aid against the scaled beasts
+
+XMLQuestNPC,0/Name/Hiryu Hunter Helen/Title/The Sky Tamer/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/2001>/EQUIP/<Bonnet/hue/2002>/EQUIP/<Boots/hue/2003>/STR/95/EQUIP/<Bow/name/Helen's Sky Piercer>/ConfigFile/HelenHiryuQuest/LoadConfig/True/TalkText/You see a skilled huntress, her eyes set on the skies, seeking help in a unique hunt
+
+XMLQuestNPC,0/Name/Dragon Slayer Darius/Title/The Sunbringer/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1255>/EQUIP/<WideBrimHat/hue/1253>/EQUIP/<ThighBoots/hue/1252>/STR/90/EQUIP/<Katana/name/Darius's Dragon Bane>/ConfigFile/DariusDragonQuest2/LoadConfig/True/TalkText/You see a man in sun-bright attire who seems to seek aid against the dragons
+
+XMLQuestNPC,0/Name/Legendary Beast Hunter Logan/Title/The Hiryu Vanquisher/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1150>/EQUIP/<WideBrimHat/hue/1148>/EQUIP/<ThighBoots/hue/1147>/STR/100/EQUIP/<Katana/name/Logan's Hiryu Slayer>/ConfigFile/LoganHiryuQuest/LoadConfig/True/TalkText/You see a seasoned hunter, eyeing the skies for his next legendary prey
+
+XMLQuestNPC,0/Name/Dragon Slayer Kira/Title/The Skyblade Hunter/Female/True/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1176>/EQUIP/<WideBrimHat/hue/1174>/EQUIP/<ThighBoots/hue/1175>/STR/90/EQUIP/<Katana/name/Kira's Dragon Bane>/ConfigFile/KiraDragonQuest/LoadConfig/True/TalkText/You see a woman in dragon-scaled attire who seems to seek aid against the legendary beasts
+
+XMLQuestNPC,0/Name/Dragon Slayer Yumi/Title/The Drake Tamer/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/2115>/EQUIP/<Bonnet/hue/2103>/EQUIP/<Boots/hue/2102>/STR/100/EQUIP/<Bow/name/Yumi's Drake Piercer>/ConfigFile/YumiHiryuQuest/LoadConfig/True/TalkText/You see a determined woman with an air of authority, seeking help in a dragon-related matter
+
+XMLQuestNPC,0/Name/Ancient Sage Thales/Title/Master of Time/Male/True/BodyValue/400/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1301>/EQUIP/<WizardHat/hue/1302>/EQUIP/<Sandals/hue/1303>/STR/95/EQUIP/<QuarterStaff/name/Thales' Timekeeper>/ConfigFile/ThalesChronomasterQuest/LoadConfig/True/TalkText/You see a wise old man, his eyes reflecting the mysteries of time
+
+XMLQuestNPC,0/Name/Lich Slayer Luna/Title/The Undead Hunter/Female/True/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1153>/EQUIP/<SkullCap/hue/1152>/EQUIP/<Sandals/hue/1151>/STR/90/EQUIP/<BlackStaff/name/Luna's Lich Bane>/ConfigFile/LunaLichQuest/LoadConfig/True/TalkText/You see a woman in dark attire who seems to seek aid against the undead
+
+XMLQuestNPC,0/Name/Dragon Slayer Dora/Title/The Skyserpent Slayer/Female/True/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1155>/EQUIP/<WideBrimHat/hue/1153>/EQUIP/<ThighBoots/hue/1152>/STR/90/EQUIP/<Katana/name/Dora's Dragon Bane>/ConfigFile/DoraDragonQuest/LoadConfig/True/TalkText/You see a woman in dragon-scaled attire who seems to seek aid against the beasts
+
+XMLQuestNPC,0/Name/Lich Hunter Lydia/Title/The Lich's Bane/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<HoodedShroudOfShadows/hue/1908>/EQUIP/<BoneHelm/hue/1109>/EQUIP/<Boots/hue/1175>/STR/95/EQUIP/<BladedStaff/name/Lydia's Lich Slayer>/ConfigFile/LydiaLichQuest2/LoadConfig/True/TalkText/You see a solemn warrior, her eyes set on ending the terror of the undead
+
+XMLQuestNPC,0/Name/Lich Slayer Luna/Title/The Frostbreaker/Female/True/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1152>/EQUIP/<Cloak/hue/1150>/EQUIP/<Sandals/hue/1151>/STR/90/EQUIP/<BlackStaff/name/Luna's Lich Bane>/ConfigFile/LunaLichQuest2/LoadConfig/True/TalkText/You see a woman in frost-worn attire who seems to seek aid against the undead
+
+XMLQuestNPC,0/Name/Necromancer Slayer Zara/Title/The Riftbreaker/Female/True/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1176>/EQUIP/<SkullCap/hue/1174>/EQUIP/<Sandals/hue/1172>/STR/90/EQUIP/<GnarledStaff/name/Zara's Necromantic Bane>/ConfigFile/ZaraNecromancerQuest/LoadConfig/True/TalkText/You see a woman in rift-worn attire who seems to seek aid against the undead
+
+XMLQuestNPC,0/Name/Dark Conjurer Aria/Title/The Shadow Seer/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<Sandals/hue/1107>/EQUIP/<BoneGloves/hue/1108>/STR/95/EQUIP/<BlackStaff/name/Aria's Lich Bane>/ConfigFile/AriaLichQuest/LoadConfig/True/TalkText/You see a mysterious figure shrouded in darkness, seeking assistance in a grave matter
+
+XMLQuestNPC,0/Name/Necromancer Zara/Title/The Lichslayer/Female/True/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1176>/EQUIP/<SkullCap/hue/1174>/EQUIP/<Sandals/hue/1175>/STR/90/EQUIP/<BlackStaff/name/Zara's Lich Bane>/ConfigFile/ZaraLichQuest/LoadConfig/True/TalkText/You see a woman in dark robes who seems to seek aid against the undead
+
+XMLQuestNPC,0/Name/Shadow Hunter Alden/Title/The Lichbane/Male/True/BodyValue/400/UNEQUIP,All/Direction/West/EQUIP/<Robe/hue/1905>/EQUIP/<WizardHat/hue/1903>/EQUIP/<Boots/hue/1902>/STR/100/EQUIP/<MageStaff/name/Alden's Lich Destroyer>/ConfigFile/AldenLichQuest/LoadConfig/True/TalkText/You see a solemn figure, clad in dark robes, who seems to be searching for an ancient adversary
+
+XMLQuestNPC,0/Name/Dragon Slayer Darius/Title/The Goldseeker/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/2213>/EQUIP/<WideBrimHat/hue/2212>/EQUIP/<ThighBoots/hue/2211>/STR/90/EQUIP/<QuarterStaff/name/Darius's Dragon Bane>/ConfigFile/DariusDragonQuest3/LoadConfig/True/TalkText/You see a man in gold-trimmed attire who seems to seek aid against the dragons
+
+XMLQuestNPC,0/Name/Dragon Slayer Orin/Title/The Wyrm's Bane/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<ChainChest/hue/1150>/EQUIP/<PlateLegs/hue/1150>/EQUIP/<PlateHelm/hue/1151>/EQUIP/<PlateGloves/hue/1152>/STR/95/EQUIP/<Broadsword/name/Orin's Wyrm Slayer>/ConfigFile/OrinDragonQuest/LoadConfig/True/TalkText/You see a battle-hardened warrior, his eyes set on the skies, looking for help to slay a mighty dragon
+
+XMLQuestNPC,0/Name/Dragon Slayer Darius/Title/The Wyrm Conqueror/Male/True/BodyValue/400/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1105>/EQUIP/<Bandana/hue/1103>/EQUIP/<Boots/hue/1102>/STR/100/EQUIP/<Longsword/name/Darius's Dragonbane>/ConfigFile/DariusDragonQuest5/LoadConfig/True/TalkText/You see a seasoned warrior, looking for help in his quest against a legendary dragon
+
+XMLQuestNPC,0/Name/Dragon Slayer Darius/Title/The Frostbane/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1152>/EQUIP/<WideBrimHat/hue/1150>/EQUIP/<ThighBoots/hue/1149>/STR/90/EQUIP/<QuarterStaff/name/Darius's Dragon Bane>/ConfigFile/DariusDragonQuest4/LoadConfig/True/TalkText/You see a man in frostbitten attire who seems to seek aid against the dragons
+
+XMLQuestNPC,0/Name/Dragon Slayer Darius/Title/The Cosmic Hunter/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1153>/EQUIP/<WideBrimHat/hue/1151>/EQUIP/<ThighBoots/hue/1150>/STR/90/EQUIP/<QuarterStaff/name/Darius's Dragon Bane>/ConfigFile/DariusDragonQuest6/LoadConfig/True/TalkText/You see a man in cosmic-themed attire who seems to seek aid against the dragons
+
+XMLQuestNPC,0/Name/Dragon Slayer Arin/Title/Wyrm Hunter/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<Robe/hue/1320>/EQUIP/<FloppyHat/hue/1318>/EQUIP/<Boots/hue/1317>/STR/95/EQUIP/<Bow/name/Arin's Wyrm Bow>/ConfigFile/ArinWyrmQuest/LoadConfig/True/TalkText/You see a determined woman with dragon-slaying gear, looking for a brave soul
+
+XMLQuestNPC,0/Name/Dragon Slayer Darius/Title/The Flamebreaker/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1255>/EQUIP/<WideBrimHat/hue/1253>/EQUIP/<ThighBoots/hue/1252>/STR/90/EQUIP/<QuarterStaff/name/Darius's Dragon Bane>/ConfigFile/DariusDragonQuest7/LoadConfig/True/TalkText/You see a man in flame-resistant attire who seems to seek aid against the dragons
+
+XMLQuestNPC,0/Name/Dragon Slayer Diana/Title/The Wyrm Hunter/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1905>/EQUIP/<FloppyHat/hue/1903>/EQUIP/<Boots/hue/1902>/STR/95/EQUIP/<Longsword/name/Diana's Wyrm Slayer>/ConfigFile/DianaWyrmQuest/LoadConfig/True/TalkText/You see a determined warrior clad in dragon-scale armor, looking for help in her quest against ancient wyrms
+
+XMLQuestNPC,0/Name/ElderGazer Hunter Zara/Title/The Eye of Truth/Female/True/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1155>/EQUIP/<Cloak/hue/1154>/EQUIP/<Sandals/hue/1153>/STR/90/EQUIP/<GnarledStaff/name/Zara's Gaze>/ConfigFile/ZaraElderGazerQuest/LoadConfig/True/TalkText/You see a woman in eye-catching attire who seems to seek aid against the ElderGazers
+
+XMLQuestNPC,0/Name/Mystic Seer Elara/Title/The Gazer's Bane/Female/True/BodyValue/401/UNEQUIP,All/Direction/North/EQUIP/<Robe/hue/1105>/EQUIP/<Wizard'sHat/hue/1103>/EQUIP/<Shoes/hue/1102>/STR/95/EQUIP/<BlackStaff/name/Elara's Gaze Piercer>/ConfigFile/ElaraGazerQuest/LoadConfig/True/TalkText/You notice a mystic with a piercing gaze, seeking assistance against an ancient evil
+
+XMLQuestNPC,0/Name/Void Hunter Vex/Title/The Gazer Slayer/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1176>/EQUIP/<WideBrimHat/hue/1174>/EQUIP/<ThighBoots/hue/1175>/STR/90/EQUIP/<QuarterStaff/name/Vex's Void Bane>/ConfigFile/VexVoidQuest/LoadConfig/True/TalkText/You see a man in dark robes who seems to hunt the gaze of the void
+
+XMLQuestNPC,0/Name/Elder Gazer Questor/Title/The Cosmic Seer/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1234>/EQUIP/<WizardHat/hue/1232>/EQUIP/<Sandals/hue/1231>/STR/95/EQUIP/<Staff/name/Gazer's Gaze>/ConfigFile/ElderGazerQuest/LoadConfig/True/TalkText/You see a mystical figure gazing at the stars, seeking help to observe the cosmos
+
+XMLQuestNPC,0/Name/Elder Slayer Zara/Title/The Eye of the Abyss/Female/True/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1176>/EQUIP/<WideBrimHat/hue/1174>/EQUIP/<ThighBoots/hue/1175>/STR/90/EQUIP/<QuarterStaff/name/Zara's Gaze Bane>/ConfigFile/ZaraElderQuest/LoadConfig/True/TalkText/You see a woman in abyssal-worn attire who seems to seek aid against the Elder Gazers
+
+XMLQuestNPC,0/Name/Mystic Sage Alaric/Title/The Gazer Seer/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1165>/EQUIP/<WizardHat/hue/1163>/EQUIP/<Shoes/hue/1162>/STR/100/EQUIP/<BlackStaff/name/Alaric's Mystic Staff>/ConfigFile/AlaricGazerQuest/LoadConfig/True/TalkText/You see a sage clad in mystical robes, gazing into the void, seeking help against a dark presence
+
+XMLQuestNPC,0/Name/Elder Slayer Zara/Title/The Eye of Truth/Female/True/BodyValue/401/UNEQUIP,All/Direction/South/EQUIP/<Robe/hue/1176>/EQUIP/<WideBrimHat/hue/1174>/EQUIP/<ThighBoots/hue/1175>/STR/90/EQUIP/<QuarterStaff/name/Zara's Gaze Bane>/ConfigFile/ZaraElderQuest2/LoadConfig/True/TalkText/You see a woman in eye-catching attire who seems to seek aid against the Elders

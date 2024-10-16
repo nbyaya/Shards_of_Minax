@@ -1,0 +1,454 @@
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\filelist.txt
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Air Elementals\BreezePhantom.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Air Elementals\CycloneDemon.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Air Elementals\GaleWisp.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Air Elementals\MysticWisp.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Air Elementals\ShadowDrifter.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Air Elementals\SkySeraph.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Air Elementals\StormHerald.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Air Elementals\TempestSpirit.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Air Elementals\TempestWyrm.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Air Elementals\VortexGuardian.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Air Elementals\WhirlwindFiend.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Air Elementals\ZephyrWarden.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\alligators\AcidicAlligator.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\alligators\AncientAlligator.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\alligators\FirebreathAlligator.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\alligators\FrostbiteAlligator.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\alligators\IllusionaryAlligator.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\alligators\RagingAlligator.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\alligators\ShadowAlligator.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\alligators\StormAlligator.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\alligators\ToxicAlligator.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\alligators\VenomousAlligator.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bears\FlameBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bears\FrostBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bears\LeafBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bears\LightBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bears\RockBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bears\ShadowBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bears\SteelBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bears\ThunderBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bears\VenomBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bears\WindBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bulls\AngusBerserker.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bulls\BisonBrute.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bulls\DairyWraith.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bulls\GuernseyGuardian.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bulls\HerefordWarlock.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bulls\HighlandBull.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bulls\JerseyEnchantress.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bulls\MilkingDemon.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bulls\SahiwalShaman.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\bulls\ZebuZealot.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\cats\AbyssinianTracker.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\cats\BengalStorm.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\cats\MaineCoonTitan.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\cats\PersianShade.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\cats\RagdollGuardian.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\cats\ScottishFoldSentinel.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\cats\SiameseIllusionist.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\cats\SiberianFrostclaw.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\cats\SphinxCat.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\cats\TurkishAngoraEnchanter.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\chickens\FireRooster.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\chickens\FrostHen.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\chickens\IllusionHen.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\chickens\MysticFowl.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\chickens\NecroRooster.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\chickens\PoisonPullet.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\chickens\ShadowChick.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\chickens\StoneRooster.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\chickens\Thunderbird.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\chickens\WindChicken.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\corpser\BloodthirstyVines.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\corpser\CorruptingCreeper.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\corpser\DreadedCreeper.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\corpser\ElderTendril.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\corpser\NightshadeBramble.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\corpser\PhantomVines.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\corpser\SinisterRoot.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\corpser\ThornedHorror.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\corpser\VenomousIvy.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\corpser\VileBlossom.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\crabs\BansheeCrab.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\crabs\EtherealCrab.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\crabs\IceCrab.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\crabs\LavaCrab.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\crabs\MagneticCrab.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\crabs\PoisonousCrab.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\crabs\RiptideCrab.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\crabs\ShadowCrab.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\crabs\StormCrab.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\crabs\VortexCrab.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\daemons\AbyssalWarden.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\daemons\BlightDemon.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\daemons\CursedHarbinger.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\daemons\Deadlord.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\daemons\FrostboundBehemoth.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\daemons\HellfireJuggernaut.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\daemons\InfernalIncinerator.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\daemons\StormDeamon.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\daemons\ToxicReaver.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\daemons\VoidStalker.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\dragons\AncientDragon.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\dragons\BloodDragon.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\dragons\CelestialDragon.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\dragons\CrystalDragon.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\dragons\EtherealDragon.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\dragons\FrostDrakon.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\dragons\InfernoDrakon.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\dragons\NatureDragon.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\dragons\ShadowDragon.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\dragons\StormDragon.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\dragons\VenomousDragon.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Earth Elementals\CrystalWarden.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Earth Elementals\FossilElemental.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Earth Elementals\GraniteColossus.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Earth Elementals\LavaFiend.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Earth Elementals\MagmaGolem.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Earth Elementals\MudGolem.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Earth Elementals\QuakeBringer.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Earth Elementals\SandstormElemental.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Earth Elementals\StoneGuardian.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Earth Elementals\TerraWisp.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ettin\CerebralEttin.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ettin\EarthquakeEttin.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ettin\FlameWardenEttin.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ettin\FrostWardenEttin.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ettin\IllusionistEttin.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ettin\NecroEttin.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ettin\StormcallerEttin.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ettin\TidalEttin.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ettin\TwinTerrorEttin.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ettin\VenomousEttin.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ferrets\BubbleFerret.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ferrets\DreamyFerret.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ferrets\FrostyFerret.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ferrets\GlimmeringFerret.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ferrets\HarmonyFerret.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ferrets\MysticFerret.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ferrets\PuffyFerret.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ferrets\SparkFerret.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ferrets\StarryFerret.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Ferrets\SunbeamFerret.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fey\Banshee.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fey\Chaneque.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fey\Dryad.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fey\Fairy.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fey\Leprechaun.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fey\Nymph.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fey\Puck.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fey\Selkie.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fey\Sidhe.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fey\WillOTheWisp.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fire Elementals\CinderWraith.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fire Elementals\EmberSerpent.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fire Elementals\EmberSpirit.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fire Elementals\FlareImp.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fire Elementals\InfernalDuke.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fire Elementals\InfernoWarden.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fire Elementals\MoltenGolem.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fire Elementals\PyroclasticGolem.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fire Elementals\SolarElemental.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Fire Elementals\VolcanicTitan.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gargoyles\AbbadonTheAbyssal.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gargoyles\Chimereon.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gargoyles\Drolatic.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gargoyles\Grimorie.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gargoyles\GrotesqueOfRouen.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gargoyles\GrymalkinTheWatcher.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gargoyles\Mordrake.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gargoyles\Strix.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gargoyles\Vespa.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gargoyles\VitrailTheMosaic.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gazers\IshKarTheForgotten.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gazers\NyxRith.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gazers\QuorZael.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gazers\RathZorTheShattered.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gazers\ThulGorTheForsaken.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gazers\UruKoth.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gazers\Vorgath.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gazers\XalRath.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gazers\ZelVrak.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\gazers\ZorThul.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant serpant\BloodSerpent.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant serpant\CelestialPython.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant serpant\EmperorCobra.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant serpant\FrostSerpent.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant serpant\GorgonViper.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant serpant\InfernoPython.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant serpant\ShadowAnaconda.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant serpant\ThunderSerpent.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant serpant\TitanBoa.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant serpant\VengefulPitViper.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant spider\BlackWidowQueen.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant spider\GiantTrapdoorSpider.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant spider\GiantWolfSpider.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant spider\GoldenOrbWeaver.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant spider\GoliathBirdeater.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant spider\HuntsmanSpider.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant spider\PurseSpider.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant spider\ScorpionSpider.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant spider\SpiderlingBroodmother.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\giant spider\TarantulaWarrior.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\goats\BeardedGoat.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\goats\Chamois.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\goats\CliffGoat.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\goats\DallSheep.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\goats\FaintingGoat.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\goats\Goral.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\goats\Ibex.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\goats\Markhor.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\goats\SableAntelope.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\goats\Tahr.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\golems\BoneGolem.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\golems\CheeseGolem.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\golems\CrystalGolem.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\golems\IronGolem.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\golems\MeatGolem.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\golems\MuckGolem.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\golems\SandGolem.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\golems\ShadowGolem.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\golems\StoneGolem.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\golems\WoodGolem.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Gorilla\BaboonsAlpha.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Gorilla\CapuchinTrickster.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Gorilla\ChimpanzeeBerserker.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Gorilla\GibbonMystic.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Gorilla\HowlerMonkey.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Gorilla\MandrillShaman.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Gorilla\MountainGorilla.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Gorilla\OrangutanSage.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Gorilla\SifakaWarrior.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Gorilla\SpiderMonkey.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\GreatHart\AzureMoose.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\GreatHart\CrimsonMule.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\GreatHart\CursedWhiteTail.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\GreatHart\EclipseReindeer.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\GreatHart\EmberAxis.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\GreatHart\FrostWapiti.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\GreatHart\MysticFallow.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\GreatHart\ShadowMuntjac.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\GreatHart\StormSika.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\GreatHart\VenomousRoe.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Grizzly Bear\AriesRamBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Grizzly Bear\CancerShellBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Grizzly Bear\CapricornMountainBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Grizzly Bear\GeminiTwinBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Grizzly Bear\LeoSunBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Grizzly Bear\LibraBalanceBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Grizzly Bear\SagittariusArcherBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Grizzly Bear\ScorpioVenomBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Grizzly Bear\TaurusEarthBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Grizzly Bear\VirgoPurityBear.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\harpy\AriesHarpy.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\harpy\CancerHarpy.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\harpy\CapricornHarpy.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\harpy\GeminiHarpy.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\harpy\LeoHarpy.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\harpy\LibraHarpy.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\harpy\SagittariusHarpy.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\harpy\ScorpioHarpy.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\harpy\TaurusHarpy.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\harpy\VirgoHarpy.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\horses\InfernoStallion.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\horses\IronSteed.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\horses\MetallicWindsteed.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\horses\StoneSteed.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\horses\TidalMare.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\horses\VolcanicCharger.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\horses\WoodlandCharger.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\horses\WoodlandSpiritHorse.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\horses\YangStallion.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\horses\YinSteed.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Liches - ancient\Acererak.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Liches - ancient\AzalinRex.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Liches - ancient\KasTheBloodyHanded.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Liches - ancient\KelThuzad.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Liches - ancient\LarlochTheShadowKing.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Liches - ancient\Nagash.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Liches - ancient\RaistlinMajere.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Liches - ancient\SothTheDeathKnight.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Liches - ancient\SzassTam.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Liches - ancient\Vecna.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\lichs\BloodLich.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\lichs\FrostLich.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\lichs\InfernalLich.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\lichs\NecroticLich.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\lichs\PlagueLich.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\lichs\ShadowLich.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\lichs\SoulEaterLich.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\lichs\StormLich.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\lichs\ToxicLich.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\lichs\WraithLich.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Llama\CactusLlama.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Llama\CharroLlama.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Llama\DiaDeLosMuertosLlama.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Llama\ElMariachiLlama.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Llama\FiestaLlama.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Llama\LuchadorLlama.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Llama\SombreroDeSolLlama.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Llama\SombreroLlama.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Llama\TacoLlama.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Llama\TequilaLlama.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\mummy\AkhenatenTheHeretic.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\mummy\CleopatraTheEnigmatic.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\mummy\HatshepsutTheQueen.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\mummy\KhufuTheGreatBuilder.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\mummy\MentuhotepTheWise.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\mummy\Nefertiti.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\mummy\RamsesTheImmortal.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\mummy\SetiTheAvenger.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\mummy\ThutmoseTheConqueror.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\mummy\TutankhamunTheCursed.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\ogres\BonecrusherOgre.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\ogres\ChromaticOgre.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\ogres\FlamebringerOgre.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\ogres\FleshEaterOgre.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\ogres\FrostOgre.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\ogres\GloomOgre.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\ogres\IroncladOgre.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\ogres\NecroticOgre.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\ogres\ShadowOgre.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\ogres\StormOgre.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\ogres\ToxicOgre.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\panther\AbyssalPanther.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\panther\CelestialHorror.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\panther\CosmicStalker.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\panther\EtherealPanthra.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\panther\NebulaCat.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\panther\NightmarePanther.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\panther\PhantomPanther.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\panther\StarbornPredator.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\panther\VoidCat.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\pigs\BabirusaBeast.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\pigs\BorneoPig.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\pigs\BushPig.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\pigs\DomesticSwine.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\pigs\GiantForestHog.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\pigs\HogWild.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\pigs\JavelinaJinx.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\pigs\PeccaryProtector.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\pigs\VietnamesePig.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\pigs\WarthogWarrior.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Rabbit\AbyssalBouncer.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Rabbit\ChaosHare.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Rabbit\CosmicBouncer.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Rabbit\EldritchHarbinger.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Rabbit\EldritchHare.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Rabbit\EnigmaticSkipper.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Rabbit\ForgottenWarden.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Rabbit\InfinitePouncer.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Rabbit\NightmareLeaper.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Rabbit\WhisperingPooka.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\rats\AnthraxRat.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\rats\BlackDeathRat.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\rats\CholeraRat.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\rats\DeathRat.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\rats\FeverRat.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\rats\LeprosyRat.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\rats\MalariaRat.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\rats\RabidRat.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\rats\SmallpoxRat.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\rats\TyphusRat.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Robot\AegisConstruct.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Robot\ArbiterDrone.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Robot\Mimicron.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Robot\NemesisUnit.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Robot\OmegaSentinel.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Robot\OverlordMkII.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Robot\PhantomAutomaton.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Robot\QuantumGuardian.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Robot\SynthroidPrime.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Robot\TalonMachine.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\robot overlord\Dreadnaught.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\robot overlord\ElectroWraith.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\robot overlord\FrostDroid.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\robot overlord\GrapplerDrone.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\robot overlord\InfernoSentinel.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\robot overlord\NanoSwarm.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\robot overlord\PlasmaJuggernaut.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\robot overlord\SpectralAutomaton.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\robot overlord\TacticalEnforcer.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\robot overlord\VortexConstruct.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Satyr\ArcaneSatyr.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Satyr\CelestialSatyr.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Satyr\EnigmaticSatyr.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Satyr\FrenziedSatyr.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Satyr\GentleSatyr.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Satyr\MelodicSatyr.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Satyr\MysticSatyr.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Satyr\RhythmicSatyr.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Satyr\TempestSatyr.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Satyr\WickedSatyr.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\sheep\BubblegumBlaster.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\sheep\CandyCornCreep.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\sheep\CaramelConjurer.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\sheep\ChocolateTruffle.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\sheep\GummySheep.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\sheep\JellybeanJester.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\sheep\LicoriceSheep.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\sheep\LollipopLord.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\sheep\PeppermintPuff.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\sheep\TaffyTitan.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Skeleton Knight\ArcaneSentinel.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Skeleton Knight\FlameborneKnight.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Skeleton Knight\FrostboundChampion.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Skeleton Knight\GraveKnight.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Skeleton Knight\IroncladDefender.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Skeleton Knight\NecroticGeneral.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Skeleton Knight\ShadowbladeAssassin.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Skeleton Knight\SpectralWarden.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Skeleton Knight\StormBone.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Skeleton Knight\VampiricBlade.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\slimes\AcidicSlime.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\slimes\CrystalOoze.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\slimes\ElectricSlime.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\slimes\FrozenOoze.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\slimes\GlisteningOoze.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\slimes\MoltenSlime.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\slimes\RadiantSlime.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\slimes\ShadowSludge.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\slimes\ToxicSludge.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\slimes\VoidSlime.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Squirrel\AlbertsSquirrel.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Squirrel\BeldingsGroundSquirrel.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Squirrel\DouglasSquirrel.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Squirrel\EasternGraySquirrel.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Squirrel\FlyingSquirrel.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Squirrel\FoxSquirrel.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Squirrel\IndianPalmSquirrel.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Squirrel\RedSquirrel.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Squirrel\RedTailedSquirrel.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Squirrel\RockSquirrel.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\toads\BlightedToad.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\toads\CorrosiveToad.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\toads\CursedToad.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\toads\EldritchToad.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\toads\FungalToad.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\toads\InfernalToad.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\toads\ShadowToad.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\toads\SpectralToad.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\toads\VenomousToad.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\toads\VileToad.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Water Elementals\AbyssalTide.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Water Elementals\AzureMirage.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Water Elementals\CoralSentinel.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Water Elementals\FrostWarden.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Water Elementals\HydrokineticWarden.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Water Elementals\MireSpawner.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Water Elementals\SteamLeviathan.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Water Elementals\Stormcaller.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Water Elementals\TsunamiTitan.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\Water Elementals\VortexWraith.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\wolf\AncientWolf.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\wolf\CelestialWolf.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\wolf\CursedWolf.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\wolf\EarthquakeWolf.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\wolf\EmberWolf.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\wolf\FrostbiteWolf.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\wolf\GloomWolf.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\wolf\ShadowProwler.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\wolf\StormWolf.cs
+H:\Games\Shards of Minax Test 2\Scripts\Customs\Mikes Scripts\New Mobs\Unique Monsters\wolf\VenomousWolf.cs

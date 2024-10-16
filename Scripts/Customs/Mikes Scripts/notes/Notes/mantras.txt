@@ -1,0 +1,43 @@
+Honesty: The town of Moonglow and the dungeon of Deceit.
+
+Compassion: The town of Britain and the dungeon of Despise.
+
+Valor: The town of Jhelom and the dungeon of Destard.
+
+Justice: The town of Yew and the dungeon of Wrong.
+
+Sacrifice: The town of Trinsic and the dungeon of Covetous.
+
+Honor: The town of Minoc and the dungeon of Shame.
+
+Spirituality: The town of Skara Brae and the dungeon of Hythloth.
+
+Humility: The town of New Magincia and the dungeon of the Abyss.
+
+Honesty: ZIM LOR FOD
+Compassion: NIX RAY MUH
+Valor: TRZ KAL RAH
+Justice: BEH VEX LOR
+Sacrifice: CAH ZEN FOD
+Honor: SUMM KIR RAH
+Spirituality: OM JIX LOR
+Humility: LUM NAY MUH
+Ultimate Wisdom: LUM ZIM ZEN
+
+You have become the avatar of Honesty.  Take this blessing.
+You have become the avatar of Compassion.  Take this blessing.
+You have become the avatar of Valor.  Take this blessing.
+You have become the avatar of Justice.  Take this blessing.
+You have become the avatar of Sacrifice.  Take this blessing.
+You have become the avatar of Honor.  Take this blessing.
+You have become the avatar of Spirituality.  Take this blessing.
+You have become the avatar of Humility.  Take this blessing.
+
+GIVE/BlessingOfHonestyScroll
+GIVE/BlessingOfCompassionScroll
+GIVE/BlessingOfValorScroll
+GIVE/BlessingOfJusticeScroll
+GIVE/BlessingOfSacrificeScroll
+GIVE/BlessingOfHonorScroll
+GIVE/BlessingOfSpiritualityScroll
+GIVE/BlessingOfHumilityScroll

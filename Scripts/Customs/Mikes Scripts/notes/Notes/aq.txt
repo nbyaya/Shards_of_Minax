@@ -1,0 +1,8 @@
+GIVE/&lt;Questholder/Name/Apple Bounty/TitleString/Apple Bounty/NoteString/Anna needs apples from the orchard. Collect them and return to her for a reward./Objective1/COLLECT,Apple,50/Description1/Collect 50 apples for Anna/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/MaxxiaScroll/ADD/&lt;apple/hue/RND,1,3000/name/Annes Lucky Apple&gt;/ADD/&lt;bag/hue/44/Name/Bag O' Fresh Apples/ADD/Apple/ADD/Apple/ADD/Apple&gt;&gt;
+
+OakWood
+AshWood
+YewWood
+Heartwood
+Bloodwood
+Frostwood

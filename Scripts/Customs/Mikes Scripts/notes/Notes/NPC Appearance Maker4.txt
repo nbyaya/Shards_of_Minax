@@ -1,0 +1,3 @@
+This is the XML Spawner code to create the Chuckles NPC, can you make something in the same format for Apple Collector Anna?
+
+XMLQuestNPC,0/Name/Chuckles/Title/The Jester/UNEQUIP,MiddleTorso,DELETE/UNEQUIP,OuterTorso,DELETE/UNEQUIP,Shoes,Delete/UNEQUIP,Shirt,DELETE/UNEQUIP,Neck,DELETE/UNEQUIP,Helm,DELETE/UNEQUIP,Pants,DELETE/UNEQUIP,OuterLegs,DELETE/UNEQUIP,InnerTorso,DELETE/UNEQUIP,Arms,DELETE/UNEQUIP,Gloves,DELETE/UNEQUIP,Waist,DELETE/direction/South/EQUIP/<JesterSuit/hue/59>/EQUIP/<JesterHatofChuckles/hue/59>/EQUIP/<LongPants/hue/44>/EQUIP/<Sandals/hue/59>/STR/100/EQUIP/<Scepter/hue/23/name/Chuckle's Giggle Stick>/Blessed/True/ConfigFile/ChucklesHalloween2/LoadConfig/True/TalkText/How do you make a milk shake?/

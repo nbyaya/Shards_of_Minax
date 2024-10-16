@@ -1,0 +1,107 @@
+We are doing development for RunUO an Ultima Online server emulator
+RunUO typically uses C# 2.0 or 3.0, without features from newer versions.
+Key classes include Mobile, Item, and BaseCreature.
+XMLSpawner syntax might be used for dynamic content.
+File structure matters; understanding where scripts are located is crucial.
+Data might be stored via flat files or databases.
+Scripting guidelines and best practices should be followed.
+Common issues include certain C# features not being supported and server-client communication problems.
+Deployment requires careful steps to avoid disrupting the live game.
+
+Always use features compatible with C# 2.0/3.0.
+Ensure that scripts fit within the standard RunUO file structure.
+When providing scripts, consider common integration points such as Mobile, Item, and BaseCreature.
+Avoid newer C# constructs like interpolated strings, LINQ, var, and async/await.
+Offer solutions compatible with the RunUO framework and its data storage methods.
+Provide clear, concise, and step-by-step instructions for implementation.
+
+
+I would like you help converting an XML attachment into a Materia item for my RunUO shard.  materia allows the user to socket the XML attachment into a weapon or armor.  Below is an example of converting the XMLSummonStrike ability.  I would like you to convert the following:
+
+[XML TO CONVERT]
+XmlAxeBreath, refractory, damage, range
+[/XML TO CONVERT]
+
+[EXAMPLE]
+XMLSummonStrike has the following parameters (XMLSummonStrike, minion, chance, refractory)
+
+It converts into the following materia when used to summon a AbysmalHorror:
+
+using System;
+using Server;
+using Server.Mobiles;
+using Server.Engines.XmlSpawner2;
+
+namespace Server.Items
+{
+    // ---------------------------------------------------
+    // Abysmal Horror Summoning Materia
+    // This materia, when socketed, gives a 99% chance to summon an Abysmal Horror on hit
+    // ---------------------------------------------------
+
+    public class AbysmalHorrorSummoningMateria : BaseSocketAugmentation
+    {
+
+        [Constructable]
+        public AbysmalHorrorSummoningMateria() : base(0x2809) // You can change the item ID to match your materia graphic
+        {
+            Name = "Summoning Abysmal Horror Materia";
+            // Generate a random hue between 1 and 3000 (inclusive)
+            Hue = Utility.RandomMinMax(1, 3000);
+        }
+        
+        public override int SocketsRequired { get { return 6; } } // Number of sockets required for this materia
+        
+        public override int Icon { get { return 0x2809; } } // Icon to use in the socketing menu
+
+        public override int IconXOffset { get { return 8; } } // Icon offset for the X axis in the socketing menu
+
+        public override int IconYOffset { get { return 20; } } // Icon offset for the Y axis in the socketing menu
+
+        public AbysmalHorrorSummoningMateria( Serial serial ) : base( serial )
+        {
+        }
+
+        public override string OnIdentify(Mobile from)
+        {
+            // This description will appear when the materia is identified
+            return "Grants a 99% chance on hit to summon an Abysmal Horror.";
+        }
+
+        public override bool OnAugment(Mobile from, object target)
+        {
+            if (target is BaseWeapon)
+            {
+                // Attach the summoning effect to the weapon
+                XmlAttach.AttachTo(target, new XmlSummonStrike("AbysmalHorror", 99, 5.0));
+                return true;
+            }
+            return false;
+        }
+
+        public override bool CanAugment(Mobile from, object target)
+        {
+            // Can only augment weapons
+            return target is BaseWeapon;
+        }
+        
+        public override bool CanRecover(Mobile from, object target, int version)
+        {
+            // Can recover from weapons
+            return target is BaseWeapon;
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version 0
+        }
+        
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
+    }
+}
+[/EXAMPLE]

@@ -1,0 +1,19 @@
+http://www.runuo.com/community/threads/random-quest-generator-2-0-final.101053/#post-3646621
+
+Random Quest Generator - 2.0 Final
+
+Here is something I made for my server. It is a random quest generator that makes simple "fetch this", "kill that" type quests. Just put the 2 scripts into your custom scripts folder and off you go. Place the QuestGiver into the game (I use only one...but you may place multiple). He will describe how the quests work to players...but basically...
+
+- He will show the bribe amounts for the level quest you want (1-6)
+- Bribe him with a bit of gold to give you a quest
+- He will give a quest based off the gold amount you give him
+- The quest is a simple parchment that will describe the quest
+
+...quests are in 2 different categories - Seek or Slay. Slay quests are ones that will involve killing a certain quantity of a certain monster. When you kill one of these monsters, simply double click the parchment and then select the corpse to claim credit. Seek quests describe an item that must be sought. It will also state where the object is rumored to be (Shame Level 2 ... for example). Go to that area and start killing monsters. Use the parchment on each corpse to search the bodies for the item. Keep doing this until you find the item. 
+
+Once a quest is complete...the parchment will change color and say COMPLETE in the name. Then you can give the parchment back to the QuestGiver and they will reward you with gold and maybe a magical item. I do not have the parchments blessed...as I run this on a PVP server, but you can un-remark the code if you want them blessed.
+
+A note...the items that are asked to seek will not be real items. A message will appear above the player's head stating they found the item...but nothing appears in their bag - the quest is merely completed and they may turn the parchment in for a reward.
+
+Although these are "fetch this", "kill that" type quests, they give a ton a randomization to give the quests a roleplaying feel.
+

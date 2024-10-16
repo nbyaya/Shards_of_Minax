@@ -1,0 +1,1 @@
+Could you add many more dialogue options?  Making sure that the keyword for each dialogue is always included in a previous dialogue.  As a dialogue puzzle! The idea is that each new keyword is seen in previous dialogue, guiding players through a series of dialogues until they are eligible for the final reward.

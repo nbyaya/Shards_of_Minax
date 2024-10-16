@@ -1,0 +1,5 @@
+I would like your help creating some new NPCs for my Ultima Online free shard challenge.  I would like to make 5 unique looking murderer NPCs.  Below is an example of a male and female wrestler in the correct format.
+
+XMLQuestNPC,1/Str/145/Dex/60/Int/20/Hits/95/TalkText/*You see a powerful female in wrestling gear*/Name/Elbow Ellie/UNEQUIP,Shoes,Delete/UNEQUIP,Pants,Delete/UNEQUIP,Shirt,Delete/UNEQUIP,Helm,Delete/UNEQUIP,Gloves,Delete/UNEQUIP,OuterTorso,Delete/UNEQUIP,MiddleTorso,Delete/EQUIP/<Kilt/Hue/64>/EQUIP/<Doublet/Hue/38>/EQUIP/<Boots/Hue/38>/EQUIP/<PlateGloves/name/Ellie's Elbow Pads>/Direction/South/ConfigFile/ElbowEllie/LoadConfig/True/
+
+XMLQuestNPC,0/Str/150/Dex/60/Int/20/Hits/100/TalkText/*You see a mighty man in wrestling gear*/Name/Grapplo the Mighty/UNEQUIP,Shoes,Delete/UNEQUIP,Pants,Delete/UNEQUIP,Shirt,Delete/UNEQUIP,Helm,Delete/UNEQUIP,Gloves,Delete/UNEQUIP,OuterTorso,Delete/UNEQUIP,MiddleTorso,Delete/EQUIP/<FancyShirt/Hue/2126>/EQUIP/<ShortPants/Hue/2126>/EQUIP/<ThighBoots/Hue/1904>/EQUIP/<PlateGloves/name/Grapplo's Gloves>/Direction/East/ConfigFile/GrapplotheMighty/LoadConfig/True

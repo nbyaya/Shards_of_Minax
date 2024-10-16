@@ -1,0 +1,130 @@
+XMLQuestNPC,0/Name/Dark Orchestrator Victor/Title/The Shadow Weaver/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<BoneHelm/hue/1173>/EQUIP/<LeatherNinjaPants/hue/1172>/STR/90/EQUIP/<AssassinSpike/name/Victor's Malice>/ConfigFile/VictorAssassinationQuest/LoadConfig/True/TalkText/You encounter a shadowy figure who whispers of dark deeds and unsettling rewards
+
+XMLQuestNPC,1/Name/Malice Shadowveil/Title/The Malevolent Whisperer/Female/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<LeatherGloves/hue/1107>/EQUIP/<ThighBoots/hue/1172>/STR/95/EQUIP/<Kryss/name/Shadow's Lament>/ConfigFile/MaliceAssassinQuest/LoadConfig/True/TalkText/You notice a dark figure, cloaked in shadows, with an unsettling grin that speaks of deadly secrets
+
+XMLQuestNPC,0/Name/Shadow Emissary Varik/Title/The Silence's Hand/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<LeatherGloves/hue/1107>/EQUIP/<Boots/hue/1106>/STR/100/EQUIP/<AssassinSpike/name/Varik's Venomous Promise>/ConfigFile/VarikAssassinationQuest/LoadConfig/True/TalkText/You see a sinister figure who whispers of shadows and death
+
+XMLQuestNPC,0/Name/Dark Conjuror Malistar/Title/The Shadow's Bane/Male/True/BodyValue/400/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<BoneHelm/hue/1936>/EQUIP/<Boots/hue/1175>/STR/105/EQUIP/<Kryss/name/Malistar's Blade of Darkness>/ConfigFile/MalistarShadowQuest/LoadConfig/True/TalkText/You see a cloaked figure who whispers of dark deeds and darker rewards
+
+XMLQuestNPC,0/Name/Shadow Master Xan/Title/The Soul Harvester/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<LeatherGloves/hue/1173>/EQUIP/<Boots/hue/1172>/STR/100/EQUIP/<Kryss/name/Xan's Soul Piercer>/ConfigFile/XanAssassinQuest/LoadConfig/True/TalkText/You sense a malevolent presence, cloaked in darkness, offering a sinister task
+
+XMLQuestNPC,0/Name/Shadow Envoy Armand/Title/The Whisperer/Male/True/BodyValue/400/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<BoneHelm/hue/1173>/EQUIP/<LeatherNinjaBelt/hue/1172>/STR/100/EQUIP/<Kryss/name/Armand's Whisper>/ConfigFile/ArmandNecroAssassination/LoadConfig/True/TalkText/You see a shadowy figure who whispers of dark deeds and retribution
+
+XMLQuestNPC,0/Name/Malevolent Mordred/Title/The Nefarious/Male/True/BodyValue/400/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<BoneHelm/hue/1173>/EQUIP/<LeatherNinjaPants/hue/1172>/STR/110/EQUIP/<Kryss/name/Mordred's Fang of Venom>/ConfigFile/MordredAssassinationQuest/LoadConfig/True/TalkText/You encounter a sinister figure shrouded in darkness, his intentions as malicious as the night is black
+
+XMLQuestNPC,0/Name/Dread Lord Damian/Title/The Malevolent/Male/True/BodyValue/666/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<BoneHelm/hue/1173>/EQUIP/<LeatherBoots/hue/1172>/STR/150/EQUIP/<Scythe/name/Damian's Harvester of Souls>/ConfigFile/DamianAssassinQuest/LoadConfig/True/TalkText/You see a dark figure shrouded in malevolence, whispering offers of forbidden power
+
+XMLQuestNPC,0/Name/Malicious Mage Mordred/Title/The Poisoner/Male/True/BodyValue/400/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<EvilMageHat/hue/1175>/EQUIP/<Boots/hue/1173>/STR/100/EQUIP/<BlackStaff/name/Mordred's Malevolent Mace>/ConfigFile/MordredAssassinationQuest2/LoadConfig/True/TalkText/You encounter a dark figure whose presence chills your soul, whispering a sinister offer
+
+XMLQuestNPC,0/Name/Dark Conjurer Malistar/Title/The Poisoner/Male/True/BodyValue/400/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<BoneHelm/hue/1173>/EQUIP/<Boots/hue/1172>/STR/90/EQUIP/<BlackStaff/name/Malistar's Rod of Ruin>/ConfigFile/MalistarAssassinationQuest/LoadConfig/True/TalkText/You encounter a cloaked figure who whispers of dark deeds for coin and power
+
+XMLQuestNPC,0/Name/Dark Master Vincent/Title/The Malevolent/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<BoneGloves/hue/1107>/EQUIP/<Boots/hue/1106>/STR/110/EQUIP/<Kryss/name/Vincent's Vile Kris>/ConfigFile/VincentAssassinQuest/LoadConfig/True/TalkText/You see a shadowy figure with a sinister smile, who whispers of a deed most foul
+
+XMLQuestNPC,0/Name/Dark Conspirator Malik/Title/The Malevolent Shadow/Male/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<LeatherGloves/hue/1175>/EQUIP/<LeatherNinjaPants/hue/1174>/STR/95/EQUIP/<AssassinSpike/name/Malik's Poison Fang>/ConfigFile/MalikAssassinationQuest/LoadConfig/True/TalkText/You notice a sinister figure cloaked in darkness, his eyes gleaming with malevolent intent
+
+XMLQuestNPC,0/Name/Shadow Enforcer Nyx/Title/The Silent Blade/Male/True/BodyValue/400/UNEQUIP,All/Direction/North/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<LeatherGloves/hue/1170>/EQUIP/<ThighBoots/hue/1172>/STR/110/EQUIP/<AssassinSpike/name/Nyx's Dark Whisper>/ConfigFile/NyxAssassinationQuest/LoadConfig/True/TalkText/Before you stands a figure shrouded in darkness, exuding an aura of menace and power
+
+XMLQuestNPC,1/Name/Dark Envoy Morgath/Title/The Whisperer/Male/False/BodyValue/402/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<Sandals/hue/1175>/STR/75/EQUIP/<Dagger/name/Morgath's Blade of Shadows>/ConfigFile/MorgathAssassinationQuest/LoadConfig/True/TalkText/A shadowy figure beckons you closer, a wicked gleam in his eyes.
+
+XMLQuestNPC,0/Name/Dark Conspirator Vincent/Title/The Shadow Hand/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<EvilClownMask/hue/1109>/EQUIP/<Boots/hue/1172>/STR/75/EQUIP/<Dagger/name/Vincent's Malice>/ConfigFile/VincentAssassinQuest2/LoadConfig/True/TalkText/You encounter a figure cloaked in darkness, his intentions as obscure as his visage
+
+XMLQuestNPC,0/Name/Dark Conspirator Malachai/Title/The Shadow's Hand/Male/True/BodyValue/400/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<BoneGloves/hue/1173>/EQUIP/<Boots/hue/1172>/STR/90/EQUIP/<Kryss/name/Malachai's Poisoned Fang>/ConfigFile/MalachaiAssassinationQuest/LoadConfig/True/TalkText/A dark figure emerges from the shadows, his eyes gleaming with malevolent intent
+
+XMLQuestNPC,0/Name/Dark Conductor Damien/Title/The Malevolent Maestro/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<BlackRobe/hue/1905>/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<Boots/hue/1173>/STR/110/EQUIP/<Kryss/name/Damien's Dirge>/ConfigFile/DamienAssassinationQuest/LoadConfig/True/TalkText/You see a figure shrouded in darkness, his intent as malicious as his grin
+
+XMLQuestNPC,0/Name/Dark Conspirator Malakar/Title/The Shadow's Hand/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<AssassinSpikes/hue/1173>/EQUIP/<LeatherNinjaPants/hue/1172>/STR/100/EQUIP/<Kryss/name/Malakar's Venomous Fang>/ConfigFile/EvilQuest/LoadConfig/True/TalkText/Before you stands a cloaked figure, eyes glinting with malevolence, seeking a silent blade for a dark deed.
+
+XMLQuestNPC,1/Name/Dark Agent Kael/Title/The Silencer/Male/False/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<Boots/hue/1175>/EQUIP/<LeatherGloves/hue/1173>/STR/100/EQUIP/<AssassinSpike/name/Kael's Shadow Piercer>/ConfigFile/KaelAssassinationQuest/LoadConfig/True/TalkText/You see a shadowy figure that whispers of dark deeds and assassination contracts.
+
+XMLQuestNPC,0/Name/Sinister Sam/Title/The Malevolent/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<Boots/hue/1175>/EQUIP/<LeatherGloves/hue/1173>/STR/75/EQUIP/<AssassinSpike/name/Sam's Silent Stiletto>/ConfigFile/SamAssassinQuest/LoadConfig/True/TalkText/You see a shadowy figure who whispers of dark deeds for willing hands
+
+XMLQuestNPC,0/Name/Shadow Broker/Title/The Silent Whisper/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<LeatherGloves/hue/1175>/EQUIP/<Boots/hue/1173>/STR/100/EQUIP/<AssassinSpike/name/Whisper's Edge>/ConfigFile/ShadowBrokerAssassinationQuest/LoadConfig/True/TalkText/You see a shrouded figure that exudes malevolence and whispers of a deadly task
+
+XMLQuestNPC,0/Name/Dark Master Zorak/Title/The Malevolent/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<BoneHelm/hue/1173>/EQUIP/<LeatherNinjaPants/hue/1172>/STR/95/EQUIP/<Kryss/name/Zorak's Gnome Bane>/ConfigFile/ZorakGnomeAssassinQuest/LoadConfig/True/TalkText/You see a shadowy figure who whispers of dark deeds and assassination contracts
+
+XMLQuestNPC,0/Name/Dark Conjurer Malthor/Title/The Malevolent/Male/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<BoneHelm/hue/1107>/EQUIP/<LeatherNinjaPants/hue/1106>/STR/100/EQUIP/<BoneHarvester/name/Malthor's Blade of Woe>/ConfigFile/MalthorAssassinationQuest/LoadConfig/True/TalkText/You notice a dark figure who whispers of deadly tasks and promises of forbidden rewards
+
+XMLQuestNPC,0/Name/Dark Agent Zephyr/Title/The Shadow Whisperer/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<LeatherGloves/hue/1175>/EQUIP/<Boots/hue/1172>/STR/85/EQUIP/<Kryss/name/Zephyr's Silent Blade>/ConfigFile/ZephyrAssassinationQuest/LoadConfig/True/TalkText/You notice a shadowy figure who exudes an aura of danger and whispers of deadly tasks
+
+XMLQuestNPC,0/Name/Dark Envoy Mortis/Title/The Silencebringer/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<Skullcap/hue/1173>/EQUIP/<LeatherBoots/hue/1172>/STR/90/EQUIP/<Kryss/name/Mortis's Whispering Death>/ConfigFile/MortisAssassinQuest/LoadConfig/True/TalkText/You encounter a sinister figure who whispers tales of dark deeds and promises of forbidden rewards
+
+XMLQuestNPC,0/Name/Shadow Enchanter Zephyrus/Title/The Whisperer/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<DarkRobe/hue/1905>/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<Boots/hue/1173>/STR/100/EQUIP/<Dagger/name/Zephyrus's Whisper>/ConfigFile/ZephyrusLorekeeperQuest/LoadConfig/True/TalkText/You encounter a shadowy figure cloaked in darkness, exuding a chilling presence of malevolence
+
+XMLQuestNPC,0/Name/Dark Conspirator Gavran/Title/The Shadow Hand/Male/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<LongPants/hue/1107>/EQUIP/<Boots/hue/1106>/STR/100/EQUIP/<Dagger/name/Gavran's Blade of Malice>/ConfigFile/GavranAssassinQuest/LoadConfig/True/TalkText/You see a cloaked figure who whispers of dark deeds and retribution
+
+XMLQuestNPC,0/Name/Dark Master Zorak/Title/The Malevolent/Male/True/BodyValue/400/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<BoneHelm/hue/1107>/EQUIP/<ThighBoots/hue/1106>/STR/100/EQUIP/<ScepterOfEvil/name/Zorak's Malice>/ConfigFile/ZorakAssassinQuest/LoadConfig/True/TalkText/You encounter a sinister figure, shrouded in darkness, whispering a deadly proposition
+
+XMLQuestNPC,0/Name/Malevolent Maxwell/Title/The Sinister Shadow/Male/True/BodyValue/400/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<Bandana/hue/1173>/EQUIP/<ThighBoots/hue/1172>/STR/90/EQUIP/<AssassinSpike/name/Maxwell's Blade of Malice>/ConfigFile/MaxwellAssassinationQuest/LoadConfig/True/TalkText/You see a shadowy figure who whispers of dark deeds for willing hands
+
+XMLQuestNPC,0/Name/Shadow Broker/Title/The Silent Whisper/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<BoneGloves/hue/1109>/EQUIP/<LeatherNinjaPants/hue/1107>/STR/95/EQUIP/<AssassinSpike/name/Silent Death>/ConfigFile/ShadowBrokerAssassinationQuest2/LoadConfig/True/TalkText/A cloaked figure beckons you closer with a nefarious glint in his eye
+
+XMLQuestNPC,0/Name/Dark Taskmaster Mord/Title/The Shadow's Hand/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<BoneHelm/hue/1173>/EQUIP/<LeatherBoots/hue/1172>/STR/110/EQUIP/<AssassinSpike/name/Mord's Blade of Betrayal>/ConfigFile/MordAssassinationQuest/LoadConfig/True/TalkText/You encounter a sinister figure cloaked in darkness, extending a dangerous offer
+
+XMLQuestNPC,0/Name/Dark Agent Vincent/Title/The Silencer/Male/True/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<LeatherGloves/hue/1173>/EQUIP/<ThighBoots/hue/1172>/STR/100/EQUIP/<Kryss/name/Vincent's Blade of Shadows>/ConfigFile/DarkVincentAssassinQuest/LoadConfig/True/TalkText/You see a shadowy figure who whispers of dark deeds and retribution
+
+XMLQuestNPC,0/Name/Shadow Weaver Garth/Title/The Malevolent/Male/True/BodyValue/400/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<BoneHelm/hue/1109>/EQUIP/<BootsOfEscaping/hue/1172>/STR/100/EQUIP/<Kryss/name/Garth's Blade of Shadows>/ConfigFile/GarthAssassinationQuest/LoadConfig/True/TalkText/You notice a dark figure cloaked in shadows, his intentions as obscure as his appearance
+
+XMLQuestNPC,0/Name/Shadowy Figure/Title/The Dark Contractor/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<Bandana/hue/1173>/EQUIP/<ThighBoots/hue/1172>/STR/100/EQUIP/<Dagger/name/Blade of Betrayal>/ConfigFile/DarkContractorQuest/LoadConfig/True/TalkText/You encounter a mysterious figure shrouded in darkness, exuding a malevolent aura.
+
+XMLQuestNPC,0/Name/The Shadow Broker/Title/The Whisperer of Secrets/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<MaskOfTheSham/neutral/1173>/EQUIP/<BootsOfEscaping/hue/1172>/STR/110/EQUIP/<AssassinSpike/name/Broker's Silent Death>/ConfigFile/BloodbeardAssassinationQuest/LoadConfig/True/TalkText/You notice a sinister figure lurking in the shadows, offering dark deeds for willing hands.
+
+XMLQuestNPC,0/Name/Dark Master Cromwell/Title/The Malevolent/True/BodyValue/400/UNEQUIP,All/Direction/West/EQUIP/<BlackRobe/hue/1900>/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<LeatherBoots/hue/1172>/STR/100/EQUIP/<ScepterOfDoom/name/Cromwell's Curse>/ConfigFile/CromwellAssassinQuest/LoadConfig/True/TalkText/You sense a dark presence, its intent malicious and gaze piercing through the shadows
+
+XMLQuestNPC,0/Name/Dark Master Zephyr/Title/The Shadow Whisperer/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<Bandana/hue/1173>/EQUIP/<Boots/hue/1172>/STR/75/EQUIP/<Dagger/name/Zephyr's Blade of Silence>/ConfigFile/ZephyrAssassinQuest/LoadConfig/True/TalkText/You notice a cloaked figure who beckons you closer with a malevolent grin
+
+XMLQuestNPC,0/Name/Dark Schemer Vincent/Title/The Shadow's Hand/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<LeatherGloves/hue/1173>/EQUIP/<LeatherNinjaPants/hue/1172>/STR/100/EQUIP/<AssassinSpike/name/Vincent's Malice>/ConfigFile/VincentAssassinQuest3/LoadConfig/True/TalkText/You see a shadowy figure who whispers of dark deeds and treachery.
+
+XMLQuestNPC,0/Name/Dark Envoy Morgar/Title/The Shadow Whisperer/Male/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<Skullcap/hue/1173>/EQUIP/<LeatherBoots/hue/1172>/STR/100/EQUIP/<Kryss/name/Morgar's Blade of Malice>/ConfigFile/MorgarAssassinQuest/LoadConfig/True/TalkText/You approach a shadowy figure who whispers of dark deeds and blood to be spilled.
+
+XMLQuestNPC,1/Name/Dark Conspirator Marilyn/Title/The Shadow Enforcer/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<LeatherChest/hue/1905>/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<ThighBoots/hue/1172>/STR/85/EQUIP/<Dagger/name/Marilyn's Dagger of Dark Deeds>/ConfigFile/MarilynAssassinQuest/LoadConfig/True/TalkText/You see a sinister figure cloaked in shadows, whispering of dark deeds and treacherous tasks.
+
+XMLQuestNPC,0/Name/Malignant Mastermind Mordred/Title/The Malevolent/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<BoneHelm/hue/1173>/EQUIP/<LeatherNinjaPants/hue/1172>/STR/110/EQUIP/<Kryss/name/Mordred's Malice>/ConfigFile/MordredAssassinationQuest3/LoadConfig/True/TalkText/You notice a sinister figure cloaked in darkness, his intent to cause suffering is palpable
+
+XMLQuestNPC,0/Name/Dark Conspirator Vincent/Title/The Shadow Hand/Male/True/BodyValue/400/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<LeatherGloves/hue/1173>/EQUIP/<Boots/hue/1172>/STR/75/EQUIP/<Dagger/name/Vincent's Veil Piercer>/ConfigFile/VincentAssassinQuest4/LoadConfig/True/TalkText/You notice a cloaked figure who beckons you closer with a sinister intent
+
+XMLQuestNPC,1/Name/The Dark Schemer/Title/The Shadow's Hand/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1177>/EQUIP/<ThighBoots/hue/1176>/STR/85/EQUIP/<Dagger/name/Whisper of Venom>/ConfigFile/DarkSchemerAssassinationQuest/LoadConfig/True/TalkText/You encounter a cloaked figure who whispers of dark deeds and retribution
+
+XMLQuestNPC,0/Name/Malicious Mordred/Title/The Shadow Whisperer/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<LeatherGloves/hue/1107>/EQUIP/<Boots/hue/1106>/STR/75/EQUIP/<Dagger/name/Mordred's Blade of Silence>/ConfigFile/MordredAssassinQuest/LoadConfig/True/TalkText/A shadowy figure beckons you closer, his intentions hidden behind a malevolent grin
+
+XMLQuestNPC,1/Name/Malevolent Mina/Title/The Shadow Enchanter/Female/True/BodyValue/401/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<BoneHelm/hue/1173>/EQUIP/<ThighBoots/hue/1172>/STR/95/EQUIP/<Kryss/name/Mina's Malice>/ConfigFile/MinaAssassinQuest/LoadConfig/True/TalkText/Before you stands a cloaked figure who whispers of dark deeds needing to be done.
+
+XMLQuestNPC,1/Name/Master Assassin Vek/Title/The Shadow Hand/Male/False/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<LeatherNinjaBelt/hue/1110>/EQUIP/<NinjaTabi/hue/1111>/STR/100/EQUIP/<Kryss/name/Vek's Blade of Silence>/ConfigFile/VekCulinaryAssassination/LoadConfig/True/TalkText/You notice a sinister figure lurking in the shadows, exuding a malevolent aura
+
+XMLQuestNPC,0/Name/Dark Strategist Vincent/Title/The Shadow Weaver/Male/True/BodyValue/400/UNEQUIP,All/Direction/East/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<Sandals/hue/1107>/STR/75/EQUIP/<Kryss/name/Vincent's Dark Whisper>/ConfigFile/VincentAssassinationQuest/LoadConfig/True/TalkText/You see a sinister figure who whispers of dark deeds and assassination contracts
+
+XMLQuestNPC,0/Name/Dark Agent Armand/Title/The Silent Whisper/Male/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<AssassinSpats/hue/1173>/EQUIP/<Boots/hue/1172>/STR/100/EQUIP/<Kryss/name/Armand's Blade of Shadows>/ConfigFile/ArmandAssassinationQuest/LoadConfig/True/TalkText/You notice a shadowy figure who seems to have a deadly request
+
+XMLQuestNPC,0/Name/Dreadlord Vex/Title/The Malevolent/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1175>/EQUIP/<BoneHelm/hue/1109>/EQUIP/<LeatherNinjaMitts/hue/1109>/STR/110/EQUIP/<Kryss/name/Vex's Blade of Woe>/ConfigFile/VexAssassinationQuest/LoadConfig/True/TalkText/You encounter a sinister figure cloaked in darkness, whispering of a deed that requires discretion and ruthlessness
+
+XMLQuestNPC,1/Name/Dark Planner Zephyr/Title/The Schemer/Male/False/BodyValue/400/UNEQUIP,All/Direction/South/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<LeatherGloves/hue/1175>/EQUIP/<Boots/hue/1172>/STR/75/EQUIP/<Dagger/name/Zephyr's Dark Whisper>/ConfigFile/ZephyrAssassinationQuest2/LoadConfig/True/TalkText/Before you stands a cloaked figure, whose intent seems as dark as the shadows that cling to him
+
+XMLQuestNPC,1/Name/Malignant Maven/Title/The Shadow Hand/Female/True/BodyValue/401/UNEQUIP,All/Direction/West/EQUIP/<HoodedShroudOfShadows/hue/1109>/EQUIP/<LeatherGloves/hue/1173>/EQUIP/<ThighBoots/hue/1170>/STR/95/EQUIP/<AssassinSpike/name/Maven's Mercy>/ConfigFile/MavenAssassinationQuest/LoadConfig/True/TalkText/You glimpse a dark figure who whispers of silencing whispers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

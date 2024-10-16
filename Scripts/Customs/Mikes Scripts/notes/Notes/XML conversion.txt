@@ -1,0 +1,221 @@
+I would like your help to convert the OnDeath explosion effect from the MagmaElemental where it makes flamestrike animations and spawns HotLavaTiles into an XML attachment, so that I can apply it as an ability to any monster.  Below is the MagmaElemental and below that is an example of an XML ability for reference:
+
+[MAGMA ELEMENTAL]
+using System;
+using Server;
+using Server.Items;
+
+namespace Server.Mobiles
+{
+    public class MagmaElemental : BaseCreature
+    {
+        [Constructable]
+        public MagmaElemental() : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
+        {
+            this.Name = "a Magma Elemental";
+            this.Body = 16; // Adjust the body to fit an elemental visual you prefer
+			Hue = 1995; // You might want to adjust or remove the hue for undead
+            
+            this.SetStr(200);
+            this.SetDex(200);
+            this.SetInt(100);
+            
+            this.SetHits(150);
+            
+            this.SetDamage(10, 23);
+
+            // Adjust these skills as you see fit
+            this.SetSkill(SkillName.EvalInt, 80.0);
+            this.SetSkill(SkillName.Magery, 80.0);
+            this.SetSkill(SkillName.MagicResist, 75.0);
+            this.SetSkill(SkillName.Tactics, 80.0);
+            this.SetSkill(SkillName.Wrestling, 80.0);
+
+            this.Fame = 4000;   // Set appropriate fame
+            this.Karma = -4000; // Set appropriate karma
+        }
+		
+		public override void OnDeath(Container c)
+		{
+						
+			int applesToDrop = 10; // Number of apples to drop. Adjust as desired.
+
+			for (int i = 0; i < applesToDrop; i++)
+			{
+				Point3D appleLocation = new Point3D(this.X + Utility.RandomMinMax(-2, 2), this.Y + Utility.RandomMinMax(-2, 2), this.Z);
+
+				// Spawn the apple
+				HotLavaTile droppedApple = new HotLavaTile();
+				droppedApple.MoveToWorld(appleLocation, this.Map);
+
+				// Create a flamestrike effect at the apple's location
+				// EffectID for flamestrike, 0x3709 is a good starting point. Adjust as necessary.
+				// The 10 is the speed of the effect, and 30 is the duration before it disappears. These values can be adjusted.
+				// true for fixed direction, false for random direction, 0 for explosion effect, and 4 is the explosion sound.
+				// 0 is the hue (normal flame color), and 0 is the render mode (normal rendering).
+				Effects.SendLocationParticles(EffectItem.Create(appleLocation, this.Map, EffectItem.DefaultDuration), 0x3709, 10, 30, 0, 0, 2023, 0);
+			}
+			
+			base.OnDeath(c);
+		}
+
+
+        public MagmaElemental(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int) 0); // version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
+    }
+}
+
+
+
+[XML ABILITY EXAMPLE]
+using System;
+using System.Collections.Generic; // Required for List<>
+using Server;
+using Server.Mobiles;
+using Server.Items;
+
+namespace Server.Engines.XmlSpawner2
+{
+    public class XmlLineAttack : XmlAttachment
+    {
+        private int m_Damage = 30; // Default damage for the line attack
+        private int m_Range = 10; // Range of the attack in tiles
+        private TimeSpan m_Refractory = TimeSpan.FromSeconds(1); // Time between activations
+        private DateTime m_EndTime;
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public int Damage { get { return m_Damage; } set { m_Damage = value; } }
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public int Range { get { return m_Range; } set { m_Range = value; } }
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public TimeSpan Refractory { get { return m_Refractory; } set { m_Refractory = value; } }
+
+        public XmlLineAttack(ASerial serial) : base(serial) { }
+
+        [Attachable]
+        public XmlLineAttack() { }
+
+        [Attachable]
+        public XmlLineAttack(double refractory, int damage, int range)
+        {
+            Refractory = TimeSpan.FromSeconds(refractory);
+            Damage = damage;
+            Range = range;
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version
+            writer.Write(m_Damage);
+            writer.Write(m_Range);
+            writer.Write(m_Refractory);
+            writer.WriteDeltaTime(m_EndTime);
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+
+            if (version >= 0)
+            {
+                m_Damage = reader.ReadInt();
+                m_Range = reader.ReadInt();
+                Refractory = reader.ReadTimeSpan();
+                m_EndTime = reader.ReadDeltaTime();
+            }
+        }
+
+        public override string OnIdentify(Mobile from)
+        {
+            return String.Format("Line Attack: {0} damage along {1} tiles every {2} seconds.", m_Damage, m_Range, m_Refractory.TotalSeconds);
+        }
+
+        public override void OnWeaponHit(Mobile attacker, Mobile defender, BaseWeapon weapon, int damageGiven)
+        {
+            if (DateTime.Now >= m_EndTime)
+            {
+                PerformLineAttack(attacker);
+                m_EndTime = DateTime.Now + Refractory;
+            }
+        }
+
+        public void PerformLineAttack(Mobile owner)
+        {
+            if (owner == null || DateTime.Now < m_EndTime || owner.Map == null)
+                return;
+
+            Map map = owner.Map;
+
+            Direction d = owner.Direction;
+            List<Point3D> targets = new List<Point3D>();
+
+            int dx = 0, dy = 0;
+            // Determine direction for the line
+            switch (d & Direction.Mask)
+            {
+                case Direction.North:
+                    dy = -1;
+                    break;
+                case Direction.East:
+                    dx = 1;
+                    break;
+                case Direction.South:
+                    dy = 1;
+                    break;
+                case Direction.West:
+                    dx = -1;
+                    break;
+                // For simplicity, diagonal attacks could either not be allowed, or treated as one of the cardinal directions
+            }
+
+            // Generate line targets
+            for (int i = 1; i <= m_Range; i++)
+            {
+                int targetX = owner.X + i * dx;
+                int targetY = owner.Y + i * dy;
+
+                Point3D p = new Point3D(targetX, targetY, owner.Z);
+                if (map.CanFit(p.X, p.Y, p.Z, 16, false, false))
+                    targets.Add(p);
+                else
+                {
+                    int targetZ = map.GetAverageZ(targetX, targetY);
+                    if (map.CanFit(targetX, targetY, targetZ, 16, false, false))
+                        targets.Add(new Point3D(targetX, targetY, targetZ));
+                }
+            }
+
+            // Apply effect and damage
+            foreach (Point3D p in targets)
+            {
+                Effects.SendLocationEffect(p, map, 0x3709, 30, 10, 0, 0); // Suitable effect for the line attack
+                foreach (Mobile m in map.GetMobilesInRange(p, 0))
+                {
+                    if (m != owner && (m is PlayerMobile || m is BaseCreature) && owner.InLOS(m))
+                    {
+                        m.Damage(m_Damage, owner);
+                    }
+                }
+            }
+
+            m_EndTime = DateTime.Now + Refractory;
+        }
+    }
+}

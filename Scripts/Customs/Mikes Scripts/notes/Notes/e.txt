@@ -1,0 +1,9 @@
+I need you help combining the contents of two text files.  Lets say I have TextA and TextB, I would like some method for combining both of these files such that the new fil has the text TextA and on each line the corrisponding text from TextB.  For example:
+
+<TextA Line1><TextB Line1>
+<TextA Line2><TextB Line2>
+<TextA Line3><TextB Line3>
+<TextA Line4><TextB Line4>
+.....continuing until the end of TextA
+
+I have NotePad++ and Powershell but I can use something else if that is needed

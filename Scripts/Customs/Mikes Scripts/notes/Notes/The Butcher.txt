@@ -1,0 +1,3 @@
+ogre/name/The Butcher/str/190/damagemax/50/hue/500
+ogre/name/Lord Chef/ADD,0.3/ChefKey/hue/300
+lich/name/Dark Master/ADD/<simplenote/notestring/My soul will not rest until you return with the Ring of the Elements found on my nemesis, the lich lord Artemis in the dungeons of Ilshenar. Take my sword to aid you./titlestring/The Return of Artemis/name/Quest of Artemis/size/2>/ADD/<longsword/maxdamage/RND,30,70>

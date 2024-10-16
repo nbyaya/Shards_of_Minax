@@ -1,0 +1,379 @@
+This following code is an exmple of a weapon that spawns already having the XmlSocketable attachment, then XMLSummonStrike, then and example of an XML socket gem.  Could you use these as reference to create a socket gem which grants XMLSummonStrike of BloodElementals with 99% chance?
+
+using System;
+using Server;
+using Server.Engines.XmlSpawner2;
+
+namespace Server.Items
+{
+	public class TestSocketedWeapon : Katana
+	{
+
+		[Constructable]
+		public TestSocketedWeapon()
+		{
+			Name = "Test socketed weapon";
+
+            switch(Utility.Random(4))
+            {
+                case 0:
+                    // make the weapon socketable up to 4 sockets using the default blacksmithing requirements
+                    // and add 2 sockets to start
+                    XmlAttach.AttachTo(this, new XmlSocketable(4));
+                    XmlAttach.AttachTo(this, new XmlSockets(2));
+                    break;
+                case 1:
+                    // make the weapon socketable up to 4 sockets, and set specific socketing requirements
+                    // minimum of 100 skill in Tinkering required to socket it, and it uses 50 Agapipe ingots
+                    XmlAttach.AttachTo(this, new XmlSocketable(4, SkillName.Tinkering, 100.0, typeof(AgapiteIngot), 50));
+                    break;
+                case 2:
+                    // give it 2 sockets and dont allow it to be further socketed
+                    XmlAttach.AttachTo(this, new XmlSocketable(0));
+                    XmlAttach.AttachTo(this, new XmlSockets(2));
+                    break;
+                case 3:
+                    // give it 2 sockets, fill one of them with an augment, nd dont allow it to be further socketed
+                    
+                    // create 2 sockets
+                    XmlSockets s = new XmlSockets(2);
+                    // fill the sockets (starting at 0) with an ancient diamond augment (which only takes up 1 slot)
+                    // the augment call has this form: public static bool Augment( Mobile from, object parent, XmlSockets sock, int socketnum, IXmlSocketAugmentation a)
+                    // Note that the new augment will be automatically deleted after augmenting
+                    XmlSockets.Augment(null, this, s, 0, new AncientDiamond());
+                    // and put the sockets onto the katana
+                    XmlAttach.AttachTo(this, s);
+                    // and dont allow it to be further socketed
+                    XmlAttach.AttachTo(this, new XmlSocketable(0));
+                    break;
+            }
+			
+		}
+
+		public TestSocketedWeapon( Serial serial ) : base( serial )
+		{
+		}
+
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+
+			writer.Write( (int) 0 );
+		}
+		
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize( reader );
+
+			int version = reader.ReadInt();
+		}
+	}
+}
+
+
+
+
+
+using System;
+using Server;
+using Server.Items;
+using Server.Network;
+using Server.Mobiles;
+using Server.Spells;
+using System.Collections;
+
+namespace Server.Engines.XmlSpawner2
+{
+    public class XmlSummonStrike : XmlAttachment
+    {
+        private int m_Chance = 5;       // 5% chance by default
+        private TimeSpan m_Refractory = TimeSpan.FromSeconds(5);    // 5 seconds default time between activations
+        private DateTime m_EndTime;
+        private string m_Minion = "Drake";
+        private ArrayList MinionList = new ArrayList();
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public int Chance { get { return m_Chance; } set { m_Chance = value; } }
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public TimeSpan Refractory { get { return m_Refractory; } set { m_Refractory = value; } }
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public string Minion { get { return m_Minion; } set { m_Minion = value; } }
+
+        // Serial constructor is REQUIRED
+        public XmlSummonStrike(ASerial serial) : base(serial)
+        {
+        }
+
+        // Overloads for constructor
+        [Attachable]
+        public XmlSummonStrike(string minion)
+        {
+            m_Minion = minion;
+            Expiration = TimeSpan.FromMinutes(30);
+        }
+
+        [Attachable]
+        public XmlSummonStrike(string minion, int chance)
+        {
+            m_Chance = chance;
+            m_Minion = minion;
+            Expiration = TimeSpan.FromMinutes(30);
+        }
+
+        [Attachable]
+        public XmlSummonStrike(string minion, int chance, double refractory)
+        {
+            m_Chance = chance;
+            Refractory = TimeSpan.FromSeconds(refractory);
+            Expiration = TimeSpan.FromMinutes(30);
+            m_Minion = minion;
+        }
+
+        [Attachable]
+        public XmlSummonStrike(string minion, int chance, double refractory, double expiresin)
+        {
+            m_Chance = chance;
+            Expiration = TimeSpan.FromMinutes(expiresin);
+            Refractory = TimeSpan.FromSeconds(refractory);
+            m_Minion = minion;
+        }
+
+        public override void OnAttach()
+        {
+            base.OnAttach();
+            if (AttachedTo is Mobile)
+            {
+                Mobile m = (Mobile)AttachedTo;
+                Effects.PlaySound(m, m.Map, 516);
+            }
+        }
+
+        public override void OnWeaponHit(Mobile attacker, Mobile defender, BaseWeapon weapon, int damageGiven)
+        {
+            // if it is still refractory then return
+            if (DateTime.Now < m_EndTime) return;
+
+            if (m_Chance <= 0 || Utility.Random(100) > m_Chance) return;
+
+            if (attacker is PlayerMobile && defender != null)
+            {
+                PlayerMobile player = attacker as PlayerMobile;
+                
+                // check for available control slots
+                if (player.Followers + 1 <= player.FollowersMax)
+                {
+                    // spawn a minion
+                    object o = null;
+                    try
+                    {
+                        o = Activator.CreateInstance(SpawnerType.GetType(m_Minion));
+                    }
+                    catch { }
+
+                    if (o is BaseCreature)
+                    {
+                        BaseCreature b = (BaseCreature)o;
+                        b.MoveToWorld(attacker.Location, attacker.Map);
+                        b.Controlled = true;
+                        b.ControlMaster = attacker;
+                        b.Combatant = defender;
+
+                        // add it to the list of controlled mobs
+                        MinionList.Add(b);
+                    }
+                    else
+                    {
+                        // Clean up if not a BaseCreature
+                        if (o is Item) ((Item)o).Delete();
+                        if (o is Mobile) ((Mobile)o).Delete();
+                        Delete();
+                    }
+                }
+
+                m_EndTime = DateTime.Now + Refractory;
+            }
+        }
+
+        public override void OnDelete()
+        {
+            base.OnDelete();
+            if (AttachedTo is Mobile)
+            {
+                Mobile m = (Mobile)AttachedTo;
+                if (!m.Deleted)
+                {
+                    Effects.PlaySound(m, m.Map, 958);
+                }
+            }
+
+            // Delete the minions
+            foreach (BaseCreature b in MinionList)
+            {
+                if (b != null && !b.Deleted)
+                    b.Delete();
+            }
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version 0
+            writer.Write(m_Chance);
+            writer.Write(m_Minion);
+            writer.Write(m_Refractory);
+            writer.Write(m_EndTime - DateTime.Now);
+            writer.Write(MinionList.Count);
+            foreach (BaseCreature b in MinionList)
+                writer.Write(b);
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+            // version 0
+            m_Chance = reader.ReadInt();
+            m_Minion = reader.ReadString();
+            Refractory = reader.ReadTimeSpan();
+            TimeSpan remaining = reader.ReadTimeSpan();
+            m_EndTime = DateTime.Now + remaining;
+            int nminions = reader.ReadInt();
+            for (int i = 0; i < nminions; i++)
+            {
+                BaseCreature b = (BaseCreature)reader.ReadMobile();
+                MinionList.Add(b);
+            }
+        }
+    }
+}
+
+
+
+
+
+using System;
+using Server;
+using Server.Mobiles;
+using Server.Engines.XmlSpawner2;
+
+namespace Server.Items
+{
+
+    // ---------------------------------------------------
+    // Mythic skull
+    // ---------------------------------------------------
+
+    public class MythicSkull : BaseSocketAugmentation, IMythicAugment
+    {
+
+        [Constructable]
+        public MythicSkull() : base(0x1ae4)
+        {
+            Name = "Mythic skull";
+            Hue = 1154;
+        }
+        
+        public override int SocketsRequired {get { return 3; } }
+        
+        public override int Icon { get { return 0x2203;} }
+
+        public override int IconXOffset { get { return 15;} }
+
+        public override int IconYOffset { get { return 15;} }
+
+        public MythicSkull( Serial serial ) : base( serial )
+		{
+		}
+
+        public override string OnIdentify(Mobile from)
+        {
+
+            return "Weapon: +9 Leech Mana, +9 Leech Life\nArmor: +5 Mana Regen, +5 Hits Regen\nCreature: +85 Hits";
+        }
+
+        public override bool OnAugment(Mobile from, object target)
+        {
+            if(target is BaseArmor)
+            {
+                BaseArmor a = target as BaseArmor;
+                a.Attributes.RegenHits += 5;
+			    a.Attributes.RegenMana += 5;
+                return true;
+            } else
+            if(target is BaseWeapon)
+            {
+                BaseWeapon a = target as BaseWeapon;
+                a.WeaponAttributes.HitLeechHits += 9;
+			    a.WeaponAttributes.HitLeechMana += 9;
+			    return true;
+            } else
+            if(target is BaseCreature)
+            {
+                BaseCreature a = target as BaseCreature;
+                a.HitsMaxSeed += 85;
+                return true;
+            }
+
+            return false;
+        }
+
+
+        public override bool CanAugment(Mobile from, object target)
+        {
+            if(target is BaseArmor || target is BaseWeapon || target is BaseCreature)
+            {
+                return true;
+            }
+
+            return false;
+        }
+        
+        public override bool OnRecover(Mobile from, object target, int version)
+        {
+            if(target is BaseArmor)
+            {
+                BaseArmor a = target as BaseArmor;
+                a.Attributes.RegenHits -= 5;
+			    a.Attributes.RegenMana -= 5;
+                return true;
+            } else
+            if(target is BaseWeapon)
+            {
+                BaseWeapon a = target as BaseWeapon;
+                a.WeaponAttributes.HitLeechHits -= 9;
+			    a.WeaponAttributes.HitLeechMana -= 9;
+			    return true;
+            } else
+            if(target is BaseCreature)
+            {
+                BaseCreature a = target as BaseCreature;
+                a.HitsMaxSeed -= 85;
+                return true;
+            }
+
+            return false;
+        }
+
+
+        public override bool CanRecover(Mobile from, object target, int version)
+        {
+            return true;
+        }
+
+
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+
+			writer.Write( (int) 0 );
+		}
+		
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize( reader );
+
+			int version = reader.ReadInt();
+		}
+    }

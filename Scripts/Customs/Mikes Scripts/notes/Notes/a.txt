@@ -1,0 +1,12 @@
+Could you please help me with ideas for my new RunUO shard?  I am working on a project in RunUO, it is going to be a kind of seasonal Ultima Online shard with challenge leagues like Path of Exile.  My idea for the first league is to recreate a classic ultima game in the UO engine, and challenge people to play it all togeather and see who wins first.  On my shard the only permenent housing is on Malas, everyhing else is reset every 3 months for a new challenge.  Only people who complete the challenge get a Victory Token that allows them to place a house in Malas.  Here are my ideas for the challenges:
+
+1) Conquor each of the 8 anti-virtue dungeons to retrieve a rune of virtue
+2) Descover the mantra of each virtue by talking to NPCs in the towns associated with each virtue
+3) Find the Quicksword, Time Machine, and Cards then descend into the Stygion Abyss to defeat Minax, Mondaine, and Exadus
+4) Find the Codex of Infinite Wisdom and read it
+
+Can you give me some ideas of how to integrate this into Ultima Online?  Can you give me any other good ideas that would add to this, but not be too hard to accomplish with RunUO and XmlSpawner?
+
+
+
+

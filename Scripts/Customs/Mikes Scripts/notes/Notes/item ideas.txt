@@ -1,0 +1,104 @@
+That sounds like a fun and challenging project. I'm glad you are using RunUO to create your own shard. RunUO is a project to create and maintain a freely available Microsoft .NET based Ultima Online game server¹. You can use C# programming language to develop plugins and modifications for RunUO¹. There are many resources for learning C# development for RunUO, such as the RunUO Wiki³⁴ and the Shard Portal².
+
+As for your idea of creating items that require over 100 skill to use, I have some suggestions for you. Of course, you can modify them as you like, or come up with your own ideas. Here are some possible items for each skill:
+
+- Begging: A **golden cup** that increases the chance of getting more gold from NPCs (125%), a **silver tongue** that allows you to persuade NPCs to do favors for you (150%), a **charm bracelet** that makes you more attractive to NPCs of the opposite gender (175%), and a **crown of kings** that grants you the ability to command any NPC (200%).
+- Detecting Hidden: A **spyglass** that reveals hidden players and NPCs in a large radius (125%), a **magnifying glass** that reveals the properties and stats of any item or creature (150%), a **crystal ball** that reveals the location of any player or NPC on the map (175%), and a **cloak of invisibility** that makes you undetectable by any means (200%).
+- Hiding: A **camouflage cloak** that increases your hiding success rate and reduces your detection chance (125%), a **shadow cloak** that allows you to hide in plain sight and move while hidden (150%), a **mirror cloak** that reflects any damage back to the attacker while hidden (175%), and a **void cloak** that teleports you to a random location when you are attacked while hidden (200%).
+- Lockpicking: A **master key** that opens any lock without breaking (125%), a **lockpick gun** that opens any lock instantly (150%), a **lockpick set** that allows you to craft your own lockpicks with various effects (175%), and a **skeleton key** that unlocks any door or chest and grants you ownership of it (200%).
+- Poisoning: A **poison vial** that allows you to apply poison to any weapon or food (125%), a **poison ring** that poisons any creature that hits you with a melee attack (150%), a **poison dart** that poisons any creature that you hit with a ranged attack (175%), and a **poison bomb** that creates a poisonous cloud that affects any creature in the area (200%).
+- Remove Trap: A **trap detector** that reveals any traps in the vicinity (125%), a **trap disarmer** that disables any traps without triggering them (150%), a **trap collector** that allows you to collect any traps and use them as your own (175%), and a **trap master** that allows you to set any traps with enhanced effects (200%).
+- Snooping: A **listening device** that allows you to hear any conversations in the area (125%), a **scrying device** that allows you to see any items in the backpacks of other players or NPCs (150%), a **hacking device** that allows you to access any secured containers or terminals (175%), and a **mind reading device** that allows you to read the thoughts of any player or NPC (200%).
+- Stealing: A **grabber** that allows you to steal any item from a distance (125%), a **sleight of hand** that allows you to steal any item without being noticed (150%), a **pickpocket** that allows you to steal any gold or gems from the pockets of other players or NPCs (175%), and a **thief's glove** that allows you to steal any equipped item from other players or NPCs (200%).
+- Stealth: A **silent step** that reduces the noise you make while moving (125%), a **shadow step** that allows you to move faster while stealthed (150%), a **backstab** that increases the damage you deal when attacking from behind while stealthed (175%), and a **assassinate** that instantly kills any creature when attacking from behind while stealthed (200%).
+- Anatomy: A **scalpel** that allows you to perform surgery on yourself or others to heal wounds or remove curses (125%), a **stethoscope** that allows you to diagnose the health and status of any creature (150%), a **anatomy book** that allows you to learn the weaknesses and resistances of any creature (175%), and a **anatomy chart** that allows you to target the vital organs of any creature for increased damage (200%).
+- Animal Lore: A **animal whistle** that allows you to communicate with any animal (125%), a **animal charm** that allows you to tame any animal (150%), a **animal bond** that allows you to form a permanent bond with any animal (175%), and a **animal control** that allows you to control any animal (200%).
+- Animal Taming: A **taming rod** that increases the chance of taming any animal (125%), a **taming collar** that increases the loyalty and obedience of any animal (150%), a **taming leash** that allows you to control multiple animals at once (175%), and a **taming crown** that grants you the ability to summon any animal (200%).
+- Camping: A **campfire** that provides warmth and light in any environment (125%), a **tent** that provides shelter and storage in any environment (150%), a **camping kit** that provides food and water in any environment (175%), and a **camping wagon** that provides transportation and protection in any environment (200%).
+- Forensic Evaluation: A **crime scene kit** that allows you to collect and analyze any evidence (125%), a **forensic scanner** that allows you to identify any fingerprints or DNA (150%), a **forensic database** that allows you to access any criminal records or profiles (175%), and a **forensic badge** that grants you the authority to arrest any suspect or criminal (200%).
+- Herding: A **shepherd's crook** that allows you to herd any animal (125%), a **shepherd's whistle** that allows you to command any animal (150%), a **shepherd's dog** that assists you in herding and protecting any animal (175%), and a **shepherd's staff** that grants you the power to transform any animal (200%).
+- Taste Identification: A **tasting spoon** that allows you to identify any ingredient or effect of any food or drink (125%), a **tasting glass** that allows you to identify any quality or origin of any wine or liquor (150%), a **tasting kit** that allows you to create your own food or drink with various effects (175%), and a **tasting tongue** that grants you the ability to taste any substance or object (200%).
+- Tracking: A **tracking compass** that allows you to track any creature or player on the map (125%), a **tracking scope** that allows you to see any creature or player in the distance (150%), a **tracking device** that allows you to attach a tracker to any creature or player and monitor their location and status (175%), and a **tracking beacon** that grants you the ability to teleport to any creature or player you have tracked (200%).
+- Fishing: A **fishing rod** that allows you to catch any fish or sea creature (125%), a **fishing net** that allows you to catch multiple fish or sea creatures at once (150%), a **fishing boat** that allows you to travel and fish in any body of water (175%), and a **fishing trident** that grants you the ability to control any fish or sea creature (200%).
+- Mining: A **golden shovel** that only mines gold ore (125%), a **diamond pickaxe** that mines any ore faster and with more yield (150%), a **mining cart** that allows you to store and transport any ore (175%), and a **mining drill** that grants you the ability to mine any terrain or material (200%).
+- Lumberjacking: A **silver axe** that only chops silverwood logs (125%), a **adamantium axe** that chops any wood faster and with more yield (150%), a **lumber cart** that allows you to store and transport any wood (175%), and a **lumber saw** that grants you the ability to chop any tree or plant (200%).
+- Arms Lore: A **weapon analyzer** that reveals the properties and stats of any weapon (125%), a **weapon enhancer** that improves the properties and stats of any weapon (150%), a **weapon crafter** that allows you to craft your own weapons with various effects (175%), and a **weapon master** that grants you the ability to wield any weapon (200%).
+- Blacksmithy: A **blacksmith hammer** that allows you to repair any metal item (125%), a **blacksmith anvil** that allows you to forge any metal item (150%), a **blacksmith forge** that allows you to smelt any metal item (175%), and a **blacksmith glove** that grants you the ability to shape any metal item (200%).
+- Bowcraft & Fletching: A **bowcraft knife** that allows you to carve any wood item (125%), a **bowcraft lathe** that allows you to craft any wood item (150%), a **bowcraft press** that allows you to bend any wood item (175%), and a **bowcraft glov
+
+
+Source: Conversation with Bing, 2023-11-21
+(1) RunUO – RunUO – Ultima Online Emulator. https://www.runuo.net/.
+(2) How to make a RunUO Shard - RunUO Wiki. https://runuo.net/wiki/index.php?title=How_to_make_a_RunUO_Shard.
+(3) RunUO FAQ - RunUO Wiki. https://runuo.net/wiki/index.php?title=RunUO_FAQ.
+(4) RunUO | Shard Portal. http://shardportal.com/categories/runuo.27/.
+(5) Want to create your own shard? | Stratics Community Forums. https://community.stratics.com/threads/want-to-create-your-own-shard.420981/.
+
+
+Hello, this is Bing. I'm glad you are interested in creating some items for your RunUO shard. I have some ideas for you based on the skills you listed. Here they are:
+
+- Bowcraft & Fletching: 
+    - 125% skill: A **flaming bow** that shoots arrows that ignite the target on impact.
+    - 150% skill: A **frost bow** that shoots arrows that freeze the target for a short duration.
+    - 175% skill: A **lightning bow** that shoots arrows that electrocute the target and nearby enemies.
+    - 200% skill: A **divine bow** that shoots arrows that deal holy damage and heal the shooter.
+- Carpentry:
+    - 125% skill: A **sturdy table** that can be used to craft items with a bonus to success rate and quality.
+    - 150% skill: A **wooden golem** that can be summoned to fight for the carpenter or carry items.
+    - 175% skill: A **wooden fortress** that can be deployed to create a temporary shelter with defensive features.
+    - 200% skill: A **living tree** that can be grown from a seed and controlled by the carpenter.
+- Cooking:
+    - 125% skill: A **delicious cake** that restores health and stamina and grants a temporary boost to luck.
+    - 150% skill: A **spicy curry** that restores health and stamina and grants a temporary boost to fire resistance and damage.
+    - 175% skill: A **sushi platter** that restores health and stamina and grants a temporary boost to dexterity and fishing skill.
+    - 200% skill: A **dragon steak** that restores health and stamina and grants a temporary boost to strength and dragon slaying skill.
+- Item Identification:
+    - 125% skill: A **magnifying glass** that reveals the hidden properties and value of an item.
+    - 150% skill: A **detective hat** that increases the chance of finding clues and solving mysteries.
+    - 175% skill: A **psychic orb** that allows the user to communicate with the spirit of an item and learn its history and secrets.
+    - 200% skill: A **relic scanner** that locates and identifies ancient artifacts and relics of great power.
+- Cartography:
+    - 125% skill: A **compass** that points to the nearest treasure or point of interest.
+    - 150% skill: A **map case** that stores and organizes maps and allows the user to create custom markers and notes.
+    - 175% skill: A **spyglass** that enhances the user's vision and reveals hidden details and features on a map.
+    - 200% skill: A **portal map** that allows the user to travel to any location on a map instantly.
+- Tailoring:
+    - 125% skill: A **silk robe** that enhances the user's magic and charisma.
+    - 150% skill: A **leather jacket** that enhances the user's stealth and agility.
+    - 175% skill: A **chainmail vest** that enhances the user's defense and endurance.
+    - 200% skill: A **cloak of invisibility** that renders the user invisible to the naked eye.
+- Tinkering:
+    - 125% skill: A **clockwork toy** that can be used to distract or entertain NPCs and animals.
+    - 150% skill: A **mechanical lockpick** that can open any lock with ease.
+    - 175% skill: A **steam engine** that can power various machines and devices.
+    - 200% skill: A **robot companion** that can assist the user in combat and crafting.
+
+I hope these ideas are helpful for you. Have fun with your RunUO shard! 😊
+
+Hello, this is Bing. I'm glad you are interested in creating some items for your RunUO shard. I have some ideas for you based on the skills you mentioned. Here they are:
+
+- Begging: 
+    - 125% skill: A **silver tongue** that increases your chance of getting more gold from NPCs.
+    - 150% skill: A **golden hat** that attracts more attention from wealthy NPCs and makes them more generous.
+    - 175% skill: A **diamond ring** that allows you to beg from other players and get a percentage of their gold.
+    - 200% skill: A **royal scepter** that grants you the ability to beg from the king and get a random rare item.
+- Detecting Hidden:
+    - 125% skill: A **spyglass** that reveals the location of hidden players and NPCs on the minimap.
+    - 150% skill: A **magnifying glass** that reveals the stats and skills of hidden players and NPCs when you hover over them.
+    - 175% skill: A **detective hat** that reveals the name and guild of hidden players and NPCs when you click on them.
+    - 200% skill: A **invisibility cloak** that allows you to detect hidden players and NPCs while being invisible yourself.
+- Hiding:
+    - 125% skill: A **camouflage cloak** that reduces the chance of being detected by other players and NPCs when hiding.
+    - 150% skill: A **shadow cloak** that increases the duration of hiding and reduces the movement penalty when hiding.
+    - 175% skill: A **ghost cloak** that allows you to hide while mounted and pass through obstacles when hiding.
+    - 200% skill: A **mirage cloak** that creates a decoy of yourself when hiding and confuses your enemies.
+- Lockpicking:
+    - 125% skill: A **master key** that opens any lock without breaking or consuming the key.
+    - 150% skill: A **lockpick gun** that opens any lock instantly and automatically.
+    - 175% skill: A **hacking device** that opens any electronic lock and disables any trap or alarm.
+    - 200% skill: A **teleportation device** that bypasses any lock and teleports you to the other side of the door.
+- Poisoning:
+    - 125% skill: A **venomous dagger** that applies a deadly poison to your target with every hit.
+    - 150% skill: A **poisonous ring** that emits a toxic gas around you that damages and slows your enemies.
+    - 175% skill: A **poisoned apple** that looks like a normal apple but kills anyone who eats it.
+    - 200% skill: A **plague mask** that infects your enemies with a contagious disease that spreads to their allies.

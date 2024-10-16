@@ -1,0 +1,1 @@
+pkmurderer/UNEQUIP,Weapon,Delete/EQUIP/<cloak/name/PK Lords Cloak/hue/RND,1059,3000>/EQUIP/

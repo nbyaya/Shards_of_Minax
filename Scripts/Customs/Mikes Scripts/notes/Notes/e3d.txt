@@ -1,0 +1,5 @@
+It would not complie and I got this message:
+
+Errors:
+ + Customs/17. Mikes Scripts/BloodElementalSummoningGem.cs:
+    CS0308: Line 58: The non-generic method 'Server.Engines.XmlSpawner2.XmlAttach.FindAttachment(object)' cannot be used with type arguments

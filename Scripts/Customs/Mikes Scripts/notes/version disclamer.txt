@@ -1,0 +1,3 @@
+I am using an older version of C# so keep this in mind:
+Always use features compatible with C# 2.0/3.0.
+Avoid newer C# constructs like interpolated strings, LINQ, var, and async/await.

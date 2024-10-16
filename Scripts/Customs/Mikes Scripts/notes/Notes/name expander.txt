@@ -1,0 +1,37 @@
+This is a list of trollish player killer names for my random PK generator.  Can you please expand these list in the same format (but do not write out the original words):
+
+
+        private static string[] trollNames = 
+        {
+		"TrollMaster", "DarkSlaya", "NoobCrusher", "XxKillYouxX", "ShadowFiend", "PKLord",
+		"RuthlessKilla", "StealthAssassin", "BloodyMarauder", "SilentStalker", "DeathDealer",
+		"XxDeathBringerxX", "VengefulSlayer", "NemesisKnight", "CruelCrusader", "BrutalBerserker",
+		"MercilessMarauder", "PvPGod", "FatalFury", "KillerInstinct", "RampageRuler",
+		"WarlordWrecker", "Doomsday", "EpicEliminator", "RogueReaper", "ChaoticCrusher",
+		"RelentlessRavager", "PredatorPrime", "AlphaAssailant", "BrutalBlitz", "MortalMachete",
+		"SavageSlayer", "ProwlerPrime", "ViciousVanquisher", "RuthlessReaver", "NoMercyManiac",
+		"DeadlyDesperado", "GrimGuerilla", "FatalFrost", "SearingSun", "WickedWarlock",
+		"TerribleTempest", "BlazingBlade", "ColdCarnage", "RagingRiot", "MalignantMystic",
+		"FerociousFiend", "DreadfulDominator", "LethalLegend", "GruesomeGhoul", "FatalForce",
+		"DoomDeliverer", "SavageSaboteur", "PvPPhantom", "EpicExterminator", "ChaosChampion",
+		"DeadlyDreadnought", "GrimGoliath", "FierceFighter", "BrutalBrawler", "MercilessMauler",
+		"ProwlingPredator", "VengefulViper", "RuthlessRonin", "NoobNightmare", "XxSlayerKingxX",
+		"ShadowSentinel", "StealthSpecter", "BloodyBuccaneer", "SilentSlasher", "DeathDefiler",
+		"XxReaperRexxX", "ViciousVandal", "NemesisNinja", "CruelConqueror", "BrutalBarbarian",
+		"MercilessMutilator", "PvPParagon", "FuriousFighter", "KillerKhan", "RampageRegent",
+		"WarlordWreckage", "DoomsdayDaemon", "EpicEradicator", "RogueRipper", "ChaoticChaos",
+		"RelentlessRipper", "PredatorProwler", "AlphaAnnihilator", "BrutalBombardment", "MortalMangler",
+		"SavageStalker", "ProwlerPhantom", "ViciousVandaler", "RuthlessRavager", "NoQuarterQuasher",
+		"DeadlyDuelist", "GrimGladiator", "FatalFlurry", "SearingSerpent", "WickedWarrior",
+		"TerribleTyphoon", "BlazingBerserker", "ColdCalamity", "RagingRampart", "MalignantMonster",
+		"FerociousFury", "DreadfulDestroyer", "LethalLeviathan", "GruesomeGhost", "FatalFalcon",
+		"DoomDeliverer", "SavageSaboteur", "EpicExterminator", "PhantomFury", "ChaosConqueror",
+		"VengefulViper", "NefariousNightmare", "BrutalBrawler", "MercilessMauler", "PvPPhantom",
+		"FatalFalcon", "RuthlessRonin", "ShadowSentinel", "CrimsonCarnage", "StealthSpecter",
+		"DreadfulDuelist", "LethalLeviathan", "GrimGoliath", "FrostyFear", "SearingSerpent",
+		"WickedWarlord", "TerribleTyphoon", "BlazingBrawler", "ColdConqueror", "RagingRogue",
+		"MalignantMonarch", "FerociousFang", "DreadfulDragon", "LethalLancer", "GruesomeGhost",
+		"FatalFlame", "SavageStorm", "ProwlingPhantom", "ViciousVandal", "RuthlessRipper",
+		"NoQuarterQuasher", "DeadlyDagger", "GrimGladiator", "FrostbiteFury", "SunscorchSlayer"
+        };
+

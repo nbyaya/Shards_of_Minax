@@ -1,0 +1,1 @@
+GUMP,QuestNPC Name,4/Want to see the item?  500gp.;Sure, lets see it.;yes;No, I am broke;no

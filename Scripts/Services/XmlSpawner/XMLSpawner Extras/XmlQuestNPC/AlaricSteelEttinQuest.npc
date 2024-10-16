@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<XmlQuestNPC>
+  <NPC>
+    <Name>Ironheart Alaric</Name>
+    <Running>True</Running>
+    <ProximityRange>4</ProximityRange>
+    <ResetRange>18</ResetRange>
+    <NoTriggerOnCarried>Steel Insignia</NoTriggerOnCarried>
+    <AllowGhost>False</AllowGhost>
+    <SpeechPace>12</SpeechPace>
+    <ResetTime>0.6</ResetTime>
+    <ConfigFile>AlaricSteelEttinQuest</ConfigFile>
+    <SpeechEntries>4</SpeechEntries>
+  </NPC>
+  <SpeechEntry>
+    <EntryNumber>1</EntryNumber>
+    <ID>1</ID>
+    <Text>The Steel Ettins have been spotted in the Iron Valley. Their presence threatens the kingdom. Will you help us?</Text>
+    <Keywords>You encounter a stalwart knight, seeking assistance to quell a metal monstrosity.</Keywords>
+    <DependsOn>-1</DependsOn>
+    <Pause>1.5</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>2</EntryNumber>
+    <ID>2</ID>
+    <DependsOn>1</DependsOn>
+    <Pause>1.5</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+    <Gump>GUMP,Steel Ettin Hunt,4/The Iron Valley forges are halted by Steel Ettins. We need a brave soul to defeat them.;I will face this challenge!;Indeed</Gump>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>3</EntryNumber>
+    <ID>3</ID>
+    <Text>May your arm be strong and your aim true. Bring me proof of your victory, and I shall bestow upon you a fitting reward.</Text>
+    <Keywords>Indeed</Keywords>
+    <Action>GIVE/&lt;Questholder/Name/Steel Insignia/TitleString/Steel Ettin Defeat/NoteString/Return proof of defeating Steel Ettins to Alaric for a reward./Objective1/KILLNAMED,Steel Ettin,1/Description1/Defeat a Steel Ettin/Autoreward/True/CantSeeReward/True/RewardString/@bag/ADD/MaxxiaScroll/ADD/&lt;BlackPearl/hue/RND,1,1000/name/Core of Steel&gt;/ADD/&lt;bag/hue/2405/Name/Ettin's Bane Cache/ADD/&lt;HealPotion/name/Potion of Metal Mend&gt;/ADD/&lt;Halberd/name/Ettin's End&gt;/ADD/&lt;Shield/hue/2406/name/Warden's Barrier&gt;&gt;&gt;</Action>
+    <DependsOn>2</DependsOn>
+    <Pause>1.5</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+  <SpeechEntry>
+    <EntryNumber>0</EntryNumber>
+    <ID>0</ID>
+    <Pause>1.5</Pause>
+    <PrePause>-1</PrePause>
+    <LockConversation>True</LockConversation>
+    <IgnoreCarried>False</IgnoreCarried>
+    <AllowNPCTrigger>False</AllowNPCTrigger>
+    <SpeechStyle>Regular</SpeechStyle>
+    <SpeechHue>-1</SpeechHue>
+  </SpeechEntry>
+</XmlQuestNPC>

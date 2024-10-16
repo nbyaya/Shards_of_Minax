@@ -1,0 +1,63 @@
+# UO Special Animals Concepts
+
+1. Alligator - Deathroll: Can perform a powerful spinning attack, dealing high damage and stunning the target.
+
+2. Bird - Feather Blast: Releases a burst of razor-sharp feathers, dealing piercing damage to nearby enemies.
+
+3. BlackBear - Shadow Cloak: Can temporarily become invisible, ideal for ambush attacks.
+
+4. Boar - Tusk Charge: Performs a high-speed charge attack, knocking back and damaging enemies in its path.
+
+5. BrownBear - Honey Heal: Can consume honey to rapidly regenerate health.
+
+6. Bull - Stampede: Summons a small herd of spectral bulls to trample enemies.
+
+7. BullFrog - Toxic Croak: Releases a poisonous sound wave, dealing poison damage over time.
+
+8. Cat - Nine Lives: Can revive itself once per battle when killed, returning with partial health.
+
+9. Chicken - Egg Bomb: Lays explosive eggs that detonate when enemies approach.
+
+10. Cougar - Predator's Mark: Marks a target, increasing damage dealt to them and tracking their movement.
+
+11. Cow - Milk of Life: Produces healing milk that can be consumed by allies to restore health.
+
+12. Dog - Loyal Guardian: Can intercept attacks meant for its owner, taking reduced damage.
+
+13. Ferret - Pocket Thief: Steals small items from enemies and returns them to its owner.
+
+14. GiantSpider - Web Trap: Creates sticky web traps that immobilize enemies.
+
+15. GiantToad - Tongue Lash: Uses its long tongue to grab and pull enemies closer.
+
+16. GiantTurkey - Feather Shield: Creates a protective barrier of feathers, temporarily increasing its armor.
+
+17. Goat - Ramming Headbutt: Performs a powerful headbutt that can stun enemies.
+
+18. GreatHart - Nature's Blessing: Periodically heals nearby allies with nature magic.
+
+19. GrizzlyBear - Furious Roar: Lets out a terrifying roar, lowering the attack and defense of nearby enemies.
+
+20. Horse - Swift Gallop: Temporarily increases movement speed of itself and nearby allies.
+
+21. Lion - Pride Leader: Summons spectral lion cubs to assist in battle.
+
+22. Llama - Spit Barrage: Fires a rapid succession of acidic spits, dealing damage over time.
+
+23. MountainGoat - Rocky Hide: Temporarily turns its hide to stone, greatly increasing physical resistance.
+
+24. Pig - Mud Wallow: Creates a mud pit that slows enemies and increases the pig's evasion.
+
+25. PolarBear - Frost Claws: Its attacks have a chance to freeze the target, temporarily immobilizing them.
+
+26. Rabbit - Lucky Foot: Has a chance to dodge incoming attacks completely.
+
+27. Rat - Plague Bearer: Inflicts a contagious disease that spreads among nearby enemies.
+
+28. Scorpion - Venom Burst: Releases a cloud of venom, poisoning nearby enemies.
+
+29. Sheep - Woolly Armor: Its wool grows thicker in combat, gradually increasing its armor.
+
+30. Snake - Hypnotic Gaze: Can mesmerize a target, preventing them from attacking for a short duration.
+
+31. Walrus - Blubber Bounce: Uses its blubber to absorb and reflect a portion of incoming damage back to attackers.

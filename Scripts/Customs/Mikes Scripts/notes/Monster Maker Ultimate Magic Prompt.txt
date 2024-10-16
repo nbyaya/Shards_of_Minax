@@ -1,0 +1,471 @@
+I would like your help to make a cool new unique monster with special powers for my ServUO shard.  Could you make it with a Squirrel body and unique hue?  Make sure to display a message over the monsters head every time it uses an ability, for dramatic effect.  Can you help me with this task?  I will send you the description of the monster I want you to make in the next message.
+
+This is the Squirrel for reference:
+
+using System;
+
+namespace Server.Mobiles
+{
+    [CorpseName("a squirrel corpse")]	
+    public class Squirrel : BaseCreature
+    {
+        [Constructable]
+        public Squirrel()
+            : base(AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4)
+        {
+            this.Name = "a squirrel";
+            this.Body = 0x116;
+
+            this.SetStr(44, 50);
+            this.SetDex(35);
+            this.SetInt(5);
+
+            this.SetHits(42, 50);
+
+            this.SetDamage(1, 2);
+
+            this.SetDamageType(ResistanceType.Physical, 100);
+
+            this.SetResistance(ResistanceType.Physical, 30, 34);
+            this.SetResistance(ResistanceType.Fire, 10, 14);
+            this.SetResistance(ResistanceType.Cold, 30, 35);
+            this.SetResistance(ResistanceType.Poison, 20, 25);
+            this.SetResistance(ResistanceType.Energy, 20, 25);
+
+            this.SetSkill(SkillName.MagicResist, 4.0);
+            this.SetSkill(SkillName.Tactics, 4.0);
+            this.SetSkill(SkillName.Wrestling, 4.0);
+
+            this.Tamable = true;	
+            this.ControlSlots = 1;
+            this.MinTameSkill = -21.3;
+        }
+
+        public Squirrel(Serial serial)
+            : base(serial)
+        {
+        }
+
+        public override int Meat
+        {
+            get
+            {
+                return 1;
+            }
+        }
+        public override FoodType FavoriteFood
+        {
+            get
+            {
+                return FoodType.FruitsAndVegies;
+            }
+        }
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+
+            writer.Write((int)0); // version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+
+            int version = reader.ReadInt();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+Here are examples of two unique monsters that I made earlier:
+
+using System;
+using Server;
+using Server.Mobiles;
+using Server.Network;
+using Server.Targeting;
+using Server.Spells;
+
+namespace Server.Mobiles
+{
+    [CorpseName("a chimpanzee berserker corpse")]
+    public class ChimpanzeeBerserker : BaseCreature
+    {
+        private DateTime m_NextRage;
+        private DateTime m_NextFrenziedAttack;
+        private DateTime m_NextBananaBomb;
+        private bool m_AbilitiesInitialized; // Flag to track if abilities have been initialized
+
+        [Constructable]
+        public ChimpanzeeBerserker()
+            : base(AIType.AI_Melee, FightMode.Aggressor, 10, 1, 0.2, 0.4)
+        {
+            Name = "a Chimpanzee Berserker";
+            Body = 0x1D; // Gorilla body
+            Hue = 1154; // Unique hue
+
+            SetStr(200);
+            SetDex(150);
+            SetInt(50);
+
+            SetHits(200);
+            SetMana(0);
+
+            SetDamage(15, 25);
+
+            SetDamageType(ResistanceType.Physical, 100);
+
+            SetResistance(ResistanceType.Physical, 40, 50);
+            SetResistance(ResistanceType.Fire, 15, 25);
+            SetResistance(ResistanceType.Cold, 15, 25);
+
+            SetSkill(SkillName.MagicResist, 70.0, 90.0);
+            SetSkill(SkillName.Tactics, 90.0, 110.0);
+            SetSkill(SkillName.Wrestling, 90.0, 110.0);
+
+            Fame = 3000;
+            Karma = -3000;
+
+            VirtualArmor = 50;
+
+            Tamable = false;
+
+            m_AbilitiesInitialized = false; // Initialize flag
+        }
+
+        public ChimpanzeeBerserker(Serial serial)
+            : base(serial)
+        {
+        }
+
+        public override void OnThink()
+        {
+            base.OnThink();
+
+            if (Combatant != null)
+            {
+                if (!m_AbilitiesInitialized)
+                {
+                    Random rand = new Random();
+                    m_NextRage = DateTime.UtcNow + TimeSpan.FromSeconds(rand.Next(1, 20));
+                    m_NextFrenziedAttack = DateTime.UtcNow + TimeSpan.FromSeconds(rand.Next(1, 30));
+                    m_NextBananaBomb = DateTime.UtcNow + TimeSpan.FromSeconds(rand.Next(1, 40));
+                    m_AbilitiesInitialized = true; // Set the flag to prevent re-initializing
+                }
+
+                if (DateTime.UtcNow >= m_NextRage)
+                {
+                    Rage();
+                }
+
+                if (DateTime.UtcNow >= m_NextFrenziedAttack)
+                {
+                    FrenziedAttack();
+                }
+
+                if (DateTime.UtcNow >= m_NextBananaBomb)
+                {
+                    BananaBomb();
+                }
+            }
+        }
+
+        private void Rage()
+        {
+            PublicOverheadMessage(MessageType.Regular, 0x3B2, true, "* The Chimpanzee Berserker enters a state of uncontrollable fury! *");
+            PlaySound(0x208); // Roar sound
+
+            // Increase damage and decrease defense
+            this.SetDamage(20, 35);
+            this.VirtualArmor = 20;
+
+            m_NextRage = DateTime.UtcNow + TimeSpan.FromSeconds(120); // Cooldown for Rage
+        }
+
+        private void FrenziedAttack()
+        {
+            PublicOverheadMessage(MessageType.Regular, 0x3B2, true, "* The Chimpanzee Berserker unleashes a frenzied attack! *");
+            PlaySound(0x208); // Roar sound
+
+            // Rapid attack effect
+            for (int i = 0; i < 5; i++)
+            {
+                Timer.DelayCall(TimeSpan.FromMilliseconds(i * 200), () =>
+                {
+                    if (Combatant != null)
+                    {
+                        AOS.Damage(Combatant, this, Utility.RandomMinMax(7, 12), 0, 100, 0, 0, 0);
+                        if (Combatant is Mobile mobile)
+                        {
+                            mobile.SendMessage("You are hit by a rapid series of attacks!");
+                        }
+                    }
+                });
+            }
+
+            m_NextFrenziedAttack = DateTime.UtcNow + TimeSpan.FromSeconds(30); // Cooldown for FrenziedAttack
+        }
+
+        private void BananaBomb()
+        {
+            if (Combatant != null && Utility.RandomDouble() < 0.25) // 25% chance
+            {
+                PublicOverheadMessage(MessageType.Regular, 0x3B2, true, "* The Chimpanzee Berserker throws a Banana Bomb! *");
+                PlaySound(0x208); // Throw sound
+
+                Point3D loc = Location;
+                BananaBombItem bomb = new BananaBombItem();
+                bomb.MoveToWorld(loc, Map);
+
+                Timer.DelayCall(TimeSpan.FromSeconds(2), () => ExplodeBananaBomb(bomb));
+
+                m_NextBananaBomb = DateTime.UtcNow + TimeSpan.FromSeconds(45); // Cooldown for BananaBomb
+            }
+        }
+
+        private void ExplodeBananaBomb(BananaBombItem bomb)
+        {
+            if (bomb.Deleted)
+                return;
+
+            PublicOverheadMessage(MessageType.Regular, 0x3B2, true, "* The Banana Bomb explodes in a mess of peels! *");
+            PlaySound(0x307); // Explosion sound
+
+            Effects.SendLocationEffect(bomb.Location, Map, 0x36BD, 20, 10); // Explosion effect
+
+            foreach (Mobile m in GetMobilesInRange(3))
+            {
+                if (m != this && m.Alive && !m.IsDeadBondedPet)
+                {
+                    int damage = Utility.RandomMinMax(15, 25);
+                    AOS.Damage(m, this, damage, 0, 100, 0, 0, 0);
+
+                    if (m is Mobile mobile)
+                    {
+                        mobile.SendMessage("You are hit by the explosive banana bomb!");
+                    }
+                    m.PlaySound(0x1DD); // Explosion sound
+                }
+            }
+
+            bomb.Delete();
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+            m_AbilitiesInitialized = false; // Reset flag on deserialize
+        }
+    }
+
+    public class BananaBombItem : Item
+    {
+        public BananaBombItem() : base(0x171D)
+        {
+            Movable = false;
+        }
+
+        public BananaBombItem(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
+    }
+}
+
+
+
+
+
+
+
+using System;
+using Server.Items;
+using Server.Network;
+
+namespace Server.Mobiles
+{
+    [CorpseName("a bubble ferret corpse")]
+    public class BubbleFerret : BaseCreature
+    {
+        private DateTime m_NextBubbleBurst;
+        private DateTime m_NextBubbleShield;
+        private DateTime m_BubbleShieldEnd;
+        private bool m_AbilitiesInitialized; // Flag to track if abilities have been initialized
+
+        [Constructable]
+        public BubbleFerret()
+            : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
+        {
+            Name = "a bubble ferret";
+            Body = 0x117; // Ferret body
+            Hue = 1152; // Unique blue hue
+
+            SetStr(96, 120);
+            SetDex(81, 105);
+            SetInt(36, 60);
+
+            SetHits(58, 72);
+
+            SetDamage(4, 12);
+
+            SetDamageType(ResistanceType.Physical, 100);
+
+            SetResistance(ResistanceType.Physical, 20, 25);
+            SetResistance(ResistanceType.Fire, 10, 20);
+            SetResistance(ResistanceType.Cold, 20, 30);
+            SetResistance(ResistanceType.Poison, 10, 20);
+            SetResistance(ResistanceType.Energy, 20, 30);
+
+            SetSkill(SkillName.MagicResist, 57.6, 75.0);
+            SetSkill(SkillName.Tactics, 50.1, 70.0);
+            SetSkill(SkillName.Wrestling, 50.1, 70.0);
+
+            Fame = 2500;
+            Karma = 2500;
+
+            VirtualArmor = 28;
+
+            Tamable = true;
+            ControlSlots = 1;
+            MinTameSkill = 65.1;
+
+            m_AbilitiesInitialized = false; // Initialize flag
+        }
+
+        public BubbleFerret(Serial serial)
+            : base(serial)
+        {
+        }
+
+        public override int Meat { get { return 1; } }
+        public override FoodType FavoriteFood { get { return FoodType.Fish; } }
+
+        public override void OnThink()
+        {
+            base.OnThink();
+
+            if (Combatant != null)
+            {
+                if (!m_AbilitiesInitialized)
+                {
+                    // Set random intervals for abilities
+                    Random rand = new Random();
+                    m_NextBubbleBurst = DateTime.UtcNow + TimeSpan.FromSeconds(rand.Next(1, 15));
+                    m_NextBubbleShield = DateTime.UtcNow + TimeSpan.FromSeconds(rand.Next(1, 30));
+                    m_AbilitiesInitialized = true; // Set the flag to prevent re-initializing
+                }
+
+                if (DateTime.UtcNow >= m_NextBubbleBurst)
+                {
+                    DoBubbleBurst();
+                }
+
+                if (DateTime.UtcNow >= m_NextBubbleShield && DateTime.UtcNow >= m_BubbleShieldEnd)
+                {
+                    ActivateBubbleShield();
+                }
+            }
+
+            if (DateTime.UtcNow >= m_BubbleShieldEnd && m_BubbleShieldEnd != DateTime.MinValue)
+            {
+                DeactivateBubbleShield();
+            }
+
+            // Constantly blow bubbles
+            if (Utility.RandomDouble() < 0.1) // 10% chance each think cycle
+            {
+                BlowBubbles();
+            }
+        }
+
+        private void DoBubbleBurst()
+        {
+            PublicOverheadMessage(MessageType.Regular, 0x3B2, true, "* Bubble Burst *");
+            PlaySound(0x026); // Bubble pop sound
+
+            foreach (Mobile m in GetMobilesInRange(3))
+            {
+                if (m != this && m.Alive && CanBeHarmful(m))
+                {
+                    DoHarmful(m);
+                    AOS.Damage(m, this, Utility.RandomMinMax(5, 10), 0, 0, 100, 0, 0); // Pure cold damage
+                    m.SendLocalizedMessage(1114727); // The burst of bubbles knocks you back!
+                    m.MovingParticles(this, 0x373A, 10, 0, false, true, 0x1F4, 0, 3006, 4006, 0x160, 0); // Spray of water particles
+                }
+            }
+
+            m_NextBubbleBurst = DateTime.UtcNow + TimeSpan.FromSeconds(15);
+        }
+
+        private void ActivateBubbleShield()
+        {
+            PublicOverheadMessage(MessageType.Regular, 0x3B2, true, "* Bubble Shield *");
+            PlaySound(0x1E3); // Spell sound
+
+            FixedParticles(0x376A, 9, 32, 5030, EffectLayer.Waist);
+
+            m_BubbleShieldEnd = DateTime.UtcNow + TimeSpan.FromSeconds(10);
+            m_NextBubbleShield = DateTime.UtcNow + TimeSpan.FromSeconds(30);
+        }
+
+        private void DeactivateBubbleShield()
+        {
+            PublicOverheadMessage(MessageType.Regular, 0x3B2, true, "* Bubble Shield Fades *");
+            m_BubbleShieldEnd = DateTime.MinValue;
+        }
+
+        private void BlowBubbles()
+        {
+            MovingParticles(this, 0x373A, 10, 0, false, true, 0x1F4, 0, 3006, 4006, 0x160, 0);
+        }
+
+        public override void AlterMeleeDamageFrom(Mobile from, ref int damage)
+        {
+            if (m_BubbleShieldEnd > DateTime.UtcNow)
+            {
+                damage = 0; // No melee damage when bubble shield is active
+                from.SendLocalizedMessage(1114728); // Your attack is deflected by the bubble shield!
+            }
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0);
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+
+            m_AbilitiesInitialized = false; // Reset the initialization flag
+        }
+    }
+}
+
+Can you help me with this task?  I will send you the description of the monster I want you to make in the next message.

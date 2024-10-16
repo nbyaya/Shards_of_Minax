@@ -1,0 +1,13 @@
+[UpdateGoldenChestGumps
+[UpdateMetalChestGumps
+[UpdateMetalBoxGumps
+[UpdateLargeCrateGumps
+[UpdateSmallCrateGumps
+[UpdateWoodenBoxGumps
+[UpdateChestGumps
+[UpdateDrawerGumps
+[UpdateBookcaseGumps
+[UpdateEmptyBookcaseGumps
+[UpdateFancyDrawerGumps
+[UpdateFancyArmoireGumps
+[UpdateBarrelGumps

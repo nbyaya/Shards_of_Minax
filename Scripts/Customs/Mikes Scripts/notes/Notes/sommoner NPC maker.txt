@@ -1,0 +1,116 @@
+I would like your help making a new NPC for my RunUO challenge shard.  Could you make a Skeleton Lord npc who summons SkeletalKnight, Skeleton, and SkeletalMage?  I have a SurferSummoner NPC that I would like you to use for inspiraton:
+
+
+using System;
+using Server.Items;
+using Server.Spells;
+
+namespace Server.Mobiles
+{
+    [CorpseName("corpse of a wave rider")]
+    public class SurferSummoner : BaseCreature
+    {
+        private TimeSpan m_SpeechDelay = TimeSpan.FromSeconds(10.0); // time between surfer's speech
+        private DateTime m_NextSpeechTime;
+        
+        [Constructable]
+        public SurferSummoner() : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
+        {
+            Hue = Utility.RandomSkinHue();
+
+            if (Female = Utility.RandomBool())
+            {
+                Body = 0x191; 
+                Name = "Surfer Girl";
+            }
+            else
+            {
+                Body = 0x190;
+                Name = "Surfer Dude";
+            }
+            
+            Item shorts = new ShortPants(Utility.RandomBlueHue());
+            Item shirt = new Shirt(Utility.RandomYellowHue());
+
+            AddItem(shorts);
+            AddItem(shirt);
+            
+            // Abilities and stats
+            SetStr(300, 400);
+            SetDex(80, 110);
+            SetInt(150, 200);
+            SetHits(250, 300);
+            
+            VirtualArmor = 25;
+            
+            SpeechHue = Utility.RandomDyedHue();
+            SetDamage(8, 12);
+
+            SetSkill(SkillName.MagicResist, 70.1, 90.0);
+            SetSkill(SkillName.Tactics, 65.1, 90.0);
+            SetSkill(SkillName.Magery, 75.0, 90.0);
+            
+            Fame = 5000;
+            Karma = 10000;
+
+            m_NextSpeechTime = DateTime.Now + m_SpeechDelay;
+        }
+
+        public override void OnThink()
+        {
+            base.OnThink();
+
+            if (DateTime.Now >= m_NextSpeechTime && Combatant != null)
+            {
+                int phrase = Utility.Random(3);
+
+                switch (phrase)
+                {
+                    case 0: Say("Ride the waves, beast!"); SummonSeaCreature(); break;
+                    case 1: Say("From the depths, I call thee!"); SummonSeaCreature(); break;
+                    case 2: Say("Surf's up, monster!"); SummonSeaCreature(); break;
+                }
+
+                m_NextSpeechTime = DateTime.Now + m_SpeechDelay;
+            }
+        }
+
+        public void SummonSeaCreature()
+        {
+            BaseCreature creature;
+
+            switch (Utility.Random(3))
+            {
+                default:
+                case 0: creature = new Kraken(); break;
+                case 1: creature = new SeaSerpent(); break;
+                case 2: creature = new DeepSeaSerpent(); break;
+            }
+
+            creature.MoveToWorld(this.Location, this.Map);
+            creature.Combatant = this.Combatant;
+        }
+
+        public override void GenerateLoot()
+        {
+            PackGem();
+            PackGold(150, 200);
+        }
+
+        public SurferSummoner(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0);
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
+    }
+}

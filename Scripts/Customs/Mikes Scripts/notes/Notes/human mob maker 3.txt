@@ -1,0 +1,104 @@
+I would like your help making a new NPC for my RunUO challenge shard.  Could you make a bard?  I have a black knight NPC that I would like you to use for inspiraton:
+
+using System;
+using Server.Items;
+using Server.Targeting;
+
+namespace Server.Mobiles
+{
+    [CorpseName("a black knight's corpse")]
+    public class BlackKnight : BaseCreature
+    {
+        private TimeSpan m_SpeechDelay = TimeSpan.FromSeconds(15.0); // time between knight speech
+        public DateTime m_NextSpeechTime;
+
+        [Constructable]
+        public BlackKnight() : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
+        {
+            Hue = 0x497; // Set the hue for a black knight
+
+            Body = 0x190; // Use a male body
+            Name = NameList.RandomName("male");
+            Title = "the Black Knight";
+
+            AddItem(new PlateChest() { Hue = 0x497 });
+            AddItem(new PlateLegs() { Hue = 0x497 });
+            AddItem(new PlateArms() { Hue = 0x497 });
+            AddItem(new PlateGorget() { Hue = 0x497 });
+            AddItem(new PlateGloves() { Hue = 0x497 });
+            AddItem(new PlateHelm() { Hue = 0x497 });
+
+            SetStr(150, 175);
+            SetDex(90, 110);
+            SetInt(50, 75);
+
+            SetHits(200, 250);
+
+            VirtualArmor = 40;
+
+            SpeechHue = Utility.RandomDyedHue();
+
+            SetDamage(15, 20);
+
+            SetSkill(SkillName.Swords, 90.1, 100.0);
+            SetSkill(SkillName.Tactics, 90.1, 100.0);
+
+            Fame = 10000;
+            Karma = -10000;
+
+            m_NextSpeechTime = DateTime.Now + m_SpeechDelay;
+        }
+
+        public override bool AlwaysMurderer { get { return false; } }
+        public override bool CanRummageCorpses { get { return false; } }
+        public override bool ShowFameTitle { get { return false; } }
+        public override bool ClickTitle { get { return true; } }
+
+        public override void OnThink()
+        {
+            if (DateTime.Now >= m_NextSpeechTime)
+            {
+                Mobile combatant = this.Combatant;
+
+                if (combatant != null && combatant.Map == this.Map && combatant.InRange(this, 8))
+                {
+                    int phrase = Utility.Random(4);
+
+                    switch (phrase)
+                    {
+                        case 0: this.Say(true, "For honor and glory!"); break;
+                        case 1: this.Say(true, "I shall defend the realm!"); break;
+                        case 2: this.Say(true, "You dare challenge a Black Knight?"); break;
+                        case 3: this.Say(true, "Prepare to face my blade!"); break;
+                    }
+
+                    m_NextSpeechTime = DateTime.Now + m_SpeechDelay;
+                }
+
+                base.OnThink();
+            }
+        }
+
+        public override void GenerateLoot()
+        {
+            PackGold(500, 750);
+        }
+
+        public BlackKnight(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0);
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
+    }
+}
+
