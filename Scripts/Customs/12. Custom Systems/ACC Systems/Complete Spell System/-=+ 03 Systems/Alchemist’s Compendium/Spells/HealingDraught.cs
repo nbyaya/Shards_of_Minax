@@ -20,7 +20,7 @@ namespace Server.ACC.CSS.Systems.AlchemyMagic
             get { return SpellCircle.First; } // Adjust as necessary
         }
 
-        public override double CastDelay { get { return 2.0; } } // Casting delay in seconds
+        public override double CastDelay { get { return 0.2; } } // Casting delay in seconds
         public override double RequiredSkill { get { return 20.0; } } // Skill requirement
         public override int RequiredMana { get { return 15; } } // Mana cost
 

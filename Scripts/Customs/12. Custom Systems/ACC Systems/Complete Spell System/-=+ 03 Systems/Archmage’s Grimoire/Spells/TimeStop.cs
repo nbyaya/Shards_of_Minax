@@ -18,7 +18,7 @@ namespace Server.ACC.CSS.Systems.MageryMagic
 
         public override SpellCircle Circle => SpellCircle.Seventh; // Assuming it's a high-level spell
 
-        public override double CastDelay => 2.0;
+        public override double CastDelay => 0.2;
         public override double RequiredSkill => 80.0;
         public override int RequiredMana => 50;
 

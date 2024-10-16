@@ -20,7 +20,7 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
             get { return SpellCircle.Third; }
         }
 
-        public override double CastDelay { get { return 2.0; } } // Cast delay in seconds
+        public override double CastDelay { get { return 0.2; } } // Cast delay in seconds
         public override double RequiredSkill { get { return 50.0; } } // Minimum skill required to cast
         public override int RequiredMana { get { return 15; } } // Mana required to cast
 

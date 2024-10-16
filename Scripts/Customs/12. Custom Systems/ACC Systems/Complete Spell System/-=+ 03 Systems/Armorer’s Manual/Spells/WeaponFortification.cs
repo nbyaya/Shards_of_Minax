@@ -20,7 +20,7 @@ namespace Server.ACC.CSS.Systems.ArmsLoreMagic
             get { return SpellCircle.Sixth; }
         }
 
-        public override double CastDelay { get { return 2.0; } } // 2 seconds delay
+        public override double CastDelay { get { return 0.2; } } // 2 seconds delay
         public override double RequiredSkill { get { return 50.0; } } // Requires 50.0 skill in magic
         public override int RequiredMana { get { return 20; } } // Costs 20 mana
 

@@ -21,7 +21,7 @@ namespace Server.ACC.CSS.Systems.ParryMagic
         }
 
         public override int RequiredMana { get { return 25; } }
-        public override double CastDelay { get { return 1.0; } }
+        public override double CastDelay { get { return 0.1; } }
         public override double RequiredSkill { get { return 60.0; } }
 
         public ReflectiveShield(Mobile caster, Item scroll) : base(caster, scroll, m_Info)

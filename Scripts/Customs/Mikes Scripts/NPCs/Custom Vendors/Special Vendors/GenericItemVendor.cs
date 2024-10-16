@@ -101,38 +101,8 @@ namespace Server.Gumps
 			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(WeaponOil), "Weapon Oil", 3622, 20));
 			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(MasterWeaponOil), "Master Weapon Oil", 3622, 30));
 			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(BankCrystal), "Bank Crystal", 7964, 100));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(AlchemySpellbook), "Alchemists Compendium", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(FishingSpellbook), "Anglers Guide", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(EvalIntSpellbook), "Arcanists Codex", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(ArcherySpellbook), "Archers Grimoire", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(MagerySpellbook), "Archmages Grimoire", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(ArmsLoreSpellbook), "Armorers Manual", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(AnimalTamingSpellbook), "Beastmasters Codex", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(AnimalLoreSpellbook), "Bestiary Tome", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(CarpentrySpellbook), "Carpenters Guide", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(CartographySpellbook), "Cartographers Atlas", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(TasteIDSpellbook), "Connoisseurs Tome", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(CookingSpellbook), "Culinarians Tome", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(DiscordanceSpellbook), "Discordant Codex", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(FencingSpellbook), "Duelists Codex", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(FletchingSpellbook), "Fletchers Folio", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(ForensicsSpellbook), "Forensic Scholars Tome", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(WrestlingSpellbook), "Guardians Codex", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(ParrySpellbook), "Healers Lexicon", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(HealingSpellbook), "Inquisitors Manual", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(DetectHiddenSpellbook), "Instigators Tome", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(ProvocationSpellbook), "Locksmiths Codex", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(LockpickingSpellbook), "Macebearers Tome", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(MacingSpellbook), "Martial Manual", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(MeditationSpellbook), "Mediators Guide", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(BeggingSpellbook), "Mendicants Manual", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(MiningSpellbook), "Miners Ledger", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(StealingSpellbook), "Rogues Compendium", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(InscribeSpellbook), "Scribes Compendium", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(NinjitsuSpellbook), "Shadow Warriors Manual", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(HidingSpellbook), "Shadows Manual", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(StealthSpellbook), "Silent Shadows Journal", 3834, 20));
-			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(BlacksmithSpellbook), "Smiths Ledger", 3834, 20));
+			MaxxiaVendorItems.Add(new MaxxiaVendorItem(typeof(VirtueDistillationFlask), "Virtue Distillation Flask", 6194, 1));
+
 
             // Add more items as needed
         }
@@ -144,8 +114,8 @@ namespace Server.Gumps
             m_Page = page;
 
             AddPage(0);
-            AddBackground(0, 0, 600, 400, 9270);
-            AddAlphaRegion(10, 10, 580, 380);
+            AddBackground(0, 0, 600, 430, 9270);
+            AddAlphaRegion(10, 10, 580, 410);
 
             AddHtml(20, 20, 560, 20, "<CENTER><BASEFONT COLOR=#FFFFFF>Maxxia Store</BASEFONT></CENTER>", false, false);
 

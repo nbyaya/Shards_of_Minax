@@ -144,37 +144,37 @@ namespace Server.Mobiles
 
             if (mobile != null)
             {
-                if (dropped is Gold && dropped.Amount == 5)
+                if (dropped is Gold && dropped.Amount == 500)
                 {
                     mobile.AddToBackpack(new QuestScroll(1));
                     this.PrivateOverheadMessage(MessageType.Regular, 1153, false, "Return the Quest parchment to me when you are done...for your reward.", mobile.NetState);
                     return true;
                 }
-                else if (dropped is Gold && dropped.Amount == 10)
+                else if (dropped is Gold && dropped.Amount == 1000)
                 {
                     mobile.AddToBackpack(new QuestScroll(2));
                     this.PrivateOverheadMessage(MessageType.Regular, 1153, false, "Return the Quest parchment to me when you are done...for your reward.", mobile.NetState);
                     return true;
                 }
-                else if (dropped is Gold && dropped.Amount == 15)
+                else if (dropped is Gold && dropped.Amount == 1500)
                 {
                     mobile.AddToBackpack(new QuestScroll(3));
                     this.PrivateOverheadMessage(MessageType.Regular, 1153, false, "Return the Quest parchment to me when you are done...for your reward.", mobile.NetState);
                     return true;
                 }
-                else if (dropped is Gold && dropped.Amount == 20)
+                else if (dropped is Gold && dropped.Amount == 2000)
                 {
                     mobile.AddToBackpack(new QuestScroll(4));
                     this.PrivateOverheadMessage(MessageType.Regular, 1153, false, "Return the Quest parchment to me when you are done...for your reward.", mobile.NetState);
                     return true;
                 }
-                else if (dropped is Gold && dropped.Amount == 25)
+                else if (dropped is Gold && dropped.Amount == 2500)
                 {
                     mobile.AddToBackpack(new QuestScroll(5));
                     this.PrivateOverheadMessage(MessageType.Regular, 1153, false, "Return the Quest parchment to me when you are done...for your reward.", mobile.NetState);
                     return true;
                 }
-                else if (dropped is Gold && dropped.Amount == 30)
+                else if (dropped is Gold && dropped.Amount == 3000)
                 {
                     mobile.AddToBackpack(new QuestScroll(6));
                     this.PrivateOverheadMessage(MessageType.Regular, 1153, false, "Return the Quest parchment to me when you are done...for your reward.", mobile.NetState);

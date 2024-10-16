@@ -17,7 +17,7 @@ namespace Server.ACC.CSS.Systems.HidingMagic
 
         public override SpellCircle Circle => SpellCircle.Second; // Choose appropriate spell circle for balance
 
-        public override double CastDelay => 1.0;
+        public override double CastDelay => 0.1;
         public override double RequiredSkill => 30.0; // Required skill level to cast
         public override int RequiredMana => 15;
 

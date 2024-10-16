@@ -22,7 +22,7 @@ namespace Server.ACC.CSS.Systems.DetectHiddenMagic
         );
 
         public override SpellCircle Circle { get { return SpellCircle.Third; } }
-        public override double CastDelay { get { return 1.5; } }
+        public override double CastDelay { get { return 0.2; } }
         public override double RequiredSkill { get { return 60.0; } }
         public override int RequiredMana { get { return 40; } }
 

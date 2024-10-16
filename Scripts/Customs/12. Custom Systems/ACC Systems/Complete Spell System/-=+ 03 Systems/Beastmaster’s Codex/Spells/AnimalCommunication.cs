@@ -19,7 +19,7 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             get { return SpellCircle.First; } // Adjust as necessary
         }
 
-        public override double CastDelay { get { return 2.0; } } // Cast delay in seconds
+        public override double CastDelay { get { return 0.2; } } // Cast delay in seconds
         public override double RequiredSkill { get { return 20.0; } } // Required skill level
         public override int RequiredMana { get { return 20; } } // Mana cost
 

@@ -21,7 +21,7 @@ namespace Server.ACC.CSS.Systems.BeggingMagic
             get { return SpellCircle.First; }
         }
 
-        public override double CastDelay { get { return 1.0; } }
+        public override double CastDelay { get { return 0.1; } }
         public override double RequiredSkill { get { return 20.0; } }
         public override int RequiredMana { get { return 18; } }
 

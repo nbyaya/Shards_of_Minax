@@ -21,7 +21,7 @@ namespace Server.ACC.CSS.Systems.ArcheryMagic
             get { return SpellCircle.Fourth; } // Adjust the spell circle as needed
         }
 
-        public override double CastDelay { get { return 1.0; } }
+        public override double CastDelay { get { return 0.1; } }
         public override double RequiredSkill { get { return 50.0; } }
         public override int RequiredMana { get { return 30; } }
 

@@ -1,8 +1,0 @@
-GenChampSpawns
-GenMiniChamp
-
-Create World
-
-WorldOmniGen
-
-XmlSpawnerRespawnAll

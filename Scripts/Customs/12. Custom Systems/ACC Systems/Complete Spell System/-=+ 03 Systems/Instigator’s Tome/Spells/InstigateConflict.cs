@@ -21,7 +21,7 @@ namespace Server.ACC.CSS.Systems.ProvocationMagic
         );
 
         public override SpellCircle Circle { get { return SpellCircle.First; } }
-		public override double CastDelay { get { return 2.0; } }
+		public override double CastDelay { get { return 0.2; } }
         public override double RequiredSkill { get { return 70.0; } }
         public override int RequiredMana { get { return 30; } }
 

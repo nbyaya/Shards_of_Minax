@@ -21,7 +21,7 @@ namespace Server.ACC.CSS.Systems.CarpentryMagic
             get { return SpellCircle.Fourth; }
         }
 
-        public override double CastDelay { get { return 2.0; } }
+        public override double CastDelay { get { return 0.2; } }
         public override double RequiredSkill { get { return 30.0; } }
         public override int RequiredMana { get { return 30; } }
 

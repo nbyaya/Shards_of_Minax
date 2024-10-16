@@ -21,7 +21,7 @@ namespace Server.ACC.CSS.Systems.MageryMagic
             get { return SpellCircle.Third; } // Adjust circle level as needed
         }
 
-        public override double CastDelay { get { return 1.0; } }
+        public override double CastDelay { get { return 0.1; } }
         public override double RequiredSkill { get { return 30.0; } } // Adjust skill requirement
         public override int RequiredMana { get { return 15; } } // Mana cost as per your request
 

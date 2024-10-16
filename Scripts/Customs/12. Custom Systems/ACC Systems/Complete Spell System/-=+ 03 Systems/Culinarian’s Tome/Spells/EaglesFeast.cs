@@ -19,7 +19,7 @@ namespace Server.ACC.CSS.Systems.CookingMagic
             get { return SpellCircle.First; }
         }
 
-        public override double CastDelay { get { return 2.0; } }
+        public override double CastDelay { get { return 0.2; } }
         public override double RequiredSkill { get { return 0.0; } }
         public override int RequiredMana { get { return 20; } }
 

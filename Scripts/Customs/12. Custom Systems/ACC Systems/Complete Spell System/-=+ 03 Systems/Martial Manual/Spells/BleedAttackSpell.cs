@@ -19,7 +19,7 @@ namespace Server.ACC.CSS.Systems.MartialManual
         );
 
         public override SpellCircle Circle { get { return SpellCircle.Third; } }
-        public override double CastDelay { get { return 1.0; } }
+        public override double CastDelay { get { return 0.1; } }
         public override double RequiredSkill { get { return 30.0; } }
         public override int RequiredMana { get { return 30; } }
 

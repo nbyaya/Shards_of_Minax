@@ -25,7 +25,7 @@ namespace Server.ACC.CSS.Systems.HealingMagic
             get { return SpellCircle.Sixth; }
         }
 
-        public override double CastDelay { get { return 2.0; } }
+        public override double CastDelay { get { return 0.2; } }
         public override double RequiredSkill { get { return 75.0; } }
         public override int RequiredMana { get { return 30; } }
 

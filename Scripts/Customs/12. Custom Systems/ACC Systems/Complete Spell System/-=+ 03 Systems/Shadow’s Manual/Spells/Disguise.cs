@@ -19,7 +19,7 @@ namespace Server.ACC.CSS.Systems.HidingMagic
             get { return SpellCircle.Second; }
         }
 
-        public override double CastDelay { get { return 1.0; } }
+        public override double CastDelay { get { return 0.1; } }
         public override double RequiredSkill { get { return 50.0; } }
         public override int RequiredMana { get { return 30; } }
 

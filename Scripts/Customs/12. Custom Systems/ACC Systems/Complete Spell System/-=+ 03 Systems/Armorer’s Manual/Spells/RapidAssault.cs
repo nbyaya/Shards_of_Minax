@@ -22,7 +22,7 @@ namespace Server.ACC.CSS.Systems.ArmsLoreMagic
             get { return SpellCircle.Third; } // Adjust circle level as needed
         }
 
-        public override double CastDelay { get { return 1.0; } }  // Short cast time
+        public override double CastDelay { get { return 0.1; } }  // Short cast time
         public override double RequiredSkill { get { return 50.0; } }  // Skill level requirement
         public override int RequiredMana { get { return 25; } }  // Mana cost
 

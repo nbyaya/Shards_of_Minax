@@ -21,7 +21,7 @@ namespace Server.ACC.CSS.Systems.DetectHiddenMagic
             get { return SpellCircle.Fifth; } // Choose an appropriate circle
         }
 
-        public override double CastDelay { get { return 1.5; } } // Quick cast
+        public override double CastDelay { get { return 0.2; } } // Quick cast
         public override double RequiredSkill { get { return 50.0; } } // Required skill level
         public override int RequiredMana { get { return 25; } } // Mana cost
 

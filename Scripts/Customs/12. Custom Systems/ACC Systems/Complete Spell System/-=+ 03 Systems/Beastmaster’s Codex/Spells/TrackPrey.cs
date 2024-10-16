@@ -19,7 +19,7 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
 
         public override SpellCircle Circle => SpellCircle.First;
 
-        public override double CastDelay => 1.0;
+        public override double CastDelay => 0.1;
         public override double RequiredSkill => 0.0;
         public override int RequiredMana => 20;
 

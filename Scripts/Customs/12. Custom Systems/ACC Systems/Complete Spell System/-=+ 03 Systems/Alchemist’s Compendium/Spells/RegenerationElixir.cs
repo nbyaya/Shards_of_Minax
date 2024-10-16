@@ -22,7 +22,7 @@ namespace Server.ACC.CSS.Systems.AlchemyMagic
             get { return SpellCircle.Fourth; }
         }
 
-        public override double CastDelay => 1.0;
+        public override double CastDelay => 0.1;
         public override double RequiredSkill => 60.0;
         public override int RequiredMana => 20;
 

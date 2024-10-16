@@ -1,6 +1,90 @@
 <Spawns>
   <Points>
     <Name>British Castle</Name>
+    <UniqueId>055f9118-f066-4ea0-ae69-00ccf6e50236</UniqueId>
+    <Map>Trammel</Map>
+    <X>1331</X>
+    <Y>1655</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1331</CentreX>
+    <CentreY>1655</CentreY>
+    <CentreZ>51</CentreZ>
+    <Range>0</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>True</IsHomeRangeRelative>
+    <Objects2>HonorQuestGiver/direction/East/:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>British Castle</Name>
+    <UniqueId>0808c3c5-5b22-4645-bb98-ab3c0ae45ceb</UniqueId>
+    <Map>Trammel</Map>
+    <X>1337</X>
+    <Y>1659</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1337</CentreX>
+    <CentreY>1659</CentreY>
+    <CentreZ>51</CentreZ>
+    <Range>0</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>True</IsHomeRangeRelative>
+    <Objects2>HumilityQuestGiver/direction/West/:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>British Castle</Name>
     <UniqueId>08949858-0068-48cd-bccd-23017e5aa5c8</UniqueId>
     <Map>Trammel</Map>
     <X>1321</X>
@@ -208,6 +292,48 @@
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>True</IsHomeRangeRelative>
     <Objects2>trainingelemental:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>British Castle</Name>
+    <UniqueId>1db475d1-febb-4e85-8b65-98ea8b65cd39</UniqueId>
+    <Map>Trammel</Map>
+    <X>1337</X>
+    <Y>1647</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1337</CentreX>
+    <CentreY>1647</CentreY>
+    <CentreZ>51</CentreZ>
+    <Range>0</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>True</IsHomeRangeRelative>
+    <Objects2>JusticeQuestGiver/direction/West/:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
     <Name>British Castle</Name>
@@ -463,6 +589,48 @@
   </Points>
   <Points>
     <Name>British Castle</Name>
+    <UniqueId>4da632ba-d291-4ebf-ac48-5adbb0596913</UniqueId>
+    <Map>Trammel</Map>
+    <X>1331</X>
+    <Y>1649</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1331</CentreX>
+    <CentreY>1649</CentreY>
+    <CentreZ>51</CentreZ>
+    <Range>0</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>True</IsHomeRangeRelative>
+    <Objects2>SacrificeQuestGiver/direction/East/:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>British Castle</Name>
     <UniqueId>4db67169-b067-4ee8-be33-19a3bf559ad5</UniqueId>
     <Map>Trammel</Map>
     <X>1329</X>
@@ -631,6 +799,48 @@
   </Points>
   <Points>
     <Name>British Castle</Name>
+    <UniqueId>5557c456-5468-4e38-b5c4-d5c819c2be8d</UniqueId>
+    <Map>Trammel</Map>
+    <X>1331</X>
+    <Y>1651</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1331</CentreX>
+    <CentreY>1651</CentreY>
+    <CentreZ>51</CentreZ>
+    <Range>0</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>True</IsHomeRangeRelative>
+    <Objects2>HonestyQuestGiver/direction/East/:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>British Castle</Name>
     <UniqueId>5b01731f-0e6f-4da4-b4d8-d1f2f42f6674</UniqueId>
     <Map>Trammel</Map>
     <X>1327</X>
@@ -670,6 +880,48 @@
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>True</IsHomeRangeRelative>
     <Objects2>MonsterContractDealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>British Castle</Name>
+    <UniqueId>5e200cf5-b8f9-4677-bb5b-4f3dac16ef78</UniqueId>
+    <Map>Trammel</Map>
+    <X>1337</X>
+    <Y>1653</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1337</CentreX>
+    <CentreY>1653</CentreY>
+    <CentreZ>51</CentreZ>
+    <Range>0</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>True</IsHomeRangeRelative>
+    <Objects2>LordofVirtue/direction/West/:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
     <Name>British Castle</Name>
@@ -1219,6 +1471,90 @@
   </Points>
   <Points>
     <Name>British Castle</Name>
+    <UniqueId>b316b2c9-2a48-4e15-a77a-198587261c84</UniqueId>
+    <Map>Trammel</Map>
+    <X>1331</X>
+    <Y>1659</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1331</CentreX>
+    <CentreY>1659</CentreY>
+    <CentreZ>51</CentreZ>
+    <Range>0</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>True</IsHomeRangeRelative>
+    <Objects2>SpiritualQuestGiver/direction/East/:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>British Castle</Name>
+    <UniqueId>b31929d3-f84c-40c9-b2ff-4ff034d2a232</UniqueId>
+    <Map>Trammel</Map>
+    <X>1331</X>
+    <Y>1657</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1331</CentreX>
+    <CentreY>1657</CentreY>
+    <CentreZ>51</CentreZ>
+    <Range>0</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>True</IsHomeRangeRelative>
+    <Objects2>ValorQuestGiver/direction/East/:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>British Castle</Name>
     <UniqueId>c62e5f73-3743-4f81-862f-42492d1439ad</UniqueId>
     <Map>Trammel</Map>
     <X>1305</X>
@@ -1720,5 +2056,47 @@
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>True</IsHomeRangeRelative>
     <Objects2>Impresario:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Monk:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Naturalist:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Peasant:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>British Castle</Name>
+    <UniqueId>fddcfd29-af3b-4340-ae62-a27b7b0644a3</UniqueId>
+    <Map>Trammel</Map>
+    <X>1331</X>
+    <Y>1647</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1331</CentreX>
+    <CentreY>1647</CentreY>
+    <CentreZ>51</CentreZ>
+    <Range>0</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>True</IsHomeRangeRelative>
+    <Objects2>CompassionQuestGiver/direction/East/:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
 </Spawns>

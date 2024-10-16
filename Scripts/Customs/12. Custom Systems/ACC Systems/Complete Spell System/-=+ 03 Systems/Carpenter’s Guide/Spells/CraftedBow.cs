@@ -19,7 +19,7 @@ namespace Server.ACC.CSS.Systems.CarpentryMagic
             get { return SpellCircle.First; }
         }
 
-        public override double CastDelay { get { return 1.0; } }
+        public override double CastDelay { get { return 0.1; } }
         public override double RequiredSkill { get { return 0.0; } }  // No specific skill required
         public override int RequiredMana { get { return 30; } }
 

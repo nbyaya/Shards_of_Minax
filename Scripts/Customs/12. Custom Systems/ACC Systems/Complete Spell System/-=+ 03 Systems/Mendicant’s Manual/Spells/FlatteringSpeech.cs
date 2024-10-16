@@ -22,7 +22,7 @@ namespace Server.ACC.CSS.Systems.BeggingMagic
             get { return SpellCircle.First; }
         }
 
-        public override double CastDelay { get { return 2.0; } } // 2 seconds delay
+        public override double CastDelay { get { return 0.2; } } // 2 seconds delay
         public override double RequiredSkill { get { return 20.0; } } // Example required skill level
         public override int RequiredMana { get { return 12; } } // Mana cost of the spell
 

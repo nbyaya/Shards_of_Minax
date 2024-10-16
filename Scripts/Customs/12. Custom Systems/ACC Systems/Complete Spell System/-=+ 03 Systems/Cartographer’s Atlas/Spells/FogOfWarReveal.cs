@@ -21,7 +21,7 @@ namespace Server.ACC.CSS.Systems.CartographyMagic
             get { return SpellCircle.First; } // Adjust the circle to fit the skill system balance
         }
 
-        public override double CastDelay { get { return 2.0; } } // Adjust the delay as needed
+        public override double CastDelay { get { return 0.2; } } // Adjust the delay as needed
         public override double RequiredSkill { get { return 80.0; } } // Adjust the required skill level as needed
         public override int RequiredMana { get { return 50; } } // Adjust the mana cost as needed
 

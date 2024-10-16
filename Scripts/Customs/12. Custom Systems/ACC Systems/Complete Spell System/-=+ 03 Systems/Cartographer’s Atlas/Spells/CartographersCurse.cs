@@ -23,7 +23,7 @@ namespace Server.ACC.CSS.Systems.CartographyMagic
             get { return SpellCircle.Sixth; } // Adjust the circle as needed
         }
 
-        public override double CastDelay { get { return 2.0; } } // Casting delay
+        public override double CastDelay { get { return 0.2; } } // Casting delay
         public override double RequiredSkill { get { return 70.0; } } // Required skill level to cast
         public override int RequiredMana { get { return 50; } } // Mana cost to cast
 

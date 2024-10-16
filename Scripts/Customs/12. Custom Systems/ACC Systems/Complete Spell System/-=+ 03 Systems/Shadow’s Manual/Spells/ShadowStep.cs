@@ -22,7 +22,7 @@ namespace Server.ACC.CSS.Systems.HidingMagic
             get { return SpellCircle.Second; }
         }
 
-        public override double CastDelay { get { return 1.5; } } // Shorter delay for quick escape
+        public override double CastDelay { get { return 0.2; } } // Shorter delay for quick escape
         public override double RequiredSkill { get { return 30.0; } } // Required skill level
         public override int RequiredMana { get { return 10; } } // Mana cost
 

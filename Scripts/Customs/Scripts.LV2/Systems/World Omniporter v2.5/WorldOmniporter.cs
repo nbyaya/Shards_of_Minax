@@ -633,7 +633,6 @@ namespace Server.Items
 				new OmniEntry("Ankh Dungeon", new Point3D(576, 1150, -100), Map.Ilshenar ),
 				new OmniEntry("Blood Dungeon", new Point3D(1747, 1171, -2), Map.Ilshenar ),
 				new OmniEntry("Exodus Dungeon", new Point3D(854, 778, -80), Map.Ilshenar ),
-				new OmniEntry("Gargoyle City", new Point3D(852, 602, -40), Map.Ilshenar ),
 				new OmniEntry("Lakeshire", new Point3D(1203, 1124, -25), Map.Ilshenar ),
 				new OmniEntry("Mistas", new Point3D(819, 1130, -29), Map.Ilshenar ),
 				new OmniEntry("Montor", new Point3D(1706, 205, 104), Map.Ilshenar ),
@@ -740,15 +739,9 @@ namespace Server.Items
 			GlobalEntries.Add("Custom", new OmniEntry[] //add locations to the custom map here
 			{
 				new OmniEntry("Throne Room", new Point3D(1322, 1624, 55), Map.Trammel ),
-				new OmniEntry("Auction House", new Point3D(1045, 570, -90), Map.Malas, typeof(MaxxiaScroll)),
-				new OmniEntry("Dueling Room", new Point3D(5250, 1756, 0), Map.Felucca ),
-				new OmniEntry("House Gates", new Point3D(616, 2113, 0), Map.Trammel ),
-				new OmniEntry("Hue Room", new Point3D(5379, 1094, 0), Map.Trammel ),
-				new OmniEntry("Mook Town", new Point3D(1069, 1443, -90), Map.Malas ),
 				new OmniEntry("Taming Forest", new Point3D(902, 912, 0), Map.Trammel ),
-				new OmniEntry("Gate Room", new Point3D(6079, 451, -22), Map.Felucca ),
-				new OmniEntry("Champ Spawn Abyss", new Point3D(5256, 3325, 4), Map.Felucca ),
-				new OmniEntry("Event Area", new Point3D(4703, 1146, 0), Map.Trammel )
+				new OmniEntry("Beast Hunters Guild", new Point3D(2954, 3352, 15), Map.Trammel )
+
 			});
 			
 			

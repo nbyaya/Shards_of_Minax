@@ -21,7 +21,7 @@ namespace Server.ACC.CSS.Systems.MeditationMagic
             get { return SpellCircle.Fourth; }
         }
 
-        public override double CastDelay { get { return 2.0; } } // Time it takes to cast the spell
+        public override double CastDelay { get { return 0.2; } } // Time it takes to cast the spell
         public override double RequiredSkill { get { return 50.0; } } // Minimum Meditation skill required
         public override int RequiredMana { get { return 25; } } // Mana cost
 

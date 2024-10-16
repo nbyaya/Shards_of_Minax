@@ -18,7 +18,7 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
 
         public override SpellCircle Circle => SpellCircle.Third; // Adjust this if needed
 
-        public override double CastDelay => 1.0;
+        public override double CastDelay => 0.1;
         public override double RequiredSkill => 50.0; // Example: Adjust if a different skill level is required
         public override int RequiredMana => 20; // Mana cost as specified in the description
 

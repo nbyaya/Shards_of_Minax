@@ -20,7 +20,7 @@ namespace Server.ACC.CSS.Systems.MageryMagic
             get { return SpellCircle.Fourth; } // Set to Fourth Circle for balance
         }
 
-        public override double CastDelay { get { return 1.5; } } // Casting delay in seconds
+        public override double CastDelay { get { return 0.2; } } // Casting delay in seconds
         public override double RequiredSkill { get { return 65.0; } } // Required Magery skill
         public override int RequiredMana { get { return 20; } } // Mana cost
 

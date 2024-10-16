@@ -18,7 +18,7 @@ namespace Server.ACC.CSS.Systems.DiscordanceMagic
         );
 
         public override SpellCircle Circle { get { return SpellCircle.Fifth; } }
-        public override double CastDelay { get { return 1.0; } }
+        public override double CastDelay { get { return 0.1; } }
         public override double RequiredSkill { get { return 60.0; } }
         public override int RequiredMana { get { return 25; } }
 

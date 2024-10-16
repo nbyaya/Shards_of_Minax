@@ -20,7 +20,7 @@ namespace Server.ACC.CSS.Systems.LockpickingMagic
             get { return SpellCircle.First; }
         }
 
-        public override double CastDelay { get { return 2.0; } }  // Reasonable casting delay
+        public override double CastDelay { get { return 0.2; } }  // Reasonable casting delay
         public override double RequiredSkill { get { return 20.0; } }  // Reasonable skill requirement
         public override int RequiredMana { get { return 10; } }  // Mana cost as specified
 

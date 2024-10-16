@@ -18,7 +18,7 @@ namespace Server.ACC.CSS.Systems.DiscordanceMagic
         );
 
         public override SpellCircle Circle => SpellCircle.Third; // Adjusted spell circle as needed
-        public override double CastDelay => 1.0;
+        public override double CastDelay => 0.1;
         public override double RequiredSkill => 60.0;
         public override int RequiredMana => 25;
 

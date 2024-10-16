@@ -25,7 +25,7 @@ namespace Server.ACC.CSS.Systems.NinjitsuMagic
 
         public override int RequiredMana { get { return 20; } }
         public override double RequiredSkill { get { return 50.0; } }
-        public override double CastDelay { get { return 1.5; } }
+        public override double CastDelay { get { return 0.2; } }
 
         public TrapMastery(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
         {

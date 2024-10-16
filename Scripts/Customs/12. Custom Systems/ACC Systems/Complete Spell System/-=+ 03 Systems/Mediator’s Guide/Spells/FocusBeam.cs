@@ -21,7 +21,7 @@ namespace Server.ACC.CSS.Systems.MeditationMagic
             get { return SpellCircle.Third; } // Adjust as needed
         }
 
-        public override double CastDelay { get { return 1.5; } } // Delay before casting
+        public override double CastDelay { get { return 0.2; } } // Delay before casting
         public override double RequiredSkill { get { return 50.0; } } // Required Meditation skill level
         public override int RequiredMana { get { return 20; } } // Mana cost
 

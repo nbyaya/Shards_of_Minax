@@ -16,7 +16,7 @@ namespace Server.ACC.CSS.Systems.StealthMagic
             9213
         );
 
-        public override double CastDelay => 1.0;
+        public override double CastDelay => 0.1;
         public override double RequiredSkill => 75.0;
         public override int RequiredMana => 30;
 

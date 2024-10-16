@@ -19,7 +19,7 @@ namespace Server.ACC.CSS.Systems.WrestlingMagic
             get { return SpellCircle.First; }
         }
 
-        public override double CastDelay { get { return 1.5; } } // Casting delay of 1.5 seconds
+        public override double CastDelay { get { return 0.2; } } // Casting delay of 1.5 seconds
         public override double RequiredSkill { get { return 0.0; } } // No specific skill requirement
         public override int RequiredMana { get { return 15; } } // Mana cost of 15
 

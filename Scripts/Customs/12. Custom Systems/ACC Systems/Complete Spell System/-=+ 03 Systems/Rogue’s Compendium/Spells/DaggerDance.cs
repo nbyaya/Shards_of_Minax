@@ -18,7 +18,7 @@ namespace Server.ACC.CSS.Systems.StealingMagic
         );
 
         public override SpellCircle Circle => SpellCircle.Eighth;
-        public override double CastDelay => 1.0;
+        public override double CastDelay => 0.1;
         public override double RequiredSkill => 70.0;
         public override int RequiredMana => 10;
 

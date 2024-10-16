@@ -18,7 +18,7 @@ namespace Server.ACC.CSS.Systems.InscribeMagic
 
         public override SpellCircle Circle => SpellCircle.Sixth; // Adjust the circle as needed
 
-        public override double CastDelay => 1.0; // 1-second cast delay
+        public override double CastDelay => 0.1; // 1-second cast delay
         public override double RequiredSkill => 75.0; // Required skill level
         public override int RequiredMana => 35; // Mana cost
 

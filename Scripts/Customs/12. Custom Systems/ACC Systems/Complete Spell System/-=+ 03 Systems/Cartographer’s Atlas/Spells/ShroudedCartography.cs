@@ -20,7 +20,7 @@ namespace Server.ACC.CSS.Systems.CartographyMagic
             get { return SpellCircle.Second; } // Adjust as needed
         }
 
-        public override double CastDelay { get { return 2.0; } }
+        public override double CastDelay { get { return 0.2; } }
         public override double RequiredSkill { get { return 50.0; } } // Adjust skill requirement as needed
         public override int RequiredMana { get { return 30; } }
 

@@ -21,7 +21,7 @@ namespace Server.ACC.CSS.Systems.StealthMagic
             get { return SpellCircle.Fifth; } // Example value; adjust as needed
         }
 
-        public override double CastDelay { get { return 1.0; } }
+        public override double CastDelay { get { return 0.1; } }
         public override double RequiredSkill { get { return 50.0; } } // Adjust as needed
         public override int RequiredMana { get { return 30; } } // Adjust as needed
 

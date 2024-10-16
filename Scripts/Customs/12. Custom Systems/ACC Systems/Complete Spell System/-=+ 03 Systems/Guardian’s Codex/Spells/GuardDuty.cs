@@ -22,7 +22,7 @@ namespace Server.ACC.CSS.Systems.ParryMagic
 
         public override SpellCircle Circle => SpellCircle.Fifth;
 
-        public override double CastDelay => 2.0;
+        public override double CastDelay => 0.2;
         public override double RequiredSkill => 50.0;
         public override int RequiredMana => 30;
 

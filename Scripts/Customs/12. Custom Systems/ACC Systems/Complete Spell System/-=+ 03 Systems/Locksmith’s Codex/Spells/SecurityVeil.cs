@@ -15,7 +15,7 @@ namespace Server.ACC.CSS.Systems.LockpickingMagic
         );
 
         public override SpellCircle Circle { get { return SpellCircle.Second; } }
-        public override double CastDelay { get { return 1.5; } }
+        public override double CastDelay { get { return 0.2; } }
         public override double RequiredSkill { get { return 30.0; } }
         public override int RequiredMana { get { return 10; } }
 

@@ -21,7 +21,7 @@ namespace Server.ACC.CSS.Systems.ParryMagic
             get { return SpellCircle.Sixth; }
         }
 
-        public override double CastDelay { get { return 1.5; } } // Cast delay in seconds
+        public override double CastDelay { get { return 0.2; } } // Cast delay in seconds
         public override double RequiredSkill { get { return 50.0; } } // Required skill level
         public override int RequiredMana { get { return 20; } } // Mana cost
 

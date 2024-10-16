@@ -21,7 +21,7 @@ namespace Server.ACC.CSS.Systems.ForensicsMagic
         }
 
         public override int RequiredMana { get { return 30; } }
-        public override double CastDelay { get { return 1.0; } }
+        public override double CastDelay { get { return 0.1; } }
         public override double RequiredSkill { get { return 40.0; } }
 
         public ForensicHealing(Mobile caster, Item scroll) : base(caster, scroll, m_Info)

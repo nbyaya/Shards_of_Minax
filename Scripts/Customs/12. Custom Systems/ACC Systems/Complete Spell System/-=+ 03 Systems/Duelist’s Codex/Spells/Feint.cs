@@ -20,7 +20,7 @@ namespace Server.ACC.CSS.Systems.FencingMagic
             get { return SpellCircle.Fifth; } // Adjust based on your spell circle hierarchy
         }
 
-        public override double CastDelay { get { return 1.5; } }
+        public override double CastDelay { get { return 0.2; } }
         public override double RequiredSkill { get { return 50.0; } } // Adjust as needed
         public override int RequiredMana { get { return 20; } }
 

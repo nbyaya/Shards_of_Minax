@@ -16,7 +16,7 @@ namespace Server.ACC.CSS.Systems.WrestlingMagic
         );
 
         public override SpellCircle Circle { get { return SpellCircle.First; } } // Define the spell circle as First for simplicity
-        public override double CastDelay { get { return 1.0; } } // 1 second cast delay
+        public override double CastDelay { get { return 0.1; } } // 1 second cast delay
         public override double RequiredSkill { get { return 20.0; } } // Requires 20 skill level
         public override int RequiredMana { get { return 15; } } // Requires 15 mana
 

@@ -1,7 +1,0 @@
-Regions: Loading...done
-World: Loading...
-...done (364332 items, 72402 mobiles, 3 customs) (7.39 seconds)
-
-
-World: Loading...
-...done (370807 items, 73913 mobiles, 3 customs) (7.43 seconds)

@@ -1,5 +1,0 @@
-BootsOfCommand
-GlovesOfCommand
-GrandmastersRobe
-JesterHatOfCommand
-PlateLeggingsOfCommand

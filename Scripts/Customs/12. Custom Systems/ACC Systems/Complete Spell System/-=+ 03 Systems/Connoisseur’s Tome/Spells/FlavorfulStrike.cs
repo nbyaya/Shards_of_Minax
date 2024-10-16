@@ -20,7 +20,7 @@ namespace Server.ACC.CSS.Systems.TasteIDMagic
             get { return SpellCircle.Fifth; }
         }
 
-        public override double CastDelay { get { return 1.5; } }
+        public override double CastDelay { get { return 0.2; } }
         public override double RequiredSkill { get { return 70.0; } }
         public override int RequiredMana { get { return 18; } }
 

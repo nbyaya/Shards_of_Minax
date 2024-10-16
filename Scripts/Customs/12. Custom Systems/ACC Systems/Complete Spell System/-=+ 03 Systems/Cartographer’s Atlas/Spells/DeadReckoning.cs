@@ -24,7 +24,7 @@ namespace Server.ACC.CSS.Systems.CartographyMagic
         }
 
         // CastDelay now returns a double, representing delay in seconds
-        public override double CastDelay { get { return 1.5; } }
+        public override double CastDelay { get { return 0.2; } }
 
         public override double RequiredSkill => 80.0;
         public override int RequiredMana => 50;

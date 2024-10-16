@@ -17,7 +17,7 @@ namespace Server.ACC.CSS.Systems.ForensicsMagic
 
         public override SpellCircle Circle => SpellCircle.Sixth; // Example, adjust as needed
 
-        public override double CastDelay => 1.0; // Casting delay
+        public override double CastDelay => 0.1; // Casting delay
         public override double RequiredSkill => 80.0; // Required skill level
         public override int RequiredMana => 30; // Mana cost
 

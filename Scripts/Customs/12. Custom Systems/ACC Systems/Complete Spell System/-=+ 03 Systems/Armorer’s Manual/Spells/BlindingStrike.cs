@@ -19,7 +19,7 @@ namespace Server.ACC.CSS.Systems.ArmsLoreMagic
 
         public override SpellCircle Circle => SpellCircle.Fourth;
 
-        public override double CastDelay => 1.0;
+        public override double CastDelay => 0.1;
         public override double RequiredSkill => 60.0;
         public override int RequiredMana => 25;
 

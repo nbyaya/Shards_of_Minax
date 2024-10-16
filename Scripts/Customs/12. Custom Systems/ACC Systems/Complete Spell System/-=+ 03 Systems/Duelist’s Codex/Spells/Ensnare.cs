@@ -19,7 +19,7 @@ namespace Server.ACC.CSS.Systems.FencingMagic
             get { return SpellCircle.First; } // Adjust spell circle based on balance
         }
 
-        public override double CastDelay { get { return 1.0; } }
+        public override double CastDelay { get { return 0.1; } }
         public override double RequiredSkill { get { return 20.0; } } // Example skill requirement
         public override int RequiredMana { get { return 20; } }
 

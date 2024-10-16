@@ -21,7 +21,7 @@ namespace Server.ACC.CSS.Systems.ChivalryMagic
             get { return SpellCircle.Sixth; } // Adjust based on your system
         }
 
-        public override double CastDelay { get { return 1.5; } }
+        public override double CastDelay { get { return 0.2; } }
         public override double RequiredSkill { get { return 75.0; } }
         public override int RequiredMana { get { return 35; } }
 

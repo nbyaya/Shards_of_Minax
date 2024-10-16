@@ -17,7 +17,7 @@ namespace Server.ACC.CSS.Systems.ParryMagic
         );
 
         public override SpellCircle Circle { get { return SpellCircle.Eighth; } }
-        public override double CastDelay { get { return 1.5; } }
+        public override double CastDelay { get { return 0.2; } }
         public override double RequiredSkill { get { return 75.0; } }
         public override int RequiredMana { get { return 30; } }
 

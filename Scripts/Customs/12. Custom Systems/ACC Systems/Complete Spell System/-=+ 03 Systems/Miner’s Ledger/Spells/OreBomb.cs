@@ -22,7 +22,7 @@ namespace Server.ACC.CSS.Systems.MiningMagic
             get { return SpellCircle.Fourth; }
         }
 
-        public override double CastDelay { get { return 1.5; } } // Delay before the ability is cast
+        public override double CastDelay { get { return 0.2; } } // Delay before the ability is cast
         public override double RequiredSkill { get { return 50.0; } } // Required skill level to use the ability
         public override int RequiredMana { get { return 30; } } // Mana cost for the ability
 

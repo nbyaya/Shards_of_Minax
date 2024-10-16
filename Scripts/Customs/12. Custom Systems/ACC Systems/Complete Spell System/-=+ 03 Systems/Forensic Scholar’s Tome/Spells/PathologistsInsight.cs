@@ -20,7 +20,7 @@ namespace Server.ACC.CSS.Systems.ForensicsMagic
             get { return SpellCircle.Second; }
         }
 
-        public override double CastDelay { get { return 2.0; } }
+        public override double CastDelay { get { return 0.2; } }
         public override double RequiredSkill { get { return 30.0; } }
         public override int RequiredMana { get { return 25; } }
 
