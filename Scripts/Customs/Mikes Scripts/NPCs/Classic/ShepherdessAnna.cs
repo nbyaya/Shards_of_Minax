@@ -2,6 +2,7 @@ using System;
 using Server;
 using Server.Mobiles;
 using Server.Items;
+using Server.Network;
 
 namespace Server.Mobiles
 {
@@ -38,79 +39,167 @@ namespace Server.Mobiles
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-            
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
 
-            if (speech.Contains("name"))
-            {
-                Say("Greetings, traveler. I am Shepherdess Anna.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("I'm in good health, thank you for asking.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("I'm a shepherdess, tending to my flock and the land.");
-            }
-            else if (speech.Contains("virtues"))
-            {
-                Say("True virtue lies in the heart, where compassion and humility flourish. What virtues do you hold dear?");
-            }
-            else if (speech.Contains("anna"))
-            {
-                Say("Anna is a name passed down in my family for generations. My grandmother was named Anna, and she taught me many tales of old.");
-            }
-            else if (speech.Contains("good"))
-            {
-                Say("I believe my good health is a result of the fresh air here and the exercise I get from tending to the sheep. The land has a way of healing.");
-            }
-            else if (speech.Contains("shepherdess"))
-            {
-                Say("Being a shepherdess is more than just a job, it's a calling. The sheep depend on me, just as I depend on them for warmth and sustenance. Do you know the importance of wool?");
-            }
-            else if (speech.Contains("tales"))
-            {
-                Say("Ah, the tales my grandmother told me! Stories of knights, dragons, and hidden treasures. Once, she gave me a mysterious amulet after sharing a particular tale. If you're interested, I might share its story and reward you for your keen interest.");
-            }
-            else if (speech.Contains("land"))
-            {
-                Say("This land has a rich history. Many battles were fought here, and it's said that the spirits of fallen warriors still roam at night. I've felt their presence on more than one occasion.");
-            }
-            else if (speech.Contains("wool"))
-            {
-                Say("Wool is a vital resource for us. It provides warmth during the cold winters. I also trade it in the village for other necessities. It's amazing how something so simple can be so valuable.");
-            }
-            else if (speech.Contains("amulet"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("This amulet was given to my grandmother by a wandering mage. She never told anyone its true power, but she mentioned it held a secret. Since you're interested, here, take it as a gift. Perhaps you can uncover its mystery.");
-                    from.AddToBackpack(new HerdingAugmentCrystal()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-            else if (speech.Contains("spirits"))
-            {
-                Say("Some nights, when the moon is full, you can hear the spirits whispering. They are not to be feared, but respected. They remind us of the history and the sacrifices made for this land.");
-            }
-            else if (speech.Contains("trade"))
-            {
-                Say("Trading is essential for survival. I often exchange wool for food, tools, and sometimes stories from travelers. It's through trade that I learn about the world beyond these hills.");
-            }
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("Greetings, traveler. I am Shepherdess Anna. Lately, I've been pondering many things, especially about my role in this land and the choices I make.");
 
-            base.OnSpeech(e);
+            greeting.AddOption("What do you mean?",
+                player => true,
+                player => 
+                {
+                    DialogueModule detailModule = new DialogueModule("I've been struggling with the idea of becoming a vegan. You see, I care for my flock deeply, yet I also feel a connection to the creatures around me.");
+                    detailModule.AddOption("Why do you want to become a vegan?",
+                        pl => true,
+                        pl => 
+                        {
+                            DialogueModule reasonModule = new DialogueModule("I've been learning about the impact of animal agriculture on the land and the environment. It troubles me to think about the suffering it causes. I want to do what's right.");
+                            reasonModule.AddOption("That's understandable. Have you considered the challenges?",
+                                p => true,
+                                p => 
+                                {
+                                    DialogueModule challengeModule = new DialogueModule("Yes, there are many challenges. What would happen to my sheep? They rely on me. The thought of losing them is unbearable.");
+                                    challengeModule.AddOption("Could you find a way to keep them?",
+                                        plq => true,
+                                        plq => 
+                                        {
+                                            DialogueModule keepModule = new DialogueModule("Perhaps. If I could transition to a lifestyle that focuses on plants and perhaps find other ways to care for my sheep, it might work.");
+                                            keepModule.AddOption("That sounds like a plan. Have you spoken to anyone about it?",
+                                                pw => true,
+                                                pw => 
+                                                {
+                                                    DialogueModule talkModule = new DialogueModule("Not yet. I'm afraid of what others might think. They might see me as foolish for wanting to change something that has been my way of life for so long.");
+                                                    talkModule.AddOption("Your feelings are valid. Change can be hard.",
+                                                        ple => true,
+                                                        ple => 
+                                                        {
+                                                            pl.SendGump(new DialogueGump(pl, detailModule));
+                                                        });
+                                                    talkModule.AddOption("Maybe they will understand if you explain your thoughts.",
+                                                        plr => true,
+                                                        plr => 
+                                                        {
+                                                            pl.SendGump(new DialogueGump(pl, keepModule));
+                                                        });
+                                                    p.SendGump(new DialogueGump(p, talkModule));
+                                                });
+                                            p.SendGump(new DialogueGump(p, challengeModule));
+                                        });
+                                    challengeModule.AddOption("Perhaps you should seek help from others.",
+                                        plt => true,
+                                        plt => 
+                                        {
+                                            DialogueModule helpModule = new DialogueModule("That's a good idea. There are many who have taken similar journeys. Perhaps they could share their experiences.");
+                                            helpModule.AddOption("It’s important to have support.",
+                                                py => true,
+                                                py => 
+                                                {
+                                                    p.SendGump(new DialogueGump(p, detailModule));
+                                                });
+                                            p.SendGump(new DialogueGump(p, helpModule));
+                                        });
+                                    p.SendGump(new DialogueGump(p, reasonModule));
+                                });
+                            reasonModule.AddOption("How do you feel about your sheep?",
+                                plu => true,
+                                plu => 
+                                {
+                                    DialogueModule sheepModule = new DialogueModule("I adore them. They are not just livestock; they are companions. I often wonder if they sense my conflict.");
+                                    sheepModule.AddOption("They might. Animals are perceptive.",
+                                        p => true,
+                                        p => 
+                                        {
+                                            sheepModule.AddOption("It's true. I’ve seen them react when I’m upset. It makes me feel even more responsible for their well-being.",
+                                                pli => true,
+                                                pli => 
+                                                {
+                                                    pl.SendGump(new DialogueGump(pl, sheepModule));
+                                                });
+                                            p.SendGump(new DialogueGump(p, sheepModule));
+                                        });
+                                    plu.SendGump(new DialogueGump(plu, sheepModule));
+                                });
+                            pl.SendGump(new DialogueGump(pl, reasonModule));
+                        });
+                    player.SendGump(new DialogueGump(player, detailModule));
+                });
+
+            greeting.AddOption("Have you thought about your diet?",
+                player => true,
+                player => 
+                {
+                    DialogueModule dietModule = new DialogueModule("Yes! I know I can grow many vegetables and fruits, but I worry about the nutrients I might miss. What if I can't get enough protein?");
+                    dietModule.AddOption("There are many plant-based sources of protein.",
+                        pl => true,
+                        pl => 
+                        {
+                            DialogueModule sourcesModule = new DialogueModule("That's true! Lentils, beans, and even nuts can provide what I need. It’s a whole new world to explore.");
+                            sourcesModule.AddOption("Exactly! It could be a wonderful journey of discovery.",
+                                p => true,
+                                p => 
+                                {
+                                    p.SendGump(new DialogueGump(p, dietModule));
+                                });
+                            dietModule.AddOption("What about the taste of meat?",
+                                plz => true,
+                                plz => 
+                                {
+                                    DialogueModule tasteModule = new DialogueModule("I do enjoy the flavors of meat, but I wonder if I can find substitutes that could satisfy my cravings.");
+                                    tasteModule.AddOption("There are many delicious plant-based recipes out there.",
+                                        p => true,
+                                        p => 
+                                        {
+                                            tasteModule.AddOption("I’d love to explore them. Maybe cooking could become a new hobby for me!",
+                                                plx => true,
+                                                plx => 
+                                                {
+                                                    pl.SendGump(new DialogueGump(pl, tasteModule));
+                                                });
+                                            p.SendGump(new DialogueGump(p, tasteModule));
+                                        });
+                                    pl.SendGump(new DialogueGump(pl, tasteModule));
+                                });
+                            pl.SendGump(new DialogueGump(pl, sourcesModule));
+                        });
+                    player.SendGump(new DialogueGump(player, dietModule));
+                });
+
+            greeting.AddOption("What do you think about the ethics of eating meat?",
+                player => true,
+                player => 
+                {
+                    DialogueModule ethicsModule = new DialogueModule("It’s a heavy topic for me. I want to honor the lives of the animals I care for, yet survival often feels like a primal instinct.");
+                    ethicsModule.AddOption("That’s a common struggle for many.",
+                        pl => true,
+                        pl => 
+                        {
+                            DialogueModule commonStruggleModule = new DialogueModule("Yes, I see that now. I must reconcile my needs with my values.");
+                            commonStruggleModule.AddOption("Finding balance is key.",
+                                p => true,
+                                p => 
+                                {
+                                    p.SendGump(new DialogueGump(p, commonStruggleModule));
+                                });
+                            ethicsModule.AddOption("Maybe you could find a middle ground.",
+                                plb => true,
+                                plb => 
+                                {
+                                    pl.SendGump(new DialogueGump(pl, commonStruggleModule));
+                                });
+                            player.SendGump(new DialogueGump(player, ethicsModule));
+                        });
+                    player.SendGump(new DialogueGump(player, ethicsModule));
+                });
+
+            return greeting;
         }
 
         public ShepherdessAnna(Serial serial) : base(serial) { }

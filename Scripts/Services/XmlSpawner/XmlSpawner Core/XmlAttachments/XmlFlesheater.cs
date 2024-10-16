@@ -11,7 +11,7 @@ namespace Server.Engines.XmlSpawner2
         private int m_BleedDamage = 40; // Base bleed damage over 15 seconds
         private TimeSpan m_Duration = TimeSpan.FromSeconds(15); // Duration of the bleed effect
         private TimeSpan m_Cooldown = TimeSpan.FromSeconds(60); // Cooldown before ability can be used again
-        private DateTime m_LastUsed;
+        private DateTime m_LastUsed = DateTime.MinValue; // Initialize to MinValue to prevent DateTime overflow issues
         private int m_HealthRestore = 100; // Amount of health restored to the user
 
         [CommandProperty(AccessLevel.GameMaster)]
@@ -38,6 +38,7 @@ namespace Server.Engines.XmlSpawner2
             BleedDamage = bleedDamage;
             Duration = TimeSpan.FromSeconds(durationSeconds);
             HealthRestore = healthRestore;
+            m_LastUsed = DateTime.MinValue; // Proper initialization
         }
 
         public override void Serialize(GenericWriter writer)
@@ -68,7 +69,7 @@ namespace Server.Engines.XmlSpawner2
 
         public override string OnIdentify(Mobile from)
         {
-			return String.Format("Flesheater: Inflicts bleed damage over time. Restores health to the caster.");
+            return String.Format("Flesheater: Inflicts bleed damage over time. Restores health to the caster.");
         }
 
         public override void OnWeaponHit(Mobile attacker, Mobile defender, BaseWeapon weapon, int damageGiven)
@@ -76,7 +77,7 @@ namespace Server.Engines.XmlSpawner2
             if (DateTime.Now < m_LastUsed + m_Cooldown) return;
 
             PerformFlesheaterAttack(attacker, defender);
-            m_LastUsed = DateTime.Now;
+            m_LastUsed = DateTime.Now; // Reset cooldown timer
         }
 
         private void PerformFlesheaterAttack(Mobile attacker, Mobile initialTarget)
@@ -98,7 +99,7 @@ namespace Server.Engines.XmlSpawner2
 
             // Restore health to the attacker
             attacker.Hits += m_HealthRestore;
-			attacker.Say("Drinks Blood!");
+            attacker.Say("Drinks Blood!");
             // Indicate the cooldown start
             m_LastUsed = DateTime.Now;
         }

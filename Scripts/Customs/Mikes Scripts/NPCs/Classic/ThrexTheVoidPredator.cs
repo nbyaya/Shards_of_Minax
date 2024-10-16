@@ -1,136 +1,225 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
-namespace Server.Mobiles
+public class ThrexTheVoidPredator : BaseCreature
 {
-    [CorpseName("the corpse of Threx the Void Predator")]
-    public class ThrexTheVoidPredator : BaseCreature
+    private DateTime lastRewardTime;
+
+    [Constructable]
+    public ThrexTheVoidPredator() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "Threx the Void Predator";
+        Body = 0x190; // Human male body
 
-        [Constructable]
-        public ThrexTheVoidPredator() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Threx the Void Predator";
-            Body = 0x190; // Human male body
+        // Stats
+        SetStr(150);
+        SetDex(110);
+        SetInt(40);
+        SetHits(110);
 
-            // Stats
-            Str = 150;
-            Dex = 110;
-            Int = 40;
-            Hits = 110;
+        // Appearance
+        AddItem(new BoneChest() { Hue = 1182 });
+        AddItem(new BoneGloves() { Hue = 1182 });
+        AddItem(new BoneHelm() { Hue = 1181 });
+        AddItem(new VikingSword() { Name = "Threx's Ripper" });
 
-            // Appearance
-            AddItem(new BoneChest() { Hue = 1182 });
-            AddItem(new BoneGloves() { Hue = 1182 });
-            AddItem(new BoneHelm() { Hue = 1181 });
-            AddItem(new VikingSword() { Name = "Threx's Ripper" });
+        Hue = 1180;
+        HairItemID = Race.RandomHair(this);
+        HairHue = Race.RandomHairHue();
 
-            Hue = 1180;
-            HairItemID = Race.RandomHair(this);
-            HairHue = Race.RandomHairHue();
-            
-            SpeechHue = 0; // Default speech hue
+        lastRewardTime = DateTime.MinValue; // Initialize the lastRewardTime
+    }
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
-        }
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
 
-            if (!from.InRange(this, 3))
-                return;
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("I am Threx the Void Predator! My heart beats in rhythm with the cosmos, and my love for void meat surpasses even that.");
 
-            string speech = e.Speech.ToLower();
+        greeting.AddOption("What is void meat?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateVoidMeatModule())); });
 
-            if (speech.Contains("name"))
-            {
-                Say("I am Threx the Void Predator!");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("I exist beyond the realms of flesh and bone, my health is irrelevant.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("I am a Void Predator, a cosmic sentinel observing the ebb and flow of the universe.");
-            }
-            else if (speech.Contains("battles"))
-            {
-                Say("Within the void, battles are but ripples in the cosmic fabric. Art thou prepared for the unknown?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("Then venture forth, seeker of the void's secrets, and remember, the questions are as important as the answers.");
-            }
-            else if (speech.Contains("threx"))
-            {
-                Say("Ah, so you've heard of me before? The void speaks in many tongues and whispers tales to those who listen.");
-            }
-            else if (speech.Contains("realms"))
-            {
-                Say("These realms you know are but grains of sand in the vast desert of existence. Many dimensions overlap and intertwine in ways you cannot fathom.");
-            }
-            else if (speech.Contains("cosmic"))
-            {
-                Say("The vast cosmos is my canvas, and every star, every galaxy, has a story waiting to be told. Do you wish to hear a tale from the cosmos?");
-            }
-            else if (speech.Contains("void"))
-            {
-                Say("The void is not just emptiness; it is potential, a canvas for existence. Within it lie secrets that few dare to seek. For your bravery in seeking them out, accept this token from the void itself.");
-            }
-            else if (speech.Contains("token"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("For your bravery in seeking out the secrets of the void, accept this token.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-            else if (speech.Contains("dimensions"))
-            {
-                Say("Each dimension vibrates at its own frequency, and with the right knowledge, one can travel between them. But beware, for not all dimensions are friendly to mortals.");
-            }
-            else if (speech.Contains("tale"))
-            {
-                Say("Very well. In the early days of the cosmos, when stars were young, a great entity emerged from the void, seeking to bring balance to the raging energies. This entity's legacy is still felt across the dimensions.");
-            }
-            else if (speech.Contains("travel"))
-            {
-                Say("Traveling between dimensions requires understanding of their essence and resonance. Tools and artifacts can aid in this, but the journey is fraught with peril.");
-            }
-            else if (speech.Contains("entity"))
-            {
-                Say("This entity, known by many names across the cosmos, weaves its influence subtly, guiding the flow of energies and destinies. Some revere it as a deity, others fear its unpredictable nature.");
-            }
+        greeting.AddOption("Tell me about your cosmic journey.",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateJourneyModule())); });
 
-            base.OnSpeech(e);
-        }
+        greeting.AddOption("What do you think of this realm?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateRealmModule())); });
 
-        public ThrexTheVoidPredator(Serial serial) : base(serial) { }
+        greeting.AddOption("Do you have any stories to share?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateStoriesModule())); });
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
-        }
+        return greeting;
+    }
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
-        }
+    private DialogueModule CreateVoidMeatModule()
+    {
+        DialogueModule voidMeatModule = new DialogueModule("Void meat is a delicacy of the cosmic expanse, rich in flavor and steeped in the essence of existence itself.");
+
+        voidMeatModule.AddOption("How do you prepare void meat?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreatePreparationModule())); });
+
+        voidMeatModule.AddOption("What does it taste like?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateTasteModule())); });
+
+        voidMeatModule.AddOption("Where can I find it?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateFindingModule())); });
+
+        voidMeatModule.AddOption("Why do you love it so much?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateLoveModule())); });
+
+        return voidMeatModule;
+    }
+
+    private DialogueModule CreatePreparationModule()
+    {
+        DialogueModule prepModule = new DialogueModule("To prepare void meat, one must first harness the energies of the cosmos. A fire fueled by star essence is ideal.");
+
+        prepModule.AddOption("What ingredients are needed?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateIngredientsModule())); });
+
+        prepModule.AddOption("Is it difficult to cook?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateDifficultyModule())); });
+
+        prepModule.AddOption("Can you teach me the recipe?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateRecipeModule())); });
+
+        return prepModule;
+    }
+
+    private DialogueModule CreateIngredientsModule()
+    {
+        return new DialogueModule("The essential ingredients include rare spices from the Nebula Flora, starfire oil, and of course, the prime cut of void meat itself.");
+    }
+
+    private DialogueModule CreateDifficultyModule()
+    {
+        return new DialogueModule("Cooking void meat is not for the faint of heart; it requires precision and an understanding of cosmic energies. One misstep could lead to... explosive results.");
+    }
+
+    private DialogueModule CreateRecipeModule()
+    {
+        DialogueModule recipeModule = new DialogueModule("First, marinate the void meat in starfire oil for an hour. Then, grill it over a star essence fire for a duration corresponding to the phases of the moon.");
+
+        recipeModule.AddOption("What if I mess up?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateMessUpModule())); });
+
+        recipeModule.AddOption("Can I make variations?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateVariationsModule())); });
+
+        return recipeModule;
+    }
+
+    private DialogueModule CreateMessUpModule()
+    {
+        return new DialogueModule("If you mess up, don't despair! The void has ways of forgiving, but be cautious—unintended outcomes can lead to bizarre results.");
+    }
+
+    private DialogueModule CreateVariationsModule()
+    {
+        return new DialogueModule("Ah, variations! You can mix in some spices from the realms of light or even pair it with celestial fruits for an unforgettable meal.");
+    }
+
+    private DialogueModule CreateTasteModule()
+    {
+        return new DialogueModule("The taste of void meat is a fusion of flavors from across dimensions; it's savory, with hints of ethereal sweetness that dance upon the tongue.");
+    }
+
+    private DialogueModule CreateFindingModule()
+    {
+        DialogueModule findingModule = new DialogueModule("To find void meat, one must traverse the dimensional rifts. Seek the hidden markets of the intergalactic travelers or negotiate with cosmic entities.");
+
+        findingModule.AddOption("Are there dangers involved?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateDangersModule())); });
+
+        return findingModule;
+    }
+
+    private DialogueModule CreateDangersModule()
+    {
+        return new DialogueModule("Indeed! The dimensional rifts are fraught with peril, from rogue time anomalies to cosmic beasts. Only the brave should venture forth.");
+    }
+
+    private DialogueModule CreateLoveModule()
+    {
+        DialogueModule loveModule = new DialogueModule("My love for void meat is rooted in its connection to the cosmos. It embodies the essence of existence and fuels my very being.");
+
+        loveModule.AddOption("Have you shared this love with others?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateSharingModule())); });
+
+        return loveModule;
+    }
+
+    private DialogueModule CreateSharingModule()
+    {
+        return new DialogueModule("Indeed! I often share void meat with fellow cosmic wanderers, hosting feasts where we exchange tales of the void while savoring its delights.");
+    }
+
+    private DialogueModule CreateJourneyModule()
+    {
+        return new DialogueModule("My journey through the cosmos has been filled with encounters, lessons, and cosmic marvels. Each moment is a fragment of the grand tapestry of existence.");
+
+        // Additional nested options can be added here
+    }
+
+    private DialogueModule CreateRealmModule()
+    {
+        return new DialogueModule("This realm is but a transient dream, a fleeting shadow of the grand cosmos. I observe its wonders with both curiosity and a hint of melancholy.");
+    }
+
+    private DialogueModule CreateStoriesModule()
+    {
+        DialogueModule storiesModule = new DialogueModule("Ah, stories! Each star I visit has a tale to tell, weaving the fabric of reality with the narratives of existence.");
+
+        storiesModule.AddOption("Tell me a tale!",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateTaleModule())); });
+
+        return storiesModule;
+    }
+
+    private DialogueModule CreateTaleModule()
+    {
+        return new DialogueModule("In the early days of the cosmos, when stars were young, a great entity emerged from the void, seeking to bring balance to the raging energies. This entity's legacy is still felt across the dimensions.");
+    }
+
+    public ThrexTheVoidPredator(Serial serial) : base(serial) { }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0); // version
+        writer.Write(lastRewardTime);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        lastRewardTime = reader.ReadDateTime();
     }
 }

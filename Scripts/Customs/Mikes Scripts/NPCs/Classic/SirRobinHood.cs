@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -39,71 +40,131 @@ namespace Server.Mobiles
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+        public SirRobinHood(Serial serial) : base(serial) { }
 
-            if (!from.InRange(this, 3))
+        public override void OnDoubleClick(Mobile from)
+        {
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
 
-            if (speech.Contains("name"))
-            {
-                Say("I am Sir Robin Hood, the 'hero' of the poor. Ha!");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("Health? I'm as fit as a fiddle, unlike the poor souls I 'help.'");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My 'job'? Oh, I rob from the rich and give to the 'needy.' How noble of me.");
-            }
-            else if (speech.Contains("heroism"))
-            {
-                Say("True heroism is a fairy tale. Think you can prove me wrong?");
-            }
-            else if (speech.Contains("yes") && HasAlreadySpoken(30))
-            {
-                Say("Ha! You're either a fool or a dreamer. Good luck proving your worth.");
-            }
-            else if (speech.Contains("hero"))
-            {
-                Say("The title of 'hero' is bestowed upon me by the people, but I wonder if they truly understand the cost of such a title. Have you ever considered the price of heroism?");
-            }
-            else if (speech.Contains("fiddle"))
-            {
-                Say("This old fiddle? It's seen better days. It's a reminder of my past, a simpler time when music brought joy. Ever played an instrument?");
-            }
-            else if (speech.Contains("needy"))
-            {
-                Say("The 'needy' are more than just people without coin. They have stories, dreams, and fears. Have you ever stopped to listen to their tales?");
-            }
-            else if (speech.Contains("prove"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("To prove oneself is a never-ending journey. Here, take this as a token for your efforts. May it guide you on your path.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-            else if (speech.Contains("rob"))
-            {
-                Say("Robbing is not just about taking wealth. It's a statement against the unjust distribution of power. What's your stance on justice?");
-            }
-            else if (speech.Contains("fairy"))
-            {
-                Say("Fairy tales are often tales of hope, masking the harsh reality with sugar-coated truths. Do you believe in fairy tales or reality?");
-            }
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("Ah, greetings! I am Sir Robin Hood, the 'hero' of the poor. Ha! Care to hear about my most daring exploits?");
 
-            base.OnSpeech(e);
+            greeting.AddOption("Tell me about your best robbery.",
+                player => true,
+                player => 
+                {
+                    DialogueModule robberyModule = new DialogueModule("Ah, the thrill of the chase! One of my finest was when I raided the Sheriff of Nottingham's treasury. It was a night to remember!");
+                    robberyModule.AddOption("What happened during the raid?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule raidDetailsModule = new DialogueModule("The night was dark, and the moon was my only witness. I crept in with my merry band, avoiding guards with the grace of shadows.");
+                            raidDetailsModule.AddOption("Were you caught?",
+                                p => true,
+                                p =>
+                                {
+                                    DialogueModule caughtModule = new DialogueModule("Not this time! Just as we reached the treasury, I heard footsteps approaching. We quickly disguised ourselves as guards and fooled them.");
+                                    caughtModule.AddOption("Impressive! Did you escape with treasure?",
+                                        plq => true,
+                                        plq =>
+                                        {
+                                            DialogueModule treasureModule = new DialogueModule("Indeed! We filled our bags with gold and jewels. The look on the Sheriff’s face when he found his vault empty was priceless!");
+                                            player.SendGump(new DialogueGump(player, treasureModule));
+                                        });
+                                    player.SendGump(new DialogueGump(player, caughtModule));
+                                });
+                            raidDetailsModule.AddOption("What did you do next?",
+                                p => true,
+                                p =>
+                                {
+                                    DialogueModule escapeModule = new DialogueModule("We sprinted through the forest, laughter echoing in the night. Our merry band celebrated with a feast under the stars.");
+                                    escapeModule.AddOption("That sounds incredible!",
+                                        plw => true,
+                                        plw => 
+                                        {
+                                            DialogueModule celebrationModule = new DialogueModule("Ah, it was a night of joy! But what made it truly special was sharing it with those in need.");
+                                            player.SendGump(new DialogueGump(player, celebrationModule));
+                                        });
+                                    player.SendGump(new DialogueGump(player, escapeModule));
+                                });
+                            player.SendGump(new DialogueGump(player, raidDetailsModule));
+                        });
+                    player.SendGump(new DialogueGump(player, robberyModule));
+                });
+
+            greeting.AddOption("Do you have any other memorable stories?",
+                player => true,
+                player =>
+                {
+                    DialogueModule memorableStoriesModule = new DialogueModule("Oh, countless tales! One time, I intercepted a tax collector on his way to the castle, heavy with gold!");
+                    memorableStoriesModule.AddOption("How did you manage that?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule collectorModule = new DialogueModule("I disguised myself as a peasant, blending in with the villagers. When he stopped for a break, I struck!");
+                            collectorModule.AddOption("What did you do next?",
+                                p => true,
+                                p =>
+                                {
+                                    DialogueModule aftermathModule = new DialogueModule("I filled my pack with gold, then scattered his papers in the wind. The look on his face when he woke up—priceless!");
+                                    player.SendGump(new DialogueGump(player, aftermathModule));
+                                });
+                            player.SendGump(new DialogueGump(player, collectorModule));
+                        });
+                    memorableStoriesModule.AddOption("Any other daring deeds?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule otherDeedsModule = new DialogueModule("There was the time I rescued a group of villagers from a band of mercenaries. They were going to be sold as slaves!");
+                            otherDeedsModule.AddOption("What happened then?",
+                                p => true,
+                                p =>
+                                {
+                                    DialogueModule rescueModule = new DialogueModule("With quick thinking, I staged a false attack, distracting the mercenaries long enough for the villagers to escape. They owe me their freedom!");
+                                    player.SendGump(new DialogueGump(player, rescueModule));
+                                });
+                            player.SendGump(new DialogueGump(player, otherDeedsModule));
+                        });
+                    player.SendGump(new DialogueGump(player, memorableStoriesModule));
+                });
+
+            greeting.AddOption("Do you ever regret your actions?",
+                player => true,
+                player =>
+                {
+                    DialogueModule regretModule = new DialogueModule("Regret? Sometimes I wonder if I could have helped even more, but the need is great, and I can only do so much.");
+                    regretModule.AddOption("Your heart is in the right place.",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule heartModule = new DialogueModule("Thank you! I believe that true heroism lies in the intent to help others, regardless of the path we take.");
+                            player.SendGump(new DialogueGump(player, heartModule));
+                        });
+                    player.SendGump(new DialogueGump(player, regretModule));
+                });
+
+            greeting.AddOption("What is your stance on justice?",
+                player => true,
+                player =>
+                {
+                    DialogueModule justiceModule = new DialogueModule("Justice is often skewed in favor of the wealthy. My actions are a form of reclaiming that balance for the poor.");
+                    justiceModule.AddOption("Do you think it's effective?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule effectivenessModule = new DialogueModule("It brings hope to those in despair and fear to those who exploit. Change takes time, but I believe in our cause.");
+                            player.SendGump(new DialogueGump(player, effectivenessModule));
+                        });
+                    player.SendGump(new DialogueGump(player, justiceModule));
+                });
+
+            return greeting;
         }
 
         private bool HasAlreadySpoken(int entryNumber)
@@ -111,8 +172,6 @@ namespace Server.Mobiles
             // Implement logic to check if NPC has already spoken the given entry number
             return false; // Placeholder logic
         }
-
-        public SirRobinHood(Serial serial) : base(serial) { }
 
         public override void Serialize(GenericWriter writer)
         {

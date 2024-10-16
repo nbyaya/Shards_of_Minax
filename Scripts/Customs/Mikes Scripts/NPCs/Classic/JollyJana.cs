@@ -1,134 +1,195 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
+using Server.Network;
 using Server.Items;
 
-namespace Server.Mobiles
+[CorpseName("the corpse of Jolly Jana")]
+public class JollyJana : BaseCreature
 {
-    [CorpseName("the corpse of Jolly Jana")]
-    public class JollyJana : BaseCreature
+    private DateTime lastRewardTime;
+
+    [Constructable]
+    public JollyJana() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "Jolly Jana";
+        Body = 0x191; // Human female body
 
-        [Constructable]
-        public JollyJana() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Jolly Jana";
-            Body = 0x191; // Human female body
+        // Stats
+        SetStr(70);
+        SetDex(70);
+        SetInt(120);
+        SetHits(70);
 
-            // Stats
-            Str = 70;
-            Dex = 70;
-            Int = 120;
-            Hits = 70;
+        // Appearance
+        AddItem(new FancyDress() { Hue = 2214 });
+        AddItem(new Boots() { Hue = 2214 });
+        AddItem(new GoldNecklace() { Name = "Jana's Jolly Necklace" });
+        AddItem(new ShortSpear() { Name = "Jana's Jolly Spear" });
 
-            // Appearance
-            AddItem(new FancyDress() { Hue = 2214 }); // FancyDress with hue 2214
-            AddItem(new Boots() { Hue = 2214 }); // Boots with hue 2214
-            AddItem(new GoldNecklace() { Name = "Jana's Jolly Necklace" });
-            AddItem(new ShortSpear() { Name = "Jana's Jolly Spear" });
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(Female);
+        HairHue = Race.RandomHairHue();
 
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(Female);
-            HairHue = Race.RandomHairHue();
+        lastRewardTime = DateTime.MinValue;
+    }
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
-        }
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
 
-            if (!from.InRange(this, 3))
-                return;
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("Greetings, traveler! I am Jolly Jana, the keeper of laughter! How can I brighten your day?");
 
-            string speech = e.Speech.ToLower();
+        greeting.AddOption("Tell me about yourself.",
+            player => true,
+            player =>
+            {
+                DialogueModule aboutMe = new DialogueModule("I spread joy and merriment wherever I go! My laughter is infectious, and I believe it can heal even the heaviest hearts. Would you like to know how I became the keeper of laughter?");
+                aboutMe.AddOption("Yes, how did you become the keeper of laughter?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule backstory = new DialogueModule("Ah! It all started when I was a young girl. I discovered that laughter could bring people together, and I decided to dedicate my life to spreading joy. My travels have taken me to many lands, each filled with unique stories. Would you like to hear about one of my adventures?");
+                        backstory.AddOption("Please, tell me about an adventure.",
+                            pll => true,
+                            pll =>
+                            {
+                                DialogueModule adventure = new DialogueModule("Once, I found myself in a village plagued by sorrow. I organized a grand festival, filled with games and laughter, which brought the villagers together. By the end of the night, their worries had faded away! They thanked me with joyous smiles. It was truly a heartwarming experience!");
+                                pll.SendGump(new DialogueGump(pll, adventure));
+                            });
+                        player.SendGump(new DialogueGump(player, backstory));
+                    });
+                player.SendGump(new DialogueGump(player, aboutMe));
+            });
 
-            if (speech.Contains("name"))
+        greeting.AddOption("Do you know any jokes?",
+            player => true,
+            player =>
             {
-                Say("Greetings, traveler! I am Jolly Jana, the keeper of laughter!");
-            }
-            else if (speech.Contains("health"))
+                DialogueModule jokeModule = new DialogueModule("Ah! I have a good one for you: Why did the scarecrow win an award? Because he was outstanding in his field! Haha!");
+                jokeModule.AddOption("That was funny!",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule followUp = new DialogueModule("I'm glad you enjoyed it! Laughter is like a flower that blooms in the heart. Would you like to hear another?");
+                        followUp.AddOption("Yes, tell me another!",
+                            pll => true,
+                            pll => 
+                            {
+                                pll.SendGump(new DialogueGump(pll, new DialogueModule("Why don’t scientists trust atoms? Because they make up everything! Haha!")));
+                            });
+                        followUp.AddOption("Maybe later.",
+                            pll => true,
+                            pll => 
+                            {
+                                pll.SendGump(new DialogueGump(pll, CreateGreetingModule()));
+                            });
+                        player.SendGump(new DialogueGump(player, followUp));
+                    });
+                player.SendGump(new DialogueGump(player, jokeModule));
+            });
+
+        greeting.AddOption("Can you tell me about 'The Laughing Order'?",
+            player => true,
+            player =>
             {
-                Say("I'm as hearty as a laugh, my friend!");
-            }
-            else if (speech.Contains("job"))
+                DialogueModule guildInfo = new DialogueModule("Our guild believes in the healing power of humor. We gather jokes and tales to share with the world. Each member contributes their favorite stories. Would you be interested in joining our guild of laughter?");
+                guildInfo.AddOption("Yes, I’d love to join!",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Welcome! Laughter is a bond that unites us. Together, we can spread joy far and wide!")));
+                    });
+                guildInfo.AddOption("Not right now, but tell me more about the guild.",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule moreInfo = new DialogueModule("The Laughing Order organizes events where we perform and share stories. We also host laughter workshops to help others find their humor! What kind of humor do you enjoy?");
+                        moreInfo.AddOption("I enjoy puns.",
+                            pll => true,
+                            pll => 
+                            {
+                                pll.SendGump(new DialogueGump(pll, new DialogueModule("Puns are delightful! They tickle the mind! Would you like to hear some punny jokes?")));
+                            });
+                        moreInfo.AddOption("I prefer stories.",
+                            pll => true,
+                            pll => 
+                            {
+                                pll.SendGump(new DialogueGump(pll, new DialogueModule("Stories bring laughter to life! I can share some of the funniest tales from my travels!")));
+                            });
+                        pl.SendGump(new DialogueGump(pl, moreInfo));
+                    });
+                player.SendGump(new DialogueGump(player, guildInfo));
+            });
+
+        greeting.AddOption("What do you think about laughter?",
+            player => true,
+            player =>
             {
-                Say("My job, you ask? Why, I spread joy and merriment wherever I go!");
-            }
-            else if (speech.Contains("virtues"))
-            {
-                Say("Laughter is a virtue, my dear friend! Can you find humor in life's trials?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("Then you possess the heart of a true jester! Tell me, what's the funniest thing that's ever happened to you?");
-            }
-            else if (speech.Contains("goodbye"))
-            {
-                Say("Oh, what a splendid tale! Laughter truly is the best medicine, my friend. Farewell, and may your days be filled with mirth!");
-            }
-            else if (speech.Contains("keeper"))
-            {
-                Say("Ah, yes! As the keeper of laughter, I've traveled many lands and shared countless jokes. Laughter unites us all!");
-            }
-            else if (speech.Contains("laugh"))
-            {
-                Say("Every laugh gives me strength and vitality! Heard a good joke lately?");
-            }
-            else if (speech.Contains("merriment"))
-            {
-                Say("Merriment is the light in the darkest of times. It's my mission to ensure that no one forgets the joy of a good chuckle.");
-            }
-            else if (speech.Contains("travel"))
-            {
-                Say("I've been to bustling cities and quiet hamlets. But no matter where I go, I find that laughter is a universal language.");
-            }
-            else if (speech.Contains("joke"))
-            {
-                Say("Ah! I have a good one for you: Why did the scarecrow win an award? Because he was outstanding in his field! Haha!");
-            }
-            else if (speech.Contains("scarecrow"))
+                DialogueModule laughterThoughts = new DialogueModule("Laughter is a virtue! It's the light in the darkest of times. It brings us together and helps us heal. Can you find humor in life's trials?");
+                laughterThoughts.AddOption("Absolutely! Laughter is essential.",
+                    pl => true,
+                    pl => 
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Then you possess the heart of a true jester! Tell me, what's the funniest thing that's ever happened to you?")));
+                    });
+                laughterThoughts.AddOption("Sometimes it's hard to laugh.",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("I understand. Life can be challenging. But remember, even in tough times, a good laugh can make everything feel a little lighter!")));
+                    });
+                player.SendGump(new DialogueGump(player, laughterThoughts));
+            });
+
+        greeting.AddOption("May I have a token of gratitude for listening?",
+            player => true,
+            player =>
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)
                 {
-                    Say("I have no reward right now. Please return later.");
+                    player.SendGump(new DialogueGump(player, new DialogueModule("I have no reward right now. Please return later.")));
                 }
                 else
                 {
-                    Say("The scarecrow is a simple fellow, but even he knows the importance of a good laugh! By the way, for appreciating my joke, here's a little token of gratitude.");
-                    from.AddToBackpack(new SnoopingAugmentCrystal()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
+                    player.AddToBackpack(new SnoopingAugmentCrystal());
+                    lastRewardTime = DateTime.UtcNow;
+                    player.SendGump(new DialogueGump(player, new DialogueModule("Here's a little token of gratitude for appreciating my jokes! Keep spreading joy!")));
                 }
-            }
-            else if (speech.Contains("guild"))
+            });
+
+        greeting.AddOption("Goodbye.",
+            player => true,
+            player =>
             {
-                Say("Our guild, 'The Laughing Order', believes in the healing power of humor. We gather jokes and tales to share with the world.");
-            }
-            else if (speech.Contains("villages"))
-            {
-                Say("Villages, although small, have close-knit communities. It's heartwarming to see an entire village gather around a bonfire, sharing tales and laughing together.");
-            }
+                player.SendGump(new DialogueGump(player, new DialogueModule("Oh, what a splendid tale! Laughter truly is the best medicine. Farewell, and may your days be filled with mirth!")));
+            });
 
-            base.OnSpeech(e);
-        }
-
-        public JollyJana(Serial serial) : base(serial) { }
-
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
-        }
-
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
-        }
+        return greeting;
     }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write(0); // version
+        writer.Write(lastRewardTime);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        lastRewardTime = reader.ReadDateTime();
+    }
+
+    public JollyJana(Serial serial) : base(serial) { }
 }

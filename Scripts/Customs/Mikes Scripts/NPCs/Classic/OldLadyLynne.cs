@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -17,10 +18,10 @@ namespace Server.Mobiles
             Body = 0x191; // Human female body
 
             // Stats
-            Str = 32;
-            Dex = 28;
-            Int = 25;
-            Hits = 40;
+            SetStr(32);
+            SetDex(28);
+            SetInt(25);
+            SetHits(40);
 
             // Appearance
             AddItem(new Robe() { Hue = 11 }); // Robe with hue 11
@@ -36,86 +37,168 @@ namespace Server.Mobiles
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+        public OldLadyLynne(Serial serial) : base(serial) { }
 
-            if (!from.InRange(this, 3))
+        public override void OnDoubleClick(Mobile from)
+        {
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
-
-            if (speech.Contains("name"))
-            {
-                Say("I am Old Lady Lynne, a humble beggar.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("My health? Oh, it's frail, but what can an old beggar expect?");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("Begging is my only job, kind traveler.");
-            }
-            else if (speech.Contains("virtue") && speech.Contains("compassion"))
-            {
-                Say("Compassion is a virtue I hold dear. Do you have a coin to spare for a poor beggar?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("Oh, thank you, kind soul. May your compassion shine bright in your adventures.");
-            }
-            else if (speech.Contains("lynne"))
-            {
-                Say("Ah, my parents named me after the beautiful lake Lynne. It was said to have clear, shimmering waters.");
-            }
-            else if (speech.Contains("frail"))
-            {
-                Say("Yes, age has caught up with me. But it's not just age, it's also the memories of my past that weigh me down.");
-            }
-            else if (speech.Contains("begging"))
-            {
-                Say("It wasn't always this way. I was once a dancer, light on my feet and the belle of every ball.");
-            }
-            else if (speech.Contains("lake"))
-            {
-                Say("Lake Lynne was a serene place, surrounded by tall pines and singing birds. But it dried up many years ago, taking a piece of my heart with it.");
-            }
-            else if (speech.Contains("memories"))
-            {
-                Say("Ah, memories of lost love, failed endeavors, and the swift passage of time. But also memories of joy, laughter, and dancing.");
-            }
-            else if (speech.Contains("dancer"))
-            {
-                Say("Those were the days! Dancing under the moonlight, with music filling the air. Would you like to see a few steps? If so, maybe I could offer a little token in return for your kindness.");
-            }
-            else if (speech.Contains("dried"))
-            {
-                Say("The townspeople say it was due to a curse. But I believe it was a sign of nature telling us to cherish what we have. Sometimes, I dream of its return.");
-            }
-            else if (speech.Contains("love"))
-            {
-                Say("My heart still aches for the love I lost. He was a brave knight, off to battle, and never returned. His name was Sir Reginald.");
-            }
-            else if (speech.Contains("moonlight"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Here, let me show you a move. [She attempts a dance move but stumbles a bit]. Oh, it seems my legs aren't as nimble as they used to be. But for your patience, here's a little something.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Replace with the correct item to give as a reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-
-            base.OnSpeech(e);
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
         }
 
-        public OldLadyLynne(Serial serial) : base(serial) { }
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("I am Old Lady Lynne, a humble beggar. My health? Oh, it's frail, but what can an old beggar expect? Lately, my digestion has been a troublesome affair.");
+
+            greeting.AddOption("Tell me about your digestion problems.",
+                player => true,
+                player =>
+                {
+                    DialogueModule digestionModule = new DialogueModule("Ah, it's been a struggle. My stomach seems to rebel against even the simplest of foods. I have to stick to a rather unpleasant diet.");
+                    digestionModule.AddOption("What kind of diet do you have to follow?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule dietModule = new DialogueModule("I've been advised to consume bland foods, mostly rice and boiled vegetables. But even that can be tricky. Just the other day, I tried a new vegetable and it sent me running to the bushes!");
+                            dietModule.AddOption("That sounds awful! Have you tried anything else?",
+                                pla => true,
+                                pla =>
+                                {
+                                    DialogueModule alternativesModule = new DialogueModule("Oh, I have! There was a time I thought I could handle some roasted chicken. But oh, how it disagreed with me! I swear it was plotting against me.");
+                                    alternativesModule.AddOption("So what do you do for flavor?",
+                                        plq => true,
+                                        plq =>
+                                        {
+                                            DialogueModule flavorModule = new DialogueModule("I try to sprinkle some herbs, but they don’t help much. A pinch of salt here and there, but it's all so bland. Sometimes I wonder if I’d prefer to taste the dish of a rat!");
+                                            flavorModule.AddOption("Have you considered herbs?",
+                                                plaw => true,
+                                                plaw =>
+                                                {
+                                                    DialogueModule herbsModule = new DialogueModule("Ah, yes! I’ve heard that some herbs can soothe the stomach, like peppermint. But they can be a bit tricky to find in this area, and I’m not as spry as I once was.");
+                                                    herbsModule.AddOption("Perhaps I could help you find some herbs.",
+                                                        p => true,
+                                                        p =>
+                                                        {
+                                                            p.SendMessage("You have my deepest gratitude! If you could find some peppermint and maybe a sprig of thyme, it would mean the world to me.");
+                                                            p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                                                        });
+                                                    pla.SendGump(new DialogueGump(pla, herbsModule));
+                                                });
+                                            pl.SendGump(new DialogueGump(pl, flavorModule));
+                                        });
+                                    pla.SendGump(new DialogueGump(pla, alternativesModule));
+                                });
+                            pl.SendGump(new DialogueGump(pl, dietModule));
+                        });
+                    player.SendGump(new DialogueGump(player, digestionModule));
+                });
+
+            greeting.AddOption("How has your health affected your life?",
+                player => true,
+                player =>
+                {
+                    DialogueModule healthImpactModule = new DialogueModule("Oh, it has affected me deeply. I can no longer enjoy gatherings or feast with friends. Instead, I sit alone in my little corner, dreaming of the past.");
+                    healthImpactModule.AddOption("That sounds lonely. What do you miss the most?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule missModule = new DialogueModule("I miss the joyous laughter and the lively dances. We used to gather around the fire, and my heart would soar with the music.");
+                            missModule.AddOption("Why don’t you dance anymore?",
+                                pla => true,
+                                pla =>
+                                {
+                                    DialogueModule danceModule = new DialogueModule("Oh, I used to love dancing! But now, even the thought of moving too much makes my stomach churn. It’s a shame, really.");
+                                    danceModule.AddOption("Maybe a gentle dance would do you good.",
+                                        p => true,
+                                        p =>
+                                        {
+                                            p.SendMessage("You think so? Perhaps it would lift my spirits! But what if my stomach protests?");
+                                            p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                                        });
+                                    pla.SendGump(new DialogueGump(pla, danceModule));
+                                });
+                            pl.SendGump(new DialogueGump(pl, missModule));
+                        });
+                    player.SendGump(new DialogueGump(player, healthImpactModule));
+                });
+
+            greeting.AddOption("Do you ever eat anything special?",
+                player => true,
+                player =>
+                {
+                    DialogueModule specialFoodModule = new DialogueModule("Only on rare occasions. There was a time I tried a slice of cake—a mistake that I still regret! It seemed so tempting, but it turned my insides upside down!");
+                    specialFoodModule.AddOption("Why would you risk it?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule riskModule = new DialogueModule("Sometimes, temptation overwhelms reason, you see. I miss the taste of sweet things. But every time I indulge, I pay dearly for it.");
+                            riskModule.AddOption("It must be hard to resist.",
+                                pla => true,
+                                pla =>
+                                {
+                                    pla.SendMessage("Oh, indeed! I often sit by the baker’s window, inhaling the delicious scents. It’s torture, really. But I remind myself of the consequences.");
+                                    pla.SendGump(new DialogueGump(pla, CreateGreetingModule()));
+                                });
+                            pl.SendGump(new DialogueGump(pl, riskModule));
+                        });
+                    player.SendGump(new DialogueGump(player, specialFoodModule));
+                });
+
+            greeting.AddOption("What about your love for Sir Reginald?",
+                player => true,
+                player =>
+                {
+                    DialogueModule loveReginaldModule = new DialogueModule("Ah, Sir Reginald. He was my heart’s desire! He used to dance with me, making every step feel light. But alas, he is gone, lost to the chaos of battle.");
+                    loveReginaldModule.AddOption("Do you think he would be proud of you?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule prideModule = new DialogueModule("I believe he would. I’ve tried to live my life with kindness, despite the struggles. It’s what he would have wanted.");
+                            prideModule.AddOption("You have a beautiful spirit.",
+                                pla => true,
+                                pla =>
+                                {
+                                    pla.SendMessage("Thank you, kind traveler! Your words are a balm to my soul.");
+                                    pla.SendGump(new DialogueGump(pla, CreateGreetingModule()));
+                                });
+                            pl.SendGump(new DialogueGump(pl, prideModule));
+                        });
+                    player.SendGump(new DialogueGump(player, loveReginaldModule));
+                });
+
+            greeting.AddOption("Would you like any help with your diet?",
+                player => true,
+                player =>
+                {
+                    DialogueModule helpModule = new DialogueModule("Oh, if only someone would help me navigate this dreadful diet! I feel lost in a sea of tasteless food.");
+                    helpModule.AddOption("What can I do to assist you?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule assistModule = new DialogueModule("I could use a hand finding suitable foods or even someone to share a meal with. Cooking for one is dreary!");
+                            assistModule.AddOption("I can help you gather some food.",
+                                pla => true,
+                                pla =>
+                                {
+                                    pla.SendMessage("You would do that? Bless your heart! If you could find some fresh vegetables and perhaps some mint, it would brighten my day!");
+                                    pla.SendGump(new DialogueGump(pla, CreateGreetingModule()));
+                                });
+                            assistModule.AddOption("I could join you for a meal.",
+                                pla => true,
+                                pla =>
+                                {
+                                    pla.SendMessage("How lovely! It would warm my heart to share a meal with someone. But be warned, it may not be the most appetizing affair.");
+                                    pla.SendGump(new DialogueGump(pla, CreateGreetingModule()));
+                                });
+                            pl.SendGump(new DialogueGump(pl, assistModule));
+                        });
+                    player.SendGump(new DialogueGump(player, helpModule));
+                });
+
+            return greeting;
+        }
 
         public override void Serialize(GenericWriter writer)
         {

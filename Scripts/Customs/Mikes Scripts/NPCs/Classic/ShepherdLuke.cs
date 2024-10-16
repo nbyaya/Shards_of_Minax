@@ -39,79 +39,143 @@ namespace Server.Mobiles
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
 
-            if (speech.Contains("name"))
-            {
-                Say("I'm Shepherd Luke, the miserable shepherd.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("Health? Do I look like a healer? I'm as healthy as a shepherd can be.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My job? Oh, it's just to tend to these wretched sheep day in and day out.");
-            }
-            else if (speech.Contains("bitter"))
-            {
-                Say("Think you're any better off? Hah! What's your lot in life, adventurer?");
-            }
-            else if (speech.Contains("sarcastic"))
-            {
-                Say("Ah, so you've got a bit of snark in you. I like that. What's your take on the world, then?");
-            }
-            else if (speech.Contains("miserable"))
-            {
-                Say("Miserable, you ask? It's a long tale of lost love and betrayal. Do you really wish to know?");
-            }
-            else if (speech.Contains("healer"))
-            {
-                Say("Healers? Pah! All they've given me are remedies for my body. None can heal the scars of my soul.");
-            }
-            else if (speech.Contains("sheep"))
-            {
-                Say("These sheep might be wretched, but they're all I have left after the incident. Have you ever lost something dear to you?");
-            }
-            else if (speech.Contains("betrayal"))
-            {
-                Say("It was my brother, Jacob. He stole my love, my inheritance, and left me with these sheep. Ever met a man named Jacob?");
-            }
-            else if (speech.Contains("scars"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("The deepest wounds are the ones unseen. My heart has known its share of sorrow. If you bring me a healing potion, I might part with something for your trouble.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-            else if (speech.Contains("incident"))
-            {
-                Say("Years ago, a wolf pack attacked. Lost half my herd and almost lost my life. But a mysterious traveler saved me. Do you believe in fate?");
-            }
-            else if (speech.Contains("fate"))
-            {
-                Say("Some days I think everything is predestined, other days I think we make our own path. What's your stance on destiny?");
-            }
-            else if (speech.Contains("jacob"))
-            {
-                Say("If you ever come across Jacob, tell him I haven't forgotten. And if he ever sets foot on this land, the sheep won't be the only ones bleating.");
-            }
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("I'm Shepherd Luke, the miserable shepherd. My sheep are my only companions. Would you like to talk about them?");
 
-            base.OnSpeech(e);
+            greeting.AddOption("Tell me about your sheep.",
+                player => true,
+                player => 
+                {
+                    DialogueModule sheepModule = new DialogueModule("Ah, my sheep! They're soft, woolly wonders. Their fleece is like a cloud, comforting and warm. I often find myself lost in their embrace. Would you like to know more about their beauty?");
+                    sheepModule.AddOption("What makes their fleece so special?",
+                        p => true,
+                        p => 
+                        {
+                            DialogueModule fleeceModule = new DialogueModule("Their wool is a treasure, a soft tapestry woven by nature. Each strand holds secrets of the land and warmth of the sun. I could spend hours caressing their wool, feeling every curl and twist.");
+                            fleeceModule.AddOption("That sounds… intimate.",
+                                pl => true,
+                                pl => 
+                                {
+                                    DialogueModule intimateModule = new DialogueModule("Intimacy is what I feel with them. It's a bond beyond words. You can't understand the joy of wrapping your fingers in their fluffy wool, can you?");
+                                    intimateModule.AddOption("Maybe not.",
+                                        pq => true,
+                                        pq => { p.SendGump(new DialogueGump(p, CreateGreetingModule())); });
+                                    fleeceModule.AddOption("What do you do with the wool?",
+                                        plw => true,
+                                        plw => 
+                                        {
+                                            DialogueModule useWoolModule = new DialogueModule("Oh, the uses are endless! I spin it into threads and weave it into soft blankets. Each piece carries a piece of my heart, wrapped in warmth.");
+                                            useWoolModule.AddOption("Can I see a blanket?",
+                                                pe => true,
+                                                pe => { SendMessage("Here, feel the softness! It’s like a warm hug from a thousand sheep!"); });
+                                            useWoolModule.AddOption("I think you've lost your mind.",
+                                                pr => true,
+                                                pr => { p.SendGump(new DialogueGump(p, CreateGreetingModule())); });
+                                            fleeceModule.AddOption("Show me your weaving.",
+                                                plt => true,
+                                                plt => { SendMessage("I’ll gladly show you my creations, but be warned—the softness is enchanting!"); });
+                                            pl.SendGump(new DialogueGump(pl, useWoolModule));
+                                        });
+                                    p.SendGump(new DialogueGump(p, intimateModule));
+                                });
+                            p.SendGump(new DialogueGump(p, fleeceModule));
+                        });
+                    sheepModule.AddOption("How do you care for them?",
+                        pl => true,
+                        pl => 
+                        {
+                            DialogueModule careModule = new DialogueModule("Caring for them is a labor of love. I groom their wool, making sure it's fluffy and beautiful. Sometimes, I sing to them; they respond with soft bleats of affection.");
+                            careModule.AddOption("Do they really respond to singing?",
+                                p => true,
+                                p => 
+                                {
+                                    DialogueModule singModule = new DialogueModule("Oh yes! When I sing, they gather around me, their soft wool brushing against my skin. It's a feeling of pure bliss, like being enveloped in a warm embrace.");
+                                    singModule.AddOption("That sounds beautiful.",
+                                        ply => true,
+                                        ply => { p.SendGump(new DialogueGump(pl, CreateGreetingModule())); });
+                                    singModule.AddOption("It's a bit creepy, don't you think?",
+                                        plu => true,
+                                        plu => 
+                                        {
+                                            DialogueModule creepyModule = new DialogueModule("Creepy? Perhaps. But the bond I share with them is unmatched. There's a comfort in their presence that no human can provide.");
+                                            creepyModule.AddOption("I guess that’s true.",
+                                                pi => true,
+                                                pi => { p.SendGump(new DialogueGump(p, CreateGreetingModule())); });
+                                            p.SendGump(new DialogueGump(p, creepyModule));
+                                        });
+                                    p.SendGump(new DialogueGump(p, singModule));
+                                });
+                            pl.SendGump(new DialogueGump(pl, careModule));
+                        });
+                    player.SendGump(new DialogueGump(player, sheepModule));
+                });
+
+            greeting.AddOption("What happened to you?",
+                player => true,
+                player =>
+                {
+                    DialogueModule storyModule = new DialogueModule("Ah, my story is long and sorrowful. It begins with a betrayal and ends with my solace found in these woolly companions.");
+                    storyModule.AddOption("Tell me about the betrayal.",
+                        pl => true,
+                        pl => 
+                        {
+                            DialogueModule betrayalModule = new DialogueModule("It was my brother, Jacob. He took everything from me, even the woman I loved. Now I find comfort in my sheep, who will never betray me.");
+                            betrayalModule.AddOption("How did you cope with the loss?",
+                                p => true,
+                                p => 
+                                {
+                                    DialogueModule copeModule = new DialogueModule("At first, I was consumed by despair. But the sheep’s gentle presence healed my wounds. They became my family, and their wool is a reminder of my newfound joy.");
+                                    copeModule.AddOption("It sounds like you really love them.",
+                                        plo => true,
+                                        plo => { SendMessage("Love is an understatement! Their woolly warmth is the only thing that keeps my heart from freezing."); });
+                                    copeModule.AddOption("Maybe you should see a healer.",
+                                        pla => true,
+                                        pla => { p.SendGump(new DialogueGump(p, CreateGreetingModule())); });
+                                    p.SendGump(new DialogueGump(p, copeModule));
+                                });
+                            player.SendGump(new DialogueGump(player, betrayalModule));
+                        });
+                    storyModule.AddOption("What do you do to forget?",
+                        pl => true,
+                        pl => 
+                        {
+                            DialogueModule forgetModule = new DialogueModule("I lose myself in the softness of their wool. Each time I touch it, I forget my sorrows, if only for a moment.");
+                            forgetModule.AddOption("That's quite poetic.",
+                                p => true,
+                                p => { p.SendGump(new DialogueGump(p, CreateGreetingModule())); });
+                            forgetModule.AddOption("You might want to find a hobby.",
+                                p => true,
+                                p => { p.SendGump(new DialogueGump(p, CreateGreetingModule())); });
+                            player.SendGump(new DialogueGump(player, forgetModule));
+                        });
+                    player.SendGump(new DialogueGump(player, storyModule));
+                });
+
+            greeting.AddOption("Do you ever get lonely?",
+                player => true,
+                player =>
+                {
+                    DialogueModule lonelinessModule = new DialogueModule("Lonely? Only when the sun sets and I can no longer see their soft, woolly forms. But as long as they’re here, I feel complete.");
+                    lonelinessModule.AddOption("It must be nice to have them.",
+                        p => true,
+                        p => { SendMessage("Nice? It's everything! Every moment spent with them is a treasure, filled with warmth and love."); });
+                    lonelinessModule.AddOption("You should try talking to people.",
+                        p => true,
+                        p => { p.SendGump(new DialogueGump(p, CreateGreetingModule())); });
+                    player.SendGump(new DialogueGump(player, lonelinessModule));
+                });
+
+            return greeting;
         }
 
         public ShepherdLuke(Serial serial) : base(serial) { }

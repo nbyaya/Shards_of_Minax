@@ -3,126 +3,217 @@ using Server;
 using Server.Mobiles;
 using Server.Items;
 
-namespace Server.Mobiles
+public class MasterGauss : BaseCreature
 {
-    [CorpseName("the corpse of Master Gauss")]
-    public class MasterGauss : BaseCreature
+    [Constructable]
+    public MasterGauss() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "Master Gauss";
+        Body = 0x190; // Human male body
 
-        [Constructable]
-        public MasterGauss() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Master Gauss";
-            Body = 0x190; // Human male body
+        // Stats
+        SetStr(90);
+        SetDex(65);
+        SetInt(105);
+        SetHits(70);
 
-            // Stats
-            Str = 90;
-            Dex = 65;
-            Int = 105;
-            Hits = 70;
+        // Appearance
+        AddItem(new ShortPants() { Hue = 1156 });
+        AddItem(new FancyShirt() { Hue = 1156 });
+        AddItem(new Shoes() { Hue = 1156 });
+        AddItem(new Spellbook() { Name = "Gaussian Distributions" });
+        
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(this);
+        HairHue = Race.RandomHairHue();
+    }
 
-            // Appearance
-            AddItem(new ShortPants() { Hue = 1156 });
-            AddItem(new FancyShirt() { Hue = 1156 });
-            AddItem(new Shoes() { Hue = 1156 });
-            AddItem(new Spellbook() { Name = "Gaussian Distributions" });
+    public MasterGauss(Serial serial) : base(serial) { }
 
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(this);
-            HairHue = Race.RandomHairHue();
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
-        }
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("Greetings, seeker of wisdom. I am Master Gauss, a humble philosopher.");
 
-            if (!from.InRange(this, 3))
-                return;
+        greeting.AddOption("Tell me about your health.",
+            player => true,
+            player => 
+            {
+                DialogueModule healthModule = new DialogueModule("My physical health is of little consequence, for I seek to nourish the mind and spirit. Why do you ask?");
+                healthModule.AddOption("I care about your well-being.",
+                    p => true,
+                    p => 
+                    {
+                        DialogueModule caringModule = new DialogueModule("Your concern is appreciated, but I assure you that my pursuits are far more important than mere physicality.");
+                        p.SendGump(new DialogueGump(p, caringModule));
+                    });
+                healthModule.AddOption("What if your health affects your wisdom?",
+                    p => true,
+                    p => 
+                    {
+                        DialogueModule wisdomModule = new DialogueModule("Ah, a fair point! Indeed, the body and mind are intertwined. One cannot ignore the body's needs if one wishes to gain wisdom. What do you suggest?");
+                        wisdomModule.AddOption("Perhaps you should take better care of yourself.",
+                            pl => true,
+                            pl => 
+                            {
+                                pl.SendGump(new DialogueGump(pl, new DialogueModule("Wise words. I will consider them.")));
+                            });
+                        wisdomModule.AddOption("What does self-care mean to you?",
+                            pl => true,
+                            pl => 
+                            {
+                                DialogueModule selfCareModule = new DialogueModule("Self-care involves nourishing the body with food, rest, and meditation. It is the foundation upon which wisdom can grow.");
+                                pl.SendGump(new DialogueGump(pl, selfCareModule));
+                            });
+                        p.SendGump(new DialogueGump(p, wisdomModule));
+                    });
+                player.SendGump(new DialogueGump(player, healthModule));
+            });
+        
+        greeting.AddOption("What is your job?",
+            player => true,
+            player =>
+            {
+                DialogueModule jobModule = new DialogueModule("My occupation, if it can be called such, is to ponder the mysteries of existence and the virtues that shape our world. Care to delve deeper?");
+                jobModule.AddOption("What mysteries do you ponder?",
+                    pl => true,
+                    pl => 
+                    {
+                        DialogueModule mysteriesModule = new DialogueModule("I often contemplate the essence of sacrifice, the nature of truth, and the implications of knowledge. Each thought is a path to greater understanding.");
+                        mysteriesModule.AddOption("Tell me more about sacrifice.",
+                            p => true,
+                            p => 
+                            {
+                                DialogueModule sacrificeDetail = new DialogueModule("Sacrifice is not merely about loss; it's an exchange of value. What do you think is worth sacrificing for knowledge?");
+                                sacrificeDetail.AddOption("Perhaps time?",
+                                    pla => true,
+                                    pla => 
+                                    {
+                                        pla.SendGump(new DialogueGump(pla, new DialogueModule("Indeed, time is a precious commodity. Without it, knowledge cannot be cultivated.")));
+                                    });
+                                sacrificeDetail.AddOption("What about relationships?",
+                                    pla => true,
+                                    pla => 
+                                    {
+                                        DialogueModule relationshipsModule = new DialogueModule("Ah, relationships can be both a source of strength and distraction. It is a delicate balance, indeed.");
+                                        pla.SendGump(new DialogueGump(pla, relationshipsModule));
+                                    });
+                                p.SendGump(new DialogueGump(p, sacrificeDetail));
+                            });
+                        pl.SendGump(new DialogueGump(pl, mysteriesModule));
+                    });
+                player.SendGump(new DialogueGump(player, jobModule));
+            });
 
-            string speech = e.Speech.ToLower();
+        greeting.AddOption("What can you tell me about virtues?",
+            player => true,
+            player =>
+            {
+                DialogueModule virtuesModule = new DialogueModule("Virtues are the guiding principles that help us navigate life's challenges. Do any particular virtues resonate with you?");
+                virtuesModule.AddOption("I admire compassion.",
+                    p => true,
+                    p => 
+                    {
+                        DialogueModule compassionModule = new DialogueModule("Compassion is indeed a noble virtue. It allows us to connect with others and understand their suffering. How do you practice compassion?");
+                        compassionModule.AddOption("By helping others in need.",
+                            pl => true,
+                            pl => 
+                            {
+                                pl.SendGump(new DialogueGump(pl, new DialogueModule("A commendable practice! Helping others not only uplifts them but enriches your own soul.")));
+                            });
+                        compassionModule.AddOption("I often feel overwhelmed.",
+                            pl => true,
+                            pl => 
+                            {
+                                DialogueModule overwhelmedModule = new DialogueModule("It is easy to feel overwhelmed in a world filled with suffering. Remember to care for yourself, so you can be a beacon of light for others.");
+                                pl.SendGump(new DialogueGump(pl, overwhelmedModule));
+                            });
+                        p.SendGump(new DialogueGump(p, compassionModule));
+                    });
+                virtuesModule.AddOption("I struggle with selflessness.",
+                    p => true,
+                    p => 
+                    {
+                        DialogueModule selflessnessModule = new DialogueModule("Selflessness is a challenging virtue to embrace. It requires the understanding that the collective good often outweighs individual desires.");
+                        selflessnessModule.AddOption("How can I improve?",
+                            pl => true,
+                            pl => 
+                            {
+                                pl.SendGump(new DialogueGump(pl, new DialogueModule("Practice empathy; understand the needs of others as if they were your own. It is a journey, not a destination.")));
+                            });
+                        p.SendGump(new DialogueGump(p, selflessnessModule));
+                    });
+                player.SendGump(new DialogueGump(player, virtuesModule));
+            });
 
-            if (speech.Contains("name"))
+        greeting.AddOption("What is your journey about?",
+            player => true,
+            player =>
             {
-                Say("Greetings, seeker of wisdom. I am Master Gauss, a humble philosopher.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("My physical health is of little consequence, for I seek to nourish the mind and spirit.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My occupation, if it can be called such, is to ponder the mysteries of existence and the virtues that shape our world.");
-            }
-            else if (speech.Contains("virtues"))
-            {
-                Say("Do you seek wisdom, young one? Can you fathom the depths of the virtues that guide us: Honesty, Compassion, Valor, Justice, Sacrifice, Honor, Spirituality, and Humility?");
-            }
-            else if (speech.Contains("journey"))
-            {
-                Say("What say you, seeker? Are you prepared to embark on a journey of self-discovery and enlightenment?");
-            }
-            else if (speech.Contains("gauss"))
-            {
-                Say("I hail from a long lineage of philosophers, each named 'Gauss'. Our duty has always been to seek out and preserve knowledge.");
-            }
-            else if (speech.Contains("mind"))
-            {
-                Say("The mind, when cultivated, can be the most resilient of all, outlasting the physical constraints of the body. It is through the mind that I connect to the spiritual realm and draw wisdom.");
-            }
-            else if (speech.Contains("mysteries"))
-            {
-                Say("The mysteries of life are vast and intertwined. One particular riddle I've been contemplating is the essence of the mantra of Sacrifice. I've recently discovered that its third syllable is 'FOD'.");
-            }
-            else if (speech.Contains("sacrifice"))
-            {
-                Say("Sacrifice is the act of giving up something valued for the sake of something else deemed to be of greater importance or worth. It requires selflessness and understanding. Reflect upon this virtue and you may uncover more than you realize.");
-            }
-            else if (speech.Contains("discovery"))
-            {
-                Say("The path of self-discovery is not a straightforward one. It is filled with trials, reflections, and moments of insight. But remember, the journey itself can be as enlightening as the destination.");
-            }
-            else if (speech.Contains("lineage"))
-            {
-                Say("Our family's texts span generations, filled with thoughts, debates, and philosophies. They serve as a beacon, guiding those who seek understanding.");
-            }
-            else if (speech.Contains("spiritual"))
-            {
-                Say("The spiritual realm is a vast expanse where time, space, and thought converge. It is there that I converse with the great minds of the past, seeking answers to the questions of the present.");
-            }
-            else if (speech.Contains("mantra"))
-            {
-                Say("Mantras are sacred utterances believed to possess spiritual efficacy. They're often repeated, serving as a focus for meditation and reflection. The mantra of Sacrifice, in particular, holds great power and significance.");
-            }
-            else if (speech.Contains("selflessness"))
-            {
-                Say("To be selfless is to put the needs of others before your own, understanding that the whole is greater than the sum of its parts. It is a virtue that few truly master but all should strive for.");
-            }
-            else if (speech.Contains("trials"))
-            {
-                Say("Trials are the challenges we face in life, both external and internal. They shape our character, testing our resolve and our understanding of the virtues.");
-            }
+                DialogueModule journeyModule = new DialogueModule("The journey of self-discovery is fraught with challenges and revelations. What aspect of this journey intrigues you most?");
+                journeyModule.AddOption("I want to know more about challenges.",
+                    pl => true,
+                    pl => 
+                    {
+                        DialogueModule challengesModule = new DialogueModule("Challenges are the catalysts for growth. They test our resolve and character. What challenges have you faced?");
+                        challengesModule.AddOption("I've faced many in my life.",
+                            p => true,
+                            p => 
+                            {
+                                p.SendGump(new DialogueGump(p, new DialogueModule("Each challenge you overcome shapes who you are. Embrace them as opportunities for learning.")));
+                            });
+                        challengesModule.AddOption("I fear challenges.",
+                            p => true,
+                            p => 
+                            {
+                                DialogueModule fearModule = new DialogueModule("Fear is natural. It can guide you, but do not let it paralyze you. Step forward with courage, and you will discover strength you did not know you had.");
+                                p.SendGump(new DialogueGump(p, fearModule));
+                            });
+                        pl.SendGump(new DialogueGump(pl, challengesModule));
+                    });
+                journeyModule.AddOption("I'm curious about revelations.",
+                    pl => true,
+                    pl => 
+                    {
+                        DialogueModule revelationsModule = new DialogueModule("Revelations often come when we least expect them. They can change our perspective entirely. What revelations have you experienced?");
+                        revelationsModule.AddOption("I had a moment of clarity recently.",
+                            p => true,
+                            p => 
+                            {
+                                p.SendGump(new DialogueGump(p, new DialogueModule("Cherish that clarity; it can serve as a guiding light in times of confusion.")));
+                            });
+                        revelationsModule.AddOption("I struggle to find clarity.",
+                            p => true,
+                            p => 
+                            {
+                                DialogueModule struggleModule = new DialogueModule("Clarity often requires stillness. Take time to meditate and reflect; it will come in due time.");
+                                p.SendGump(new DialogueGump(p, struggleModule));
+                            });
+                        pl.SendGump(new DialogueGump(pl, revelationsModule));
+                    });
+                player.SendGump(new DialogueGump(player, journeyModule));
+            });
 
-            base.OnSpeech(e);
-        }
+        return greeting;
+    }
 
-        public MasterGauss(Serial serial) : base(serial) { }
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write(0); // version
+    }
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
-        }
-
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
-        }
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
     }
 }

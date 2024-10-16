@@ -1,119 +1,242 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
+using Server.Network;
 using Server.Items;
 
-namespace Server.Mobiles
+public class BackstabBob : BaseCreature
 {
-    [CorpseName("the corpse of Backstab Bob")]
-    public class BackstabBob : BaseCreature
+    private DateTime lastRewardTime;
+
+    [Constructable]
+    public BackstabBob() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "Backstab Bob";
+        Body = 0x190; // Human male body
 
-        [Constructable]
-        public BackstabBob() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Backstab Bob";
-            Body = 0x190; // Human male body
+        // Stats
+        SetStr(115);
+        SetDex(100);
+        SetInt(60);
 
-            // Stats
-            Str = 115;
-            Dex = 100;
-            Int = 60;
-            Hits = 85;
+        SetHits(85);
+        SetMana(0);
+        SetStam(100);
 
-            // Appearance
-            AddItem(new ShortPants() { Hue = 1153 });
-            AddItem(new BoneArms() { Hue = 1153 });
-            AddItem(new Dagger { Name = "Bob's Dagger" });
+        Fame = 0;
+        Karma = 0;
 
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(this);
-            HairHue = Race.RandomHairHue();
+        VirtualArmor = 15;
 
-            SpeechHue = 0; // Default speech hue
+        // Appearance
+        AddItem(new ShortPants() { Hue = 1153 });
+        AddItem(new BoneArms() { Hue = 1153 });
+        AddItem(new Dagger { Name = "Bob's Dagger" });
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
-        }
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(this);
+        HairHue = Race.RandomHairHue();
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+        SpeechHue = 0;
 
-            if (!from.InRange(this, 3))
-                return;
+        // Initialize the lastRewardTime to a past time
+        lastRewardTime = DateTime.MinValue;
+    }
 
-            string speech = e.Speech.ToLower();
+    public BackstabBob(Serial serial) : base(serial) { }
 
-            if (speech.Contains("name"))
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
+
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
+
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("Greetings, stranger. I am Backstab Bob, the rogue. What brings you to my neck of the shadows?");
+
+        greeting.AddOption("Who are you?",
+            player => true,
+            player =>
             {
-                Say("Greetings, stranger. I am Backstab Bob, the rogue.");
-            }
-            else if (speech.Contains("health"))
+                DialogueModule introModule = new DialogueModule("I am Backstab Bob. Some call me a rogue, others a scoundrel. I prefer to think of myself as an expert in acquiring the unattainable.");
+                introModule.AddOption("Tell me about your job.",
+                    p => true,
+                    p =>
+                    {
+                        DialogueModule jobModule = new DialogueModule("My job? Well, let's just say I specialize in acquiring hard-to-get items. Discretion is my ally, and shadows my friends.");
+                        jobModule.AddOption("That sounds dangerous.",
+                            pl => true,
+                            pl =>
+                            {
+                                DialogueModule dangerModule = new DialogueModule("It certainly is. But, in this world, you need to take risks to reap the rewards. And I have become very adept at managing those risks.");
+                                dangerModule.AddOption("Fascinating. Goodbye for now.",
+                                    pla => true,
+                                    pla =>
+                                    {
+                                        pla.SendGump(new DialogueGump(pla, CreateGreetingModule()));
+                                    });
+                                pl.SendGump(new DialogueGump(pl, dangerModule));
+                            });
+                        jobModule.AddOption("Where is the best place to backstab someone in town?",
+                            pl => true,
+                            pl =>
+                            {
+                                DialogueModule placeModule = new DialogueModule("Ah, now we're getting into the real secrets. The best places depend on what you're looking for: stealth, escape routes, or minimal witnesses.");
+                                placeModule.AddOption("Tell me about the stealthiest places.",
+                                    pla => true,
+                                    pla =>
+                                    {
+                                        DialogueModule stealthModule = new DialogueModule("If you're looking for a stealthy backstab, the alley behind The Broken Dagger tavern is ideal. It's dimly lit, and most folk who wander there are either drunk or looking for trouble. No one asks questions, and the shadows work in your favor.");
+                                        stealthModule.AddOption("What about escape routes?",
+                                            plb => true,
+                                            plb =>
+                                            {
+                                                DialogueModule escapeModule = new DialogueModule("For quick getaways, the market square at dusk is perfect. The crowd provides cover, and there are multiple exits. You can blend in with traders or duck into the nearby sewer grate. It leads directly to the lower tunnels—great for vanishing without a trace.");
+                                                escapeModule.AddOption("What if I want minimal witnesses?",
+                                                    plc => true,
+                                                    plc =>
+                                                    {
+                                                        DialogueModule witnessModule = new DialogueModule("Minimal witnesses? The chapel courtyard at midnight is your best bet. Most folks avoid the place after dark due to ghost stories, and the lone guardsman on duty is usually half-asleep. A quick strike, and you're gone before anyone knows what happened.");
+                                                        witnessModule.AddOption("Thank you for the tips.",
+                                                            pld => true,
+                                                            pld =>
+                                                            {
+                                                                pld.SendGump(new DialogueGump(pld, CreateGreetingModule()));
+                                                            });
+                                                        plc.SendGump(new DialogueGump(plc, witnessModule));
+                                                    });
+                                                escapeModule.AddOption("Thanks, I'll keep that in mind.",
+                                                    pld => true,
+                                                    pld =>
+                                                    {
+                                                        pld.SendGump(new DialogueGump(pld, CreateGreetingModule()));
+                                                    });
+                                                plb.SendGump(new DialogueGump(plb, escapeModule));
+                                            });
+                                        stealthModule.AddOption("Thanks for the info.",
+                                            plb => true,
+                                            plb =>
+                                            {
+                                                plb.SendGump(new DialogueGump(plb, CreateGreetingModule()));
+                                            });
+                                        pla.SendGump(new DialogueGump(pla, stealthModule));
+                                    });
+                                placeModule.AddOption("Tell me more about these places.",
+                                    pla => true,
+                                    pla =>
+                                    {
+                                        DialogueModule moreModule = new DialogueModule("There's also the warehouse district. It's full of crates and blind corners. The guards there are easily bribed, and they tend to look the other way if coin crosses their palm. Timing is key though—wait for the shift change.");
+                                        moreModule.AddOption("Sounds useful. Goodbye.",
+                                            plb => true,
+                                            plb =>
+                                            {
+                                                plb.SendGump(new DialogueGump(plb, CreateGreetingModule()));
+                                            });
+                                        pla.SendGump(new DialogueGump(pla, moreModule));
+                                    });
+                                placeModule.AddOption("Goodbye.",
+                                    pla => true,
+                                    pla =>
+                                    {
+                                        pla.SendGump(new DialogueGump(pla, CreateGreetingModule()));
+                                    });
+                                pl.SendGump(new DialogueGump(pl, placeModule));
+                            });
+                        jobModule.AddOption("Goodbye.",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                            });
+                        p.SendGump(new DialogueGump(p, jobModule));
+                    });
+                introModule.AddOption("Goodbye.",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                    });
+                player.SendGump(new DialogueGump(player, introModule));
+            });
+
+        greeting.AddOption("Can you tell me about virtue and vice?",
+            player => true,
+            player =>
             {
-                Say("I'm always in top shape, my friend.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My job? Well, let's just say I specialize in acquiring hard-to-get items.");
-            }
-            else if (speech.Contains("virtue"))
-            {
-                Say("True rogues like us must always consider the balance of virtue and vice. Have you thought about that?");
-            }
-            else if (speech.Contains("virtue"))
-            {
-                Say("Are you more inclined toward honesty or deceit in your life?");
-            }
-            else if (speech.Contains("items"))
-            {
-                Say("Oh, the items I've acquired over the years have stories of their own. Some treasures, some trinkets, and some... well, let's just say they're best left unspoken of. Would you like to hear about one of my most prized possessions?");
-            }
-            else if (speech.Contains("balance"))
-            {
-                Say("Balance is the essence of our existence. In our line of work, leaning too far to virtue makes one vulnerable, while excess vice can be... costly. It's a dance on the razor's edge, and mastering it is an art.");
-            }
-            else if (speech.Contains("honesty"))
-            {
-                Say("Honesty has its merits. I respect those who can walk their path with a clear conscience. But in our world, sometimes a little dishonesty can open doors honesty can't.");
-            }
-            else if (speech.Contains("deceit"))
-            {
-                Say("Deceit is a tool, much like a dagger or a lockpick. It's not inherently evil; it's all about how and when you use it. And sometimes, it can save your life or get you that which is unattainable by other means.");
-            }
-            else if (speech.Contains("reward"))
+                DialogueModule virtueModule = new DialogueModule("True rogues like us must always consider the balance of virtue and vice. Lean too far to either side, and you'll find yourself vulnerable. It's a delicate dance, indeed.");
+                virtueModule.AddOption("Are you more honest or deceitful?",
+                    p => true,
+                    p =>
+                    {
+                        DialogueModule honestyModule = new DialogueModule("Honesty has its place, but so does deceit. Sometimes, the truth opens doors. Other times, a well-crafted lie does the trick. The real art is knowing when to use which.");
+                        honestyModule.AddOption("Thank you for your insight.",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                            });
+                        p.SendGump(new DialogueGump(p, honestyModule));
+                    });
+                virtueModule.AddOption("Goodbye.",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                    });
+                player.SendGump(new DialogueGump(player, virtueModule));
+            });
+
+        greeting.AddOption("Do you have any items to share?",
+            player => true,
+            player =>
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)
                 {
-                    Say("I have no reward right now. Please return later.");
+                    player.SendMessage("I have no reward for you right now. Please return later.");
                 }
                 else
                 {
-                    Say("Ah, you're interested in rewards, are you? Tell you what, since you've shown genuine interest in my tales, I'll gift you something from my collection. It's not much, but it may come in handy for someone like you.");
-                    from.AddToBackpack(new FireHitAreaCrystal()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
+                    DialogueModule rewardModule = new DialogueModule("Ah, you're interested in rewards, are you? Since you've shown genuine interest in my tales, I'll gift you something from my collection.");
+                    rewardModule.AddOption("Thank you.",
+                        p => true,
+                        p =>
+                        {
+                            p.AddToBackpack(new FireHitAreaCrystal());
+                            lastRewardTime = DateTime.UtcNow;
+                            p.SendMessage("Backstab Bob gives you a mysterious crystal.");
+                            p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                        });
+                    player.SendGump(new DialogueGump(player, rewardModule));
                 }
-            }
+            });
 
-            base.OnSpeech(e);
-        }
+        greeting.AddOption("Goodbye.",
+            player => true,
+            player =>
+            {
+                player.SendMessage("Backstab Bob gives you a sly grin as you part ways.");
+            });
 
-        public BackstabBob(Serial serial) : base(serial) { }
+        return greeting;
+    }
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
-        }
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write(0); // version
+        writer.Write(lastRewardTime);
+    }
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
-        }
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        lastRewardTime = reader.ReadDateTime();
     }
 }

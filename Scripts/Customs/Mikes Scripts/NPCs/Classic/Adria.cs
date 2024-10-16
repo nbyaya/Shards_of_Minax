@@ -1,81 +1,154 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
-namespace Server.Mobiles
+public class Adria : BaseCreature
 {
-    [CorpseName("the corpse of Adria")]
-    public class Adria : BaseCreature
+    [Constructable]
+    public Adria() : base(AIType.AI_Healer, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        [Constructable]
-        public Adria() : base(AIType.AI_Healer, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Adria";
-            Body = 0x191; // Human female body
+        Name = "Adria";
+        Body = 0x191; // Human female body
 
-            // Stats
-            Str = 50;
-            Dex = 50;
-            Int = 140;
-            Hits = 60;
+        SetStr(50);
+        SetDex(50);
+        SetInt(140);
+        SetHits(60);
 
-            // Appearance
-            AddItem(new Robe(1152));
-            AddItem(new Sandals(0));
-            AddItem(new Spellbook() { Name = "Adria's Grimoire" });
+        // Appearance
+        AddItem(new Robe(1152));
+        AddItem(new Sandals(0));
+        AddItem(new Spellbook() { Name = "Adria's Grimoire" });
 
-            // Speech hue
-            SpeechHue = 0; // Default speech hue
-        }
+        SpeechHue = 0; // Default speech hue
+    }
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+    public Adria(Serial serial) : base(serial) { }
 
-            if (!from.InRange(this, 3))
-                return;
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-            if (Insensitive.Contains(e.Speech, "name"))
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
+
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("I am Adria, the Sorceress of Tristram. What do you want?");
+        
+        greeting.AddOption("Tell me about your magic.",
+            player => true,
+            player =>
             {
-                Say("I am Adria, the Sorceress of Tristram. What do you want?");
-            }
-            else if (Insensitive.Contains(e.Speech, "health"))
-            {
-                Say("My health is of no concern to you. Focus on your own affairs.");
-            }
-            else if (Insensitive.Contains(e.Speech, "job"))
-            {
-                Say("My \"job,\" as you call it, is to harness the power of magic. Something you could never understand.");
-            }
-            else if (Insensitive.Contains(e.Speech, "magic") || Insensitive.Contains(e.Speech, "power"))
-            {
-                Say("Do you truly believe you have the wit to understand the forces I command? Are you even capable of comprehending true power?");
-            }
-            else if (Insensitive.Contains(e.Speech, "ambition") || Insensitive.Contains(e.Speech, "power"))
-            {
-                Say("Ha! You are amusingly confident for a mere mortal. Tell me, what would you do with true power if you had it?");
-            }
-            else if (Insensitive.Contains(e.Speech, "knowledge") || Insensitive.Contains(e.Speech, "prove"))
-            {
-                Say("Hmph. Perhaps you are not entirely without potential. But potential alone means nothing. Prove your worth to me, and I may share some of my knowledge.");
-            }
+                DialogueModule magicModule = new DialogueModule("Do you truly believe you have the wit to understand the forces I command? Are you even capable of comprehending true power?");
+                magicModule.AddOption("I seek to understand.",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, CreateKnowledgeModule()));
+                    });
+                magicModule.AddOption("Perhaps I should move on.",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, greeting));
+                    });
+                player.SendGump(new DialogueGump(player, magicModule));
+            });
 
-            base.OnSpeech(e);
-        }
+        greeting.AddOption("What is your ambition?",
+            player => true,
+            player =>
+            {
+                DialogueModule ambitionModule = new DialogueModule("Ha! You are amusingly confident for a mere mortal. Tell me, what would you do with true power if you had it?");
+                ambitionModule.AddOption("I would use it for good.",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, CreateKnowledgeModule()));
+                    });
+                ambitionModule.AddOption("That's for me to know.",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, greeting));
+                    });
+                player.SendGump(new DialogueGump(player, ambitionModule));
+            });
 
-        public Adria(Serial serial) : base(serial) { }
+        greeting.AddOption("Can you teach me something?",
+            player => true,
+            player =>
+            {
+                DialogueModule teachModule = new DialogueModule("Hmph. Perhaps you are not entirely without potential. But potential alone means nothing. Prove your worth to me, and I may share some of my knowledge.");
+                teachModule.AddOption("What must I do to prove myself?",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, CreateQuestModule()));
+                    });
+                teachModule.AddOption("Maybe another time.",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, greeting));
+                    });
+                player.SendGump(new DialogueGump(player, teachModule));
+            });
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0);
-        }
+        return greeting;
+    }
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-        }
+    private DialogueModule CreateKnowledgeModule()
+    {
+        DialogueModule knowledgeModule = new DialogueModule("Knowledge is a double-edged sword. The more you learn, the more dangerous it can become. Are you ready for the burden it carries?");
+        knowledgeModule.AddOption("I am ready.",
+            pl => true,
+            pl =>
+            {
+                pl.SendGump(new DialogueGump(pl, CreateGreetingModule())); // Continue the conversation
+            });
+        knowledgeModule.AddOption("I'm not sure.",
+            pl => true,
+            pl =>
+            {
+                pl.SendGump(new DialogueGump(pl, CreateGreetingModule())); // Return to the main greeting
+            });
+        return knowledgeModule;
+    }
+
+    private DialogueModule CreateQuestModule()
+    {
+        DialogueModule questModule = new DialogueModule("To prove yourself, bring me a rare tome from the depths of the Mystic Library. Only then will I consider sharing my knowledge with you.");
+        questModule.AddOption("I will find it!",
+            pl => true,
+            pl =>
+            {
+                pl.SendMessage("You set off to find the rare tome.");
+                pl.SendGump(new DialogueGump(pl, CreateGreetingModule())); // Continue the conversation
+            });
+        questModule.AddOption("That sounds too difficult.",
+            pl => true,
+            pl =>
+            {
+                pl.SendGump(new DialogueGump(pl, CreateGreetingModule())); // Return to the main greeting
+            });
+        return questModule;
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0); // version
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
     }
 }

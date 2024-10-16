@@ -1,120 +1,172 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
-namespace Server.Mobiles
+[CorpseName("the corpse of Tommy")]
+public class Tommy : BaseCreature
 {
-    [CorpseName("the corpse of Tommy")]
-    public class Tommy : BaseCreature
+    private DateTime lastRewardTime;
+
+    [Constructable]
+    public Tommy() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "Tommy";
+        Body = 0x190; // Human male body
 
-        [Constructable]
-        public Tommy() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Tommy";
-            Body = 0x190; // Human male body
+        // Stats
+        SetStr(60);
+        SetDex(40);
+        SetInt(40);
+        SetHits(40);
 
-            // Stats
-            Str = 60;
-            Dex = 40;
-            Int = 40;
-            Hits = 40;
+        // Appearance
+        AddItem(new LongPants() { Hue = 1152 });
+        AddItem(new FancyShirt() { Hue = 1152 });
+        AddItem(new Boots() { Hue = 1152 });
+        AddItem(new ShepherdsCrook() { Name = "Tommy's Crook" });
 
-            // Appearance
-            AddItem(new LongPants() { Hue = 1152 });
-            AddItem(new FancyShirt() { Hue = 1152 });
-            AddItem(new Boots() { Hue = 1152 });
-            AddItem(new ShepherdsCrook() { Name = "Tommy's Crook" });
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(this);
+        HairHue = Race.RandomHairHue();
 
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(this);
-            HairHue = Race.RandomHairHue();
+        SpeechHue = 0; // Default speech hue
 
-            SpeechHue = 0; // Default speech hue
+        lastRewardTime = DateTime.MinValue; // Initialize the lastRewardTime to a past time
+    }
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
-        }
+    public Tommy(Serial serial) : base(serial) { }
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-            if (!from.InRange(this, 3))
-                return;
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
 
-            string speech = e.Speech.ToLower();
-
-            if (speech.Contains("name"))
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("Greetings, traveler. I am Tommy the Shepherd. My life has been filled with remarkable adventures. How can I assist you today?");
+        
+        greeting.AddOption("Tell me about your adventures.",
+            player => true,
+            player =>
             {
-                Say("Greetings, traveler. I am Tommy the Shepherd.");
-            }
-            else if (speech.Contains("health"))
+                DialogueModule adventureModule = new DialogueModule("Ah, where to begin? I once fought as the evil Green Power Ranger. It was a dark time for me.");
+                
+                adventureModule.AddOption("What do you mean by 'evil'?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule evilModule = new DialogueModule("I was manipulated by dark forces, serving a villain named Rita Repulsa. I fought against my friends, the other Power Rangers.");
+                        evilModule.AddOption("How did you escape that darkness?",
+                            pll => true,
+                            pll =>
+                            {
+                                DialogueModule escapeModule = new DialogueModule("With the help of my friends and their unwavering belief in me, I broke free from Rita's control and transformed.");
+                                escapeModule.AddOption("What happened next?",
+                                    plll => true,
+                                    plll =>
+                                    {
+                                        DialogueModule transformationModule = new DialogueModule("I became the White Power Ranger, embodying the virtues of honor and justice. It was a second chance.");
+                                        transformationModule.AddOption("What was it like being the White Ranger?",
+                                            pllll => true,
+                                            pllll =>
+                                            {
+                                                pllll.SendGump(new DialogueGump(pllll, new DialogueModule("As the White Ranger, I fought alongside my friends, protecting our world from evil. It felt like I was finally where I belonged.")));
+                                            });
+                                        plll.SendGump(new DialogueGump(plll, transformationModule));
+                                    });
+                                pll.SendGump(new DialogueGump(pll, escapeModule));
+                            });
+                        pl.SendGump(new DialogueGump(pl, evilModule));
+                    });
+                
+                adventureModule.AddOption("What challenges did you face?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule challengesModule = new DialogueModule("Each battle was a test of strength and will. Facing my former allies was particularly painful, yet it taught me resilience.");
+                        challengesModule.AddOption("Did you ever regret your actions?",
+                            pll => true,
+                            pll =>
+                            {
+                                DialogueModule regretModule = new DialogueModule("Indeed, I carry that regret with me. Every day I strive to do better, to honor those I once fought against.");
+                                regretModule.AddOption("How do you cope with that regret?",
+                                    pllll => true,
+                                    pllll =>
+                                    {
+                                        pllll.SendGump(new DialogueGump(pllll, new DialogueModule("I focus on my responsibilities now, caring for my flock and helping others. It's a way to make amends.")));
+                                    });
+                                pll.SendGump(new DialogueGump(pll, regretModule));
+                            });
+                        player.SendGump(new DialogueGump(player, challengesModule));
+                    });
+
+                player.SendGump(new DialogueGump(player, adventureModule));
+            });
+
+        greeting.AddOption("What do you think about compassion?",
+            player => true,
+            player =>
             {
-                Say("I'm in good health, tending to my flock.");
-            }
-            else if (speech.Contains("job"))
+                DialogueModule compassionModule = new DialogueModule("Compassion is essential. It guided me from darkness to light. How do you view compassion?");
+                compassionModule.AddOption("I believe it's essential.",
+                    pl => true,
+                    pl => 
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Indeed, compassion warms the coldest heart. It's what saved me.")));
+                    });
+                compassionModule.AddOption("It's nice in theory.",
+                    pl => true,
+                    pl => 
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("In practice, it can be challenging. Showing kindness in tough times is what truly matters.")));
+                    });
+                player.SendGump(new DialogueGump(player, compassionModule));
+            });
+
+        greeting.AddOption("What about your flock?",
+            player => true,
+            player =>
             {
-                Say("My job is to care for these sheep, guiding them through their days.");
-            }
-            else if (speech.Contains("compassion"))
-            {
-                Say("The virtue of compassion guides my every step. How do you view compassion?");
-            }
-            else if (speech.Contains("show compassion"))
-            {
-                Say("Compassion is the light that warms the coldest heart. How can one show compassion in their daily life?");
-            }
-            else if (speech.Contains("shepherd"))
-            {
-                Say("Aye, being a shepherd is a noble calling. I have learned much from the sheep, especially patience.");
-            }
-            else if (speech.Contains("flock"))
-            {
-                Say("My flock is my family. I have raised many from lambs, and watched them grow. It's a fulfilling life, seeing them thrive.");
-            }
-            else if (speech.Contains("guide"))
-            {
-                Say("It's not just about leading them to fresh pastures, but also about protecting them from dangers like wolves. I have many tales to tell from my years in this job.");
-            }
-            else if (speech.Contains("view"))
-            {
-                Say("Our views shape our actions. By seeing compassion as a fundamental part of life, we can act in ways that support and nurture those around us.");
-            }
-            else if (speech.Contains("daily"))
+                player.SendGump(new DialogueGump(player, new DialogueModule("My flock is my family. They remind me of the importance of care and protection. I have raised many from lambs.")));
+            });
+
+        greeting.AddOption("Do you have a reward for me?",
+            player => true,
+            player =>
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)
                 {
-                    Say("I have no reward right now. Please return later.");
+                    player.SendGump(new DialogueGump(player, new DialogueModule("I have no reward right now. Please return later.")));
                 }
                 else
                 {
-                    Say("In daily life, one can show compassion by helping those in need, listening without judgment, and being kind even when it's difficult. For your thoughtful reflection, take this token of appreciation from me.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
+					lastRewardTime = DateTime.UtcNow; // Update the timestamp
+                    player.AddToBackpack(new MaxxiaScroll());
+                    player.SendMessage("For your thoughtful reflection, take this token of appreciation from me.");
                 }
-            }
+            });
 
-            base.OnSpeech(e);
-        }
+        return greeting;
+    }
 
-        public Tommy(Serial serial) : base(serial) { }
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write(0); // version
+        writer.Write(lastRewardTime);
+    }
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
-        }
-
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
-        }
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        lastRewardTime = reader.ReadDateTime();
     }
 }

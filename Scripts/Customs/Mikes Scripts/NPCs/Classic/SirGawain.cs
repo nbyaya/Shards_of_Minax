@@ -3,153 +3,161 @@ using Server;
 using Server.Mobiles;
 using Server.Items;
 
-namespace Server.Mobiles
+public class SirGawain : BaseCreature
 {
-    [CorpseName("the corpse of Sir Gawain")]
-    public class SirGawain : BaseCreature
+    private DateTime lastRewardTime;
+
+    [Constructable]
+    public SirGawain() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "Sir Gawain";
+        Body = 0x190; // Human male body
 
-        [Constructable]
-        public SirGawain() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Sir Gawain";
-            Body = 0x190; // Human male body
+        // Stats
+        SetStr(163);
+        SetDex(68);
+        SetInt(29);
+        SetHits(118);
 
-            // Stats
-            Str = 163;
-            Dex = 68;
-            Int = 29;
-            Hits = 118;
+        // Appearance
+        AddItem(new PlateChest() { Hue = 1190 });
+        AddItem(new PlateLegs() { Hue = 1190 });
+        AddItem(new PlateGloves() { Hue = 1190 });
+        AddItem(new PlateArms() { Hue = 1190 });
+        AddItem(new Bascinet() { Hue = 1190 });
+        
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(this);
+        HairHue = Race.RandomHairHue();
 
-            // Appearance
-            AddItem(new PlateChest() { Hue = 1190 });
-            AddItem(new PlateLegs() { Hue = 1190 });
-            AddItem(new PlateGloves() { Hue = 1190 });
-            AddItem(new PlateArms() { Hue = 1190 });
-            AddItem(new Bascinet() { Hue = 1190 });
-            
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(this);
-            HairHue = Race.RandomHairHue();
+        // Speech Hue
+        SpeechHue = 0; // Default speech hue
 
-            // Speech Hue
-            SpeechHue = 0; // Default speech hue
+        lastRewardTime = DateTime.MinValue;
+    }
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
-        }
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
-            
-            if (!from.InRange(this, 3))
-                return;
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
 
-            string speech = e.Speech.ToLower();
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("I am Sir Gawain, once a proud knight of the realm. How may I assist you?");
 
-            if (speech.Contains("name"))
+        greeting.AddOption("Tell me about your past.",
+            player => true,
+            player =>
             {
-                Say("I am Sir Gawain, once a proud knight of the realm.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("My body may be whole, but my spirit is broken.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My 'job' now is to haunt these accursed lands.");
-            }
-            else if (speech.Contains("battles"))
-            {
-                Say("Valor, you say? Valor is a fading memory.");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("Do you believe in chivalry, in a world where honor has no place?");
-            }
-            else if (speech.Contains("realm"))
-            {
-                Say("Ah, the realm! It once shimmered with prosperity and unity. I miss the days where the knights upheld the virtues and the land was at peace.");
-            }
-            else if (speech.Contains("spirit"))
-            {
-                Say("My spirit was shattered when I lost my most cherished possession. It was an amulet given to me by my beloved before she passed away.");
-            }
-            else if (speech.Contains("haunt"))
-            {
-                Say("Yes, I roam these lands in search of redemption. I've lost my way and I've made mistakes that I deeply regret.");
-            }
-            else if (speech.Contains("valor"))
-            {
-                Say("Once, valor meant everything to me. But after witnessing the treachery of those I once trusted, my faith in the code of chivalry waned.");
-            }
-            else if (speech.Contains("mistakes"))
-            {
-                Say("I was entrusted with a sacred task to protect a holy relic. But in my arrogance, I failed, and it was taken by the forces of darkness.");
-            }
-            else if (speech.Contains("relic"))
-            {
-                Say("The holy relic is known as the Chalice of Virtues. If you ever come across it, please return it to the Shrine of Honor. In gratitude, I would offer you a reward for such an act of kindness.");
-            }
-            else if (speech.Contains("shrine"))
-            {
-                Say("It's an ancient site dedicated to the principles of chivalry and honor. Legend says it holds the power to cleanse tainted souls.");
-            }
-            else if (speech.Contains("chivalry"))
-            {
-                Say("Chivalry was the code we knights lived by. Honesty, valor, compassion... But times have changed, and I fear chivalry is now a forgotten ideal.");
-            }
-            else if (speech.Contains("amulet"))
-            {
-                Say("It was a pendant with a blue gem at its center, symbolizing our undying love. Alas, it was stolen from me during a skirmish, and I've never seen it since.");
-            }
-            else if (speech.Contains("stolen"))
-            {
-                Say("It was taken by a rogue named Lancelot. Our brotherhood was betrayed by his deceit and cunning.");
-            }
-            else if (speech.Contains("lancelot"))
-            {
-                Say("He was once my closest ally and brother-in-arms. But ambition and jealousy turned him. If you seek him out, be wary. He is not to be trusted.");
-            }
-            else if (speech.Contains("brotherhood"))
-            {
-                Say("We were a band of knights, sworn to protect the realm and uphold the virtues. But like all things, our unity eventually fractured. Take this friend.");
-                from.AddToBackpack(new MaxxiaScroll()); // Give the reward
-            }
-            else if (speech.Contains("reward"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Ah, yes. Should you aid me in my quest, I shall grant you something from my treasure trove, a token of my gratitude.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
+                DialogueModule pastModule = new DialogueModule("My body may be whole, but my spirit is broken. Valor is a fading memory.");
+                pastModule.AddOption("What happened to you?",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, CreateTimePortalModule()));
+                    });
+                player.SendGump(new DialogueGump(player, pastModule));
+            });
 
-            base.OnSpeech(e);
-        }
+        greeting.AddOption("Do you seek your lost amulet?",
+            player => true,
+            player =>
+            {
+                DialogueModule amuletModule = new DialogueModule("It was a pendant with a blue gem at its center, stolen during a skirmish. If you find it, return it to me.");
+                amuletModule.AddOption("What do you offer as a reward?",
+                    pl => true,
+                    pl =>
+                    {
+                        if (DateTime.UtcNow - lastRewardTime < TimeSpan.FromMinutes(10))
+                        {
+                            pl.SendMessage("I have no reward right now. Please return later.");
+                        }
+                        else
+                        {
+                            pl.SendMessage("Ah, yes. I shall grant you a token of my gratitude.");
+                            pl.AddToBackpack(new MaxxiaScroll()); // Give the reward
+                            lastRewardTime = DateTime.UtcNow; // Update the timestamp
+                        }
+                    });
+                player.SendGump(new DialogueGump(player, amuletModule));
+            });
 
-        public SirGawain(Serial serial) : base(serial) { }
+        greeting.AddOption("What do you know of Lancelot?",
+            player => true,
+            player =>
+            {
+                DialogueModule lancelotModule = new DialogueModule("He was once my closest ally. Betrayed by ambition, he cannot be trusted. If you seek him, be wary.");
+                player.SendGump(new DialogueGump(player, lancelotModule));
+            });
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
-        }
+        return greeting;
+    }
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
-        }
+    private DialogueModule CreateTimePortalModule()
+    {
+        DialogueModule portalModule = new DialogueModule("It began on a fateful night when I stumbled upon a mysterious portal shimmering with arcane energy. Stepping through, I was pulled into a realm of chaos and despair.");
+        portalModule.AddOption("What did you find on the other side?",
+            pl => true,
+            pl =>
+            {
+                DialogueModule otherSideModule = new DialogueModule("I found myself in a dark world ruled by Minax, a sorceress of unparalleled power. Her armies were relentless, and I was forced to serve her.");
+                otherSideModule.AddOption("Why did you serve Minax?",
+                    p => true,
+                    p =>
+                    {
+                        DialogueModule serveModule = new DialogueModule("At first, I resisted, but Minax threatened the lives of my comrades. I had no choice but to obey her commands to protect them.");
+                        serveModule.AddOption("What were your duties?",
+                            plq => true,
+                            plq =>
+                            {
+                                DialogueModule dutiesModule = new DialogueModule("I was tasked with gathering relics and enforcing her will across the realm. Each mission was a reminder of my lost honor.");
+                                dutiesModule.AddOption("Did you ever try to escape?",
+                                    pll => true,
+                                    pll =>
+                                    {
+                                        DialogueModule escapeModule = new DialogueModule("Many times, but Minax's grip was too strong. I lost hope, wandering in a shadow of my former self.");
+                                        escapeModule.AddOption("What changed?",
+                                            plll => true,
+                                            plll =>
+                                            {
+                                                DialogueModule changeModule = new DialogueModule("One day, I discovered a group of rebels plotting against her. I joined their cause, fueled by a flicker of hope for redemption.");
+                                                changeModule.AddOption("Did you succeed?",
+                                                    pllll => true,
+                                                    pllll =>
+                                                    {
+                                                        DialogueModule successModule = new DialogueModule("In a fierce battle, we managed to weaken her forces. But in the chaos, I was once again caught in a portal, returning to this land, alone and haunted.");
+                                                        pl.SendGump(new DialogueGump(pl, successModule));
+                                                    });
+                                                pl.SendGump(new DialogueGump(pl, changeModule));
+                                            });
+                                        pl.SendGump(new DialogueGump(pl, escapeModule));
+                                    });
+                                pl.SendGump(new DialogueGump(pl, dutiesModule));
+                            });
+                        pl.SendGump(new DialogueGump(pl, serveModule));
+                    });
+                pl.SendGump(new DialogueGump(pl, otherSideModule));
+            });
+        return portalModule;
+    }
+
+    public SirGawain(Serial serial) : base(serial) { }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0); // version
+        writer.Write(lastRewardTime);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        lastRewardTime = reader.ReadDateTime();
     }
 }

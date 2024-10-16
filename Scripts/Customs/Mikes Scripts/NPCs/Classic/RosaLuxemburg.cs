@@ -17,10 +17,10 @@ namespace Server.Mobiles
             Body = 0x191; // Human female body
 
             // Stats
-            Str = 85;
-            Dex = 70;
-            Int = 95;
-            Hits = 74;
+            SetStr(85);
+            SetDex(70);
+            SetInt(95);
+            SetHits(74);
 
             // Appearance
             AddItem(new Skirt() { Hue = 1912 });
@@ -39,77 +39,169 @@ namespace Server.Mobiles
             SpeechHue = 0; // Default speech hue
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
 
-            if (speech.Contains("name"))
-            {
-                Say("I am Rosa Luxemburg, a champion of the proletariat!");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("My health is of no concern when there's a class struggle to fight!");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My job is to liberate the oppressed and challenge the bourgeoisie!");
-            }
-            else if (speech.Contains("class struggle"))
-            {
-                Say("The workers' struggle for justice and equality is the only battle that matters. Do you understand the plight of the proletariat?");
-            }
-            else if (speech.Contains("join"))
-            {
-                Say("Your words reveal your true intentions. Will you join the proletariat in the fight for a just society?");
-            }
-            else if (speech.Contains("proletariat"))
-            {
-                Say("The proletariat are the workers, the oppressed, those who labor but do not own the means of production. They are at the heart of the revolution.");
-            }
-            else if (speech.Contains("concern"))
-            {
-                Say("My only concern is for the working class. Their suffering under the oppressive system is what drives me each day.");
-            }
-            else if (speech.Contains("liberate"))
-            {
-                Say("To liberate means to set free. I aim to free the minds and hearts of the oppressed from the chains that bind them.");
-            }
-            else if (speech.Contains("justice"))
-            {
-                Say("Justice is more than just laws. It is about equal rights, opportunities, and a fair distribution of resources. It's a dream for many, but a goal for us.");
-            }
-            else if (speech.Contains("society"))
-            {
-                Say("A just society is one where every individual has an equal chance at happiness, success, and prosperity. But to achieve it, we need to challenge the existing power structures.");
-            }
-            else if (speech.Contains("revolution"))
-            {
-                Say("The revolution is not a one-time event. It is a continuous process of challenging the status quo and striving for a world where everyone can thrive.");
-            }
-            else if (speech.Contains("chains"))
-            {
-                Say("These chains are not just physical, but mental. Many are bound by the chains of ignorance, prejudice, and fear. It's our duty to break them.");
-            }
-            else if (speech.Contains("thrive"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("I am Rosa Luxemburg, a champion of the proletariat! We stand at the cusp of a revolution against Lord British's oppressive rule. Are you ready to discuss the path toward true freedom?");
+            
+            greeting.AddOption("What do you mean by oppressive rule?",
+                player => true,
+                player =>
                 {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
+                    DialogueModule oppressiveModule = new DialogueModule("Lord British's reign has suffocated our voices and shackled our ambitions. The nobility hoards power, while the common folk suffer. It is time to dismantle this corrupt system!");
+                    oppressiveModule.AddOption("How can we dismantle this system?",
+                        p => true,
+                        p =>
+                        {
+                            DialogueModule dismantleModule = new DialogueModule("We must unite! Through collective action and the power of the masses, we can overthrow the tyrant and build a society where all are free to flourish!");
+                            dismantleModule.AddOption("And what about Lord Blackthorn?",
+                                pl => true,
+                                pl =>
+                                {
+                                    DialogueModule blackthornModule = new DialogueModule("Lord Blackthorn embraces the philosophy of Anarchism, advocating for a society free from hierarchies. He sees the value in individual liberty, and we must learn from his vision.");
+                                    blackthornModule.AddOption("Is Blackthorn truly different from British?",
+                                        pq => true,
+                                        pq =>
+                                        {
+                                            DialogueModule differenceModule = new DialogueModule("While both may have held power, Blackthorn seeks to dismantle the oppressive structures that British upholds. He dreams of a world where authority is decentralized and every voice matters.");
+                                            differenceModule.AddOption("What can I do to support this vision?",
+                                                pla => true,
+                                                pla =>
+                                                {
+                                                    DialogueModule supportModule = new DialogueModule("You can start by spreading awareness and gathering support among the people. Encourage others to join the movement for change! Our strength lies in our unity.");
+                                                    supportModule.AddOption("I want to join the movement!",
+                                                        plw => true,
+                                                        plw =>
+                                                        {
+                                                            HandleThriveOption(pl);
+                                                        });
+                                                    supportModule.AddOption("I need to think about it.",
+                                                        ple => true,
+                                                        ple =>
+                                                        {
+                                                            pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                                                        });
+                                                    pla.SendGump(new DialogueGump(pla, supportModule));
+                                                });
+                                            p.SendGump(new DialogueGump(p, differenceModule));
+                                        });
+                                    player.SendGump(new DialogueGump(player, blackthornModule));
+                                });
+                            player.SendGump(new DialogueGump(player, dismantleModule));
+                        });
+                    player.SendGump(new DialogueGump(player, oppressiveModule));
+                });
+
+            greeting.AddOption("What role do the workers play in this revolution?",
+                player => true,
+                player =>
                 {
-                    Say("Your understanding warms my heart. Here, take this as a token of gratitude for being an ally in our cause.");
-                    from.AddToBackpack(new DetectingHiddenAugmentCrystal()); // Replace with the actual reward item
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
+                    DialogueModule workersModule = new DialogueModule("The workers are the backbone of any society! Without our labor, the elite cannot thrive. When we rise together, we reclaim our power!");
+                    workersModule.AddOption("But how do we organize ourselves?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule organizeModule = new DialogueModule("We must form councils and local assemblies to represent our collective interests. Communication and solidarity are key! Only then can we effect real change.");
+                            organizeModule.AddOption("What if the nobility tries to suppress us?",
+                                p => true,
+                                p =>
+                                {
+                                    DialogueModule suppressModule = new DialogueModule("They will try, but we are many and they are few. Through perseverance and our shared determination, we can stand against their oppression!");
+                                    suppressModule.AddOption("I'm inspired! What should I do next?",
+                                        pla => true,
+                                        pla =>
+                                        {
+                                            HandleThriveOption(pla);
+                                        });
+                                    p.SendGump(new DialogueGump(p, suppressModule));
+                                });
+                            pl.SendGump(new DialogueGump(pl, organizeModule));
+                        });
+                    player.SendGump(new DialogueGump(player, workersModule));
+                });
+
+            greeting.AddOption("Is violence necessary for revolution?",
+                player => true,
+                player =>
+                {
+                    DialogueModule violenceModule = new DialogueModule("Revolution often comes with struggle, but it is not the first course of action we should take. Our aim should be to educate and inspire, but we must be prepared to defend ourselves if necessary.");
+                    violenceModule.AddOption("I see your point. How do we educate the masses?",
+                        p => true,
+                        p =>
+                        {
+                            DialogueModule educateModule = new DialogueModule("We can spread pamphlets, organize gatherings, and engage in discussions with our fellow workers. Knowledge is a powerful tool for liberation!");
+                            educateModule.AddOption("I will help spread the message!",
+                                pla => true,
+                                pla =>
+                                {
+                                    HandleThriveOption(pla);
+                                });
+                            p.SendGump(new DialogueGump(p, educateModule));
+                        });
+                    player.SendGump(new DialogueGump(player, violenceModule));
+                });
+
+            greeting.AddOption("Tell me more about Lord Blackthorn's vision.",
+                player => true,
+                player =>
+                {
+                    DialogueModule blackthornVisionModule = new DialogueModule("Blackthorn envisions a society where individuals are empowered to govern themselves without the constraints of authoritarian rule. He believes in the inherent goodness of people!");
+                    blackthornVisionModule.AddOption("That sounds appealing. How do we achieve that?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule achieveModule = new DialogueModule("We must cultivate trust among each other and build systems that prioritize cooperation and mutual aid. It begins with us!");
+                            achieveModule.AddOption("I'm ready to contribute to this vision!",
+                                pla => true,
+                                pla =>
+                                {
+                                    HandleThriveOption(pla);
+                                });
+                            pl.SendGump(new DialogueGump(pl, achieveModule));
+                        });
+                    player.SendGump(new DialogueGump(player, blackthornVisionModule));
+                });
+
+            greeting.AddOption("What do you think will happen if we succeed?",
+                player => true,
+                player =>
+                {
+                    DialogueModule successModule = new DialogueModule("If we succeed, we will create a world where everyone has a voice, where resources are shared equitably, and where creativity flourishes unencumbered by tyranny. It will be a beautiful world!");
+                    successModule.AddOption("That sounds wonderful! How can I help?",
+                        p => true,
+                        p =>
+                        {
+                            HandleThriveOption(p);
+                        });
+                    player.SendGump(new DialogueGump(player, successModule));
+                });
+
+            return greeting;
+        }
+
+        private void HandleThriveOption(PlayerMobile player)
+        {
+            TimeSpan cooldown = TimeSpan.FromMinutes(10);
+            if (DateTime.UtcNow - lastRewardTime < cooldown)
+            {
+                player.SendMessage("I have no reward right now. Please return later.");
             }
+            else
+            {
+                player.SendMessage("Your commitment to the cause is commendable! Here, take this as a token of gratitude for your willingness to fight alongside us.");
+                player.AddToBackpack(new DetectingHiddenAugmentCrystal()); // Replace with the actual reward item
+                lastRewardTime = DateTime.UtcNow; // Update the timestamp
+            }
+
+            player.SendGump(new DialogueGump(player, CreateGreetingModule()));
         }
 
         public RosaLuxemburg(Serial serial) : base(serial) { }

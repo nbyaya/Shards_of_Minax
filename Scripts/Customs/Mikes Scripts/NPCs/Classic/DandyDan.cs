@@ -1,137 +1,175 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
+using Server.Network;
 using Server.Items;
 
-namespace Server.Mobiles
+public class DandyDan : BaseCreature
 {
-    [CorpseName("the corpse of Dandy Dan")]
-    public class DandyDan : BaseCreature
+    [Constructable]
+    public DandyDan() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "Dandy Dan";
+        Body = 0x190; // Human male body
 
-        [Constructable]
-        public DandyDan() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Dandy Dan";
-            Body = 0x190; // Human male body
+        // Stats
+        SetStr(85);
+        SetDex(90);
+        SetInt(80);
+        SetHits(85);
 
-            // Stats
-            Str = 85;
-            Dex = 90;
-            Int = 80;
-            Hits = 85;
+        // Appearance
+        AddItem(new FancyShirt(1153)); // Fancy shirt with hue 1153
+        AddItem(new LongPants(1153)); // Long pants with hue 1153
+        AddItem(new Boots(1153)); // Boots with hue 1153
+        AddItem(new FeatheredHat(1153)); // Feathered hat with hue 1153
+        AddItem(new GoldRing { Name = "Dan's Dazzling Ring" });
+        AddItem(new Longsword { Name = "Dan's Dashing Rapier" });
 
-            // Appearance
-            AddItem(new FancyShirt(1153)); // Fancy shirt with hue 1153
-            AddItem(new LongPants(1153)); // Long pants with hue 1153
-            AddItem(new Boots(1153)); // Boots with hue 1153
-            AddItem(new FeatheredHat(1153)); // Feathered hat with hue 1153
-            AddItem(new GoldRing { Name = "Dan's Dazzling Ring" });
-            AddItem(new Longsword { Name = "Dan's Dashing Rapier" });
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(this);
+        HairHue = Race.RandomHairHue();
 
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(this);
-            HairHue = Race.RandomHairHue();
+        SpeechHue = 0; // Default speech hue
+    }
 
-            SpeechHue = 0; // Default speech hue
+    public DandyDan(Serial serial) : base(serial)
+    {
+    }
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
-        }
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
 
-            if (!from.InRange(this, 3))
-                return;
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("Greetings, traveler! I am Dandy Dan, the rogue. What brings you my way?");
 
-            string speech = e.Speech.ToLower();
+        greeting.AddOption("Tell me about your amazing luck.",
+            player => true,
+            player =>
+            {
+                DialogueModule luckModule = new DialogueModule("Ah, my luck is legendary, or so they say. From finding gold coins in the most unlikely places to escaping certain doom by mere inches, luck has always been on my side.");
+                luckModule.AddOption("How did you first discover your luck?",
+                    p => true,
+                    p =>
+                    {
+                        DialogueModule firstLuckModule = new DialogueModule("It all started when I was just a lad. I remember finding a rare gemstone in a pile of pebbles by the river. Everyone said it was impossible, but there it was, shining brightly amidst the mundane. From that day on, strange and fortunate things seemed to follow me.");
+                        firstLuckModule.AddOption("What happened after you found the gemstone?",
+                            pl => true,
+                            pl =>
+                            {
+                                DialogueModule afterGemstoneModule = new DialogueModule("Well, a traveling merchant offered me a small fortune for it, and I used the gold to buy my first set of adventuring gear. That very gear saved my life countless times. It was as if fate itself had taken a liking to me.");
+                                afterGemstoneModule.AddOption("Did you have more lucky encounters after that?",
+                                    pla => true,
+                                    pla =>
+                                    {
+                                        DialogueModule moreLuckModule = new DialogueModule("Oh, absolutely! There was the time I accidentally stumbled into a dragon's lair. Just as it was about to roast me alive, a group of knights burst in, completely unaware I was even there. They fought the beast, and I slipped away with some of the treasure. Talk about timing!");
+                                        moreLuckModule.AddOption("What did you do with the dragon's treasure?",
+                                            plb => true,
+                                            plb =>
+                                            {
+                                                DialogueModule treasureUseModule = new DialogueModule("I used it to travel far and wide, of course! I bought passage on ships, paid for guides through treacherous mountains, and even bribed a few guards when things got too hot. You could say luck and I have always been the best of friends.");
+                                                treasureUseModule.AddOption("Tell me about another lucky adventure.",
+                                                    plc => true,
+                                                    plc =>
+                                                    {
+                                                        DialogueModule anotherLuckModule = new DialogueModule("Ah, there was that time I found myself in a goblin-infested forest. I was outnumbered, unarmed, and frankly terrified. Just when I thought it was over, a massive thunderstorm rolled in, and a lightning strike scared the goblins off! I walked away without a scratch.");
+                                                        anotherLuckModule.AddOption("You must be charmed, Dan!",
+                                                            pld => true,
+                                                            pld =>
+                                                            {
+                                                                DialogueModule charmedModule = new DialogueModule("Haha! Many have said that. Perhaps I am. Some even say I was blessed by a wandering druid when I was a baby. Who knows? All I know is that I'm still here, and life keeps throwing me wonderful surprises.");
+                                                                charmedModule.AddOption("Do you think your luck will ever run out?",
+                                                                    ple => true,
+                                                                    ple =>
+                                                                    {
+                                                                        DialogueModule luckEndModule = new DialogueModule("Ah, that's the question, isn't it? Every gambler knows that luck can be fickle. But until the day it does run out, I'll keep living life to the fullest. And even then, well, I like to think I've got enough wit to get by without it.");
+                                                                        luckEndModule.AddOption("A wise outlook, Dan.",
+                                                                            plf => true,
+                                                                            plf =>
+                                                                            {
+                                                                                plf.SendGump(new DialogueGump(plf, CreateGreetingModule()));
+                                                                            });
+                                                                        ple.SendGump(new DialogueGump(ple, luckEndModule));
+                                                                    });
+                                                                charmedModule.AddOption("May your luck never run out, my friend.",
+                                                                    ple => true,
+                                                                    ple =>
+                                                                    {
+                                                                        ple.SendGump(new DialogueGump(ple, CreateGreetingModule()));
+                                                                    });
+                                                                pld.SendGump(new DialogueGump(pld, charmedModule));
+                                                            });
+                                                        plc.SendGump(new DialogueGump(plc, anotherLuckModule));
+                                                    });
+                                                treasureUseModule.AddOption("That's an incredible story.",
+                                                    plc => true,
+                                                    plc =>
+                                                    {
+                                                        plc.SendGump(new DialogueGump(plc, CreateGreetingModule()));
+                                                    });
+                                                plb.SendGump(new DialogueGump(plb, treasureUseModule));
+                                            });
+                                        moreLuckModule.AddOption("You've had quite the life, Dan.",
+                                            plc => true,
+                                            plc =>
+                                            {
+                                                plc.SendGump(new DialogueGump(plc, CreateGreetingModule()));
+                                            });
+                                        pla.SendGump(new DialogueGump(pla, moreLuckModule));
+                                    });
+                                pl.SendGump(new DialogueGump(pl, afterGemstoneModule));
+                            });
+                        firstLuckModule.AddOption("It sounds like fate has always been on your side.",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                            });
+                        p.SendGump(new DialogueGump(p, firstLuckModule));
+                    });
+                luckModule.AddOption("Do you think it's all just luck, or is there something more?",
+                    p => true,
+                    p =>
+                    {
+                        DialogueModule moreThanLuckModule = new DialogueModule("Ah, now there's a thought. Some say it's destiny, others say it's merely coincidence. I like to think it's a mix of both. Luck opens doors, but it's up to us to step through them. I've always taken every opportunity that comes my way.");
+                        moreThanLuckModule.AddOption("A good philosophy to live by.",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                            });
+                        p.SendGump(new DialogueGump(p, moreThanLuckModule));
+                    });
+                player.SendGump(new DialogueGump(player, luckModule));
+            });
 
-            if (speech.Contains("name"))
+        greeting.AddOption("Goodbye, Dan.",
+            player => true,
+            player =>
             {
-                Say("Greetings, traveler! I am Dandy Dan, the rogue.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("I'm quite nimble and cunning, always dodging danger.");
-            }
-            else if (speech.Contains("valor"))
-            {
-                Say("But remember, my friend, true valor lies in the heart, not in thievery.");
-            }
-            else if (speech.Contains("battles"))
-            {
-                Say("Do you seek to walk the path of valor, my friend?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("If so, remember that valor is not about winning battles but about doing what is right.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("Ah, I've seen better days, but my spirit remains unbroken. It's all thanks to an old healer named Mira. Have you met her?");
-            }
-            else if (speech.Contains("mira"))
-            {
-                Say("Mira is a skilled healer who once saved me from a deadly poison. She taught me the value of compassion and whispered a secret - the third syllable of the mantra of Compassion is MUH. It might aid you on your journey.");
-            }
-            else if (speech.Contains("thievery"))
-            {
-                Say("Thievery is a path I once walked, but no longer. There's a certain thrill to it, but the cost is one's own integrity. Tell me, have you heard of the Guild of Shadows?");
-            }
-            else if (speech.Contains("guild"))
-            {
-                Say("A secretive group of thieves, rumored to operate from the shadows of every city. They have codes and secrets, but their path is fraught with peril. Beware if you ever cross them.");
-            }
-            else if (speech.Contains("danger"))
-            {
-                Say("Oh, I've faced my share of danger. From dragons to trolls, every challenge has its lessons. Among the most treacherous are the merfolk of the deep. Ever heard tales of them?");
-            }
-            else if (speech.Contains("merfolk"))
-            {
-                Say("Enchanting beings of the underwater realm. They possess secrets of the ocean and are guardians of its mysteries. I once bartered with a mermaid for a trinket, and in return, she shared tales of sunken treasures.");
-            }
-            else if (speech.Contains("treasures"))
-            {
-                Say("Many a sailor and adventurer dreams of finding sunken treasures. But remember, gold and gems are fleeting. True treasures are found in friendships and memories.");
-            }
-            else if (speech.Contains("right"))
-            {
-                Say("Doing what's right is not always easy. It requires listening to one's heart and standing firm against injustice. In this land, the Temple of Virtue is a beacon for those seeking the path of righteousness. Have you visited it?");
-            }
-            else if (speech.Contains("temple"))
-            {
-                Say("It's a sacred place where many come to meditate on the virtues. Within its walls, wisdom is shared, and souls are rejuvenated. I once met a monk there who spoke of inner peace.");
-            }
-            else if (speech.Contains("peace"))
-            {
-                Say("Inner peace is a state of balance and harmony within oneself. It's achieved by understanding oneself, accepting the past, and having hope for the future. It's a journey, not a destination.");
-            }
+                player.SendMessage("Dandy Dan gives you a nod and a wink.");
+            });
 
-            base.OnSpeech(e);
-        }
+        return greeting;
+    }
 
-        public override void OnDeath(Container c)
-        {
-            base.OnDeath(c);
-        }
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write(0); // version
+    }
 
-        public DandyDan(Serial serial) : base(serial) { }
-
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
-        }
-
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
-        }
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
     }
 }

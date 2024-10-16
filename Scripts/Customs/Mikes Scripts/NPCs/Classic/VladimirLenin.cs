@@ -1,130 +1,165 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
+using Server.Network;
 using Server.Items;
 
-namespace Server.Mobiles
+[CorpseName("the corpse of Vladimir Lenin")]
+public class VladimirLenin : BaseCreature
 {
-    [CorpseName("the corpse of Vladimir Lenin")]
-    public class VladimirLenin : BaseCreature
+    private DateTime lastRewardTime;
+
+    [Constructable]
+    public VladimirLenin() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "Vladimir Lenin";
+        Body = 0x190; // Human male body
 
-        [Constructable]
-        public VladimirLenin() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Vladimir Lenin";
-            Body = 0x190; // Human male body
+        // Stats
+        SetStr(100);
+        SetDex(80);
+        SetInt(90);
+        SetHits(75);
 
-            // Stats
-            Str = 100;
-            Dex = 80;
-            Int = 90;
-            Hits = 75;
+        // Appearance
+        AddItem(new LongPants() { Hue = 1910 });
+        AddItem(new Tunic() { Hue = 1102 });
+        AddItem(new Boots() { Hue = 1102 });
+        AddItem(new WarAxe() { Name = "Bolshevik Blade" });
 
-            // Appearance
-            AddItem(new LongPants() { Hue = 1910 });
-            AddItem(new Tunic() { Hue = 1102 });
-            AddItem(new Boots() { Hue = 1102 });
-            AddItem(new WarAxe() { Name = "Bolshevik Blade" });
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(this);
+        HairHue = Race.RandomHairHue();
 
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(this);
-            HairHue = Race.RandomHairHue();
+        // Initialize the lastRewardTime to a past time
+        lastRewardTime = DateTime.MinValue;
+    }
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
-        }
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
 
-            if (!from.InRange(this, 3))
-                return;
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("I am Vladimir Lenin, the revolutionary! How may I inspire you today?");
 
-            string speech = e.Speech.ToLower();
+        greeting.AddOption("Tell me about revolutionary theory.",
+            player => true,
+            player =>
+            {
+                DialogueModule theoryModule = new DialogueModule("Revolutionary theory is the guiding light for those seeking to change the world. It encompasses various schools of thought. Which aspect interests you?");
+                theoryModule.AddOption("What is Marxism?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule marxismModule = new DialogueModule("Marxism is a socioeconomic analysis that uses a materialist interpretation of historical development, often referred to as historical materialism. It posits that the struggle between the ruling class and the working class is the engine of historical change.");
+                        marxismModule.AddOption("Tell me about class struggle.",
+                            p => true,
+                            p =>
+                            {
+                                p.SendGump(new DialogueGump(p, new DialogueModule("Class struggle is the conflict between different classes within society, particularly the bourgeoisie (capitalist class) and the proletariat (working class). This struggle is a key factor in societal evolution and revolutionary change.")));
+                            });
+                        marxismModule.AddOption("What about dialectical materialism?",
+                            p => true,
+                            p =>
+                            {
+                                p.SendGump(new DialogueGump(p, new DialogueModule("Dialectical materialism combines Hegelian dialectics and materialism. It argues that material conditions shape consciousness and that social change arises from contradictions within society, ultimately leading to revolutionary outcomes.")));
+                            });
+                        player.SendGump(new DialogueGump(player, marxismModule));
+                    });
 
-            if (speech.Contains("name"))
-            {
-                Say("I am Vladimir Lenin, the revolutionary!");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("My health is irrelevant, for the revolution lives on!");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My job is to overthrow the oppressive bourgeoisie!");
-            }
-            else if (speech.Contains("revolution"))
-            {
-                Say("The true path to progress is through the collective will of the proletariat! Are you with us?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("Then rise, comrade, and join the ranks of the revolutionaries!");
-            }
-            else if (speech.Contains("revolutionary"))
-            {
-                Say("The winds of change are ever blowing, and it's up to brave souls like us to guide its course.");
-            }
-            else if (speech.Contains("change"))
-            {
-                Say("Like the seasons, societies too undergo cycles. But for meaningful change, action is required.");
-            }
-            else if (speech.Contains("bourgeoisie"))
-            {
-                Say("They hoard the wealth while the workers suffer. It's time to redistribute the means of production!");
-            }
-            else if (speech.Contains("proletariat"))
-            {
-                Say("It's the workers, the common folk, who are the backbone of any society. Their unity can topple even the most oppressive regimes.");
-            }
-            else if (speech.Contains("hope"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Hope is the beacon that guides us through the darkest nights. For your dedication to the cause, take this as a token of my appreciation.");
-                    from.AddToBackpack(new ChivalryAugmentCrystal()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-            else if (speech.Contains("wealth"))
-            {
-                Say("True wealth isn't gold or jewels, but the bonds we share and the just world we strive to create.");
-            }
-            else if (speech.Contains("unity"))
-            {
-                Say("Together, united under a single cause, we can overcome any obstacle.");
-            }
-            else if (speech.Contains("action"))
-            {
-                Say("Words alone cannot change the world. It's our deeds that define our legacy.");
-            }
+                theoryModule.AddOption("What is socialism?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule socialismModule = new DialogueModule("Socialism is an economic and political system where the means of production are owned and regulated by the community as a whole. It seeks to establish a more equitable distribution of wealth and to eliminate class distinctions.");
+                        socialismModule.AddOption("How does socialism differ from communism?",
+                            p => true,
+                            p =>
+                            {
+                                p.SendGump(new DialogueGump(p, new DialogueModule("While both aim for a classless society, socialism often exists as a transitional phase towards communism. Socialism emphasizes state control of resources, while communism seeks to abolish the state altogether.")));
+                            });
+                        socialismModule.AddOption("What are the criticisms of socialism?",
+                            p => true,
+                            p =>
+                            {
+                                p.SendGump(new DialogueGump(p, new DialogueModule("Critics argue that socialism can lead to inefficiencies and a lack of innovation due to state control. They also express concerns over the potential for authoritarian governance.")));
+                            });
+                        player.SendGump(new DialogueGump(player, socialismModule));
+                    });
 
-            base.OnSpeech(e);
-        }
+                theoryModule.AddOption("What about anarchism?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule anarchismModule = new DialogueModule("Anarchism advocates for a stateless society where individuals freely cooperate without hierarchical structures. Anarchists believe in dismantling oppressive institutions, often opposing both capitalism and state control.");
+                        anarchismModule.AddOption("How do anarchists view revolution?",
+                            p => true,
+                            p =>
+                            {
+                                p.SendGump(new DialogueGump(p, new DialogueModule("Anarchists see revolution as a means to overthrow oppressive systems, but they emphasize grassroots organization and direct action rather than seizing state power.")));
+                            });
+                        anarchismModule.AddOption("What are some anarchist theories?",
+                            p => true,
+                            p =>
+                            {
+                                p.SendGump(new DialogueGump(p, new DialogueModule("Prominent theories include anarcho-communism, which advocates for communal ownership of resources, and anarcho-syndicalism, which focuses on labor movements and workers' self-management.")));
+                            });
+                        player.SendGump(new DialogueGump(player, anarchismModule));
+                    });
 
-        public VladimirLenin(Serial serial) : base(serial) { }
+                player.SendGump(new DialogueGump(player, theoryModule));
+            });
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
-        }
+        greeting.AddOption("What is your vision for the revolution?",
+            player => true,
+            player =>
+            {
+                DialogueModule visionModule = new DialogueModule("My vision is a world where the working class rises against oppression and seizes the means of production. Through unity and collective action, we can create a society where resources are shared and all voices are heard.");
+                visionModule.AddOption("How can individuals contribute to the revolution?",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, new DialogueModule("Every individual can contribute by educating themselves and others about revolutionary theory, participating in grassroots organizing, and advocating for the rights of the working class. Every small action counts!")));
+                    });
+                visionModule.AddOption("What challenges do we face?",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, new DialogueModule("The primary challenges include misinformation, apathy, and the powerful interests of the ruling class who will do everything to maintain their dominance. Overcoming these obstacles requires dedication and courage.")));
+                    });
+                player.SendGump(new DialogueGump(player, visionModule));
+            });
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
-        }
+        greeting.AddOption("What do you think of unity?",
+            player => true,
+            player =>
+            {
+                player.SendGump(new DialogueGump(player, new DialogueModule("Unity is crucial for any revolutionary movement. Only through collective strength can we dismantle the oppressive structures that bind us. Together, we can overcome any obstacle.")));
+            });
+
+        return greeting;
+    }
+
+    public VladimirLenin(Serial serial) : base(serial) { }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0); // version
+        writer.Write(lastRewardTime);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        lastRewardTime = reader.ReadDateTime();
     }
 }

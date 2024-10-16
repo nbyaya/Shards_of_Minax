@@ -1,160 +1,257 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
+using Server.Network;
 using Server.Items;
 
-namespace Server.Mobiles
+[CorpseName("the corpse of King Edmund")]
+public class KingEdmund : BaseCreature
 {
-    [CorpseName("the corpse of King Edmund")]
-    public class KingEdmund : BaseCreature
+    private DateTime lastRewardTime;
+
+    [Constructable]
+    public KingEdmund() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "King Edmund";
+        Body = 0x190; // Human male body
 
-        [Constructable]
-        public KingEdmund() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
+        // Stats
+        SetStr(100);
+        SetDex(100);
+        SetInt(100);
+        SetHits(80);
+
+        // Appearance
+        AddItem(new Robe() { Hue = 1124 }); // Robe with hue 1124
+        AddItem(new Sandals() { Hue = 1124 }); // Sandals with hue 1124
+        AddItem(new QuarterStaff() { Name = "King Edmund's Staff" });
+
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(this);
+        HairHue = Race.RandomHairHue();
+
+        // Initialize the lastRewardTime to a past time
+        lastRewardTime = DateTime.MinValue;
+    }
+
+    public KingEdmund(Serial serial) : base(serial)
+    {
+    }
+
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
+
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
+
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("I am King Edmund, the ruler of this wretched kingdom. How may I assist you?");
+
+        greeting.AddOption("Tell me about your health.",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateHealthModule())); });
+
+        greeting.AddOption("What is your job?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateJobModule())); });
+
+        greeting.AddOption("What about your kingdom?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateKingdomModule())); });
+
+        greeting.AddOption("How can I help you?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateHelpModule())); });
+
+        greeting.AddOption("What can you tell me about the traitor?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateTraitorModule())); });
+
+        greeting.AddOption("What is the Oracle?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateOracleModule())); });
+
+        greeting.AddOption("Ponder my choices.",
+            player => true,
+            player => { HandlePondering(player); });
+
+        return greeting;
+    }
+
+    private DialogueModule CreateHealthModule()
+    {
+        DialogueModule healthModule = new DialogueModule("My health is as miserable as my reign. The weight of my crown bears heavily on my heart.");
+        
+        healthModule.AddOption("What troubles you?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateHealthTroubleModule())); });
+
+        healthModule.AddOption("Is there a remedy?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateHealthRemedyModule())); });
+
+        return healthModule;
+    }
+
+    private DialogueModule CreateHealthTroubleModule()
+    {
+        return new DialogueModule("The betrayals of those close to me have left me in despair. I feel their treachery like a dagger in my back.");
+    }
+
+    private DialogueModule CreateHealthRemedyModule()
+    {
+        return new DialogueModule("If only I could find the rare Elixir of Hope! It is said to cure any ailment. Alas, it is hidden deep within the cursed caverns.");
+    }
+
+    private DialogueModule CreateJobModule()
+    {
+        DialogueModule jobModule = new DialogueModule("My 'job' is to sit on this accursed throne and watch my kingdom crumble. I must bear witness to my people's suffering.");
+
+        jobModule.AddOption("What is your greatest burden?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateJobBurdenModule())); });
+
+        jobModule.AddOption("Do you have advisors?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateJobAdvisorsModule())); });
+
+        return jobModule;
+    }
+
+    private DialogueModule CreateJobBurdenModule()
+    {
+        return new DialogueModule("The greatest burden is the knowledge that my decisions affect countless lives. Each choice I make could lead to joy or ruin.");
+    }
+
+    private DialogueModule CreateJobAdvisorsModule()
+    {
+        DialogueModule advisorModule = new DialogueModule("I have advisors, but trust is a fragile thing. Many have their own agendas. It is hard to find a loyal counselor in these treacherous times.");
+        
+        advisorModule.AddOption("Who do you trust?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateAdvisorsTrustModule())); });
+
+        return advisorModule;
+    }
+
+    private DialogueModule CreateAdvisorsTrustModule()
+    {
+        return new DialogueModule("Only a few have proven their loyalty, but even they have shadows lurking in their pasts. Can you help me determine who is truly trustworthy?");
+    }
+
+    private DialogueModule CreateKingdomModule()
+    {
+        DialogueModule kingdomModule = new DialogueModule("This realm was once a land of prosperity and joy, but now shadows have fallen upon it. The people suffer.");
+
+        kingdomModule.AddOption("What caused this downfall?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateKingdomDownfallModule())); });
+
+        kingdomModule.AddOption("Is there hope for the future?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateKingdomHopeModule())); });
+
+        return kingdomModule;
+    }
+
+    private DialogueModule CreateKingdomDownfallModule()
+    {
+        return new DialogueModule("The kingdom has been plagued by treachery and disloyalty. The once-great knights have turned against me.");
+    }
+
+    private DialogueModule CreateKingdomHopeModule()
+    {
+        return new DialogueModule("Hope lies in the hands of brave souls like you. If you can restore faith among my people, perhaps the light can return.");
+    }
+
+    private DialogueModule CreateHelpModule()
+    {
+        DialogueModule helpModule = new DialogueModule("If you truly wish to assist, seek out the Oracle in the Whispering Woods. She may have insights into the issues plaguing my realm.");
+
+        helpModule.AddOption("What should I ask her?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateHelpAskModule())); });
+
+        return helpModule;
+    }
+
+    private DialogueModule CreateHelpAskModule()
+    {
+        return new DialogueModule("Ask her about the traitor in my court. She sees things beyond the mortal eye.");
+    }
+
+    private DialogueModule CreateTraitorModule()
+    {
+        DialogueModule traitorModule = new DialogueModule("The traitor is cunning, hiding in plain sight. Gather evidence and present it to me.");
+
+        traitorModule.AddOption("How will I recognize the traitor?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateTraitorRecognitionModule())); });
+
+        traitorModule.AddOption("What is the reward for exposing them?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateTraitorRewardModule())); });
+
+        return traitorModule;
+    }
+
+    private DialogueModule CreateTraitorRecognitionModule()
+    {
+        return new DialogueModule("Watch for suspicious behavior, especially among those closest to me. A traitor often reveals themselves in times of stress.");
+    }
+
+    private DialogueModule CreateTraitorRewardModule()
+    {
+        return new DialogueModule("The reward shall be great—gold, titles, and perhaps even a place by my side in the council. But beware, false accusations can lead to dire consequences.");
+    }
+
+    private DialogueModule CreateOracleModule()
+    {
+        DialogueModule oracleModule = new DialogueModule("The Oracle is a mysterious being, residing deep within the Whispering Woods. Many seek her wisdom, but not all are deemed worthy.");
+
+        oracleModule.AddOption("How can I prove myself worthy?",
+            player => true,
+            player => { player.SendGump(new DialogueGump(player, CreateOracleWorthinessModule())); });
+
+        return oracleModule;
+    }
+
+    private DialogueModule CreateOracleWorthinessModule()
+    {
+        return new DialogueModule("To prove your worth, you must complete a trial of courage. Face the challenges of the woods and return with a token of your bravery.");
+    }
+
+    private void HandlePondering(PlayerMobile player)
+    {
+        TimeSpan cooldown = TimeSpan.FromMinutes(10);
+        if (DateTime.UtcNow - lastRewardTime < cooldown)
         {
-            Name = "King Edmund";
-            Body = 0x190; // Human male body
-
-            // Stats
-            Str = 100;
-            Dex = 100;
-            Int = 100;
-            Hits = 80;
-
-            // Appearance
-            AddItem(new Robe() { Hue = 1124 }); // Robe with hue 1124
-            AddItem(new Sandals() { Hue = 1124 }); // Sandals with hue 1124
-            AddItem(new QuarterStaff() { Name = "King Edmund's Staff" });
-
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(this);
-            HairHue = Race.RandomHairHue();
-
-            // Speech Hue
-            SpeechHue = 0; // Default speech hue
-
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
+            player.SendMessage("I have no reward right now. Please return later.");
         }
-
-        public override void OnSpeech(SpeechEventArgs e)
+        else
         {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
-                return;
-
-            string speech = e.Speech.ToLower();
-
-            if (speech.Contains("name"))
-            {
-                Say("I am King Edmund, the ruler of this wretched kingdom.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("My health is as miserable as my reign.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My \"job\" is to sit on this accursed throne and watch my kingdom crumble.");
-            }
-            else if (speech.Contains("battles"))
-            {
-                Say("Do you dare question the authority of a miserable king like me?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("Oh, a brave soul, aren't you? Let's see how brave you are in the face of misery!");
-            }
-            else if (speech.Contains("kingdom"))
-            {
-                Say("This realm was once a land of prosperity and joy, but now shadows have fallen upon it. Tell me, are you here to help or to observe its downfall?");
-            }
-            else if (speech.Contains("miserable"))
-            {
-                Say("Yes, my spirit has been broken by the betrayal of those I once called allies. There is a traitor amongst the courtiers, spreading poison with whispers. If you can unmask this traitor, I will reward you.");
-            }
-            else if (speech.Contains("throne"))
-            {
-                Say("This very seat has witnessed the rise and fall of many before me. The weight of it is not in its gold or jewels, but in the responsibility and burden it carries. Have you ever felt such a weight upon your shoulders?");
-            }
-            else if (speech.Contains("help"))
-            {
-                Say("If you truly wish to assist, seek out the Oracle in the Whispering Woods. She may have insights into the issues plaguing my realm. And if you prove successful, come back to me, and I shall reward you.");
-            }
-            else if (speech.Contains("traitor"))
-            {
-                Say("The traitor is cunning, hiding in plain sight. Gather evidence and present it to me. But be wary, for making false accusations can turn the court against you. If you reveal the traitor's identity, I shall grant you an invaluable reward.");
-            }
-            else if (speech.Contains("responsibility"))
-            {
-                Say("Ah, so you understand the weight of leadership. Sometimes, it's the silent decisions, the ones made in the shadows of the night, that are the heaviest. Have you ever made such a choice?");
-            }
-            else if (speech.Contains("oracle"))
-            {
-                Say("The Oracle is a mysterious being, residing deep within the Whispering Woods. Many seek her wisdom, but not all are deemed worthy. Approach with respect, and she might just share her visions with you.");
-            }
-            else if (speech.Contains("evidence"))
-            {
-                Say("The evidence may not always be tangible. Sometimes, it's a word misplaced or an action not taken. Observe the courtiers closely. Your intuition might guide you to the truth.");
-            }
-            else if (speech.Contains("choice"))
-            {
-                Say("Choices define us, more than our lineage or wealth. It's the path we choose that carves our legacy. And now, you have the choice to save or forsake this kingdom. What will you choose?");
-            }
-            else if (speech.Contains("visions"))
-            {
-                Say("Visions of the Oracle are enigmatic. They may not always make sense immediately, but in time, their meaning becomes clear. If she grants you a vision, ponder upon it, and it might just reveal the way.");
-            }
-            else if (speech.Contains("intuition"))
-            {
-                Say("Trusting one's gut can be a powerful tool. However, it's essential to balance intuition with reason. And remember, the traitor will do anything to remain hidden, so be cautious in your pursuit.");
-            }
-            else if (speech.Contains("legacy"))
-            {
-                Say("Legacies are built over time, with each action, each choice. My legacy seems to be one of ruin, but with your help, perhaps it can change. Together, we can write a new chapter for this kingdom.");
-            }
-            else if (speech.Contains("ponder"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("To ponder is to reflect deeply, to search within for answers. Not all solutions lie outside; sometimes, the key is within. Seek that key, and you might unlock the salvation of this realm. As a token of appreciation for your dedication, take this.");
-                    from.AddToBackpack(new MurderRemovalDeed()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-            else if (speech.Contains("reason"))
-            {
-                Say("Reason is the guiding light in the darkness of uncertainty. Use it to navigate the complex web of court politics and to unmask the traitor. And always be wary of those who abandon reason for personal gain.");
-            }
-            else if (speech.Contains("chapter"))
-            {
-                Say("Each chapter in a kingdom's history has heroes and villains. Your actions will determine which role you play. But know this, every hero faces challenges, and every villain has a reason. Choose wisely.");
-            }
-
-            base.OnSpeech(e);
+            player.SendMessage("To ponder is to reflect deeply. As a token of appreciation, take this.");
+            player.AddToBackpack(new MurderRemovalDeed()); // Give the reward
+            lastRewardTime = DateTime.UtcNow; // Update the timestamp
         }
+    }
 
-        public KingEdmund(Serial serial) : base(serial) { }
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write(0); // version
+        writer.Write(lastRewardTime);
+    }
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
-        }
-
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
-        }
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        lastRewardTime = reader.ReadDateTime();
     }
 }

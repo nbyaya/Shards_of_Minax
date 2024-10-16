@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -31,80 +32,144 @@ namespace Server.Mobiles
             HairItemID = Race.RandomHair(this);
             HairHue = Race.RandomHairHue();
 
-            // Speech Hue
-            SpeechHue = 0; // Default speech hue
-
-            // Initialize the lastRewardTime to a past time
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
 
-            if (speech.Contains("name"))
-            {
-                Say("I am Longitude Larry, the world's most renowned cartographer. But what do you care?");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("As if my health concerns you! I have endured hardships you wouldn't understand.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My job? I'm a cartographer, mapping this wretched world for fools like you who can't find their way!");
-            }
-            else if (speech.Contains("battles"))
-            {
-                Say("Oh, you think you're valiant, do you? Let's see if you can even comprehend what true valor means.");
-            }
-            else if (speech.Contains("yes") && HasPreviousSpeech(30))
-            {
-                Say("Valor, you say? Well, prove it! When you're lost in the wilderness, will you flee like a coward or find your way like a true adventurer?");
-            }
-            else if (speech.Contains("cartographer"))
-            {
-                Say("Ah, so you've heard of cartography! It's the art and science of drawing maps. But it's not just scribbles on parchment; it's about understanding the world! Have you ever used a map I've drawn?");
-            }
-            else if (speech.Contains("hardships"))
-            {
-                Say("Ha! I've traversed treacherous terrains, crossed mountains, and braved deserts. All to create the perfect map! You think it's easy? Have you faced any battles yourself?");
-            }
-            else if (speech.Contains("mapping"))
-            {
-                Say("Mapping isn't just about charting unknown lands. It's about giving adventurers a beacon of hope, a guide through darkness. But I doubt you understand the intricacies of my work. Ever tried your hand at mapmaking?");
-            }
-            else if (speech.Contains("valor"))
-            {
-                Say("Valor isn't about showcasing strength. It's about pushing on even when the path is unclear. I've seen many who've claimed to be brave, but few who truly are. Show me an artifact of true bravery, and perhaps you'll earn a reward.");
-            }
-            else if (speech.Contains("adventurer"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Ah, the spirit of an adventurer! Always seeking, always exploring. If you're truly an adventurer, you'll appreciate the gift of a map. Here, take this. It might help you on your journey.");
-                    from.AddToBackpack(new FocusAugmentCrystal()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("I am Longitude Larry, the world's most renowned cartographer. But what do you care?");
 
-            base.OnSpeech(e);
+            greeting.AddOption("Tell me about your job.",
+                player => true,
+                player =>
+                {
+                    DialogueModule jobModule = new DialogueModule("My job? I'm a cartographer, mapping this wretched world for fools like you who can't find their way!");
+                    jobModule.AddOption("What does a cartographer do?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule cartographyModule = new DialogueModule("A cartographer collects data from explorations and creates detailed maps to guide adventurers. It's more art than science, you know.");
+                            cartographyModule.AddOption("What kind of maps do you create?",
+                                p => true,
+                                p =>
+                                {
+                                    DialogueModule mapTypesModule = new DialogueModule("I specialize in various maps: topographical, political, and even treasure maps! Each serves a unique purpose for those brave enough to venture into the unknown.");
+                                    mapTypesModule.AddOption("Do you have a treasure map?",
+                                        plq => true,
+                                        plq =>
+                                        {
+                                            DialogueModule treasureMapModule = new DialogueModule("Ah, treasure maps! They hold the secrets to hidden riches. Unfortunately, I don't have any at the moment, but keep an eye out for them!");
+                                            pl.SendGump(new DialogueGump(pl, treasureMapModule));
+                                        });
+                                    p.SendGump(new DialogueGump(p, mapTypesModule));
+                                });
+                            pl.SendGump(new DialogueGump(pl, cartographyModule));
+                        });
+                    jobModule.AddOption("What about battles?",
+                        p => true,
+                        p =>
+                        {
+                            DialogueModule battlesModule = new DialogueModule("Oh, you think you're valiant, do you? Let's see if you can even comprehend what true valor means.");
+                            battlesModule.AddOption("Tell me about valor.",
+                                pl => true,
+                                pl =>
+                                {
+                                    DialogueModule valorModule = new DialogueModule("Valor is not simply the absence of fear; it's the courage to face the unknown, even when the odds are against you.");
+                                    valorModule.AddOption("Have you shown valor?",
+                                        p2 => true,
+                                        p2 =>
+                                        {
+                                            DialogueModule myValorModule = new DialogueModule("Indeed! I once braved the treacherous Ice Peaks to recover lost maps from a ruined outpost. Many perished there, but I returned with knowledge that changed the world!");
+                                            p2.SendGump(new DialogueGump(p2, myValorModule));
+                                        });
+                                    pl.SendGump(new DialogueGump(pl, valorModule));
+                                });
+                            p.SendGump(new DialogueGump(p, battlesModule));
+                        });
+                    player.SendGump(new DialogueGump(player, jobModule));
+                });
+
+            greeting.AddOption("What hardships have you faced?",
+                player => true,
+                player =>
+                {
+                    DialogueModule hardshipsModule = new DialogueModule("Ha! I've traversed treacherous terrains, crossed mountains, and braved deserts. All to create the perfect map! You think it's easy? Have you faced any battles yourself?");
+                    hardshipsModule.AddOption("What was the hardest journey?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule hardestJourneyModule = new DialogueModule("The hardest was undoubtedly my expedition to the Abyssal Depths. The darkness is palpable, and the creatures lurking there are more terrifying than any beast in this realm.");
+                            hardestJourneyModule.AddOption("Did you encounter any monsters?",
+                                p => true,
+                                p =>
+                                {
+                                    DialogueModule monsterModule = new DialogueModule("Indeed! I encountered shadow wraiths and cave trolls. They are vicious and relentless, but I managed to escape with my life and some valuable knowledge.");
+                                    p.SendGump(new DialogueGump(p, monsterModule));
+                                });
+                            pl.SendGump(new DialogueGump(pl, hardestJourneyModule));
+                        });
+                    hardshipsModule.AddOption("Tell me about mapping.",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule mappingModule = new DialogueModule("Mapping isn't just about charting unknown lands. It's about giving adventurers a beacon of hope, a guide through darkness. But I doubt you understand the intricacies of my work. Ever tried your hand at mapmaking?");
+                            mappingModule.AddOption("No, but I’d like to learn.",
+                                p => true,
+                                p =>
+                                {
+                                    DialogueModule learnModule = new DialogueModule("Mapmaking requires precision and an eye for detail. You must understand the geography and the stories behind each landmark. Would you like to hear about specific techniques?");
+                                    learnModule.AddOption("Yes, please tell me!",
+                                        plw => true,
+                                        plw =>
+                                        {
+                                            DialogueModule techniquesModule = new DialogueModule("You must master triangulation for accurate positioning, and understanding weather patterns is vital to predict changes in terrain. Patience is key in this art.");
+                                            pl.SendGump(new DialogueGump(pl, techniquesModule));
+                                        });
+                                    p.SendGump(new DialogueGump(p, learnModule));
+                                });
+                            pl.SendGump(new DialogueGump(pl, mappingModule));
+                        });
+                    player.SendGump(new DialogueGump(player, hardshipsModule));
+                });
+
+            greeting.AddOption("Do you have a reward for adventurers?",
+                player => true,
+                player =>
+                {
+                    TimeSpan cooldown = TimeSpan.FromMinutes(10);
+                    if (DateTime.UtcNow - lastRewardTime < cooldown)
+                    {
+                        SayToPlayer(player, "I have no reward right now. Please return later.");
+                    }
+                    else
+                    {
+                        SayToPlayer(player, "Ah, the spirit of an adventurer! Always seeking, always exploring. Here, take this map. It might help you on your journey.");
+                        player.AddToBackpack(new FocusAugmentCrystal()); // Give the reward
+                        lastRewardTime = DateTime.UtcNow; // Update the timestamp
+                    }
+                    player.SendGump(new DialogueGump(player, CreateGreetingModule()));
+                });
+
+            return greeting;
+        }
+
+        private void SayToPlayer(Mobile player, string message)
+        {
+            player.SendMessage(message);
         }
 
         private bool HasPreviousSpeech(int entryNumber)
         {
-            // This is a placeholder method for determining if a previous speech entry was triggered.
-            // Implement logic based on your specific requirements or data storage.
+            // Placeholder for previous speech logic; implement as needed
             return true;
         }
 

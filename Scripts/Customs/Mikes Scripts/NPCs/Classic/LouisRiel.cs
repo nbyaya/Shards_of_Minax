@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -17,10 +18,10 @@ namespace Server.Mobiles
             Body = 0x190; // Human male body
 
             // Stats
-            Str = 90;
-            Dex = 85;
-            Int = 95;
-            Hits = 75;
+            SetStr(90);
+            SetDex(85);
+            SetInt(95);
+            SetHits(75);
 
             // Appearance
             AddItem(new LongPants() { Hue = 1105 });
@@ -34,85 +35,212 @@ namespace Server.Mobiles
 
             SpeechHue = 0; // Default speech hue
 
-            // Initialize the lastRewardTime to a past time
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
 
-            if (speech.Contains("name"))
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("Oh, another curious traveler, I suppose. What do you want?");
+            
+            greeting.AddOption("Tell me your name.",
+                player => true,
+                player => player.SendGump(new DialogueGump(player, CreateNameModule())));
+
+            greeting.AddOption("How is your health?",
+                player => true,
+                player => player.SendGump(new DialogueGump(player, CreateHealthModule())));
+
+            greeting.AddOption("What do you do?",
+                player => true,
+                player => player.SendGump(new DialogueGump(player, CreateJobModule())));
+
+            greeting.AddOption("Tell me about battles.",
+                player => true,
+                player => player.SendGump(new DialogueGump(player, CreateBattlesModule())));
+
+            greeting.AddOption("What about redemption?",
+                player => true,
+                player => player.SendGump(new DialogueGump(player, CreateRedemptionModule())));
+
+            return greeting;
+        }
+
+        private DialogueModule CreateNameModule()
+        {
+            DialogueModule nameModule = new DialogueModule("My name? I'm Louis Riel. But a name is just a label in this world, isn't it?");
+            nameModule.AddOption("Tell me more about your legend.",
+                player => true,
+                player => player.SendGump(new DialogueGump(player, CreateGreetingModule())));
+            return nameModule;
+        }
+
+        private DialogueModule CreateHealthModule()
+        {
+            DialogueModule healthModule = new DialogueModule("My health? Why do you care? I'm not your healer, am I?");
+            healthModule.AddOption("You seem troubled.",
+                player => true,
+                player => player.SendGump(new DialogueGump(player, CreateTroubledHealthModule())));
+            return healthModule;
+        }
+
+        private DialogueModule CreateTroubledHealthModule()
+        {
+            DialogueModule troubledHealthModule = new DialogueModule("Yes, the weight of the past is heavy. But what of you? Do you carry burdens of your own?");
+            troubledHealthModule.AddOption("I have my struggles.",
+                player => true,
+                player => player.SendGump(new DialogueGump(player, CreateStrugglesModule())));
+            troubledHealthModule.AddOption("What can I do to help?",
+                player => true,
+                player => {
+                    troubledHealthModule.AddOption("I could gather herbs or potions for you.",
+                        pl => true,
+                        pl => {
+                            // Implement quest or task for the player
+                            pl.SendMessage("Louis considers your offer.");
+                        });
+                    player.SendGump(new DialogueGump(player, troubledHealthModule));
+                });
+            return troubledHealthModule;
+        }
+
+        private DialogueModule CreateStrugglesModule()
+        {
+            return new DialogueModule("Struggles are a part of life, but some are harder to bear than others. Tell me, what weighs on your heart?");
+        }
+
+        private DialogueModule CreateJobModule()
+        {
+            DialogueModule jobModule = new DialogueModule("My job? What a laugh! I'm just another pawn in this wretched world's game.");
+            jobModule.AddOption("Do you regret it?",
+                player => true,
+                player => {
+                    jobModule.AddOption("Sometimes. But there are moments of joy.",
+                        pl => true,
+                        pl => pl.SendGump(new DialogueGump(pl, CreateJoyfulMomentsModule())));
+                    jobModule.AddOption("Not at all. It shapes who I am.",
+                        pl => true,
+                        pl => pl.SendGump(new DialogueGump(pl, CreateNoRegretModule())));
+                    player.SendGump(new DialogueGump(player, jobModule));
+                });
+            return jobModule;
+        }
+
+        private DialogueModule CreateJoyfulMomentsModule()
+        {
+            return new DialogueModule("Ah, those fleeting moments when hope shines through the darkness. Perhaps we should cherish them more.");
+        }
+
+        private DialogueModule CreateNoRegretModule()
+        {
+            return new DialogueModule("Every choice, every hardship, has led me to this moment. I wouldn't change a thing.");
+        }
+
+        private DialogueModule CreateBattlesModule()
+        {
+            DialogueModule battlesModule = new DialogueModule("Valor? Ha! There's no valor in a world full of deceit and betrayal. But enough about me, what about you?");
+            battlesModule.AddOption("I've faced my share of battles.",
+                player => true,
+                player => player.SendGump(new DialogueGump(player, CreateYourBattlesModule())));
+            battlesModule.AddOption("Tell me about your battles.",
+                player => true,
+                player => player.SendGump(new DialogueGump(player, CreateMyBattlesModule())));
+            return battlesModule;
+        }
+
+        private DialogueModule CreateYourBattlesModule()
+        {
+            return new DialogueModule("Each battle shapes us, doesn't it? What have you fought for? Is it honor, revenge, or perhaps something more?");
+        }
+
+        private DialogueModule CreateMyBattlesModule()
+        {
+            DialogueModule myBattlesModule = new DialogueModule("I've fought for causes I believed in, yet often found myself surrounded by betrayal. It is a harsh lesson in trust.");
+            myBattlesModule.AddOption("What did you learn from it?",
+                player => true,
+                player => player.SendGump(new DialogueGump(player, CreateBattleLessonsModule())));
+            return myBattlesModule;
+        }
+
+        private DialogueModule CreateBattleLessonsModule()
+        {
+            return new DialogueModule("Trust is fragile, and loyalty is rare. Sometimes, the fiercest battles are fought within ourselves.");
+        }
+
+        private DialogueModule CreateRedemptionModule()
+        {
+            DialogueModule redemptionModule = new DialogueModule("Redemption is a tricky thing. Some say it's never too late, others believe some deeds can never be undone. What's your take on forgiveness?");
+            redemptionModule.AddOption("Forgiveness is essential.",
+                player => true,
+                player => player.SendGump(new DialogueGump(player, CreateForgivenessModule())));
+            redemptionModule.AddOption("I don't believe in redemption.",
+                player => true,
+                player => player.SendGump(new DialogueGump(player, CreateGreetingModule())));
+            return redemptionModule;
+        }
+
+        private DialogueModule CreateForgivenessModule()
+        {
+            DialogueModule forgivenessModule = new DialogueModule("Yes, it can lighten the soul. But can we ever truly forgive ourselves? That’s a burden many carry.");
+            forgivenessModule.AddOption("How do you seek forgiveness?",
+                player => true,
+                player => {
+                    forgivenessModule.AddOption("By making amends and helping others.",
+                        pl => true,
+                        pl => pl.SendGump(new DialogueGump(pl, CreateMakingAmendsModule())));
+                    forgivenessModule.AddOption("I struggle with it.",
+                        pl => true,
+                        pl => pl.SendGump(new DialogueGump(pl, CreateStruggleForgivenessModule())));
+                    player.SendGump(new DialogueGump(player, forgivenessModule));
+                });
+            return forgivenessModule;
+        }
+
+        private DialogueModule CreateMakingAmendsModule()
+        {
+            return new DialogueModule("That is noble. Helping others is a step towards healing the wounds of the past.");
+        }
+
+        private DialogueModule CreateStruggleForgivenessModule()
+        {
+            return new DialogueModule("It's a difficult path, but recognizing our mistakes is the first step. You are not alone in this journey.");
+        }
+
+        private DialogueModule CreateCurseModule()
+        {
+            DialogueModule curseModule = new DialogueModule("The curse? It's not just of ill health. It's the curse of memories, of dreams lost. But for your kindness in asking, take this reward. It might help you on your journey.");
+
+            TimeSpan cooldown = TimeSpan.FromMinutes(10);
+            if (DateTime.UtcNow - lastRewardTime < cooldown)
             {
-                Say("Oh, another curious traveler, I suppose. What do you want?");
+                curseModule.AddOption("What about the reward?",
+                    player => true,
+                    player => player.SendGump(new DialogueGump(player, CreateNoRewardModule())));
             }
-            else if (speech.Contains("health"))
+            else
             {
-                Say("My health? Why do you care? I'm not your healer, am I?");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My job? What a laugh! I'm just another pawn in this wretched world's game.");
-            }
-            else if (speech.Contains("battles"))
-            {
-                Say("Valor? Ha! There's no valor in a world full of deceit and betrayal. But enough about me, what about you?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("Hmm, you're either a fool or an optimist. Tell me, do you think you'll survive this harsh world?");
-            }
-            else if (speech.Contains("louis"))
-            {
-                Say("My name? I'm Louis Riel. But a name is just a label in this world, isn't it? Have you heard of the legend of my past?");
-            }
-            else if (speech.Contains("care"))
-            {
-                Say("Well, if you must know, my health has seen better days. This world takes a toll on you. Ever experienced the curse of this land?");
-            }
-            else if (speech.Contains("laugh"))
-            {
-                Say("I was once a leader, fighting for what I believed in. Now, I'm a mere shadow, haunted by my past decisions. Do you believe in redemption?");
-            }
-            else if (speech.Contains("legend"))
-            {
-                Say("Ah, the legend. It speaks of battles fought, of valor and sacrifice. But legends can be twisted tales. Have you ever sought the truth in them?");
-            }
-            else if (speech.Contains("curse"))
-            {
-                Say("The curse? It's not just of ill health. It's the curse of memories, of dreams lost. But for your kindness in asking, take this reward. It might help you on your journey.");
-                // Reward
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    from.AddToBackpack(new MaxxiaScroll()); // Adjust the item type as needed
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-            else if (speech.Contains("redemption"))
-            {
-                Say("Redemption is a tricky thing. Some say it's never too late, others believe some deeds can never be undone. What's your take on forgiveness?");
-            }
-            else if (speech.Contains("truth"))
-            {
-                Say("Truth is a double-edged sword. Sometimes it sets you free, other times it chains you down. But seeking it is a noble quest. Do you always seek the path of truth?");
-            }
-            else if (speech.Contains("reward"))
-            {
-                // This response is handled in the "curse" section already
-                Say("If you seek a reward, speak of the curse or ask me again later.");
+                curseModule.AddOption("Thank you for the reward!",
+                    player => true,
+                    player => {
+                        player.AddToBackpack(new MaxxiaScroll()); // Adjust the item type as needed
+                        lastRewardTime = DateTime.UtcNow; // Update the timestamp
+                    });
             }
 
-            base.OnSpeech(e);
+            return curseModule;
+        }
+
+        private DialogueModule CreateNoRewardModule()
+        {
+            return new DialogueModule("I have no reward right now. Please return later.");
         }
 
         public LouisRiel(Serial serial) : base(serial) { }

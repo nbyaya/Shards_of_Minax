@@ -1,6 +1,8 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
+using Server.Network;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -17,10 +19,10 @@ namespace Server.Mobiles
             Body = 0x190; // Human male body
 
             // Stats
-            Str = 80;
-            Dex = 60;
-            Int = 110;
-            Hits = 60;
+            SetStr(80);
+            SetDex(60);
+            SetInt(110);
+            SetHits(60);
 
             // Appearance
             AddItem(new Robe() { Hue = 1155 });
@@ -33,91 +35,186 @@ namespace Server.Mobiles
 
             // Initialize the lastRewardTime to a past time
             lastRewardTime = DateTime.MinValue;
-
             SpeechHue = 0; // Default speech hue
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
 
-            if (speech.Contains("name"))
-            {
-                Say("Greetings, traveler. I am Professor Euclid, a humble philosopher.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("My physical well-being is irrelevant in the grand scheme of existence.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My occupation, if you must label it so, is the pursuit of knowledge and wisdom.");
-            }
-            else if (speech.Contains("battles"))
-            {
-                Say("Indeed, the battles I wage are in the realm of ideas. Do you seek knowledge, traveler?");
-            }
-            else if (speech.Contains("knowledge") && !speech.Contains("traveler"))
-            {
-                Say("Yes, every day is a journey into the depths of understanding. In my studies, I've discovered ancient texts that few have seen.");
-            }
-            else if (speech.Contains("traveler"))
-            {
-                Say("Then let us engage in discourse. What questions do you have, or what thoughts weigh upon your mind?");
-            }
-            else if (speech.Contains("farewell"))
-            {
-                Say("Very well, traveler. Your thoughts are your own to ponder. Farewell.");
-            }
-            else if (speech.Contains("euclid"))
-            {
-                Say("Ah, the name 'Euclid' originates from a great geometrician of ancient times. Geometry is a passion of mine.");
-            }
-            else if (speech.Contains("scheme"))
-            {
-                Say("The true essence of existence delves far deeper than our mortal coil. The universe holds many mysteries, don't you think?");
-            }
-            else if (speech.Contains("ideas"))
-            {
-                Say("It is in the realm of ideas where the fiercest battles are fought. Thoughts are potent weapons. One such idea I ponder is the concept of destiny.");
-            }
-            else if (speech.Contains("geometry"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Geometry is the branch of mathematics involving points, lines, and shapes. It's fascinating how the universe's design can be understood through it. Here, take this as a token for your curiosity.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Replace with actual item ID if necessary
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-            else if (speech.Contains("universe"))
-            {
-                Say("The universe is vast and infinite, filled with stars, galaxies, and dark matter. Its complexities could take lifetimes to understand.");
-            }
-            else if (speech.Contains("ancient"))
-            {
-                Say("These texts speak of forgotten civilizations and lost knowledge. Some even hint at hidden treasures in distant lands.");
-            }
-            else if (speech.Contains("destiny"))
-            {
-                Say("Many believe in a predetermined fate, while others see life as a series of choices. The debate between fate and free will is eternal.");
-            }
-            else if (speech.Contains("reality"))
-            {
-                Say("Reality is both subjective and objective. Our perceptions shape it, yet there are truths that remain constant. Such as the age-old question: if a tree falls in a forest and no one is around, does it make a sound?");
-            }
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("Greetings, traveler. I am Professor Euclid, a humble philosopher. What thoughts weigh upon your mind?");
 
-            base.OnSpeech(e);
+            greeting.AddOption("Tell me about geometry.",
+                player => true,
+                player =>
+                {
+                    DialogueModule geometryModule = new DialogueModule("Geometry is not merely a branch of mathematics; it is the language in which the universe is written. Would you like to explore its philosophical implications?");
+                    geometryModule.AddOption("Yes, please elaborate.",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule philosophyModule = new DialogueModule("Geometry embodies the interplay between form and abstraction. It raises profound questions about existence, space, and the nature of reality. What aspect interests you most?");
+                            philosophyModule.AddOption("The nature of space.",
+                                p => true,
+                                p =>
+                                {
+                                    DialogueModule spaceModule = new DialogueModule("Space, dear traveler, is the canvas upon which the universe paints its myriad wonders. It compels us to ponder: Is space an entity of its own, or merely a context for objects?");
+                                    spaceModule.AddOption("Is space infinite?",
+                                        plq => true,
+                                        plq =>
+                                        {
+                                            DialogueModule infiniteSpaceModule = new DialogueModule("Ah, the infinite! Many philosophers and mathematicians have debated whether space extends forever or is bounded by some cosmic boundary. What do you think?");
+                                            infiniteSpaceModule.AddOption("I believe space is infinite.",
+                                                pw => true,
+                                                pw =>
+                                                {
+                                                    p.SendMessage("Professor Euclid nods thoughtfully. 'Indeed, the concept of infinity challenges our understanding and imagination.'");
+                                                });
+                                            infiniteSpaceModule.AddOption("I think it must be finite.",
+                                                pe => true,
+                                                pe =>
+                                                {
+                                                    p.SendMessage("Professor Euclid raises an eyebrow. 'A curious perspective! If space is finite, what lies beyond its edges? Such questions inspire deeper exploration.'");
+                                                });
+                                            pl.SendGump(new DialogueGump(pl, infiniteSpaceModule));
+                                        });
+                                    spaceModule.AddOption("What about dimensions?",
+                                        plr => true,
+                                        plr =>
+                                        {
+                                            DialogueModule dimensionModule = new DialogueModule("Dimensions are fascinating constructs. In our realm, we perceive three dimensions—length, width, and height. But what of higher dimensions? How do they shape our understanding of reality?");
+                                            dimensionModule.AddOption("What are higher dimensions?",
+                                                pt => true,
+                                                pt =>
+                                                {
+                                                    DialogueModule higherDimModule = new DialogueModule("Higher dimensions can be visualized as extensions beyond our perception. For instance, a tesseract is a four-dimensional cube. It challenges our spatial intuitions and reveals deeper truths about the universe.");
+                                                    higherDimModule.AddOption("That sounds intriguing!",
+                                                        ply => true,
+                                                        ply =>
+                                                        {
+                                                            pl.SendGump(new DialogueGump(pl, higherDimModule));
+                                                        });
+                                                    p.SendGump(new DialogueGump(p, higherDimModule));
+                                                });
+                                            pl.SendGump(new DialogueGump(pl, dimensionModule));
+                                        });
+                                    pl.SendGump(new DialogueGump(pl, spaceModule));
+                                });
+                            philosophyModule.AddOption("The relationship between form and function.",
+                                p => true,
+                                p =>
+                                {
+                                    DialogueModule formFunctionModule = new DialogueModule("The relationship between form and function in geometry is paramount. Form provides structure, while function lends purpose. Consider the shapes in nature—how they serve both aesthetic and practical roles.");
+                                    formFunctionModule.AddOption("Can you give an example?",
+                                        plu => true,
+                                        plu =>
+                                        {
+                                            DialogueModule exampleModule = new DialogueModule("Take the honeycomb, for instance. Its hexagonal structure maximizes space and efficiency, embodying nature's geometric genius. Such harmony between form and function invites us to appreciate the design of the world around us.");
+                                            pl.SendGump(new DialogueGump(pl, exampleModule));
+                                        });
+                                    pl.SendGump(new DialogueGump(pl, formFunctionModule));
+                                });
+                            player.SendGump(new DialogueGump(player, philosophyModule));
+                        });
+
+                    geometryModule.AddOption("How does geometry relate to art?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule artModule = new DialogueModule("Geometry has a profound influence on art. Artists utilize shapes, lines, and symmetry to create harmony and balance in their work. The Golden Ratio, for example, is often employed to achieve aesthetic appeal.");
+                            artModule.AddOption("What is the Golden Ratio?",
+                                p => true,
+                                p =>
+                                {
+                                    DialogueModule goldenRatioModule = new DialogueModule("The Golden Ratio, approximately 1.618, is a mathematical ratio that appears in nature, architecture, and art. It creates balance and beauty, guiding artists in their compositions.");
+                                    goldenRatioModule.AddOption("Can you show me examples?",
+                                        pli => true,
+                                        pli =>
+                                        {
+                                            DialogueModule examplesModule = new DialogueModule("You can observe the Golden Ratio in the Parthenon, da Vinci's works, and even in the spiral patterns of seashells. Its prevalence underscores the intrinsic connection between mathematics and beauty.");
+                                            pl.SendGump(new DialogueGump(pl, examplesModule));
+                                        });
+                                    p.SendGump(new DialogueGump(p, goldenRatioModule));
+                                });
+                            player.SendGump(new DialogueGump(player, artModule));
+                        });
+                    player.SendGump(new DialogueGump(player, geometryModule));
+                });
+
+            greeting.AddOption("What do you think about the philosophy of knowledge?",
+                player => true,
+                player =>
+                {
+                    DialogueModule knowledgePhilosophyModule = new DialogueModule("The philosophy of knowledge intertwines with geometry in profound ways. Knowledge shapes our understanding of reality, and geometry provides the framework for that understanding. What intrigues you?");
+                    knowledgePhilosophyModule.AddOption("How do we acquire knowledge?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule acquisitionModule = new DialogueModule("Knowledge is acquired through experience, observation, and reason. Geometry teaches us to observe patterns and relationships, enhancing our comprehension of the world.");
+                            player.SendGump(new DialogueGump(player, acquisitionModule));
+                        });
+                    knowledgePhilosophyModule.AddOption("Is knowledge objective or subjective?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule objectivityModule = new DialogueModule("Ah, the eternal debate! Some argue that knowledge is objective, rooted in universal truths, while others contend it is subjective, shaped by personal experiences. Geometry often straddles both realms.");
+                            player.SendGump(new DialogueGump(player, objectivityModule));
+                        });
+                    player.SendGump(new DialogueGump(player, knowledgePhilosophyModule));
+                });
+
+            greeting.AddOption("What about the intersection of geometry and nature?",
+                player => true,
+                player =>
+                {
+                    DialogueModule natureGeometryModule = new DialogueModule("Nature is a master of geometry. From the Fibonacci sequence in sunflowers to the hexagonal patterns in beehives, geometry reveals itself in the most unexpected places.");
+                    natureGeometryModule.AddOption("Can you explain the Fibonacci sequence?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule fibonacciModule = new DialogueModule("The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones. It appears frequently in nature, such as in the arrangement of leaves, the branching of trees, and the patterns of flowers.");
+                            player.SendGump(new DialogueGump(player, fibonacciModule));
+                        });
+                    player.SendGump(new DialogueGump(player, natureGeometryModule));
+                });
+
+            greeting.AddOption("What are your thoughts on destiny?",
+                player => true,
+                player =>
+                {
+                    DialogueModule destinyModule = new DialogueModule("Destiny, like geometry, raises profound questions. Is our path predetermined, or do we carve it through our choices? Just as a line extends infinitely, so too does our potential.");
+                    destinyModule.AddOption("Is destiny fixed?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule fixedDestinyModule = new DialogueModule("Some philosophies suggest that destiny is fixed, akin to a geometric shape defined by its angles and sides. Others argue that we possess the power to alter our trajectory, like adjusting the path of a line.");
+                            player.SendGump(new DialogueGump(player, fixedDestinyModule));
+                        });
+                    destinyModule.AddOption("How do choices influence destiny?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule choicesModule = new DialogueModule("Each choice we make carves a path through the fabric of destiny, much like a geometric proof builds upon previous axioms. Our decisions shape the outcome of our lives and the world around us.");
+                            player.SendGump(new DialogueGump(player, choicesModule));
+                        });
+                    player.SendGump(new DialogueGump(player, destinyModule));
+                });
+
+            greeting.AddOption("Farewell.",
+                player => true,
+                player =>
+                {
+                    player.SendMessage("Very well, traveler. Your thoughts are your own to ponder. Farewell.");
+                });
+
+            return greeting;
         }
 
         public ProfessorEuclid(Serial serial) : base(serial) { }

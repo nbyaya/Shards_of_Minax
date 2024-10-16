@@ -3,137 +3,220 @@ using Server;
 using Server.Mobiles;
 using Server.Items;
 
-namespace Server.Mobiles
+[CorpseName("the corpse of Miss Nixie")]
+public class MissNixie : BaseCreature
 {
-    [CorpseName("the corpse of Miss Nixie")]
-    public class MissNixie : BaseCreature
+    private DateTime lastRewardTime;
+
+    [Constructable]
+    public MissNixie() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "Miss Nixie";
+        Body = 0x191; // Human female body
 
-        [Constructable]
-        public MissNixie() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Miss Nixie";
-            Body = 0x191; // Human female body
+        // Stats
+        SetStr(50);
+        SetDex(70);
+        SetInt(90);
+        SetHits(45);
 
-            // Stats
-            Str = 50;
-            Dex = 70;
-            Int = 90;
-            Hits = 45;
+        // Appearance
+        AddItem(new LeatherArms() { Name = "Nixie's Leather Sleeves" });
+        AddItem(new LeatherChest() { Name = "Nixie's Leather Bustier" });
+        AddItem(new LeatherGloves() { Name = "Nixie's Leather Gloves" });
+        AddItem(new LeatherLegs() { Name = "Nixie's Leather Skirt" });
+        AddItem(new LeatherCap() { Name = "Nixie's Leather Cap" });
+        AddItem(new Boots() { Name = "Nixie's Boots" });
+        AddItem(new Cloak() { Name = "Nixie's Mortar and Pestle" });
 
-            // Appearance
-            AddItem(new LeatherArms() { Name = "Nixie's Leather Sleeves" });
-            AddItem(new LeatherChest() { Name = "Nixie's Leather Bustier" });
-            AddItem(new LeatherGloves() { Name = "Nixie's Leather Gloves" });
-            AddItem(new LeatherLegs() { Name = "Nixie's Leather Skirt" });
-            AddItem(new LeatherCap() { Name = "Nixie's Leather Cap" });
-            AddItem(new Boots() { Name = "Nixie's Boots" });
-            AddItem(new Cloak() { Name = "Nixie's Mortar and Pestle" });
+        Hue = Utility.RandomSkinHue();
+        HairItemID = Utility.RandomList(0x203B, 0x203C); // Random female hair
+        HairHue = Utility.RandomHairHue();
 
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(Female);
-            HairHue = Race.RandomHairHue();
+        SpeechHue = 0; // Default speech hue
 
-            // Speech Hue
-            SpeechHue = 0; // Default speech hue
+        lastRewardTime = DateTime.MinValue;
+    }
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
-        }
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
 
-            if (!from.InRange(this, 3))
-                return;
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("Ah, a curious traveler! I am Miss Nixie, the cunning thief! What brings you to my corner of the world?");
 
-            string speech = e.Speech.ToLower();
+        greeting.AddOption("What do you do?",
+            player => true,
+            player =>
+            {
+                DialogueModule jobModule = new DialogueModule("Oh, I specialize in acquiring valuable items, shall we say? My skills allow me to relieve the unwary of their treasures! Are you intrigued?");
+                jobModule.AddOption("Yes, tell me more!",
+                    p => true,
+                    p => 
+                    {
+                        DialogueModule moreJobModule = new DialogueModule("Thievery is an art, one must have finesse and a quick wit. I’ve pilfered jewels from under the noses of nobles! Do you have the heart for such work?");
+                        moreJobModule.AddOption("Absolutely!",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, new DialogueModule("Very well! Let’s discuss some techniques!")));
+                            });
+                        moreJobModule.AddOption("No, I prefer a safer path.",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, new DialogueModule("A wise choice, perhaps! Life as a thief is fraught with danger. Be cautious!")));
+                            });
+                        p.SendGump(new DialogueGump(p, moreJobModule));
+                    });
+                player.SendGump(new DialogueGump(player, jobModule));
+            });
 
-            if (speech.Contains("name"))
+        greeting.AddOption("Tell me about your escapades.",
+            player => true,
+            player =>
             {
-                Say("I am Miss Nixie, the cunning thief!");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("I'm in perfect health, always ready for a quick escape!");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My job? Well, let's just say I specialize in acquiring valuable items.");
-            }
-            else if (speech.Contains("battles"))
-            {
-                Say("Thievery is an art, wouldn't you agree? Do you have what it takes to be a master thief?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("So, are you daring enough to join the ranks of thieves and outlaws?");
-            }
-            else if (speech.Contains("no"))
-            {
-                Say("Oh, a coward, are you? Well, not everyone has the cunning and audacity required for a life of thievery.");
-            }
-            else if (speech.Contains("nixie"))
-            {
-                Say("Ah, you've heard of me, haven't you? Stories of my escapades often reach the corners of the kingdom.");
-            }
-            else if (speech.Contains("escape"))
-            {
-                Say("It's not just about escaping, it's about knowing when to strike and when to vanish into the shadows. Have you ever hidden in the shadows?");
-            }
-            else if (speech.Contains("valuable"))
-            {
-                Say("You'd be surprised at the treasures that people just leave unattended. Ever wonder about the most precious item I've pilfered?");
-            }
-            else if (speech.Contains("escapades"))
-            {
-                Say("Once, I stole the crown jewels from the very castle itself! All while the king's guards were mere steps away.");
-            }
-            else if (speech.Contains("shadows"))
-            {
-                Say("The shadows are a thief's best ally. With the right skills, one can blend in and become nearly invisible. Have you ever wanted to learn such skills?");
-            }
-            else if (speech.Contains("precious"))
-            {
-                Say("The most precious item I've ever taken? Ah, that would be the heart-shaped locket from the duchess. But not for its material value... Do you know the story behind it?");
-            }
-            else if (speech.Contains("skills"))
-            {
-                Say("If you're truly interested, I might be persuaded to teach you a trick or two. But it'll cost you. Are you willing to pay the price?");
-            }
-            else if (speech.Contains("price"))
-            {
-                if (DateTime.UtcNow - lastRewardTime < TimeSpan.FromMinutes(10))
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Very well. Give me a moment... Here, this trinket will aid you in your endeavors. Use it wisely and remember, discretion is key.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Assuming RobeOfTheJabba is a valid item in your server
-                    lastRewardTime = DateTime.UtcNow;
-                }
-            }
+                DialogueModule escapadesModule = new DialogueModule("Ah, my escapades are legendary! Once, I stole the crown jewels from the very castle itself! Guards were mere steps away.");
+                escapadesModule.AddOption("How did you pull that off?",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Timing, my friend! Timing is everything. I waited until the guards were busy with a feast, and I slipped in, light as a feather.")));
+                    });
+                escapadesModule.AddOption("What’s the most valuable thing you’ve taken?",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Ah, the most precious item? A heart-shaped locket belonging to the duchess. Not for its material worth, but the story it carries...")));
+                    });
+                player.SendGump(new DialogueGump(player, escapadesModule));
+            });
 
-            base.OnSpeech(e);
-        }
+        greeting.AddOption("Do you have any valuable items?",
+            player => true,
+            player =>
+            {
+                DialogueModule valuableModule = new DialogueModule("You'd be surprised at the treasures people leave unattended! But the most valuable of all is knowledge. Ever wonder about the secrets of my craft?");
+                valuableModule.AddOption("What do you mean?",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("The art of thievery isn't just about taking; it’s about understanding people and their habits. Would you like to learn a trick or two?")));
+                    });
+                valuableModule.AddOption("I think I’d rather not.",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Wise choice! Knowledge can be a double-edged sword.")));
+                    });
+                player.SendGump(new DialogueGump(player, valuableModule));
+            });
 
-        public MissNixie(Serial serial) : base(serial) { }
+        greeting.AddOption("Can you teach me skills?",
+            player => true,
+            player =>
+            {
+                DialogueModule skillsModule = new DialogueModule("If you're truly interested, I might teach you a trick or two! But it'll cost you. Are you willing to pay the price?");
+                skillsModule.AddOption("What is the price?",
+                    p => true,
+                    p =>
+                    {
+                        if (DateTime.UtcNow - lastRewardTime < TimeSpan.FromMinutes(10))
+                        {
+                            p.SendMessage("I have no reward right now. Please return later.");
+                        }
+                        else
+                        {
+                            p.SendMessage("Very well. Give me a moment... Here, this trinket will aid you in your endeavors. Use it wisely and remember, discretion is key.");
+                            p.AddToBackpack(new MaxxiaScroll()); // Assuming MaxxiaScroll is a valid item
+                            lastRewardTime = DateTime.UtcNow;
+                        }
+                    });
+                player.SendGump(new DialogueGump(player, skillsModule));
+            });
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
-        }
+        greeting.AddOption("Why do you steal?",
+            player => true,
+            player =>
+            {
+                DialogueModule reasonModule = new DialogueModule("Ah, the thrill of the chase! But also necessity. Life as a thief is not just about greed; it's about survival. Have you ever felt desperation?");
+                reasonModule.AddOption("I understand desperation.",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Then you grasp the essence of my life! In this world, one must do what is needed to survive.")));
+                    });
+                reasonModule.AddOption("I prefer not to engage in such activities.",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("And that is a noble path! Not everyone has the heart for a life on the edge.")));
+                    });
+                player.SendGump(new DialogueGump(player, reasonModule));
+            });
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
-        }
+        greeting.AddOption("Do you fear getting caught?",
+            player => true,
+            player =>
+            {
+                DialogueModule fearModule = new DialogueModule("Fear is part of the game! A thief must always be aware of their surroundings. It sharpens the mind. Ever had a close call?");
+                fearModule.AddOption("Yes, once I nearly got caught!",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Ah, the adrenaline rush! Did you manage to escape?")));
+                    });
+                fearModule.AddOption("No, I’m always careful.",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Caution is wise. It’s better to avoid a dangerous situation than to test your luck.")));
+                    });
+                player.SendGump(new DialogueGump(player, fearModule));
+            });
+
+        greeting.AddOption("What are the risks of thievery?",
+            player => true,
+            player =>
+            {
+                DialogueModule risksModule = new DialogueModule("Oh, the risks are plenty! From the guards to vengeful victims, one misstep can cost you everything. But the rewards can be great! Are you willing to take those risks?");
+                risksModule.AddOption("I live for risks!",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("A true thrill-seeker! You might find yourself quite at home in this life.")));
+                    });
+                risksModule.AddOption("Not really, I prefer stability.",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Wise choice! A stable life is often the happiest.")));
+                    });
+                player.SendGump(new DialogueGump(player, risksModule));
+            });
+
+        return greeting;
+    }
+
+    public MissNixie(Serial serial) : base(serial) { }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0); // version
+        writer.Write(lastRewardTime);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        lastRewardTime = reader.ReadDateTime();
     }
 }

@@ -1,141 +1,233 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
+using Server.Network;
 using Server.Items;
 
-namespace Server.Mobiles
+public class PegLegPete : BaseCreature
 {
-    [CorpseName("the corpse of Peg-leg Pete")]
-    public class PegLegPete : BaseCreature
+    private DateTime lastRewardTime;
+
+    [Constructable]
+    public PegLegPete() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "Peg-leg Pete";
+        Body = 0x190; // Human male body
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(this);
+        HairHue = Race.RandomHairHue();
+        
+        // Stats
+        SetStr(120);
+        SetDex(55);
+        SetInt(20);
+        SetHits(85);
 
-        [Constructable]
-        public PegLegPete() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Peg-leg Pete";
-            Body = 0x190; // Human male body
+        // Appearance
+        AddItem(new TricorneHat() { Hue = 2123 });
+        AddItem(new FancyShirt() { Hue = 38 });
+        AddItem(new ShortPants() { Hue = 2124 });
+        AddItem(new Boots() { Hue = 1170 });
+        AddItem(new Longsword() { Name = "Pete's Blade" });
 
-            // Stats
-            Str = 120;
-            Dex = 55;
-            Int = 20;
-            Hits = 85;
+        lastRewardTime = DateTime.MinValue; // Initialize the last reward time
+    }
 
-            // Appearance
-            AddItem(new TricorneHat() { Hue = 2123 });
-            AddItem(new FancyShirt() { Hue = 38 });
-            AddItem(new ShortPants() { Hue = 2124 });
-            AddItem(new Boots() { Hue = 1170 });
-            AddItem(new Longsword() { Name = "Pete's Blade" });
+    public PegLegPete(Serial serial) : base(serial)
+    {
+    }
 
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(this);
-            HairHue = Race.RandomHairHue();
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-            SpeechHue = 0; // Default speech hue
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
-        }
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("Arrr, I'm Peg-leg Pete, the one-legged pirate! What ye want, landlubber?");
+        
+        greeting.AddOption("Tell me about your adventures.",
+            player => true,
+            player =>
+            {
+                DialogueModule adventuresModule = new DialogueModule("Life on the sea be tough, lad. It takes more than a sharp blade to survive. Be ye up to the challenge?");
+                adventuresModule.AddOption("Aye, I be ready for the challenge!",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, CreateChallengeModule()));
+                    });
+                adventuresModule.AddOption("I think I'll pass.",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                    });
+                player.SendGump(new DialogueGump(player, adventuresModule));
+            });
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+        greeting.AddOption("What do you know about the Lost Jewel of the Sea?",
+            player => true,
+            player =>
+            {
+                DialogueModule jewelModule = new DialogueModule("Aye, the Lost Jewel o' the Sea be a fabled gem, said to be as big as a fist and shinin' brighter than the North Star. Many have sought it, few have lived to tell the tale. If ye ever find it, bring it to me, and I'll make it worth yer while.");
+                jewelModule.AddOption("I'll keep an eye out for it.",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                    });
+                player.SendGump(new DialogueGump(player, jewelModule));
+            });
 
-            if (!from.InRange(this, 3))
-                return;
+        greeting.AddOption("Tell me about your crew.",
+            player => true,
+            player =>
+            {
+                DialogueModule crewModule = new DialogueModule("Aye, me crew be the saltiest bunch of scallywags ye ever did see! But they're loyal to a fault. Once saved me life from a kraken's grasp, they did! Have ye ever seen such a beast?");
+                crewModule.AddOption("I've heard tales of the kraken.",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, CreateKrakenModule()));
+                    });
+                crewModule.AddOption("I haven't, but I don't want to!",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                    });
+                player.SendGump(new DialogueGump(player, crewModule));
+            });
 
-            string speech = e.Speech.ToLower();
+        greeting.AddOption("What led you to piracy?",
+            player => true,
+            player =>
+            {
+                DialogueModule piracyModule = new DialogueModule("Ah, that be a tale worth tellin'. I once had dreams of bein' a librarian. But they laughed me out, said I was too rough 'n tumble for the bookshelves.");
+                piracyModule.AddOption("Why did you want to be a librarian?",
+                    p => true,
+                    p =>
+                    {
+                        DialogueModule librarianDreamsModule = new DialogueModule("I always believed knowledge should be free for all! I wanted to share stories and wisdom, to create a world where everyone could read and learn.");
+                        librarianDreamsModule.AddOption("That sounds noble. What happened?",
+                            pl => true,
+                            pl =>
+                            {
+                                DialogueModule rejectionModule = new DialogueModule("They said I didn't fit their image—too many scars, too much grit. I was crushed, lad. The world ain't fair, and I sought a different path.");
+                                rejectionModule.AddOption("So you turned to piracy for equality?",
+                                    pla => true,
+                                    pla =>
+                                    {
+                                        DialogueModule equalityModule = new DialogueModule("Aye! On the high seas, I found me true calling. Here, I could take what was denied to me and share it with me crew. A more equal world, that's what I seek!");
+                                        equalityModule.AddOption("How can piracy create equality?",
+                                            pq => true,
+                                            pq =>
+                                            {
+                                                DialogueModule createEqualityModule = new DialogueModule("By redistributing the wealth of the rich! The sea be filled with treasures hoarded by the greedy. I take from them and give to those in need. That's me code.");
+                                                createEqualityModule.AddOption("What about the consequences?",
+                                                    plw => true,
+                                                    plw =>
+                                                    {
+                                                        DialogueModule consequencesModule = new DialogueModule("Aye, there be risks, but life on the sea be a gamble. Better to live free and wild than caged in the libraries, don’t ye think?");
+                                                        consequencesModule.AddOption("I suppose freedom is worth it.",
+                                                            plae => true,
+                                                            plae =>
+                                                            {
+                                                                pla.SendGump(new DialogueGump(pla, CreateGreetingModule()));
+                                                            });
+                                                        consequencesModule.AddOption("It sounds dangerous.",
+                                                            plar => true,
+                                                            plar =>
+                                                            {
+                                                                pla.SendGump(new DialogueGump(pla, CreateGreetingModule()));
+                                                            });
+                                                        p.SendGump(new DialogueGump(p, consequencesModule));
+                                                    });
+                                                p.SendGump(new DialogueGump(p, createEqualityModule));
+                                            });
+                                        pla.SendGump(new DialogueGump(pla, equalityModule));
+                                    });
+                                pl.SendGump(new DialogueGump(pl, rejectionModule));
+                            });
+                        p.SendGump(new DialogueGump(p, librarianDreamsModule));
+                    });
+                player.SendGump(new DialogueGump(player, piracyModule));
+            });
 
-            if (speech.Contains("name"))
-            {
-                Say("Arrr, I'm Peg-leg Pete, the one-legged pirate! What ye want, landlubber?");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("Me leg ain't what it used to be, but I've had worse! What about ye?");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("I'm a pirate, ain't it obvious? Plunderin' and sailin' the high seas, that be me job!");
-            }
-            else if (speech.Contains("battles"))
-            {
-                Say("Life on the sea be tough, lad. It takes more than a sharp blade to survive. Be ye up to the challenge?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("Har! A brave one, ye be! But remember, in the pirate's code, there be no fleein'. What say ye?");
-            }
-            else if (speech.Contains("plunder"))
-            {
-                Say("Ah, plunderin' be the life for me! Found many a treasure chest in me days, but one still eludes me. Ever heard o' the Lost Jewel o' the Sea?");
-            }
-            else if (speech.Contains("jewel"))
-            {
-                Say("Aye, the Lost Jewel o' the Sea be a fabled gem, said to be as big as a fist and shinin' brighter than the North Star. Many have sought it, few have lived to tell the tale. If ye ever find it, bring it to me, and I'll make it worth yer while.");
-            }
-            else if (speech.Contains("sailin"))
-            {
-                Say("Sailin' be in me blood. The wind in yer hair, the salt on yer lips, and the horizon stretchin' out as far as the eye can see. Have ye ever dreamed o' becomin' a sailor?");
-            }
-            else if (speech.Contains("sailor"))
-            {
-                Say("Har har! It ain't an easy life, but it's free. If ye ever want to learn the ropes, find Old Man Jenkins at the harbor. Tell 'im Peg-leg Pete sent ye, and he might teach ye a thing or two.");
-            }
-            else if (speech.Contains("blade"))
-            {
-                Say("A sharp blade be important, but it's the hand that wields it that counts. Do ye have a trusty blade by yer side?");
-            }
-            else if (speech.Contains("trust"))
-            {
-                Say("Trust be a rare commodity on the high seas. Me crew be loyal, but there's always a dagger waitin' in the shadows. Always be watchful, lad.");
-            }
-            else if (speech.Contains("crew"))
-            {
-                Say("Aye, me crew be the saltiest bunch of scallywags ye ever did see! But they're loyal to a fault. Once saved me life from a kraken's grasp, they did! Have ye ever seen such a beast?");
-            }
-            else if (speech.Contains("kraken"))
-            {
-                Say("The kraken be a monster from the deep, tentacles longer than masts, and a hunger for ships and men alike! If ye ever encounter one, be sure to have a bard with ye. Their songs can soothe the beast.");
-            }
-            else if (speech.Contains("bard"))
-            {
-                Say("Bards have saved many a ship with their tunes. I once had a bard named Lillian in me crew. Her voice could tame the wildest of storms. Ever met a bard in yer travels?");
-            }
-            else if (speech.Contains("lillian"))
+        greeting.AddOption("Do you have any quests for me?",
+            player => true,
+            player =>
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)
                 {
-                    Say("I have no reward right now. Please return later.");
+                    player.SendMessage("I have no reward right now. Please return later.");
                 }
                 else
                 {
-                    Say("Lillian was a gem, not just for her voice, but her spirit. She left me crew years ago in search of her own destiny. If ye ever find her, give her this old locket from me. And for yer trouble, here's somethin' for ye.");
-                    from.AddToBackpack(new FishingAugmentCrystal()); // Reward item
+                    DialogueModule questModule = new DialogueModule("Lillian was a gem, not just for her voice, but her spirit. She left me crew years ago in search of her own destiny. If ye ever find her, give her this old locket from me. And for yer trouble, here's somethin' for ye.");
+                    player.AddToBackpack(new FishingAugmentCrystal()); // Reward item
                     lastRewardTime = DateTime.UtcNow; // Update the timestamp
+                    questModule.AddOption("Thank you, I'll keep an eye out for her.",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                        });
+                    player.SendGump(new DialogueGump(player, questModule));
                 }
-            }
+            });
 
-            base.OnSpeech(e);
-        }
+        return greeting;
+    }
 
-        public PegLegPete(Serial serial) : base(serial) { }
+    private DialogueModule CreateChallengeModule()
+    {
+        DialogueModule challengeModule = new DialogueModule("Har! A brave one, ye be! But remember, in the pirate's code, there be no fleein'. What say ye?");
+        challengeModule.AddOption("I'm ready to face any danger!",
+            p => true,
+            p =>
+            {
+                p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+            });
+        challengeModule.AddOption("Perhaps another time.",
+            p => true,
+            p =>
+            {
+                p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+            });
+        return challengeModule;
+    }
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
-        }
+    private DialogueModule CreateKrakenModule()
+    {
+        DialogueModule krakenModule = new DialogueModule("The kraken be a monster from the deep, tentacles longer than masts, and a hunger for ships and men alike! If ye ever encounter one, be sure to have a bard with ye. Their songs can soothe the beast.");
+        krakenModule.AddOption("Bards can calm the kraken?",
+            p => true,
+            p =>
+            {
+                p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+            });
+        return krakenModule;
+    }
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
-        }
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0); // version
+        writer.Write(lastRewardTime);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        lastRewardTime = reader.ReadDateTime();
     }
 }

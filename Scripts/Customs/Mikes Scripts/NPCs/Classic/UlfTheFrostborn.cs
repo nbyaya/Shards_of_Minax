@@ -36,89 +36,141 @@ namespace Server.Mobiles
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
-
-            if (speech.Contains("name"))
-            {
-                Say("Ulf the Frostborn, they call me.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("Health? Bah! A scratch!");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My job? Surviving in this wretched world!");
-            }
-            else if (speech.Contains("tougher"))
-            {
-                Say("Life here is harsh, stranger. Are you made of tougher stuff?");
-            }
-            else if (speech.Contains("battle"))
-            {
-                if (speech.Contains("greatest"))
-                {
-                    Say("If you're as tough as you claim, prove it! Tell me, stranger, what's your greatest battle?");
-                }
-                else
-                {
-                    Say("Impressive, stranger. For your bravery and tales, I grant you this token from my clan. May it serve you well.");
-                    TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                    if (DateTime.UtcNow - lastRewardTime < cooldown)
-                    {
-                        Say("I have no reward right now. Please return later.");
-                    }
-                    else
-                    {
-                        from.AddToBackpack(new MaxxiaScroll()); // Give the reward
-                        lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                    }
-                }
-            }
-            else if (speech.Contains("frostborn"))
-            {
-                Say("They named me Frostborn because I was discovered as a babe in the heart of a snowstorm, left untouched by its fury.");
-            }
-            else if (speech.Contains("scratch"))
-            {
-                Say("This scratch? It's from my last encounter with a dire wolf. Those beasts are everywhere in the icy north!");
-            }
-            else if (speech.Contains("surviving"))
-            {
-                Say("Surviving, yes, but not without purpose. I seek the ancient relics lost in the frozen wastelands to reclaim my clan's honor.");
-            }
-            else if (speech.Contains("tundras"))
-            {
-                Say("I've faced frozen tundras, wild beasts, and treacherous mountains. What have you faced, stranger?");
-            }
-            else if (speech.Contains("snowstorm"))
-            {
-                Say("That snowstorm was said to be the fiercest the north had ever seen. Many believe it was a sign from the gods.");
-            }
-            else if (speech.Contains("wolf"))
-            {
-                Say("Those dire wolves are a menace, but they also hold a deep connection to our land. Some say they guard the spirits of our ancestors.");
-            }
-            else if (speech.Contains("relics"))
-            {
-                Say("These relics are said to hold immense power. Many have tried to find them, but the icy wilderness is unforgiving.");
-            }
-            else if (speech.Contains("gods"))
-            {
-                Say("The gods of the north are old and powerful. We pay our respects to them through rituals and offerings.");
-            }
-
-            base.OnSpeech(e);
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
         }
 
-        public UlfTheFrostborn(Serial serial) : base(serial) { }
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("Ulf the Frostborn, they call me. What brings you to these icy lands?");
+
+            greeting.AddOption("Tell me about your health.",
+                player => true,
+                player => { player.SendMessage("Health? Bah! A scratch!"); });
+
+            greeting.AddOption("What is your job?",
+                player => true,
+                player => { player.SendMessage("My job? Surviving in this wretched world!"); });
+
+            greeting.AddOption("Are you tougher than me?",
+                player => true,
+                player => { player.SendMessage("Life here is harsh, stranger. Are you made of tougher stuff?"); });
+
+            greeting.AddOption("What's your greatest battle?",
+                player => true,
+                player =>
+                {
+                    DialogueModule battleModule = new DialogueModule("If you're as tough as you claim, prove it! Tell me, stranger, what's your greatest battle?");
+                    battleModule.AddOption("Let me tell you...",
+                        pl => true,
+                        pl =>
+                        {
+                            if (DateTime.UtcNow - lastRewardTime >= TimeSpan.FromMinutes(10))
+                            {
+                                pl.AddToBackpack(new MaxxiaScroll());
+                                lastRewardTime = DateTime.UtcNow;
+                                pl.SendMessage("Ulf grants you a token from his clan. May it serve you well.");
+                            }
+                            else
+                            {
+                                pl.SendMessage("I have no reward right now. Please return later.");
+                            }
+                        });
+                    player.SendGump(new DialogueGump(player, battleModule));
+                });
+
+            greeting.AddOption("Tell me about the Frostborn.",
+                player => true,
+                player => { player.SendMessage("They named me Frostborn because I was discovered as a babe in the heart of a snowstorm, left untouched by its fury."); });
+
+            greeting.AddOption("What do you know about dire wolves?",
+                player => true,
+                player => { player.SendMessage("Those dire wolves are a menace, but they also hold a deep connection to our land. Some say they guard the spirits of our ancestors."); });
+
+            greeting.AddOption("What relics do you seek?",
+                player => true,
+                player => { player.SendMessage("These relics are said to hold immense power. Many have tried to find them, but the icy wilderness is unforgiving."); });
+
+            greeting.AddOption("What can you tell me about the gods?",
+                player => true,
+                player => { player.SendMessage("The gods of the north are old and powerful. We pay our respects to them through rituals and offerings."); });
+
+            greeting.AddOption("What was it like growing up in the frost lands?",
+                player => true,
+                player =>
+                {
+                    DialogueModule childhoodModule = new DialogueModule("Ah, growing up in the frost lands is both a blessing and a curse. The beauty of the snow-covered mountains hides many dangers.");
+                    childhoodModule.AddOption("What dangers did you face?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule dangersModule = new DialogueModule("From ferocious beasts to treacherous weather, every day was a test. The cold bites deeper than any blade.");
+                            dangersModule.AddOption("Tell me about the beasts.",
+                                p => true,
+                                p =>
+                                {
+                                    p.SendMessage("Wolves and bears stalk the night, while the icy winds carry the howls of hungry spirits. We learn to respect our foes.");
+                                });
+                            dangersModule.AddOption("What about the weather?",
+                                p => true,
+                                p =>
+                                {
+                                    p.SendMessage("The storms can come without warning, burying whole villages under mountains of snow. One must always be prepared.");
+                                });
+                            dangersModule.AddOption("How did you survive?",
+                                p => true,
+                                p =>
+                                {
+                                    DialogueModule survivalModule = new DialogueModule("Survival is a lesson taught by the land itself. We learned to hunt, fish, and gather what little warmth we could find.");
+                                    survivalModule.AddOption("What do you hunt?",
+                                        plq => true,
+                                        plq => { pl.SendMessage("Deer, hares, and even the occasional bear, if one is brave enough. Each hunt teaches us something new."); });
+                                    survivalModule.AddOption("Do you fish in the frozen lakes?",
+                                        plw => true,
+                                        plw => { pl.SendMessage("Yes, we carve holes in the ice and wait patiently for a bite. Patience is a virtue learned in the frost."); });
+                                    survivalModule.AddOption("And what do you gather?",
+                                        ple => true,
+                                        ple => { pl.SendMessage("Berries in the summer, herbs that brave the cold, and the occasional treasure from the depths of the snow."); });
+                                    p.SendGump(new DialogueGump(p, survivalModule));
+                                });
+                            pl.SendGump(new DialogueGump(pl, dangersModule));
+                        });
+                    childhoodModule.AddOption("What about your family?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule familyModule = new DialogueModule("Family is everything in the frost lands. We rely on each other for warmth and strength. My clan was my lifeline.");
+                            familyModule.AddOption("What about your clan?",
+                                p => true,
+                                p =>
+                                {
+                                    p.SendMessage("The Frostborn clan is resilient. We gather by the fire, share stories, and pass down our history.");
+                                });
+                            familyModule.AddOption("What traditions do you have?",
+                                p => true,
+                                p =>
+                                {
+                                    DialogueModule traditionsModule = new DialogueModule("We have many rituals, especially during the solstice. We honor the spirits of the land and seek their blessings.");
+                                    traditionsModule.AddOption("What rituals do you perform?",
+                                        plr => true,
+                                        plr => { pl.SendMessage("Offerings of food, dances under the stars, and storytelling around the fire are our ways of connecting with the spirits."); });
+                                    traditionsModule.AddOption("Do you believe in spirits?",
+                                        plt => true,
+                                        plt => { pl.SendMessage("Absolutely. The frost lands are alive with their presence, guiding and protecting us in their own way."); });
+                                    p.SendGump(new DialogueGump(p, traditionsModule));
+                                });
+                            player.SendGump(new DialogueGump(player, familyModule));
+                        });
+                    player.SendGump(new DialogueGump(player, childhoodModule));
+                });
+
+            return greeting;
+        }
 
         public override void Serialize(GenericWriter writer)
         {
@@ -133,5 +185,7 @@ namespace Server.Mobiles
             int version = reader.ReadInt();
             lastRewardTime = reader.ReadDateTime();
         }
+
+        public UlfTheFrostborn(Serial serial) : base(serial) { }
     }
 }

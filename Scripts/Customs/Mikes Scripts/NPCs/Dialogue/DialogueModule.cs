@@ -4,7 +4,7 @@ using Server;
 using Server.Gumps;
 using Server.Items;
 using Server.Mobiles;
-using Server.Network; // Add this line to include the NetState class
+using Server.Network;
 
 public class DialogueModule
 {
@@ -52,18 +52,23 @@ public class DialogueGump : Gump
         Dragable = true;
         Resizable = false;
 
+        // Updated sizes: double the background size and adjust all elements accordingly
         AddPage(0);
-        AddBackground(0, 0, 400, 350, 9200);
-        AddHtml(20, 20, 360, 100, _module.NPCText, false, true);
+        AddBackground(0, 0, 800, 700, 9270); // Double the width and height
+        
+        // Change text color to light blue for NPCText
+        AddHtml(40, 40, 720, 200, $"<BODY><BASEFONT COLOR=\"#ADD8E6\">{_module.NPCText}</BASEFONT></BODY>", false, true); 
 
-        int y = 130;
+        int y = 260; // Start the options lower since the text block is larger
         for (int i = 0; i < _module.Options.Count; i++)
         {
             if (_module.Options[i].Condition(_player))
             {
-                AddButton(20, y, 4005, 4007, i + 1, GumpButtonType.Reply, 0);
-                AddHtml(55, y, 325, 40, _module.Options[i].Text, false, false);
-                y += 40;
+                AddButton(40, y, 4005, 4007, i + 1, GumpButtonType.Reply, 0); // Adjust button position
+                
+                // Change text color to green for the options
+                AddHtml(110, y, 650, 80, $"<BODY><BASEFONT COLOR=\"#32CD32\">{_module.Options[i].Text}</BASEFONT></BODY>", false, false); 
+                y += 30; // Increase vertical space between buttons for better readability
             }
         }
     }
@@ -83,4 +88,3 @@ public class DialogueGump : Gump
         }
     }
 }
-

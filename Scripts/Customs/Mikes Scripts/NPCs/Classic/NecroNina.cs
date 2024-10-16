@@ -3,130 +3,217 @@ using Server;
 using Server.Mobiles;
 using Server.Items;
 
-namespace Server.Mobiles
+public class NecroNina : BaseCreature
 {
-    [CorpseName("the corpse of Necro Nina")]
-    public class NecroNina : BaseCreature
+    private DateTime lastRewardTime;
+
+    [Constructable]
+    public NecroNina() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "Necro Nina";
+        Body = 0x190; // Human female body
 
-        [Constructable]
-        public NecroNina() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Necro Nina";
-            Body = 0x190; // Human female body
+        // Stats
+        SetStr(130);
+        SetDex(70);
+        SetInt(100);
+        SetHits(100);
 
-            // Stats
-            Str = 130;
-            Dex = 70;
-            Int = 100;
-            Hits = 100;
+        // Appearance
+        AddItem(new Robe() { Hue = 38 });
+        AddItem(new Sandals() { Hue = 38 });
+        AddItem(new BoneGloves() { Name = "Nina's Necrotic Nails" });
 
-            // Appearance
-            AddItem(new Robe() { Hue = 38 });
-            AddItem(new Sandals() { Hue = 38 });
-            AddItem(new BoneGloves() { Name = "Nina's Necrotic Nails" });
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(Female);
+        HairHue = Race.RandomHairHue();
 
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(Female);
-            HairHue = Race.RandomHairHue();
+        // Initialize the lastRewardTime to a past time
+        lastRewardTime = DateTime.MinValue;
+    }
 
-            // Speech Hue
-            SpeechHue = 0; // Default speech hue
+    public NecroNina(Serial serial) : base(serial) { }
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
-        }
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
 
-            if (!from.InRange(this, 3))
-                return;
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("Greetings, mortal. I am Necro Nina, a mistress of the dark arts.");
 
-            string speech = e.Speech.ToLower();
+        greeting.AddOption("Tell me about your powers.",
+            player => true,
+            player =>
+            {
+                DialogueModule powerModule = new DialogueModule("True power lies not in brute force, but in knowledge and understanding of the arcane. But beware, such knowledge comes with a price.");
+                powerModule.AddOption("What do you mean by that?",
+                    pl => true,
+                    pl => pl.SendGump(new DialogueGump(pl, CreatePowerDetailsModule())));
+                player.SendGump(new DialogueGump(player, powerModule));
+            });
 
-            if (speech.Contains("name"))
+        greeting.AddOption("What is your job?",
+            player => true,
+            player =>
             {
-                Say("Greetings, mortal. I am Necro Nina, a mistress of the dark arts.");
-            }
-            else if (speech.Contains("health"))
+                DialogueModule jobModule = new DialogueModule("I delve into the forbidden arts of necromancy. It's a path filled with risks but also great rewards.");
+                jobModule.AddOption("What rewards do you speak of?",
+                    pl => true,
+                    pl => pl.SendGump(new DialogueGump(pl, CreateGreetingModule())));
+                jobModule.AddOption("How did you become a necromancer?",
+                    pl => true,
+                    pl => pl.SendGump(new DialogueGump(pl, CreateBackgroundModule())));
+                player.SendGump(new DialogueGump(player, jobModule));
+            });
+
+        greeting.AddOption("Can you demonstrate your rituals?",
+            player => true,
+            player =>
             {
-                Say("My body may be frail, but my power is eternal.");
-            }
-            else if (speech.Contains("job"))
+                DialogueModule ritualModule = new DialogueModule("My rituals are a bridge between the living and the dead. Through them, I can converse with spirits. Would you like to assist me?");
+                ritualModule.AddOption("Yes, I would like to help.",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendMessage("You prepare to assist in the ritual.");
+                        pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                    });
+                ritualModule.AddOption("Maybe another time.",
+                    pl => true,
+                    pl => pl.SendGump(new DialogueGump(pl, CreateGreetingModule())));
+                player.SendGump(new DialogueGump(player, ritualModule));
+            });
+
+        greeting.AddOption("What do you think of the eight virtues?",
+            player => true,
+            player =>
             {
-                Say("I delve into the forbidden arts of necromancy.");
-            }
-            else if (speech.Contains("virtues"))
-            {
-                Say("The eight virtues, they say... I ponder on their twisted interpretation in my dark rituals.");
-            }
-            else if (speech.Contains("dark arts"))
-            {
-                Say("Do you dare to embrace the shadows and seek power beyond mortal comprehension?");
-            }
-            else if (speech.Contains("necromancy"))
-            {
-                Say("Necromancy is not just about raising the dead. It's about understanding the balance between life and death. Those who mock it do so out of ignorance.");
-            }
-            else if (speech.Contains("power"))
-            {
-                Say("True power lies not in brute force, but in knowledge and understanding of the arcane. But beware, such knowledge comes with a price.");
-            }
-            else if (speech.Contains("interpretation"))
-            {
-                Say("The eight virtues as understood by many are limited. In my rituals, I seek a deeper, darker understanding of them. They can be tools, not just ideals.");
-            }
-            else if (speech.Contains("rituals"))
-            {
-                Say("My rituals are a bridge between the living and the dead. Through them, I can converse with spirits and seek their guidance. Would you like a demonstration?");
-            }
-            else if (speech.Contains("past"))
-            {
-                Say("I was once like any other, but my insatiable thirst for knowledge led me down this path. Now, I am bound to the shadows, forever seeking more.");
-            }
-            else if (speech.Contains("domain"))
-            {
-                Say("This realm is both my sanctuary and my prison. It's where I practice my arts and commune with the spirits. Tread carefully, for not all spirits are friendly.");
-            }
-            else if (speech.Contains("embrace"))
+                DialogueModule virtuesModule = new DialogueModule("The eight virtues are limited in understanding. I seek a deeper, darker interpretation through my rituals.");
+                virtuesModule.AddOption("What do you mean by a 'darker interpretation'?",
+                    pl => true,
+                    pl => pl.SendGump(new DialogueGump(pl, CreateVirtuesModule())));
+                player.SendGump(new DialogueGump(player, virtuesModule));
+            });
+
+        greeting.AddOption("Can you grant me a token of power?",
+            player => true,
+            player =>
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)
                 {
-                    Say("I have no reward right now. Please return later.");
+                    player.SendMessage("I have no reward right now. Please return later.");
                 }
                 else
                 {
-                    Say("Ah, a brave soul. If you truly wish to embrace the shadows, I can grant you a token of power. Use it wisely and remember, every gift comes with a cost.");
-                    from.AddToBackpack(new NecromancyAugmentCrystal()); // Give the reward
+                    player.SendMessage("Ah, a brave soul. Here, take this token of power. Use it wisely and remember, every gift comes with a cost.");
+                    player.AddToBackpack(new NecromancyAugmentCrystal());
                     lastRewardTime = DateTime.UtcNow; // Update the timestamp
                 }
-            }
-            else if (speech.Contains("beware"))
+                player.SendGump(new DialogueGump(player, CreateGreetingModule()));
+            });
+
+        return greeting;
+    }
+
+    private DialogueModule CreatePowerDetailsModule()
+    {
+        DialogueModule powerDetails = new DialogueModule("The knowledge of necromancy is not just about raising the dead. It involves understanding the flow of life and death.");
+        powerDetails.AddOption("What other powers do you possess?",
+            pl => true,
+            pl =>
             {
-                Say("Yes, you should always be cautious. The path of darkness is fraught with dangers, but the rewards... they can be immense.");
-            }
+                DialogueModule otherPowers = new DialogueModule("I can summon spirits, command the undead, and manipulate life force itself. But each spell demands a price—sacrifice is often required.");
+                otherPowers.AddOption("What kind of sacrifice?",
+                    p => true,
+                    p => p.SendGump(new DialogueGump(p, CreateSacrificeModule())));
+                pl.SendGump(new DialogueGump(pl, otherPowers));
+            });
+        return powerDetails;
+    }
 
-            base.OnSpeech(e);
-        }
+    private DialogueModule CreateSacrificeModule()
+    {
+        DialogueModule sacrificeModule = new DialogueModule("Sacrifices can vary from the trivial—a handful of herbs—to something more profound, like a piece of one's own vitality. Each choice shapes the outcome of the magic.");
+        sacrificeModule.AddOption("I see. Sounds dangerous.",
+            pl => true,
+            pl => pl.SendGump(new DialogueGump(pl, CreateGreetingModule())));
+        return sacrificeModule;
+    }
 
-        public NecroNina(Serial serial) : base(serial) { }
+    private DialogueModule CreateBackgroundModule()
+    {
+        DialogueModule backgroundModule = new DialogueModule("Once, I was a scholar of the arcane arts. My thirst for knowledge led me down forbidden paths, seeking secrets hidden from the light of day.");
+        backgroundModule.AddOption("What secrets did you discover?",
+            pl => true,
+            pl => pl.SendGump(new DialogueGump(pl, CreateSecretsModule())));
+        return backgroundModule;
+    }
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
-        }
+    private DialogueModule CreateSecretsModule()
+    {
+        DialogueModule secretsModule = new DialogueModule("I uncovered rituals that could bind spirits, spells that could manipulate time, and the dark truth of necromancy itself. But knowledge is a double-edged sword.");
+        secretsModule.AddOption("What happened then?",
+            pl => true,
+            pl =>
+            {
+                DialogueModule consequenceModule = new DialogueModule("I became a pariah among my peers, hunted for my practices. But in the shadows, I found power, and now I wield it.");
+                consequenceModule.AddOption("You sound powerful.",
+                    p => true,
+                    p => p.SendGump(new DialogueGump(p, CreateGreetingModule())));
+                pl.SendGump(new DialogueGump(pl, consequenceModule));
+            });
+        return secretsModule;
+    }
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
-        }
+    private DialogueModule CreateVirtuesModule()
+    {
+        DialogueModule virtuesModule = new DialogueModule("The virtues are a guide for the living, but I believe they can be manipulated. For example, the virtue of compassion can lead to weakness in the eyes of the dead.");
+        virtuesModule.AddOption("That sounds twisted.",
+            pl => true,
+            pl => pl.SendGump(new DialogueGump(pl, CreateGreetingModule())));
+        virtuesModule.AddOption("What do you seek in the shadows?",
+            pl => true,
+            pl =>
+            {
+                DialogueModule seekModule = new DialogueModule("I seek knowledge, power, and perhaps a way to transcend this mortal coil. The shadows hold secrets that could grant me eternal life.");
+                seekModule.AddOption("Eternal life? Is that possible?",
+                    p => true,
+                    p => p.SendGump(new DialogueGump(p, CreateEternalLifeModule())));
+                pl.SendGump(new DialogueGump(pl, seekModule));
+            });
+        return virtuesModule;
+    }
+
+    private DialogueModule CreateEternalLifeModule()
+    {
+        DialogueModule eternalLifeModule = new DialogueModule("It is said that by mastering the art of necromancy, one can achieve a form of immortality. However, it often requires great sacrifice and a deep understanding of the soul.");
+        eternalLifeModule.AddOption("What sacrifices would be needed?",
+            pl => true,
+            pl => pl.SendGump(new DialogueGump(pl, CreateSacrificeModule())));
+        eternalLifeModule.AddOption("That sounds horrifying.",
+            pl => true,
+            pl => pl.SendGump(new DialogueGump(pl, CreateGreetingModule())));
+        return eternalLifeModule;
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0); // version
+        writer.Write(lastRewardTime);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        lastRewardTime = reader.ReadDateTime();
     }
 }

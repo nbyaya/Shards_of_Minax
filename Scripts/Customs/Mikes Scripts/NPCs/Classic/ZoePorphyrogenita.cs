@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -31,95 +32,155 @@ namespace Server.Mobiles
             HairItemID = Race.RandomHair(Female);
             HairHue = Race.RandomHairHue();
 
-            // Initialize the lastRewardTime to a past time
             lastRewardTime = DateTime.MinValue;
-
             SpeechHue = 0; // Default speech hue
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
 
-            if (speech.Contains("name"))
-            {
-                Say("Greetings, traveler. I am Zoe Porphyrogenita.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("I am in good health, thank you for asking.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("I am a scholar of Byzantium, dedicated to the pursuit of knowledge.");
-            }
-            else if (speech.Contains("virtues"))
-            {
-                if (speech.Contains("ponder"))
-                {
-                    Say("Do you ponder the virtues, traveler? They are the cornerstone of a noble life.");
-                }
-                else
-                {
-                    Say("Honor, compassion, and justice are virtues I hold dear. How do they guide your path?");
-                }
-            }
-            else if (speech.Contains("porphyrogenita"))
-            {
-                Say("Zoe Porphyrogenita, a name passed down through my family for generations. It means 'born into the purple' in ancient tongues. Our lineage is deeply connected with the Byzantine Empire.");
-            }
-            else if (speech.Contains("good"))
-            {
-                Say("My good health is largely due to my daily meditations and adherence to the ancient practices of the Byzantine scholars. I also partake in regular herbal remedies.");
-            }
-            else if (speech.Contains("byzantium"))
-            {
-                Say("Ah, Byzantium! The heart of an ancient empire, filled with secrets, history, and knowledge yet to be uncovered. I've dedicated my life to decoding its mysteries and artifacts.");
-            }
-            else if (speech.Contains("noble"))
-            {
-                Say("Living a noble life means more than just words. It is about actions, decisions, and sometimes sacrifices. If you ever need guidance on this path, I can offer a token of wisdom.");
-            }
-            else if (speech.Contains("token"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("I am pleased you seek guidance. Take this amulet; it's a replica of an ancient Byzantine artifact. It has brought me clarity in times of doubt. May it aid you on your journey.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-            else if (speech.Contains("lineage"))
-            {
-                Say("Our family traces its roots back to the very halls of Byzantium. Some say we are descended from emperors, but I pride myself more on the wisdom we've inherited than on titles or crowns.");
-            }
-            else if (speech.Contains("meditations"))
-            {
-                Say("Meditations are a powerful tool. They connect us to the ancient energies of the world, allowing us to find balance and perspective. If you're interested, I can teach you a basic chant.");
-            }
-            else if (speech.Contains("artifacts"))
-            {
-                Say("The artifacts from Byzantium are not just historical items; they hold magic and stories of a time long past. Some are dangerous, others enlightening. I've collected a few in my studies.");
-            }
-            else if (speech.Contains("chant"))
-            {
-                Say("The chant goes like this: 'Abyssus abyssum invocat'. It translates to 'Deep calls to deep.' Meditate on these words and feel the ancient energies flow.");
-            }
-            else if (speech.Contains("studies"))
-            {
-                Say("My studies have taken me to the furthest reaches of the world, from the catacombs of Byzantium to the lost libraries of Alexandria. Each journey enriches my understanding of the past.");
-            }
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("Greetings, traveler. I am Zoe Porphyrogenita. How may I assist you?");
 
-            base.OnSpeech(e);
+            greeting.AddOption("Tell me about your health.",
+                player => true,
+                player =>
+                {
+                    DialogueModule healthModule = new DialogueModule("I am in good health, thank you for asking. Daily meditations and herbal remedies keep me well.");
+                    healthModule.AddOption("What kind of herbal remedies?",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, new DialogueModule("I often use Lavender for relaxation and Sage for clarity. They are quite potent.")));
+                        });
+                    player.SendGump(new DialogueGump(player, healthModule));
+                });
+
+            greeting.AddOption("What is your job?",
+                player => true,
+                player =>
+                {
+                    DialogueModule jobModule = new DialogueModule("I am a scholar of Byzantium, dedicated to the pursuit of knowledge. My studies encompass history, philosophy, and ancient artifacts.");
+                    jobModule.AddOption("What have you discovered?",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, new DialogueModule("I have uncovered many secrets, including lost texts that detail the philosophies of ancient scholars.")));
+                        });
+                    player.SendGump(new DialogueGump(player, jobModule));
+                });
+
+            greeting.AddOption("What are virtues?",
+                player => true,
+                player =>
+                {
+                    DialogueModule virtuesModule = new DialogueModule("Honor, compassion, and justice are virtues I hold dear. They are essential in guiding one's path.");
+                    virtuesModule.AddOption("How do virtues guide you?",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, new DialogueModule("Virtues remind me of my duties and responsibilities. They help me remain steadfast even in turbulent times.")));
+                        });
+                    player.SendGump(new DialogueGump(player, virtuesModule));
+                });
+
+            greeting.AddOption("Tell me about your lineage.",
+                player => true,
+                player =>
+                {
+                    DialogueModule lineageModule = new DialogueModule("Our family traces its roots back to the very halls of Byzantium, descended from noble scholars.");
+                    lineageModule.AddOption("What does Porphyrogenita mean?",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, new DialogueModule("It means 'born into the purple,' signifying a lineage of royalty and nobility.")));
+                        });
+                    player.SendGump(new DialogueGump(player, lineageModule));
+                });
+
+            greeting.AddOption("Do you have any tokens of wisdom?",
+                player => CanReceiveToken(player),
+                player =>
+                {
+                    if (DateTime.UtcNow - lastRewardTime < TimeSpan.FromMinutes(10))
+                    {
+                        player.SendGump(new DialogueGump(player, new DialogueModule("I have no reward right now. Please return later.")));
+                    }
+                    else
+                    {
+                        lastRewardTime = DateTime.UtcNow;
+                        player.AddToBackpack(new MaxxiaScroll());
+                        player.SendGump(new DialogueGump(player, new DialogueModule("Take this amulet; it’s a replica of an ancient Byzantine artifact. May it aid you on your journey.")));
+                    }
+                });
+
+            greeting.AddOption("What do you think about Byzantium?",
+                player => true,
+                player =>
+                {
+                    DialogueModule byzantiumModule = new DialogueModule("Ah, Byzantium! The heart of an ancient empire, filled with secrets and history. Its beauty is unmatched.");
+                    byzantiumModule.AddOption("What is its greatest secret?",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, new DialogueModule("The greatest secret of Byzantium is the knowledge hidden in its ruins. Many scholars seek these truths.")));
+                        });
+                    player.SendGump(new DialogueGump(player, byzantiumModule));
+                });
+
+            greeting.AddOption("Can you teach me about meditations?",
+                player => true,
+                player =>
+                {
+                    DialogueModule meditationModule = new DialogueModule("Meditations connect us to the ancient energies of the world. Would you like to learn a basic chant?");
+                    meditationModule.AddOption("Yes, please teach me.",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, new DialogueModule("The chant goes like this: 'Abyssus abyssum invocat'. Meditate on these words and feel the energies flow.")));
+                        });
+                    meditationModule.AddOption("Maybe another time.",
+                        pl => true,
+                        pl => 
+                        {
+                            pl.SendGump(new DialogueGump(pl, new DialogueModule("Of course. Just remember, the path to enlightenment is always open.")));
+                        });
+                    player.SendGump(new DialogueGump(player, meditationModule));
+                });
+
+            greeting.AddOption("What artifacts have you studied?",
+                player => true,
+                player =>
+                {
+                    DialogueModule artifactsModule = new DialogueModule("The artifacts from Byzantium hold not just history, but also magic. Each tells a story of its own.");
+                    artifactsModule.AddOption("Can you show me an artifact?",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, new DialogueModule("I can describe one: the Golden Eagle of Byzantium, a symbol of power and protection.")));
+                        });
+                    artifactsModule.AddOption("What is the most dangerous artifact?",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, new DialogueModule("The cursed Chalice of Fate is said to bring ruin to those who possess it without wisdom.")));
+                        });
+                    player.SendGump(new DialogueGump(player, artifactsModule));
+                });
+
+            return greeting;
+        }
+
+        private bool CanReceiveToken(PlayerMobile player)
+        {
+            return DateTime.UtcNow - lastRewardTime >= TimeSpan.FromMinutes(10);
         }
 
         public ZoePorphyrogenita(Serial serial) : base(serial) { }

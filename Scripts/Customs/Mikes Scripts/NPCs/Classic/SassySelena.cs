@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -17,10 +18,10 @@ namespace Server.Mobiles
             Body = 0x191; // Human female body
 
             // Stats
-            Str = 85;
-            Dex = 75;
-            Int = 55;
-            Hits = 65;
+            SetStr(85);
+            SetDex(75);
+            SetInt(55);
+            SetHits(65);
 
             // Appearance
             AddItem(new LeatherArms() { Hue = 2956 });
@@ -30,98 +31,135 @@ namespace Server.Mobiles
             Hue = Race.RandomSkinHue();
             HairItemID = Race.RandomHair(this);
             HairHue = Race.RandomHairHue();
-
             SpeechHue = 0; // Default speech hue
 
             // Initialize the lastRewardTime to a past time
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
 
-            if (speech.Contains("name"))
-            {
-                Say("Greetings, sweet traveler. I am Sassy Selena, a courtesan of the night.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("My beauty is my greatest asset, dear. I am in perfect health.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("I entertain and delight those who seek companionship.");
-            }
-            else if (speech.Contains("virtues"))
-            {
-                Say("Compassion and allure are my greatest virtues. What virtues dost thou hold dear?");
-            }
-            else if (speech.Contains("compassion"))
-            {
-                Say("That is a wise choice, my sweet. Compassion and allure can win over even the coldest hearts.");
-            }
-            else if (speech.Contains("selena"))
-            {
-                Say("Some call me enchanting, others bewitching. But you, my dear, may just call me Selena.");
-            }
-            else if (speech.Contains("beauty"))
-            {
-                Say("Beauty is not just about good health, but also about the secrets you keep to maintain it. Care to learn some of mine?");
-            }
-            else if (speech.Contains("entertain"))
-            {
-                Say("My work requires me to hear many tales. Some are whispers of forbidden love, others, tales of great adventures. Would you like to share your tale with me?");
-            }
-            else if (speech.Contains("virtues") && speech.Contains("valor"))
-            {
-                Say("There are many virtues in this world. Valor, Justice, and Honor to name a few. Which do you value the most?");
-            }
-            else if (speech.Contains("valor"))
-            {
-                Say("Valor is the courage to face adversity. I've seen many brave souls in my time. But true valor comes from the heart. How have you demonstrated your valor?");
-            }
-            else if (speech.Contains("adversity"))
-            {
-                Say("Ah, the path not taken. I too have faced moments of doubt. But I always find my way back. Sometimes, a simple song guides me. Would you like to hear it?");
-            }
-            else if (speech.Contains("song"))
-            {
-                Say("*singing* In the moon's soft glow, through the night we go. Hearts entwined, fate aligned, our souls forever to show. *singing*🎵");
-            }
-            else if (speech.Contains("moonflowers"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("Greetings, sweet traveler. I am Sassy Selena, a courtesan of the night. Recently, my beloved blueberry crop has been devastated by a dreadful drought. How may I share my sorrow with you?");
+
+            greeting.AddOption("Tell me about your blueberry crop.",
+                player => true,
+                player =>
                 {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
+                    DialogueModule cropModule = new DialogueModule("Ah, my precious blueberries! They were the pride of my garden, sweet and succulent. But the relentless sun has scorched them, leaving nothing but withered leaves and dry earth. Would you care to hear more about my struggles?");
+                    cropModule.AddOption("Yes, what happened?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule storyModule = new DialogueModule("I had nurtured those bushes for years, watching them flourish. This year, however, the rains never came. As the days grew hotter, I tried everything I could think of—watering by hand, seeking out hidden springs—but to no avail.");
+                            storyModule.AddOption("That sounds heartbreaking.",
+                                pla => true,
+                                pla =>
+                                {
+                                    pla.SendGump(new DialogueGump(pla, CreateGreetingModule()));
+                                });
+                            storyModule.AddOption("Have you considered planting drought-resistant crops?",
+                                pla => true,
+                                pla =>
+                                {
+                                    DialogueModule solutionModule = new DialogueModule("I've thought about it! Perhaps I could plant more resilient varieties next season. But it pains me to abandon my beloved blueberries. Do you think I should consider a change?");
+                                    solutionModule.AddOption("Sometimes change is necessary.",
+                                        plq => true,
+                                        plq =>
+                                        {
+                                            pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                                        });
+                                    solutionModule.AddOption("I believe in sticking with your passion.",
+                                        plw => true,
+                                        plw =>
+                                        {
+                                            pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                                        });
+                                    pla.SendGump(new DialogueGump(pla, solutionModule));
+                                });
+                            player.SendGump(new DialogueGump(player, storyModule));
+                        });
+                    cropModule.AddOption("How do you cope with this loss?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule copingModule = new DialogueModule("Coping is difficult. I find solace in my friends and the stories I tell. Sometimes, I even imagine my blueberries singing songs in the breeze. It brings me comfort, but the ache remains. Would you like to share a tale of your own?");
+                            copingModule.AddOption("Yes, I have a tale.",
+                                pla => true,
+                                pla =>
+                                {
+                                    pla.SendGump(new DialogueGump(pla, CreateGreetingModule()));
+                                });
+                            copingModule.AddOption("Not at this moment.",
+                                pla => true,
+                                pla =>
+                                {
+                                    pla.SendGump(new DialogueGump(pla, CreateGreetingModule()));
+                                });
+                            player.SendGump(new DialogueGump(player, copingModule));
+                        });
+                    player.SendGump(new DialogueGump(player, cropModule));
+                });
+
+            greeting.AddOption("Do you have any rewards for me?",
+                player => DateTime.UtcNow - lastRewardTime >= TimeSpan.FromMinutes(10),
+                player =>
                 {
-                    Say("Here you go, dear traveler. This essence will help rejuvenate your spirit. Use it wisely.");
-                    from.AddToBackpack(new BeggingAugmentCrystal()); // Give the reward
                     lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-            else if (speech.Contains("tales"))
-            {
-                Say("Every tale holds a lesson, every adventure a memory. I have a keepsake from one such tale. Would you like to see?");
-            }
-            else if (speech.Contains("keepsake"))
-            {
-                Say("This is a locket, a memory of a past love. It reminds me of the fleeting nature of time. Life is but a series of moments. Cherish them.");
-            }
-            else if (speech.Contains("wandering"))
-            {
-                Say("Wanderers come and go, leaving traces of their stories. I keep a journal of such tales. Would you like to read an entry?");
-            }
+                    player.AddToBackpack(new BeggingAugmentCrystal()); // Give the reward
+                    player.SendMessage("Here you go, dear traveler. This essence will help rejuvenate your spirit. Use it wisely.");
+                    player.SendGump(new DialogueGump(player, CreateGreetingModule()));
+                });
 
-            base.OnSpeech(e);
+            greeting.AddOption("What do you think about beauty?",
+                player => true,
+                player =>
+                {
+                    DialogueModule beautyModule = new DialogueModule("Beauty is not just about good health, but also about the secrets you keep to maintain it. Care to learn some of mine?");
+                    beautyModule.AddOption("Yes, I would love to learn.",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                        });
+                    player.SendGump(new DialogueGump(player, beautyModule));
+                });
+
+            greeting.AddOption("What tales do you have?",
+                player => true,
+                player =>
+                {
+                    DialogueModule talesModule = new DialogueModule("Every tale holds a lesson, every adventure a memory. I have a keepsake from one such tale. Would you like to see?");
+                    talesModule.AddOption("Yes, show me the keepsake.",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, CreateKeepsakeModule()));
+                        });
+                    player.SendGump(new DialogueGump(player, talesModule));
+                });
+
+            return greeting;
+        }
+
+        private DialogueModule CreateKeepsakeModule()
+        {
+            DialogueModule keepsakeModule = new DialogueModule("This is a locket, a memory of a past love. It reminds me of the fleeting nature of time. Life is but a series of moments. Cherish them.");
+            keepsakeModule.AddOption("Thank you for sharing.",
+                player => true,
+                player =>
+                {
+                    player.SendGump(new DialogueGump(player, CreateGreetingModule()));
+                });
+            return keepsakeModule;
         }
 
         public SassySelena(Serial serial) : base(serial) { }

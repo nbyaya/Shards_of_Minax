@@ -1,146 +1,192 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
-namespace Server.Mobiles
+[CorpseName("the corpse of Marco the Navigator")]
+public class MarcoTheNavigator : BaseCreature
 {
-    [CorpseName("the corpse of Marco the Navigator")]
-    public class MarcoTheNavigator : BaseCreature
+    private DateTime lastRewardTime;
+
+    [Constructable]
+    public MarcoTheNavigator() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "Marco the Navigator";
+        Body = 0x190; // Human male body
 
-        [Constructable]
-        public MarcoTheNavigator() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Marco the Navigator";
-            Body = 0x190; // Human male body
+        // Stats
+        SetStr(50);
+        SetDex(50);
+        SetInt(70);
+        SetHits(70);
 
-            // Stats
-            Str = 50;
-            Dex = 50;
-            Int = 70;
-            Hits = 70;
+        // Appearance
+        AddItem(new LongPants() { Hue = 2126 });
+        AddItem(new Doublet() { Hue = 1904 });
+        AddItem(new ThighBoots() { Hue = 1904 });
+        AddItem(new TricorneHat() { Hue = 2126 });
+        AddItem(new Cloak() { Name = "Marco's Cloak" });
 
-            // Appearance
-            AddItem(new LongPants() { Hue = 2126 });
-            AddItem(new Doublet() { Hue = 1904 });
-            AddItem(new ThighBoots() { Hue = 1904 });
-            AddItem(new TricorneHat() { Hue = 2126 });
-            AddItem(new Cloak() { Name = "Marco's Cloak" });
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(this);
+        HairHue = Race.RandomHairHue();
 
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(this);
-            HairHue = Race.RandomHairHue();
+        // Initialize the lastRewardTime to a past time
+        lastRewardTime = DateTime.MinValue;
+    }
 
-            // Speech Hue
-            SpeechHue = 0; // Default speech hue
+    public MarcoTheNavigator(Serial serial) : base(serial)
+    {
+    }
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
-        }
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
 
-            if (!from.InRange(this, 3))
-                return;
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("Greetings, traveler! I am Marco the Navigator, a cartographer. What brings you to this part of the world?");
 
-            string speech = e.Speech.ToLower();
+        greeting.AddOption("Tell me about yourself.",
+            player => true,
+            player =>
+            {
+                DialogueModule aboutMe = new DialogueModule("Ah, where to begin? My journey as a navigator has taken me across vast oceans and through dense forests. I am deeply passionate about charting the unknown.");
+                aboutMe.AddOption("What inspired you to become a navigator?",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, new DialogueModule("Ever since I was a child, I was fascinated by tales of explorers and their adventures. The idea of discovering new lands and cultures sparked a fire within me.")));
+                    });
+                aboutMe.AddOption("What are your greatest achievements?",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, new DialogueModule("I mapped the treacherous waters of the Eastern Sea and uncovered a hidden isle filled with rare resources. Many adventurers owe their safe travels to my maps.")));
+                    });
+                player.SendGump(new DialogueGump(player, aboutMe));
+            });
 
-            if (speech.Contains("name"))
+        greeting.AddOption("What do you know about exploration?",
+            player => true,
+            player =>
             {
-                Say("Greetings, traveler! I am Marco the Navigator, a cartographer.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("I am in good health, thank you for asking.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My job as a cartographer is to map the lands and seas, guiding adventurers like yourself.");
-            }
-            else if (speech.Contains("virtue"))
-            {
-                Say("The art of cartography is a blend of precision and creativity. It reflects the virtue of humility.");
-            }
-            else if (speech.Contains("ponder"))
-            {
-                Say("Do you ponder the virtues, traveler? Which one resonates most with your heart?");
-            }
-            else if (speech.Contains("marco"))
-            {
-                Say("Ah, you've heard of me! I've traveled far and wide, mapping the uncharted and learning tales of ancient places.");
-            }
-            else if (speech.Contains("thank"))
-            {
-                Say("Your kindness warms my heart. It's travelers like you that make my journeys worthwhile.");
-            }
-            else if (speech.Contains("map"))
-            {
-                Say("Yes, maps! They are essential for adventurers. I recently found an old map leading to a hidden treasure. Would you like to have it?");
-            }
-            else if (speech.Contains("uncharted"))
-            {
-                Say("The uncharted regions often hold the greatest mysteries. I've faced many dangers to plot them on a map, but the thrill of discovery is unmatched.");
-            }
-            else if (speech.Contains("journeys"))
-            {
-                Say("My journeys have taken me to the highest peaks and the deepest caverns. The world is vast, and there's so much more to explore.");
-            }
-            else if (speech.Contains("mysteries"))
-            {
-                Say("There are tales of cities submerged underwater and ancient civilizations lost in time. Solving these mysteries is a challenge, but the truth awaits the persistent.");
-            }
-            else if (speech.Contains("explore"))
-            {
-                Say("Exploration is not just about discovering new lands. It's also about understanding the cultures, languages, and histories of the places we visit.");
-            }
-            else if (speech.Contains("risk"))
-            {
-                Say("Risks are a part of every journey. But with preparation, knowledge, and a bit of luck, one can navigate through the most treacherous paths.");
-            }
-            else if (speech.Contains("civilizations"))
-            {
-                Say("Lost civilizations hold clues to our past. By studying their remains, we can piece together stories of their greatness and downfall.");
-            }
-            else if (speech.Contains("cultures"))
-            {
-                Say("Each culture has its unique traditions, arts, and values. It's a privilege to learn from them and share their stories with others.");
-            }
-            else if (speech.Contains("preparation"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Proper preparation involves gathering the right tools, learning about the region, and always having a backup plan. It has saved me more than once! Here take this.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
+                DialogueModule explorationModule = new DialogueModule("Exploration is not merely about discovery; it’s about understanding the stories behind every place. Each map I draw is filled with history and adventure.");
+                explorationModule.AddOption("What is the greatest challenge you've faced?",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, new DialogueModule("The fiercest storm I've encountered nearly sunk my ship. It taught me the value of respect for nature and the importance of preparation.")));
+                    });
+                explorationModule.AddOption("Tell me about the places you've been.",
+                    p => true,
+                    p =>
+                    {
+                        DialogueModule placesModule = new DialogueModule("I've traveled to the Frosted Peaks, the Burning Sands, and the Whispering Woods. Each place has its unique beauty and hidden dangers.");
+                        placesModule.AddOption("Which place was the most dangerous?",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, new DialogueModule("The Frosted Peaks are unforgiving. The blizzards can erase trails, and the creatures there are as fierce as they are majestic.")));
+                            });
+                        placesModule.AddOption("Which place was the most beautiful?",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, new DialogueModule("The sunsets over the Emerald Coast are breathtaking. The sky ignites with colors that even the finest artists cannot replicate.")));
+                            });
+                        player.SendGump(new DialogueGump(player, placesModule));
+                    });
+                player.SendGump(new DialogueGump(player, explorationModule));
+            });
 
-            base.OnSpeech(e);
-        }
+        greeting.AddOption("Do you have any maps?",
+            player => true,
+            player =>
+            {
+                DialogueModule mapModule = new DialogueModule("Indeed! I always have maps available for those in search of adventure. I recently found an old map leading to a hidden treasure. Would you like to see it?");
+                mapModule.AddOption("Yes, please!",
+                    pl => CanGiveReward(pl),
+                    pl =>
+                    {
+                        pl.AddToBackpack(new MaxxiaScroll()); // Give the reward
+                        lastRewardTime = DateTime.UtcNow; // Update the timestamp
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Here is the map! Best of luck on your adventures.")));
+                    });
+                mapModule.AddOption("What else do you have?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule moreMapsModule = new DialogueModule("I have maps of various regions: the Shadowlands, the Crystal Caverns, and the Serpent's Spine Mountains. Each one is a doorway to new adventures.");
+                        moreMapsModule.AddOption("Tell me about the Shadowlands.",
+                            p => true,
+                            p =>
+                            {
+                                p.SendGump(new DialogueGump(p, new DialogueModule("The Shadowlands are filled with ancient ruins and dark secrets. Many who enter never return, but those who do have tales that chill the soul.")));
+                            });
+                        moreMapsModule.AddOption("Tell me about the Crystal Caverns.",
+                            p => true,
+                            p =>
+                            {
+                                p.SendGump(new DialogueGump(p, new DialogueModule("The Crystal Caverns sparkle with luminescent stones, but beware! They are home to many mystical creatures that guard their treasures fiercely.")));
+                            });
+                        moreMapsModule.AddOption("Tell me about the Serpent's Spine Mountains.",
+                            p => true,
+                            p =>
+                            {
+                                p.SendGump(new DialogueGump(p, new DialogueModule("The Serpent's Spine is a treacherous range, known for its winding paths and fierce storms. Only the brave dare to venture there.")));
+                            });
+                        player.SendGump(new DialogueGump(player, moreMapsModule));
+                    });
+                player.SendGump(new DialogueGump(player, mapModule));
+            });
 
-        public MarcoTheNavigator(Serial serial) : base(serial) { }
+        greeting.AddOption("What about uncharted regions?",
+            player => true,
+            player =>
+            {
+                DialogueModule unchartedModule = new DialogueModule("Ah, the uncharted regions hold the greatest mysteries! They beckon adventurers with promises of glory and treasure, but they often come with peril.");
+                unchartedModule.AddOption("What is the greatest mystery you've encountered?",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, new DialogueModule("I once stumbled upon ruins of a civilization long forgotten. Their writings spoke of a powerful artifact that could alter the very fabric of reality.")));
+                    });
+                unchartedModule.AddOption("Are there dangers in these regions?",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, new DialogueModule("Indeed! Many adventurers have fallen prey to both nature and the creatures that dwell in these areas. It requires skill and caution to navigate.")));
+                    });
+                player.SendGump(new DialogueGump(player, unchartedModule));
+            });
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
-        }
+        return greeting;
+    }
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
-        }
+    private bool CanGiveReward(PlayerMobile player)
+    {
+        TimeSpan cooldown = TimeSpan.FromMinutes(10);
+        return DateTime.UtcNow - lastRewardTime >= cooldown;
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0); // version
+        writer.Write(lastRewardTime);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        lastRewardTime = reader.ReadDateTime();
     }
 }

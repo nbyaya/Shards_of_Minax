@@ -1,0 +1,88 @@
+
+***ERROR LOG [2024-09-23 9:05:24 AM]***
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.ObjectExtUtility.GetEventDelegates(Object obj, String eventName)
+   at VitaNex.VitaNexCore.Configure()
+
+
+
+***ERROR LOG [2024-09-23 9:08:37 AM]***
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.ObjectExtUtility.GetEventDelegates(Object obj, String eventName)
+   at VitaNex.VitaNexCore.Configure()
+
+
+
+***ERROR LOG [2024-09-23 9:27:02 AM]***
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.ObjectExtUtility.GetEventDelegates(Object obj, String eventName)
+   at VitaNex.VitaNexCore.Configure()
+
+
+
+***ERROR LOG [2024-09-23 12:55:16 PM]***
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.ObjectExtUtility.GetEventDelegates(Object obj, String eventName)
+   at VitaNex.VitaNexCore.Configure()
+
+
+
+***ERROR LOG [2024-09-23 1:00:57 PM]***
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.ObjectExtUtility.GetEventDelegates(Object obj, String eventName)
+   at VitaNex.VitaNexCore.Configure()
+
+
+
+***ERROR LOG [2024-09-23 2:16:37 PM]***
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.ObjectExtUtility.GetEventDelegates(Object obj, String eventName)
+   at VitaNex.VitaNexCore.Configure()
+
+
+
+***ERROR LOG [2024-09-23 2:35:43 PM]***
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.ObjectExtUtility.GetEventDelegates(Object obj, String eventName)
+   at VitaNex.VitaNexCore.Configure()
+
+
+
+***ERROR LOG [2024-09-23 4:52:57 PM]***
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.ObjectExtUtility.GetEventDelegates(Object obj, String eventName)
+   at VitaNex.VitaNexCore.Configure()
+
+
+
+***ERROR LOG [2024-09-23 5:04:27 PM]***
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.ObjectExtUtility.GetEventDelegates(Object obj, String eventName)
+   at VitaNex.VitaNexCore.Configure()
+
+
+
+***ERROR LOG [2024-09-23 8:01:04 PM]***
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.ObjectExtUtility.GetEventDelegates(Object obj, String eventName)
+   at VitaNex.VitaNexCore.Configure()
+
+
+
+***ERROR LOG [2024-09-23 9:20:04 PM]***
+Object reference not set to an instance of an object.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.ObjectExtUtility.GetEventDelegates(Object obj, String eventName)
+   at VitaNex.VitaNexCore.Configure()
+
+

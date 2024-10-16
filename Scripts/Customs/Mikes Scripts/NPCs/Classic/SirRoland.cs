@@ -3,119 +3,160 @@ using Server;
 using Server.Mobiles;
 using Server.Items;
 
-namespace Server.Mobiles
+public class SirRoland : BaseCreature
 {
-    [CorpseName("the corpse of Sir Roland")]
-    public class SirRoland : BaseCreature
+    [Constructable]
+    public SirRoland() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        [Constructable]
-        public SirRoland() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Sir Roland";
-            Body = 0x190; // Human male body
+        Name = "Sir Roland";
+        Body = 0x190; // Human male body
 
-            // Stats
-            Str = 165;
-            Dex = 72;
-            Int = 28;
-            Hits = 125;
+        // Stats
+        SetStr(165);
+        SetDex(72);
+        SetInt(28);
+        SetHits(125);
 
-            // Appearance
-            AddItem(new PlateChest() { Hue = 1175 });
-            AddItem(new PlateLegs() { Hue = 1175 });
-            AddItem(new CloseHelm() { Hue = 1175 });
-            AddItem(new PlateGloves() { Hue = 1175 });
-            AddItem(new Cloak() { Hue = 1175 });
-            
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(this);
-            HairHue = Race.RandomHairHue();
+        // Appearance
+        AddItem(new PlateChest() { Hue = 1175 });
+        AddItem(new PlateLegs() { Hue = 1175 });
+        AddItem(new CloseHelm() { Hue = 1175 });
+        AddItem(new PlateGloves() { Hue = 1175 });
+        AddItem(new Cloak() { Hue = 1175 });
 
-            // Speech Hue
-            SpeechHue = 0; // Default speech hue
-        }
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(this);
+        HairHue = Race.RandomHairHue();
+    }
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+    public SirRoland(Serial serial) : base(serial) { }
 
-            if (!from.InRange(this, 3))
-                return;
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-            string speech = e.Speech.ToLower();
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
 
-            if (speech.Contains("name"))
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("Greetings, noble traveler. I am Sir Roland, a humble knight. I have a peculiar passion for turtles! Would you like to hear more about it?");
+        
+        greeting.AddOption("Tell me about your love for turtles.",
+            player => true,
+            player => 
             {
-                Say("Greetings, noble traveler. I am Sir Roland, a humble knight.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("My health is in good condition, thanks for asking.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("I am a knight, sworn to uphold the virtues of Honesty, Compassion, Valor, Justice, Sacrifice, Honor, Spirituality, and Humility.");
-            }
-            else if (speech.Contains("virtues"))
-            {
-                Say("Each day, I strive to live by these virtues. They guide my path as a knight.");
-            }
-            else if (speech.Contains("follow path virtue"))
-            {
-                Say("Do you also follow the path of virtue, traveler? What virtues do you hold dear?");
-            }
-            else if (speech.Contains("honesty"))
-            {
-                Say("Honesty is the foundation of trust. It's the first virtue I learned as a knight, and it's vital in all our interactions. A knight who lies breaks the trust of his peers.");
-            }
-            else if (speech.Contains("compassion"))
-            {
-                Say("Compassion is the heart's response to suffering. In our journeys, we often come across those in need. The true test is how we respond. By the way, I once heard that the second syllable of the mantra of Compassion is RAY.");
-            }
-            else if (speech.Contains("valor"))
-            {
-                Say("Valor is not just about bravery in battle, but also standing up for what's right, even when it's difficult. It means confronting fear and injustice with courage.");
-            }
-            else if (speech.Contains("justice"))
-            {
-                Say("Justice is the cornerstone of a harmonious society. It's not just about punishment, but ensuring that the scales are balanced and fairness prevails.");
-            }
-            else if (speech.Contains("sacrifice"))
-            {
-                Say("Sacrifice is about putting others before oneself. As knights, we often must make sacrifices for the greater good. It's a virtue that tests our commitment and love for others.");
-            }
-            else if (speech.Contains("honor"))
-            {
-                Say("Honor binds us as knights. It's more than just our reputation; it's about living with integrity and keeping our word. An honorable knight is respected and trusted.");
-            }
-            else if (speech.Contains("spirituality"))
-            {
-                Say("Spirituality connects us with the divine and the mysteries of the universe. It reminds us that there's more to existence than the material world. Prayer and meditation guide me in this virtue.");
-            }
-            else if (speech.Contains("humility"))
-            {
-                Say("Humility is recognizing that we are but a small part of the grand tapestry of life. It keeps us grounded and prevents arrogance. It's the virtue that reminds us always to learn and grow.");
-            }
-            else if (speech.Contains("ray"))
-            {
-                Say("Ah, you've been listening closely. Indeed, RAY is part of a powerful mantra. It holds a special significance for those who truly understand compassion.");
-            }
+                DialogueModule turtleLoveModule = new DialogueModule("Ah, turtles! Majestic creatures that embody patience and wisdom. They remind me of the importance of perseverance. Would you like to know about my favorite species?");
+                
+                turtleLoveModule.AddOption("What is your favorite species?",
+                    pl => true,
+                    pl => 
+                    {
+                        DialogueModule speciesModule = new DialogueModule("My favorite species is the Galápagos tortoise. They can live for over a hundred years and are a symbol of longevity. Have you ever seen one?");
+                        
+                        speciesModule.AddOption("I have seen one!",
+                            plq => true,
+                            plq => { pl.SendGump(new DialogueGump(pl, new DialogueModule("Wonderful! They are truly awe-inspiring, aren't they? Their shells are like living armor."))); });
+                        
+                        speciesModule.AddOption("No, but I've read about them.",
+                            plw => true,
+                            plw => { pl.SendGump(new DialogueGump(pl, new DialogueModule("Reading about them is almost as good! Their history is fascinating, especially their role in conservation efforts."))); });
 
-            base.OnSpeech(e);
-        }
+                        speciesModule.AddOption("I don't know much about turtles.",
+                            ple => true,
+                            ple => 
+                            {
+                                pl.SendGump(new DialogueGump(pl, new DialogueModule("Ah, allow me to enlighten you! Turtles have existed for millions of years and play crucial roles in their ecosystems. Would you like to learn more about their habitats?")));
+                            });
+                        
+                        turtleLoveModule.AddOption("What else do you love about turtles?",
+                            plr => true,
+                            plr => { pl.SendGump(new DialogueGump(pl, new DialogueModule("I admire their tranquility and wisdom. They remind me to take life at a steady pace, enjoying every moment."))); });
 
-        public SirRoland(Serial serial) : base(serial) { }
+                        turtleLoveModule.AddOption("Tell me about turtle conservation.",
+                            plt => true,
+                            plt => 
+                            {
+                                DialogueModule conservationModule = new DialogueModule("Turtle conservation is critical! Many species are endangered due to habitat loss and poaching. We must protect their nesting sites and educate others about their importance.");
+                                
+                                conservationModule.AddOption("How can I help?",
+                                    ply => true,
+                                    ply => { pl.SendGump(new DialogueGump(pl, new DialogueModule("You can support conservation organizations, volunteer for beach clean-ups, and spread awareness about turtles! Every small effort counts."))); });
+                                
+                                conservationModule.AddOption("What organizations do you recommend?",
+                                    plu => true,
+                                    plu => 
+                                    {
+                                        pl.SendGump(new DialogueGump(pl, new DialogueModule("I recommend the Sea Turtle Conservancy and World Wildlife Fund. They do excellent work for turtle conservation.")));
+                                    });
+                                
+                                turtleLoveModule.AddOption("That sounds important.",
+                                    pli => true,
+                                    pli => { pl.SendGump(new DialogueGump(pl, new DialogueModule("Indeed, it is! Every creature plays a part in the balance of our world."))); });
+                            });
+                        
+                        player.SendGump(new DialogueGump(player, speciesModule));
+                    });
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-        }
+                turtleLoveModule.AddOption("Do you have a turtle companion?",
+                    pl => true,
+                    pl => 
+                    {
+                        DialogueModule companionModule = new DialogueModule("Ah, I wish! I’ve often thought of adopting a turtle as a companion. They would be a noble and wise presence by my side.");
+                        
+                        companionModule.AddOption("What would you name your turtle?",
+                            plo => true,
+                            plo => { pl.SendGump(new DialogueGump(pl, new DialogueModule("I would name him 'Sir Shellington'! A name befitting a knight's companion."))); });
+                        
+                        companionModule.AddOption("Would you train it?",
+                            plp => true,
+                            plp => { pl.SendGump(new DialogueGump(pl, new DialogueModule("Training a turtle would be quite the challenge, but it would be rewarding! They can learn to recognize their name and come when called."))); });
+                        
+                        player.SendGump(new DialogueGump(player, companionModule));
+                    });
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-        }
+                player.SendGump(new DialogueGump(player, turtleLoveModule));
+            });
+
+        greeting.AddOption("What virtues do you follow?",
+            player => true,
+            player =>
+            {
+                DialogueModule virtuesModule = new DialogueModule("Ah, virtues guide my every action as a knight! Which virtue would you like to discuss?");
+                
+                virtuesModule.AddOption("Honesty",
+                    pl => true,
+                    pl => { pl.SendGump(new DialogueGump(pl, new DialogueModule("Honesty is the foundation of trust. As a knight, I must uphold the truth."))); });
+
+                virtuesModule.AddOption("Compassion",
+                    pl => true,
+                    pl => { pl.SendGump(new DialogueGump(pl, new DialogueModule("Compassion drives me to help those in need, much like how we must care for our environment and the turtles within it."))); });
+
+                virtuesModule.AddOption("Valor",
+                    pl => true,
+                    pl => { pl.SendGump(new DialogueGump(pl, new DialogueModule("Valor is not just bravery; it's standing up for what is right, like advocating for the protection of turtles."))); });
+
+                player.SendGump(new DialogueGump(player, virtuesModule));
+            });
+
+        greeting.AddOption("Goodbye.",
+            player => true,
+            player => { player.SendMessage("Safe travels, noble friend. May your path be as steady as a turtle's."); });
+
+        return greeting;
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0); // version
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
     }
 }

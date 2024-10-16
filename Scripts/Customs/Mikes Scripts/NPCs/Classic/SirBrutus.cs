@@ -17,10 +17,10 @@ namespace Server.Mobiles
             Body = 0x190; // Human male body
 
             // Stats
-            Str = 140;
-            Dex = 60;
-            Int = 20;
-            Hits = 100;
+            SetStr(140);
+            SetDex(60);
+            SetInt(20);
+            SetHits(100);
 
             // Appearance
             AddItem(new PlateChest() { Hue = 1175 });
@@ -40,92 +40,113 @@ namespace Server.Mobiles
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+		public SirBrutus(Serial serial) : base(serial)
+		{
+		}
 
-            if (!from.InRange(this, 3))
+        public override void OnDoubleClick(Mobile from)
+        {
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
-
-            if (speech.Contains("name"))
-            {
-                Say("I am Sir Brutus, the silent shadow in the night.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("My wounds are mere scratches, nothing more.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("I am an assassin, a master of shadows and deception.");
-            }
-            else if (speech.Contains("conflict ideals"))
-            {
-                Say("Justice and compassion, conflicting ideals in my line of work. Can one truly be just while taking lives?");
-            }
-            else if (speech.Contains("honor shadows"))
-            {
-                Say("What say you, traveler? Can one find honor in shadows, or does honor require the light?");
-            }
-            else if (speech.Contains("shadow"))
-            {
-                Say("Ah, the silent shadow. It's a moniker I've earned from my ability to move unnoticed. Many have tried to trace my steps, but darkness is my ally.");
-            }
-            else if (speech.Contains("scratches"))
-            {
-                Say("Every scar on my body tells a tale. Some of victory, others of lessons learned. If you're keen on stories, just ask.");
-            }
-            else if (speech.Contains("assassin"))
-            {
-                Say("Being an assassin isn't just about the kill. It's about strategy, patience, and understanding one's prey. But not all assignments are the same.");
-            }
-            else if (speech.Contains("assignments"))
-            {
-                Say("There are some I take for gold, others for personal reasons. There was one assignment, the silent melody, that changed everything for me.");
-            }
-            else if (speech.Contains("silent"))
-            {
-                Say("It's not a person but a rare and mystical tune. The one who plays it can control minds. I was hired to retrieve its notes. If you help me find the remaining parts, I may reward you.");
-            }
-            else if (speech.Contains("reward"))
-            {
-                if (DateTime.UtcNow - lastRewardTime < TimeSpan.FromMinutes(10))
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Ah, always the curious type, aren't you? Very well, help me and you shall receive something invaluable. Something many in my profession seek but seldom find.");
-                    from.AddToBackpack(new FencingAugmentCrystal()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-            else if (speech.Contains("justice"))
-            {
-                Say("Justice is subjective. To some, it's vengeance. To others, it's retribution. In my world, it's about maintaining balance.");
-            }
-            else if (speech.Contains("compassion"))
-            {
-                Say("Even in my line of work, compassion is not entirely lost. It's a fleeting emotion, but it has saved lives, including my own. Here take this.");
-                from.AddToBackpack(new FencingAugmentCrystal()); // Give the reward
-                lastRewardTime = DateTime.UtcNow; // Update the timestamp
-            }
-            else if (speech.Contains("honor"))
-            {
-                Say("Honor is a personal code. Light or shadow, it's our actions that define its true meaning.");
-            }
-
-            base.OnSpeech(e);
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
         }
 
-        public SirBrutus(Serial serial) : base(serial) { }
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("I am Sir Brutus, the silent shadow in the night. How may I assist you?");
+
+            greeting.AddOption("Tell me about your journey through the moongate.",
+                player => true,
+                player =>
+                {
+                    DialogueModule journeyModule = new DialogueModule("Ah, the moongate. A mysterious portal, it is. One moment, I was shrouded in darkness, and the next, I was pulled through a swirling vortex of light. It felt as if the very fabric of reality was unraveling around me.");
+                    journeyModule.AddOption("What happened when you arrived?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule arrivalModule = new DialogueModule("I found myself in a strange wood, filled with sounds I had never heard before. The air was thick with the scent of damp earth and unknown flora. I was disoriented, a mere shadow of my former self, lost in a realm I did not understand.");
+                            arrivalModule.AddOption("Did you encounter any creatures?",
+                                pl2 => true,
+                                pl2 =>
+                                {
+                                    DialogueModule creaturesModule = new DialogueModule("Indeed, I encountered strange beasts and mystical beings. Some were hostile, while others seemed merely curious about my presence. I remember a peculiar fae creature that flitted around, giggling as it watched me stumble through the underbrush.");
+                                    creaturesModule.AddOption("What did the fae say?",
+                                        pl3 => true,
+                                        pl3 =>
+                                        {
+                                            DialogueModule faeModule = new DialogueModule("It whispered riddles and warned me of dangers lurking in the shadows. It claimed that not all who wander here return to their own world. Its words were both amusing and terrifying.");
+                                            faeModule.AddOption("Did you feel threatened?",
+                                                pl4 => true,
+                                                pl4 =>
+                                                {
+                                                    player.SendGump(new DialogueGump(player, new DialogueModule("At first, yes. The woods felt alive, and I was but a trespasser. However, as I spent more time there, I learned to respect its rhythms and secrets.")));
+                                                });
+                                            pl3.SendGump(new DialogueGump(pl3, faeModule));
+                                        });
+                                    arrivalModule.AddOption("What else did you see?",
+                                        pl3 => true,
+                                        pl3 =>
+                                        {
+                                            DialogueModule sightsModule = new DialogueModule("The trees were enormous, their trunks gnarled and ancient. I stumbled upon a crystal-clear stream that sparkled like stars. It was enchanting and filled with vibrant life, but I could sense lurking dangers.");
+                                            sightsModule.AddOption("What kind of dangers?",
+                                                pl4 => true,
+                                                pl4 =>
+                                                {
+                                                    player.SendGump(new DialogueGump(player, new DialogueModule("Creatures of shadow, predators unseen, awaited the unwary. I learned quickly to tread lightly and to listen closely to the whispers of the woods.")));
+                                                });
+                                            pl3.SendGump(new DialogueGump(pl3, sightsModule));
+                                        });
+                                    pl2.SendGump(new DialogueGump(pl2, creaturesModule));
+                                });
+                            journeyModule.AddOption("How did you survive?",
+                                pl2 => true,
+                                pl2 =>
+                                {
+                                    DialogueModule survivalModule = new DialogueModule("I relied on my instincts and the skills honed through years of experience. I hunted when I could and foraged for wild edibles. The woods taught me the balance of life and survival.");
+                                    survivalModule.AddOption("Did you ever feel hopeless?",
+                                        pl3 => true,
+                                        pl3 =>
+                                        {
+                                            player.SendGump(new DialogueGump(player, new DialogueModule("There were dark moments when despair threatened to consume me. But I remembered my training and the resolve that brought me here. Hope is a powerful ally.")));
+                                        });
+                                    pl2.SendGump(new DialogueGump(pl2, survivalModule));
+                                });
+                            player.SendGump(new DialogueGump(player, arrivalModule));
+                        });
+                    player.SendGump(new DialogueGump(player, journeyModule));
+                });
+
+            greeting.AddOption("What about your thoughts on justice?",
+                player => true,
+                player =>
+                {
+                    player.SendGump(new DialogueGump(player, new DialogueModule("Justice is subjective. To some, it is vengeance. To others, it is retribution. In my world, it is about maintaining balance, whether in the shadows or the light.")));
+                });
+
+            greeting.AddOption("What is your view on honor?",
+                player => true,
+                player =>
+                {
+                    player.SendGump(new DialogueGump(player, new DialogueModule("Honor is a personal code. Light or shadow, it's our actions that define its true meaning. My journey has taught me that honor is often blurred by necessity.")));
+                });
+
+            greeting.AddOption("Do you believe in compassion?",
+                player => true,
+                player =>
+                {
+                    player.AddToBackpack(new FencingAugmentCrystal()); // Give the reward
+                    player.SendGump(new DialogueGump(player, new DialogueModule("Even in my line of work, compassion is not entirely lost. It has saved lives, including my own. Here, take this as a token of my belief.")));
+                });
+
+            return greeting;
+        }
 
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write((int)0); // version
+            writer.Write(0); // version
             writer.Write(lastRewardTime);
         }
 

@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -17,101 +18,164 @@ namespace Server.Mobiles
             Body = 0x191; // Human male body
 
             // Stats
-            Str = 100;
-            Dex = 90;
-            Int = 60;
-            Hits = 80;
+            SetStr(100);
+            SetDex(90);
+            SetInt(60);
+            SetHits(80);
 
             // Appearance
-            AddItem(new FemaleLeatherChest() { Hue = 1337 }); // Robe with hue 1337
-			AddItem(new Cloak() { Hue = 1337 }); // Robe with hue 1337
-            AddItem(new ThighBoots() { Hue = 1337 }); // Thigh Boots with hue 1337
+            AddItem(new FemaleLeatherChest() { Hue = 1337 });
+            AddItem(new Cloak() { Hue = 1337 });
+            AddItem(new ThighBoots() { Hue = 1337 });
             AddItem(new Dagger() { Name = "Junny's Blade" });
 
             Hue = Race.RandomSkinHue();
             HairItemID = Race.RandomHair(Female);
             HairHue = Race.RandomHairHue();
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
-        }
-
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
-                return;
-
-            string speech = e.Speech.ToLower();
-
-            if (speech.Contains("name"))
-            {
-                Say("Greetings, traveler. I am Junny, the Exile.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("I've faced countless battles in Wraeclast.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My life is a never-ending battle for survival.");
-            }
-            else if (speech.Contains("battles"))
-            {
-                Say("Survival in Wraeclast requires many virtues. What virtues guide you?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("Indeed, the path of an exile is fraught with peril. Tell me, do you value Honor and Sacrifice in your journey?");
-            }
-            else if (speech.Contains("exile"))
-            {
-                Say("Many years ago, I was cast out from my homeland for challenging the corrupt leadership. It's a story of betrayal and loss.");
-            }
-            else if (speech.Contains("wraeclast"))
-            {
-                Say("Wraeclast is a land of dark magic and dangerous creatures. Every day is a test of one's will and might. I've earned my scars in this unforgiving land.");
-            }
-            else if (speech.Contains("survival"))
-            {
-                Say("To survive in Wraeclast, one must be cunning and resourceful. Over the years, I've learned to craft weapons and armors to protect myself from the beasts that roam this land.");
-            }
-            else if (speech.Contains("virtues"))
-            {
-                Say("In Wraeclast, virtues like honor, sacrifice, and courage are the pillars that keep an exile going. These virtues have been my guiding light in the darkest of times.");
-            }
-            else if (speech.Contains("homeland"))
-            {
-                Say("My homeland was once a place of beauty and prosperity. But greed and power corrupted its leaders, leading to its downfall. I still dream of returning and restoring its former glory.");
-            }
-            else if (speech.Contains("magic"))
-            {
-                Say("The magic in Wraeclast is ancient and powerful. It's not just about casting spells, but understanding the very fabric of reality. Those who misuse it often pay a heavy price.");
-            }
-            else if (speech.Contains("craft"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Crafting is not just a skill but an art. With the right materials and knowledge, one can create items of immense power. If you prove worthy, I might share some secrets with you and reward you with a crafted item.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Replace with actual reward item
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-            else if (speech.Contains("courage"))
-            {
-                Say("Courage is not just about facing danger but also standing up for what is right. In Wraeclast, where trust is a rare commodity, having the courage to trust and be trusted is a virtue in itself.");
-            }
-
-            base.OnSpeech(e);
+            lastRewardTime = DateTime.MinValue; // Initialize lastRewardTime
         }
 
         public Junny(Serial serial) : base(serial) { }
+
+        public override void OnDoubleClick(Mobile from)
+        {
+            if (!(from is PlayerMobile player))
+                return;
+
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
+
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("Greetings, traveler. I am Junny, the Exile. What would you like to discuss?");
+
+            greeting.AddOption("Tell me about your health.",
+                player => true,
+                player =>
+                {
+                    player.SendGump(new DialogueGump(player, new DialogueModule("I've faced countless battles in Wraeclast, and while my body is scarred, my spirit remains unbroken. What else do you wish to know?")));
+                });
+
+            greeting.AddOption("What is your job?",
+                player => true,
+                player =>
+                {
+                    DialogueModule jobModule = new DialogueModule("My life is a never-ending battle for survival. I fend for myself in the wilds, often crafting weapons and potions from the materials I find. What intrigues you about my life?");
+                    jobModule.AddOption("How do you survive?",
+                        p => true,
+                        p =>
+                        {
+                            p.SendGump(new DialogueGump(p, new DialogueModule("Survival in Wraeclast requires cunning and resourcefulness. I hunt, gather, and trade with others to sustain myself. It’s a constant struggle, but it keeps me sharp.")));
+                        });
+                    jobModule.AddOption("Do you have any allies?",
+                        p => true,
+                        p =>
+                        {
+                            p.SendGump(new DialogueGump(p, new DialogueModule("Allies are scarce in Wraeclast, but I have a few trusted companions. We look out for each other, though trust is a rare commodity here.")));
+                        });
+                    player.SendGump(new DialogueGump(player, jobModule));
+                });
+
+            greeting.AddOption("What can you tell me about battles?",
+                player => true,
+                player =>
+                {
+                    DialogueModule battlesModule = new DialogueModule("Survival in Wraeclast requires many virtues. What virtues guide you?");
+                    battlesModule.AddOption("Tell me about your virtues.",
+                        p => true,
+                        p =>
+                        {
+                            DialogueModule virtuesModule = new DialogueModule("Virtues like honor, sacrifice, and courage are my guiding lights. They remind me to fight for something greater than myself. Which virtue resonates with you?");
+                            virtuesModule.AddOption("I value honor.",
+                                pl => true,
+                                pl =>
+                                {
+                                    pl.SendGump(new DialogueGump(pl, new DialogueModule("Honor is paramount. It gives meaning to our struggles and guides our actions in the heat of battle.")));
+                                });
+                            virtuesModule.AddOption("Courage is what I cherish.",
+                                pl => true,
+                                pl =>
+                                {
+                                    pl.SendGump(new DialogueGump(pl, new DialogueModule("Courage is essential, especially when facing the unknown. It empowers us to take risks.")));
+                                });
+                            virtuesModule.AddOption("Sacrifice is the path I choose.",
+                                pl => true,
+                                pl =>
+                                {
+                                    pl.SendGump(new DialogueGump(pl, new DialogueModule("Sacrifice can lead to greater rewards. Sometimes, one must give up something valuable for the greater good.")));
+                                });
+                            p.SendGump(new DialogueGump(p, virtuesModule));
+                        });
+                    battlesModule.AddOption("What do you think of Wraeclast?",
+                        p => true,
+                        p =>
+                        {
+                            p.SendGump(new DialogueGump(p, new DialogueModule("Wraeclast is a land of dark magic and dangerous creatures. Every day is a test of one's will and might. What stories have you heard about it?")));
+                        });
+                    player.SendGump(new DialogueGump(player, battlesModule));
+                });
+
+            greeting.AddOption("Do you have any crafting secrets?",
+                player => true,
+                player =>
+                {
+                    TimeSpan cooldown = TimeSpan.FromMinutes(10);
+                    if (DateTime.UtcNow - lastRewardTime < cooldown)
+                    {
+                        player.SendGump(new DialogueGump(player, new DialogueModule("I have no reward right now. Please return later.")));
+                    }
+                    else
+                    {
+                        lastRewardTime = DateTime.UtcNow; // Update the timestamp
+                        player.AddToBackpack(new MaxxiaScroll()); // Replace with actual reward item
+                        player.SendGump(new DialogueGump(player, new DialogueModule("Crafting is not just a skill but an art. I’ve given you a crafted item as a reward.")));
+                    }
+                });
+
+            greeting.AddOption("What about courage?",
+                player => true,
+                player =>
+                {
+                    DialogueModule courageModule = new DialogueModule("Courage is not just about facing danger; it's also about standing up for what is right. In Wraeclast, trust is a rare commodity. Do you have someone you trust?");
+                    courageModule.AddOption("I have a trusted companion.",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, new DialogueModule("That's good to hear. In this land, having someone at your back can mean the difference between life and death.")));
+                        });
+                    courageModule.AddOption("I stand alone.",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, new DialogueModule("Standing alone can be a heavy burden. Remember, even the strongest need allies sometimes.")));
+                        });
+                    player.SendGump(new DialogueGump(player, courageModule));
+                });
+
+            greeting.AddOption("What about magic in Wraeclast?",
+                player => true,
+                player =>
+                {
+                    DialogueModule magicModule = new DialogueModule("The magic in Wraeclast is ancient and powerful. It's not just about casting spells, but understanding the very fabric of reality. What do you think of magic?");
+                    magicModule.AddOption("Magic is a double-edged sword.",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, new DialogueModule("Indeed, those who misuse it often pay a heavy price. Balance is key.")));
+                        });
+                    magicModule.AddOption("I seek magical knowledge.",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, new DialogueModule("Knowledge is the greatest treasure. Seek out wise sages and ancient tomes to deepen your understanding.")));
+                        });
+                    player.SendGump(new DialogueGump(player, magicModule));
+                });
+
+            return greeting;
+        }
 
         public override void Serialize(GenericWriter writer)
         {

@@ -1,120 +1,253 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
-namespace Server.Mobiles
+[CorpseName("the corpse of Alien Ambassador Zark")]
+public class AlienAmbassadorZark : BaseCreature
 {
-    [CorpseName("the corpse of Alien Ambassador Zark")]
-    public class AlienAmbassadorZark : BaseCreature
+    [Constructable]
+    public AlienAmbassadorZark() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        [Constructable]
-        public AlienAmbassadorZark() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Alien Ambassador Zark";
-            Body = 0x190; // Human male body; adjust as needed
+        Name = "Alien Ambassador Zark";
+        Body = 0x190; // Human male body
 
-            // Stats
-            Str = 80;
-            Dex = 90;
-            Int = 130;
-            Hits = 70;
+        // Stats
+        SetStr(80);
+        SetDex(90);
+        SetInt(130);
+        SetHits(70);
 
-            // Appearance
-            AddItem(new Robe(2400)); // Robe with Hue 4400
-            AddItem(new BlackStaff { Name = "Zark's Energy Staff" });
+        // Appearance
+        AddItem(new Robe(2400)); // Robe with Hue 4400
+        AddItem(new BlackStaff { Name = "Zark's Energy Staff" });
 
-            SpeechHue = 0; // Default speech hue
-        }
-
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
-                return;
-
-            if (Insensitive.Contains(e.Speech, "name"))
-            {
-                Say("Greetings, I am Alien Ambassador Zark, representing the interstellar council.");
-            }
-            else if (Insensitive.Contains(e.Speech, "health"))
-            {
-                Say("I am in perfect health, as our technology can swiftly mend any ailment.");
-            }
-            else if (Insensitive.Contains(e.Speech, "job"))
-            {
-                Say("My role here is to foster diplomacy and understanding between our two worlds.");
-            }
-            else if (Insensitive.Contains(e.Speech, "virtues"))
-            {
-                Say("We, the Council, hold the virtue of Spirituality dear, seeking harmony among all beings.");
-            }
-            else if (Insensitive.Contains(e.Speech, "thoughts"))
-            {
-                Say("What are your thoughts on the virtue of Spirituality, and how it relates to your world?");
-            }
-            else if (Insensitive.Contains(e.Speech, "council"))
-            {
-                Say("The interstellar council comprises various species from distant galaxies, working together to ensure peace and prosperity in the cosmos.");
-            }
-            else if (Insensitive.Contains(e.Speech, "technology"))
-            {
-                Say("Our technology is not just for health. We've harnessed the power of stars, manipulated the fabric of space, and unlocked secrets of the universe. Would you like a demonstration?");
-            }
-            else if (Insensitive.Contains(e.Speech, "diplomacy"))
-            {
-                Say("Diplomacy is not just about communication, but understanding. We believe in learning from every civilization we encounter, combining knowledge for the betterment of all.");
-            }
-            else if (Insensitive.Contains(e.Speech, "harmony"))
-            {
-                Say("Harmony is achieved not by dominance, but by mutual respect. Every being, regardless of their origin, has value and can contribute to the larger tapestry of existence.");
-            }
-            else if (Insensitive.Contains(e.Speech, "world"))
-            {
-                Say("Your world is unique, filled with its own challenges and joys. It reminds us of a planet in the Andromeda sector. If you ever wish to visit, I can make arrangements.");
-            }
-            else if (Insensitive.Contains(e.Speech, "species"))
-            {
-                Say("There are countless species in the council, from the ethereal Aeloxians to the robust Yarnarians. We cherish the diversity, as it brings varied perspectives.");
-            }
-            else if (Insensitive.Contains(e.Speech, "demonstration"))
-            {
-                Say("Watch closely. [Ambassador Zark produces a small device, and with a press, a holographic universe unfolds before your eyes, showing the vastness of the cosmos]. This is but a fraction of what we have explored. As a token of our meeting, please take this device. May it inspire wonder in you.");
-                from.AddToBackpack(new TailoringAugmentCrystal()); // Adjust item type as needed
-            }
-            else if (Insensitive.Contains(e.Speech, "civilization"))
-            {
-                Say("Each civilization we encounter holds a mirror to our own, reflecting both our strengths and areas for growth. By sharing and learning, we aim to uplift all.");
-            }
-            else if (Insensitive.Contains(e.Speech, "origin"))
-            {
-                Say("Regardless of one's origin, the universal language is kindness. We've found this truth resonates across galaxies and species.");
-            }
-            else if (Insensitive.Contains(e.Speech, "aeloxians"))
-            {
-                Say("The Aeloxians are beings of pure energy, not bound by physical form. Their wisdom has greatly influenced the council's philosophy.");
-            }
-            else if (Insensitive.Contains(e.Speech, "device"))
-            {
-                Say("The device you now hold is a portable universe map. It's a tool for exploration and understanding. Cherish it, and perhaps one day, you'll join our explorations.");
-            }
-
-            base.OnSpeech(e);
-        }
-
-        public AlienAmbassadorZark(Serial serial) : base(serial) { }
-
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0);
-        }
-
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-        }
+        SpeechHue = 0; // Default speech hue
     }
+
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
+
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
+
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("Greetings, I am Alien Ambassador Zark, representing the interstellar council. How may I assist you?");
+
+        greeting.AddOption("Tell me about your council.",
+            player => true,
+            player =>
+            {
+                DialogueModule councilModule = new DialogueModule("The interstellar council comprises various species from distant galaxies, working together to ensure peace and prosperity in the cosmos. We meet regularly to discuss universal matters.");
+                
+                councilModule.AddOption("What species are part of the council?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule speciesModule = new DialogueModule("There are countless species, including the wise Aeloxians, the resilient Yarnarians, and the enigmatic Crystallans. Each brings unique perspectives and knowledge.");
+                        
+                        speciesModule.AddOption("Tell me more about the Aeloxians.",
+                            pla => true,
+                            pla =>
+                            {
+                                DialogueModule aeloxianModule = new DialogueModule("The Aeloxians are beings of pure energy, known for their profound wisdom and serene nature. They often serve as mediators in council discussions.");
+                                aeloxianModule.AddOption("How do they communicate?",
+                                    p => true,
+                                    p =>
+                                    {
+                                        p.SendGump(new DialogueGump(p, aeloxianModule));
+                                    });
+                                speciesModule.AddOption("What do you value in your council?",
+                                    pls => true,
+                                    pls =>
+                                    {
+                                        DialogueModule valuesModule = new DialogueModule("We value kindness, understanding, and the pursuit of knowledge. The universal language of kindness resonates across galaxies.");
+                                        valuesModule.AddOption("I see, that's enlightening.",
+                                            p => true,
+                                            p =>
+                                            {
+                                                p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                                            });
+                                        pl.SendGump(new DialogueGump(pl, valuesModule));
+                                    });
+                                pl.SendGump(new DialogueGump(pl, aeloxianModule));
+                            });
+                        speciesModule.AddOption("What are the Yarnarians like?",
+                            plw => true,
+                            plw =>
+                            {
+                                DialogueModule yarnarianModule = new DialogueModule("Yarnarians are known for their resilience and craftsmanship. They have a deep connection with the materials of their world, using them to create stunning artifacts.");
+                                yarnarianModule.AddOption("That sounds fascinating.",
+                                    p => true,
+                                    p =>
+                                    {
+                                        p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                                    });
+                                pl.SendGump(new DialogueGump(pl, yarnarianModule));
+                            });
+                        pl.SendGump(new DialogueGump(pl, speciesModule));
+                    });
+
+                councilModule.AddOption("How do you ensure peace?",
+                    playerd => true,
+                    playerd =>
+                    {
+                        DialogueModule peaceModule = new DialogueModule("We utilize a combination of diplomacy, cultural exchanges, and sometimes even joint missions to foster understanding and harmony among species.");
+                        peaceModule.AddOption("What kind of missions?",
+                            pl => true,
+                            pl =>
+                            {
+                                DialogueModule missionsModule = new DialogueModule("Joint missions can range from exploration endeavors to research projects aimed at solving interstellar challenges, such as resource scarcity or health crises.");
+                                missionsModule.AddOption("That's interesting! Can you tell me about a specific mission?",
+                                    p => true,
+                                    p =>
+                                    {
+                                        DialogueModule specificMissionModule = new DialogueModule("One notable mission involved a collaboration with the Aeloxians to explore a newly discovered planet rich in rare minerals. We aimed to assess its viability for habitation.");
+                                        specificMissionModule.AddOption("What were the results?",
+                                            plt => true,
+                                            plt =>
+                                            {
+                                                plt.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                                            });
+                                        p.SendGump(new DialogueGump(p, specificMissionModule));
+                                    });
+                                pl.SendGump(new DialogueGump(pl, missionsModule));
+                            });
+                        player.SendGump(new DialogueGump(player, peaceModule));
+                    });
+
+                player.SendGump(new DialogueGump(player, councilModule));
+            });
+
+        greeting.AddOption("What is your role?",
+            player => true,
+            player =>
+            {
+                DialogueModule roleModule = new DialogueModule("My role is to foster diplomacy and understanding between our two worlds. It requires keen insight and the ability to navigate complex cultural landscapes.");
+                
+                roleModule.AddOption("What challenges do you face?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule challengesModule = new DialogueModule("The greatest challenges often arise from misunderstandings. Different cultures have unique values and norms, which can lead to friction if not approached with care.");
+                        challengesModule.AddOption("How do you overcome these challenges?",
+                            p => true,
+                            p =>
+                            {
+                                p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                            });
+                        pl.SendGump(new DialogueGump(pl, challengesModule));
+                    });
+                player.SendGump(new DialogueGump(player, roleModule));
+            });
+
+        greeting.AddOption("Can you demonstrate your technology?",
+            player => true,
+            player =>
+            {
+                DialogueModule techModule = new DialogueModule("Watch closely. [Ambassador Zark produces a small device, and with a press, a holographic universe unfolds before your eyes]. This is but a fraction of what we have explored.");
+                techModule.AddOption("What is this device?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule deviceModule = new DialogueModule("This is a portable universe map, a tool for exploration and understanding. It allows one to visualize the cosmos in stunning detail.");
+                        deviceModule.AddOption("Can I keep it?",
+                            p => true,
+                            p =>
+                            {
+                                p.AddToBackpack(new TailoringAugmentCrystal()); // Adjust item type as needed
+                                p.SendGump(new DialogueGump(p, deviceModule));
+                            });
+                        pl.SendGump(new DialogueGump(pl, deviceModule));
+                    });
+                player.SendGump(new DialogueGump(player, techModule));
+            });
+
+        greeting.AddOption("What do you think about your world?",
+            player => true,
+            player =>
+            {
+                DialogueModule worldModule = new DialogueModule("Your world is unique, filled with its own challenges and joys. It reminds me of a planet in the Andromeda sector, rich in biodiversity and cultural heritage.");
+                
+                worldModule.AddOption("What can you tell me about Andromeda?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule andromedaModule = new DialogueModule("Andromeda is home to many fascinating civilizations. One in particular, the Seraphim, are known for their breathtaking architecture and harmonious living with nature.");
+                        andromedaModule.AddOption("I would love to visit one day.",
+                            p => true,
+                            p =>
+                            {
+                                p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                            });
+                        pl.SendGump(new DialogueGump(pl, andromedaModule));
+                    });
+                player.SendGump(new DialogueGump(player, worldModule));
+            });
+
+        greeting.AddOption("What are your thoughts on technology?",
+            player => true,
+            player =>
+            {
+                DialogueModule techThoughtsModule = new DialogueModule("Technology, when used wisely, can bridge gaps and foster understanding. However, it also poses risks if not handled responsibly.");
+                
+                techThoughtsModule.AddOption("What kind of risks?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule riskModule = new DialogueModule("The greatest risk is the potential for misuse. Advanced technology can become a tool for oppression rather than liberation if in the wrong hands.");
+                        riskModule.AddOption("That's a valid concern.",
+                            p => true,
+                            p =>
+                            {
+                                p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                            });
+                        pl.SendGump(new DialogueGump(pl, riskModule));
+                    });
+                player.SendGump(new DialogueGump(player, techThoughtsModule));
+            });
+
+        greeting.AddOption("Tell me about your travels.",
+            player => true,
+            player =>
+            {
+                DialogueModule travelModule = new DialogueModule("Traveling across galaxies has opened my eyes to the diversity of life and culture. I've seen planets where the skies shimmer with colors unknown to your world.");
+                
+                travelModule.AddOption("What was your most memorable trip?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule memorableTripModule = new DialogueModule("One of my most memorable trips was to the planet Quorath, known for its crystalline forests and luminescent flora. The beauty was breathtaking, and the inhabitants welcomed us warmly.");
+                        memorableTripModule.AddOption("Sounds enchanting!",
+                            p => true,
+                            p =>
+                            {
+                                p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                            });
+                        pl.SendGump(new DialogueGump(pl, memorableTripModule));
+                    });
+                player.SendGump(new DialogueGump(player, travelModule));
+            });
+
+        return greeting;
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+
+    public AlienAmbassadorZark(Serial serial) : base(serial) { }
 }

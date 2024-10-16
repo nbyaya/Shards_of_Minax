@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -32,77 +33,158 @@ namespace Server.Mobiles
             HairItemID = Race.RandomHair(Female);
             HairHue = Race.RandomHairHue();
 
-            // Speech Hue
-            SpeechHue = 0; // Default speech hue
-
             // Initialize the lastRewardTime to a past time
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
 
-            if (speech.Contains("name"))
-            {
-                Say("Greetings, darling. I am Sultry Sally.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("My health? Why, my dear, it's positively radiant.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My profession? I provide companionship, darling, for those in search of warmth and intimacy.");
-            }
-            else if (speech.Contains("valor"))
-            {
-                Say("But remember, darling, true valor lies not only in the heart of a warrior but also in the tenderness of a lover. Do you agree?");
-            }
-            else if (speech.Contains("yes") && (speech.Contains("valor") || speech.Contains("love")))
-            {
-                Say("Ah, a wise answer, my sweet. Just remember that love can be the most powerful force of all.");
-            }
-            else if (speech.Contains("companionship"))
-            {
-                Say("Companionship is an art, my dear. It's about understanding, listening, and being there for someone when they need it. Some come for tales, others for comfort.");
-            }
-            else if (speech.Contains("tales"))
-            {
-                Say("Over the years, I've heard many stories. From lost treasures to hidden caves, the world is full of secrets. One tale that intrigued me the most is that of the Moonlit Grotto.");
-            }
-            else if (speech.Contains("grotto"))
-            {
-                if (DateTime.UtcNow - lastRewardTime < TimeSpan.FromMinutes(10))
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("Greetings, darling. I am Sultry Sally. Care for a tale or two about my... colorful clientele?");
+            
+            greeting.AddOption("Tell me about your worst customers.",
+                player => true,
+                player =>
                 {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Ah, the mysterious cavern where legends say the water glows under the moonlight. Many adventurers seek it, but few find it. If you ever wish to explore it, take this token. It might help you on your way.");
-                    from.AddToBackpack(new BraceletSlotChangeDeed()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-            else if (speech.Contains("secrets"))
-            {
-                Say("Darling, the world holds many mysteries. Some are meant to be discovered, while others remain hidden. But the best secret? That's the power of love and connection.");
-            }
-            else if (speech.Contains("love"))
-            {
-                Say("Love is a force that moves us, binds us, and sometimes breaks us. But in its purest form, it gives us strength. Have you ever been in love, darling?");
-            }
-            else if (speech.Contains("no"))
-            {
-                Say("Do not worry, my dear. Love finds us in the most unexpected places and moments. Always keep your heart open.");
-            }
+                    DialogueModule worstCustomersModule = new DialogueModule("Oh, where do I even begin? There are so many! One of the worst was a man named Boris who thought he could charm me with gold and empty promises.");
+                    
+                    worstCustomersModule.AddOption("What did he do?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule borisModule = new DialogueModule("He would come in every week, flaunting his wealth and boasting about his adventures. But darling, when it came to paying, he'd always have an excuse. 'My purse was stolen!' he would say. How predictable!");
+                            borisModule.AddOption("Did you ever confront him?",
+                                p => true,
+                                p =>
+                                {
+                                    DialogueModule confrontationModule = new DialogueModule("Oh, I tried! I told him that if he couldn't pay, he should stop wasting my time. He simply laughed and promised to make it up to me. But he never did.");
+                                    confrontationModule.AddOption("What happened to him?",
+                                        plq => true,
+                                        plq =>
+                                        {
+                                            pl.SendMessage("He eventually stopped coming around. Word got out, and I suspect the other ladies had a few words with him.");
+                                            pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                                        });
+                                    p.SendGump(new DialogueGump(p, confrontationModule));
+                                });
+                            pl.SendGump(new DialogueGump(pl, borisModule));
+                        });
 
-            base.OnSpeech(e);
+                    worstCustomersModule.AddOption("Any other memorable customers?",
+                        playerw => true,
+                        playerw =>
+                        {
+                            DialogueModule otherModule = new DialogueModule("Absolutely! There's also the tale of Lady Gwendolyn, a rather... demanding patron. She would arrive with a long list of expectations and a very short temper.");
+                            otherModule.AddOption("What did she expect?",
+                                pl => true,
+                                pl =>
+                                {
+                                    DialogueModule expectationsModule = new DialogueModule("She wanted everything to be perfect—candlelit ambiance, fresh flowers, and the finest wines. But, oh, the moment anything went wrong, her wrath was terrifying!");
+                                    expectationsModule.AddOption("Did you ever make a mistake?",
+                                        p => true,
+                                        p =>
+                                        {
+                                            DialogueModule mistakeModule = new DialogueModule("Once, I accidentally served her the wrong vintage. She nearly threw the glass at my head! I learned very quickly to triple-check her orders.");
+                                            mistakeModule.AddOption("How did you handle her?",
+                                                ple => true,
+                                                ple =>
+                                                {
+                                                    pl.SendMessage("I had to calm her down and promise her a complimentary evening next time. I even apologized profusely, and thankfully, she returned.");
+                                                    pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                                                });
+                                            p.SendGump(new DialogueGump(p, mistakeModule));
+                                        });
+                                    pl.SendGump(new DialogueGump(pl, expectationsModule));
+                                });
+                            player.SendGump(new DialogueGump(player, otherModule));
+                        });
+
+                    worstCustomersModule.AddOption("Anyone else worth mentioning?",
+                        playerr => true,
+                        playerr =>
+                        {
+                            DialogueModule mentionModule = new DialogueModule("Oh yes! There's that infamous rogue, Jarek. He was charming but utterly unpredictable. You never knew what mood he'd be in.");
+                            mentionModule.AddOption("What was he like?",
+                                pl => true,
+                                pl =>
+                                {
+                                    DialogueModule jarekModule = new DialogueModule("One moment he’d shower you with affection, the next he’d be shouting at the shadows! He once tried to pick a fight with a lantern!");
+                                    jarekModule.AddOption("What did you do?",
+                                        p => true,
+                                        p =>
+                                        {
+                                            DialogueModule responseModule = new DialogueModule("I merely stepped aside and let him tire himself out. Eventually, he realized how ridiculous he was being. I think he left embarrassed.");
+                                            responseModule.AddOption("Did he ever return?",
+                                                pla => true,
+                                                pla =>
+                                                {
+                                                    pla.SendMessage("Oh yes, he came back, but with a much calmer demeanor. I suppose he learned not to provoke the very shadows he feared.");
+                                                    pla.SendGump(new DialogueGump(pla, CreateGreetingModule()));
+                                                });
+                                            p.SendGump(new DialogueGump(p, responseModule));
+                                        });
+                                    pl.SendGump(new DialogueGump(pl, jarekModule));
+                                });
+                            player.SendGump(new DialogueGump(player, mentionModule));
+                        });
+
+                    player.SendGump(new DialogueGump(player, worstCustomersModule));
+                });
+
+            greeting.AddOption("What tales do you have?",
+                player => true,
+                player =>
+                {
+                    DialogueModule talesModule = new DialogueModule("Over the years, I've heard many stories. One tale that intrigued me the most is that of the Moonlit Grotto.");
+                    talesModule.AddOption("What about the grotto?",
+                        pl => true,
+                        pl =>
+                        {
+                            if (DateTime.UtcNow - lastRewardTime < TimeSpan.FromMinutes(10))
+                            {
+                                pl.SendMessage("I have no reward right now. Please return later.");
+                            }
+                            else
+                            {
+                                pl.SendMessage("Ah, the mysterious cavern where legends say the water glows under the moonlight. Here, take this token. It might help you on your way.");
+                                pl.AddToBackpack(new BraceletSlotChangeDeed()); // Give the reward
+                                lastRewardTime = DateTime.UtcNow; // Update the timestamp
+                            }
+                            pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                        });
+                    player.SendGump(new DialogueGump(player, talesModule));
+                });
+
+            greeting.AddOption("Do you have secrets to share?",
+                player => true,
+                player =>
+                {
+                    DialogueModule secretsModule = new DialogueModule("Darling, the world holds many mysteries. The best secret? That's the power of love and connection.");
+                    secretsModule.AddOption("What do you think about love?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule loveModule = new DialogueModule("Love is a force that moves us, binds us, and sometimes breaks us. Have you ever been in love, darling?");
+                            loveModule.AddOption("Yes.",
+                                pla => true,
+                                pla => pla.SendGump(new DialogueGump(pla, CreateGreetingModule())));
+                            loveModule.AddOption("No.",
+                                pla => true,
+                                pla => pla.SendGump(new DialogueGump(pla, CreateGreetingModule())));
+                            pl.SendGump(new DialogueGump(pl, loveModule));
+                        });
+                    player.SendGump(new DialogueGump(player, secretsModule));
+                });
+
+            return greeting;
         }
 
         public SultrySally(Serial serial) : base(serial) { }

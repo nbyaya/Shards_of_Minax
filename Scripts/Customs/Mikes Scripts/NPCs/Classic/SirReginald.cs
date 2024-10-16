@@ -1,134 +1,193 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
+using Server.Network;
 using Server.Items;
 
-namespace Server.Mobiles
+public class SirReginald : BaseCreature
 {
-    [CorpseName("the corpse of Sir Reginald")]
-    public class SirReginald : BaseCreature
+    private DateTime lastRewardTime;
+
+    [Constructable]
+    public SirReginald() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "Sir Reginald";
+        Body = 0x190; // Human male body
 
-        [Constructable]
-        public SirReginald() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Sir Reginald";
-            Body = 0x190; // Human male body
+        // Stats
+        SetStr(70);
+        SetDex(50);
+        SetInt(90);
+        SetHits(55);
 
-            // Stats
-            Str = 70;
-            Dex = 50;
-            Int = 90;
-            Hits = 55;
+        // Appearance
+        AddItem(new LongPants() { Hue = 1906 });
+        AddItem(new Tunic() { Hue = 1906 });
+        AddItem(new Shoes() { Hue = 1906 });
+        AddItem(new FeatheredHat() { Hue = 1906 });
+        AddItem(new MortarPestle() { Name = "Reginald's Mortar and Pestle" });
 
-            // Appearance
-            AddItem(new LongPants() { Hue = 1906 });
-            AddItem(new Tunic() { Hue = 1906 });
-            AddItem(new Shoes() { Hue = 1906 });
-            AddItem(new FeatheredHat() { Hue = 1906 });
-            AddItem(new MortarPestle() { Name = "Reginald's Mortar and Pestle" });
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(this);
+        HairHue = Race.RandomHairHue();
 
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(this);
-            HairHue = Race.RandomHairHue();
+        lastRewardTime = DateTime.MinValue; // Initialize the lastRewardTime to a past time
+    }
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
+	public SirReginald(Serial serial) : base(serial)
+	{
+	}
 
-            // Speech Hue
-            SpeechHue = 0; // Default speech hue
-        }
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
 
-            if (!from.InRange(this, 3))
-                return;
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("Greetings, traveler! I am Sir Reginald. Have you ever pondered the nature of our reality?");
 
-            string speech = e.Speech.ToLower();
-
-            if (speech.Contains("name"))
+        greeting.AddOption("What do you mean by reality?",
+            player => true,
+            player =>
             {
-                Say("Greetings, traveler! I am Sir Reginald.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("I'm in fair health, as knights should be!");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("I serve as a knight in these lands.");
-            }
-            else if (speech.Contains("battles"))
-            {
-                Say("True valor lies not just in the sword, but in one's heart. Are you a person of courage?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("Then never back down when honor is at stake!");
-            }
-            else if (speech.Contains("reginald"))
-            {
-                Say("Ah, you've heard of me? I come from a long line of knights. My father was Sir Roderick, a legend in his time.");
-            }
-            else if (speech.Contains("fair"))
-            {
-                Say("Indeed, daily training and discipline keep me fit. However, sometimes I do miss the taste of Lady Emeline's famous pies.");
-            }
-            else if (speech.Contains("knight"))
-            {
-                Say("A knight's duty is not just about battles. It's about protecting the weak and upholding justice. I've taken an oath to the Order of the Silver Lance.");
-            }
-            else if (speech.Contains("roderick"))
-            {
-                Say("Ah, my father! A brave soul and a beacon of hope in dark times. He once saved our village from a fearsome dragon.");
-            }
-            else if (speech.Contains("emeline"))
-            {
-                Say("Lady Emeline is not only a brilliant cook but also a skilled herbalist. She aids the wounded and sick with her remedies. If you ever need healing, seek her out and mention my name for a reward.");
-            }
-            else if (speech.Contains("lance"))
-            {
-                Say("An ancient order of knights, we've been guardians of this realm for centuries. Our symbol, a silver lance crossed with a shield, can be seen at important landmarks.");
-            }
-            else if (speech.Contains("dragon"))
-            {
-                Say("Ah, the beast was named Drakonar. Its fiery breath and scales tougher than steel posed a great challenge. My father used his wit and skill to best it.");
-            }
-            else if (speech.Contains("remedies"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Indeed, Lady Emeline's potions have saved many lives. I remember when I was poisoned in a skirmish; her antidote was the only thing that saved me. Here, take this vial as a token of gratitude for listening to my tales.");
-                    from.AddToBackpack(new EnergyHitAreaCrystal()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
+                DialogueModule realityModule = new DialogueModule("I believe this world is but a grand simulation. Everything we perceive may be mere illusions crafted by a higher power.");
+                realityModule.AddOption("But why would anyone create a simulation?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule purposeModule = new DialogueModule("Perhaps to learn, to observe, or to test the limits of morality. What if our choices have no consequence beyond this digital realm?");
+                        purposeModule.AddOption("That sounds troubling.",
+                            p => true,
+                            p =>
+                            {
+                                DialogueModule troublingModule = new DialogueModule("Indeed, it is. It leads one to question the very fabric of our existence. Are we truly free, or just puppets in a play?");
+                                p.SendGump(new DialogueGump(p, troublingModule));
+                            });
+                        pl.SendGump(new DialogueGump(pl, purposeModule));
+                    });
+                player.SendGump(new DialogueGump(player, realityModule));
+            });
 
-            base.OnSpeech(e);
-        }
+        greeting.AddOption("How do you know it's a simulation?",
+            player => true,
+            player =>
+            {
+                DialogueModule knowledgeModule = new DialogueModule("I have seen patterns, anomalies in our world. Moments that feel too perfect, too coincidental to be random.");
+                knowledgeModule.AddOption("Can you give me an example?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule exampleModule = new DialogueModule("Consider how certain events unfold. A chance encounter leads to a life-changing moment, as if scripted by an unseen hand. Even our battles feel predetermined at times.");
+                        exampleModule.AddOption("That's an interesting perspective.",
+                            p => true,
+                            p =>
+                            {
+                                p.SendGump(new DialogueGump(p, CreateGreetingModule())); // Return to the main greeting
+                            });
+                        pl.SendGump(new DialogueGump(pl, exampleModule));
+                    });
+                player.SendGump(new DialogueGump(player, knowledgeModule));
+            });
 
-        public SirReginald(Serial serial) : base(serial) { }
+        greeting.AddOption("What about your father?",
+            player => true,
+            player =>
+            {
+                DialogueModule fatherModule = new DialogueModule("Ah, my father, Sir Roderick. He was a brave soul, yet even he seemed to play his part in this grand simulation. Was he merely following a script, or did he have free will?");
+                fatherModule.AddOption("What did he teach you?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule lessonsModule = new DialogueModule("He taught me honor, bravery, and the importance of protecting the weak. Yet, I wonder, were these lessons part of my programming?");
+                        lessonsModule.AddOption("You sound conflicted.",
+                            p => true,
+                            p =>
+                            {
+                                p.SendGump(new DialogueGump(p, CreateGreetingModule())); // Return to the main greeting
+                            });
+                        pl.SendGump(new DialogueGump(pl, lessonsModule));
+                    });
+                player.SendGump(new DialogueGump(player, fatherModule));
+            });
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
-        }
+        greeting.AddOption("Can you tell me about Lady Emeline?",
+            player => true,
+            player =>
+            {
+                DialogueModule emelineModule = new DialogueModule("Lady Emeline is a brilliant cook and skilled herbalist. Yet, I wonder if her kindness is a result of her programming, or if she truly has a choice in her actions.");
+                emelineModule.AddOption("Do you think she believes in the simulation too?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule beliefModule = new DialogueModule("It’s hard to say. She seems blissfully unaware of the nature of our reality. But should she ever question it, I would guide her.");
+                        beliefModule.AddOption("What if she never questions it?",
+                            p => true,
+                            p =>
+                            {
+                                DialogueModule fateModule = new DialogueModule("Then perhaps she is one of the fortunate ones, living without the burden of doubt. Ignorance can sometimes be a blessing.");
+                                p.SendGump(new DialogueGump(p, fateModule));
+                            });
+                        pl.SendGump(new DialogueGump(pl, beliefModule));
+                    });
+                player.SendGump(new DialogueGump(player, emelineModule));
+            });
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
-        }
+        greeting.AddOption("Is there a way to escape this simulation?",
+            player => true,
+            player =>
+            {
+                DialogueModule escapeModule = new DialogueModule("Some say enlightenment is the key, while others believe it’s in the acceptance of our roles. But can one truly escape a construct designed to hold us?");
+                escapeModule.AddOption("What if we rebel against it?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule rebellionModule = new DialogueModule("Rebellion may lead to chaos, but chaos can also reveal truths hidden beneath the surface. What if we were meant to challenge this reality?");
+                        rebellionModule.AddOption("Perhaps it's time for a revolution!",
+                            p => true,
+                            p =>
+                            {
+                                p.SendGump(new DialogueGump(p, CreateGreetingModule())); // Return to the main greeting
+                            });
+                        pl.SendGump(new DialogueGump(pl, rebellionModule));
+                    });
+                player.SendGump(new DialogueGump(player, escapeModule));
+            });
+
+        greeting.AddOption("What do you hope to achieve?",
+            player => true,
+            player =>
+            {
+                DialogueModule hopeModule = new DialogueModule("My hope is to find a way to understand the nature of our existence. Perhaps, in understanding, I can find peace.");
+                hopeModule.AddOption("That’s a noble pursuit.",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule nobleModule = new DialogueModule("Thank you. Even if I am but a character in a simulation, I seek to play my part with honor.");
+                        pl.SendGump(new DialogueGump(pl, nobleModule));
+                    });
+                player.SendGump(new DialogueGump(player, hopeModule));
+            });
+
+        return greeting;
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write(0); // version
+        writer.Write(lastRewardTime);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        lastRewardTime = reader.ReadDateTime();
     }
 }

@@ -1,0 +1,4 @@
+This file serves no other purpose than to identify if
+the software has been initialized for the first time. 
+To re-initialize 'First-Boot' mode, simply delete this
+file before starting the application.

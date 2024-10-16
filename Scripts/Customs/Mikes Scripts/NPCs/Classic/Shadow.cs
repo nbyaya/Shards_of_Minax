@@ -1,160 +1,193 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
-namespace Server.Mobiles
+[CorpseName("the corpse of Shadow")]
+public class Shadow : BaseCreature
 {
-    [CorpseName("the corpse of Shadow")]
-    public class Shadow : BaseCreature
+    private DateTime lastRewardTime;
+
+    [Constructable]
+    public Shadow() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "Shadow";
+        Body = 0x190; // Human male body
 
-        [Constructable]
-        public Shadow() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Shadow";
-            Body = 0x190; // Human male body
-            
-            // Stats
-            Str = 120;
-            Dex = 120;
-            Int = 60;
-            Hits = 85;
+        // Stats
+        Str = 120;
+        Dex = 120;
+        Int = 60;
+        Hits = 85;
 
-            // Appearance
-            AddItem(new LeatherLegs() { Hue = 1100 });
-            AddItem(new LeatherCap() { Hue = 1100 });
-            AddItem(new LeatherGloves() { Hue = 1100 });
-            AddItem(new ChainChest() { Hue = 1100 });
-            AddItem(new Kryss() { Name = "Shadow's Blade" });
-            
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(this);
-            HairHue = Race.RandomHairHue();
+        // Appearance
+        AddItem(new LeatherLegs() { Hue = 1100 });
+        AddItem(new LeatherCap() { Hue = 1100 });
+        AddItem(new LeatherGloves() { Hue = 1100 });
+        AddItem(new ChainChest() { Hue = 1100 });
+        AddItem(new Kryss() { Name = "Shadow's Blade" });
 
-            SpeechHue = 0; // Default speech hue
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(this);
+        HairHue = Race.RandomHairHue();
+        
+        SpeechHue = 0; // Default speech hue
 
-            lastRewardTime = DateTime.MinValue;
-        }
+        lastRewardTime = DateTime.MinValue;
+    }
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+    public Shadow(Serial serial) : base(serial) { }
 
-            if (!from.InRange(this, 3))
-                return;
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-            string speech = e.Speech.ToLower();
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
 
-            if (speech.Contains("name"))
-            {
-                Say("Hmph, what do you want?");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("Health? What's it to you?");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("Job? I'm just a hired blade, nothing more.");
-            }
-            else if (speech.Contains("battles"))
-            {
-                Say("Life's a battlefield, kid. You fight to survive, or you die trying. Got any regrets?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("Ha, don't we all? Life's a cruel joke, my friend. But if you're gonna survive in this world, you better learn to laugh along with it.");
-            }
-            else if (speech.Contains("shadow"))
-            {
-                Say("Shadow is just an alias I use. A name lost in the midst of time, from battles fought and memories buried deep.");
-            }
-            else if (speech.Contains("battlefield"))
-            {
-                Say("I've had my fair share of scars and wounds. They tell a story of a life lived on the edge. Ever been to battle?");
-            }
-            else if (speech.Contains("blade"))
-            {
-                Say("A blade might be just a tool, but it's a companion in the darkest of times. I've wielded many, but there's one that stands out. Ever heard of the 'Crimson Dagger'?");
-            }
-            else if (speech.Contains("alias"))
-            {
-                Say("Names, titles, aliases... they all serve a purpose. Sometimes to hide, other times to be remembered. What's in a name anyway? Would you change yours?");
-            }
-            else if (speech.Contains("scars"))
-            {
-                Say("Every scar has a tale. Some of victory, others of loss. But they all shape who we are. Ever received a scar that changed you?");
-            }
-            else if (speech.Contains("crimson"))
-            {
-                Say("Ah, the Crimson Dagger, a weapon of legends. I came across it during one of my missions. There's magic in its blade. In the right hands, it can change fortunes. Seek it if you dare, and maybe, just maybe, I might reward you for your efforts.");
-            }
-            else if (speech.Contains("change"))
-            {
-                Say("Change is inevitable. Whether it's names or destinies, everything shifts with time. What's something you'd want to change in your life?");
-            }
-            else if (speech.Contains("received"))
-            {
-                Say("It's not just the physical scars that matter, but the emotional ones too. They shape our character, our very being. Have you ever faced an event that marked you forever?");
-            }
-            else if (speech.Contains("seek"))
-            {
-                Say("Many have sought the Crimson Dagger, few have found it. The journey is treacherous, but the reward... priceless. Return it to me, and I'll ensure you're handsomely compensated.");
-            }
-            else if (speech.Contains("destinies"))
-            {
-                Say("Destinies are written in the stars, but our choices shape them. Every decision, every path taken, leads to a different outcome. Have you ever felt you were meant for something greater?");
-            }
-            else if (speech.Contains("event"))
-            {
-                Say("Events, big or small, shape our lives. Some leave scars, others memories. It's how we react to them that defines us. Ever made a choice you regret?");
-            }
-            else if (speech.Contains("meant"))
-            {
-                Say("Feeling that you're meant for something greater is both a blessing and a curse. It drives you, motivates you, but can also consume you. What drives you forward?");
-            }
-            else if (speech.Contains("choice"))
-            {
-                Say("Choices, good or bad, are a part of life. Sometimes they lead us to unexpected places, other times to dead ends. But every choice has a consequence. Have you faced the repercussions of a past decision?");
-            }
-            else if (speech.Contains("drives"))
-            {
-                Say("Drive is what pushes us beyond our limits. It's what makes us get up every morning, face challenges, and strive for more. Without it, we're lost. What's your greatest ambition?");
-            }
-            else if (speech.Contains("repercussions"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Every action has a reaction. Sometimes immediate, other times delayed. But they always come. Have you ever tried to undo a past mistake? Take This.");
-                    from.AddToBackpack(new PlateLeggingsOfCommand()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("Hmph, what do you want?");
 
-            base.OnSpeech(e);
-        }
+        greeting.AddOption("Tell me your story.",
+            player => true,
+            player =>
+            {
+                DialogueModule storyModule = new DialogueModule("Abandoned to die on a magical floating continent, I learned the true meaning of survival. It wasn't just a place; it was a prison of my own making.");
+                storyModule.AddOption("What happened on that continent?",
+                    pl => true,
+                    pl =>
+                    {
+                        DialogueModule continentModule = new DialogueModule("I was betrayed by those I trusted, left behind as they fled to save themselves. The continent was beautiful, but it hid dark secrets. I had to escape before it exploded.");
+                        continentModule.AddOption("What caused the explosion?",
+                            p => true,
+                            p =>
+                            {
+                                DialogueModule explosionModule = new DialogueModule("The very magic that kept it afloat began to unravel. Ancient rituals gone awry. I could feel the ground tremble beneath me as chaos erupted.");
+                                explosionModule.AddOption("How did you manage to escape?",
+                                    plq => true,
+                                    plq =>
+                                    {
+                                        DialogueModule escapeModule = new DialogueModule("I found an ancient relic—a portal stone. It flickered with energy, a last chance for salvation. With no time to spare, I activated it, leaping into the unknown.");
+                                        escapeModule.AddOption("What happened next?",
+                                            pla => true,
+                                            pla =>
+                                            {
+                                                DialogueModule afterEscapeModule = new DialogueModule("I landed in a place I did not recognize, alone and battered. The journey had changed me. I was no longer just Shadow; I was a survivor.");
+                                                afterEscapeModule.AddOption("Do you still feel the scars of that betrayal?",
+                                                    pw => true,
+                                                    pw =>
+                                                    {
+                                                        p.SendGump(new DialogueGump(p, new DialogueModule("Every day. The weight of trust is heavy. I tread lightly around others, fearing betrayal again.")));
+                                                    });
+                                                pla.SendGump(new DialogueGump(pla, afterEscapeModule));
+                                            });
+                                    });
+                                p.SendGump(new DialogueGump(p, explosionModule));
+                            });
+                        pl.SendGump(new DialogueGump(pl, continentModule));
+                    });
 
-        public Shadow(Serial serial) : base(serial) { }
+                storyModule.AddOption("What did you learn from that experience?",
+                    playere => true,
+                    playere =>
+                    {
+                        DialogueModule lessonModule = new DialogueModule("Survival isn't just about the body; it's about the mind. Trust must be earned, not freely given. And sometimes, the only ally you have is yourself.");
+                        lessonModule.AddOption("Do you ever regret surviving?",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, new DialogueModule("Regret is a poison. I may have survived, but the memories haunt me. What would you do if you were in my place?")));
+                            });
+                        player.SendGump(new DialogueGump(player, lessonModule));
+                    });
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
-        }
+                greeting.AddOption("What did you find on that continent?",
+                    playerr => true,
+                    playerr =>
+                    {
+                        DialogueModule findModule = new DialogueModule("Ancient relics, forgotten magic, and the whispers of the lost. I found knowledge that could change destinies, but at what cost?");
+                        findModule.AddOption("What knowledge?",
+                            pl => true,
+                            pl =>
+                            {
+                                DialogueModule knowledgeModule = new DialogueModule("Secrets of the arcane, tomes filled with power. But they also held the weight of responsibility. Knowledge can be both a gift and a curse.");
+                                knowledgeModule.AddOption("Did you use any of it?",
+                                    p => true,
+                                    p =>
+                                    {
+                                        DialogueModule usedModule = new DialogueModule("I've used some, but I tread carefully. Magic that saved me could also destroy me if mishandled. You understand that, don’t you?");
+                                        usedModule.AddOption("I do, but what if it could help others?",
+                                            pla => true,
+                                            pla =>
+                                            {
+                                                pla.SendGump(new DialogueGump(pla, new DialogueModule("Helping others is noble, but can lead to more pain. Balance is key; use it wisely.")));
+                                            });
+                                        p.SendGump(new DialogueGump(p, usedModule));
+                                    });
+                                pl.SendGump(new DialogueGump(pl, knowledgeModule));
+                            });
+                        player.SendGump(new DialogueGump(player, findModule));
+                    });
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
-        }
+                player.SendGump(new DialogueGump(player, storyModule));
+            });
+
+        greeting.AddOption("What about the Crimson Dagger?",
+            player => true,
+            player =>
+            {
+                DialogueModule daggerModule = new DialogueModule("Ah, the Crimson Dagger, a weapon of legends. It holds power, but finding it is perilous. Are you brave enough to seek it?");
+                daggerModule.AddOption("What will you give me if I find it?",
+                    pl => true,
+                    pl =>
+                    {
+                        TimeSpan cooldown = TimeSpan.FromMinutes(10);
+                        if (DateTime.UtcNow - lastRewardTime < cooldown)
+                        {
+                            pl.SendGump(new DialogueGump(pl, new DialogueModule("I have no reward right now. Please return later.")));
+                        }
+                        else
+                        {
+                            pl.AddToBackpack(new PlateLeggingsOfCommand()); // Give the reward
+                            lastRewardTime = DateTime.UtcNow; // Update the timestamp
+                            pl.SendGump(new DialogueGump(pl, new DialogueModule("Take this for your efforts.")));
+                        }
+                    });
+                player.SendGump(new DialogueGump(player, daggerModule));
+            });
+
+        greeting.AddOption("Tell me about your scars.",
+            player => true,
+            player =>
+            {
+                DialogueModule scarsModule = new DialogueModule("Every scar has a tale. Some of victory, others of loss. Each mark tells a story of survival, of battles fought.");
+                scarsModule.AddOption("What scars do you carry?",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Scars of betrayal, wounds of survival. They remind me that I'm alive, and that I must remain vigilant.")));
+                    });
+                player.SendGump(new DialogueGump(player, scarsModule));
+            });
+
+        return greeting;
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0); // version
+        writer.Write(lastRewardTime);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        lastRewardTime = reader.ReadDateTime();
     }
 }

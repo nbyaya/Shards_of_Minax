@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -8,8 +9,6 @@ namespace Server.Mobiles
     [CorpseName("the corpse of Raven the Shade")]
     public class RavenTheShade : BaseCreature
     {
-        private DateTime lastRewardTime;
-
         [Constructable]
         public RavenTheShade() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
         {
@@ -33,84 +32,214 @@ namespace Server.Mobiles
             Hue = Race.RandomSkinHue();
             HairItemID = Race.RandomHair(this);
             HairHue = Race.RandomHairHue();
-
-            SpeechHue = 0; // Default speech hue
-
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
 
-            if (speech.Contains("name"))
-            {
-                Say("I am Raven the Shade, the night's silent blade.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("My health is my business, not yours.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My job is to dance in the shadows and collect debts that are long overdue.");
-            }
-            else if (speech.Contains("battles"))
-            {
-                Say("Do you dare venture into the abyss of darkness, or do you bask in the false light of day?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("If you have the audacity to answer, speak. Otherwise, fade into the oblivion of ignorance.");
-            }
-            else if (speech.Contains("shadows"))
-            {
-                Say("Shadows are my realm, the very fabric from which I weave my fate. They hide secrets and stories untold. Why do you ask?");
-            }
-            else if (speech.Contains("debts"))
-            {
-                Say("Some debts are of coin, and some of the soul. Those who cross the boundaries of light and darkness owe more than they can repay. It's my duty to ensure balance.");
-            }
-            else if (speech.Contains("balance"))
-            {
-                Say("Balance is the essence of existence. Light cannot exist without darkness, and vice versa. It's the eternal dance of opposites, and I am its guardian.");
-            }
-            else if (speech.Contains("dance"))
-            {
-                Say("Dancing is not just a form of expression, but a way to transcend realms. Through dance, I commune with the spirits of the night and tap into the energies of the universe.");
-            }
-            else if (speech.Contains("spirits"))
-            {
-                Say("Spirits roam freely in the vast expanse between realms. Some are benign, others malicious. I can guide you to them, but whether they help or harm is up to you.");
-            }
-            else if (speech.Contains("realms"))
-            {
-                Say("Beyond the mortal coil lie realms of wonder and terror. Places where time stands still and reality bends. I can take you there, for a price.");
-            }
-            else if (speech.Contains("price"))
-            {
-                Say("The price of such knowledge and power is steep. Sometimes it's a trinket, sometimes a memory, and at times, a piece of your very essence. Are you willing to pay?");
-            }
-            else if (speech.Contains("knowledge"))
-            {
-                Say("Knowledge is the truest form of power. With it, one can shape destinies and rewrite history. But it comes with its own burdens. Seek it, if you dare.");
-            }
-            else if (speech.Contains("history"))
-            {
-                Say("History is written by victors and forgotten by the lost. In shadows, truths of the past linger, waiting for someone to discover them.");
-            }
-            else if (speech.Contains("truths"))
-            {
-                Say("Truth is a matter of perspective. What you perceive as truth might be a lie to another. But in the shadows, the line between truth and lies blurs.");
-            }
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("I am Raven the Shade, the night's silent blade. Raised among ravens, I am both shadow and secret. What do you wish to know?");
 
-            base.OnSpeech(e);
+            greeting.AddOption("Tell me about your childhood.",
+                player => true,
+                player => 
+                {
+                    DialogueModule childhoodModule = new DialogueModule("I was not raised by mere mortals but by the enigmatic ravens of the Whispering Woods. They found me as a child, abandoned and alone, and took me into their fold.");
+                    childhoodModule.AddOption("What was it like living with ravens?",
+                        pl => true,
+                        pl => 
+                        {
+                            DialogueModule ravensLifeModule = new DialogueModule("Life with ravens is unlike any other. They are clever, cunning, and fiercely protective. They taught me to see the world through their eyes, to embrace the shadows and find wisdom in darkness.");
+                            ravensLifeModule.AddOption("Did you learn their ways?",
+                                p => true,
+                                p => 
+                                {
+                                    DialogueModule learnedWaysModule = new DialogueModule("Indeed! I learned their calls, their dances in the air, and their secrets whispered on the wind. I became one with the shadows, understanding the balance of light and darkness.");
+                                    learnedWaysModule.AddOption("What secrets did they share?",
+                                        plq => true,
+                                        plq => 
+                                        {
+                                            DialogueModule secretsModule = new DialogueModule("Ravens are the keepers of many secrets. They showed me hidden paths in the forest and taught me to listen for the truths buried beneath the lies of the world.");
+                                            secretsModule.AddOption("How do you listen to the world?",
+                                                pw => true,
+                                                pw => 
+                                                {
+                                                    DialogueModule listeningModule = new DialogueModule("Listening is an art. It requires patience and an open heart. The whispers of the night carry tales of the past, and if you attune your senses, you can hear them.");
+                                                    listeningModule.AddOption("Can you teach me to listen?",
+                                                        ple => true,
+                                                        ple => 
+                                                        {
+                                                            DialogueModule teachListeningModule = new DialogueModule("To listen is to observe. Find a quiet place, close your eyes, and breathe. Let the world around you fade, and you shall hear the echoes of existence.");
+                                                            teachListeningModule.AddOption("I will try to listen.",
+                                                                pla => true,
+                                                                pla => pla.SendMessage("You resolve to practice the art of listening."));
+                                                            teachListeningModule.AddOption("Maybe another time.",
+                                                                pla => true,
+                                                                pla => pla.SendGump(new DialogueGump(pla, CreateGreetingModule())));
+                                                            p.SendGump(new DialogueGump(p, teachListeningModule));
+                                                        });
+                                                    p.SendGump(new DialogueGump(p, listeningModule));
+                                                });
+                                            secretsModule.AddOption("What else did you learn?",
+                                                plr => true,
+                                                plr => 
+                                                {
+                                                    DialogueModule moreLearningModule = new DialogueModule("The ravens taught me to navigate through life's complexities. They showed me that survival is about cunning and strategy, much like a game of shadows.");
+                                                    moreLearningModule.AddOption("What strategies did you learn?",
+                                                        pt => true,
+                                                        pt => 
+                                                        {
+                                                            DialogueModule strategiesModule = new DialogueModule("I learned to adapt, to blend in with my surroundings, and to strike when the moment is right. In the world of shadows, timing is everything.");
+                                                            strategiesModule.AddOption("That sounds useful.",
+                                                                ply => true,
+                                                                ply => pl.SendGump(new DialogueGump(pl, CreateGreetingModule())));
+                                                            p.SendGump(new DialogueGump(p, strategiesModule));
+                                                        });
+                                                    p.SendGump(new DialogueGump(pl, moreLearningModule));
+                                                });
+                                            pl.SendGump(new DialogueGump(pl, secretsModule));
+                                        });
+                                    p.SendGump(new DialogueGump(p, learnedWaysModule));
+                                });
+                            ravensLifeModule.AddOption("Did you have any friends?",
+                                p => true,
+                                p => 
+                                {
+                                    DialogueModule friendsModule = new DialogueModule("The ravens were my family, my friends. They understood my heart, and in return, I learned their language. Together, we soared through the night.");
+                                    friendsModule.AddOption("What adventures did you have?",
+                                        plu => true,
+                                        plu => 
+                                        {
+                                            DialogueModule adventuresModule = new DialogueModule("We would explore hidden glades, soar above the treetops, and discover ancient ruins shrouded in mist. Each night was a new adventure waiting to unfold.");
+                                            adventuresModule.AddOption("What were these ruins like?",
+                                                pi => true,
+                                                pi => 
+                                                {
+                                                    DialogueModule ruinsModule = new DialogueModule("The ruins whispered of a forgotten time. Crumbling stones bore the marks of ancient rituals, and the air was thick with the energy of past lives.");
+                                                    ruinsModule.AddOption("Did you find anything valuable?",
+                                                        plo => true,
+                                                        plo => 
+                                                        {
+                                                            DialogueModule treasuresModule = new DialogueModule("I found relics of power and knowledge, remnants of an era long lost. The ravens showed me how to harness this knowledge for my own understanding.");
+                                                            treasuresModule.AddOption("What kind of relics?",
+                                                                pp => true,
+                                                                pp => 
+                                                                {
+                                                                    DialogueModule relicsModule = new DialogueModule("Some were trinkets, others were tomes filled with ancient lore. Each had a story, a connection to the past that shaped my understanding of the world.");
+                                                                    relicsModule.AddOption("Can you share a story from one of these relics?",
+                                                                        pla => true,
+                                                                        pla => 
+                                                                        {
+                                                                            DialogueModule storyModule = new DialogueModule("One relic spoke of a great battle between light and dark, where heroes fell and legends were born. It taught me that every story holds a lesson, and wisdom lies in the shadows of our past.");
+                                                                            storyModule.AddOption("That's fascinating!",
+                                                                                plas => true,
+                                                                                plas => pla.SendGump(new DialogueGump(pla, CreateGreetingModule())));
+                                                                            p.SendGump(new DialogueGump(p, storyModule));
+                                                                        });
+                                                                    p.SendGump(new DialogueGump(pl, relicsModule));
+                                                                });
+                                                            p.SendGump(new DialogueGump(pl, treasuresModule));
+                                                        });
+                                                    p.SendGump(new DialogueGump(p, ruinsModule));
+                                                });
+                                            p.SendGump(new DialogueGump(pl, adventuresModule));
+                                        });
+                                    p.SendGump(new DialogueGump(pl, friendsModule));
+                                });
+                            pl.SendGump(new DialogueGump(pl, ravensLifeModule));
+                        });
+                    player.SendGump(new DialogueGump(player, childhoodModule));
+                });
+
+            greeting.AddOption("What about your abilities?",
+                player => true,
+                player =>
+                {
+                    DialogueModule abilitiesModule = new DialogueModule("The ravens granted me unique abilities, a connection to the shadows. I can slip between worlds and harness the night to conceal myself.");
+                    abilitiesModule.AddOption("How do you use these abilities?",
+                        pl => true,
+                        pl => 
+                        {
+                            DialogueModule usingAbilitiesModule = new DialogueModule("In the depths of night, I blend with the shadows, becoming one with them. I can move unnoticed, gathering secrets and observing the world without being seen.");
+                            usingAbilitiesModule.AddOption("What do you observe?",
+                                p => true,
+                                p => 
+                                {
+                                    DialogueModule observationModule = new DialogueModule("I watch the struggles of mortals, the dances of the celestial bodies, and the ebb and flow of life. Each moment is a lesson, a chance to learn.");
+                                    observationModule.AddOption("Do you share what you learn?",
+                                        pld => true,
+                                        pld => 
+                                        {
+                                            DialogueModule shareModule = new DialogueModule("I share only what is necessary, for knowledge is a double-edged sword. Some truths are burdensome, while others enlighten the soul.");
+                                            shareModule.AddOption("What truths have you shared?",
+                                                pf => true,
+                                                pf => 
+                                                {
+                                                    DialogueModule truthsModule = new DialogueModule("I have shared the importance of balance, the need for light and dark to coexist. The world thrives in duality, and understanding this is key to harmony.");
+                                                    truthsModule.AddOption("That's profound.",
+                                                        pla => true,
+                                                        pla => pla.SendGump(new DialogueGump(pla, CreateGreetingModule())));
+                                                    p.SendGump(new DialogueGump(p, truthsModule));
+                                                });
+                                            p.SendGump(new DialogueGump(pl, shareModule));
+                                        });
+                                    p.SendGump(new DialogueGump(p, observationModule));
+                                });
+                            player.SendGump(new DialogueGump(player, usingAbilitiesModule));
+                        });
+                    player.SendGump(new DialogueGump(player, abilitiesModule));
+                });
+
+            greeting.AddOption("Do you have any regrets?",
+                player => true,
+                player =>
+                {
+                    DialogueModule regretsModule = new DialogueModule("Regrets are shadows that cling to the heart. I sometimes wonder what life would have been like had I not been raised by ravens.");
+                    regretsModule.AddOption("What do you mean?",
+                        pl => true,
+                        pl => 
+                        {
+                            DialogueModule meaningModule = new DialogueModule("While the ravens taught me much, there are experiences of humanity I missed. Friendships, love, and the warmth of family that I have only glimpsed from afar.");
+                            meaningModule.AddOption("Is it too late to experience that?",
+                                p => true,
+                                p => 
+                                {
+                                    DialogueModule lateModule = new DialogueModule("Time is but an illusion. Every day brings a new chance to embrace the warmth of connection. It is never too late to reach out.");
+                                    lateModule.AddOption("How do I start?",
+                                        plg => true,
+                                        plg => 
+                                        {
+                                            DialogueModule startModule = new DialogueModule("Begin by opening your heart. Listen, share, and be vulnerable. Only then can you truly connect with others.");
+                                            startModule.AddOption("I will try to be more open.",
+                                                pla => true,
+                                                pla => pla.SendMessage("You resolve to be more open with others."));
+                                            startModule.AddOption("Maybe I should think about it.",
+                                                pla => true,
+                                                pla => pla.SendGump(new DialogueGump(pla, CreateGreetingModule())));
+                                            p.SendGump(new DialogueGump(p, startModule));
+                                        });
+                                    p.SendGump(new DialogueGump(p, lateModule));
+                                });
+                            pl.SendGump(new DialogueGump(pl, meaningModule));
+                        });
+                    player.SendGump(new DialogueGump(player, regretsModule));
+                });
+
+            greeting.AddOption("Goodbye.",
+                player => true,
+                player =>
+                {
+                    player.SendMessage("Raven nods silently as you depart.");
+                });
+
+            return greeting;
         }
 
         public RavenTheShade(Serial serial) : base(serial) { }
@@ -119,14 +248,12 @@ namespace Server.Mobiles
         {
             base.Serialize(writer);
             writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
         }
 
         public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
             int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
         }
     }
 }

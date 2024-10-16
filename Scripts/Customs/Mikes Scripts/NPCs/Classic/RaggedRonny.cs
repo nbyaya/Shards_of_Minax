@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -35,91 +36,169 @@ namespace Server.Mobiles
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
 
-            if (speech.Contains("name"))
-            {
-                Say("I am Ragged Ronny, a beggar by trade.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("Life on the streets, friend, it's a constant battle.");
-            }
-            else if (speech.Contains("virtue"))
-            {
-                Say("Compassion, friend, that's the virtue I hold dear.");
-            }
-            else if (speech.Contains("virtue compassion"))
-            {
-                Say("Compassion is the light that guides us through the darkest alleys.");
-            }
-            else if (speech.Contains("virtue compassion yes") || speech.Contains("virtue compassion no"))
-            {
-                Say("Do you possess the virtue of compassion, my friend?");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("My body may be frail, but my spirit remains strong. The streets have hardened me.");
-            }
-            else if (speech.Contains("streets"))
-            {
-                Say("The streets have taught me more about life than any book. Every cobblestone has a story if you're willing to listen.");
-            }
-            else if (speech.Contains("compassion"))
-            {
-                Say("Compassion is not just a virtue but a way of life. It's the reason I share what little I have with others on the streets. Did you know the mantra of Sacrifice starts with 'CAH'?");
-            }
-            else if (speech.Contains("spirit"))
-            {
-                Say("My spirit has been my guiding force. Even in the harshest winters, it has kept me warm and given me hope.");
-            }
-            else if (speech.Contains("cobblestone"))
-            {
-                Say("Each cobblestone has felt the weight of both the pauper and the king. They've witnessed acts of kindness and moments of cruelty.");
-            }
-            else if (speech.Contains("mantra"))
-            {
-                Say("Ah, the mantras. Each one tied to a virtue. The mantra of Sacrifice, as I mentioned, starts with 'CAH'. But to truly understand it, one must live it.");
-            }
-            else if (speech.Contains("winters"))
-            {
-                Say("The cold winds and snow have tested my resolve, but I've always found shelter, thanks to the kindness of strangers.");
-            }
-            else if (speech.Contains("kindness"))
-            {
-                Say("Kindness, even a simple act, can change someone's day. A coin, a loaf of bread, or just a listening ear can make a world of difference.");
-            }
-            else if (speech.Contains("live"))
-            {
-                Say("To live is not just to exist. It's to experience, to share, and to give. Even in my situation, I find moments of joy and purpose.");
-            }
-            else if (speech.Contains("ragged"))
-            {
-                Say("Many call me a mere beggar, but I've seen more of the world from the streets than most in castles.");
-            }
-            else if (speech.Contains("virtues ponder"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Deep reflection on virtues is essential for one's personal growth. In recognizing them, we shape our destiny. For your thoughtful inquiry, please accept this reward.");
-                    from.AddToBackpack(new Gold(100)); // Example reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("I am Ragged Ronny, a beggar by trade. Life on the streets, friend, it's a constant battle. How may I help you?");
 
-            base.OnSpeech(e);
+            greeting.AddOption("What do you think about virtue?",
+                player => true,
+                player =>
+                {
+                    DialogueModule virtueModule = new DialogueModule("Compassion, friend, that's the virtue I hold dear. It's the light that guides us through the darkest alleys.");
+                    virtueModule.AddOption("Why is compassion important?",
+                        p => true,
+                        pl =>
+                        {
+                            DialogueModule compassionModule = new DialogueModule("Compassion is not just a virtue but a way of life. It's the reason I share what little I have with others on the streets.");
+                            compassionModule.AddOption("That's insightful.",
+                                p => true,
+                                pla => { pl.SendGump(new DialogueGump(pl, CreateGreetingModule())); });
+                            pl.SendGump(new DialogueGump(pl, compassionModule));
+                        });
+                    player.SendGump(new DialogueGump(player, virtueModule));
+                });
+
+            greeting.AddOption("Tell me about the streets.",
+                player => true,
+                player =>
+                {
+                    DialogueModule streetsModule = new DialogueModule("The streets have taught me more about life than any book. Every cobblestone has a story if you're willing to listen.");
+                    streetsModule.AddOption("What kind of stories?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule storiesModule = new DialogueModule("Each cobblestone has felt the weight of both the pauper and the king. They've witnessed acts of kindness and moments of cruelty.");
+                            storiesModule.AddOption("It sounds like a tough life.",
+                                p => true,
+                                plw => { pl.SendGump(new DialogueGump(pl, CreateGreetingModule())); });
+                            pl.SendGump(new DialogueGump(pl, storiesModule));
+                        });
+                    player.SendGump(new DialogueGump(player, streetsModule));
+                });
+
+            greeting.AddOption("Do you have any rewards for me?",
+                player => true,
+                player =>
+                {
+                    TimeSpan cooldown = TimeSpan.FromMinutes(10);
+                    if (DateTime.UtcNow - lastRewardTime < cooldown)
+                    {
+                        Say("I have no reward right now. Please return later.");
+                    }
+                    else
+                    {
+                        Say("For your thoughtful inquiry, please accept this reward.");
+                        player.AddToBackpack(new Gold(100)); // Example reward
+                        lastRewardTime = DateTime.UtcNow; // Update the timestamp
+                    }
+                    player.SendGump(new DialogueGump(player, CreateGreetingModule()));
+                });
+
+            greeting.AddOption("Tell me about your adventures.",
+                player => true,
+                player =>
+                {
+                    DialogueModule adventuresModule = new DialogueModule("Ah, there are tales aplenty! Let me share one of my favorites about the time I found a gold ring in the trash.");
+                    adventuresModule.AddOption("What happened with the ring?",
+                        p => true,
+                        pl =>
+                        {
+                            DialogueModule ringModule = new DialogueModule("I was rummaging through some refuse near the market when I stumbled upon a glimmer of gold. At first, I thought it was just a scrap of metal, but upon closer inspection, it was a ring!");
+                            ringModule.AddOption("Did you keep it?",
+                                p => true,
+                                ple =>
+                                {
+                                    DialogueModule keepRingModule = new DialogueModule("Of course! It was beautifully crafted, with a small emerald set in the center. I felt like a king wearing it. But I knew I couldn’t keep it for long. It belonged to someone.");
+                                    keepRingModule.AddOption("What did you do with it?",
+                                        p => true,
+                                        plr =>
+                                        {
+                                            DialogueModule returnRingModule = new DialogueModule("I decided to return it to the market, hoping its owner would be searching for it. A woman approached me, tears in her eyes. She recognized it immediately! It turned out it was a family heirloom.");
+                                            returnRingModule.AddOption("That's kind of you!",
+                                                plt => true,
+                                                pla => { pla.SendGump(new DialogueGump(pla, CreateGreetingModule())); });
+                                            pl.SendGump(new DialogueGump(pl, returnRingModule));
+                                        });
+                                    pl.SendGump(new DialogueGump(pl, keepRingModule));
+                                });
+                            ringModule.AddOption("What did you do afterwards?",
+                                p => true,
+                                ply =>
+                                {
+                                    DialogueModule afterRingModule = new DialogueModule("After returning the ring, I felt a sense of fulfillment. To celebrate, I decided to treat myself to a week of fine meats at the inn.");
+                                    afterRingModule.AddOption("Fine meats? Tell me more!",
+                                        p => true,
+                                        plu =>
+                                        {
+                                            DialogueModule fineMeatsModule = new DialogueModule("Oh, the meats were exquisite! Roast duck, tender beef, and even a leg of lamb. I had never tasted such luxury before!");
+                                            fineMeatsModule.AddOption("Did you eat well every day?",
+                                                p => true,
+                                                pli =>
+                                                {
+                                                    DialogueModule dailyMealsModule = new DialogueModule("Every day was a feast! I would sit by the fire, savoring each bite, and I could even afford a mug of their finest ale. The innkeeper treated me like a king!");
+                                                    dailyMealsModule.AddOption("What was your favorite dish?",
+                                                        p => true,
+                                                        plo =>
+                                                        {
+                                                            DialogueModule favoriteDishModule = new DialogueModule("The roast duck was my favorite! It was crispy on the outside and succulent on the inside. They served it with a berry sauce that made my mouth water just thinking about it!");
+                                                            favoriteDishModule.AddOption("I'd love to try that!",
+                                                                plp => true,
+                                                                pla => { pla.SendGump(new DialogueGump(pla, CreateGreetingModule())); });
+                                                            pl.SendGump(new DialogueGump(pl, favoriteDishModule));
+                                                        });
+                                                    pl.SendGump(new DialogueGump(pl, dailyMealsModule));
+                                                });
+                                            fineMeatsModule.AddOption("Did you share your meals?",
+                                                p => true,
+                                                pla =>
+                                                {
+                                                    DialogueModule sharingModule = new DialogueModule("I did! I shared my meals with fellow travelers and other beggars who stopped by. It felt wonderful to spread the joy.");
+                                                    sharingModule.AddOption("That's very generous of you!",
+                                                        pls => true,
+                                                        plax => { pla.SendGump(new DialogueGump(pla, CreateGreetingModule())); });
+                                                    pl.SendGump(new DialogueGump(pl, sharingModule));
+                                                });
+                                            pl.SendGump(new DialogueGump(pl, fineMeatsModule));
+                                        });
+                                    pl.SendGump(new DialogueGump(pl, afterRingModule));
+                                });
+                            pl.SendGump(new DialogueGump(pl, ringModule));
+                        });
+                    player.SendGump(new DialogueGump(player, adventuresModule));
+                });
+
+            greeting.AddOption("What can you tell me about kindness?",
+                player => true,
+                player =>
+                {
+                    DialogueModule kindnessModule = new DialogueModule("Kindness, even a simple act, can change someone's day. A coin, a loaf of bread, or just a listening ear can make a world of difference.");
+                    kindnessModule.AddOption("I agree with you.",
+                        pl => true,
+                        pl => { pl.SendGump(new DialogueGump(pl, CreateGreetingModule())); });
+                    player.SendGump(new DialogueGump(player, kindnessModule));
+                });
+
+            greeting.AddOption("Tell me more about your life.",
+                player => true,
+                player =>
+                {
+                    DialogueModule lifeModule = new DialogueModule("To live is not just to exist. It's to experience, to share, and to give. Even in my situation, I find moments of joy and purpose.");
+                    lifeModule.AddOption("That's a good perspective.",
+                        pl => true,
+                        pl => { pl.SendGump(new DialogueGump(pl, CreateGreetingModule())); });
+                    player.SendGump(new DialogueGump(player, lifeModule));
+                });
+
+            return greeting;
         }
 
         public RaggedRonny(Serial serial) : base(serial) { }

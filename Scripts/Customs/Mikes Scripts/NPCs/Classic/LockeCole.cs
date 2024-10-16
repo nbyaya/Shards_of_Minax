@@ -1,132 +1,246 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
-namespace Server.Mobiles
+[CorpseName("the corpse of Locke Cole")]
+public class LockeCole : BaseCreature
 {
-    [CorpseName("the corpse of Locke Cole")]
-    public class LockeCole : BaseCreature
+    private DateTime lastRewardTime;
+
+    [Constructable]
+    public LockeCole() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "Locke Cole";
+        Body = 0x190; // Human male body
 
-        [Constructable]
-        public LockeCole() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Locke Cole";
-            Body = 0x190; // Human male body
+        // Stats
+        SetStr(100);
+        SetDex(130);
+        SetInt(70);
+        SetHits(75);
 
-            // Stats
-            Str = 100;
-            Dex = 130;
-            Int = 70;
-            Hits = 75;
+        // Appearance
+        AddItem(new LeatherLegs() { Hue = 1175 });
+        AddItem(new LeatherChest() { Hue = 1175 });
+        AddItem(new LeatherCap() { Hue = 1175 });
+        AddItem(new Dagger() { Name = "Locke's Dagger" });
 
-            // Appearance
-            AddItem(new LeatherLegs() { Hue = 1175 });
-            AddItem(new LeatherChest() { Hue = 1175 });
-            AddItem(new LeatherCap() { Hue = 1175 });
-            AddItem(new Dagger() { Name = "Locke's Dagger" });
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(this);
+        HairHue = Race.RandomHairHue();
+        SpeechHue = 0; // Default speech hue
 
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(this);
-            HairHue = Race.RandomHairHue();
+        // Initialize the lastRewardTime to a past time
+        lastRewardTime = DateTime.MinValue;
+    }
 
-            SpeechHue = 0; // Default speech hue
+    public LockeCole(Serial serial) : base(serial) { }
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
-        }
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
 
-            if (!from.InRange(this, 3))
-                return;
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("Greetings, stranger. I'm Locke Cole. What would you like to know?");
 
-            string speech = e.Speech.ToLower();
+        greeting.AddOption("Tell me about your health.",
+            player => true,
+            player => player.SendGump(new DialogueGump(player, new DialogueModule("I've had my fair share of scrapes, but I'm still standing."))));
 
-            if (speech.Contains("name"))
+        greeting.AddOption("What do you do for a living?",
+            player => true,
+            player =>
             {
-                Say("Greetings, stranger. I'm Locke Cole.");
-            }
-            else if (speech.Contains("health"))
+                DialogueModule jobModule = new DialogueModule("I make a living as a treasure hunter, searching for hidden relics. It's an adventure unlike any other!");
+                jobModule.AddOption("What treasures have you found?",
+                    p => true,
+                    p =>
+                    {
+                        DialogueModule treasuresModule = new DialogueModule("Oh, some fascinating things! I've discovered ancient coins, enchanted artifacts, and even a cursed amulet.");
+                        treasuresModule.AddOption("Tell me about the cursed amulet.",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, new DialogueModule("It's said to bring misfortune to its wearer. I found it in a sunken ship, and it took weeks to get rid of the bad luck!")));
+                            });
+                        treasuresModule.AddOption("What about the enchanted artifacts?",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, new DialogueModule("Those are the best! They can enhance your abilities, but you must be careful. Not all are what they seem.")));
+                            });
+                        p.SendGump(new DialogueGump(p, treasuresModule));
+                    });
+                jobModule.AddOption("What challenges do you face?",
+                    p => true,
+                    p =>
+                    {
+                        DialogueModule challengesModule = new DialogueModule("Every hunt comes with its dangers. From traps to fierce creatures, it requires both skill and luck to survive.");
+                        challengesModule.AddOption("What creatures have you encountered?",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, new DialogueModule("I've faced wolves, trolls, and even a dragon once. Each encounter teaches you something new.")));
+                            });
+                        challengesModule.AddOption("How do you prepare for a hunt?",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, new DialogueModule("Preparation is key! I gather supplies, study maps, and ensure my gear is in top condition.")));
+                            });
+                        p.SendGump(new DialogueGump(p, challengesModule));
+                    });
+                player.SendGump(new DialogueGump(player, jobModule));
+            });
+
+        greeting.AddOption("What are your thoughts on challenges?",
+            player => true,
+            player =>
             {
-                Say("I've had my fair share of scrapes, but I'm still standing.");
-            }
-            else if (speech.Contains("job"))
+                DialogueModule challenges = new DialogueModule("Life's full of choices, isn't it? What's your approach to challenges?");
+                challenges.AddOption("I face them head-on.",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("A bold approach! Courage is vital in our world. What drives your bravery?")));
+                    });
+                challenges.AddOption("I prefer to plan ahead.",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Smart thinking! A good plan can save your life. Do you have a favorite strategy?")));
+                    });
+                player.SendGump(new DialogueGump(player, challenges));
+            });
+
+        greeting.AddOption("Do you have any stories about your adventures?",
+            player => true,
+            player =>
             {
-                Say("I make a living as a treasure hunter, searching for hidden relics.");
-            }
-            else if (speech.Contains("approach"))
+                DialogueModule storiesModule = new DialogueModule("Every scar tells a story, and trust me, I've got plenty. Would you like to hear about a specific adventure?");
+                storiesModule.AddOption("Yes, tell me about your encounter with a dragon.",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("It was a fateful night. I had stumbled upon a lair deep in the mountains. The dragon was fierce, and escaping its wrath was a true test of my skills.")));
+                    });
+                storiesModule.AddOption("How about a treasure hunt gone wrong?",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Ah, there's a tale! I once thought I'd found a hidden trove, but it turned out to be a trap laid by mercenaries. I barely escaped!")));
+                    });
+                player.SendGump(new DialogueGump(player, storiesModule));
+            });
+
+        greeting.AddOption("What about treasure?",
+            player => true,
+            player =>
             {
-                Say("Life's full of choices, isn't it? What's your approach to challenges?");
-            }
-            else if (speech.Contains("daring"))
+                DialogueModule treasureModule = new DialogueModule("It's not just about the gold and jewels. It's the thrill of the hunt, and the legends behind each relic that drive me.");
+                treasureModule.AddOption("What legends have you encountered?",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("One legend speaks of an ancient city, hidden beneath the mountains, where time stands still. I aim to find it one day.")));
+                    });
+                treasureModule.AddOption("What do you think makes a treasure valuable?",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Value comes from history and rarity. A simple trinket can be worth more than gold if it has a captivating story.")));
+                    });
+                player.SendGump(new DialogueGump(player, treasureModule));
+            });
+
+        greeting.AddOption("What do you know about rumors?",
+            player => true,
+            player =>
             {
-                Say("Well, I respect that. It takes a certain daring to succeed in this world.");
-            }
-            else if (speech.Contains("scrapes"))
+                DialogueModule rumorModule = new DialogueModule("They say that the most valuable treasures are guarded by the most dangerous creatures. But, for those brave enough to face them, the rewards are worth it.");
+                rumorModule.AddOption("What creatures do you speak of?",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Dragons, hydras, and ancient golems. Each holds treasures beyond imagination, but they demand respect and caution.")));
+                    });
+                player.SendGump(new DialogueGump(player, rumorModule));
+            });
+
+        greeting.AddOption("Tell me about your scars.",
+            player => true,
+            player =>
             {
-                Say("Every scar tells a story, and trust me, I've got plenty. But I suppose that's the life of an adventurer.");
-            }
-            else if (speech.Contains("treasure"))
-            {
-                Say("It's not just about the gold and jewels. It's the thrill of the hunt, and the legends behind each relic that drive me.");
-            }
-            else if (speech.Contains("rumors"))
-            {
-                Say("They say that the most valuable treasures are guarded by the most dangerous creatures. But, for those brave enough to face them, the rewards are worth it.");
-            }
-            else if (speech.Contains("scar"))
-            {
-                Say("This one here on my arm? Got that from a near encounter with a dragon. Not my finest moment, but I learned a valuable lesson.");
-            }
-            else if (speech.Contains("legends"))
-            {
-                Say("One legend speaks of an ancient city, hidden beneath the mountains, where time stands still. I aim to find it one day.");
-            }
-            else if (speech.Contains("rewards"))
+                DialogueModule scarsModule = new DialogueModule("This one here on my arm? Got that from a near encounter with a dragon. Not my finest moment, but I learned a valuable lesson.");
+                scarsModule.AddOption("What lesson did you learn?",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Respect the creatures of the wild, and always be prepared for the unexpected. A lesson hard-earned!")));
+                    });
+                player.SendGump(new DialogueGump(player, scarsModule));
+            });
+
+        greeting.AddOption("Do you have any rewards for me?",
+            player => true,
+            player =>
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)
                 {
-                    Say("I have no reward right now. Please return later.");
+                    player.SendGump(new DialogueGump(player, new DialogueModule("I have no reward right now. Please return later.")));
                 }
                 else
                 {
-                    Say("Speaking of rewards, for someone as inquisitive as you, here's a little something. Keep it safe, it might come in handy.");
-                    from.AddToBackpack(new StealingAugmentCrystal()); // Give the reward
+                    player.SendGump(new DialogueGump(player, new DialogueModule("Speaking of rewards, for someone as inquisitive as you, here's a little something. Keep it safe, it might come in handy.")));
+                    player.AddToBackpack(new StealingAugmentCrystal()); // Give the reward
                     lastRewardTime = DateTime.UtcNow; // Update the timestamp
                 }
-            }
-            else if (speech.Contains("dragon"))
+            });
+
+        greeting.AddOption("What do you think about dragons?",
+            player => true,
+            player =>
             {
-                Say("Dragons are powerful, majestic creatures. Not something you'd want to confront without proper preparation. But their treasures? Unparalleled.");
-            }
-            else if (speech.Contains("locke"))
+                DialogueModule dragonModule = new DialogueModule("Dragons are powerful, majestic creatures. Not something you'd want to confront without proper preparation. But their treasures? Unparalleled.");
+                dragonModule.AddOption("Have you ever fought a dragon?",
+                    pl => true,
+                    pl =>
+                    {
+                        pl.SendGump(new DialogueGump(pl, new DialogueModule("Once. It was a clash that tested every skill I had. The roar still echoes in my dreams.")));
+                    });
+                player.SendGump(new DialogueGump(player, dragonModule));
+            });
+
+        greeting.AddOption("Have you heard of Locke Cole?",
+            player => true,
+            player =>
             {
-                Say("Ah, you've heard of me before? Rumors tend to spread, but not all of them are true.");
-            }
+                player.SendGump(new DialogueGump(player, new DialogueModule("Ah, you've heard of me before? Rumors tend to spread, but not all of them are true. What have you heard?")));
+            });
 
-            base.OnSpeech(e);
-        }
+        return greeting;
+    }
 
-        public LockeCole(Serial serial) : base(serial) { }
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write(0); // version
+        writer.Write(lastRewardTime);
+    }
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
-        }
-
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
-        }
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        lastRewardTime = reader.ReadDateTime();
     }
 }

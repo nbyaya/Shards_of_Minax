@@ -1,118 +1,181 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
+using Server.Network;
 
-namespace Server.Mobiles
+public class ScientistTesla : BaseCreature
 {
-    [CorpseName("the corpse of Scientist Tesla")]
-    public class ScientistTesla : BaseCreature
+    private DateTime lastRewardTime;
+
+    [Constructable]
+    public ScientistTesla() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "Scientist Tesla";
+        Body = 0x190; // Human male body
 
-        [Constructable]
-        public ScientistTesla() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Scientist Tesla";
-            Body = 0x190; // Human male body
+        // Stats
+        SetStr(85);
+        SetDex(65);
+        SetInt(115);
+        SetHits(65);
 
-            // Stats
-            Str = 85;
-            Dex = 65;
-            Int = 115;
-            Hits = 65;
+        // Appearance
+        AddItem(new LongPants() { Hue = 1157 });
+        AddItem(new Doublet() { Hue = 1158 });
+        AddItem(new Shoes() { Hue = 0 });
+        AddItem(new FeatheredHat() { Hue = 1159 });
+        AddItem(new FireballWand() { Name = "Tesla's Innovations" });
 
-            // Appearance
-            AddItem(new LongPants() { Hue = 1157 });
-            AddItem(new Doublet() { Hue = 1158 });
-            AddItem(new Shoes() { Hue = 0 });
-            AddItem(new FeatheredHat() { Hue = 1159 });
-            AddItem(new FireballWand() { Name = "Tesla's Innovations" });
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(this);
+        HairHue = Race.RandomHairHue();
 
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(this);
-            HairHue = Race.RandomHairHue();
+        // Initialize the lastRewardTime to a past time
+        lastRewardTime = DateTime.MinValue;
+    }
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
-        }
+    public ScientistTesla(Serial serial) : base(serial) { }
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
-            if (!from.InRange(this, 3))
-                return;
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-            string speech = e.Speech.ToLower();
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
 
-            if (speech.Contains("name"))
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("I am Scientist Tesla, a brilliant mind wasted on this wretched society! How may I assist you?");
+        
+        greeting.AddOption("Tell me about your health.",
+            player => true,
+            player =>
             {
-                Say("I am Scientist Tesla, a brilliant mind wasted on this wretched society!");
-            }
-            else if (speech.Contains("health"))
+                DialogueModule healthModule = new DialogueModule("My health? What does it matter? I'm a mere pawn in this wretched game of life.");
+                player.SendGump(new DialogueGump(player, healthModule));
+            });
+
+        greeting.AddOption("What is your job?",
+            player => true,
+            player =>
             {
-                Say("My health? What does it matter? I'm a mere pawn in this wretched game of life.");
-            }
-            else if (speech.Contains("job"))
+                DialogueModule jobModule = new DialogueModule("My so-called 'job' is to toil away in obscurity, conducting experiments that no one appreciates.");
+                player.SendGump(new DialogueGump(player, jobModule));
+            });
+
+        greeting.AddOption("What discoveries have you made?",
+            player => true,
+            player =>
             {
-                Say("My so-called 'job' is to toil away in obscurity, conducting experiments that no one appreciates.");
-            }
-            else if (speech.Contains("discoveries"))
+                DialogueModule discoveriesModule = new DialogueModule("Do you have any idea how many groundbreaking discoveries I've made, only to have them ignored by the masses?");
+                player.SendGump(new DialogueGump(player, discoveriesModule));
+            });
+
+        greeting.AddOption("What do you think of the company founded in your name?",
+            player => true,
+            player =>
             {
-                Say("Do you have any idea how many groundbreaking discoveries I've made, only to have them ignored by the masses?");
-            }
-            else if (speech.Contains("mock"))
+                DialogueModule companyModule = new DialogueModule("Ah, the so-called 'Tesla Inc.' Founded in my name, yet it seems more like a circus than a tribute to my work.");
+                companyModule.AddOption("Why do you feel that way?",
+                    p => true,
+                    p =>
+                    {
+                        DialogueModule whyModule = new DialogueModule("They focus more on flashy products and marketing than on true scientific advancement. It's an insult to my legacy!");
+                        whyModule.AddOption("Do you think they make real innovations?",
+                            pl => true,
+                            pl =>
+                            {
+                                DialogueModule innovationsModule = new DialogueModule("Some claim they innovate, but I see a lot of noise and little substance. A true scientist seeks knowledge, not just profits.");
+                                pl.SendGump(new DialogueGump(pl, innovationsModule));
+                            });
+                        whyModule.AddOption("That sounds harsh. What do you prefer?",
+                            pl => true,
+                            pl =>
+                            {
+                                DialogueModule preferModule = new DialogueModule("I prefer a focus on genuine exploration of the unknown, not a relentless push for sales. Knowledge should be the goal.");
+                                pl.SendGump(new DialogueGump(pl, preferModule));
+                            });
+                        p.SendGump(new DialogueGump(p, whyModule));
+                    });
+                player.SendGump(new DialogueGump(player, companyModule));
+            });
+
+        greeting.AddOption("What do you think of Elon Musk?",
+            player => true,
+            player =>
             {
-                Say("So, are you here to mock me too, or do you actually care about science?");
-            }
-            else if (speech.Contains("brilliant"))
+                DialogueModule elonModule = new DialogueModule("Elon Musk? A blowhard! He touts himself as a visionary but lacks the humility and depth of real scientists.");
+                elonModule.AddOption("What do you mean by that?",
+                    p => true,
+                    p =>
+                    {
+                        DialogueModule depthModule = new DialogueModule("True science requires patience, experimentation, and a willingness to learn from failure. He often skips that for the limelight.");
+                        depthModule.AddOption("So you think he's not a real scientist?",
+                            pl => true,
+                            pl =>
+                            {
+                                DialogueModule realScientistModule = new DialogueModule("Exactly! He may have a knack for business, but science isn't just about profits and publicity.");
+                                pl.SendGump(new DialogueGump(pl, realScientistModule));
+                            });
+                        depthModule.AddOption("Isn't he doing anything good?",
+                            pl => true,
+                            pl =>
+                            {
+                                DialogueModule goodModule = new DialogueModule("He does push some boundaries, but at what cost? Innovation should be ethical and responsible, not just for headlines.");
+                                pl.SendGump(new DialogueGump(pl, goodModule));
+                            });
+                        p.SendGump(new DialogueGump(p, depthModule));
+                    });
+                player.SendGump(new DialogueGump(player, elonModule));
+            });
+
+        greeting.AddOption("Do you have a reward for me?",
+            player => CanGiveReward(),
+            player =>
             {
-                Say("Ah, you recognize brilliance when you see it! In a world where ignorance prevails, a sharp mind is a rarity.");
-            }
-            else if (speech.Contains("pawn"))
-            {
-                Say("Yes, like a pawn on a chessboard, forever moved by the hands of fate. However, I've decided to carve my own path, regardless of the obstacles.");
-            }
-            else if (speech.Contains("experiments"))
-            {
-                Say("My experiments are more than mere scientific endeavors. They are a pursuit of truth in an age of deception. Once, I even managed to harness pure energy, but my peers ridiculed me.");
-            }
-            else if (speech.Contains("groundbreaking"))
-            {
-                Say("Groundbreaking, indeed! One of my proudest achievements was an apparatus that could communicate across vast distances. Yet, it was deemed 'impossible' by the naysayers.");
-            }
-            else if (speech.Contains("science"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
+                if (GiveReward(player))
                 {
-                    Say("I have no reward right now. Please return later.");
+                    DialogueModule rewardModule = new DialogueModule("Ah, science! The beacon of hope in a world filled with darkness. As a token of appreciation, take this.");
+                    player.SendGump(new DialogueGump(player, rewardModule));
                 }
                 else
                 {
-                    Say("Ah, science! The beacon of hope in a world filled with darkness. If you truly care about it, I have something for you. As a token of appreciation for a fellow enthusiast, take this.");
-                    from.AddToBackpack(new PoisoningAugmentCrystal()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
+                    DialogueModule noRewardModule = new DialogueModule("I have no reward right now. Please return later.");
+                    player.SendGump(new DialogueGump(player, noRewardModule));
                 }
-            }
+            });
 
-            base.OnSpeech(e);
-        }
+        return greeting;
+    }
 
-        public ScientistTesla(Serial serial) : base(serial) { }
+    private bool CanGiveReward()
+    {
+        TimeSpan cooldown = TimeSpan.FromMinutes(10);
+        return DateTime.UtcNow - lastRewardTime >= cooldown;
+    }
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
-        }
+    private bool GiveReward(Mobile player)
+    {
+        lastRewardTime = DateTime.UtcNow; // Update the timestamp
+        player.AddToBackpack(new PoisoningAugmentCrystal()); // Give the reward
+        return true;
+    }
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
-        }
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0); // version
+        writer.Write(lastRewardTime);
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+        lastRewardTime = reader.ReadDateTime();
     }
 }

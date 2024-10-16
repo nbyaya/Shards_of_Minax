@@ -1,192 +1,315 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
+using Server.Network;
 using Server.Items;
 
-namespace Server.Mobiles
+public class CulinaryCatherine : BaseCreature
 {
-    [CorpseName("the corpse of Culinary Catherine")]
-    public class CulinaryCatherine : BaseCreature
+    private DateTime m_NextRewardTime;
+
+    [Constructable]
+    public CulinaryCatherine() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime m_NextRewardTime;
+        Name = "Culinary Catherine";
+        Body = 0x191; // Human female body
 
-        [Constructable]
-        public CulinaryCatherine() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Culinary Catherine";
-            Body = 0x191; // Human female body
+        // Stats
+        SetStr(75);
+        SetDex(55);
+        SetInt(80);
 
-            // Stats
-            Str = 75;
-            Dex = 55;
-            Int = 80;
-            Hits = 55;
+        SetHits(55);
 
-            // Appearance
-            AddItem(new Kilt(2920));
-            AddItem(new Surcoat(1151));
-            AddItem(new Boots(495));
-            AddItem(new LeatherGloves() { Name = "Catherine's Culinary Mitts" });
+        // Appearance
+        AddItem(new Kilt(2920));
+        AddItem(new Surcoat(1151));
+        AddItem(new Boots(495));
+        AddItem(new LeatherGloves() { Name = "Catherine's Culinary Mitts" });
 
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(this);
-            HairHue = Race.RandomHairHue();
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(this);
+        HairHue = Race.RandomHairHue();
 
-            SpeechHue = 0; // Default speech hue
-        }
+        SpeechHue = 0; // Default speech hue
+    }
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+    public CulinaryCatherine(Serial serial) : base(serial)
+    {
+    }
 
-            if (!from.InRange(this, 3))
-                return;
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-            if (Insensitive.Contains(e.Speech, "name"))
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
+
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("Oh, it's you. What do you want?");
+
+        greeting.AddOption("Who are you?",
+            player => true,
+            player =>
             {
-                Say("Oh, it's you. What do you want?");
-            }
-            else if (Insensitive.Contains(e.Speech, "health"))
+                DialogueModule nameModule = new DialogueModule("Culinary Catherine, that's what they call me. Though most don't care enough to ask.");
+                nameModule.AddOption("Tell me about your job.",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, CreateJobModule()));
+                    });
+                nameModule.AddOption("Goodbye.",
+                    p => true,
+                    p =>
+                    {
+                        p.SendMessage("Catherine goes back to her cooking.");
+                    });
+                player.SendGump(new DialogueGump(player, nameModule));
+            });
+
+        greeting.AddOption("Tell me about your job.",
+            player => true,
+            player =>
             {
-                Say("Do I look like a healer to you? Figure it out yourself!");
-            }
-            else if (Insensitive.Contains(e.Speech, "job"))
-            {
-                Say("My job? I'm a cook, alright? Not that anyone appreciates it!");
-            }
-            else if (Insensitive.Contains(e.Speech, "cuisine"))
-            {
-                Say("Appreciation for culinary skills? Hah! Tell me, do you even know what 'sous-vide' means?");
-            }
-            else if (Insensitive.Contains(e.Speech, "riddles"))
-            {
-                Say("Oh, you think you're clever, don't you? Well, I don't have time for riddles. Scram!");
-            }
-            else if (Insensitive.Contains(e.Speech, "catherine"))
-            {
-                Say("Culinary Catherine, that's what they call me. Though most don't care enough to ask.");
-            }
-            else if (Insensitive.Contains(e.Speech, "healer"))
-            {
-                Say("Maybe if people took the time to enjoy my dishes, they'd feel better! Food is the best medicine after all.");
-            }
-            else if (Insensitive.Contains(e.Speech, "cook"))
-            {
-                Say("It's a thankless job. Day in and day out, I create masterpieces, and yet it's never enough. You know, I once prepared a feast for the King himself.");
-            }
-            else if (Insensitive.Contains(e.Speech, "care"))
+                player.SendGump(new DialogueGump(player, CreateJobModule()));
+            });
+
+        greeting.AddOption("Do you need any help?",
+            player => true,
+            player =>
             {
                 if (DateTime.Now >= m_NextRewardTime)
                 {
-                    Say("It's a lonely world when you pour your heart into your work and no one notices. But here, I appreciate you asking. Take this as a token of my gratitude.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Reward item
-                    m_NextRewardTime = DateTime.Now.AddMinutes(10); // 10 minute cooldown
+                    DialogueModule helpModule = new DialogueModule("It's a lonely world when you pour your heart into your work and no one notices. But here, I appreciate you asking. Take this as a token of my gratitude.");
+                    helpModule.AddOption("Thank you.",
+                        p => true,
+                        p =>
+                        {
+                            p.AddToBackpack(new MaxxiaScroll()); // Reward item
+                            m_NextRewardTime = DateTime.Now.AddMinutes(10); // 10 minute cooldown
+                            p.SendMessage("You receive a Maxxia Scroll as a token of appreciation.");
+                        });
+                    player.SendGump(new DialogueGump(player, helpModule));
                 }
                 else
                 {
-                    Say("You've already received a token of my appreciation recently. Come back later.");
+                    player.SendMessage("You've already received a token of appreciation recently. Come back later.");
                 }
-            }
-            else if (Insensitive.Contains(e.Speech, "dishes"))
-            {
-                Say("My dishes aren't just food; they're art. From the flavors to the presentation, everything is meticulous. Have you ever tried my signature beef bourguignon?");
-            }
-            else if (Insensitive.Contains(e.Speech, "feast"))
-            {
-                Say("Ah, that was a day to remember. Fresh game, exotic fruits, and the finest wines. All for the royals and yet not a single compliment came my way.");
-            }
-            else if (Insensitive.Contains(e.Speech, "token"))
-            {
-                Say("It's not much, but it's a recipe I've been perfecting for ages. Use it well, and maybe you'll understand the essence of my culinary journey.");
-            }
-            else if (Insensitive.Contains(e.Speech, "bourguignon"))
-            {
-                Say("Ah, a connoisseur! That dish takes hours of slow cooking, with the finest cuts of beef, wine, and herbs. The secret? A dash of love and patience.");
-            }
-            else if (Insensitive.Contains(e.Speech, "royals"))
-            {
-                Say("Dealing with the royals is a mixed blessing. The prestige is unmatched, but the pressure is immense. And their tastes? Incredibly fickle.");
-            }
-            else if (Insensitive.Contains(e.Speech, "recipe"))
-            {
-                Say("This recipe has been passed down through generations. It's a simple dish, but when made right, it can transport you to another world.");
-            }
-            else if (Insensitive.Contains(e.Speech, "secret"))
-            {
-                Say("Every chef has their secrets. For some, it's a special ingredient. For others, a unique technique. For me? It's the passion I pour into every dish.");
-            }
-            else if (Insensitive.Contains(e.Speech, "pressure"))
-            {
-                Say("With every dish I present, I feel the weight of expectations. But it's that pressure that drives me to innovate and perfect my craft.");
-            }
-            else if (Insensitive.Contains(e.Speech, "generations"))
-            {
-                Say("My grandmother was a chef, as was her mother before her. Cooking is in my blood. It's a legacy I intend to uphold.");
-            }
-            else if (Insensitive.Contains(e.Speech, "passion"))
-            {
-                Say("Passion is what keeps me going. Even when the world is unkind, the fire in my heart never dims. It's the essence of every dish I create.");
-            }
-            else if (Insensitive.Contains(e.Speech, "innovate"))
-            {
-                Say("To innovate is to evolve. In the culinary world, if you aren't pushing boundaries, you're falling behind. But it's a balance between tradition and novelty.");
-            }
-            else if (Insensitive.Contains(e.Speech, "legacy"))
-            {
-                Say("Legacy is not just about remembering the past, but shaping the future. I hope my dishes leave an impact long after I'm gone.");
-            }
-            else if (Insensitive.Contains(e.Speech, "fire"))
-            {
-                Say("The fire represents my drive, my determination. It's what fuels my creativity and keeps me striving for perfection.");
-            }
-            else if (Insensitive.Contains(e.Speech, "tradition"))
-            {
-                Say("Tradition grounds us, gives us a sense of belonging. But it's also important to challenge and reinvent those traditions to stay relevant.");
-            }
-            else if (Insensitive.Contains(e.Speech, "impact"))
-            {
-                Say("The true impact of a dish is not in its taste alone, but in the memories it creates, the emotions it evokes. That's the mark of true culinary greatness.");
-            }
-            else if (Insensitive.Contains(e.Speech, "determination"))
-            {
-                Say("Determination is what pushes me through the long hours, the critiques, the failures. It's the backbone of any true artist.");
-            }
-            else if (Insensitive.Contains(e.Speech, "belonging"))
-            {
-                Say("The kitchen is where I belong. It's my sanctuary, my playground. It's where I'm truly myself.");
-            }
-            else if (Insensitive.Contains(e.Speech, "memories"))
-            {
-                Say("Memories are the soul's food. A single bite can take you back to a cherished moment, a long-forgotten place. It's magic, really.");
-            }
-            else if (Insensitive.Contains(e.Speech, "backbone"))
-            {
-                Say("Without a strong backbone, a chef would crumble under the pressure. It's what keeps us standing tall, despite the odds.");
-            }
-            else if (Insensitive.Contains(e.Speech, "sanctuary"))
-            {
-                Say("My sanctuary is my safe haven. A place where I can experiment, create, and be free from judgment. It's where my best ideas come to life.");
-            }
-            else if (Insensitive.Contains(e.Speech, "magic"))
-            {
-                Say("The magic of cooking is in the transformation. Taking simple ingredients and turning them into something extraordinary. It's a kind of alchemy.");
-            }
+            });
 
-            base.OnSpeech(e);
-        }
+        greeting.AddOption("Tell me about your cooking.",
+            player => true,
+            player =>
+            {
+                DialogueModule cookingModule = new DialogueModule("My dishes aren't just food; they're art. From the flavors to the presentation, everything is meticulous. Have you ever tried my signature beef bourguignon?");
+                cookingModule.AddOption("Tell me more about the bourguignon.",
+                    p => true,
+                    p =>
+                    {
+                        DialogueModule bourguignonModule = new DialogueModule("Ah, a connoisseur! That dish takes hours of slow cooking, with the finest cuts of beef, wine, and herbs. The secret? A dash of love and patience.");
+                        bourguignonModule.AddOption("Sounds delicious.",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                            });
+                        p.SendGump(new DialogueGump(p, bourguignonModule));
+                    });
+                cookingModule.AddOption("What about Troll Meat?",
+                    p => true,
+                    p =>
+                    {
+                        DialogueModule trollMeatModule = new DialogueModule("Ah, Troll Meat! It's a truly unique ingredient due to its regenerative properties. Properly stored, it can last indefinitely, and when cooked correctly, it can provide incredible health benefits.");
+                        trollMeatModule.AddOption("How do you store Troll Meat?",
+                            pl => true,
+                            pl =>
+                            {
+                                DialogueModule storageModule = new DialogueModule("The key to storing Troll Meat is keeping it cool and moist. Wrap it in damp cloth and store it in a shadowy place—never let it dry out. The regenerative properties will keep it from spoiling.");
+                                storageModule.AddOption("Can it really regenerate?",
+                                    pla => true,
+                                    pla =>
+                                    {
+                                        DialogueModule regenerateModule = new DialogueModule("Yes, indeed. Troll Meat has an uncanny ability to regenerate itself if stored properly. You could cut off a piece, and within a day or two, it will have regrown to nearly its original size. It's one of the reasons it's so valuable.");
+                                        regenerateModule.AddOption("How does this affect cooking it?",
+                                            plb => true,
+                                            plb =>
+                                            {
+                                                DialogueModule cookingEffectModule = new DialogueModule("Cooking Troll Meat is tricky because of its regenerative properties. If you cook it too slowly, it begins to heal itself even in the pot. The trick is a quick, high-temperature sear to lock in the juices before it has a chance to regenerate.");
+                                                cookingEffectModule.AddOption("That sounds challenging.",
+                                                    plc => true,
+                                                    plc =>
+                                                    {
+                                                        plc.SendGump(new DialogueGump(plc, CreateGreetingModule()));
+                                                    });
+                                                cookingEffectModule.AddOption("Are there any recipes?",
+                                                    plc => true,
+                                                    plc =>
+                                                    {
+                                                        DialogueModule recipesModule = new DialogueModule("Oh, there are quite a few! My favorite is Troll Steak with Herb Reduction. The trick is to sear the steak quickly, then add a mixture of wild herbs and simmer for just a few minutes.");
+                                                        recipesModule.AddOption("Tell me more about the herb reduction.",
+                                                            pld => true,
+                                                            pld =>
+                                                            {
+                                                                DialogueModule herbModule = new DialogueModule("The herb reduction is a mix of sage, thyme, and a touch of rosemary. These herbs help counteract the somewhat gamey flavor of Troll Meat, making it more palatable. You need to simmer them just enough to release their oils, but not so much that they overpower the meat.");
+                                                                herbModule.AddOption("Any other recipes?",
+                                                                    ple => true,
+                                                                    ple =>
+                                                                    {
+                                                                        DialogueModule otherRecipesModule = new DialogueModule("Certainly! There's also Troll Meat Stew, which requires dicing the meat into small cubes and cooking it with root vegetables. The stew benefits from the regenerative properties of the meat, which make it incredibly hearty.");
+                                                                        otherRecipesModule.AddOption("How do you make it?",
+                                                                            plf => true,
+                                                                            plf =>
+                                                                            {
+                                                                                DialogueModule stewModule = new DialogueModule("First, you need to sear the cubes of Troll Meat—just like with the steak—to prevent them from regenerating during cooking. Then, add diced carrots, potatoes, and onions, along with a good bone broth. Let it simmer for an hour, and the result is a rich, filling stew that can keep you going for days.");
+                                                                                stewModule.AddOption("Sounds wonderful.",
+                                                                                    plg => true,
+                                                                                    plg =>
+                                                                                    {
+                                                                                        plg.SendGump(new DialogueGump(plg, CreateGreetingModule()));
+                                                                                    });
+                                                                                plf.SendGump(new DialogueGump(plf, stewModule));
+                                                                            });
+                                                                        otherRecipesModule.AddOption("Maybe another time.",
+                                                                            plf => true,
+                                                                            plf =>
+                                                                            {
+                                                                                plf.SendGump(new DialogueGump(plf, CreateGreetingModule()));
+                                                                            });
+                                                                        ple.SendGump(new DialogueGump(ple, otherRecipesModule));
+                                                                    });
+                                                                herbModule.AddOption("I'll have to try that.",
+                                                                    ple => true,
+                                                                    ple =>
+                                                                    {
+                                                                        ple.SendGump(new DialogueGump(ple, CreateGreetingModule()));
+                                                                    });
+                                                                pld.SendGump(new DialogueGump(pld, herbModule));
+                                                            });
+                                                        recipesModule.AddOption("Maybe another time.",
+                                                            pld => true,
+                                                            pld =>
+                                                            {
+                                                                pld.SendGump(new DialogueGump(pld, CreateGreetingModule()));
+                                                            });
+                                                        plc.SendGump(new DialogueGump(plc, recipesModule));
+                                                    });
+                                                plb.SendGump(new DialogueGump(plb, cookingEffectModule));
+                                            });
+                                        pla.SendGump(new DialogueGump(pla, regenerateModule));
+                                    });
+                                storageModule.AddOption("I'll keep that in mind.",
+                                    pla => true,
+                                    pla =>
+                                    {
+                                        pla.SendGump(new DialogueGump(pla, CreateGreetingModule()));
+                                    });
+                                pl.SendGump(new DialogueGump(pl, storageModule));
+                            });
+                        trollMeatModule.AddOption("What are the benefits of eating Troll Meat?",
+                            pl => true,
+                            pl =>
+                            {
+                                DialogueModule benefitsModule = new DialogueModule("Troll Meat, when properly prepared, has incredible regenerative effects on those who consume it. It can accelerate healing, restore stamina, and even slightly increase one's resilience to poisons. However, it must be prepared correctly to unlock these properties.");
+                                benefitsModule.AddOption("How do you unlock these properties?",
+                                    pla => true,
+                                    pla =>
+                                    {
+                                        DialogueModule unlockModule = new DialogueModule("The key is to cook it at just the right temperature. Too low, and it retains too much of its raw nature, which can cause stomach upset. Too high, and the regenerative compounds break down. A medium-hot sear followed by a brief rest is ideal.");
+                                        unlockModule.AddOption("Got it.",
+                                            plb => true,
+                                            plb =>
+                                            {
+                                                plb.SendGump(new DialogueGump(plb, CreateGreetingModule()));
+                                            });
+                                        pla.SendGump(new DialogueGump(pla, unlockModule));
+                                    });
+                                benefitsModule.AddOption("That's fascinating.",
+                                    pla => true,
+                                    pla =>
+                                    {
+                                        pla.SendGump(new DialogueGump(pla, CreateGreetingModule()));
+                                    });
+                                pl.SendGump(new DialogueGump(pl, benefitsModule));
+                            });
+                        trollMeatModule.AddOption("Maybe another time.",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                            });
+                        p.SendGump(new DialogueGump(p, trollMeatModule));
+                    });
+                cookingModule.AddOption("Maybe another time.",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                    });
+                player.SendGump(new DialogueGump(player, cookingModule));
+            });
 
-        public CulinaryCatherine(Serial serial) : base(serial) { }
+        greeting.AddOption("Goodbye.",
+            player => true,
+            player =>
+            {
+                player.SendMessage("Catherine goes back to her cooking.");
+            });
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-        }
+        return greeting;
+    }
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-        }
+    private DialogueModule CreateJobModule()
+    {
+        DialogueModule jobModule = new DialogueModule("My job? I'm a cook, alright? Not that anyone appreciates it!");
+        jobModule.AddOption("Tell me about your dishes.",
+            player => true,
+            player =>
+            {
+                DialogueModule dishesModule = new DialogueModule("My dishes aren't just food; they're art. From the flavors to the presentation, everything is meticulous.");
+                dishesModule.AddOption("Have you cooked for anyone famous?",
+                    p => true,
+                    p =>
+                    {
+                        DialogueModule feastModule = new DialogueModule("Ah, that was a day to remember. Fresh game, exotic fruits, and the finest wines. All for the royals, and yet not a single compliment came my way.");
+                        feastModule.AddOption("That must have been tough.",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                            });
+                        p.SendGump(new DialogueGump(p, feastModule));
+                    });
+                dishesModule.AddOption("Maybe another time.",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                    });
+                player.SendGump(new DialogueGump(player, dishesModule));
+            });
+        jobModule.AddOption("Goodbye.",
+            player => true,
+            player =>
+            {
+                player.SendMessage("Catherine goes back to her cooking.");
+            });
+        return jobModule;
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write(0); // version
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
     }
 }

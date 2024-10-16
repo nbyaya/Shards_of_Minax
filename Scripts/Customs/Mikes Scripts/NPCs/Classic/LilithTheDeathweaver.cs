@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -17,93 +18,151 @@ namespace Server.Mobiles
             Body = 0x191; // Human female body
 
             // Stats
-            Str = 125;
-            Dex = 55;
-            Int = 155;
-            Hits = 105;
+            SetStr(125);
+            SetDex(55);
+            SetInt(155);
+            SetHits(105);
 
             // Appearance
             AddItem(new Robe() { Hue = 1175 });
             AddItem(new Sandals() { Hue = 1109 });
             AddItem(new BoneHelm());
 
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(Female);
-            HairHue = Race.RandomHairHue();
+			Hue = Race.RandomSkinHue();
+			HairItemID = Race.RandomHair(Female);
+			HairHue = Race.RandomHairHue();
 
             SpeechHue = 0; // Default speech hue
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
-        }
-
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
-                return;
-
-            string speech = e.Speech.ToLower();
-
-            if (speech.Contains("name"))
-            {
-                Say("I am Lilith the Deathweaver, a master of dark arts!");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("My health is sustained by the power of the dark forces.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("I delve into the secrets of necromancy and control the undead.");
-            }
-            else if (speech.Contains("dark arts"))
-            {
-                Say("Dark arts are not for the faint of heart. Are you brave enough to learn?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("Then prove your dedication by completing this dark task.");
-            }
-            else if (speech.Contains("forces"))
-            {
-                Say("The dark forces are ancient energies, flowing through the world, waiting to be harnessed by those with the knowledge and will.");
-            }
-            else if (speech.Contains("necromancy"))
-            {
-                Say("Necromancy, the art of communing with and controlling the dead. I have studied its mysteries for years. There is power beyond imagination for those who dare.");
-            }
-            else if (speech.Contains("undead"))
-            {
-                Say("The undead are misunderstood beings, merely tools to be wielded. With the right incantations, they can be made to serve any purpose. Take this friend.");
-                from.AddToBackpack(new SpiritSpeakAugmentCrystal()); // Give the reward
-            }
-            else if (speech.Contains("power"))
-            {
-                Say("Power comes at a price. If you're willing, I can offer you a task. Complete it, and you shall be rewarded.");
-            }
-            else if (speech.Contains("task"))
-            {
-                Say("Deep in the Whispering Woods, there lies a crypt. Retrieve the Black Orb resting there, and bring it to me. Do this, and you shall receive what you seek.");
-            }
-            else if (speech.Contains("reward"))
-            {
-                if (DateTime.UtcNow - lastRewardTime < TimeSpan.FromMinutes(10))
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Ah, curious about your reward? Complete the task, and you'll find out. Rest assured, it will be worth your effort.");
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-
-            base.OnSpeech(e);
+            lastRewardTime = DateTime.MinValue; // Initialize lastRewardTime
         }
 
         public LilithTheDeathweaver(Serial serial) : base(serial) { }
+
+        public override void OnDoubleClick(Mobile from)
+        {
+            if (!(from is PlayerMobile player))
+                return;
+
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
+
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("I am Lilith the Deathweaver, a master of dark arts! What do you seek, traveler?");
+
+            greeting.AddOption("What is your health?",
+                player => true,
+                player => 
+                {
+                    player.SendGump(new DialogueGump(player, new DialogueModule("My health is sustained by the power of the dark forces.")));
+                });
+
+            greeting.AddOption("What do you do?",
+                player => true,
+                player => 
+                {
+                    player.SendGump(new DialogueGump(player, new DialogueModule("I delve into the secrets of necromancy and control the undead.")));
+                });
+
+            greeting.AddOption("Tell me about dark arts.",
+                player => true,
+                player => 
+                {
+                    DialogueModule darkArtsModule = new DialogueModule("Dark arts are not for the faint of heart. Are you brave enough to learn?");
+                    darkArtsModule.AddOption("Yes, I'm brave!",
+                        p => true,
+                        p => 
+                        {
+                            p.SendGump(new DialogueGump(p, new DialogueModule("Then prove your dedication by completing this dark task.")));
+                        });
+                    player.SendGump(new DialogueGump(player, darkArtsModule));
+                });
+
+            greeting.AddOption("What is necromancy?",
+                player => true,
+                player => 
+                {
+                    DialogueModule necromancyModule = new DialogueModule("Necromancy, the art of communing with and controlling the dead. There is power beyond imagination for those who dare. Would you like to learn more?");
+                    necromancyModule.AddOption("Yes, tell me more.",
+                        p => true,
+                        p => 
+                        {
+                            DialogueModule moreInfoModule = new DialogueModule("Necromancers wield the forces of life and death. They are feared and often misunderstood. Many seek the power to raise the fallen, but it comes with a heavy price. Are you prepared for such a burden?");
+                            moreInfoModule.AddOption("I am ready for the burden.",
+                                pl => true,
+                                pl => 
+                                {
+                                    pl.SendGump(new DialogueGump(pl, new DialogueModule("Very well! Your journey begins with the study of dark tomes and forbidden rituals.")));
+                                });
+                            moreInfoModule.AddOption("Maybe another time.",
+                                pl => true,
+                                pl => 
+                                {
+                                    pl.SendGump(new DialogueGump(pl, new DialogueModule("Take your time. The path of a necromancer is not to be taken lightly.")));
+                                });
+                            p.SendGump(new DialogueGump(p, moreInfoModule));
+                        });
+                    player.SendGump(new DialogueGump(player, necromancyModule));
+                });
+
+            greeting.AddOption("Do you have a task for me?",
+                player => true,
+                player => 
+                {
+                    DialogueModule taskModule = new DialogueModule("Deep in the Whispering Woods, there lies a crypt. Retrieve the Black Orb resting there, and bring it to me. Do this, and you shall receive what you seek.");
+                    taskModule.AddOption("What will I receive?",
+                        p => DateTime.UtcNow - lastRewardTime >= TimeSpan.FromMinutes(10),
+                        p => 
+                        {
+                            p.SendGump(new DialogueGump(p, new DialogueModule("Ah, curious about your reward? Complete the task, and you'll find out. Rest assured, it will be worth your effort.")));
+                            lastRewardTime = DateTime.UtcNow; // Update lastRewardTime
+                        });
+                    taskModule.AddOption("I am not ready for such a task.",
+                        p => true,
+                        p => 
+                        {
+                            p.SendGump(new DialogueGump(p, new DialogueModule("Very well. Return when you are prepared.")));
+                        });
+                    taskModule.AddOption("What dangers lie ahead?",
+                        p => true,
+                        p => 
+                        {
+                            p.SendGump(new DialogueGump(p, new DialogueModule("The crypt is filled with restless spirits and dark creatures that guard the orb. Use caution, and your wits will serve you well.")));
+                        });
+                    player.SendGump(new DialogueGump(player, taskModule));
+                });
+
+            greeting.AddOption("What about the undead?",
+                player => true,
+                player => 
+                {
+                    DialogueModule undeadModule = new DialogueModule("The undead are misunderstood beings, merely tools to be wielded. With the right incantations, they can be made to serve any purpose. Would you like to learn how?");
+                    undeadModule.AddOption("Yes, teach me!",
+                        pl => true,
+                        pl => 
+                        {
+                            DialogueModule learningModule = new DialogueModule("To control the undead, one must first learn the words of power. Study the ancient scripts, and perform the rituals. Do you wish to start this path?");
+                            learningModule.AddOption("I wish to begin.",
+                                p => true,
+                                p => 
+                                {
+                                    p.SendGump(new DialogueGump(p, new DialogueModule("Very well. Your journey into the unknown starts now. Be cautious, for knowledge can be a double-edged sword.")));
+                                });
+                            learningModule.AddOption("I'm not sure yet.",
+                                p => true,
+                                p => 
+                                {
+                                    p.SendGump(new DialogueGump(p, new DialogueModule("Think carefully. The path you choose will shape your destiny.")));
+                                });
+                            pl.SendGump(new DialogueGump(pl, learningModule));
+                        });
+                    player.SendGump(new DialogueGump(player, undeadModule));
+                });
+
+            return greeting;
+        }
 
         public override void Serialize(GenericWriter writer)
         {

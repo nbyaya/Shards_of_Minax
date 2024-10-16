@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -17,10 +18,10 @@ namespace Server.Mobiles
             Body = 0x190; // Human male body
 
             // Stats
-            Str = 160;
-            Dex = 63;
-            Int = 22;
-            Hits = 115;
+            SetStr(160);
+            SetDex(63);
+            SetInt(22);
+            SetHits(115);
 
             // Appearance
             AddItem(new ChainLegs() { Hue = 1100 });
@@ -40,94 +41,148 @@ namespace Server.Mobiles
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
-
-            if (speech.Contains("name"))
-            {
-                Say("I am Sir Tristan, a once noble knight...");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("These days, my health is but a shadow of its former glory...");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My job? Ha! I was a protector of the realm, but now I'm naught but a relic...");
-            }
-            else if (speech.Contains("battles"))
-            {
-                Say("But tell me, what worth is valor in a world that has forgotten me?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("Do you think you can succeed where I failed?");
-            }
-            else if (speech.Contains("hope"))
-            {
-                Say("Very well, prove your worth, and perhaps there's hope for this world yet...");
-            }
-            else if (speech.Contains("noble"))
-            {
-                Say("I was once a part of the King's inner circle, celebrated for my deeds and prowess in battle.");
-            }
-            else if (speech.Contains("shadow"))
-            {
-                Say("A great beast wounded me in my final battle. Its venom courses through me, dimming my vitality each day.");
-            }
-            else if (speech.Contains("relic"))
-            {
-                Say("Though many see me as a mere vestige of the past, I once stood as a beacon of hope against the darkness that threatened the land.");
-            }
-            else if (speech.Contains("king"))
-            {
-                Say("The King and I were close allies, until the darkness cast its veil between us. He too has forgotten my sacrifices.");
-            }
-            else if (speech.Contains("beast"))
-            {
-                Say("It was the Netherwyrm, a creature of legends. Its power was immense, and even with my full strength, I barely escaped with my life.");
-            }
-            else if (speech.Contains("darkness"))
-            {
-                Say("The darkness I speak of is not merely the absence of light. It's a force, an entity that wishes to consume all. Yet, I sense a glimmer of light in you.");
-            }
-            else if (speech.Contains("allies"))
-            {
-                Say("Our bond was unbreakable, fighting side by side. But time has a way of altering perspectives. Seek the truth and perhaps you'll understand.");
-            }
-            else if (speech.Contains("netherwyrm"))
-            {
-                Say("If you seek to challenge the Netherwyrm, be prepared. I have an old weapon that might aid you in this endeavor.");
-            }
-            else if (speech.Contains("glimmer"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("I see potential in you. Take this pendant, a symbol of my family's honor. It might just guide you when all seems lost.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-            else if (speech.Contains("truth"))
-            {
-                Say("Many tales have been spun, but few know the true events that transpired. A scroll, hidden in the old ruins, might shed light on the past.");
-            }
-
-            base.OnSpeech(e);
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
         }
 
-        public SirTristan(Serial serial) : base(serial) { }
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("Ah, greetings, traveler! You seem to have found me lost in thought about my beloved rabbits...");
+
+            greeting.AddOption("Rabbits? Tell me more!",
+                player => true,
+                player =>
+                {
+                    DialogueModule rabbitsModule = new DialogueModule("Ah, yes! They are the most delightful creatures, full of life and joy. I often find solace in their company.");
+                    rabbitsModule.AddOption("What do you love most about them?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule loveModule = new DialogueModule("Their gentle nature and playful spirit remind me of simpler times. Watching them hop around brings me peace.");
+                            loveModule.AddOption("Do you have a favorite breed?",
+                                pla => true,
+                                pla =>
+                                {
+                                    DialogueModule breedModule = new DialogueModule("I must say, the Netherland Dwarf holds a special place in my heart. Their tiny size and affectionate nature are simply enchanting.");
+                                    breedModule.AddOption("How many do you have?",
+                                        plb => true,
+                                        plb =>
+                                        {
+                                            DialogueModule countModule = new DialogueModule("Currently, I care for five rabbits: Flopsy, Mopsy, Cotton, Thumper, and the ever-mischievous Pippin. They each have their unique quirks!");
+                                            countModule.AddOption("What are their quirks?",
+                                                plc => true,
+                                                plc =>
+                                                {
+                                                    DialogueModule quirksModule = new DialogueModule("Flopsy loves to dig, Mopsy enjoys hiding in the tall grass, Cotton is a champion eater, Thumper is the most curious, and Pippin... well, he's a troublemaker!");
+                                                    quirksModule.AddOption("Do you spend a lot of time with them?",
+                                                        ple => true,
+                                                        ple =>
+                                                        {
+                                                            DialogueModule timeModule = new DialogueModule("Every day! They bring joy to my heart, and I often talk to them as if they understand every word.");
+                                                            AddCommonOptions(timeModule);
+                                                            ple.SendGump(new DialogueGump(ple, timeModule));
+                                                        });
+                                                    plc.SendGump(new DialogueGump(plc, quirksModule));
+                                                });
+                                            plb.SendGump(new DialogueGump(plb, countModule));
+                                        });
+                                    pla.SendGump(new DialogueGump(pla, breedModule));
+                                });
+                            loveModule.AddOption("Do they help you forget your troubles?",
+                                plq => true,
+                                plq =>
+                                {
+                                    DialogueModule helpModule = new DialogueModule("Indeed, they do. Whenever I feel weighed down by my past, their playful hops lift my spirits.");
+                                    AddCommonOptions(helpModule);
+                                    pl.SendGump(new DialogueGump(pl, helpModule));
+                                });
+                            player.SendGump(new DialogueGump(player, loveModule));
+                        });
+                    player.SendGump(new DialogueGump(player, rabbitsModule));
+                });
+
+            greeting.AddOption("Did something happen to your rabbits?",
+                player => true,
+                player =>
+                {
+                    DialogueModule tragedyModule = new DialogueModule("Ah, it pains me to speak of it. A fierce storm once swept through, scattering my beloved rabbits. I lost dear Cotton that day.");
+                    tragedyModule.AddOption("I'm sorry to hear that.",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule comfortModule = new DialogueModule("Thank you, kind traveler. Remembering Cotton is bittersweet, but I cherish the memories we made.");
+                            AddCommonOptions(comfortModule);
+                            pl.SendGump(new DialogueGump(pl, comfortModule));
+                        });
+                    tragedyModule.AddOption("How did you cope?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule copeModule = new DialogueModule("It was hard. I spent time with the others, and their presence reminded me that life continues.");
+                            copeModule.AddOption("What do you do to honor Cotton?",
+                                plc => true,
+                                plc =>
+                                {
+                                    DialogueModule honorModule = new DialogueModule("I created a small garden in his memory, filled with flowers he loved to nibble on. It's a peaceful spot.");
+                                    AddCommonOptions(honorModule);
+                                    plc.SendGump(new DialogueGump(plc, honorModule));
+                                });
+                            AddCommonOptions(copeModule);
+                            pl.SendGump(new DialogueGump(pl, copeModule));
+                        });
+                    player.SendGump(new DialogueGump(player, tragedyModule));
+                });
+
+            greeting.AddOption("Do you have any rabbit-related stories?",
+                player => true,
+                player =>
+                {
+                    DialogueModule storyModule = new DialogueModule("Oh, many! One time, I caught Pippin trying to steal a carrot from my garden. He looked so guilty!");
+                    storyModule.AddOption("What did you do?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule responseModule = new DialogueModule("I couldn't scold him; he looked too adorable with that carrot in his mouth! I ended up giving him the carrot as a treat.");
+                            AddCommonOptions(responseModule);
+                            pl.SendGump(new DialogueGump(pl, responseModule));
+                        });
+                    storyModule.AddOption("Do they have a favorite food?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule foodModule = new DialogueModule("Oh, definitely! They adore fresh greens and, of course, the sweetest carrots. It's a joy to see them hop around excitedly at feeding time.");
+                            AddCommonOptions(foodModule);
+                            pl.SendGump(new DialogueGump(pl, foodModule));
+                        });
+                    player.SendGump(new DialogueGump(player, storyModule));
+                });
+
+            greeting.AddOption("Why rabbits?",
+                player => true,
+                player =>
+                {
+                    DialogueModule whyModule = new DialogueModule("Rabbits embody gentleness and playfulness. In their presence, I find comfort that transcends the pain of my past.");
+                    AddCommonOptions(whyModule);
+                    player.SendGump(new DialogueGump(player, whyModule));
+                });
+
+            return greeting;
+        }
+
+        private void AddCommonOptions(DialogueModule module)
+        {
+            module.AddOption("Tell me more.",
+                player => true,
+                player => player.SendGump(new DialogueGump(player, CreateGreetingModule())));
+            module.AddOption("Goodbye.",
+                player => true,
+                player => player.SendMessage("Until we meet again, traveler."));
+        }
 
         public override void Serialize(GenericWriter writer)
         {
@@ -142,5 +197,7 @@ namespace Server.Mobiles
             int version = reader.ReadInt();
             lastRewardTime = reader.ReadDateTime();
         }
+
+        public SirTristan(Serial serial) : base(serial) { }
     }
 }

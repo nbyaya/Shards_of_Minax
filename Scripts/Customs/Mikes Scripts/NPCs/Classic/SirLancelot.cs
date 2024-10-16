@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -8,8 +9,6 @@ namespace Server.Mobiles
     [CorpseName("the corpse of Sir Lancelot")]
     public class SirLancelot : BaseCreature
     {
-        private DateTime lastRewardTime;
-
         [Constructable]
         public SirLancelot() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
         {
@@ -17,10 +16,10 @@ namespace Server.Mobiles
             Body = 0x190; // Human male body
 
             // Stats
-            Str = 158;
-            Dex = 66;
-            Int = 26;
-            Hits = 113;
+            SetStr(158);
+            SetDex(66);
+            SetInt(26);
+            SetHits(113);
 
             // Appearance
             AddItem(new ChainChest() { Hue = 1400 });
@@ -32,98 +31,131 @@ namespace Server.Mobiles
             Hue = Race.RandomSkinHue();
             HairItemID = Race.RandomHair(this);
             HairHue = Race.RandomHairHue();
-
-            SpeechHue = 0; // Default speech hue
-
-            lastRewardTime = DateTime.MinValue;
-        }
-
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
-                return;
-
-            string speech = e.Speech.ToLower();
-
-            if (speech.Contains("name"))
-            {
-                Say("I am Sir Lancelot, a knight of noble lineage.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("My health is robust, as befits a knight of the realm.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("I serve the kingdom as a protector and defender.");
-            }
-            else if (speech.Contains("valor"))
-            {
-                Say("True valor lies not only in the strength of one's arm but in the purity of one's heart. Dost thou value valor?");
-            }
-            else if (speech.Contains("yes") && LastSpeechContains("valor"))
-            {
-                Say("Then thou art on the path of honor. Remember, a true knight never wavers in the face of adversity.");
-            }
-            else if (speech.Contains("lineage"))
-            {
-                Say("My lineage traces back to the ancient knights who served the realm with honor and courage.");
-            }
-            else if (speech.Contains("robust"))
-            {
-                Say("Being robust isn't solely about physical strength, but also mental resilience. I often meditate on the mantra of Sacrifice to help me maintain both.");
-            }
-            else if (speech.Contains("protector"))
-            {
-                Say("As a protector, I've faced many perils and vanquished numerous foes. It's essential for knights like me to always be prepared.");
-            }
-            else if (speech.Contains("purity"))
-            {
-                Say("Purity of heart comes from understanding one's self and others. I've learned this through countless quests and challenges.");
-            }
-            else if (speech.Contains("mantra"))
-            {
-                Say("Ah, the mantra of Sacrifice... I've whispered its syllables many times. The second syllable is ZEN, though it holds more power when combined with the others.");
-            }
-            else if (speech.Contains("perils"))
-            {
-                Say("Every peril I've faced has taught me a lesson. Even in the darkest moments, there's always a glimmer of hope and a lesson to be learned.");
-            }
-            else if (speech.Contains("quests"))
-            {
-                Say("My quests have taken me to the far reaches of the realm. In each journey, I've sought to uphold the virtues and bring justice where it's needed.");
-            }
-            else if (speech.Contains("knights"))
-            {
-                Say("The ancient knights were paragons of virtue and valor. Their tales inspire me to this day, reminding me of the noble legacy I uphold.");
-            }
-
-            base.OnSpeech(e);
-        }
-
-        private bool LastSpeechContains(string keyword)
-        {
-            // Implement a method to check if the last speech contains the keyword
-            // This is a placeholder method, you'll need to create the actual implementation.
-            return false;
         }
 
         public SirLancelot(Serial serial) : base(serial) { }
+
+        public override void OnDoubleClick(Mobile from)
+        {
+            if (!(from is PlayerMobile player))
+                return;
+
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
+
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("I am Sir Lancelot, a knight of noble lineage. How may I assist you?");
+
+            greeting.AddOption("Tell me about your encounter with an evil wizard.",
+                player => true,
+                player => 
+                {
+                    DialogueModule wizardEncounter = new DialogueModule("Ah, it was a dark day when I faced that foul wizard. He had a terrible power, and I found myself trapped in a cloning vat of his own making.");
+                    wizardEncounter.AddOption("What happened during that encounter?",
+                        pl => true,
+                        pl => 
+                        {
+                            DialogueModule encounterDetails = new DialogueModule("The wizard sought to steal my strength and valor. I fought valiantly, but he overwhelmed me with dark magic, casting me into a vat that twisted my very essence.");
+                            encounterDetails.AddOption("How did you escape?",
+                                plq => true,
+                                plq => 
+                                {
+                                    DialogueModule escapeStory = new DialogueModule("In the depths of despair, I recalled the teachings of my mentors. Through sheer will, I summoned the strength to shatter the vat and escape its grasp.");
+                                    escapeStory.AddOption("What did you learn from this experience?",
+                                        plw => true,
+                                        plw => 
+                                        {
+                                            player.SendGump(new DialogueGump(player, new DialogueModule("I learned that true strength lies not in one's body, but in the heart and mind. Every challenge can be overcome with courage and wisdom.")));
+                                        });
+                                    player.SendGump(new DialogueGump(player, escapeStory));
+                                });
+                            encounterDetails.AddOption("What did the wizard look like?",
+                                ple => true,
+                                ple => 
+                                {
+                                    player.SendGump(new DialogueGump(player, new DialogueModule("The wizard was cloaked in shadows, with eyes that glowed like embers. His voice chilled the very air, and his magic was a palpable darkness.")));
+                                });
+                            player.SendGump(new DialogueGump(player, encounterDetails));
+                        });
+                    wizardEncounter.AddOption("What is a cloning vat?",
+                        pl => true,
+                        pl => 
+                        {
+                            player.SendGump(new DialogueGump(player, new DialogueModule("A foul device, it was! It could replicate living beings, trapping their essence within. It is said to be a creation of twisted minds who seek to play god.")));
+                        });
+                    player.SendGump(new DialogueGump(player, wizardEncounter));
+                });
+
+            greeting.AddOption("What is your health like?",
+                player => true,
+                player => 
+                {
+                    player.SendGump(new DialogueGump(player, new DialogueModule("My health is robust, as befits a knight of the realm.")));
+                });
+
+            greeting.AddOption("What is your job?",
+                player => true,
+                player =>
+                {
+                    player.SendGump(new DialogueGump(player, new DialogueModule("I serve the kingdom as a protector and defender.")));
+                });
+
+            greeting.AddOption("What is valor?",
+                player => true,
+                player =>
+                {
+                    DialogueModule valorModule = new DialogueModule("True valor lies not only in the strength of one's arm but in the purity of one's heart. Dost thou value valor?");
+                    valorModule.AddOption("Yes.",
+                        pl => true,
+                        pl => 
+                        {
+                            pl.SendGump(new DialogueGump(pl, new DialogueModule("Then thou art on the path of honor. A true knight never wavers in the face of adversity.")));
+                        });
+                    valorModule.AddOption("No.",
+                        pl => true,
+                        pl => 
+                        {
+                            pl.SendGump(new DialogueGump(pl, new DialogueModule("Then perhaps you should reflect on your values.")));
+                        });
+                    player.SendGump(new DialogueGump(player, valorModule));
+                });
+
+            greeting.AddOption("What can you tell me about your lineage?",
+                player => true,
+                player =>
+                {
+                    player.SendGump(new DialogueGump(player, new DialogueModule("My lineage traces back to the ancient knights who served the realm with honor and courage.")));
+                });
+
+            greeting.AddOption("How do you maintain your resilience?",
+                player => true,
+                player =>
+                {
+                    player.SendGump(new DialogueGump(player, new DialogueModule("Being robust isn't solely about physical strength, but also mental resilience. I often meditate on the mantra of Sacrifice to help me maintain both.")));
+                });
+
+            greeting.AddOption("What have you learned from your quests?",
+                player => true,
+                player =>
+                {
+                    player.SendGump(new DialogueGump(player, new DialogueModule("Every peril I've faced has taught me a lesson. There's always a glimmer of hope and a lesson to be learned.")));
+                });
+
+            return greeting;
+        }
 
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
             writer.Write((int)0); // version
-            writer.Write(lastRewardTime);
         }
 
         public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
             int version = reader.ReadInt();
-            lastRewardTime = reader.ReadDateTime();
         }
     }
 }

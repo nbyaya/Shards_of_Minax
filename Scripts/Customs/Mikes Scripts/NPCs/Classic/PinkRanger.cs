@@ -1,6 +1,8 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
+using Server.Network;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -17,10 +19,10 @@ namespace Server.Mobiles
             Body = 0x191; // Human female body
 
             // Stats
-            Str = 100;
-            Dex = 110;
-            Int = 65;
-            Hits = 75;
+            SetStr(100);
+            SetDex(110);
+            SetInt(65);
+            SetHits(75);
 
             // Appearance
             AddItem(new StuddedLegs() { Hue = 24 });
@@ -40,74 +42,144 @@ namespace Server.Mobiles
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+        public PinkRanger(Serial serial) : base(serial) { }
 
-            if (!from.InRange(this, 3))
+        public override void OnDoubleClick(Mobile from)
+        {
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
-
-            if (speech.Contains("name"))
-            {
-                Say("I am the Pink Ranger, a guardian of Compassion!");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("I am in perfect health, as Compassion heals all wounds.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("I protect the innocent and spread Compassion throughout the land.");
-            }
-            else if (speech.Contains("compassion"))
-            {
-                Say("Compassion is the truest form of strength. Do you understand its power?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("Then you must strive to show kindness and empathy in all your actions.");
-            }
-            else if (speech.Contains("pink"))
-            {
-                Say("The color pink signifies love and compassion. It's more than just a hue; it's a representation of my mission.");
-            }
-            else if (speech.Contains("perfect"))
-            {
-                Say("It's not just about physical health, but also mental and spiritual well-being. Compassion plays a vital role in all three.");
-            }
-            else if (speech.Contains("protect"))
-            {
-                Say("Protection is more than just physical safety. It's about ensuring that the spirit of compassion remains alive in people's hearts.");
-            }
-            else if (speech.Contains("power"))
-            {
-                Say("True power doesn't come from strength or might, but from understanding and empathy. Have you ever felt this kind of power?");
-            }
-            else if (speech.Contains("felt"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Feelings are a guiding force. When you truly feel for others, you can understand their pain and joy. That's where true compassion starts. And for your journey in understanding this, let me give you a reward to help you on your way.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-            else if (speech.Contains("journey"))
-            {
-                Say("Every journey has its challenges and rewards. But remember, it's not the destination but the lessons learned along the way that matter.");
-            }
-
-            base.OnSpeech(e);
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
         }
 
-        public PinkRanger(Serial serial) : base(serial) { }
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("I am the Pink Ranger, a guardian of Compassion! How can I assist you today?");
+
+            greeting.AddOption("Tell me about your time as a Power Ranger.",
+                player => true,
+                player =>
+                {
+                    DialogueModule rangerModule = new DialogueModule("Ah, my time as a Power Ranger was filled with adventure and friendship! We faced countless villains and learned the true meaning of teamwork. Would you like to hear about a specific mission or perhaps a memorable moment?");
+                    rangerModule.AddOption("Tell me about your first battle.",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, CreateResponseModule("My first battle was against Rita Repulsa! I was so nervous, but my teammates supported me. Together, we fought valiantly and learned to trust one another.")));
+                        });
+                    rangerModule.AddOption("What was the most difficult challenge you faced?",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, CreateResponseModule("The most difficult challenge was when Lord Zedd captured my friends. I had to summon all my strength and courage to save them, and it was during that time I truly understood the power of friendship.")));
+                        });
+                    rangerModule.AddOption("Did you ever face the Green Ranger?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule greenRangerModule = new DialogueModule("Ah, Tommy. He started as our enemy, but I always felt there was more to him. Even when he was evil, I sensed a kind heart deep inside. Would you like to hear more about that time?");
+                            greenRangerModule.AddOption("Yes, tell me about Tommy.",
+                                plq => true,
+                                plq =>
+                                {
+                                    DialogueModule tommyModule = new DialogueModule("Tommy was originally the Green Ranger, sent to defeat us. But even while he was under Rita's control, I felt an inexplicable connection to him. It was complicated, to say the least.");
+                                    tommyModule.AddOption("Did you have a crush on him?",
+                                        plw => true,
+                                        plw =>
+                                        {
+                                            DialogueModule crushModule = new DialogueModule("Yes, I did! It was so confusing because he was our enemy. But I couldn’t help but admire his strength and determination. When he turned good, it felt like a dream come true!");
+                                            crushModule.AddOption("What was it like when he became good?",
+                                                ple => true,
+                                                ple =>
+                                                {
+                                                    pl.SendGump(new DialogueGump(pl, CreateResponseModule("When Tommy broke free from Rita’s spell, it was like a weight lifted off my heart. We became close friends, and I admired him even more for choosing the path of righteousness.")));
+                                                });
+                                            crushModule.AddOption("Did you ever tell him?",
+                                                plr => true,
+                                                plr =>
+                                                {
+                                                    pl.SendGump(new DialogueGump(pl, CreateResponseModule("I wanted to! But with all the battles and challenges, it was hard to find the right moment. Sometimes I think he knew, though. Our bond grew stronger as teammates.")));
+                                                });
+                                            pl.SendGump(new DialogueGump(pl, crushModule));
+                                        });
+                                    tommyModule.AddOption("How did the other Rangers feel about him?",
+                                        plt => true,
+                                        plt =>
+                                        {
+                                            pl.SendGump(new DialogueGump(pl, CreateResponseModule("At first, they were cautious. But as Tommy proved himself, they welcomed him into the team. He quickly became an invaluable member of our family.")));
+                                        });
+                                    pl.SendGump(new DialogueGump(pl, tommyModule));
+                                });
+                            greenRangerModule.AddOption("What was the turning point for Tommy?",
+                                ply => true,
+                                ply =>
+                                {
+                                    pl.SendGump(new DialogueGump(pl, CreateResponseModule("The turning point was when he chose to help us against Rita, risking his own safety. It was a brave act, and from that moment, he truly became one of us.")));
+                                });
+                            pl.SendGump(new DialogueGump(pl, greenRangerModule));
+                        });
+                    player.SendGump(new DialogueGump(player, rangerModule));
+                });
+
+            greeting.AddOption("How are you?",
+                player => true,
+                player =>
+            {
+                player.SendGump(new DialogueGump(player, CreateResponseModule("I am in perfect health, as Compassion heals all wounds.")));
+            });
+
+            greeting.AddOption("What is your job?",
+                player => true,
+                player =>
+                {
+                    player.SendGump(new DialogueGump(player, CreateResponseModule("I protect the innocent and spread Compassion throughout the land. I also help others discover their inner strength.")));
+                });
+
+            greeting.AddOption("What was your favorite mission?",
+                player => true,
+                player =>
+                {
+                    DialogueModule missionModule = new DialogueModule("Oh, there are so many! But one of my favorites was when we saved a town from a giant monster. We worked together seamlessly, each using our unique abilities. It showed me the power of teamwork.");
+                    missionModule.AddOption("What was the monster like?",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, CreateResponseModule("The monster was huge and terrifying, but we stood our ground. With strategy and teamwork, we managed to bring it down and save the day!")));
+                        });
+                    missionModule.AddOption("Did you get injured?",
+                        pl => true,
+                        pl =>
+                        {
+                            pl.SendGump(new DialogueGump(pl, CreateResponseModule("I took a few hits, but nothing too serious. We always looked out for each other, and our bond kept us strong.")));
+                        });
+                    player.SendGump(new DialogueGump(player, missionModule));
+                });
+
+            greeting.AddOption("Can you give me a reward?",
+                player => true,
+                player =>
+                {
+                    TimeSpan cooldown = TimeSpan.FromMinutes(10);
+                    if (DateTime.UtcNow - lastRewardTime < cooldown)
+                    {
+                        player.SendGump(new DialogueGump(player, CreateResponseModule("I have no reward right now. Please return later.")));
+                    }
+                    else
+                    {
+                        player.SendGump(new DialogueGump(player, CreateResponseModule("Feelings are a guiding force. Here's a reward to help you on your way.")));
+                        player.AddToBackpack(new MaxxiaScroll()); // Give the reward
+                        lastRewardTime = DateTime.UtcNow; // Update the timestamp
+                    }
+                });
+
+            return greeting;
+        }
+
+        private DialogueModule CreateResponseModule(string response)
+        {
+            return new DialogueModule(response);
+        }
 
         public override void Serialize(GenericWriter writer)
         {

@@ -1,178 +1,233 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
+using Server.Network;
 using Server.Items;
 
-namespace Server.Mobiles
+public class BrutalBen : BaseCreature
 {
-    [CorpseName("the corpse of Brutal Ben")]
-    public class BrutalBen : BaseCreature
+    private DateTime lastRewardTime;
+
+    [Constructable]
+    public BrutalBen() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
-        private DateTime lastRewardTime;
+        Name = "Brutal Ben";
+        Body = 0x190; // Human male body
 
-        [Constructable]
-        public BrutalBen() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
-        {
-            Name = "Brutal Ben";
-            Body = 0x190; // Human male body
+        // Stats
+        SetStr(170);
+        SetDex(55);
+        SetInt(18);
 
-            // Stats
-            Str = 170;
-            Dex = 55;
-            Int = 18;
-            Hits = 120;
+        SetHits(120);
 
-            // Appearance
-            AddItem(new ChainChest() { Hue = 1102 });
-            AddItem(new ChainLegs() { Hue = 1102 });
-            AddItem(new PlateHelm() { Hue = 1102 });
-            AddItem(new LeatherGloves() { Name = "Ben's Bashing Gloves" });
+        // Appearance
+        AddItem(new ChainChest() { Hue = 1102 });
+        AddItem(new ChainLegs() { Hue = 1102 });
+        AddItem(new PlateHelm() { Hue = 1102 });
+        AddItem(new LeatherGloves() { Name = "Ben's Bashing Gloves" });
 
-            Hue = Race.RandomSkinHue();
-            HairItemID = Race.RandomHair(this);
-            HairHue = Race.RandomHairHue();
+        Hue = Race.RandomSkinHue();
+        HairItemID = Race.RandomHair(this);
+        HairHue = Race.RandomHairHue();
 
-            SpeechHue = 0; // Default speech hue
+        SpeechHue = 0; // Default speech hue
 
-            // Initialize the lastRewardTime to a past time
-            lastRewardTime = DateTime.MinValue;
-        }
+        // Initialize the lastRewardTime to a past time
+        lastRewardTime = DateTime.MinValue;
+    }
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            Mobile from = e.Mobile;
+    public BrutalBen(Serial serial) : base(serial) { }
 
-            if (!from.InRange(this, 3))
-                return;
+    public override void OnDoubleClick(Mobile from)
+    {
+        if (!(from is PlayerMobile player))
+            return;
 
-            string speech = e.Speech.ToLower();
+        DialogueModule greetingModule = CreateGreetingModule();
+        player.SendGump(new DialogueGump(player, greetingModule));
+    }
 
-            if (speech.Contains("name"))
+    private DialogueModule CreateGreetingModule()
+    {
+        DialogueModule greeting = new DialogueModule("Brutal Ben, they call me. What's it to you?");
+
+        greeting.AddOption("Tell me about yourself.",
+            player => true,
+            player =>
             {
-                Say("Brutal Ben, they call me. What's it to you?");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("Health? Ha! I've seen worse. But that's none of your business.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My job? I'm in the business of death, friend. Not that you'd understand.");
-            }
-            else if (speech.Contains("murderer"))
-            {
-                Say("Think you're tough, eh? Let me ask you this: Do you know the taste of blood?");
-            }
-            else if (speech.Contains("blood"))
-            {
-                Say("Ha! You talk big, but words won't save you in the shadows of the night.");
-            }
-            else if (speech.Contains("brutal"))
-            {
-                Say("Brutal? I got that name from countless fights in the taverns. Few dare to cross me after hearing the tales.");
-            }
-            else if (speech.Contains("worse"))
-            {
-                Say("I've been beaten, broken, and left for dead more times than you can count. Yet here I stand. Do you know what keeps me going?");
-            }
-            else if (speech.Contains("death"))
-            {
-                Say("Death isn't just my business, it's an art. And the blade? It's my brush. Ever heard of the Silent Dagger?");
-            }
-            else if (speech.Contains("tough"))
-            {
-                Say("Being tough is more than muscle and bravado. It's about survival. You ever been to the Dead Man's Alley?");
-            }
-            else if (speech.Contains("taverns"))
-            {
-                Say("Ah, the taverns. Where I've made enemies and, surprisingly, a few friends. Ever met Old Barley the bartender?");
-            }
-            else if (speech.Contains("broken"))
+                DialogueModule aboutModule = new DialogueModule("I'm in the business of death, friend. Not that you'd understand. But, if you want to know more, you'd better be ready for the truth.");
+                aboutModule.AddOption("What do you mean by 'business of death'?",
+                    p => true,
+                    p =>
+                    {
+                        DialogueModule deathModule = new DialogueModule("Death isn't just my business, it's an art. And the blade? It's my brush. Ever heard of the Silent Dagger?");
+                        deathModule.AddOption("Tell me about the Silent Dagger.",
+                            pl => true,
+                            pl =>
+                            {
+                                DialogueModule daggerModule = new DialogueModule("The Silent Dagger, the guild of assassins. Some say they're just a myth, but those in the know, fear them. I might or might not be connected, but ask too much and you might find out the hard way.");
+                                daggerModule.AddOption("How many people have you killed?",
+                                    pla => true,
+                                    pla =>
+                                    {
+                                        DialogueModule killCountModule = new DialogueModule("Ah, the question of numbers. You really want to know? Fine. I've lost count, but it's well over a hundred. Each face is etched in my mind—some deserved it, some... well, let's just say it's the way of the world.");
+                                        killCountModule.AddOption("Did you ever regret any of them?",
+                                            plb => true,
+                                            plb =>
+                                            {
+                                                DialogueModule regretModule = new DialogueModule("Regret? Aye, some of them haunt me. The eyes of those who didn't deserve it—they stare back at me in my dreams. But I can't change the past, and regrets don't help you survive in this world.");
+                                                regretModule.AddOption("Who were they?",
+                                                    plc => true,
+                                                    plc =>
+                                                    {
+                                                        DialogueModule whoModule = new DialogueModule("There was a young lad, barely a man. He was just in the wrong place at the wrong time. And a healer—she tried to protect her village. I did what I had to do, but those memories never leave.");
+                                                        whoModule.AddOption("That sounds rough.",
+                                                            pld => true,
+                                                            pld =>
+                                                            {
+                                                                pld.SendGump(new DialogueGump(pld, CreateGreetingModule()));
+                                                            });
+                                                        plc.SendGump(new DialogueGump(plc, whoModule));
+                                                    });
+                                                regretModule.AddOption("I suppose that's the life you chose.",
+                                                    plc => true,
+                                                    plc =>
+                                                    {
+                                                        plc.SendGump(new DialogueGump(plc, CreateGreetingModule()));
+                                                    });
+                                                plb.SendGump(new DialogueGump(plb, regretModule));
+                                            });
+                                        killCountModule.AddOption("You seem proud of it.",
+                                            plb => true,
+                                            plb =>
+                                            {
+                                                DialogueModule prideModule = new DialogueModule("Proud? No. But I am alive, and in this world, that's something. Every kill was a step forward, a way to keep breathing for one more day. It's not pride—it’s survival.");
+                                                prideModule.AddOption("I see. It's all about survival.",
+                                                    plc => true,
+                                                    plc =>
+                                                    {
+                                                        plc.SendGump(new DialogueGump(plc, CreateGreetingModule()));
+                                                    });
+                                                prideModule.AddOption("You don't have to live like this forever.",
+                                                    plc => true,
+                                                    plc =>
+                                                    {
+                                                        DialogueModule changeModule = new DialogueModule("Maybe not. But changing who I am isn't easy. I've lived by the blade for so long, it's all I know. Perhaps one day, I'll find a way out—if I live that long.");
+                                                        changeModule.AddOption("I hope you do.",
+                                                            pld => true,
+                                                            pld =>
+                                                            {
+                                                                pld.SendGump(new DialogueGump(pld, CreateGreetingModule()));
+                                                            });
+                                                        changeModule.AddOption("It's never too late to try.",
+                                                            pld => true,
+                                                            pld =>
+                                                            {
+                                                                pld.SendGump(new DialogueGump(pld, CreateGreetingModule()));
+                                                            });
+                                                        plc.SendGump(new DialogueGump(plc, changeModule));
+                                                    });
+                                                plb.SendGump(new DialogueGump(plb, prideModule));
+                                            });
+                                        pla.SendGump(new DialogueGump(pla, killCountModule));
+                                    });
+                                daggerModule.AddOption("I think I'll stop asking questions.",
+                                    pla => true,
+                                    pla =>
+                                    {
+                                        pla.SendGump(new DialogueGump(pla, CreateGreetingModule()));
+                                    });
+                                pl.SendGump(new DialogueGump(pl, daggerModule));
+                            });
+                        deathModule.AddOption("Maybe this isn't for me.",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                            });
+                        p.SendGump(new DialogueGump(p, deathModule));
+                    });
+                aboutModule.AddOption("I don't care about your story.",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                    });
+                player.SendGump(new DialogueGump(player, aboutModule));
+            });
+
+        greeting.AddOption("You mentioned you've been through worse.",
+            player => true,
+            player =>
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)
                 {
-                    Say("I have no reward right now. Please return later.");
+                    player.SendMessage("I have no reward right now. Please return later.");
                 }
                 else
                 {
-                    Say("Even when I was down, I never lost hope. The amulet my mother gave me has always brought me luck. Say, you seem like someone who appreciates trinkets. Here, have this.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Assuming AdventurerKey is a valid item
-                    lastRewardTime = DateTime.UtcNow;
+                    DialogueModule worseModule = new DialogueModule("I've been beaten, broken, and left for dead more times than you can count. Yet here I stand. Even when I was down, I never lost hope. The amulet my mother gave me has always brought me luck. Say, you seem like someone who appreciates trinkets. Here, have this.");
+                    worseModule.AddOption("Thank you.",
+                        p => true,
+                        p =>
+                        {
+                            p.AddToBackpack(new MaxxiaScroll()); // Assuming MaxxiaScroll is a valid item
+                            lastRewardTime = DateTime.UtcNow;
+                            p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                        });
+                    player.SendGump(new DialogueGump(player, worseModule));
                 }
-            }
-            else if (speech.Contains("silent"))
-            {
-                Say("Ah, the Silent Dagger, the guild of assassins. Some say they're just a myth, but those in the know, fear them. I might or might not be connected, but ask too much and you might find out the hard way.");
-            }
-            else if (speech.Contains("alley"))
-            {
-                Say("It's a dark place, where many have met their end. It's not for the faint of heart. You looking to prove something?");
-            }
-            else if (speech.Contains("barley"))
-            {
-                Say("Old Barley? He's seen it all. From the rowdiest brawls to the most touching reunions. If walls could talk, they'd probably ask him for the stories.");
-            }
-            else if (speech.Contains("guild"))
-            {
-                Say("Guilds are more than just groups. They're families, bound by purpose and sometimes, dark secrets. Be careful who you trust.");
-            }
-            else if (speech.Contains("prove"))
-            {
-                Say("Many have tried to prove themselves, to earn respect or fear. Most fail. But a rare few... they become legends. What will your story be?");
-            }
-            else if (speech.Contains("brawls"))
-            {
-                Say("I've been in many brawls, and each scar tells a story. Some of pride, some of regret. But all of survival. Care to challenge me?");
-            }
-            else if (speech.Contains("trust"))
-            {
-                Say("Trust is a rare commodity these days. Even in the darkest corners, you find betrayal. Remember, keep your friends close, but your enemies closer.");
-            }
-            else if (speech.Contains("legends"))
-            {
-                Say("Legends are born from deeds, from choices made in crucial moments. Will you be remembered as a hero, or fade into obscurity?");
-            }
-            else if (speech.Contains("challenge"))
-            {
-                Say("A challenge? From you? Haha! Come back when you've seen more of the world and its horrors. Then we'll talk.");
-            }
-            else if (speech.Contains("betrayal"))
-            {
-                Say("Betrayal stings more than the sharpest blade. I've been betrayed, but I've also done my share. It's a circle that never ends.");
-            }
-            else if (speech.Contains("hero"))
-            {
-                Say("Heroes are a dime a dozen, but true heroes? They're the ones who stand when all else have fallen. Who are you in the grand tapestry of fate?");
-            }
-            else if (speech.Contains("horrors"))
-            {
-                Say("Horrors are everywhere. From the deepest dungeons to the highest towers. But the greatest horrors? They lie within us.");
-            }
-            else if (speech.Contains("blade"))
-            {
-                Say("The blade is an extension of one's self. It tells a story with every swing, every cut. But a blade is only as good as its wielder.");
-            }
-            else if (speech.Contains("fate"))
-            {
-                Say("Fate is a fickle mistress. She weaves our destinies with threads of gold and shadow. What path have you chosen?");
-            }
+            });
 
-            base.OnSpeech(e);
-        }
+        greeting.AddOption("What keeps you going?",
+            player => true,
+            player =>
+            {
+                DialogueModule determinationModule = new DialogueModule("The more I face, the stronger I become. It's about survival. You ever been to the Dead Man's Alley?");
+                determinationModule.AddOption("Tell me about Dead Man's Alley.",
+                    p => true,
+                    p =>
+                    {
+                        DialogueModule alleyModule = new DialogueModule("It's a dark place, where many have met their end. It's not for the faint of heart. You looking to prove something?");
+                        alleyModule.AddOption("Maybe one day.",
+                            pl => true,
+                            pl =>
+                            {
+                                pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                            });
+                        p.SendGump(new DialogueGump(p, alleyModule));
+                    });
+                determinationModule.AddOption("Not interested.",
+                    p => true,
+                    p =>
+                    {
+                        p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                    });
+                player.SendGump(new DialogueGump(player, determinationModule));
+            });
 
-        public BrutalBen(Serial serial) : base(serial) { }
+        greeting.AddOption("Goodbye, Ben.",
+            player => true,
+            player =>
+            {
+                player.SendMessage("Brutal Ben grunts and turns away.");
+            });
 
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-        }
+        return greeting;
+    }
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-        }
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0); // version
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
     }
 }

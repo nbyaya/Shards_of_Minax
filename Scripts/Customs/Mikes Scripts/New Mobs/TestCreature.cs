@@ -3,6 +3,7 @@ using Server;
 using Server.Mobiles;
 using Server.Engines.XmlSpawner2;
 
+
 namespace Server.Mobiles
 {
     [CorpseName("corpse of a test creature")]
@@ -40,12 +41,21 @@ namespace Server.Mobiles
             Tamable = false;
             ControlSlots = 1;
             MinTameSkill = 0;
+			
+			CanMove = false;
 
             // Attach the XmlAxeCircle attachment
-            XmlAttach.AttachTo(this, new XmlTheftStrike());
+			XmlAttach.AttachTo(this, new XmlScorchedBite());
+			XmlAttach.AttachTo(this, new XmlFlameCoil());
+			XmlAttach.AttachTo(this, new XmlPhantomBurn());
+			XmlAttach.AttachTo(this, new XmlFireWalk());
+			XmlAttach.AttachTo(this, new XmlBlazingTrail());
+
+
 
             PackGold(100, 200); // Pack some gold
-        }
+        }	
+
 
         public TestCreature(Serial serial) : base(serial)
         {

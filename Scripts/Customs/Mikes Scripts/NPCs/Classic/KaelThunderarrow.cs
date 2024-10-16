@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -39,91 +40,131 @@ namespace Server.Mobiles
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
 
-            if (speech.Contains("name"))
-            {
-                Say("I am Kael Thunderarrow, the archer of virtue!");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("I have always maintained good health.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My job is to protect the virtues with my keen archery skills.");
-            }
-            else if (speech.Contains("virtues"))
-            {
-                Say("The virtue of Humility is often overlooked, but it's the foundation of all virtues. Do you agree?");
-            }
-            else if (speech.Contains("yes") && (speech.Contains("virtues") || speech.Contains("humility")))
-            {
-                Say("Your response is wise. Humility is the first step toward understanding the other virtues.");
-            }
-            else if (speech.Contains("archer"))
-            {
-                Say("Archery requires patience, focus, and humility. My arrows always find their mark, especially when defending the virtues.");
-            }
-            else if (speech.Contains("patience"))
-            {
-                Say("Patience is not merely waiting, it's about how we behave while we're waiting. It's also an essential aspect of mastering any skill. Do you value patience?");
-            }
-            else if (speech.Contains("yes") && speech.Contains("patience"))
-            {
-                Say("It's a virtue that many overlook. True patience brings peace and understanding, and can reveal the secrets of the virtues.");
-            }
-            else if (speech.Contains("focus"))
-            {
-                Say("With focus, one can aim true and never miss the target. Even beyond archery, it helps us concentrate on our goals in life. Have you ever lost focus?");
-            }
-            else if (speech.Contains("no") && speech.Contains("focus"))
-            {
-                Say("Staying true to one's path is commendable. Always hold onto that focus, for it will guide you in the darkest times.");
-            }
-            else if (speech.Contains("humility"))
-            {
-                Say("Ah, humility. It is said that the mantra of Compassion consists of three syllables. I know the third one. Do you wish to know it?");
-            }
-            else if (speech.Contains("mantra"))
-            {
-                Say("The third syllable of the mantra of Compassion is MUH. Use it wisely and with a pure heart.");
-            }
-            else if (speech.Contains("virtues") && speech.Contains("compassion"))
-            {
-                Say("The Eight Virtues are a guide to a righteous life. Among them, Compassion has always spoken to me. Would you like to hear about it?");
-            }
-            else if (speech.Contains("compassion"))
-            {
-                Say("Compassion is understanding and caring for the pain and joy of others. It's what binds us all in this vast world. Always extend a helping hand, for the ripple of one act can touch countless souls.");
-            }
-            else if (speech.Contains("souls"))
-            {
-                Say("Every soul carries the potential to embrace the virtues. It's our choices that define our path. Choose wisely, for the virtues are always watching.");
-            }
-            else if (speech.Contains("virtues"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Deep reflection on virtues is essential for one's personal growth. In recognizing them, we shape our destiny. For your thoughtful inquiry, please accept this reward.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Replace with actual reward item
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("I am Kael Thunderarrow, the archer of virtue! What brings you to this part of the world?");
+            
+            greeting.AddOption("Tell me about your health.",
+                player => true,
+                player => player.SendGump(new DialogueGump(player, new DialogueModule("I have always maintained good health. My training keeps me fit and ready."))));
 
-            base.OnSpeech(e);
+            greeting.AddOption("What is your job?",
+                player => true,
+                player => player.SendGump(new DialogueGump(player, new DialogueModule("My job is to protect the virtues with my keen archery skills. Each arrow I shoot is guided by the principles I uphold."))));
+
+            greeting.AddOption("What do you think of the virtues?",
+                player => true,
+                player =>
+                {
+                    DialogueModule virtuesModule = new DialogueModule("The virtue of Humility is often overlooked, but it's the foundation of all virtues. Do you agree?");
+                    virtuesModule.AddOption("Yes, humility is important.",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule followUp = new DialogueModule("Your response is wise. Humility allows us to learn and grow. What do you think is the next most important virtue?");
+                            followUp.AddOption("Compassion.",
+                                p => true,
+                                p => p.SendGump(new DialogueGump(p, new DialogueModule("Compassion is indeed vital. It helps us connect with others and understand their pain."))));
+                            followUp.AddOption("Courage.",
+                                p => true,
+                                p => p.SendGump(new DialogueGump(p, new DialogueModule("Courage is the force that drives us to face our fears and stand for what's right."))));
+                            pl.SendGump(new DialogueGump(pl, followUp));
+                        });
+                    virtuesModule.AddOption("No, I have my doubts.",
+                        pl => true,
+                        pl => pl.SendGump(new DialogueGump(pl, new DialogueModule("That's a different perspective. Care to elaborate on why you feel that way?"))));
+                    player.SendGump(new DialogueGump(player, virtuesModule));
+                });
+
+            greeting.AddOption("What can you tell me about patience?",
+                player => true,
+                player =>
+                {
+                    DialogueModule patienceModule = new DialogueModule("Patience is not merely waiting; it's about how we behave while we're waiting. It's essential for mastering any skill. Do you value patience?");
+                    patienceModule.AddOption("Yes, it's crucial.",
+                        pl => true,
+                        pl => pl.SendGump(new DialogueGump(pl, new DialogueModule("It's a virtue that many overlook. True patience brings peace and understanding."))));
+                    patienceModule.AddOption("No, it's just wasting time.",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule response = new DialogueModule("Interesting viewpoint. Some believe that patience is a sign of weakness. What would you suggest instead?");
+                            response.AddOption("Quick action.",
+                                p => true,
+                                p => p.SendGump(new DialogueGump(p, new DialogueModule("Ah, a decisive approach. There’s merit in swift actions, but be cautious—hasty decisions can lead to regret."))));
+                            response.AddOption("Calculating strategies.",
+                                p => true,
+                                p => p.SendGump(new DialogueGump(p, new DialogueModule("Indeed! A balance of patience and strategy often yields the best outcomes."))));
+                            pl.SendGump(new DialogueGump(pl, response));
+                        });
+                    player.SendGump(new DialogueGump(player, patienceModule));
+                });
+
+            greeting.AddOption("What about focus?",
+                player => true,
+                player =>
+                {
+                    DialogueModule focusModule = new DialogueModule("With focus, one can aim true and never miss the target. Even beyond archery, it helps us concentrate on our goals. Have you ever lost focus?");
+                    focusModule.AddOption("No, I stay committed.",
+                        pl => true,
+                        pl => pl.SendGump(new DialogueGump(pl, new DialogueModule("That's commendable! Staying true to one's path is essential."))));
+                    focusModule.AddOption("Yes, frequently.",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule response = new DialogueModule("Losing focus can be detrimental. What distracts you the most?");
+                            response.AddOption("Social media.",
+                                p => true,
+                                p => p.SendGump(new DialogueGump(p, new DialogueModule("Ah, the lure of instant gratification. It's easy to lose track of time. Perhaps setting boundaries could help."))));
+                            response.AddOption("Personal doubts.",
+                                p => true,
+                                p => p.SendGump(new DialogueGump(p, new DialogueModule("Those can be challenging. Remember, self-reflection can guide you back on track."))));
+                            pl.SendGump(new DialogueGump(pl, response));
+                        });
+                    player.SendGump(new DialogueGump(player, focusModule));
+                });
+
+            greeting.AddOption("Tell me about compassion.",
+                player => true,
+                player =>
+                {
+                    DialogueModule compassionModule = new DialogueModule("Compassion is understanding and caring for the pain and joy of others. Would you like to hear more about it?");
+                    compassionModule.AddOption("Yes, please.",
+                        pl => true,
+                        pl => pl.SendGump(new DialogueGump(pl, new DialogueModule("Compassion binds us all in this vast world. It’s essential to extend a helping hand, for the ripple of one act can touch countless souls."))));
+                    compassionModule.AddOption("No, not really.",
+                        pl => true,
+                        pl => pl.SendGump(new DialogueGump(pl, new DialogueModule("That's fine. Just know the virtues are always there for guidance. Perhaps another time."))));
+                    player.SendGump(new DialogueGump(player, compassionModule));
+                });
+
+            greeting.AddOption("Do you have any rewards for me?",
+                player => true,
+                player =>
+                {
+                    TimeSpan cooldown = TimeSpan.FromMinutes(10);
+                    if (DateTime.UtcNow - lastRewardTime < cooldown)
+                    {
+                        player.SendGump(new DialogueGump(player, new DialogueModule("I have no reward right now. Please return later.")));
+                    }
+                    else
+                    {
+                        player.AddToBackpack(new MaxxiaScroll()); // Replace with actual reward item
+                        player.SendGump(new DialogueGump(player, new DialogueModule("For your thoughtful inquiry, please accept this reward. It’s a small token of appreciation.")));
+                        lastRewardTime = DateTime.UtcNow; // Update the timestamp
+                    }
+                });
+
+            return greeting;
         }
 
         public KaelThunderarrow(Serial serial) : base(serial) { }

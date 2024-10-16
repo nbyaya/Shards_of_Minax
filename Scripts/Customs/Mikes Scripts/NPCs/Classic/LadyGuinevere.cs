@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -17,10 +18,10 @@ namespace Server.Mobiles
             Body = 0x191; // Human female body
 
             // Stats
-            Str = 100;
-            Dex = 100;
-            Int = 60;
-            Hits = 70;
+            SetStr(100);
+            SetDex(100);
+            SetInt(60);
+            SetHits(70);
 
             // Appearance
             AddItem(new ChainChest() { Hue = 1908 });
@@ -33,79 +34,150 @@ namespace Server.Mobiles
             Hue = Race.RandomSkinHue();
             HairItemID = Race.RandomHair(this);
             HairHue = Race.RandomHairHue();
-
-            // Speech Hue
             SpeechHue = 0; // Default speech hue
 
             // Initialize the lastRewardTime to a past time
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
 
-            if (speech.Contains("name"))
-            {
-                Say("Greetings, traveler. I am Lady Guinevere.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("I am in good health, thank you for asking.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My duty is to uphold the virtue of Justice in these lands.");
-            }
-            else if (speech.Contains("virtue"))
-            {
-                Say("Justice is the cornerstone of virtue, wouldn't you agree?");
-            }
-            else if (speech.Contains("agree"))
-            {
-                Say("Indeed, it is the guiding light that leads us to a better world.");
-            }
-            else if (speech.Contains("guinevere"))
-            {
-                Say("I hail from the ancient lineage of Avalon, and my name carries the weight of my ancestors' legacy.");
-            }
-            else if (speech.Contains("good"))
-            {
-                Say("Yes, the pristine waters and pure air of this realm keep me rejuvenated. But more than that, it's the love and respect of its people that nourish my spirit.");
-            }
-            else if (speech.Contains("duty"))
-            {
-                Say("My duty extends beyond mere title. I ensure that every judgment passed in these lands adheres to the highest standards of fairness and righteousness. It's not an easy task, but it's one I undertake with pride.");
-            }
-            else if (speech.Contains("justice"))
-            {
-                Say("Justice is more than just a concept; it's a way of life. For those who truly understand its depth, I sometimes bestow a token of appreciation. Would you like to be tested on your understanding of Justice?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("Very well. Answer this: In a village, two men committed a crime. One did it out of greed, the other out of desperation to feed his starving family. Should their punishments be the same or different?");
-            }
-            else if (speech.Contains("different"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("Greetings, traveler. I am Lady Guinevere. How may I assist you today?");
+            
+            greeting.AddOption("Tell me about your health.",
+                player => true,
+                player => 
                 {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Wise answer. While both committed a wrongdoing, their intentions and circumstances were different. Recognizing this nuance is crucial for true Justice. For your wisdom, I bestow upon you a reward. May it serve you well in your journey.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
+                    player.SendGump(new DialogueGump(player, new DialogueModule("I am in good health, thank you for asking. The beauty of this land sustains my spirit.")));
+                });
 
-            base.OnSpeech(e);
+            greeting.AddOption("What is your job?",
+                player => true,
+                player => 
+                {
+                    DialogueModule jobModule = new DialogueModule("My duty is to uphold the virtue of Justice in these lands. I strive to ensure fairness and righteousness.");
+                    jobModule.AddOption("What does justice mean to you?",
+                        playerq => true,
+                        playerq => 
+                        {
+                            DialogueModule justiceMeaning = new DialogueModule("Justice is the balance between punishment and mercy. It requires understanding the circumstances behind each action.");
+                            justiceMeaning.AddOption("Can you give an example?",
+                                playerw => true,
+                                playerw => 
+                                {
+                                    player.SendGump(new DialogueGump(player, new DialogueModule("Consider two thieves: one stole to survive, while the other did it out of greed. Should they face the same punishment?")));
+                                });
+                            player.SendGump(new DialogueGump(player, justiceMeaning));
+                        });
+                    player.SendGump(new DialogueGump(player, jobModule));
+                });
+
+            greeting.AddOption("What is virtue?",
+                player => true,
+                player => 
+                {
+                    DialogueModule virtueModule = new DialogueModule("Virtue is the moral excellence that guides our actions. It is the light that leads us through darkness.");
+                    virtueModule.AddOption("How can one cultivate virtue?",
+                        playere => true,
+                        playere => 
+                        {
+                            DialogueModule cultivationModule = new DialogueModule("To cultivate virtue, one must practice kindness, honesty, and humility. Every small act of goodness contributes to a virtuous life.");
+                            player.SendGump(new DialogueGump(player, cultivationModule));
+                        });
+                    player.SendGump(new DialogueGump(player, virtueModule));
+                });
+
+            greeting.AddOption("Do you believe in justice?",
+                player => true,
+                player => 
+                {
+                    DialogueModule justiceModule = new DialogueModule("Justice is more than just a concept; it's a way of life. For those who understand its depth, I sometimes bestow a token of appreciation. Would you like to be tested on your understanding of Justice?");
+                    
+                    justiceModule.AddOption("Yes, please test me.",
+                        p => true,
+                        p => 
+                        {
+                            DialogueModule testModule = new DialogueModule("Very well. Answer this: In a village, two men committed a crime. One did it out of greed, the other out of desperation to feed his starving family. Should their punishments be the same or different?");
+                            
+                            testModule.AddOption("Different.",
+                                pr => 
+                                {
+                                    TimeSpan cooldown = TimeSpan.FromMinutes(10);
+                                    if (DateTime.UtcNow - lastRewardTime < cooldown)
+                                    {
+                                        return false;
+                                    }
+                                    else
+                                    {
+                                        lastRewardTime = DateTime.UtcNow;
+                                        return true;
+                                    }
+                                },
+                                pt =>
+                                {
+                                    p.SendGump(new DialogueGump(p, new DialogueModule("Wise answer. Recognizing the nuance is crucial for true Justice. For your wisdom, I bestow upon you a reward. May it serve you well in your journey.") { }));
+                                    p.AddToBackpack(new MaxxiaScroll()); // Give the reward
+                                });
+
+                            testModule.AddOption("Same.",
+                                py => true,
+                                py => 
+                                {
+                                    p.SendGump(new DialogueGump(p, new DialogueModule("Justice requires understanding the nuances of each situation. Think carefully about your answer next time.")));
+                                });
+
+                            p.SendGump(new DialogueGump(p, testModule));
+                        });
+
+                    justiceModule.AddOption("Maybe later.",
+                        p => true,
+                        p => 
+                        {
+                            p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                        });
+
+                    player.SendGump(new DialogueGump(player, justiceModule));
+                });
+
+            greeting.AddOption("Tell me about your lineage.",
+                player => true,
+                player => 
+                {
+                    DialogueModule lineageModule = new DialogueModule("I hail from the ancient lineage of Avalon, and my name carries the weight of my ancestors' legacy.");
+                    lineageModule.AddOption("What is Avalon?",
+                        playeru => true,
+                        playeru => 
+                        {
+                            player.SendGump(new DialogueGump(player, new DialogueModule("Avalon is a mythical island, a place of peace and wisdom, where the noblest virtues are revered. Legends say it is hidden from the eyes of the unworthy.")));
+                        });
+                    player.SendGump(new DialogueGump(player, lineageModule));
+                });
+
+            greeting.AddOption("What are your thoughts on the world?",
+                player => true,
+                player => 
+                {
+                    DialogueModule worldThoughts = new DialogueModule("The world is a tapestry of light and shadow, woven together by the actions of its inhabitants. It can be both beautiful and cruel.");
+                    worldThoughts.AddOption("How can we improve the world?",
+                        playeri => true,
+                        playeri => 
+                        {
+                            DialogueModule improvementModule = new DialogueModule("We can improve the world through acts of kindness, justice, and understanding. Each person has the power to make a difference.");
+                            player.SendGump(new DialogueGump(player, improvementModule));
+                        });
+                    player.SendGump(new DialogueGump(player, worldThoughts));
+                });
+
+            return greeting;
         }
 
         public LadyGuinevere(Serial serial) : base(serial) { }

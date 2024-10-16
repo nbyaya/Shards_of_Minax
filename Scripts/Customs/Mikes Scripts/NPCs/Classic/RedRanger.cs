@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Mobiles;
+using Server.Gumps;
 using Server.Items;
 
 namespace Server.Mobiles
@@ -17,10 +18,10 @@ namespace Server.Mobiles
             Body = 0x190; // Human male body
 
             // Stats
-            Str = 110;
-            Dex = 110;
-            Int = 50;
-            Hits = 85;
+            SetStr(110);
+            SetDex(110);
+            SetInt(50);
+            SetHits(85);
 
             // Appearance
             AddItem(new PlateLegs() { Hue = 37 });
@@ -39,82 +40,136 @@ namespace Server.Mobiles
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
-
-            if (speech.Contains("name"))
-            {
-                Say("Greetings, traveler. I am the Red Ranger.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("I am in good health, thanks for asking.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("I am a Red Ranger, a guardian of the land.");
-            }
-            else if (speech.Contains("battles"))
-            {
-                Say("True valor is the strength of one's heart. Do you possess it?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("Valor is a precious virtue. Stand strong in the face of adversity, my friend.");
-            }
-            else if (speech.Contains("ranger"))
-            {
-                Say("Ah, you've heard of my title. The Red Rangers are a rare breed, trained in the ancient arts of combat and magic. There are few of us left.");
-            }
-            else if (speech.Contains("good"))
-            {
-                Say("Yes, maintaining one's health is crucial for a ranger. Our forest rituals and herbal knowledge keep us in peak condition.");
-            }
-            else if (speech.Contains("guardian"))
-            {
-                Say("As guardians, we are sworn to protect the innocent and uphold justice. We often patrol the forests, ensuring the safety of its creatures and travelers.");
-            }
-            else if (speech.Contains("ancient"))
-            {
-                Say("The ancient arts are a combination of martial prowess and deep-rooted magic. These skills have been passed down through generations of Red Rangers.");
-            }
-            else if (speech.Contains("forest"))
-            {
-                Say("Our rituals connect us to the spirit of the forest. Through them, we gain wisdom and the forest's blessings. Would you like a taste of the forest's blessing?");
-            }
-            else if (speech.Contains("creatures"))
-            {
-                Say("The creatures of the forest are our allies and friends. From the majestic stag to the smallest squirrel, they all play a part in the balance of nature.");
-            }
-            else if (speech.Contains("generations"))
-            {
-                Say("My ancestors were among the first Red Rangers. Their tales of bravery and valor inspire me every day. Their legacy lives on through me.");
-            }
-            else if (speech.Contains("blessing"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("Ah, a brave soul! Here, take this. It is a small token of the forest's magic. Use it wisely.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Replace with the correct item
-                    lastRewardTime = DateTime.UtcNow;
-                }
-            }
-
-            base.OnSpeech(e);
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
         }
 
-        public RedRanger(Serial serial) : base(serial) { }
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("Greetings, traveler. I am the Red Ranger, a guardian of the land. My journey has been filled with battles and lessons from my mentor, Zordon. How may I assist you today?");
+
+            greeting.AddOption("Tell me about your time as leader of the Power Rangers.",
+                player => true,
+                player =>
+                {
+                    DialogueModule leaderModule = new DialogueModule("Leading the Power Rangers was both an honor and a challenge. Together, we faced many formidable foes, including Rita Repulsa and Lord Zedd. Each battle tested our strength and unity.");
+                    leaderModule.AddOption("What was it like fighting alongside your team?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule teamModule = new DialogueModule("My team was like family. We supported one another through thick and thin. Each Ranger brought unique skills and perspectives, which made us stronger together. We had our share of disagreements, but our bond always prevailed.");
+                            teamModule.AddOption("Can you share a specific battle story?",
+                                p => true,
+                                p =>
+                                {
+                                    DialogueModule storyModule = new DialogueModule("One of the most memorable battles was against the Green Ranger, who was initially our enemy. After a fierce fight, we learned that he was under a spell cast by Rita. With teamwork and courage, we helped him break free and join our cause.");
+                                    storyModule.AddOption("That sounds intense! How did you feel during that battle?",
+                                        plq => true,
+                                        plq =>
+                                        {
+                                            pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                                        });
+                                    p.SendGump(new DialogueGump(p, storyModule));
+                                });
+                            teamModule.AddOption("What happened when you faced Lord Zedd?",
+                                p => true,
+                                p =>
+                                {
+                                    DialogueModule zeddModule = new DialogueModule("Lord Zedd was a fierce opponent. His dark magic was a constant threat. We had to strategize carefully to counter his power. I remember the day he unleashed the Zord-slaying monster. It took all of our teamwork to bring him down.");
+                                    zeddModule.AddOption("How did you feel leading your team during that fight?",
+                                        plw => true,
+                                        plw =>
+                                        {
+                                            pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                                        });
+                                    p.SendGump(new DialogueGump(p, zeddModule));
+                                });
+                            pl.SendGump(new DialogueGump(pl, teamModule));
+                        });
+                    leaderModule.AddOption("What were your greatest challenges as a leader?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule challengesModule = new DialogueModule("The greatest challenge was always making decisions that affected my team. I had to ensure everyone was safe while also making the right tactical choices in battle. It was a heavy burden, but I learned to trust my instincts and my team.");
+                            challengesModule.AddOption("Did you ever doubt your leadership?",
+                                p => true,
+                                p =>
+                                {
+                                    p.SendMessage("Yes, there were moments of doubt, especially when the stakes were high. But I drew strength from my team and Zordon's teachings.");
+                                    p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                                });
+                            pl.SendGump(new DialogueGump(pl, challengesModule));
+                        });
+                    player.SendGump(new DialogueGump(player, leaderModule));
+                });
+
+            greeting.AddOption("What was it like learning under Zordon?",
+                player => true,
+                player =>
+                {
+                    DialogueModule zordonModule = new DialogueModule("Zordon was a wise and powerful mentor. He taught me the importance of leadership, courage, and compassion. Under his guidance, I learned that being a Ranger was not just about fighting; it was about protecting the innocent and being a beacon of hope.");
+                    zordonModule.AddOption("Can you share some of Zordon's teachings?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule teachingsModule = new DialogueModule("Zordon often said, 'The power is not in the morphing grid but in the heart of a true leader.' He emphasized that strength must be balanced with wisdom. I carry his lessons with me to this day.");
+                            teachingsModule.AddOption("What did you learn about teamwork?",
+                                p => true,
+                                p =>
+                                {
+                                    DialogueModule teamworkModule = new DialogueModule("Zordon taught me that a united team can overcome any obstacle. He encouraged us to rely on one another and to communicate openly. This bond is what allowed us to prevail in even the darkest times.");
+                                    teamworkModule.AddOption("What was your favorite lesson?",
+                                        ple => true,
+                                        ple =>
+                                        {
+                                            pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                                        });
+                                    p.SendGump(new DialogueGump(p, teamworkModule));
+                                });
+                            pl.SendGump(new DialogueGump(pl, teachingsModule));
+                        });
+                    zordonModule.AddOption("What was Zordon like in person?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule zordonPersonalityModule = new DialogueModule("Zordon was a towering figure, both physically and metaphorically. His presence commanded respect, and his calm demeanor brought peace in chaos. He was patient and always willing to listen to our concerns.");
+                            zordonPersonalityModule.AddOption("What did he think of your leadership?",
+                                p => true,
+                                p =>
+                                {
+                                    p.SendMessage("Zordon believed in me, even when I doubted myself. He reminded me that true leaders grow through experience.");
+                                    p.SendGump(new DialogueGump(p, CreateGreetingModule()));
+                                });
+                            pl.SendGump(new DialogueGump(pl, zordonPersonalityModule));
+                        });
+                    player.SendGump(new DialogueGump(player, zordonModule));
+                });
+
+            greeting.AddOption("Do you have any rewards for brave souls?",
+                player => true,
+                player =>
+                {
+                    TimeSpan cooldown = TimeSpan.FromMinutes(10);
+                    if (DateTime.UtcNow - lastRewardTime < cooldown)
+                    {
+                        player.SendMessage("I have no reward right now. Please return later.");
+                    }
+                    else
+                    {
+                        player.SendMessage("Ah, a brave soul! Here, take this. It is a small token of the forest's magic. Use it wisely.");
+                        player.AddToBackpack(new MaxxiaScroll()); // Replace with the correct item
+                        lastRewardTime = DateTime.UtcNow;
+                    }
+                    player.SendGump(new DialogueGump(player, CreateGreetingModule()));
+                });
+
+            return greeting;
+        }
 
         public override void Serialize(GenericWriter writer)
         {
@@ -129,5 +184,7 @@ namespace Server.Mobiles
             int version = reader.ReadInt();
             lastRewardTime = reader.ReadDateTime();
         }
+
+        public RedRanger(Serial serial) : base(serial) { }
     }
 }

@@ -17,10 +17,10 @@ namespace Server.Mobiles
             Body = 0x191; // Human female body
 
             // Stats
-            Str = 100;
-            Dex = 60;
-            Int = 80;
-            Hits = 70;
+            SetStr(100);
+            SetDex(60);
+            SetInt(80);
+            SetHits(70);
 
             // Appearance
             AddItem(new FancyDress() { Hue = 0xB3D9 }); // Snow White Hue
@@ -31,78 +31,116 @@ namespace Server.Mobiles
             HairItemID = Race.RandomHair(Female);
             HairHue = Race.RandomHairHue();
 
-            // Speech Hue
-            SpeechHue = 0; // Default speech hue
-
             // Initialize the lastRewardTime to a past time
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
 
-            if (speech.Contains("name"))
-            {
-                Say("I am Irene of Athens, and my days in this wretched city are filled with misery and contempt.");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("My health is as poor as the state of this wretched empire.");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My \"job\" in this forsaken land? I am but a pawn in the games of power, nothing more.");
-            }
-            else if (speech.Contains("battles"))
-            {
-                Say("True valor is but a distant memory in this city. Are you any different?");
-            }
-            else if (speech.Contains("yes"))
-            {
-                Say("If you truly believe you can make a difference, then go ahead and try. But remember, this world is filled with deception and treachery.");
-            }
-            else if (speech.Contains("misery"))
-            {
-                Say("The weight of my past haunts me every day, casting shadows upon my soul.");
-            }
-            else if (speech.Contains("empire"))
-            {
-                Say("This empire, once filled with glory and splendor, has now crumbled under the weight of its own ambitions and treacheries.");
-            }
-            else if (speech.Contains("pawn"))
-            {
-                Say("The mighty and powerful play their games, using innocent souls like me as mere pieces on a chessboard. But even pawns can change the course of the game.");
-            }
-            else if (speech.Contains("past"))
-            {
-                TimeSpan cooldown = TimeSpan.FromMinutes(10);
-                if (DateTime.UtcNow - lastRewardTime < cooldown)
-                {
-                    Say("I have no reward right now. Please return later.");
-                }
-                else
-                {
-                    Say("In my youth, I was filled with dreams and aspirations, but the harsh realities of life in this city have withered them away. But for you, brave traveler, I have a small token from those happier times. May it aid you in your journey.");
-                    from.AddToBackpack(new MaxxiaScroll()); // Give the reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-            }
-            else if (speech.Contains("glory"))
-            {
-                Say("The days of glory, when honor and valor ruled, seem like distant memories now. Those were times when heroes were celebrated, and their deeds became legends.");
-            }
-            else if (speech.Contains("mighty"))
-            {
-                Say("Those who consider themselves mighty and unyielding often forget the simple truths of life. They believe their power is eternal, but everything fades with time.");
-            }
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("I am Irene of Athens, and my days in this wretched city are filled with misery and contempt. What would you like to discuss?");
 
-            base.OnSpeech(e);
+            greeting.AddOption("Tell me about your health.",
+                player => true,
+                player => 
+                {
+                    player.SendGump(new DialogueGump(player, new DialogueModule("My health is as poor as the state of this wretched empire. I often wonder if there's hope for recovery.")));
+                });
+
+            greeting.AddOption("What is your job?",
+                player => true,
+                player => 
+                {
+                    DialogueModule jobModule = new DialogueModule("My \"job\" in this forsaken land? I am but a pawn in the games of power, nothing more. Sometimes, I wish I could escape this cycle.");
+                    jobModule.AddOption("Is there a way to escape?",
+                        p => true,
+                        p =>
+                        {
+                            p.SendGump(new DialogueGump(p, new DialogueModule("Escaping the clutches of this empire seems impossible. Yet, perhaps a brave adventurer could change the fate of many.")));
+                        });
+                    jobModule.AddOption("Do you regret your choices?",
+                        p => true,
+                        p =>
+                        {
+                            p.SendGump(new DialogueGump(p, new DialogueModule("Regret is a bitter companion. I sometimes wish I had chosen a different path, one filled with light rather than shadows.")));
+                        });
+                    player.SendGump(new DialogueGump(player, jobModule));
+                });
+
+            greeting.AddOption("Tell me about battles.",
+                player => true,
+                player => 
+                {
+                    DialogueModule battleModule = new DialogueModule("True valor is but a distant memory in this city. Are you any different? Many brave souls have fallen.");
+                    battleModule.AddOption("What do you mean by that?",
+                        p => true,
+                        p =>
+                        {
+                            p.SendGump(new DialogueGump(p, new DialogueModule("I mean that too often, the brave are silenced by greed and corruption. Do you not see it around you?")));
+                        });
+                    battleModule.AddOption("I strive to be different.",
+                        p => true,
+                        p =>
+                        {
+                            p.SendGump(new DialogueGump(p, new DialogueModule("Then you are a rare gem in this rough landscape. But beware; the path of valor is fraught with peril.")));
+                        });
+                    player.SendGump(new DialogueGump(player, battleModule));
+                });
+
+            greeting.AddOption("I want to hear about your past.",
+                player => true,
+                player => 
+                {
+                    TimeSpan cooldown = TimeSpan.FromMinutes(10);
+                    if (DateTime.UtcNow - lastRewardTime < cooldown)
+                    {
+                        player.SendGump(new DialogueGump(player, new DialogueModule("I have no reward right now. Please return later.")));
+                    }
+                    else
+                    {
+                        lastRewardTime = DateTime.UtcNow; // Update the timestamp
+                        player.AddToBackpack(new MaxxiaScroll()); // Give the reward
+                        player.SendGump(new DialogueGump(player, new DialogueModule("In my youth, I was filled with dreams and aspirations, but the harsh realities of life in this city have withered them away. Here, take this small token from those happier times.")));
+                    }
+                });
+
+            greeting.AddOption("What do you think about glory?",
+                player => true,
+                player => 
+                {
+                    DialogueModule gloryModule = new DialogueModule("The days of glory, when honor and valor ruled, seem like distant memories now. Glory fades, but its memory lingers.");
+                    gloryModule.AddOption("Is there hope for glory again?",
+                        p => true,
+                        p =>
+                        {
+                            p.SendGump(new DialogueGump(p, new DialogueModule("Hope is a fragile thing. It requires belief and courage. Perhaps, if enough brave souls stand together, glory can be reclaimed.")));
+                        });
+                    player.SendGump(new DialogueGump(player, gloryModule));
+                });
+
+            greeting.AddOption("What about the mighty?",
+                player => true,
+                player => 
+                {
+                    DialogueModule mightyModule = new DialogueModule("Those who consider themselves mighty often forget the simple truths of life. Their power fades with time, leaving only shadows.");
+                    mightyModule.AddOption("What do you mean by shadows?",
+                        p => true,
+                        p =>
+                        {
+                            p.SendGump(new DialogueGump(p, new DialogueModule("Shadows represent the remnants of their once-great power. Without wisdom and humility, even the mighty will fall into obscurity.")));
+                        });
+                    player.SendGump(new DialogueGump(player, mightyModule));
+                });
+
+            return greeting;
         }
 
         public IreneOfAthens(Serial serial) : base(serial) { }

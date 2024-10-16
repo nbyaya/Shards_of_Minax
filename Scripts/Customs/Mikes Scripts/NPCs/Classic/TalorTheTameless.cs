@@ -2,6 +2,8 @@ using System;
 using Server;
 using Server.Mobiles;
 using Server.Items;
+using Server.Gumps;
+using Server.Network;
 
 namespace Server.Mobiles
 {
@@ -17,10 +19,10 @@ namespace Server.Mobiles
             Body = 0x190; // Human male body
 
             // Stats
-            Str = 96;
-            Dex = 90;
-            Int = 85;
-            Hits = 96;
+            SetStr(96);
+            SetDex(90);
+            SetInt(85);
+            SetHits(96);
 
             // Appearance
             AddItem(new Kilt() { Hue = 64 });
@@ -32,85 +34,211 @@ namespace Server.Mobiles
             HairItemID = Race.RandomHair(this);
             HairHue = Race.RandomHairHue();
 
-            // Speech Hue
-            SpeechHue = 0; // Default speech hue
-
             // Initialize the lastRewardTime to a past time
             lastRewardTime = DateTime.MinValue;
         }
 
-        public override void OnSpeech(SpeechEventArgs e)
+        public override void OnDoubleClick(Mobile from)
         {
-            Mobile from = e.Mobile;
-
-            if (!from.InRange(this, 3))
+            if (!(from is PlayerMobile player))
                 return;
 
-            string speech = e.Speech.ToLower();
+            DialogueModule greetingModule = CreateGreetingModule();
+            player.SendGump(new DialogueGump(player, greetingModule));
+        }
 
-            if (speech.Contains("name"))
-            {
-                Say("I am Talor the Tameless, the master of creatures!");
-            }
-            else if (speech.Contains("health"))
-            {
-                Say("I am in perfect health, thanks to my animal friends!");
-            }
-            else if (speech.Contains("job"))
-            {
-                Say("My job is to tame and care for the creatures of this land.");
-            }
-            else if (speech.Contains("virtues"))
-            {
-                Say("Compassion is my guiding virtue, for it takes a kind heart to understand and tame wild creatures. What virtues do you hold dear?");
-            }
-            else if (speech.Contains("honesty") || speech.Contains("compassion") || speech.Contains("humility"))
-            {
-                Say("Ah, virtue indeed! Tell me, do you value honesty, compassion, and humility in your adventures?");
-            }
-            else if (speech.Contains("creatures"))
-            {
-                Say("Ah, creatures! From the mighty dragon to the meek rabbit, I've befriended them all. One creature, in particular, holds a secret. Care to know more?");
-            }
-            else if (speech.Contains("animal"))
-            {
-                Say("Yes, my animal friends are not just companions, but healers too. They have taught me the secrets of herbs and nature's remedies. Have you ever used nature's medicine?");
-            }
-            else if (speech.Contains("tame"))
-            {
-                Say("Taming is an art. It's not about subduing, but understanding. Each creature has its own song, and once you learn it, they'll follow you willingly. Ever heard of the Song of the Phoenix?");
-            }
-            else if (speech.Contains("compassion"))
-            {
-                Say("Compassion is a force that can bridge even the wildest of hearts. I once tamed a fierce wyvern using just compassion and understanding. Do you believe that?");
-            }
-            else if (speech.Contains("secret"))
-            {
-                if (DateTime.UtcNow - lastRewardTime > TimeSpan.FromMinutes(10))
-                {
-                    Say("The secret lies with the enigmatic Griffin. A creature of majesty and mystery. If you ever find one, remember to approach with respect. For your efforts in seeking knowledge, accept this gift.");
-                    from.AddToBackpack(new EnergyResistAugmentCrystal()); // Reward
-                    lastRewardTime = DateTime.UtcNow; // Update the timestamp
-                }
-                else
-                {
-                    Say("Please return later for your reward.");
-                }
-            }
-            else if (speech.Contains("medicine"))
-            {
-                Say("Nature's medicine is powerful. From the bark of the elder tree to the petals of the moonflower, each has its healing property. Seek the Grove of Tranquility for rare herbs.");
-            }
-            else if (speech.Contains("phoenix"))
-            {
-                Say("Ah, the Phoenix! A bird of fire and rebirth. It is said its tears can heal any wound. I've been on a quest to find one. Will you aid me?");
-            }
-            else if (speech.Contains("wyvern"))
-            {
-                Say("Wyverns are often misunderstood. They are protective, yes, but not evil. I once saved a young wyvern from hunters. Since then, it has been my loyal companion. Have you encountered one?");
-            }
+        private DialogueModule CreateGreetingModule()
+        {
+            DialogueModule greeting = new DialogueModule("I am Talor the Tameless, the master of creatures! How may I assist you today?");
+            
+            greeting.AddOption("Tell me about your health.",
+                player => true,
+                player => { player.SendGump(new DialogueGump(player, CreateHealthModule())); });
+                
+            greeting.AddOption("What is your job?",
+                player => true,
+                player => { player.SendGump(new DialogueGump(player, CreateJobModule())); });
+                
+            greeting.AddOption("What virtues do you hold dear?",
+                player => true,
+                player => { player.SendGump(new DialogueGump(player, CreateVirtuesModule())); });
+                
+            greeting.AddOption("Tell me about the creatures.",
+                player => true,
+                player => { player.SendGump(new DialogueGump(player, CreateCreaturesModule())); });
+                
+            greeting.AddOption("Do you have any secrets?",
+                player => true,
+                player => { player.SendGump(new DialogueGump(player, CreateSecretModule(player))); });
+                
+            greeting.AddOption("What do you know about nature's medicine?",
+                player => true,
+                player => { player.SendGump(new DialogueGump(player, CreateMedicineModule())); });
 
-            base.OnSpeech(e);
+            greeting.AddOption("What happened to your donkey?",
+                player => true,
+                player => { player.SendGump(new DialogueGump(player, CreateDonkeyModule())); });
+
+            return greeting;
+        }
+
+        private DialogueModule CreateHealthModule()
+        {
+            return new DialogueModule("I am in perfect health, thanks to my animal friends!");
+        }
+
+        private DialogueModule CreateJobModule()
+        {
+            return new DialogueModule("My job is to tame and care for the creatures of this land.");
+        }
+
+        private DialogueModule CreateVirtuesModule()
+        {
+            return new DialogueModule("Compassion is my guiding virtue, for it takes a kind heart to understand and tame wild creatures. What virtues do you hold dear?");
+        }
+
+        private DialogueModule CreateCreaturesModule()
+        {
+            return new DialogueModule("Ah, creatures! From the mighty dragon to the meek rabbit, I've befriended them all. One creature, in particular, holds a secret. Care to know more?");
+        }
+
+        private DialogueModule CreateSecretModule(PlayerMobile player)
+        {
+            var secretModule = new DialogueModule("The secret lies with the enigmatic Griffin. A creature of majesty and mystery. If you ever find one, remember to approach with respect. For your efforts in seeking knowledge, accept this gift.");
+            if (DateTime.UtcNow - lastRewardTime > TimeSpan.FromMinutes(10))
+            {
+                lastRewardTime = DateTime.UtcNow;
+                player.AddToBackpack(new EnergyResistAugmentCrystal()); // Reward
+                secretModule.NPCText += " You've received an Energy Resist Augment Crystal!";
+            }
+            else
+            {
+                secretModule.NPCText = "Please return later for your reward.";
+            }
+            return secretModule;
+        }
+
+        private DialogueModule CreateMedicineModule()
+        {
+            return new DialogueModule("Nature's medicine is powerful. From the bark of the elder tree to the petals of the moonflower, each has its healing property. Seek the Grove of Tranquility for rare herbs.");
+        }
+
+        private DialogueModule CreateDonkeyModule()
+        {
+            DialogueModule donkeyModule = new DialogueModule("Ah, my beloved donkey, Bramble! He was no ordinary donkey; he was a rare creature known for his keen sense of direction and remarkable strength. I lost him while foraging for herbs in the Whispering Forest.");
+            
+            donkeyModule.AddOption("What makes Bramble so special?",
+                player => true,
+                player =>
+                {
+                    DialogueModule specialModule = new DialogueModule("Bramble has a unique ability to find hidden paths and rare plants. His coat shines like silver under the moonlight, and he has a gentle heart.");
+                    specialModule.AddOption("What do you plan to do to find him?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule planModule = new DialogueModule("I plan to search the Whispering Forest and ask other creatures if they've seen him. If only I had a way to track him!");
+                            planModule.AddOption("Maybe I can help you find Bramble.",
+                                pla => true,
+                                pla =>
+                                {
+                                    DialogueModule helpModule = new DialogueModule("Would you? That would mean the world to me! Bramble loves apples. If you can find some, it might lure him back to me!");
+                                    helpModule.AddOption("Where can I find these apples?",
+                                        p => true,
+                                        p =>
+                                        {
+                                            DialogueModule locationModule = new DialogueModule("You can find the Golden Apples in the Orchard of Elders, just south of here. Be wary; the path can be treacherous!");
+                                            locationModule.AddOption("I'll go to the Orchard and return with apples.",
+                                                plq => true,
+                                                plq =>
+                                                {
+                                                    pl.SendMessage("You set off towards the Orchard of Elders.");
+                                                });
+                                            locationModule.AddOption("That sounds too dangerous for me.",
+                                                plw => true,
+                                                plw =>
+                                                {
+                                                    pl.SendGump(new DialogueGump(pl, CreateGreetingModule()));
+                                                });
+                                            p.SendGump(new DialogueGump(p, locationModule));
+                                        });
+                                    pla.SendGump(new DialogueGump(pla, helpModule));
+                                });
+                            planModule.AddOption("I hope you find him soon.",
+                                p => true,
+                                p => { p.SendGump(new DialogueGump(p, CreateGreetingModule())); });
+                            player.SendGump(new DialogueGump(player, planModule));
+                        });
+                    specialModule.AddOption("I'd like to help find him.",
+                        playere => true,
+                        playere =>
+                        {
+                            player.SendGump(new DialogueGump(player, CreateDonkeyModule())); // Loop back for more discussion
+                        });
+                    player.SendGump(new DialogueGump(player, specialModule));
+                });
+            
+            donkeyModule.AddOption("What do you miss most about him?",
+                player => true,
+                player =>
+                {
+                    DialogueModule missModule = new DialogueModule("I miss his gentle braying and the way he would nuzzle against me. He had a calming presence that could soothe even the fiercest beast.");
+                    missModule.AddOption("Have you tried calling for him?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule callModule = new DialogueModule("I have, but it seems my voice is lost in the rustling leaves. Perhaps if I had someone to help me call for him!");
+                            callModule.AddOption("I can help you call for him.",
+                                p => true,
+                                p =>
+                                {
+                                    p.SendMessage("You call for Bramble, hoping he hears you.");
+                                });
+                            callModule.AddOption("Maybe we should continue searching.",
+                                p => true,
+                                p =>
+                                {
+                                    p.SendGump(new DialogueGump(p, CreateDonkeyModule())); // Loop back for more discussion
+                                });
+                            player.SendGump(new DialogueGump(player, callModule));
+                        });
+                    player.SendGump(new DialogueGump(player, missModule));
+                });
+            
+            donkeyModule.AddOption("Tell me about the Whispering Forest.",
+                player => true,
+                player =>
+                {
+                    DialogueModule forestModule = new DialogueModule("The Whispering Forest is filled with ancient trees that seem to talk to one another. The air is thick with magic, and many creatures call it home. It can be dangerous, but it holds secrets.");
+                    forestModule.AddOption("What kind of dangers should I expect?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule dangerModule = new DialogueModule("There are many wild creatures in the forest. Some are protective of their territory, while others are curious but not necessarily friendly. Keep your wits about you!");
+                            dangerModule.AddOption("Thank you for the warning.",
+                                p => true,
+                                p => { p.SendGump(new DialogueGump(p, CreateGreetingModule())); });
+                            player.SendGump(new DialogueGump(player, dangerModule));
+                        });
+                    forestModule.AddOption("What secrets do you mean?",
+                        pl => true,
+                        pl =>
+                        {
+                            DialogueModule secretsModule = new DialogueModule("The forest holds ancient runes and forgotten paths. Many believe it leads to hidden treasures and powerful magic. Perhaps Bramble found one of these paths.");
+                            secretsModule.AddOption("I'd love to explore the forest with you.",
+                                p => true,
+                                p =>
+                                {
+                                    p.SendMessage("You and Talor begin to discuss the possibilities of exploring together.");
+                                });
+                            secretsModule.AddOption("Maybe I should go alone.",
+                                p => true,
+                                p => { p.SendGump(new DialogueGump(p, CreateGreetingModule())); });
+                            player.SendGump(new DialogueGump(player, secretsModule));
+                        });
+                    player.SendGump(new DialogueGump(player, forestModule));
+                });
+
+            return donkeyModule;
         }
 
         public TalorTheTameless(Serial serial) : base(serial) { }
@@ -118,7 +246,7 @@ namespace Server.Mobiles
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write((int)0); // version
+            writer.Write(0); // version
             writer.Write(lastRewardTime);
         }
 
