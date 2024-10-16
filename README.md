@@ -2,6 +2,8 @@
 Shards of Minax ServUO Pub57 
 Maintained by: Rutibex
 
+Feel free to join our [Discord server](https://discord.gg/c6QQsGUF3d).
+
 
 # Shards of Minax - Feature List
 Shards of Minax is a ServUO single-player shard packed with numerous gameplay enhancements and expansions. The world is rich in new challenges, unique mechanics, and modded systems designed to create an engaging experience for both casual and hardcore players. Below is a comprehensive list of the features that define the Shards of Minax.
