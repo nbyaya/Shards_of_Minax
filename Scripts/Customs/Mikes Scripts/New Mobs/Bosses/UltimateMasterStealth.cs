@@ -103,10 +103,10 @@ namespace Server.Mobiles
             c.DropItem(new PowerScroll(SkillName.Stealth, 200.0));
 
             if (Utility.RandomDouble() < 0.6)
-                c.DropItem(new ShadowArmor());
+                c.DropItem(new MaxxiaScroll());
 
             if (Utility.RandomDouble() < 0.6)
-                c.DropItem(new SmokeBoomb());
+                c.DropItem(new MaxxiaScroll());
         }
 
         public override void OnGaveMeleeAttack(Mobile defender)

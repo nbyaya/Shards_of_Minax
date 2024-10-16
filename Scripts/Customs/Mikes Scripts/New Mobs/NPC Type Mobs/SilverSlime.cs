@@ -44,7 +44,7 @@ namespace Server.Custom
 
             Tamable = true;
             ControlSlots = 1;
-            MinTameSkill = 9.9;
+            MinTameSkill = -18.9;
         }
 
         public override void OnDamage(int amount, Mobile from, bool willKill)

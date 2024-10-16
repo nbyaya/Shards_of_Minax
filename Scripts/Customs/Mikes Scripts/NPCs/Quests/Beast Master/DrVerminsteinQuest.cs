@@ -62,7 +62,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You have successfully dealt with the vermin crisis!");
-            Owner.AddToBackpack(new VerminToken());
             Owner.PlaySound(CompleteSound);
         }
 

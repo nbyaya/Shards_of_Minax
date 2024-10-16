@@ -63,7 +63,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "Congratulations! You have completed Ogreon Blunderbore's quest!");
-            Owner.AddToBackpack(new OgreToken());
             Owner.PlaySound(CompleteSound);
         }
 

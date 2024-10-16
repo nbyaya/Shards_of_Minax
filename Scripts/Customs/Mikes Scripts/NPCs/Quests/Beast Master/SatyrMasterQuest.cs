@@ -62,7 +62,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "Congratulations! You have completed the Satyr Master's challenge!");
-            Owner.AddToBackpack(new SatyrToken());
             Owner.PlaySound(CompleteSound);
         }
 

@@ -100,10 +100,10 @@ namespace Server.Mobiles
             c.DropItem(new PowerScroll(SkillName.SpiritSpeak, 200.0));
 
             if (Utility.RandomDouble() < 0.6)
-                c.DropItem(new CrystalSkull());
+                c.DropItem(new MaxxiaScroll());
 
             if (Utility.RandomDouble() < 0.6)
-                c.DropItem(new NecromancersRobes());
+                c.DropItem(new MaxxiaScroll());
         }
 
         public override void OnGaveMeleeAttack(Mobile defender)

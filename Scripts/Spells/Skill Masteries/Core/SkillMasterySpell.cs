@@ -26,7 +26,7 @@ namespace Server.Spells.SkillMasteries
         public List<Mobile> PartyList { get; set; }
         public DateTime Expires { get; set; }
 
-        public virtual double RequiredSkill { get { return 90.0; } }
+        public virtual double RequiredSkill { get { return 120.0; } }
         public virtual double UpKeep { get { return 0; } }
         public virtual int RequiredMana { get { return 10; } }
         public virtual bool PartyEffects { get { return false; } }
@@ -85,8 +85,6 @@ namespace Server.Spells.SkillMasteries
             
             if (Caster.Player && Caster.Skills[CastSkill].Value < RequiredSkill)
                 Caster.SendLocalizedMessage(1115709); // Your skills are not high enough to invoke this mastery ability.
-            else if (Caster is PlayerMobile && Caster.Skills.CurrentMastery != CastSkill)
-                Caster.SendLocalizedMessage(1115664); // You are not on the correct path for using this mastery ability.
             else if (Caster is PlayerMobile && !MasteryInfo.HasLearned(Caster, CastSkill))
                 Caster.SendLocalizedMessage(1115664); // You are not on the correct path for using this mastery ability.
             else if (Caster.Mana < mana)

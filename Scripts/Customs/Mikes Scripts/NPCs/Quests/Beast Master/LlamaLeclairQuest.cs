@@ -62,7 +62,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "Congratulations! You have conquered the llama challenge!");
-            Owner.AddToBackpack(new LlamaToken());
             Owner.PlaySound(CompleteSound);
         }
 

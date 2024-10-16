@@ -61,7 +61,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You've done it! Farmer Moolin's beast shop is now open to you!");
-            Owner.AddToBackpack(new MoolinToken());
             Owner.PlaySound(CompleteSound);
         }
 

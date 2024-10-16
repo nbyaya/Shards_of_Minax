@@ -61,7 +61,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You've completed Gator McScales' challenge!");
-            Owner.AddToBackpack(new GatorToken());
             Owner.PlaySound(CompleteSound);
         }
 

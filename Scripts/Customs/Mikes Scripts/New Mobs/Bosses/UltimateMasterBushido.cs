@@ -50,7 +50,6 @@ namespace Server.Mobiles
             AddItem(new SamuraiHelm());
             AddItem(new PlateChest());
             AddItem(new PlateArms());
-            AddItem(new PlateLegs());
             AddItem(new PlateGorget());
             AddItem(new PlateGloves());
             AddItem(new PlateSuneate());
@@ -103,10 +102,10 @@ namespace Server.Mobiles
             c.DropItem(new PowerScroll(SkillName.Bushido, 200.0));
 
             if (Utility.RandomDouble() < 0.6)
-                c.DropItem(new DualKatanas());
+                c.DropItem(new MaxxiaScroll());
 
             if (Utility.RandomDouble() < 0.6)
-                c.DropItem(new SamuraiArmor());
+                c.DropItem(new MaxxiaScroll());
         }
 
         public override void OnGaveMeleeAttack(Mobile defender)

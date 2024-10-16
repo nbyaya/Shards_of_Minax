@@ -61,7 +61,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You have completed Benedict Bramblepaws' challenge!");
-            Owner.AddToBackpack(new BenToken());
             Owner.PlaySound(CompleteSound);
         }
 

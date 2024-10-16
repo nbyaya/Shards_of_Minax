@@ -30,6 +30,8 @@ namespace Server.Mobiles
                 Title = "the Master Pickpocket";
             }
 
+			this.AddItem(new Backpack());
+			
             Item shirt = new Shirt();
             Item pants = new LongPants();
             Item shoes = new Shoes();
@@ -113,29 +115,31 @@ namespace Server.Mobiles
             }
         }
 
-        private void TryToSteal(Mobile target)
-        {
-            if (target == null || target.Backpack == null)
-                return;
+		private void TryToSteal(Mobile target)
+		{
+			if (target == null || target.Backpack == null)
+				return;
 
-            List<Item> items = new List<Item>(target.Backpack.Items);
+			List<Item> items = new List<Item>(target.Backpack.Items);
 
-            if (items.Count > 0)
-            {
-                Item item = items[Utility.Random(items.Count)];
+			if (items.Count > 0)
+			{
+				Item item = items[Utility.Random(items.Count)];
 
-                if (item != null && item.Movable)
-                {
-                    target.Backpack.RemoveItem(item);
-                    this.AddToBackpack(item);
-                    this.Say(true, "I'll be taking this!");
+				if (item != null && item.Movable)
+				{
+					target.Backpack.RemoveItem(item);
+					if (this.Backpack == null)
+					{
+						this.AddItem(new Backpack());
+					}
+					this.Backpack.DropItem(item);
+					this.Say(true, "I'll be taking this!");
 
-                    target.SendMessage("An item has been stolen from your backpack!");
-                }
-            }
-
-
-        }
+					target.SendMessage("An item has been stolen from your backpack!");
+				}
+			}
+		}
 
         public MasterPickpocket(Serial serial) : base(serial)
         {

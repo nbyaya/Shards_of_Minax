@@ -61,7 +61,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You have completed Astrologos Starfall's challenge!");
-            Owner.AddToBackpack(new AstroToken());
             Owner.PlaySound(CompleteSound);
         }
 

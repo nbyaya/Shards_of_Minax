@@ -36,14 +36,11 @@ namespace Server.Mobiles
             hair.Movable = false;
 
             Item sword1 = new Katana();
-            Item sword2 = new Katana();
             AddItem(hair);
             AddItem(pants);
             AddItem(boots);
             AddItem(sword1);
-            AddItem(sword2);
-            sword1.Movable = false;
-            sword2.Movable = false;
+
 
             if (!this.Female)
             {

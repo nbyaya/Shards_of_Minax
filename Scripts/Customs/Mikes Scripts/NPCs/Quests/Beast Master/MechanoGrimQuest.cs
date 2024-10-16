@@ -62,7 +62,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "Congratulations! You have completed Dr. MechanoGrim's robotic challenge!");
-            Owner.AddToBackpack(new MechanoToken());
             Owner.PlaySound(CompleteSound);
         }
 

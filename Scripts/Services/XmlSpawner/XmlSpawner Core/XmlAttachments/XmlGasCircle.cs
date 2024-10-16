@@ -11,7 +11,7 @@ namespace Server.Engines.XmlSpawner2
     {
         private int m_Damage = 20; // Default damage for the circle fire attack
         private int m_Radius = 5; // Default radius of the circular attack
-        private int m_Thickness = 1; // Default thickness of the attack
+        private int m_Thickness = 4; // Default thickness of the attack
         private TimeSpan m_Refractory = TimeSpan.FromSeconds(10); // Time between activations
         private DateTime m_EndTime;
 

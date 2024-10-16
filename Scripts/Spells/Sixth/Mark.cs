@@ -37,7 +37,12 @@ namespace Server.Spells.Sixth
                 FinishSequence();
                 return;
             }
-
+            if (Caster.Map.Name == "Ilshenar")
+            {
+                Caster.SendMessage("Planar Travel Blocked by Minax Magic");
+                FinishSequence();
+                return;
+            }
             Caster.Target = new InternalTarget(this);
         }
 
@@ -51,7 +56,11 @@ namespace Server.Spells.Sixth
                 Caster.SendMessage("Planar Travel Blocked by Minax Magic");
                 return false;
             }
-
+            if (Caster.Map.Name == "Ilshenar")
+            {
+                Caster.SendMessage("Planar Travel Blocked by Minax Magic");
+                return false;
+            }
             return SpellHelper.CheckTravel(Caster, TravelCheckType.Mark);
         }
 
@@ -63,6 +72,12 @@ namespace Server.Spells.Sixth
                 FinishSequence();
                 return;
             }
+            if (Caster.Map.Name == "Ilshenar")
+            {
+                Caster.SendMessage("Planar Travel Blocked by Minax Magic");
+                FinishSequence();
+                return;
+            }            
 
             BaseBoat boat = BaseBoat.FindBoatAt(Caster.Location, Caster.Map);
 
@@ -113,6 +128,12 @@ namespace Server.Spells.Sixth
                     m_Owner.FinishSequence();
                     return;
                 }
+                if (from.Map.Name == "Ilshenar")
+                {
+                    from.SendMessage("Planar Travel Blocked by Minax Magic");
+                    m_Owner.FinishSequence();
+                    return;
+                }                
 
                 if (o is RecallRune)
                 {

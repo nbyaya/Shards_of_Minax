@@ -61,7 +61,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "Congratulations on completing Zodiacus Grizzlebeard's challenge!");
-            Owner.AddToBackpack(new ZodiacToken());
             Owner.PlaySound(CompleteSound);
         }
 

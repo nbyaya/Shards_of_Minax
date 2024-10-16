@@ -59,11 +59,7 @@ namespace Server.Mobiles
             HairItemID = 0x204B; // Long Hair
             HairHue = 0x47E;
 
-            // Mjolnir
-            AddItem(new Mjolnir());
 
-            // Thunder God's Belt
-            AddItem(new ThunderGodsBelt());
         }
 
         public UltimateMasterMaceFighting(Serial serial)
@@ -107,10 +103,10 @@ namespace Server.Mobiles
             c.DropItem(new PowerScroll(SkillName.Macing, 200.0));
 
             if (Utility.RandomDouble() < 0.6)
-                c.DropItem(new Mjolnir());
+                c.DropItem(new MaxxiaScroll());
 
             if (Utility.RandomDouble() < 0.6)
-                c.DropItem(new ThunderGodsBelt());
+                c.DropItem(new MaxxiaScroll());
         }
 
         public override void OnGaveMeleeAttack(Mobile defender)

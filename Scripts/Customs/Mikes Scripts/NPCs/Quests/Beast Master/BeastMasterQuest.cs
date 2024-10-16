@@ -44,7 +44,6 @@ namespace Server.Engines.Quests
 		public override void OnCompleted()
 		{
 			Owner.SendMessage(0x23, "You have completed the Beast Master's Challenge!");
-			Owner.AddToBackpack(new BeastToken()); // Give BeastToken to the player
 			Owner.PlaySound(CompleteSound);
 		}
 

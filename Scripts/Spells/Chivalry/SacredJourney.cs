@@ -147,7 +147,11 @@ namespace Server.Spells.Chivalry
 				Caster.SendMessage("Planar Travel Blocked by Minax Magic");
 				return; // Block the spell and exit the method
 			}
-			
+			if (map == Map.Ilshenar)
+			{
+				Caster.SendMessage("Planar Travel Blocked by Minax Magic");
+				return; // Block the spell and exit the method
+			}			
 			if (Factions.Sigil.ExistsOn(Caster))
 			{
 				Caster.SendLocalizedMessage(1061632); // You can't do that while carrying the sigil.

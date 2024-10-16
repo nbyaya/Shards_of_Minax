@@ -61,7 +61,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "Congratulations! You have successfully completed Squeakus Fuzzlestone's Squirrel Safari!");
-            Owner.AddToBackpack(new SquirrelToken());
             Owner.PlaySound(CompleteSound);
         }
 

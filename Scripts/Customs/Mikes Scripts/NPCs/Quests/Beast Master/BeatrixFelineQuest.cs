@@ -59,7 +59,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You have completed Beatrix Feline's challenge!");
-            Owner.AddToBackpack(new BeatrixToken());
             Owner.PlaySound(CompleteSound);
         }
 

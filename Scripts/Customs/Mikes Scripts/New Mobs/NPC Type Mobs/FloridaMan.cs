@@ -70,8 +70,8 @@ namespace Server.Mobiles
 			SetSkill(SkillName.Wrestling, Utility.RandomMinMax(50, 100));
 
 			Tamable = true;
-			ControlSlots = Utility.RandomMinMax(1, 5);
-			MinTameSkill = Utility.RandomMinMax(1, 100);
+			ControlSlots = 1;
+			MinTameSkill = -18.9;
 
 			Fame = 6000;
 			Karma = -6000;

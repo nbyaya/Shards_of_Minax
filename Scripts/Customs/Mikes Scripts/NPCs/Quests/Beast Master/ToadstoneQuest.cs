@@ -60,7 +60,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You have completed Hopper Toadstone's challenge!");
-            Owner.AddToBackpack(new ToadstoneToken());
             Owner.PlaySound(CompleteSound);
         }
 

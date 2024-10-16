@@ -60,7 +60,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "Congratulations! You have completed Golem Garrison's quest!");
-            Owner.AddToBackpack(new GolemToken());
             Owner.PlaySound(CompleteSound);
         }
 

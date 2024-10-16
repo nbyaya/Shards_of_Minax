@@ -62,7 +62,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You have completed Sweetsworth Lollypop's challenge!");
-            Owner.AddToBackpack(new SweetsworthToken());
             Owner.PlaySound(CompleteSound);
         }
 

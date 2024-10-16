@@ -62,7 +62,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You've completed Whiskers McFurball's challenge!");
-            Owner.AddToBackpack(new FelineToken());
             Owner.PlaySound(CompleteSound);
         }
 

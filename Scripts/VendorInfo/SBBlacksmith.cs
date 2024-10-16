@@ -137,8 +137,6 @@ namespace Server.Mobiles
 				Add(new GenericBuyInfo(typeof(BalancingDeed), 20000, 10, 0x14F0, 0));
 				Add(new GenericBuyInfo(typeof(VelocityDeed), 25000, 10, 0x14F0, 0));
 				Add(new GenericBuyInfo(typeof(WeaponRenamingTool), 30000, 10, 0x32F8, 0));
-				Add(new GenericBuyInfo(typeof(WeaponOil), 10000, 10, 0x1ECD, 0));
-				Add(new GenericBuyInfo(typeof(MasterWeaponOil), 25000, 10, 0x1ECD, 0));
                 Add(new GenericBuyInfo("1154005", typeof(MalleableAlloy), 50, 500, 7139, 2949, true));
             }
         }

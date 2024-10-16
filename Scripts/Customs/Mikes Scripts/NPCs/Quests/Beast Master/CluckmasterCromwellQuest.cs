@@ -60,7 +60,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "Congratulations! You've completed Cluckmaster Cromwell's challenge!");
-            Owner.AddToBackpack(new CluckToken());
             Owner.PlaySound(CompleteSound);
         }
 

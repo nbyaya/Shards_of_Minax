@@ -61,7 +61,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You have completed Porkius Truffle's swine hunt!");
-            Owner.AddToBackpack(new SwineToken());
             Owner.PlaySound(CompleteSound);
         }
 

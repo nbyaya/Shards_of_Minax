@@ -119,7 +119,6 @@ namespace Server.Mobiles
             {
                 if (m is BaseCreature creature)
                 {
-                    creature.Blessed = true; // Example: Buff the creature by making it "blessed" (not targetable by enemies)
                 }
             }
 

@@ -30,8 +30,8 @@
             VirtualArmor = 90;
 			
             Tamable = true;
-            ControlSlots = 3;
-            MinTameSkill = 93.9;
+            ControlSlots = 1;
+            MinTameSkill = -18.9;
 
 
 

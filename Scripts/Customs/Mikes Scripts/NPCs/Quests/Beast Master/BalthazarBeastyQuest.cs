@@ -61,7 +61,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You have completed Balthazar Beasty's bizarre challenge!");
-            Owner.AddToBackpack(new BeastyToken());
             Owner.PlaySound(CompleteSound);
         }
 

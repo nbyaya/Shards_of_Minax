@@ -54,7 +54,7 @@ namespace Server.Mobiles
             AddItem(new LeatherArms());
             AddItem(new LeatherGorget());
             AddItem(new LeatherGloves());
-            AddItem(new TrackerBoots());
+            AddItem(new ThighBoots());
 
             HairItemID = 0x203C; // Ponytail
             HairHue = 0x47E;
@@ -101,10 +101,10 @@ namespace Server.Mobiles
             c.DropItem(new PowerScroll(SkillName.Tracking, 200.0));
 
             if (Utility.RandomDouble() < 0.6)
-                c.DropItem(new HuntersBow());
+                c.DropItem(new MaxxiaScroll());
 
             if (Utility.RandomDouble() < 0.6)
-                c.DropItem(new HuntersBow());
+                c.DropItem(new MaxxiaScroll());
         }
 
         public override void OnGaveMeleeAttack(Mobile defender)

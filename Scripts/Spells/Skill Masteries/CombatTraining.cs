@@ -45,7 +45,7 @@ namespace Server.Spells.SkillMasteries
             }
         }
 
-        public override double RequiredSkill { get { return 90; } }
+        public override double RequiredSkill { get { return 120; } }
         public override int RequiredMana { get { return 40; } }
         public override bool PartyEffects { get { return false; } }
         public override SkillName CastSkill { get { return SkillName.AnimalTaming; } }

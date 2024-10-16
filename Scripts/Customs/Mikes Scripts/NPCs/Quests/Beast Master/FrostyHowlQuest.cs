@@ -61,7 +61,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You have completed Frosty Howl's challenge!");
-            Owner.AddToBackpack(new LupineToken());
             Owner.PlaySound(CompleteSound);
         }
 

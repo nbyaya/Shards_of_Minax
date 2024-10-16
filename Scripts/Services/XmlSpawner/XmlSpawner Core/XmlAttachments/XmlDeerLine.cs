@@ -111,6 +111,10 @@ namespace Server.Engines.XmlSpawner2
                     break;
             }
 
+            // Perpendicular vectors for 3-tile thickness
+            int perpDx = dy;
+            int perpDy = -dx;
+
             Point3D start = new Point3D(owner.X + offset * dx, owner.Y + offset * dy, owner.Z);
 
             for (int i = 0; i < m_Range; i++)
@@ -118,21 +122,28 @@ namespace Server.Engines.XmlSpawner2
                 int targetX = start.X + i * dx;
                 int targetY = start.Y + i * dy;
 
-                if (map.CanFit(targetX, targetY, start.Z, 16, false, false))
+                // Apply effect to three tiles thick area
+                for (int thickness = -1; thickness <= 1; thickness++)
                 {
-                    Point3D p = new Point3D(targetX, targetY, start.Z);
-                    int flameHue = 0;
-                    Effects.SendLocationEffect(p, map, 0x3A5F, 16, 10, flameHue, 0);
+                    int thickX = targetX + thickness * perpDx;
+                    int thickY = targetY + thickness * perpDy;
 
-                    IPooledEnumerable eable = map.GetMobilesInRange(p, 0);
-                    foreach (Mobile m in eable)
+                    if (map.CanFit(thickX, thickY, start.Z, 16, false, false))
                     {
-                        if (m is PlayerMobile || m is BaseCreature)
+                        Point3D p = new Point3D(thickX, thickY, start.Z);
+                        int flameHue = 0;
+                        Effects.SendLocationEffect(p, map, 0x3A5F, 16, 10, flameHue, 0);
+
+                        IPooledEnumerable eable = map.GetMobilesInRange(p, 0);
+                        foreach (Mobile m in eable)
                         {
-                            m.Damage(m_Damage, owner);
+                            if (m is PlayerMobile || m is BaseCreature)
+                            {
+                                m.Damage(m_Damage, owner);
+                            }
                         }
+                        eable.Free();
                     }
-                    eable.Free();
                 }
             }
 

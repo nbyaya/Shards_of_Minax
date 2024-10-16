@@ -65,7 +65,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You have completed Tempestus Gale's challenge!");
-            Owner.AddToBackpack(new GaleToken());
             Owner.PlaySound(CompleteSound);
         }
 

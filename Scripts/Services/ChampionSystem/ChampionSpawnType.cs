@@ -314,7 +314,7 @@ namespace Server.Engines.CannedEvil
             {
                 new Type[] { typeof(TerrainScout), typeof(WolfSpider) }, // Level 1
                 new Type[] { typeof(StarReader), typeof(ElfBrigand) }, // Level 2
-                new Type[] { typeof(MapMaker), typeof(WhiteWyrm) }, // Level 3
+                new Type[] { typeof(EvilMapMaker), typeof(WhiteWyrm) }, // Level 3
                 new Type[] { typeof(RelicHunter), typeof(AncientLich) } // Level 4
             }),
 			new ChampionSpawnInfo("Ultimate Master Chivalry", typeof(UltimateMasterChivalry), new string[] { "Apprentice", "Journeyman", "Expert", "Master" }, new Type[][]

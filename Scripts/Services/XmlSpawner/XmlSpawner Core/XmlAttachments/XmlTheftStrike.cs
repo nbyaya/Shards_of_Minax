@@ -51,7 +51,16 @@ namespace Server.Engines.XmlSpawner2
             attacker.SendMessage("You have stolen an item!");
 
             backpack.RemoveItem(stolenItem);
-            attacker.Backpack.DropItem(stolenItem);
+
+            // Ensure attacker has a backpack to store the stolen item
+            Container attackerBackpack = attacker.Backpack;
+            if (attackerBackpack == null)
+            {
+                attackerBackpack = new Backpack();
+                attacker.AddItem(attackerBackpack);
+            }
+
+            attackerBackpack.DropItem(stolenItem);
         }
 
         public override void Serialize(GenericWriter writer)

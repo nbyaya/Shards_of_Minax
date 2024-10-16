@@ -61,7 +61,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "Congratulations! You have completed Fizzlewick's whimsical challenge!");
-            Owner.AddToBackpack(new FizzlewickToken());
             Owner.PlaySound(CompleteSound);
         }
 

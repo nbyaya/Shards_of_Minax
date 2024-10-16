@@ -61,7 +61,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "Congratulations! You have completed Mucus Maximus' slime challenge!");
-            Owner.AddToBackpack(new SlimeToken());
             Owner.PlaySound(CompleteSound);
         }
 

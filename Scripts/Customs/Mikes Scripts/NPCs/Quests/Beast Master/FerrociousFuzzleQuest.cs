@@ -61,7 +61,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You have completed Ferrocious Fuzzle's ferret hunt!");
-            Owner.AddToBackpack(new FerretToken());
             Owner.PlaySound(CompleteSound);
         }
 

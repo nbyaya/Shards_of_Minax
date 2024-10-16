@@ -61,7 +61,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You have completed Gorwin Beestherd's beastly bounty!");
-            Owner.AddToBackpack(new GoatToken());
             Owner.PlaySound(CompleteSound);
         }
 

@@ -130,7 +130,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You have completed Malidrex the Twisted Witch's challenge!");
-            Owner.AddToBackpack(new MasterToken());
             Owner.PlaySound(CompleteSound);
         }
 

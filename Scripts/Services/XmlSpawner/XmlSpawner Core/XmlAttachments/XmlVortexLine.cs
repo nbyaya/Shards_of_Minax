@@ -74,69 +74,83 @@ namespace Server.Engines.XmlSpawner2
             }
         }
 
-        public void PerformLineBreathAttack(Mobile owner)
-        {
-            if (owner == null || DateTime.Now < m_EndTime || owner.Map == null)
-                return;
+		public void PerformLineBreathAttack(Mobile owner)
+		{
+			if (owner == null || DateTime.Now < m_EndTime || owner.Map == null)
+				return;
 
-            Map map = owner.Map;
-            Direction d = owner.Direction;
-            int dx = 0, dy = 0;
-            int offset = 1;
-            switch (d & Direction.Mask)
-            {
-                case Direction.North:
-                    dy = -1;
-                    break;
-                case Direction.East:
-                    dx = 1;
-                    break;
-                case Direction.South:
-                    dy = 1;
-                    break;
-                case Direction.West:
-                    dx = -1;
-                    break;
-                case Direction.Right: // North-East
-                    dx = 1; dy = -1;
-                    break;
-                case Direction.Down: // South-East
-                    dx = 1; dy = 1;
-                    break;
-                case Direction.Left: // South-West
-                    dx = -1; dy = 1;
-                    break;
-                case Direction.Up: // North-West
-                    dx = -1; dy = -1;
-                    break;
-            }
+			Map map = owner.Map;
+			Direction d = owner.Direction;
+			int dx = 0, dy = 0;
+			int offset = 1;
 
-            Point3D start = new Point3D(owner.X + offset * dx, owner.Y + offset * dy, owner.Z);
+			// Determine primary direction vector
+			switch (d & Direction.Mask)
+			{
+				case Direction.North:
+					dy = -1;
+					break;
+				case Direction.East:
+					dx = 1;
+					break;
+				case Direction.South:
+					dy = 1;
+					break;
+				case Direction.West:
+					dx = -1;
+					break;
+				case Direction.Right: // North-East
+					dx = 1; dy = -1;
+					break;
+				case Direction.Down: // South-East
+					dx = 1; dy = 1;
+					break;
+				case Direction.Left: // South-West
+					dx = -1; dy = 1;
+					break;
+				case Direction.Up: // North-West
+					dx = -1; dy = -1;
+					break;
+			}
 
-            for (int i = 0; i < m_Range; i++)
-            {
-                int targetX = start.X + i * dx;
-                int targetY = start.Y + i * dy;
+			Point3D start = new Point3D(owner.X + offset * dx, owner.Y + offset * dy, owner.Z);
 
-                if (map.CanFit(targetX, targetY, start.Z, 16, false, false))
-                {
-                    Point3D p = new Point3D(targetX, targetY, start.Z);
-                    int flameHue = 0;
-                    Effects.SendLocationEffect(p, map, 0x3789, 16, 10, flameHue, 0);
+			// Determine perpendicular vectors for thickness calculation
+			int perpDx = dy;
+			int perpDy = -dx;
 
-                    IPooledEnumerable eable = map.GetMobilesInRange(p, 0);
-                    foreach (Mobile m in eable)
-                    {
-                        if (m is PlayerMobile || m is BaseCreature)
-                        {
-                            m.Damage(m_Damage, owner);
-                        }
-                    }
-                    eable.Free();
-                }
-            }
+			for (int i = 0; i < m_Range; i++)
+			{
+				int targetX = start.X + i * dx;
+				int targetY = start.Y + i * dy;
 
-            m_EndTime = DateTime.Now + m_Refractory;
-        }
+				// Iterate over thickness range (-1, 0, 1) to get three tiles thick line
+				for (int thickness = -1; thickness <= 1; thickness++)
+				{
+					int thickX = targetX + thickness * perpDx;
+					int thickY = targetY + thickness * perpDy;
+
+					if (map.CanFit(thickX, thickY, start.Z, 16, false, false))
+					{
+						Point3D p = new Point3D(thickX, thickY, start.Z);
+						int flameHue = 0;  // Or adjust hue if needed
+						Effects.SendLocationEffect(p, map, 0x3789, 16, 10, flameHue, 0);
+
+						IPooledEnumerable eable = map.GetMobilesInRange(p, 0);
+						foreach (Mobile m in eable)
+						{
+							if (m is PlayerMobile || m is BaseCreature)
+							{
+								m.Damage(m_Damage, owner);
+							}
+						}
+						eable.Free();
+					}
+				}
+			}
+
+			m_EndTime = DateTime.Now + m_Refractory;
+		}
+
     }
 }

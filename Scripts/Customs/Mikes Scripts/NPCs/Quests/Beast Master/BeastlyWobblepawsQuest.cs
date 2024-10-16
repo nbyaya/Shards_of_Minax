@@ -60,7 +60,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You have completed Bertram Wobblepaws' challenge!");
-            Owner.AddToBackpack(new WobbleToken());
             Owner.PlaySound(CompleteSound);
         }
 

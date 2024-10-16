@@ -61,7 +61,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "You have completed Flareon Blaze's challenge!");
-            Owner.AddToBackpack(new FlameToken());
             Owner.PlaySound(CompleteSound);
         }
 

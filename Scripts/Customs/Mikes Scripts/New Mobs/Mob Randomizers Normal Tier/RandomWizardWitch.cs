@@ -816,7 +816,7 @@ namespace Server.Mobiles
 			if (chance < 0.05) // Very rare - highest damage and unique modifiers
 			{
 				weapon.MinDamage = Utility.RandomMinMax(1, 100);
-				weapon.MaxDamage = Utility.RandomMinMax(100, 350);
+				weapon.MaxDamage = Utility.RandomMinMax(100, 150);
 
 				// Additional high-tier modifiers
 				weapon.Attributes.WeaponSpeed = Utility.RandomMinMax(20, 30);
@@ -827,7 +827,7 @@ namespace Server.Mobiles
 			else if (chance < 0.2) // Rare
 			{
 				weapon.MinDamage = Utility.RandomMinMax(1, 50);
-				weapon.MaxDamage = Utility.RandomMinMax(50, 200);
+				weapon.MaxDamage = Utility.RandomMinMax(50, 100);
 
 				// Additional rare-tier modifiers
 				weapon.Attributes.WeaponSpeed = Utility.RandomMinMax(10, 19);
@@ -874,7 +874,7 @@ namespace Server.Mobiles
 			BaseArmor armor = Loot.RandomArmor();
 			// Tiered system for attribute bonuses
 			double attributeChance = Utility.RandomDouble();
-			if (attributeChance < 0.05) // Very rare - highest bonuses
+			if (attributeChance < 0.005) // Very rare - highest bonuses
 			{
 				armor.Attributes.ReflectPhysical = Utility.RandomMinMax(20, 25);
 				armor.Attributes.DefendChance = Utility.RandomMinMax(25, 50);
@@ -884,7 +884,7 @@ namespace Server.Mobiles
 				armor.Attributes.BonusHits = Utility.RandomMinMax(50, 100);
 				armor.Attributes.BonusMana = Utility.RandomMinMax(50, 100);
 			}
-			else if (attributeChance < 0.2) // Rare
+			else if (attributeChance < 0.05) // Rare
 			{
 				armor.Attributes.ReflectPhysical = Utility.RandomMinMax(15, 19);
 				armor.Attributes.DefendChance = Utility.RandomMinMax(15, 24);

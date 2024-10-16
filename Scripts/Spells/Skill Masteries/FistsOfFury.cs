@@ -16,7 +16,7 @@ namespace Server.Spells.SkillMasteries
 	public class FistsOfFurySpell : SkillMasteryMove
 	{
         public override int BaseMana { get { return 20; } }
-        public override double RequiredSkill { get { return 90.0; } }
+        public override double RequiredSkill { get { return 120.0; } }
 
         public override SkillName MoveSkill { get { return SkillName.Wrestling; } }
         public override TextDefinition AbilityMessage { get { return new TextDefinition(1155895); } } // You ready yourself to unleash your fists of fury!

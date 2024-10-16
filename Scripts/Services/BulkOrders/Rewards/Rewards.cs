@@ -358,6 +358,7 @@ namespace Server.Engines.BulkOrders
                 RewardCollection.Add(new BODCollectionItem(0x13E3, 1157104, 0x482, 1100, AncientHammer, 60));
                 RewardCollection.Add(new BODCollectionItem(0x13E3, 1157098, CraftResources.GetHue(CraftResource.Verite), 1150, RunicHammer, 7));
                 RewardCollection.Add(new BODCollectionItem(0x13E3, 1157099, CraftResources.GetHue(CraftResource.Valorite), 1200, RunicHammer, 8));
+				RewardCollection.Add(new BODCollectionItem(0xE34, 1016460, 1150, 500, CreateMaxxiaScroll));
             }
             else
             {
@@ -477,6 +478,10 @@ namespace Server.Engines.BulkOrders
             throw new InvalidOperationException();
         }
 
+        private static Item CreateMaxxiaScroll(int type)
+		{
+			return new MaxxiaScroll();
+		}
         private static Item CraftsmanTalisman(int type)
         {
             return new MasterCraftsmanTalisman(type, 0x9E2A, TalismanSkill.Blacksmithy);
@@ -690,6 +695,7 @@ namespace Server.Engines.BulkOrders
                 RewardCollection.Add(new BODCollectionItem(0x14F0, 1157112, 0, 400, Tapestry));
                 RewardCollection.Add(new BODCollectionItem(0x14F0, 1157113, 0, 450, BearRug));
                 RewardCollection.Add(new BODCollectionItem(0x14F0, 1157119, 0x481, 500, PowerScroll, 10));
+				RewardCollection.Add(new BODCollectionItem(0xE34, 1016460, 1150, 500, CreateMaxxiaScroll));
                 RewardCollection.Add(new BODCollectionItem(0x14F0, 1157114, 0, 550, ClothingBlessDeed));
                 RewardCollection.Add(new BODCollectionItem(0x14F0, 1157120, 0x481, 575, PowerScroll, 15));
                 RewardCollection.Add(new BODCollectionItem(0xF9D, 1157116, CraftResources.GetHue(CraftResource.HornedLeather), 600, RunicKit, 2));
@@ -985,7 +991,10 @@ namespace Server.Engines.BulkOrders
                 new int[] { 15000, 20000, 20000, 30000 }
             }
         };
-
+		private static Item CreateMaxxiaScroll(int type)
+		{
+			return new MaxxiaScroll();
+		}
         public override int ComputeGold(int quantity, bool exceptional, BulkMaterialType material, int itemCount, Type type)
         {
             int gold = 0;
@@ -1029,6 +1038,7 @@ namespace Server.Engines.BulkOrders
             RewardCollection.Add(new BODCollectionItem(0x2831, 1157289, 0, 350, Recipe, 2));
             RewardCollection.Add(new BODCollectionItem(0x9E2B, 1157264, 0, 400, CraftsmanTalisman, 10));
             RewardCollection.Add(new BODCollectionItem(0x2F5B, 1152674, CraftResources.GetHue(CraftResource.Gold), 450, SmeltersTalisman, (int)CraftResource.Gold));
+			RewardCollection.Add(new BODCollectionItem(0xE34, 1016460, 1150, 500, CreateMaxxiaScroll));
             RewardCollection.Add(new BODCollectionItem(0x14EC, 1152665, CraftResources.GetHue(CraftResource.Gold), 500, HarvestMap, (int)CraftResource.Gold));
             RewardCollection.Add(new BODCollectionItem(0x9E2B, 1157218, 0, 550, CraftsmanTalisman, 25)); // todo: Get id
             RewardCollection.Add(new BODCollectionItem(0x2F5B, 1152675, CraftResources.GetHue(CraftResource.Agapite), 600, SmeltersTalisman, (int)CraftResource.Agapite));
@@ -1073,7 +1083,11 @@ namespace Server.Engines.BulkOrders
         {
             return new MasterCraftsmanTalisman(type, 0x9E2B, TalismanSkill.Tinkering);
         }
-        #endregion
+		private static Item CreateMaxxiaScroll(int type) // Add this method
+		{
+			return new MaxxiaScroll();
+		}        
+		#endregion
 
         public static readonly TinkeringRewardCalculator Instance = new TinkeringRewardCalculator();
 
@@ -1211,6 +1225,7 @@ namespace Server.Engines.BulkOrders
             RewardCollection.Add(new BODCollectionItem(0x12B3, 1157293, CraftResources.GetHue(CraftResource.DullCopper), 450, RunicMalletAndChisel, 1));
             RewardCollection.Add(new BODCollectionItem(0x12B3, 1157294, CraftResources.GetHue(CraftResource.ShadowIron), 450, RunicMalletAndChisel, 2));
             RewardCollection.Add(new BODCollectionItem(0x14EC, 1152669, CraftResources.GetHue(CraftResource.YewWood), 500, HarvestMap, (int)CraftResource.YewWood));
+			RewardCollection.Add(new BODCollectionItem(0xE34, 1016460, 1150, 500, CreateMaxxiaScroll));
             RewardCollection.Add(new BODCollectionItem(0x1029, 1157223, CraftResources.GetHue(CraftResource.OakWood), 550, RunicDovetailSaw, 0));
             RewardCollection.Add(new BODCollectionItem(0x12B3, 1157295, CraftResources.GetHue(CraftResource.Copper), 600, RunicMalletAndChisel, 3));
             RewardCollection.Add(new BODCollectionItem(0x12B3, 1157296, CraftResources.GetHue(CraftResource.Bronze), 650, RunicMalletAndChisel, 4));
@@ -1264,7 +1279,11 @@ namespace Server.Engines.BulkOrders
         {
             return new MasterCraftsmanTalisman(type, 0x9E2C, TalismanSkill.Carpentry);
         }
-        #endregion
+		private static Item CreateMaxxiaScroll(int type) // Add this method
+		{
+			return new MaxxiaScroll();
+		}        
+		#endregion
 
         public static readonly CarpentryRewardCalculator Instance = new CarpentryRewardCalculator();
 
@@ -1408,6 +1427,7 @@ namespace Server.Engines.BulkOrders
             RewardCollection.Add(new BODCollectionItem(0x182B, 1157205, 2731, 450, NaturalDye, 6));
             RewardCollection.Add(new BODCollectionItem(0x182B, 1157205, 2735, 475, NaturalDye, 7));
             RewardCollection.Add(new BODCollectionItem(0x9E28, 1157291, 0, 500, ImprovementTalisman, 10));
+			RewardCollection.Add(new BODCollectionItem(0xE34, 1016460, 1150, 500, CreateMaxxiaScroll));
         }
 
         #region Constructors
@@ -1429,7 +1449,11 @@ namespace Server.Engines.BulkOrders
         {
             return new GuaranteedSpellbookImprovementTalisman(type);
         }
-
+		
+		private static Item CreateMaxxiaScroll(int type) // Add this method
+		{
+			return new MaxxiaScroll();
+		}
         #endregion
 
         public static readonly InscriptionRewardCalculator Instance = new InscriptionRewardCalculator();
@@ -1528,6 +1552,7 @@ namespace Server.Engines.BulkOrders
             RewardCollection.Add(new BODCollectionItem(0x9E27, 1157265, 0, 350, CraftsmanTalisman, 50));
             RewardCollection.Add(new BODCollectionItem(0x153D, 1157227, 1990, 410, CreateItem, 0));
             RewardCollection.Add(new BODCollectionItem(0x14F0, 1076605, 0, 475, CreateItem, 1));
+			RewardCollection.Add(new BODCollectionItem(0xE34, 1016460, 1150, 500, CreateMaxxiaScroll));
             RewardCollection.Add(new BODCollectionItem(0x182B, 1157278, 2740, 525, NaturalDye, 8));
             RewardCollection.Add(new BODCollectionItem(0x182B, 1157278, 2732, 625, NaturalDye, 9));
             RewardCollection.Add(new BODCollectionItem(0x9E36, 1157229, 0, 625, CreateItem, 2));
@@ -1559,7 +1584,10 @@ namespace Server.Engines.BulkOrders
 
             return null;
         }
-
+		private static Item CreateMaxxiaScroll(int type) // Add this method
+		{
+			return new MaxxiaScroll();
+		}
         #endregion
 
         public static readonly CookingRewardCalculator Instance = new CookingRewardCalculator();
@@ -1662,6 +1690,7 @@ namespace Server.Engines.BulkOrders
             RewardCollection.Add(new BODCollectionItem(0x14EC, 1152670, CraftResources.GetHue(CraftResource.Heartwood), 375, HarvestMap, (int)CraftResource.Heartwood));
             RewardCollection.Add(new BODCollectionItem(0x9E29, 1157265, 0, 410, CraftsmanTalisman, 50));
             RewardCollection.Add(new BODCollectionItem(0x1022, 1157223, CraftResources.GetHue(CraftResource.OakWood), 425, CreateRunicFletcherTools, 0));
+			RewardCollection.Add(new BODCollectionItem(0xE34, 1016460, 1150, 500, CreateMaxxiaScroll));
             RewardCollection.Add(new BODCollectionItem(0x2F5A, 1152680, CraftResources.GetHue(CraftResource.Bloodwood), 510, WoodsmansTalisman, (int)CraftResource.Bloodwood));
             RewardCollection.Add(new BODCollectionItem(0x14EC, 1152671, CraftResources.GetHue(CraftResource.Bloodwood), 525, HarvestMap, (int)CraftResource.Bloodwood));
             RewardCollection.Add(new BODCollectionItem(0x1022, 1157224, CraftResources.GetHue(CraftResource.AshWood), 650, CreateRunicFletcherTools, 1));
@@ -1697,7 +1726,10 @@ namespace Server.Engines.BulkOrders
                 case 3: return new RunicFletcherTool(CraftResource.Heartwood, 15);
             }
         }
-
+		private static Item CreateMaxxiaScroll(int type) // Add this method
+		{
+			return new MaxxiaScroll();
+		}
         #endregion
 
         public static readonly FletchingRewardCalculator Instance = new FletchingRewardCalculator();
@@ -1832,6 +1864,7 @@ namespace Server.Engines.BulkOrders
             RewardCollection.Add(new BODCollectionItem(0x975, 1152663, CraftResources.GetHue(CraftResource.Bloodwood), 410, Cauldron, 6));
             RewardCollection.Add(new BODCollectionItem(0x182B, 1157278, 2735, 425, NaturalDye, 2));
             RewardCollection.Add(new BODCollectionItem(0x975, 1152659, CraftResources.GetHue(CraftResource.Verite), 450, Cauldron, 7));
+			RewardCollection.Add(new BODCollectionItem(0xE34, 1016460, 1150, 500, CreateMaxxiaScroll));
         }
 
         #region Constructors
@@ -1863,7 +1896,11 @@ namespace Server.Engines.BulkOrders
         {
             return new MasterCraftsmanTalisman(type, 0x9E26, TalismanSkill.Alchemy);
         }
-        #endregion
+		private static Item CreateMaxxiaScroll(int type) // Add this method
+		{
+			return new MaxxiaScroll();
+		}        
+		#endregion
 
         public static readonly AlchemyRewardCalculator Instance = new AlchemyRewardCalculator();
 

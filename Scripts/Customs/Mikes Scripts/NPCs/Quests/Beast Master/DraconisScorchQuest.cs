@@ -63,7 +63,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "Congratulations on defeating the dragons!");
-            Owner.AddToBackpack(new DraconisToken());
             Owner.PlaySound(CompleteSound);
         }
 

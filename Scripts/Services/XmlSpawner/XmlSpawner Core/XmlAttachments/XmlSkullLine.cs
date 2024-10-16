@@ -83,6 +83,8 @@ namespace Server.Engines.XmlSpawner2
             Direction d = owner.Direction;
             int dx = 0, dy = 0;
             int offset = 1;
+
+            // Determine primary direction vector
             switch (d & Direction.Mask)
             {
                 case Direction.North:
@@ -113,26 +115,37 @@ namespace Server.Engines.XmlSpawner2
 
             Point3D start = new Point3D(owner.X + offset * dx, owner.Y + offset * dy, owner.Z);
 
+            // Determine perpendicular vectors for thickness calculation
+            int perpDx = dy;
+            int perpDy = -dx;
+
             for (int i = 0; i < m_Range; i++)
             {
                 int targetX = start.X + i * dx;
                 int targetY = start.Y + i * dy;
 
-                if (map.CanFit(targetX, targetY, start.Z, 16, false, false))
+                // Iterate over thickness range (-1, 0, 1) to get three tiles thick line
+                for (int thickness = -1; thickness <= 1; thickness++)
                 {
-                    Point3D p = new Point3D(targetX, targetY, start.Z);
-                    int flameHue = 0;
-                    Effects.SendLocationEffect(p, map, 0x1854, 16, 10, flameHue, 0);
+                    int thickX = targetX + thickness * perpDx;
+                    int thickY = targetY + thickness * perpDy;
 
-                    IPooledEnumerable eable = map.GetMobilesInRange(p, 0);
-                    foreach (Mobile m in eable)
+                    if (map.CanFit(thickX, thickY, start.Z, 16, false, false))
                     {
-                        if (m is PlayerMobile || m is BaseCreature)
+                        Point3D p = new Point3D(thickX, thickY, start.Z);
+                        int flameHue = 0;  // Or adjust hue if needed
+                        Effects.SendLocationEffect(p, map, 0x1854, 16, 10, flameHue, 0);
+
+                        IPooledEnumerable eable = map.GetMobilesInRange(p, 0);
+                        foreach (Mobile m in eable)
                         {
-                            m.Damage(m_Damage, owner);
+                            if (m is PlayerMobile || m is BaseCreature)
+                            {
+                                m.Damage(m_Damage, owner);
+                            }
                         }
+                        eable.Free();
                     }
-                    eable.Free();
                 }
             }
 

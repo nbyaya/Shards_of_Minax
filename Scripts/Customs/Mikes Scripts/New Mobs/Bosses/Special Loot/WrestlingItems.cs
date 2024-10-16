@@ -32,16 +32,14 @@ namespace Server.Items
         }
     }
 
-    public class WrestlersGloves : BaseClothing
+    public class WrestlersGloves : Item
     {
         [Constructable]
         public WrestlersGloves() : base(0x13C6)
         {
             Weight = 2.0;
             Name = "Wrestler's Gloves";
-            Hue = 0x497;
-            Attributes.BonusDex = 5;
-            Attributes.WeaponSpeed = 10;
+            Hue = 900;
         }
 
         public WrestlersGloves(Serial serial) : base(serial)

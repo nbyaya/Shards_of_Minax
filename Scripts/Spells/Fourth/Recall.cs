@@ -159,6 +159,11 @@ namespace Server.Spells.Fourth
             {
                 Caster.SendMessage("Planar Travel Blocked by Minax Magic");
             }
+			if (map == Map.Ilshenar)
+			{
+				Caster.SendMessage("Planar Travel Blocked by Minax Magic");
+				return; // Block the spell and exit the method
+			}            
             else if (map == null || (!Core.AOS && Caster.Map != map))
             {
                 Caster.SendLocalizedMessage(1005569); // You can not recall to another facet.

@@ -11,7 +11,7 @@ namespace Server.Spells.SkillMasteries
     public class OnslaughtSpell : SkillMasteryMove
     {
         public override int BaseMana { get { return 20; } }
-        public override double RequiredSkill { get { return 90.0; } }
+        public override double RequiredSkill { get { return 120.0; } }
 
         public override SkillName MoveSkill { get { return SkillName.Swords; } }
         public override TextDefinition AbilityMessage { get { return new TextDefinition(1156007); } } // *You ready an onslaught!*

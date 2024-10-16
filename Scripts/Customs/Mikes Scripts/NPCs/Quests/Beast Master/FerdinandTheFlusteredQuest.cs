@@ -62,7 +62,6 @@ namespace Server.Engines.Quests
         public override void OnCompleted()
         {
             Owner.SendMessage(0x23, "Congratulations on completing Ferdinand's challenge!");
-            Owner.AddToBackpack(new BeastMasterToken());
             Owner.PlaySound(CompleteSound);
         }
 
