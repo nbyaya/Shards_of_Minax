@@ -19,7 +19,7 @@ using Server;
 
 namespace VitaNex
 {
-	public abstract class SettingsObject<TFlags> : PropertyObject, IEnumerable<TFlags> where TFlags : struct, Enum
+	public abstract class SettingsObject<TFlags> : PropertyObject, IEnumerable<TFlags> where TFlags : struct
 	{
 		private static readonly Type _FlagsType = typeof(TFlags);
 

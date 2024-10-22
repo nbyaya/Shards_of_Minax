@@ -265,9 +265,12 @@ namespace VitaNex.Web
 
         public static IEnumerable<KeyValuePair<string, string>> DecodeQuery(string query)
 		{
+			var pairs = new List<KeyValuePair<string, string>>();
+
 			if (String.IsNullOrWhiteSpace(query))
 			{
-				yield break;
+				// ArgumentException?
+				return pairs;
 			}
 
 			query = WebUtility.UrlDecode(query);
@@ -276,16 +279,19 @@ namespace VitaNex.Web
 
 			if (String.IsNullOrWhiteSpace(query))
 			{
-				yield break;
+				// ArgumentException?
+				return pairs;
 			}
 
 			foreach (var kv in query.Split(_QuerySplit, StringSplitOptions.RemoveEmptyEntries))
 			{
 				if (ExtractKeyValuePair(kv, out var key, out var value))
 				{
-					yield return new KeyValuePair<string, string>(key, value);
+					pairs.Add(new KeyValuePair<string, string>(key, value));
 				}
 			}
+
+			return pairs;
 		}
 
 		private static bool ExtractKeyValuePair(string kv, out string key, out string value)
