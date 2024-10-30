@@ -6,6 +6,48 @@ using Server.Network;
 using Server.Items;
 using Server.ACC.CSS.Systems.AlchemyMagic;
 using Server.ACC.CSS.Systems.FishingMagic;
+using Server.ACC.CSS.Systems.EvalIntMagic;
+using Server.ACC.CSS.Systems.ArcheryMagic;
+using Server.ACC.CSS.Systems.MageryMagic;
+using Server.ACC.CSS.Systems.ArmsLoreMagic;
+using Server.ACC.CSS.Systems.AnimalTamingMagic;
+using Server.ACC.CSS.Systems.AnimalLoreMagic;
+using Server.ACC.CSS.Systems.CarpentryMagic;
+using Server.ACC.CSS.Systems.CartographyMagic;
+using Server.ACC.CSS.Systems.TasteIDMagic;
+using Server.ACC.CSS.Systems.CookingMagic;
+using Server.ACC.CSS.Systems.DiscordanceMagic;
+using Server.ACC.CSS.Systems.FencingMagic;
+using Server.ACC.CSS.Systems.FletchingMagic;
+using Server.ACC.CSS.Systems.ForensicsMagic;
+using Server.ACC.CSS.Systems.WrestlingMagic;
+using Server.ACC.CSS.Systems.ParryMagic;
+using Server.ACC.CSS.Systems.HealingMagic;
+using Server.ACC.CSS.Systems.DetectHiddenMagic;
+using Server.ACC.CSS.Systems.ProvocationMagic;
+using Server.ACC.CSS.Systems.LockpickingMagic;
+using Server.ACC.CSS.Systems.MacingMagic;
+using Server.ACC.CSS.Systems.MeditationMagic;
+using Server.ACC.CSS.Systems.BeggingMagic;
+using Server.ACC.CSS.Systems.MiningMagic;
+using Server.ACC.CSS.Systems.ChivalryMagic;
+using Server.ACC.CSS.Systems.StealingMagic;
+using Server.ACC.CSS.Systems.InscribeMagic;
+using Server.ACC.CSS.Systems.NinjitsuMagic;
+using Server.ACC.CSS.Systems.HidingMagic;
+using Server.ACC.CSS.Systems.StealthMagic;
+using Server.ACC.CSS.Systems.BlacksmithMagic;
+using Server.ACC.CSS.Systems.TacticsMagic;
+using Server.ACC.CSS.Systems.SwordsMagic;
+using Server.ACC.CSS.Systems.TailoringMagic;
+using Server.ACC.CSS.Systems.NecromancyMagic;
+using Server.ACC.CSS.Systems.TrackingMagic;
+using Server.ACC.CSS.Systems.RemoveTrapMagic;
+using Server.ACC.CSS.Systems.VeterinaryMagic;
+using Server.ACC.CSS.Systems.MusicianshipMagic;
+using Server.ACC.CSS.Systems.CampingMagic;
+using Server.ACC.CSS.Systems.LumberjackingMagic;
+
 
 public class CodexSaleGump : Gump
 {
@@ -64,7 +106,7 @@ public class CodexSaleGump : Gump
 			new SpellbookInfo("MeditationSpellbook", new[] { "SpiritualityStone", "JusticeStone", "HumilityStone" }),
 			new SpellbookInfo("BeggingSpellbook", new[] { "CompassionStone", "HonorStone", "HonestyStone" }),
 			new SpellbookInfo("MiningSpellbook", new[] { "HumilityStone", "HonorStone", "HonorStone" }),
-			new SpellbookInfo("ChivalrySpellbook", new[] { "HonestyStone", "HumilityStone", "ValorStone" }),
+			new SpellbookInfo("ChivalrySpellbook2", new[] { "HonestyStone", "HumilityStone", "ValorStone" }),
 			new SpellbookInfo("StealingSpellbook", new[] { "HonestyStone", "ValorStone", "HumilityStone" }),
 			new SpellbookInfo("InscribeSpellbook", new[] { "HonorStone", "SacrificeStone", "SpiritualityStone" }),
 			new SpellbookInfo("NinjitsuSpellbook", new[] { "SpiritualityStone", "ValorStone", "CompassionStone" }),
@@ -207,24 +249,25 @@ public class CodexSaleGump : Gump
         return true;
     }
 
-    private bool FindItemInPack(Container pack, string stoneName)
-    {
-        foreach (Item item in pack.Items)
-        {
-            if (item is Container subContainer)
-            {
-                if (FindItemInPack(subContainer, stoneName))
-                {
-                    return true;
-                }
-            }
-            else if (item.Name == stoneName)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
+	private bool FindItemInPack(Container pack, string stoneName)
+	{
+		foreach (Item item in pack.Items)
+		{
+			if (item is Container subContainer)
+			{
+				if (FindItemInPack(subContainer, stoneName))
+				{
+					return true;
+				}
+			}
+			else if (item.GetType().Name == stoneName) // Compare by Type Name
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
 
     private void RemoveRequiredStones(Mobile from, string[] requiredStones)
     {
@@ -239,42 +282,174 @@ public class CodexSaleGump : Gump
         }
     }
 
-    private void RemoveItemFromPack(Container pack, string stoneName)
-    {
-        foreach (Item item in pack.Items)
-        {
-            if (item is Container subContainer)
-            {
-                RemoveItemFromPack(subContainer, stoneName);
-            }
-            else if (item.Name == stoneName)
-            {
-                item.Delete();
-                return;
-            }
-        }
-    }
+	private void RemoveItemFromPack(Container pack, string stoneName)
+	{
+		foreach (Item item in pack.Items)
+		{
+			if (item is Container subContainer)
+			{
+				RemoveItemFromPack(subContainer, stoneName);
+			}
+			else if (item.GetType().Name == stoneName) // Compare by Type Name
+			{
+				item.Delete();
+				return;
+			}
+		}
+	}
 
-    private void GiveSpellbook(Mobile from, string spellbookName)
-    {
-        Item spellbook = null;
 
-        switch (spellbookName)
-        {
-            case "AlchemySpellbook":
-                spellbook = new AlchemySpellbook();
-                break;
-            case "FishingSpellbook":
-                spellbook = new FishingSpellbook();
-                break;
-            // Add cases for other spellbooks...
-        }
+	private void GiveSpellbook(Mobile from, string spellbookName)
+	{
+		Item spellbook = null;
 
-        if (spellbook != null)
-        {
-            from.AddToBackpack(spellbook);
-        }
-    }
+		switch (spellbookName)
+		{
+			case "AlchemySpellbook":
+				spellbook = new AlchemySpellbook();
+				break;
+			case "FishingSpellbook":
+				spellbook = new FishingSpellbook();
+				break;
+			case "EvalIntSpellbook":
+				spellbook = new EvalIntSpellbook();
+				break;
+			case "ArcherySpellbook":
+				spellbook = new ArcherySpellbook();
+				break;
+			case "MagerySpellbook":
+				spellbook = new MagerySpellbook();
+				break;
+			case "ArmsLoreSpellbook":
+				spellbook = new ArmsLoreSpellbook();
+				break;
+			case "AnimalTamingSpellbook":
+				spellbook = new AnimalTamingSpellbook();
+				break;
+			case "AnimalLoreSpellbook":
+				spellbook = new AnimalLoreSpellbook();
+				break;
+			case "CarpentrySpellbook":
+				spellbook = new CarpentrySpellbook();
+				break;
+			case "CartographySpellbook":
+				spellbook = new CartographySpellbook();
+				break;
+			case "TasteIDSpellbook":
+				spellbook = new TasteIDSpellbook();
+				break;
+			case "CookingSpellbook":
+				spellbook = new CookingSpellbook();
+				break;
+			case "DiscordanceSpellbook":
+				spellbook = new DiscordanceSpellbook();
+				break;
+			case "FencingSpellbook":
+				spellbook = new FencingSpellbook();
+				break;
+			case "FletchingSpellbook":
+				spellbook = new FletchingSpellbook();
+				break;
+			case "ForensicsSpellbook":
+				spellbook = new ForensicsSpellbook();
+				break;
+			case "WrestlingSpellbook":
+				spellbook = new WrestlingSpellbook();
+				break;
+			case "ParrySpellbook":
+				spellbook = new ParrySpellbook();
+				break;
+			case "HealingSpellbook":
+				spellbook = new HealingSpellbook();
+				break;
+			case "DetectHiddenSpellbook":
+				spellbook = new DetectHiddenSpellbook();
+				break;
+			case "ProvocationSpellbook":
+				spellbook = new ProvocationSpellbook();
+				break;
+			case "LockpickingSpellbook":
+				spellbook = new LockpickingSpellbook();
+				break;
+			case "MacingSpellbook":
+				spellbook = new MacingSpellbook();
+				break;
+			case "MeditationSpellbook":
+				spellbook = new MeditationSpellbook();
+				break;
+			case "BeggingSpellbook":
+				spellbook = new BeggingSpellbook();
+				break;
+			case "MiningSpellbook":
+				spellbook = new MiningSpellbook();
+				break;
+			case "ChivalrySpellbook2":
+				spellbook = new ChivalrySpellbook2();
+				break;
+			case "StealingSpellbook":
+				spellbook = new StealingSpellbook();
+				break;
+			case "InscribeSpellbook":
+				spellbook = new InscribeSpellbook();
+				break;
+			case "NinjitsuSpellbook":
+				spellbook = new NinjitsuSpellbook();
+				break;
+			case "HidingSpellbook":
+				spellbook = new HidingSpellbook();
+				break;
+			case "StealthSpellbook":
+				spellbook = new StealthSpellbook();
+				break;
+			case "BlacksmithSpellbook":
+				spellbook = new BlacksmithSpellbook();
+				break;
+			case "TacticsSpellbook":
+				spellbook = new TacticsSpellbook();
+				break;
+			case "SwordsSpellbook":
+				spellbook = new SwordsSpellbook();
+				break;
+			case "TailoringSpellbook":
+				spellbook = new TailoringSpellbook();
+				break;
+			case "NecromancySpellbook":
+				spellbook = new NecromancySpellbook();
+				break;
+			case "TrackingSpellbook":
+				spellbook = new TrackingSpellbook();
+				break;
+			case "RemoveTrapSpellbook":
+				spellbook = new RemoveTrapSpellbook();
+				break;
+			case "VeterinarySpellbook":
+				spellbook = new VeterinarySpellbook();
+				break;
+			case "MusicianshipSpellbook":
+				spellbook = new MusicianshipSpellbook();
+				break;
+			case "CampingSpellbook":
+				spellbook = new CampingSpellbook();
+				break;
+			case "LumberjackingSpellbook":
+				spellbook = new LumberjackingSpellbook();
+				break;
+			default:
+				from.SendMessage("The selected spellbook is not available.");
+				return;
+		}
+
+		if (spellbook != null)
+		{
+			from.AddToBackpack(spellbook);
+			from.SendMessage($"You have received the {spellbookName}.");
+		}
+		else
+		{
+			from.SendMessage("There was an issue creating the spellbook.");
+		}
+	}
+
 }
 
 public class SpellbookInfo
