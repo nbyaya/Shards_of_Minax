@@ -59,7 +59,7 @@ namespace Server.Mobiles
             {
                 Say("Progress is driven by innovation and creativity. Each step forward is a triumph of human ingenuity.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("ingenuity"))
             {
                 if (CheckRewardConditions(from))
                 {

@@ -13,6 +13,7 @@ namespace Server.Mobiles
             this.Name = "a black bear";
             this.Body = 211;
             this.BaseSoundID = 0xA3;
+			Team = 5;
 
             this.SetStr(76, 100);
             this.SetDex(56, 75);

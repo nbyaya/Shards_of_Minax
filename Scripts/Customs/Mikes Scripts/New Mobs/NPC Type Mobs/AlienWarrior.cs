@@ -78,6 +78,7 @@ namespace Server.Mobiles
 
             Body = Utility.RandomBool() ? 0x190 : 0x191;
             Name = alienRaceName + " Warrior";
+			Team = Utility.RandomMinMax(1, 5);
 
             SetStr(300, 500);
             SetDex(300, 500);

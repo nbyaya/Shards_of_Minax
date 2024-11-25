@@ -69,7 +69,7 @@ namespace Server.Mobiles
             {
                 Say("Treasures of the Byzantine era are said to be imbued with magical properties. Seek them out with a discerning eye.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("magical"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

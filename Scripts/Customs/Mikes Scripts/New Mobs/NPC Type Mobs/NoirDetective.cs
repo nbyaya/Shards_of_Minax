@@ -16,6 +16,7 @@ namespace Server.Mobiles
 			Hue = 0x455; // A dark hue
 			Body = Utility.RandomBool() ? 0x190 : 0x191; // Male or female
 			Name = NameList.RandomName("male") + " the Detective"; // Using elf name list for a different feel
+			Team = Utility.RandomMinMax(1, 5);
 
 			Item hat = new WideBrimHat();
 			Item shirt = new FancyShirt(0x455);

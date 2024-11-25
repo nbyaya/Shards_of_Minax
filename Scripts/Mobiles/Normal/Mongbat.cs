@@ -12,6 +12,7 @@ namespace Server.Mobiles
             Name = "a mongbat";
             Body = 39;
             BaseSoundID = 422;
+			Team = 1;
 
             SetStr(6, 10);
             SetDex(26, 38);

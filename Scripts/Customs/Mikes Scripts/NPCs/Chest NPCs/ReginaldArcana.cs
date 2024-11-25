@@ -120,7 +120,7 @@ namespace Server.Mobiles
             {
                 Say("A journey is both an adventure and a test. Those who persevere will find their reward at the end.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("adventure"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

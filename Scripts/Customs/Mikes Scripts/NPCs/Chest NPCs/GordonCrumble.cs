@@ -67,7 +67,7 @@ namespace Server.Mobiles
             {
                 Say("Ah, 'Baker's Delight' is not just a chest; it's a treasure trove of baking wonders.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("wonders"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

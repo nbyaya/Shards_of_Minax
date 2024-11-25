@@ -17,6 +17,7 @@ namespace Server.Mobiles
             Body = 0x190; // Human body
             Name = NameList.RandomName("male");
             Title = " the Infiltrator";
+			Team = 2;
 
             Item hoodedShroud = new HoodedShroudOfShadows();
             hoodedShroud.Hue = 1175;

@@ -14,6 +14,7 @@ namespace Server.Mobiles
         {
             Hue = 0x482;  // A whitish hue to represent the stormtrooper armor color.
             Body = 0x190; // Male body. (Stormtroopers are generally male in appearance)
+			Team = Utility.RandomMinMax(1, 5);
 
             Name = "Stormtrooper";
 

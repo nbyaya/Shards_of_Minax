@@ -17,6 +17,7 @@ namespace Server.Mobiles
         {
             // Air Clan Samurai should have a hue that represents their affinity to the air
             Hue = 0x9C2; // Adjust the hue to something air-like or sky-colored
+			Team = 5;
 
             // Body value could be a variant for air-themed NPCs
             Body = 0x190; // Modify if there's a specific body value for Air Clan NPCs

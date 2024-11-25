@@ -14,6 +14,7 @@ namespace Server.Mobiles
             Name = "a wisp";
             Body = 165;
             BaseSoundID = 466;
+			Team = 4;
 
             SetStr(196, 225);
             SetDex(196, 225);

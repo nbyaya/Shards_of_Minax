@@ -130,7 +130,7 @@ namespace Server.Mobiles
                     Say("Proving your understanding is crucial. For your efforts, you are now ready to ask about 'reward'.");
                 }
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("ask"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

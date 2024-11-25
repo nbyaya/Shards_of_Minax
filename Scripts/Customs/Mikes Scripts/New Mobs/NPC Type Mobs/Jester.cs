@@ -14,6 +14,7 @@ namespace Server.Mobiles
         public Jester() : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = Utility.RandomDyedHue(); // Set a random hue for the jester
+			Team = Utility.RandomMinMax(1, 5);
 
             Body = 0x190; // Use a male body (adjust if needed)
             Name = NameList.RandomName("male");

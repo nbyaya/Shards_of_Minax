@@ -25,6 +25,7 @@ namespace Server.Mobiles
 
 			// Laser Cutlass
 			AddItem(new Cutlass());
+			Team = Utility.RandomMinMax(1, 5);
 
 			SetStr( 800, 1200 );
 			SetDex( 177, 255 );

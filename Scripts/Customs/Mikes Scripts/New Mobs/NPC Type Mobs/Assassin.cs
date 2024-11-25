@@ -16,6 +16,7 @@ namespace Server.Mobiles
         public Assassin() : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = Utility.RandomSkinHue();
+			Team = Utility.RandomMinMax(1, 5);
 
             if (Female = Utility.RandomBool())
             {

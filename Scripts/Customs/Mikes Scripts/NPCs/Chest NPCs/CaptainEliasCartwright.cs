@@ -68,7 +68,7 @@ namespace Server.Mobiles
             {
                 Say("Curiosity is the spark that drives discovery. Show me your thirst for knowledge and I may just reward you.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("discovery"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

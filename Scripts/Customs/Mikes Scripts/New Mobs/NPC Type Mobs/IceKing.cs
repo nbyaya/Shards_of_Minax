@@ -16,6 +16,7 @@ namespace Server.Mobiles
             Hue = 0x480; // Icy blue hue
             Body = 0x190; 
             Name = "Ice King";
+			Team = Utility.RandomMinMax(1, 5);
 
             Item robe = new Robe(Utility.RandomBlueHue());
             AddItem(robe);

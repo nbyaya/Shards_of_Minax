@@ -13,6 +13,7 @@ namespace Server.Mobiles
             this.Name = "a gazer larva";
             this.Body = 778;
             this.BaseSoundID = 377;
+			Team = 4;
 
             this.SetStr(76, 100);
             this.SetDex(51, 75);

@@ -17,6 +17,7 @@ namespace Server.Mobiles
             Body = 0x190;
             Name = NameList.RandomName("male");
             Title = " the Death Cultist";
+			Team = 1;
 
             Item robe = new Robe();
             robe.Hue = 1175; // dark hue

@@ -16,6 +16,7 @@ namespace Server.Mobiles
         {
             // Fire Clan Samurai should have a fiery hue, representing their fire clan affiliation
             Hue = 0x489; // Adjust the hue to fit your shard's fire theme
+			Team = 2;
 
             // Body value could remain humanoid or could be something more fiery
             Body = 0x190; // Use the shard's specific body value for samurai if available

@@ -26,7 +26,10 @@ namespace Server.Engines.SeasonalEvents
         TreasuresOfKhaldun,
         KrampusEncounter,
         RisingTide,
-        Fellowship
+        Fellowship,
+		None,
+		TownInvasion,
+		MinaxInvasion
     }
 
     public enum EventStatus

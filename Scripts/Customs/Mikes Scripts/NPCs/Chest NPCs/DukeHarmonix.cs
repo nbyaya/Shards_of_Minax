@@ -58,7 +58,7 @@ namespace Server.Mobiles
                     case "harmony":
                         from.SendMessage("Harmony is about balance and unity. It's the essence of great music.");
                         break;
-                    case "reward":
+                    case "essence":
                         if (CheckRewardConditions(from))
                         {
                             GiveReward(from);

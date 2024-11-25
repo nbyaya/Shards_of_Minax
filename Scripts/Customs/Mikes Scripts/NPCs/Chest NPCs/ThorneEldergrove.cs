@@ -69,7 +69,7 @@ namespace Server.Mobiles
             {
                 Say("The forest whispers its secrets to those who listen carefully. Seek out the hidden groves and ancient trees.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("whispers"))
             {
                 if (DateTime.UtcNow - lastRewardTime < TimeSpan.FromHours(24))
                 {

@@ -158,7 +158,7 @@ namespace Server.Mobiles
                 {
                     Say("An open mind allows us to explore new ideas and perspectives, enriching our understanding.");
                 }
-                else if (speech.Contains("reward"))
+                else if (speech.Contains("understanding"))
                 {
                     if (CheckRewardConditions(from))
                     {

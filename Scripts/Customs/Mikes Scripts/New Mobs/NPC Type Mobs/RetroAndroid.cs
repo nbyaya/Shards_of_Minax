@@ -14,6 +14,7 @@ namespace Server.Mobiles
 		public RetroAndroid() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			Hue = 0x835; // Metallic hue
+			Team = Utility.RandomMinMax(1, 5);
 
 			Body = 0x190; // Humanoid body
 			Name = "Retro Android";

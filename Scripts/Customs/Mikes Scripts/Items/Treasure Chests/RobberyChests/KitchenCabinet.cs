@@ -485,6 +485,12 @@ namespace Server.Custom
             HandlePlayerInteraction(from);
         }
 
+		public override bool OnDragLift(Mobile from)
+        {
+            HandlePlayerInteraction(from);
+			return base.OnDragLift(from);
+        }
+
         public override void OnItemUsed(Mobile from, Item item)
         {
             base.OnItemUsed(from, item);

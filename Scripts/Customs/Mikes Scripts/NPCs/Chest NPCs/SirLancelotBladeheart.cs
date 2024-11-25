@@ -93,7 +93,7 @@ namespace Server.Mobiles
                 {
                     from.SendMessage("An opponent is not merely a rival, but a partner in the dance of combat.");
                 }
-                else if (speech.Contains("reward"))
+                else if (speech.Contains("rival"))
                 {
                     if (CheckRewardConditions(from))
                     {

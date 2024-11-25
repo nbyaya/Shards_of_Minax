@@ -14,6 +14,7 @@ namespace Server.Mobiles
             Name = "a lava serpent";
             Body = 90;
             BaseSoundID = 219;
+			Team = 3;
 
             SetStr(386, 415);
             SetDex(56, 80);

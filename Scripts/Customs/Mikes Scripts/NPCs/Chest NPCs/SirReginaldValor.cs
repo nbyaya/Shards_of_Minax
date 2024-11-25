@@ -96,7 +96,7 @@ namespace Server.Mobiles
             {
                 Say("The code of chivalry is a set of ideals that guide the conduct of knights. It includes honor, bravery, and justice.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("foundation"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

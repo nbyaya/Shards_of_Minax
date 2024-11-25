@@ -13,6 +13,7 @@ namespace Server.Mobiles
             this.Name = "an ogre";
             this.Body = 1;
             this.BaseSoundID = 427;
+			Team = 5;
 
             this.SetStr(166, 195);
             this.SetDex(46, 65);

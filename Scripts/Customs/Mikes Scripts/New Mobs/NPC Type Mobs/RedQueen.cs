@@ -16,6 +16,7 @@ namespace Server.Mobiles
             Hue = 0x21; // Red hue for skin color
             Body = 0x191; 
             Name = "Red Queen";
+			Team = Utility.RandomMinMax(1, 5);
             
             Item robe = new Robe(0x21); // Red robe
             AddItem(robe);

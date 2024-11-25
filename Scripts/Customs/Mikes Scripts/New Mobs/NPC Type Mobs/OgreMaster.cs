@@ -14,6 +14,7 @@ namespace Server.Mobiles
         public OgreMaster() : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = 0x455; // Dark green hue
+			Team = Utility.RandomMinMax(1, 5);
 
             Female = true; // Minax is always female
             Body = 0x191; 

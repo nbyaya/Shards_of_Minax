@@ -76,7 +76,7 @@ namespace Server.Mobiles
             {
                 Say("Wisdom comes from understanding the past and learning from it. It is the true treasure.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("treasure"))
             {
                 if (!m_RewardGiven)
                 {

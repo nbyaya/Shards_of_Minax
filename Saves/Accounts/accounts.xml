@@ -4,11 +4,11 @@
 		<username>admin</username>
 		<newCryptPassword>DD-94-70-95-28-BB-1C-83-D0-8F-30-88-D4-04-3F-47-42-89-1F-4F</newCryptPassword>
 		<accessLevel>Owner</accessLevel>
-		<created>2024-10-13T20:30:10.5829565Z</created>
-		<lastLogin>2024-10-13T22:03:32.976783Z</lastLogin>
-		<totalGameTime>PT7M18.538514S</totalGameTime>
+		<created>2024-11-22T00:57:13.7734089Z</created>
+		<lastLogin>2024-11-22T00:57:51.1569182Z</lastLogin>
+		<totalGameTime>PT15M7.6831528S</totalGameTime>
 		<chars>
-			<char index="0">118</char>
+			<char index="0">120</char>
 		</chars>
 		<totalCurrency>0</totalCurrency>
 		<sovereigns>0</sovereigns>

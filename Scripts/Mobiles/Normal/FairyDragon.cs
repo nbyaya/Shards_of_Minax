@@ -22,6 +22,7 @@ namespace Server.Mobiles
             Name = "Fairy Dragon";
             Body = 718;
             BaseSoundID = 362;
+			Team = 3;
 
             SetStr(512, 558);
             SetDex(95, 105);

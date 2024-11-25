@@ -13,6 +13,7 @@ namespace Server.Mobiles
             Name = "Enslaved Goblin Scout";
             Body = 334;
             BaseSoundID = 0x600;
+			Team = 4;
 
             SetStr(320, 320);
             SetDex(74, 74);

@@ -75,7 +75,7 @@ namespace Server.Mobiles
             {
                 Say("Strength is not just physical. A true warrior has strength of mind and spirit as well.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("physical"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

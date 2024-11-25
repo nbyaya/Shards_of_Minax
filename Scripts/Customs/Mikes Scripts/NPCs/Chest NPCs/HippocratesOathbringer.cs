@@ -74,7 +74,7 @@ namespace Server.Mobiles
             {
                 Say("If you need aid, speak to me of your ailments, and I shall see what I can do.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("ailments"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

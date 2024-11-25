@@ -14,6 +14,7 @@ namespace Server.Mobiles
             this.Name = "an ogre lord";
             this.Body = 83;
             this.BaseSoundID = 427;
+			Team = 5;
 
             this.SetStr(767, 945);
             this.SetDex(66, 75);

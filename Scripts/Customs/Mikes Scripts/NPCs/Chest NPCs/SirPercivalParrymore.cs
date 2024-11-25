@@ -83,7 +83,7 @@ namespace Server.Mobiles
             {
                 Say("Your worth is determined by your actions and commitment. Show me your worth, and I will reward you for your efforts.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("determined"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

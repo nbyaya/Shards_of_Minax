@@ -13,6 +13,7 @@ namespace Server.Mobiles
             this.Name = "an efreet";
             this.Body = 131;
             this.BaseSoundID = 768;
+			Team = 1;
 
             this.SetStr(326, 355);
             this.SetDex(266, 285);

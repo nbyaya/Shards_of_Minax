@@ -149,7 +149,7 @@ namespace Server.Mobiles
             {
                 Say("The ultimate goal is a reflection of one's deepest desires. If you have reached it, a reward awaits.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("ultimate"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

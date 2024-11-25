@@ -17,6 +17,7 @@ namespace Server.Mobiles
             Body = 0x190; // Using a male body
             Name = NameList.RandomName("male");
             Title = " the Ward Caster";
+			Team = 4;
 
             // Equipments
             Item robe = new Robe(Utility.RandomBlueHue());

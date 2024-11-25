@@ -79,7 +79,7 @@ namespace Server.Mobiles
             {
                 Say("Alien technology is both wondrous and perilous. It requires great care to study.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("technology"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

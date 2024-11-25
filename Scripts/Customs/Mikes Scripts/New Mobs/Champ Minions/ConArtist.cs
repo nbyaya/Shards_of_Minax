@@ -14,6 +14,7 @@ namespace Server.Mobiles
         public ConArtist() : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = Utility.RandomSkinHue();
+			Team = 3;
 
             if (Female = Utility.RandomBool())
             {
@@ -86,42 +87,46 @@ namespace Server.Mobiles
         public override bool ShowFameTitle { get { return false; } }
         public override bool ClickTitle { get { return true; } }
 
-        public override void OnThink()
-        {
-            if (DateTime.Now >= m_NextTrickTime)
-            {
-                Mobile combatant = this.Combatant as Mobile;
+		public override void OnThink()
+		{
+			if (DateTime.Now >= m_NextTrickTime)
+			{
+				Mobile combatant = this.Combatant as Mobile;
 
-                if (combatant != null && combatant.Map == this.Map && combatant.InRange(this, 8))
-                {
-                    int trick = Utility.Random(2);
+				if (combatant != null && combatant.Map == this.Map && combatant.InRange(this, 8))
+				{
+					int trick = Utility.Random(2);
 
-                    switch (trick)
-                    {
-                        case 0:
-                            // Trick enemy into dropping an item
-                            Item toSteal = combatant.Backpack.FindItemByType(typeof(Item));
+					switch (trick)
+					{
+						case 0:
+							// Trick enemy into dropping an item
+							if (combatant.Backpack != null)
+							{
+								Item toSteal = combatant.Backpack.FindItemByType(typeof(Item));
 
-                            if (toSteal != null)
-                            {
-                                this.Say(true, "Hand that over!");
-                                combatant.Backpack.DropItem(toSteal);
-                            }
-                            break;
+								if (toSteal != null)
+								{
+									this.Say(true, "Hand that over!");
+									combatant.Backpack.DropItem(toSteal);
+								}
+							}
+							break;
 
-                        case 1:
-                            // Trick enemy into changing position
-                            this.Say(true, "Look over there!");
-                            combatant.Location = new Point3D(combatant.X + Utility.RandomMinMax(-2, 2), combatant.Y + Utility.RandomMinMax(-2, 2), combatant.Z);
-                            break;
-                    }
+						case 1:
+							// Trick enemy into changing position
+							this.Say(true, "Look over there!");
+							combatant.Location = new Point3D(combatant.X + Utility.RandomMinMax(-2, 2), combatant.Y + Utility.RandomMinMax(-2, 2), combatant.Z);
+							break;
+					}
 
-                    m_NextTrickTime = DateTime.Now + m_TrickDelay;
-                }
+					m_NextTrickTime = DateTime.Now + m_TrickDelay;
+				}
+			}
 
-                base.OnThink();
-            }
-        }
+			base.OnThink();
+		}
+
 
         public override void GenerateLoot()
         {

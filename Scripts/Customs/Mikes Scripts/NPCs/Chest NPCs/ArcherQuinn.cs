@@ -68,7 +68,7 @@ namespace Server.Mobiles
             {
                 Say("Precision is key in archery. Only with it can you hit your target accurately.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("accurately"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

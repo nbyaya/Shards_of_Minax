@@ -16,7 +16,8 @@ namespace Server.Mobiles
             Hue = 0x455; // BeetleJuice's pale hue.
             Body = 0x190; // Male body form.
             Name = "BeetleJuice";
-            
+  			Team = Utility.RandomMinMax(1, 5);
+          
             // Clothing and appearance
             Item suit = new FancyShirt(Utility.RandomBlueHue());
             Item pants = new LongPants(Utility.RandomBlueHue());

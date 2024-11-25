@@ -69,7 +69,7 @@ namespace Server.Mobiles
             {
                 Say("The Desert Pharaoh was a ruler of great might and wisdom. His resting place holds many wonders.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("resting"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

@@ -15,6 +15,8 @@ namespace Server.Mobiles
         public WaterClanSamurai() : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = 0x5; // A hue that suggests a connection to water, such as a deep blue
+			Team = Utility.RandomMinMax(1, 5);
+
 
             Body = 0x190; // Standard humanoid body
             Name = NameList.RandomName("male");

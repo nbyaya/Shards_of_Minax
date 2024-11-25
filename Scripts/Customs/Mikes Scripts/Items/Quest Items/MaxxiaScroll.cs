@@ -13,7 +13,7 @@ namespace Server.Items
         [Constructable]
         public MaxxiaScroll(int amount) : base(0xE34)  //0xE34 is the itemID for a scroll. You can change this to another itemID if desired.
         {
-            Stackable = false;
+            Stackable = true;
             Amount = amount;
             Name = "Maxxia Scroll";
             Hue = 1150;  // Color of the scroll, change as required.

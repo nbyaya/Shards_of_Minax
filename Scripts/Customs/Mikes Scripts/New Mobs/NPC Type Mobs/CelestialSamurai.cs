@@ -16,6 +16,7 @@ namespace Server.Mobiles
         {
             // Celestial Samurai should have a radiant hue, representing their celestial nature
             Hue = 0x482; // Adjust the hue to fit your shard's celestial theme
+			Team = Utility.RandomMinMax(1, 5);
 
             // Body value could remain humanoid or could be something more ethereal
             Body = 0x190; // Use the shard's specific body value for samurai if available

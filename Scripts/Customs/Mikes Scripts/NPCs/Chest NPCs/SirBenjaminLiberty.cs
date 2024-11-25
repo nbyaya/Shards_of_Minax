@@ -138,7 +138,7 @@ namespace Server.Mobiles
             {
                 Say("Yes, the world is shaped by our collective efforts. And to honor your understanding of our ideals, I have a reward for you.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("ideals"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

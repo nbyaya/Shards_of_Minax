@@ -12,6 +12,7 @@ namespace Server.Mobiles
             this.Name = "a troll";
             this.Body = Utility.RandomList(53, 54);
             this.BaseSoundID = 461;
+			Team = 5;
 
             this.SetStr(176, 205);
             this.SetDex(46, 65);

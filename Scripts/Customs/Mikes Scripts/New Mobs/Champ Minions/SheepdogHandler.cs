@@ -17,6 +17,7 @@ namespace Server.Mobiles
         public SheepdogHandler() : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = Utility.RandomSkinHue();
+			Team = 1;
 
             if (Female = Utility.RandomBool())
             {
@@ -81,70 +82,71 @@ namespace Server.Mobiles
         public override bool ShowFameTitle { get { return false; } }
         public override bool ClickTitle { get { return true; } }
 
-        public override void OnThink()
-        {
-            base.OnThink();
+		public override void OnThink()
+		{
+			base.OnThink();
 
-            if (DateTime.Now >= m_NextSpeechTime)
-            {
-                Mobile combatant = this.Combatant as Mobile;
+			if (DateTime.Now >= m_NextSpeechTime)
+			{
+				Mobile combatant = this.Combatant as Mobile;
 
-                if (combatant != null && combatant.Map == this.Map && combatant.InRange(this, 8))
-                {
-                    int phrase = Utility.Random(4);
+				if (combatant != null && combatant.Map == this.Map && combatant.InRange(this, 8))
+				{
+					int phrase = Utility.Random(4);
 
-                    switch (phrase)
-                    {
-                        case 0: this.Say(true, "Get them, boys!"); break;
-                        case 1: this.Say(true, "Herd them into position!"); break;
-                        case 2: this.Say(true, "Don't let them escape!"); break;
-                        case 3: this.Say(true, "Keep them together!"); break;
-                    }
+					switch (phrase)
+					{
+						case 0: this.Say(true, "Get them, boys!"); break;
+						case 1: this.Say(true, "Herd them into position!"); break;
+						case 2: this.Say(true, "Don't let them escape!"); break;
+						case 3: this.Say(true, "Keep them together!"); break;
+					}
 
-                    m_NextSpeechTime = DateTime.Now + m_SpeechDelay;
-                }
-            }
+					m_NextSpeechTime = DateTime.Now + m_SpeechDelay;
+				}
+			}
 
-            if (Combatant != null && Combatant.Map == this.Map )
-            {
-                if (m_Dogs.Count < 3)
-                {
-                    SummonDog();
-                }
-            }
-        }
+			if (Combatant != null && Combatant.Map == this.Map)
+			{
+				if (m_Dogs == null)
+					m_Dogs = new ArrayList();
 
-        private void SummonDog()
-        {
-            Mobile dog = new Sheepdog();
-            dog.Combatant = this.Combatant;
+				if (m_Dogs.Count < 3)
+				{
+					SummonDog();
+				}
+			}
+		}
 
-            Point3D loc = this.Location;
-            Map map = this.Map;
+		private void SummonDog()
+		{
+			if (this.Combatant == null || this.Map == null)
+				return;
 
-            for (int i = 0; i < 10; ++i)
-            {
-                int x = loc.X + Utility.Random(3) - 1;
-                int y = loc.Y + Utility.Random(3) - 1;
-                int z = map.GetAverageZ(x, y);
+			Mobile dog = new Sheepdog();
+			dog.Combatant = this.Combatant;
 
-                if (map.CanFit(x, y, loc.Z, 16, false, false))
-                {
-                    loc = new Point3D(x, y, loc.Z);
-                    break;
-                }
-                else if (map.CanFit(x, y, z, 16, false, false))
-                {
-                    loc = new Point3D(x, y, z);
-                    break;
-                }
-            }
+			Point3D loc = this.Location;
+			Map map = this.Map;
 
-            dog.MoveToWorld(loc, map);
-            m_Dogs.Add(dog);
+			for (int i = 0; i < 10; ++i)
+			{
+				int x = loc.X + Utility.Random(3) - 1;
+				int y = loc.Y + Utility.Random(3) - 1;
+				int z = map.GetAverageZ(x, y);
 
-            dog.Combatant = this.Combatant;
-        }
+				if (map.CanFit(x, y, loc.Z, 16, false, false))
+				{
+					loc = new Point3D(x, y, loc.Z);
+					break;
+				}
+				else if (map.CanFit(x, y, z, 16, false, false))
+				{
+					loc = new Point3D(x, y, z);
+					break;
+				}
+			}
+		}
 
         public override void GenerateLoot()
         {
@@ -220,10 +222,11 @@ namespace Server.Mobiles
             writer.Write((int)0);
         }
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-        }
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = reader.ReadInt();
+
+		}
     }
 }

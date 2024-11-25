@@ -80,7 +80,7 @@ namespace Server.Mobiles
             {
                 Say("The path to treasure is filled with challenges and learning. Prove your 'dedication' and seek the 'reward'.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("treasure"))
             {
                 Say("Your reward is a token of your success. If you have shown sufficient 'dedication', you may claim it.");
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);

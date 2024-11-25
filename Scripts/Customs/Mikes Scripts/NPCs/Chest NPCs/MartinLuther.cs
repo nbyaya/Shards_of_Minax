@@ -60,7 +60,7 @@ namespace Server.Mobiles
             {
                 Say("The civil rights movement is a powerful chapter in our history. The story of those who fought for equality deserves to be remembered.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("equality"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

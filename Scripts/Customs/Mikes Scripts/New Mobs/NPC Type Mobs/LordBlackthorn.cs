@@ -16,6 +16,7 @@ namespace Server.Mobiles
             Body = 0x190; // Male model
             Name = " Blackthorn";
             Hue = 0x455;  // Shade of grey for Blackthorn
+			Team = Utility.RandomMinMax(1, 5);
             
             // Blackthorn's attire
             Item shoes = new Shoes(0); // Black shoes

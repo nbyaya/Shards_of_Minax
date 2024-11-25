@@ -17,6 +17,7 @@ namespace Server.Mobiles
             Body = 0x190; // male body
             Name = NameList.RandomName("male");
             Title = "the Knight of Justice";
+			Team = 3;
 
             // Equipment
             Item hair = new Item(Utility.RandomList(0x203B, 0x203C, 0x203D));

@@ -65,7 +65,7 @@ namespace Server.Mobiles
             {
                 Say("The Droid Workshop is where I create and repair droids. It is filled with various parts and schematics.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("schematics"))
             {
                 if (CheckRewardConditions(from))
                 {

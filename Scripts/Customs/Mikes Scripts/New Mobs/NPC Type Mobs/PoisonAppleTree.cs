@@ -15,6 +15,7 @@ namespace Server.Mobiles
             Body = 47; // Adjust the body to match a tree graphic
             BaseSoundID = 442; // Tree rustling sound
 			Hue = 2174; // Poison green color
+			Team = Utility.RandomMinMax(1, 5);
 
             SetStr(196, 250);
             SetDex(31, 45);

@@ -12,6 +12,7 @@ namespace Server.Mobiles
             this.Name = "an ettin";
             this.Body = 18;
             this.BaseSoundID = 367;
+			Team = 5;
 
             this.SetStr(136, 165);
             this.SetDex(56, 75);

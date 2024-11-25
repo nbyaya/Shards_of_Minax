@@ -14,6 +14,7 @@ namespace Server.Mobiles
         {
             Hue = 0x778; // Gargoyle hue.
             Body = 0x2F6; // Gargoyle body.
+			Team = Utility.RandomMinMax(1, 5);
 
             Name = "Graffiti Gargoyle";
             

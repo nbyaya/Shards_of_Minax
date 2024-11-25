@@ -28,7 +28,8 @@ namespace Server.Mobiles
 
 			Race = Race.Gargoyle;
 			Title = "the Gargish Rouser";
-			
+			Team = 5;
+		
 			SetStr(150);
 			SetInt(150);
 			SetDex(150);

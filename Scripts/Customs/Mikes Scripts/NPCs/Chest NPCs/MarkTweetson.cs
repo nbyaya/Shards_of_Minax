@@ -86,7 +86,7 @@ namespace Server.Mobiles
             {
                 Say("Always listen to feedback and adapt accordingly. If you're interested, I have a special reward for those who truly engage.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("feedback"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

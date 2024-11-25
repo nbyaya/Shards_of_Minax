@@ -14,6 +14,7 @@ namespace Server.Mobiles
         public DarkLord() : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = 0x497; // Dark hue for the DarkLord
+			Team = Utility.RandomMinMax(1, 5);
 
             Body = 0x190; // Male figure
             Name = "Dark Lord";

@@ -14,6 +14,7 @@ namespace Server.Mobiles
         {
             Body = 0x190; 
             Name = " British";
+			Team = Utility.RandomMinMax(1, 5);
 
             // Assigning suitable equipment and appearance to Lord British
             Hue = Utility.RandomSkinHue();

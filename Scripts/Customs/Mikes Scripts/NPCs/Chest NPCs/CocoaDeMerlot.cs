@@ -55,7 +55,7 @@ namespace Server.Mobiles
             {
                 Say("Sweets have a magical way of making life just a little bit better.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("magical"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

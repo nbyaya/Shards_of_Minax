@@ -104,7 +104,7 @@ namespace Server.Mobiles
             {
                 Say("Curiosity is the key to discovering magic and wonders. If you wish to see the chest, show me how curious you are about magic and candy.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("curious"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

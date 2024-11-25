@@ -57,7 +57,7 @@ namespace Server.Mobiles
             {
                 Say("Illusions are but reflections of one's desires and fears. They can reveal truths if one is perceptive.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("reflections"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

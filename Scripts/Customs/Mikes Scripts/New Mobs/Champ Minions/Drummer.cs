@@ -16,6 +16,7 @@ namespace Server.Mobiles
         public Drummer() : base(AIType.AI_Berserk, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = Utility.RandomSkinHue();
+			Team = 1;
 
             if (Female = Utility.RandomBool())
             {

@@ -20,6 +20,7 @@ namespace Server.Mobiles
 			Body = (( this.Female = Utility.RandomBool() ) ? Body = 0x191 : Body = 0x190);
 			
 			Hue = Utility.RandomSkinHue();
+			Team = 5;
 
 			SetStr( 326, 375 );
 			SetDex( 31, 45 );

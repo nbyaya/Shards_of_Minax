@@ -142,7 +142,7 @@ namespace Server.Mobiles
             {
                 Say("Choices define our path and reflect our true intentions. Choose wisely, and you will find yourself rewarded.");
             }
-            else if (speech.Contains("rewarded"))
+            else if (speech.Contains("reflect"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

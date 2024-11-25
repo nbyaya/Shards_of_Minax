@@ -16,6 +16,7 @@ namespace Server.Mobiles
             Body = 0x191; // Using a female model for the hag
             Name = "Green Hag";
             Hue = 0x4001; // A green hue
+			Team = Utility.RandomMinMax(1, 5);
             
             // Hag attire
             Item raggedDress = new Robe();

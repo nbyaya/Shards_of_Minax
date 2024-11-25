@@ -17,6 +17,7 @@ namespace Server.Mobiles
             Body = 0x190;
             Name = "Invisible Saboteur";
             Title = "the Saboteur";
+			Team = 1;
 
             Item hoodedShroud = new Item(0x2684);
             hoodedShroud.Hue = 0;

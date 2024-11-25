@@ -91,7 +91,7 @@ namespace Server.Mobiles
                 {
                     from.SendMessage("The gifts of the land are many. They are revealed to those who prove their respect.");
                 }
-                else if (speech.Contains("reward"))
+                else if (speech.Contains("respect"))
                 {
                     if (CheckRewardConditions(from))
                     {

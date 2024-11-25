@@ -15,6 +15,7 @@ namespace Server.Mobiles
             Hue = 0x841; // Silver-ish hue to resemble metal
 			Body = 0x191;
             Name = "Retro Robot Romancer";
+			Team = Utility.RandomMinMax(1, 5);
 			
 			Item jacket = new LeatherChest();
             Item jeans = new LongPants(Utility.RandomBlueHue());

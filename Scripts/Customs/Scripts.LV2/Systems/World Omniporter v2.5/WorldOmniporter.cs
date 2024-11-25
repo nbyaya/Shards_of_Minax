@@ -584,25 +584,25 @@ namespace Server.Items
 
 			GlobalEntries.Add("Felucca Dungeons", new OmniEntry[]
 			{
-			    new OmniEntry("Blighted Grove", new Point3D(586, 1643, -5), Map.Felucca ),
-				new OmniEntry("Covetous", new Point3D(2498, 921, 0), Map.Felucca ),
-				new OmniEntry("Daemon Temple", new Point3D(4591, 3647, 80), Map.Felucca ),
-				new OmniEntry("Deceit", new Point3D(4111, 434, 5), Map.Felucca ),
-				new OmniEntry("Despise", new Point3D(1301, 1080, 0), Map.Felucca ),
-				new OmniEntry("Destard", new Point3D(1176, 2640, 2), Map.Felucca ),
-				new OmniEntry("Fire", new Point3D(2923, 3409, 8), Map.Felucca ),
-				new OmniEntry("Hythloth", new Point3D(4721, 3824, 0), Map.Felucca ),
-				new OmniEntry("Ice", new Point3D(1999, 81, 4), Map.Felucca ),
-				new OmniEntry("Ophidian Temple", new Point3D(5766, 2634, 43), Map.Felucca ),
-				new OmniEntry("Orc Caves", new Point3D(1017, 1429, 0), Map.Felucca ),
-				new OmniEntry("Painted Caves", new Point3D(1716, 2993, 0), Map.Felucca ),
-				new OmniEntry("Paroxysmus", new Point3D(5569, 3019, 31), Map.Felucca ),
-				new OmniEntry("Prism of Light", new Point3D(3789, 1095, 20), Map.Felucca ),
-				new OmniEntry("Sanctuary", new Point3D(759, 1642, 0), Map.Felucca ),
-				new OmniEntry("Shame", new Point3D(511, 1565, 0), Map.Felucca ),
-				new OmniEntry("Solen Hive", new Point3D(2607, 763, 0), Map.Felucca ),
-				new OmniEntry("Terathan Keep", new Point3D(5451, 3143, -60), Map.Felucca ),
-				new OmniEntry("Wrong", new Point3D(2043, 238, 10), Map.Felucca )
+			    //new OmniEntry("Blighted Grove", new Point3D(586, 1643, -5), Map.Felucca ),
+				//new OmniEntry("Covetous", new Point3D(2498, 921, 0), Map.Felucca ),
+				//new OmniEntry("Daemon Temple", new Point3D(4591, 3647, 80), Map.Felucca ),
+				//new OmniEntry("Deceit", new Point3D(4111, 434, 5), Map.Felucca ),
+				//new OmniEntry("Despise", new Point3D(1301, 1080, 0), Map.Felucca ),
+				//new OmniEntry("Destard", new Point3D(1176, 2640, 2), Map.Felucca ),
+				//new OmniEntry("Fire", new Point3D(2923, 3409, 8), Map.Felucca ),
+				//new OmniEntry("Hythloth", new Point3D(4721, 3824, 0), Map.Felucca ),
+				//new OmniEntry("Ice", new Point3D(1999, 81, 4), Map.Felucca ),
+				//new OmniEntry("Ophidian Temple", new Point3D(5766, 2634, 43), Map.Felucca ),
+				//new OmniEntry("Orc Caves", new Point3D(1017, 1429, 0), Map.Felucca ),
+				//new OmniEntry("Painted Caves", new Point3D(1716, 2993, 0), Map.Felucca ),
+				//new OmniEntry("Paroxysmus", new Point3D(5569, 3019, 31), Map.Felucca ),
+				//new OmniEntry("Prism of Light", new Point3D(3789, 1095, 20), Map.Felucca ),
+				//new OmniEntry("Sanctuary", new Point3D(759, 1642, 0), Map.Felucca ),
+				//new OmniEntry("Shame", new Point3D(511, 1565, 0), Map.Felucca ),
+				//new OmniEntry("Solen Hive", new Point3D(2607, 763, 0), Map.Felucca ),
+				//new OmniEntry("Terathan Keep", new Point3D(5451, 3143, -60), Map.Felucca ),
+				//new OmniEntry("Wrong", new Point3D(2043, 238, 10), Map.Felucca )
 			});
 
 			GlobalEntries.Add("Public Moongates", new OmniEntry[]

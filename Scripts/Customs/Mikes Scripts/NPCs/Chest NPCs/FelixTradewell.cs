@@ -101,7 +101,7 @@ namespace Server.Mobiles
                     Say("The chest you seek is filled with trade goods. You must first prove your knowledge of commerce.");
                 }
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("prosperity"))
             {
                 if (spokeToAboutChest)
                 {

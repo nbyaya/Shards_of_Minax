@@ -13,6 +13,7 @@ namespace Server.Mobiles
             Name = "Greater Poison Elemental";
             Body = 162;
             BaseSoundID = 263;
+			Team = 2;
 
             Hue = 667;
 

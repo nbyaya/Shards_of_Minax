@@ -16,6 +16,8 @@ namespace Server.Mobiles
             Hue = 0; // Default hue
 
             Name = "Test Creature";
+			
+			Team = 1;
 
             SetStr(100);
             SetDex(100);
@@ -42,14 +44,10 @@ namespace Server.Mobiles
             ControlSlots = 1;
             MinTameSkill = 0;
 			
-			CanMove = false;
+			CanMove = true;
 
             // Attach the XmlAxeCircle attachment
-			XmlAttach.AttachTo(this, new XmlScorchedBite());
-			XmlAttach.AttachTo(this, new XmlFlameCoil());
-			XmlAttach.AttachTo(this, new XmlPhantomBurn());
-			XmlAttach.AttachTo(this, new XmlFireWalk());
-			XmlAttach.AttachTo(this, new XmlBlazingTrail());
+			XmlAttach.AttachTo(this, new XmlRandomAbility());
 
 
 

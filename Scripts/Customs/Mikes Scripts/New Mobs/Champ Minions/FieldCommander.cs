@@ -19,6 +19,7 @@ namespace Server.Mobiles
             Body = Utility.RandomBool() ? 0x190 : 0x191;
             Name = NameList.RandomName(Body == 0x190 ? "male" : "female");
             Title = " the Field Commander";
+			Team = 2;
 
             Item helmet = new PlateHelm();
             Item chest = new PlateChest();

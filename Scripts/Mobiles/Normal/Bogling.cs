@@ -13,6 +13,7 @@ namespace Server.Mobiles
             Name = "a bogling";
             Body = 779;
             BaseSoundID = 422;
+			Team = 3;
 
             SetStr(96, 120);
             SetDex(91, 115);

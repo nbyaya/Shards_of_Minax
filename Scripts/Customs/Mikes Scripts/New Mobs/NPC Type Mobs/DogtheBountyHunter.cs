@@ -16,6 +16,7 @@ namespace Server.Mobiles
             Hue = Utility.RandomSkinHue();
             Body = 0x190;
             Name = "Dog the Bounty Hunter";
+			Team = Utility.RandomMinMax(1, 5);
 
             Item jeans = new LongPants(Utility.RandomBlueHue());
             Item shirt = new Shirt(Utility.RandomNeutralHue());

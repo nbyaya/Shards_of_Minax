@@ -12,6 +12,7 @@ namespace Server.Mobiles
             Name = NameList.RandomName("ancient lich");
             Body = 78;
             BaseSoundID = 412;
+			Team = 4;
 
             SetStr(216, 305);
             SetDex(96, 115);

@@ -54,7 +54,7 @@ namespace Server.Mobiles
                     case "burger":
                         from.SendMessage("Our burgers are legendary. Don’t forget to try our special sauce!");
                         break;
-                    case "reward":
+                    case "sauce":
                         if (CheckRewardConditions(from))
                         {
                             GiveReward(from);

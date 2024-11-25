@@ -109,7 +109,7 @@ namespace Server.Mobiles
             {
                 Say("You got it! My chest is filled with epic '90s treasures. Prove your '90s knowledge and get a reward!");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("knowledge"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

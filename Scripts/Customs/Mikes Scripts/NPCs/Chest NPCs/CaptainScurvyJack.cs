@@ -61,7 +61,7 @@ namespace Server.Mobiles
             {
                 Say("The seas be a wild and unforgiving place. Ye best be prepared for what lies beyond the horizon.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("horizon"))
             {
                 if (!m_RewardGiven)
                 {

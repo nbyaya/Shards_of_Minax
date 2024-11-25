@@ -104,7 +104,7 @@ namespace Server.Mobiles
             {
                 Say("The essence of the Tang Dynasty is found in its culture and achievements. If you grasp this, you will be ready for the reward.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("achievements"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

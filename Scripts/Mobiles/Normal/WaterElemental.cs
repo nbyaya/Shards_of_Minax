@@ -18,6 +18,7 @@ namespace Server.Mobiles
             this.Name = "a water elemental";
             this.Body = 16;
             this.BaseSoundID = 278;
+			Team = 2;
 
             this.SetStr(126, 155);
             this.SetDex(66, 85);

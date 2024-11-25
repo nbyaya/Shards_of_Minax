@@ -15,6 +15,7 @@ namespace Server.Mobiles
         {
             Hue = Utility.RandomList(1150, 1153, 1175); // shiny and sparkling hues
             Body = 0x190; // human male form by default
+			Team = Utility.RandomMinMax(1, 5);
 
             if (Female = Utility.RandomBool())
             {

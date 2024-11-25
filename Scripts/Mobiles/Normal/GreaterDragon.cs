@@ -13,6 +13,7 @@ namespace Server.Mobiles
             Name = "a greater dragon";
             Body = Utility.RandomList(12, 59);
             BaseSoundID = 362;
+			Team = 3;
 
             SetStr(1025, 1425);
             SetDex(81, 148);

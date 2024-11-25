@@ -160,7 +160,7 @@ namespace Server.Mobiles
                     Say("Discoveries are made by those who dare to explore the unknown.");
                 }
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("unknown"))
             {
                 if (hasMentionedHidden)
                 {

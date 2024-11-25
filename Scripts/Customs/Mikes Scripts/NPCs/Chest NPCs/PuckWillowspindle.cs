@@ -95,7 +95,7 @@ namespace Server.Mobiles
             {
                 Say("Unlocking hidden realms requires both belief and determination. If you have both, then you are ready for a special reward.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("realms"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

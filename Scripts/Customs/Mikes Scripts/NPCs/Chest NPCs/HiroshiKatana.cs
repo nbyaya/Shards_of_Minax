@@ -90,7 +90,7 @@ namespace Server.Mobiles
             {
                 Say("Trials test one's resolve and character. Through these trials, one earns their place among the samurai. Do you seek a reward for your dedication?");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("samurai"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

@@ -16,6 +16,7 @@ namespace Server.Mobiles
         {
             // Set the skin hue to a dark color, typical of dark elves
             Hue = 0x840; // You may need to adjust this depending on your shard's hue for dark elf skin
+			Team = Utility.RandomMinMax(1, 5);
 
             // Adjust the body value if your server has specific ones for elves
             if (Female = Utility.RandomBool())

@@ -71,7 +71,7 @@ namespace Server.Mobiles
             {
                 Say("Prove your worth by seeking the wisdom of the ancients and the valor of your heart.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("heart"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

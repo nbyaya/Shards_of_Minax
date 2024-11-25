@@ -17,6 +17,7 @@ namespace Server.Mobiles
             Hue = 2406; // Set to a metallic hue
             Body = 0x190; // Male body type
             Name = "an Iron Smith";
+			Team = 5;
 
             // Equip the Iron Smith
             Item apron = new FullApron();

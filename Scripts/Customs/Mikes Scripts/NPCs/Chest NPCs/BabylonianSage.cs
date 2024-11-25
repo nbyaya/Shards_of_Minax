@@ -60,7 +60,7 @@ namespace Server.Mobiles
                     case "wisdom":
                         from.SendMessage("Wisdom is the greatest treasure of all. It guides us through life and illuminates the path forward.");
                         break;
-                    case "reward":
+                    case "illuminates":
                         if (CheckRewardConditions(from))
                         {
                             GiveReward(from);

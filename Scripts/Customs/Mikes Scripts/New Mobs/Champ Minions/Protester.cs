@@ -14,6 +14,7 @@ namespace Server.Mobiles
         public Protester() : base(AIType.AI_Melee, FightMode.Aggressor, 10, 1, 0.2, 0.4)
         {
             Hue = Utility.RandomSkinHue();
+			Team = 3;
 
             if (Female = Utility.RandomBool())
             {

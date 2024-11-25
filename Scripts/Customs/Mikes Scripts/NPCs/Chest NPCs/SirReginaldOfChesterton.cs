@@ -163,7 +163,7 @@ namespace Server.Mobiles
             {
                 Say("Success is the culmination of hard work and perseverance. It is often the reward of those who strive.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("strive"))
             {
                 Say("A reward is given for your efforts and achievements. For your bravery and perseverance, I present to you the chest of Medieval England. May it serve you well!");
                 if (DateTime.UtcNow - lastRewardTime > TimeSpan.FromMinutes(10))

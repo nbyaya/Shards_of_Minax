@@ -16,6 +16,7 @@ namespace Server.Mobiles
 
             Body = 0x191; // Female body
             Name = "Mushroom Witch";
+			Team = Utility.RandomMinMax(1, 5);
             
             // Witch clothing and gear
             AddItem( new Robe(Utility.RandomNeutralHue()) );

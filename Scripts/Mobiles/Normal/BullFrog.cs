@@ -14,6 +14,7 @@ namespace Server.Mobiles
             Body = 81;
             Hue = Utility.RandomList(0x5AC, 0x5A3, 0x59A, 0x591, 0x588, 0x57F);
             BaseSoundID = 0x266;
+			Team = 3;
 
             SetStr(46, 70);
             SetDex(6, 25);

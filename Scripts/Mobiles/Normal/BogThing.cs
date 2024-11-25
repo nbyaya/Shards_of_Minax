@@ -13,6 +13,7 @@ namespace Server.Mobiles
         {
             this.Name = "a bog thing";
             this.Body = 780;
+			Team = 3;
 
             this.SetStr(801, 900);
             this.SetDex(46, 65);

@@ -14,6 +14,7 @@ namespace Server.Mobiles
             this.Body = 807;
             this.BaseSoundID = 959;
             this.Hue = 0x453;
+			Team = 3;
 
             this.SetStr(326, 350);
             this.SetDex(141, 165);

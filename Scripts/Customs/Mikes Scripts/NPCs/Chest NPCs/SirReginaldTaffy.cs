@@ -61,7 +61,7 @@ namespace Server.Mobiles
                 {
                     Say("Carnival cheer is infectious! It’s the spirit of joy and celebration that fills the air with magic.");
                 }
-                else if (speech.Contains("reward"))
+                else if (speech.Contains("infectious"))
                 {
                     if (CheckRewardConditions(from))
                     {

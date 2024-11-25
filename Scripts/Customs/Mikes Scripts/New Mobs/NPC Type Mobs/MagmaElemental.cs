@@ -16,6 +16,7 @@ namespace Server.Mobiles
             this.SetStr(200);
             this.SetDex(200);
             this.SetInt(100);
+			Team = Utility.RandomMinMax(1, 5);
             
             this.SetHits(150);
             

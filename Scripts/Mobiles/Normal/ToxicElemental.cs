@@ -12,6 +12,7 @@ namespace Server.Mobiles
             this.Name = "an acid elemental";
             this.Body = 0x9E;
             this.BaseSoundID = 278;
+			Team = 2;
 
             this.SetStr(326, 355);
             this.SetDex(66, 85);

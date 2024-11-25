@@ -13,6 +13,7 @@ namespace Server.Mobiles
             Name = "an abyssmal horror";
             Body = 312;
             BaseSoundID = 0x451;
+			Team = 1;
 
             SetStr(401, 420);
             SetDex(81, 90);

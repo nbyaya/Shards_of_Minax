@@ -119,7 +119,7 @@ namespace Server.Mobiles
             {
                 Say("Actions speak louder than words. Show me your actions, and you may earn the reward.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("louder"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

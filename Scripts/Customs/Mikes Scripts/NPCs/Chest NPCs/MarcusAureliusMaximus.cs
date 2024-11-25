@@ -124,7 +124,7 @@ namespace Server.Mobiles
             {
                 Say("To be prepared is to be wise. If you have followed my guidance, you are now ready for the final reward.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("guidance"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

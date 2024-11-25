@@ -142,6 +142,7 @@ namespace Server.Mobiles
 			hair.Hue = Utility.RandomHairHue();
 			hair.Layer = Layer.Hair;
 			hair.Movable = false;
+			Team = 2;
 
 			Item sword;
 			if ( Utility.RandomBool() )

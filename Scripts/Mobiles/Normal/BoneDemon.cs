@@ -12,6 +12,7 @@ namespace Server.Mobiles
             Name = "a bone demon";
             Body = 308;
             BaseSoundID = 0x48D;
+			Team = 1;
 
             SetStr(1000);
             SetDex(151, 175);

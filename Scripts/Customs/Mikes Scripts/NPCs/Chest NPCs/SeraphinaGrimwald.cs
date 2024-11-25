@@ -73,7 +73,7 @@ namespace Server.Mobiles
             {
                 Say("Mysteries of the arcane are best approached with caution. Only the pure of heart may uncover their truths.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("uncover"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

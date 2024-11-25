@@ -74,7 +74,7 @@ namespace Server.Mobiles
             {
                 Say("Achieving the high score is the ultimate goal. It takes skill, patience, and a bit of luck.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("ultimate"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

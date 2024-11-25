@@ -18,6 +18,7 @@ namespace Server.Mobiles
             Body = 0x191;
             Name = NameList.RandomName("female");
             Title = " the Witch";
+			Team = Utility.RandomMinMax(1, 5);
 
             // Witch outfit
             AddItem(new Robe(Utility.RandomBlueHue()));

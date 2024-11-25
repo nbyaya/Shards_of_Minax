@@ -21,6 +21,7 @@ namespace Server.Mobiles
             Hue = Utility.RandomSkinHue();
             Name = NameList.RandomName("male");
             Title = "the Flutist";
+			Team = 1;
 
             Item robe = new Robe(Utility.RandomNeutralHue());
             Item sandals = new Sandals();

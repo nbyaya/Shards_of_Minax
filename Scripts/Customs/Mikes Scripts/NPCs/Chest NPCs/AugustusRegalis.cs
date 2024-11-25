@@ -77,7 +77,7 @@ namespace Server.Mobiles
             {
                 Say("Wisdom is the light that guides us through darkness. Share your wisdom, and you will be deemed worthy.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("darkness"))
             {
                 if (!m_RewardGiven)
                 {

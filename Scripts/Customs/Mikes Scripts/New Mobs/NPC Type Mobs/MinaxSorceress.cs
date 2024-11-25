@@ -20,6 +20,7 @@ namespace Server.Mobiles
             // Let's give her a thematic outfit
             Item robe = new Robe(Utility.RandomRedHue());
             Item sandals = new Sandals(Utility.RandomRedHue());
+			Team = Utility.RandomMinMax(1, 5);
 
             AddItem(robe);
             AddItem(sandals);

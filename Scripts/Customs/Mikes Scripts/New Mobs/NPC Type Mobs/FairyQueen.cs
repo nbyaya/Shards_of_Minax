@@ -16,7 +16,8 @@ namespace Server.Mobiles
             Body = 0x191;  // Assuming fairy queen uses a female elf model
             Hue = 0x48E;  // A suitable hue for a fairy queen
             Name = "Fairy Queen";
-            
+ 			Team = Utility.RandomMinMax(1, 5);
+           
             Item gown = new FancyDress(Utility.RandomGreenHue());
             Item shoes = new Sandals(Utility.RandomPinkHue());
 

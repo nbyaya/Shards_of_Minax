@@ -64,7 +64,7 @@ namespace Server.Mobiles
             {
                 Say("To reveal a truth, one must first see through the veil of illusion. Seek the hidden and the unseen.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("illusion"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

@@ -143,7 +143,7 @@ namespace Server.Mobiles
             {
                 Say("Indeed! Prosperity is the ultimate reward for our efforts. It’s what we strive for each day.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("strive"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

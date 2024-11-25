@@ -14,6 +14,7 @@ namespace Server.Mobiles
             this.Name = "an orcish mage";
             this.Body = 140;
             this.BaseSoundID = 0x45A;
+			Team = 5;
 
             this.SetStr(116, 150);
             this.SetDex(91, 115);

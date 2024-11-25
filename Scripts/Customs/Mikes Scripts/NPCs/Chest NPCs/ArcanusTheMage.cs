@@ -68,7 +68,7 @@ namespace Server.Mobiles
             {
                 Say("Artifacts of great power are hidden throughout this land. One such treasure is the Arcane Treasure Chest.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("hidden"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

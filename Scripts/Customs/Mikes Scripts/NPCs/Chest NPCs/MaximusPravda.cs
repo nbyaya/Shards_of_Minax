@@ -71,7 +71,7 @@ namespace Server.Mobiles
             {
                 Say("Justice is the light that guides us through the darkness. It ensures fairness and equality for all.");
             }
-            else if (speech.Contains("rewards"))
+            else if (speech.Contains("fairness"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - m_LastRewardTime < cooldown)

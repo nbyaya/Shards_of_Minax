@@ -13,6 +13,7 @@ namespace Server.Mobiles
         public SteampunkSamurai() : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = Utility.RandomSkinHue();
+			Team = Utility.RandomMinMax(1, 5);
 
             if (Female = Utility.RandomBool())
             {

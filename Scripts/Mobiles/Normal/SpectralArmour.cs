@@ -12,6 +12,7 @@ namespace Server.Mobiles
             this.Body = 637; 
             this.Hue = 0x8026; 
             this.Name = "spectral armour"; 
+			Team = 4;
 
             Buckler buckler = new Buckler();
             ChainCoif coif = new ChainCoif();

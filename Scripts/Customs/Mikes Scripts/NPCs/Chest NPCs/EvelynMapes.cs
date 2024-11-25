@@ -79,7 +79,7 @@ namespace Server.Mobiles
             {
                 Say("The secrets of the world are often hidden in plain sight. Seek and you shall find.");
             }
-            else if (speech.Contains("explorer's legacy"))
+            else if (speech.Contains("legacy"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

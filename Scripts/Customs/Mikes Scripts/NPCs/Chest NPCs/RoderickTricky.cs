@@ -102,7 +102,7 @@ namespace Server.Mobiles
             {
                 Say("Ah, you do understand. For your perseverance and wit, you are ready for the final step. Speak to me now of the reward you seek.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("step"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

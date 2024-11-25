@@ -151,7 +151,7 @@ namespace Server.Mobiles
             {
                 Say("Growth in swordsmanship is both physical and mental, reflecting the continuous development of skill and understanding.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("understanding"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

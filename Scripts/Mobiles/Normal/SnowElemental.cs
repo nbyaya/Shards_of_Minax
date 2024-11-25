@@ -13,6 +13,7 @@ namespace Server.Mobiles
             Name = "a snow elemental";
             Body = 163;
             BaseSoundID = 263;
+			Team = 2;
 
             SetStr(326, 355);
             SetDex(166, 185);

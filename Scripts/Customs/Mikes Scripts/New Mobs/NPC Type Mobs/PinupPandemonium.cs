@@ -16,6 +16,7 @@ namespace Server.Mobiles
             Female = true; // Always female
             Body = 0x191;
             Hue = Utility.RandomSkinHue();
+			Team = Utility.RandomMinMax(1, 5);
 
             Name = "Pinup Pandemonium";
             Title = "the 50s Menace";

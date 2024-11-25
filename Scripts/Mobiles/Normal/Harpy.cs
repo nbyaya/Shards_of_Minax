@@ -12,6 +12,7 @@ namespace Server.Mobiles
             this.Name = "a harpy";
             this.Body = 30;
             this.BaseSoundID = 402;
+			Team = 5;
 
             this.SetStr(96, 120);
             this.SetDex(86, 110);

@@ -14,6 +14,7 @@ namespace Server.Mobiles
 
             Name = "an orc brute";
             BaseSoundID = 0x45A;
+			Team = 5;
 
             SetStr(767, 945);
             SetDex(66, 75);

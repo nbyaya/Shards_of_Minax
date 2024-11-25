@@ -13,6 +13,7 @@ namespace Server.Mobiles
             this.Name = "a wyvern";
             this.Body = 62;
             this.BaseSoundID = 362;
+			Team = 3;
 
             this.SetStr(202, 240);
             this.SetDex(153, 172);

@@ -16,6 +16,7 @@ namespace Server.Mobiles
         {
             // Forest Ranger's appearance
             Hue = Utility.RandomSkinHue(); // More human-like skin tones
+			Team = Utility.RandomMinMax(1, 5);
 
             // Adjust the body value for humans if your server has different body values
             if (Female = Utility.RandomBool())

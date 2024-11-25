@@ -67,7 +67,7 @@ namespace Server.Mobiles
                 {
                     from.SendMessage("Treasure is not just gold and jewels, but the wisdom and stories it holds.");
                 }
-                else if (speech.Contains("reward"))
+                else if (speech.Contains("jewels"))
                 {
                     if (CheckRewardConditions(from))
                     {

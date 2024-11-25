@@ -69,7 +69,7 @@ namespace Server.Mobiles
             {
                 Say("Bravery is not the absence of fear, but the will to overcome it. If you are brave, you may find a reward.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("absence"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

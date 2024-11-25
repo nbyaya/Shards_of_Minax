@@ -14,6 +14,7 @@ namespace Server.Mobiles
 		public RaveRogue() : base( AIType.AI_Thief, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
             Hue = Utility.RandomBlueHue();
+			Team = Utility.RandomMinMax(1, 5);
             
             if ( Female = Utility.RandomBool() )
 			{

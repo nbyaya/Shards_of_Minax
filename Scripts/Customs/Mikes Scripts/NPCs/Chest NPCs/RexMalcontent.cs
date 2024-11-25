@@ -111,7 +111,7 @@ namespace Server.Mobiles
             {
                 Say("It takes dedication and bravery. If you’ve proven yourself, then you’re one step closer to the reward.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("dedication"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

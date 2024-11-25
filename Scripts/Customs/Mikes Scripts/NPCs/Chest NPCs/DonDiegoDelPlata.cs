@@ -70,7 +70,7 @@ namespace Server.Mobiles
             {
                 Say("Courage is not the absence of fear, but the triumph over it. Your words show you have it.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("absence"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

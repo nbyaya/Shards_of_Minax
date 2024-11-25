@@ -15,6 +15,7 @@ namespace Server.Mobiles
         public BaroqueBarbarian() : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.5)
         {
             Hue = Utility.RandomSkinHue();
+			Team = Utility.RandomMinMax(1, 5);
 
             if (Female = Utility.RandomBool())
             {

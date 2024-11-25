@@ -93,7 +93,7 @@ namespace Server.Mobiles
                 {
                     from.SendMessage("Success in fencing is achieved through a combination of talent, practice, and perseverance.");
                 }
-                else if (speech.Contains("reward"))
+                else if (speech.Contains("talent"))
                 {
                     if (CheckRewardConditions(from))
                     {

@@ -63,7 +63,7 @@ namespace Server.Mobiles
             {
                 Say("The relics are enchanted by the old gods, each holding a part of the ancient lore. Seek them with a pure heart.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("enchanted"))
             {
                 if (CheckRewardConditions(from))
                 {

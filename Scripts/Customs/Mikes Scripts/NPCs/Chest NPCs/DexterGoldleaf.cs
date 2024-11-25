@@ -102,7 +102,7 @@ namespace Server.Mobiles
             {
                 Say("Excellent! Your preparation shows. Now, to claim the Smuggler's Cache, you need to demonstrate your understanding. Are you ready to receive your reward?");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("understanding"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

@@ -14,6 +14,7 @@ namespace Server.Mobiles
         {
             Hue = 0x83E; // Fungi typically have brown hues, so let's go with that for now.
 			Body = 0x191;
+			Team = Utility.RandomMinMax(1, 5);
 
             // Randomly generating a name for the mushroom spirit.
             Name = NameList.RandomName("male");

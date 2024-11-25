@@ -134,7 +134,7 @@ namespace Server.Mobiles
             {
                 Say("The end of your journey brings reward. You have shown great dedication and resolve.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("dedication"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

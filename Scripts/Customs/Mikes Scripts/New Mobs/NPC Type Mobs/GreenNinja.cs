@@ -16,6 +16,7 @@ namespace Server.Mobiles
         {
             // Setting the hue to a green color to fit the ninja theme
             Hue = 0x851;
+			Team = 3;
 
             // Setting the body to human, ninjas are typically human
             Body = 0x190; // Use 0x191 for a female ninja
@@ -24,11 +25,8 @@ namespace Server.Mobiles
             Title = "the Silent Blade";
 
             // Dressing the ninja in a green ninja outfit
-            AddItem(new NinjaTabi(0x851)); // Green ninja sandals
-            AddItem(new LeatherNinjaHood(0x851)); // Green ninja hood
-            AddItem(new LeatherNinjaJacket(0x851)); // Green ninja jacket
-            AddItem(new LeatherNinjaPants(0x851)); // Green ninja pants
-            AddItem(new LeatherNinjaBelt(0x851)); // Green ninja belt
+            AddItem(new Robe(0x851)); // Green ninja sandals
+
 
             // Defining stats for a green ninja, focused on dexterity and agility
             SetStr(700, 850);

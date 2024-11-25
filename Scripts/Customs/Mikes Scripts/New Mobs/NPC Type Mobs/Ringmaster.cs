@@ -15,6 +15,7 @@ namespace Server.Mobiles
             Hue = Utility.RandomSkinHue();
             Body = 0x190; 
             Name = "Ringmaster";
+			Team = Utility.RandomMinMax(1, 5);
             
             Item trousers = new LongPants(Utility.RandomRedHue());
             Item shirt = new FancyShirt(Utility.RandomNeutralHue());

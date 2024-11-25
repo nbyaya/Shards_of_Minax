@@ -44,6 +44,7 @@ namespace Server.Mobiles
                 Body = 0x191; // Female
                 Name = NinjaNames.Female[Utility.Random(NinjaNames.Female.Length)];
             }
+			Team = Utility.RandomMinMax(1, 5);
 
             // Ninja outfit
             AddItem(new Kasa());

@@ -90,7 +90,7 @@ namespace Server.Mobiles
             {
                 Say("Hidden treasures are the lifeblood of a thief’s existence. They are the ultimate reward for those who seek.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("ultimate"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

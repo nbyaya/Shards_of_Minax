@@ -132,7 +132,7 @@ namespace Server.Mobiles
             {
                 Say("Fulfillment comes from living a life of honor and adhering to the principles of Bushido. It is a reward in itself.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("principles"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

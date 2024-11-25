@@ -13,6 +13,7 @@ namespace Server.Mobiles
             Name = NameList.RandomName("pixie");
             Body = 128;
             BaseSoundID = 0x467;
+			Team = 5;
 
             SetStr(21, 30);
             SetDex(301, 400);

@@ -64,7 +64,7 @@ namespace Server.Mobiles
             {
                 Say("Recipes are a brewer’s secret! But I’ll share this: always use fresh ingredients.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("secret"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

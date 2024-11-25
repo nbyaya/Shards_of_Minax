@@ -19,6 +19,7 @@ namespace Server.Mobiles
             Name = "InfernoDragon";
             Body = 49; // Adjust to appropriate dragon model
             BaseSoundID = 362;
+			Team = Utility.RandomMinMax(1, 5);
 
             // Your stats, skills, and resistances configuration here
 

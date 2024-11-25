@@ -16,6 +16,7 @@ namespace Server.Mobiles
             Hue = Utility.RandomSkinHue();
             Body = Utility.RandomList(0x9, 0x10);
             Name = "a Patchwork Monster";
+			Team = 3;
 
             SetStr(900, 1400);
             SetDex(150, 300);

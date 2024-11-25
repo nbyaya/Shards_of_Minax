@@ -63,7 +63,7 @@ namespace Server.Mobiles
                 {
                     from.SendMessage("Prove yourself by learning about the Byzantine culture and history. Only then will you earn a reward.");
                 }
-                else if (speech.Contains("reward"))
+                else if (speech.Contains("history"))
                 {
                     if (CheckRewardConditions(from))
                     {

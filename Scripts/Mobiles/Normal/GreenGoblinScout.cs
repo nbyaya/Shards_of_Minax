@@ -15,6 +15,7 @@ namespace Server.Mobiles
 			Name = "a green goblin scout";
 			Body = 723;
 			BaseSoundID = 0x600;
+			Team = 5;
 
 			SetStr(276, 309);
 			SetDex(65, 79);

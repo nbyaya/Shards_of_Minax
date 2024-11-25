@@ -67,7 +67,7 @@ namespace Server.Mobiles
             {
                 Say("The Confederation was a grand alliance, forged in unity and strength. It is honored here.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("alliance"))
             {
                 if (CheckRewardConditions(from))
                 {

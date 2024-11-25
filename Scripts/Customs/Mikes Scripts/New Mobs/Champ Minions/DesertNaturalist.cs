@@ -16,6 +16,7 @@ namespace Server.Mobiles
         {
             Hue = Utility.RandomSkinHue();
             Title = "the Naturalist";
+			Team = 2;
 
             Body = Utility.RandomBool() ? 0x191 : 0x190; // Female or Male
             Name = NameList.RandomName(Body == 0x191 ? "female" : "male");

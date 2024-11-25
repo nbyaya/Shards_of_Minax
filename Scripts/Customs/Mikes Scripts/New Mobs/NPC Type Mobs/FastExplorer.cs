@@ -17,6 +17,7 @@ namespace Server.Mobiles
 			Name = "Fast Explorer";
 			Body = 400; // Adjust this as needed to fit the desired appearance
 			BaseSoundID = 367;
+			Team = Utility.RandomMinMax(1, 5);
 
 			SetStr(100);
 			SetDex(150);

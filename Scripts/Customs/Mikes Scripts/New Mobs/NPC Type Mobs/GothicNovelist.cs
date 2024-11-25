@@ -16,6 +16,8 @@ namespace Server.Mobiles
         public GothicNovelist() : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = 0x497;
+			Team = Utility.RandomMinMax(1, 5);
+
             if (Female = Utility.RandomBool())
             {
                 Body = 0x191;

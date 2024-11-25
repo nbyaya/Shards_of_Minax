@@ -121,7 +121,7 @@ namespace Server.Mobiles
             {
                 Say("Unlocking the chest requires both wit and humor. Prove your playful spirit!");
             }
-            else if (speech.Contains("wit and humor"))
+            else if (speech.Contains("playful"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

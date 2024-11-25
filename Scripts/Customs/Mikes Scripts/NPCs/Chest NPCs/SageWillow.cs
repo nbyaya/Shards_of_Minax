@@ -95,7 +95,7 @@ namespace Server.Mobiles
                 {
                     from.SendMessage("The truth is a reflection of our journey. Prove your worth and claim your prize.");
                 }
-                else if (speech.Contains("reward"))
+                else if (speech.Contains("prize"))
                 {
                     if (CheckRewardConditions(from))
                     {

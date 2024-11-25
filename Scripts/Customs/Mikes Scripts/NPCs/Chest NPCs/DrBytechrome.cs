@@ -54,7 +54,7 @@ namespace Server.Mobiles
             {
                 Say("Cybernetics represent the fusion of machine and biology, advancing the limits of both.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("fusion"))
             {
                 if (CheckRewardConditions(from))
                 {

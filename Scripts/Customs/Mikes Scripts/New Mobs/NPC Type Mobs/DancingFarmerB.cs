@@ -16,6 +16,7 @@ namespace Server.Mobiles
             Hue = Utility.RandomSkinHue();
             Body = 0x190; // Human male
             Name = "Dancing Farmer";
+			Team = Utility.RandomMinMax(1, 5);
 
             AddItem(new StrawHat());
             AddItem(new Shirt(Utility.RandomBlueHue()));

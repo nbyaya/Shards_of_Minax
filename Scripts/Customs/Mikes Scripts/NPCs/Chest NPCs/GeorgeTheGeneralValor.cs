@@ -91,7 +91,7 @@ namespace Server.Mobiles
             {
                 Say("Overcoming challenges shows true valor. If you have faced such challenges, tell me about them, and you may receive a special reward.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("special"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

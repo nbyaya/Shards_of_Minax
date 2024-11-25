@@ -48,6 +48,7 @@ namespace Server.Mobiles
         {               
             Name = "a golem";
             Body = 752;
+			Team = 2;
 
             SetStr((int)(251 * scalar), (int)(350 * scalar));
             SetDex((int)(76 * scalar), (int)(100 * scalar));

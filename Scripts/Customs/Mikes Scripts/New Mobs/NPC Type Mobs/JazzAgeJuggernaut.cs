@@ -17,6 +17,7 @@ namespace Server.Mobiles
         {
             Name = "JazzAgeJuggernaut";
             Body = 0x1; // Ogre body, you might want to replace this with the appropriate giant body
+			Team = Utility.RandomMinMax(1, 5);
             
             Item saxophone = new Doublet(Utility.RandomRedHue()); // Placeholder, replace with a saxophone item if available
             saxophone.Name = "Enchanted Saxophone";

@@ -17,6 +17,7 @@ namespace Server.Mobiles
             Body = 0x190; // male body
             Name = "Silent Movie Monk";
             Title = "the Silent";
+			Team = Utility.RandomMinMax(1, 5);
 
             AddItem(new Robe(Utility.RandomNeutralHue())); // Robe for the monk
             AddItem(new Sandals(Utility.RandomNeutralHue())); // Sandals for a more monk-like appearance

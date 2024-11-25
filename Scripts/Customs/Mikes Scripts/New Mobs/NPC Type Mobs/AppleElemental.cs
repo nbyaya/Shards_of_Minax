@@ -11,6 +11,7 @@ namespace Server.Mobiles
         {
             this.Name = "an Apple Elemental";
             this.Body = 752; // Adjust the body to fit an elemental visual you prefer
+			Team = Utility.RandomMinMax(1, 5);
             
             this.SetStr(200);
             this.SetDex(200);

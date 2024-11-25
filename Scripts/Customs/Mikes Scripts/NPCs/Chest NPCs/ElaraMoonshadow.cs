@@ -75,7 +75,7 @@ namespace Server.Mobiles
             {
                 Say("The virtues guide our actions and shape our destiny. Reflect upon them, and you may earn a reward.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("destiny"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

@@ -14,6 +14,7 @@ namespace Server.Custom
             Name = "a SilverSlime";
             Body = 51;
             BaseSoundID = 456;
+			Team = Utility.RandomMinMax(1, 5);
 
             SetStr(22, 34);
             SetDex(16, 21);

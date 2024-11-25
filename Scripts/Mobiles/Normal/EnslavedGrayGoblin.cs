@@ -13,6 +13,7 @@ namespace Server.Mobiles
             Name = "Enslaved Gray Goblin";
             Body = 334;
             BaseSoundID = 0x600;
+			Team = 4;
 
             SetStr(321, 321);
             SetDex(64, 64);

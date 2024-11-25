@@ -16,6 +16,7 @@ namespace Server.Mobiles
         {
             // Setting the hue to a blue color to fit the water theme
             Hue = 0x5B6;
+			Team = Utility.RandomMinMax(1, 5);
 
             // Setting the body to human, ninjas are typically human
             Body = 0x190; // Use 0x191 for a female ninja

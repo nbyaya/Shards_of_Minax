@@ -13,6 +13,7 @@ namespace Server.Mobiles
             this.Name = "a reaper";
             this.Body = 47;
             this.BaseSoundID = 442;
+			Team = 4;
 
             this.SetStr(66, 215);
             this.SetDex(66, 75);

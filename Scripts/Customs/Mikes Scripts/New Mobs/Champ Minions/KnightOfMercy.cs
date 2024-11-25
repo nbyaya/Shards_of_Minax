@@ -17,6 +17,7 @@ namespace Server.Mobiles
             Hue = Utility.RandomSkinHue();
             Body = 0x190;
             Name = "Knight of Mercy";
+			Team = 2;
 
             if (Female = Utility.RandomBool())
             {

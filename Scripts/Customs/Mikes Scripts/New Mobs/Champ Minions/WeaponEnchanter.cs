@@ -51,6 +51,8 @@ namespace Server.Mobiles
 
             SetDamage(5, 10);
 
+			Team = 1;
+
             SetDamageType(ResistanceType.Physical, 100);
 
             SetResistance(ResistanceType.Physical, 50, 60);

@@ -25,6 +25,7 @@ namespace Server.Mobiles
 
             Title = "the brigand";
             Hue = Race.RandomSkinHue();
+			Team = 5;
 
             SetStr(86, 100);
             SetDex(81, 95);

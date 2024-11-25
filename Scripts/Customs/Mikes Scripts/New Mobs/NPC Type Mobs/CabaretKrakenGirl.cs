@@ -16,6 +16,7 @@ namespace Server.Mobiles
             Body = 0x191;
             Name = "Mystic Kraken Dancer";
             Title = "of the Deep";
+			Team = Utility.RandomMinMax(1, 5);
 
             // Tentacle accessories, hat, and attire for the Cabaret performer
             AddItem(new StrawHat()); // This is a fictional item. You may replace it with any existing item or create a new one.

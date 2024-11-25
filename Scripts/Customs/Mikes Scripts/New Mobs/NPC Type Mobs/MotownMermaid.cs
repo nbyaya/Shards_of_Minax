@@ -16,6 +16,7 @@ namespace Server.Mobiles
 		{
 			Body = 0x191; // Assuming this is a mermaid graphic
 			Hue = Utility.RandomBlueHue();
+			Team = Utility.RandomMinMax(1, 5);
 
 			Name = "Motown Mermaid";
 			Title = "the Soulful Siren";

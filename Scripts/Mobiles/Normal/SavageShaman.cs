@@ -19,6 +19,7 @@ namespace Server.Mobiles
 
 			Female = true;
 			Body = 186;
+			Team = 5;
 
 			SetStr(126, 145);
 			SetDex(91, 110);

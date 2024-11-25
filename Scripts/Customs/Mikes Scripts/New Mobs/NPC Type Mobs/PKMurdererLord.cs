@@ -74,6 +74,7 @@ namespace Server.Mobiles
             SetStr(800, 1200);
             SetDex(177, 255);
             SetInt(151, 250);
+			Team = Utility.RandomMinMax(1, 5);
 
             SetHits(600, 1000);
 

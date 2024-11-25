@@ -97,7 +97,7 @@ namespace Server.Mobiles
             {
                 Say("Dedication to the craft of tinkering is what separates the amateurs from the masters. If you're committed, I'll reward you with something truly special.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("masters"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

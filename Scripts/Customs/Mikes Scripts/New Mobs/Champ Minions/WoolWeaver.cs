@@ -48,6 +48,8 @@ namespace Server.Mobiles
                 AddItem(beard);
             }
 
+			Team = 2;
+
             SetStr(600, 800);
             SetDex(100, 150);
             SetInt(400, 600);

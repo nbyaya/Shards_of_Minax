@@ -126,7 +126,7 @@ namespace Server.Mobiles
                     Say("Understanding grows from wisdom and respect. Have you discussed these with me yet?");
                 }
             }
-            else if (speech.Contains("rewards"))
+            else if (speech.Contains("discussed"))
             {
                 if (hasDiscussedUnderstanding)
                 {

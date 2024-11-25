@@ -13,6 +13,7 @@ namespace Server.Mobiles
             Name = NameList.RandomName("darknight creeper");
             Body = 313;
             BaseSoundID = 0xE0;
+			Team = 4;
 
             SetStr(301, 330);
             SetDex(101, 110);

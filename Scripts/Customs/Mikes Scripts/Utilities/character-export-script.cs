@@ -39,22 +39,31 @@ namespace Server.Scripts.Commands
             writer.WriteElementString("Hits", pm.Hits.ToString());
             writer.WriteElementString("Mana", pm.Mana.ToString());
             writer.WriteElementString("Stam", pm.Stam.ToString());
-            writer.WriteEndElement();
+
+            // Added: Export StatCap, SkillsCap, FollowersMax
+            writer.WriteElementString("StatCap", pm.StatCap.ToString());
+            writer.WriteElementString("SkillsCap", pm.SkillsCap.ToString());
+            writer.WriteElementString("FollowersMax", pm.FollowersMax.ToString());
+
+            writer.WriteEndElement(); // End Stats
 
             // Export Skills
-            writer.WriteStartElement("Skills");
-            for (int i = 0; i < pm.Skills.Length; i++)
-            {
-                Skill skill = pm.Skills[i];
-                if (skill.Base > 0)
-                {
-                    writer.WriteStartElement("Skill");
-                    writer.WriteAttributeString("name", skill.Name);
-                    writer.WriteAttributeString("value", skill.Base.ToString());
-                    writer.WriteEndElement();
-                }
-            }
-            writer.WriteEndElement();
+			// Export Skills
+			writer.WriteStartElement("Skills");
+			for (int i = 0; i < pm.Skills.Length; i++)
+			{
+				Skill skill = pm.Skills[i];
+				if (skill != null)
+				{
+					writer.WriteStartElement("Skill");
+					writer.WriteAttributeString("name", skill.SkillName.ToString()); // Use enum name
+					writer.WriteAttributeString("value", skill.Base.ToString());
+					writer.WriteAttributeString("cap", skill.Cap.ToString());
+					writer.WriteEndElement();
+				}
+			}
+			writer.WriteEndElement(); // End Skills
+
 
             // Export Items
             writer.WriteStartElement("Items");
@@ -66,9 +75,9 @@ namespace Server.Scripts.Commands
                 writer.WriteAttributeString("amount", item.Amount.ToString());
                 writer.WriteEndElement();
             }
-            writer.WriteEndElement();
+            writer.WriteEndElement(); // End Items
 
-            writer.WriteEndElement(); // Character
+            writer.WriteEndElement(); // End Character
             writer.WriteEndDocument();
             writer.Close();
 

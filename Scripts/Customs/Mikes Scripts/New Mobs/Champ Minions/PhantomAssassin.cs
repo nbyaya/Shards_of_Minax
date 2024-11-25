@@ -14,6 +14,7 @@ namespace Server.Mobiles
         public PhantomAssassin() : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = 0x4001; // Dark hue for a phantom look
+			Team = 1;
 
             Body = 0x190; // Human body
             Name = "Phantom Assassin";

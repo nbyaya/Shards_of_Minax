@@ -16,6 +16,7 @@ namespace Server.Mobiles
             Body = 0x114; // Gorgon's body ID
             Name = "Blues Singing Gorgon";
             Hue = Utility.RandomGreenHue();
+			Team = Utility.RandomMinMax(1, 5);
             
             // Dressing up the gorgon
             AddItem(new Robe(Utility.RandomBlueHue()));

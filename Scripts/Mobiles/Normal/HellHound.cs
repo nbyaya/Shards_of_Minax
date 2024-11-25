@@ -17,6 +17,7 @@ namespace Server.Mobiles
             SetStr(100, 350);
             SetDex(80, 300);
             SetInt(30, 180);
+			Team = 1;
 
             SetHits(130, 300);
 

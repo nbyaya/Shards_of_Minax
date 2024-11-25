@@ -17,6 +17,7 @@ namespace Server.Mobiles
             Body = 0x190;
             Name = NameList.RandomName("male");
             Title = " the Clockwork Engineer";
+			Team = 2;
 
             Item robe = new Robe();
             robe.Hue = 1150; // dark grey

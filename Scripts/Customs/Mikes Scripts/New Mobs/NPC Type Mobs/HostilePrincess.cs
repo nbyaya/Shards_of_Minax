@@ -16,6 +16,7 @@ namespace Server.Mobiles
             Body = 0x191; // Female body
             Name = NameList.RandomName("female");
             Title = "the Hostile Princess";
+			Team = Utility.RandomMinMax(1, 5);
             
             // Outfit
             Item crown = new BodySash();

@@ -19,6 +19,7 @@ namespace Server.Mobiles
 
             // Setting the body to human, ninjas are typically human
             Body = 0x190; // Use 0x191 for a female ninja
+			Team = 5;
 
             Name = NameList.RandomName("male");
             Title = "the Whispering Gale";

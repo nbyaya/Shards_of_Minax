@@ -12,7 +12,8 @@ namespace Server.Mobiles
         {
             Name = "a minotaur scout";
             Body = 281;
-		   
+			Team = 5;
+	   
             SetStr(353, 375);
             SetDex(111, 130);
             SetInt(34, 50);

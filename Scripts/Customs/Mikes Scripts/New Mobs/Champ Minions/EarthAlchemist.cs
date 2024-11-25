@@ -15,6 +15,8 @@ namespace Server.Mobiles
         public EarthAlchemist() : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = Utility.RandomRedHue();
+			Team = 4;
+
             if (Female = Utility.RandomBool())
             {
                 Body = 0x191;

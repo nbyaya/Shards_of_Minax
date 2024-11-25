@@ -15,6 +15,7 @@ namespace Server.Mobiles
         public RockabillyRevenant() : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = 0x455; // Undead pale color
+			Team = Utility.RandomMinMax(1, 5);
             
             if (Female = Utility.RandomBool())
             {

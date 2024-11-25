@@ -88,7 +88,7 @@ namespace Server.Mobiles
             {
                 Say("Reflection leads to deeper insights. Based on your reflections, what do you believe is the essence of true reward?");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("essence"))
             {
                 Say("A true reward is not merely a physical object but the culmination of one's journey and understanding. Are you ready for a token of appreciation?");
             }

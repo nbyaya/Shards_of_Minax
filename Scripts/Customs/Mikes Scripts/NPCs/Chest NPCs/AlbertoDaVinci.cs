@@ -77,7 +77,7 @@ namespace Server.Mobiles
             {
                 Say("The Medici family were great patrons of the arts. Their support helped to fuel the Renaissance.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("patrons"))
             {
                 Say("For your interest in the arts and treasures of the Renaissance, accept this special chest as a token of appreciation.");
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);

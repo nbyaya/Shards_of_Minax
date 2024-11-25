@@ -13,6 +13,7 @@ namespace Server.Mobiles
             Name = "a rotting corpse";
             Body = 155;
             BaseSoundID = 471;
+			Team = 4;
 
             SetStr(301, 350);
             SetDex(75);

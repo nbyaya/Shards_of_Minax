@@ -17,6 +17,7 @@ namespace Server.Mobiles
             Body = 0x190; // Male body
             Name = NameList.RandomName("male");
             Title = "the Astrologer";
+			Team = 2;
 
             // Equipment
             Item robe = new Robe();

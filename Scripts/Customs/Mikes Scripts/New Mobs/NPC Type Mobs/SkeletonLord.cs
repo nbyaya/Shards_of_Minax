@@ -14,6 +14,7 @@ namespace Server.Mobiles
         public SkeletonLord() : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Name = "Skeleton Lord";
+			Team = Utility.RandomMinMax(1, 5);
 
             Body = 309;  // Skeleton lord body ID
             Hue = 0;     // Standard hue for skeletons

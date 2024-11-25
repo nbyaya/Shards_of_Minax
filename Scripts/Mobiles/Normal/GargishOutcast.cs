@@ -14,6 +14,7 @@ namespace Server.Mobiles
         {
             Race = Race.Gargoyle;
             Title = "the Gargish Outcast";
+			Team = 5;
 
             SetStr(150);
             SetInt(150);

@@ -17,6 +17,7 @@ namespace Server.Mobiles
             Name = "a succubus";
             Body = 149;
             BaseSoundID = 0x4B0;
+			Team = 1;
 
             SetStr(488, 620);
             SetDex(121, 170);

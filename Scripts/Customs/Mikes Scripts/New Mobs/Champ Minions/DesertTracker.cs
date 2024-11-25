@@ -17,6 +17,7 @@ namespace Server.Mobiles
             Body = Utility.RandomList(0x191, 0x190);
             Name = NameList.RandomName(Body == 0x191 ? "female" : "male");
             Title = " the Desert Tracker";
+			Team = 1;
 
             if (Body == 0x191) // Female
             {

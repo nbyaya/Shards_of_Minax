@@ -61,7 +61,7 @@ namespace Server.Mobiles
                 {
                     Say("History is a tapestry woven with the deeds and lives of those who came before us. It is both our heritage and our guide.");
                 }
-                else if (speech.Contains("reward"))
+                else if (speech.Contains("heritage"))
                 {
                     if (!m_RewardGiven)
                     {

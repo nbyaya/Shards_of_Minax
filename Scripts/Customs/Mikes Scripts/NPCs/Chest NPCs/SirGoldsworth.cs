@@ -118,7 +118,7 @@ namespace Server.Mobiles
             {
                 Say("The essence of the greatest treasure is the culmination of all virtues—wisdom, courage, and humility. If you possess these qualities, then you are worthy of the final reward.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("wisdom"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

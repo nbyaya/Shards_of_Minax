@@ -16,6 +16,7 @@ namespace Server.Mobiles
             Name = "LineDragon";
             Body = 49; // Adjust to appropriate dragon model
             BaseSoundID = 362;
+			Team = Utility.RandomMinMax(1, 5);
 
             SetStr(1096, 1185);
             SetDex(86, 175);

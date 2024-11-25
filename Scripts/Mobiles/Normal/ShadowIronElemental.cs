@@ -19,6 +19,7 @@ namespace Server.Mobiles
             this.Name = "a shadow iron elemental";
             this.Body = 111;
             this.BaseSoundID = 268;
+			Team = 2;
 
             this.SetStr(226, 255);
             this.SetDex(126, 145);

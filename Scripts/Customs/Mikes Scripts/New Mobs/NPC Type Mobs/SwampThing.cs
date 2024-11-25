@@ -16,7 +16,8 @@ namespace Server.Mobiles
             Hue = 0x455; // A green hue for the swamp theme
             Body = 0x11D; // This could be another humanoid body type, modify as necessary
             Name = "Swamp Thing";
-            
+            Team = Utility.RandomMinMax(1, 5);
+
             // Appearance
             Item mossyRobe = new Robe();
             mossyRobe.Hue = 0x48E; // Dark green hue

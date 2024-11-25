@@ -17,6 +17,7 @@ namespace Server.Mobiles
             Hue = Utility.RandomSkinHue();
             Body = 0x190; 
             Name = "Chris Roberts";
+			Team = Utility.RandomMinMax(1, 5);
 
             Item spaceSuit = new Robe(Utility.RandomBlueHue()); // Just for example, replace with a space-themed item
             AddItem(spaceSuit);

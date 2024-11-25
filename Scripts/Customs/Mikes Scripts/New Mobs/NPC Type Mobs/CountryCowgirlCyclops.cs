@@ -18,6 +18,7 @@ namespace Server.Mobiles
             Title = "the Lassoing Lass";
             Hue = Utility.RandomSkinHue();
             Female = true; // Our cyclops cowgirl is female
+			Team = Utility.RandomMinMax(1, 5);
 
             // Cowgirl outfit
             AddItem(new LeatherSkirt(Utility.RandomNeutralHue()));

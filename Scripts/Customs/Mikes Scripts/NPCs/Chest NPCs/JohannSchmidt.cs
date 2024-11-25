@@ -64,7 +64,7 @@ namespace Server.Mobiles
             {
                 Say("Tradition is what binds us together. It reminds us of our heritage and brings joy to our hearts.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("hearts"))
             {
                 if (CheckRewardConditions(from))
                 {

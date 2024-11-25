@@ -152,7 +152,7 @@ namespace Server.Mobiles
             {
                 Say("Virtue is a quality that embodies moral excellence. The Winged Hussars exemplified virtue in every aspect of their lives.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("excellence"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

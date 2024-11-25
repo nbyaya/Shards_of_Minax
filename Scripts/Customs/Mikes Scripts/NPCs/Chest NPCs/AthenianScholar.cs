@@ -59,7 +59,7 @@ namespace Server.Mobiles
                     case "knowledge":
                         from.SendMessage("Knowledge is the key to unlocking the secrets of the past.");
                         break;
-                    case "reward":
+                    case "unlocking":
                         if (CheckRewardConditions(from))
                         {
                             GiveReward(from);

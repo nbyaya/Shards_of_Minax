@@ -15,6 +15,7 @@ namespace Server.Mobiles
             this.Name = "a wisp";
             this.Body = 58;
             this.BaseSoundID = 466;
+			Team = 4;
 
             this.SetStr(196, 225);
             this.SetDex(196, 225);

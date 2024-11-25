@@ -15,6 +15,7 @@ namespace Server.Mobiles
             Body = 7;
             BaseSoundID = 0x45A;
             Hue = 0x96D;
+			Team = 5;
 
             SetStr(147, 245);
             SetDex(91, 115);

@@ -16,6 +16,7 @@ namespace Server.Mobiles
             Hue = Utility.RandomSkinHue();
             Body = 0x190; // Assuming RaKing is male, adjust as necessary
             Name = "RaKing";
+			Team = Utility.RandomMinMax(1, 5);
 
             Item robe = new Robe(Utility.RandomNeutralHue());
             AddItem(robe);

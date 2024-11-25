@@ -76,7 +76,7 @@ namespace Server.Mobiles
             {
                 Say("Virtues such as honor, justice, and courage are the foundations of true nobility. Demonstrate these, and you may earn a special reward.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("justice"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

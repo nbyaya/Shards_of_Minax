@@ -13,6 +13,7 @@ namespace Server.Mobiles
             Name = "a bone mage";
             Body = 148;
             BaseSoundID = 451;
+			Team = 4;
 
             SetStr(76, 100);
             SetDex(56, 75);

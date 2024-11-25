@@ -77,28 +77,49 @@ namespace Server.Scripts.Commands
                     target.Hits = Convert.ToInt32(statsNode.SelectSingleNode("Hits").InnerText);
                     target.Mana = Convert.ToInt32(statsNode.SelectSingleNode("Mana").InnerText);
                     target.Stam = Convert.ToInt32(statsNode.SelectSingleNode("Stam").InnerText);
+
+                    // Added: Import StatCap, SkillsCap, FollowersMax
+                    XmlNode statCapNode = statsNode.SelectSingleNode("StatCap");
+                    if (statCapNode != null)
+                        target.StatCap = Convert.ToInt32(statCapNode.InnerText);
+
+                    XmlNode skillsCapNode = statsNode.SelectSingleNode("SkillsCap");
+                    if (skillsCapNode != null)
+                        target.SkillsCap = Convert.ToInt32(skillsCapNode.InnerText);
+
+                    XmlNode followersMaxNode = statsNode.SelectSingleNode("FollowersMax");
+                    if (followersMaxNode != null)
+                        target.FollowersMax = Convert.ToInt32(followersMaxNode.InnerText);
                 }
 
                 // Import Skills
-                XmlNodeList skillNodes = characterNode.SelectNodes("Skills/Skill");
-                foreach (XmlNode skillNode in skillNodes)
-                {
-                    string skillName = skillNode.Attributes["name"].Value;
-                    double skillValue = Convert.ToDouble(skillNode.Attributes["value"].Value);
-                    
-                    // Parse the skill name string to SkillName enum
-                    SkillName parsedSkillName;
-                    if (Enum.TryParse(skillName, true, out parsedSkillName))
-                    {
-                        Skill skill = target.Skills[parsedSkillName];
-                        if (skill != null)
-                            skill.Base = skillValue;
-                    }
-                    else
-                    {
-                        from.SendMessage(string.Format("Unknown skill: {0}", skillName));
-                    }
-                }
+				// Import Skills
+				XmlNodeList skillNodes = characterNode.SelectNodes("Skills/Skill");
+				foreach (XmlNode skillNode in skillNodes)
+				{
+					string skillName = skillNode.Attributes["name"].Value;
+					double skillValue = Convert.ToDouble(skillNode.Attributes["value"].Value);
+					double skillCap = 100.0; // Default skill cap
+
+					if (skillNode.Attributes["cap"] != null)
+						skillCap = Convert.ToDouble(skillNode.Attributes["cap"].Value);
+
+					// Parse the skill name as an enum
+					if (Enum.TryParse(skillName, true, out SkillName parsedSkillName))
+					{
+						Skill skill = target.Skills[parsedSkillName];
+						if (skill != null)
+						{
+							skill.Base = skillValue;
+							skill.Cap = skillCap;
+						}
+					}
+					else
+					{
+						from.SendMessage($"Unrecognized skill: {skillName}");
+					}
+				}
+
 
                 // Import Items
                 XmlNodeList itemNodes = characterNode.SelectNodes("Items/Item");
@@ -111,10 +132,23 @@ namespace Server.Scripts.Commands
                     Type type = ScriptCompiler.FindTypeByName(itemType);
                     if (type != null && type.IsSubclassOf(typeof(Item)))
                     {
-                        Item item = (Item)Activator.CreateInstance(type);
-                        item.Name = itemName;
-                        item.Amount = itemAmount;
-                        target.AddToBackpack(item);
+                        try
+                        {
+                            // Try to create an instance with a parameterless constructor.
+                            Item item = (Item)Activator.CreateInstance(type);
+                            item.Name = itemName;
+                            item.Amount = itemAmount;
+                            target.AddToBackpack(item);
+                        }
+                        catch (MissingMethodException)
+                        {
+                            // If no parameterless constructor exists, use a fallback logic.
+                            from.SendMessage($"Unable to create item of type {itemType}. No parameterless constructor available.");
+                        }
+                    }
+                    else
+                    {
+                        from.SendMessage($"Invalid item type: {itemType}");
                     }
                 }
 

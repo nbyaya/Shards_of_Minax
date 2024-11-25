@@ -76,7 +76,7 @@ namespace Server.Mobiles
             {
                 Say("Legends say that the greatest treasures are guarded by mythical sea creatures. But I believe any treasure is worth the effort to find.");
             }
-            else if (speech.Contains("rewards"))
+            else if (speech.Contains("mythical"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)

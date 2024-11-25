@@ -30,6 +30,7 @@ namespace Server.Mobiles
             Name = DefaultName;
             Body = 264;
             Hue = DefaultHue;
+			Team = 1;
 
             SetStr(36, 105);
             SetDex(212, 262);

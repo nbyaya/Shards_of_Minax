@@ -13,6 +13,7 @@ namespace Server.Mobiles
             this.Name = "a skeleton";
             this.Body = Utility.RandomList(50, 56);
             this.BaseSoundID = 0x48D;
+			Team = 4;
 
             this.SetStr(56, 80);
             this.SetDex(56, 75);

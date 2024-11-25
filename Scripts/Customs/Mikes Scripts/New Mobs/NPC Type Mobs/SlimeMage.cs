@@ -14,6 +14,7 @@ namespace Server.Mobiles
         public SlimeMage() : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = Utility.RandomGreenHue();
+			Team = Utility.RandomMinMax(1, 5);
 
             if (Female = Utility.RandomBool())
             {

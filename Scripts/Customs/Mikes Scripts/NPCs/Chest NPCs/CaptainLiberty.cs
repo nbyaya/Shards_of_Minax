@@ -134,7 +134,7 @@ namespace Server.Mobiles
             {
                 Say("The way forward is through courage and unity. Follow this path, and you shall find the reward.");
             }
-            else if (speech.Contains("reward"))
+            else if (speech.Contains("forward"))
             {
                 TimeSpan cooldown = TimeSpan.FromMinutes(10);
                 if (DateTime.UtcNow - lastRewardTime < cooldown)
