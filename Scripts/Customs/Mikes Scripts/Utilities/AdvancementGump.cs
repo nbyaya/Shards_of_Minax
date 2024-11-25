@@ -81,7 +81,7 @@ namespace Server.Gumps
                     {
                         if (ConsumeScrolls(from, 1))
                         {
-                            from.SkillsCap += 1;
+                            from.SkillsCap += 10;
                             from.SendMessage("Your total skill cap has been increased by 1 point.");
                         }
                         else
