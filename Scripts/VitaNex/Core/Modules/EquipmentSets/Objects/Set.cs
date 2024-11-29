@@ -149,13 +149,17 @@ namespace VitaNex.Modules.EquipmentSets
 
 		public IEnumerable<Tuple<EquipmentSetPart, Item>> FindEquippedParts(Mobile m)
 		{
+			var equipped = new List<Tuple<EquipmentSetPart, Item>>();
+
 			foreach (var part in Parts)
 			{
 				if (part.IsEquipped(m, out var item))
 				{
-					yield return Tuple.Create(part, item);
+					equipped.Add(Tuple.Create(part, item));
 				}
 			}
+
+			return equipped;
 		}
 
 		public Tuple<EquipmentSetPart, Item>[] GetEquippedParts(Mobile m)
