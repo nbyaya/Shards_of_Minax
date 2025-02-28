@@ -1,5 +1,5 @@
 # Build: docker build --tag shards-of-minax --progress auto .
-# Run:   docker run -it -p 2593:2593 -v ./Client_files:/opt/Shards-of-Minax/Client_files -v ./Logs:/opt/Shards-of-Minax/Logs -v ./Saves:/opt/Shards-of-Minax/Saves shards-of-minax
+# Run:   docker run -it -p 2593:2593 -v ./Backups:/opt/Shards-of-Minax/Backups -v ./Client_files:/opt/Shards-of-Minax/Client_files -v ./Logs:/opt/Shards-of-Minax/Logs -v ./Saves:/opt/Shards-of-Minax/Saves shards-of-minax
 
 # Tested on mono:6.12.0.182
 FROM mono:6.12
