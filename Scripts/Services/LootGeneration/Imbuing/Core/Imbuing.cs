@@ -131,49 +131,55 @@ namespace Server.SkillHandlers
             return true;
         }
 
-        public static bool CanUnravelItem(Mobile from, Item item, bool message = true)
-        {
-            if (!CheckSoulForge(from, 2, false, false))
-            {
-                from.SendLocalizedMessage(1080433); // You must be near a soulforge to magically unravel an item.
-            }
-            else if (!item.IsChildOf(from.Backpack))
-            {
-                if (message)
-                    from.SendLocalizedMessage(1080424);  // The item must be in your backpack to magically unravel it.
-            }
-            else if (item.LootType == LootType.Blessed || item.LootType == LootType.Newbied)
-            {
-                if (message)
-                    from.SendLocalizedMessage(1080421);  // You cannot unravel the magic of a blessed item.
-            }
-            else if (!(item is BaseWeapon || item is BaseArmor || item is BaseJewel || item is BaseHat))
-            {
-                if (message)
-                    from.SendLocalizedMessage(1080425); // You cannot magically unravel this item.
-            }
-            else if (item is BaseWeapon && Spells.Mysticism.EnchantSpell.IsUnderSpellEffects(from, (BaseWeapon)item))
-            {
-                if (message)
-                    from.SendLocalizedMessage(1080427);  // You cannot magically unravel an item that is currently enchanted.
-            }
-            else if (item is BaseWeapon && ((BaseWeapon)item).FocusWeilder != null)
-            {
-                if (message)
-                    from.SendLocalizedMessage(1080445); //You cannot magically unravel an item that is under the effects of the ninjitsu focus attack ability.
-            }
-            else if (item is IFactionItem && ((IFactionItem)item).FactionItemState != null)
-            {
-                if (message)
-                    from.SendLocalizedMessage(1112408); // You cannot magically unravel a faction reward item.
-            }
-            else
-            {
-                return true;
-            }
+		public static bool CanUnravelItem(Mobile from, Item item, bool message = true)
+		{
+			if (!CheckSoulForge(from, 2, false, false))
+			{
+				from.SendLocalizedMessage(1080433); // You must be near a soulforge to magically unravel an item.
+			}
+			else if (!item.IsChildOf(from.Backpack))
+			{
+				if (message)
+					from.SendLocalizedMessage(1080424);  // The item must be in your backpack to magically unravel it.
+			}
+			else if (item.LootType == LootType.Blessed || item.LootType == LootType.Newbied)
+			{
+				if (message)
+					from.SendLocalizedMessage(1080421);  // You cannot unravel the magic of a blessed item.
+			}
+			else if (
+				!(item is BaseWeapon || item is BaseArmor || item is BaseJewel || item is BaseHat) &&
+				!RelicFragmentItems.Contains(item.GetType()) &&
+				!EnchantedEssenceItems.Contains(item.GetType()) &&
+				!MagicalResidueItems.Contains(item.GetType())
+			)
+			{
+				if (message)
+					from.SendLocalizedMessage(1080425); // You cannot magically unravel this item.
+			}
+			else if (item is BaseWeapon && Spells.Mysticism.EnchantSpell.IsUnderSpellEffects(from, (BaseWeapon)item))
+			{
+				if (message)
+					from.SendLocalizedMessage(1080427);  // You cannot magically unravel an item that is currently enchanted.
+			}
+			else if (item is BaseWeapon && ((BaseWeapon)item).FocusWeilder != null)
+			{
+				if (message)
+					from.SendLocalizedMessage(1080445); //You cannot magically unravel an item that is under the effects of the ninjitsu focus attack ability.
+			}
+			else if (item is IFactionItem && ((IFactionItem)item).FactionItemState != null)
+			{
+				if (message)
+					from.SendLocalizedMessage(1112408); // You cannot magically unravel a faction reward item.
+			}
+			else
+			{
+				return true;
+			}
 
-            return false;
-        }
+			return false;
+		}
+
 
         public static bool IsSpecialItem(Item item)
         {
@@ -739,46 +745,291 @@ namespace Server.SkillHandlers
             item.InvalidateProperties();
         }
 
-	    public static bool UnravelItem(Mobile from, Item item, bool message = true)
-	    {
-            double bonus = 0.0;
+		private static readonly List<Type> RelicFragmentItems = new List<Type>
+		{
+			typeof(GraveNylon),
+			typeof(Aeroglass),
+			typeof(Infinityclay),
+			typeof(Bloodglass),
+			typeof(DenaturedMorphonite),
+			typeof(Energite),
+			typeof(FlammablePlasmine),
+			typeof(Impervanium),
+			typeof(NegativePhocite),
+			typeof(OpaqueHydragyon),
+			typeof(PositiveEvenium),
+			typeof(RefractivePotamite),
+			typeof(Schizonite),
+			typeof(Thoril),
+			typeof(TransparentAurarus),
+			typeof(Turbesium),
+			typeof(Uranimite),
+			typeof(ChargedAcoustesium),
+			typeof(ExoticEun),
+			typeof(Fibrogen),
+			typeof(Flurocite),
+			typeof(GaseousAesthogen),
+			typeof(HighdensityElectron),
+			typeof(MorphicHeteril),
+			typeof(Negite)
+		};
 
-            if (!CheckSoulForge(from, 2, out bonus))
-                return false;
+		private static readonly List<Type> EnchantedEssenceItems = new List<Type>
+		{
+			typeof(Zychroline),
+			typeof(Aetheralate),
+			typeof(Neontrium),
+			typeof(Oblivionate),
+			typeof(Phantomide),
+			typeof(Quarkothene),
+			typeof(Stygiocarbon),
+			typeof(Cryovitrin),
+			typeof(Fluxidate),
+			typeof(Novaesine),
+			typeof(Xenocrylate),
+			typeof(Gravitoxane),
+			typeof(Eclipsium),
+			typeof(Darkspirite),
+			typeof(Photoplasmene),
+			typeof(Vibranide),
+			typeof(Duskenium),
+			typeof(Chronodyne),
+			typeof(Auroracene),
+			typeof(Voidanate),
+			typeof(Lumicryne),
+			typeof(Prismalium),
+			typeof(Etherothal),
+			typeof(Pyrolythene),
+			typeof(Radiacrylate),
+			typeof(Synthionide),
+			typeof(Morphaloxane),
+			typeof(Astrocyne),
+			typeof(Nyxiolate),
+			typeof(Spectrovanate),
+			typeof(Solvexium),
+			typeof(Helionine),
+			typeof(Thermodrithium),
+			typeof(Arcvaloxate),
+			typeof(Cinderathane),
+			typeof(Zephyrenium),
+			typeof(Kryotoxite),
+			typeof(Starshardine),
+			typeof(Omniplasium),
+			typeof(Nebulifluxate)
+		};
 
-		    int weight = GetTotalWeight(item, -1, false, true);
-			
-		    if (weight <= 0)
+		private static readonly List<Type> MagicalResidueItems = new List<Type>
+		{
+			typeof(AbyssChivesFruit),
+			typeof(aggearangFruit),
+			typeof(agleatainFruit),
+			typeof(ameoyoteFruit),
+			typeof(AngelRootFruit),
+			typeof(AngelTurnipFruit),
+			typeof(ArcticParsnipFruit),
+			typeof(AshLycheeFruit),
+			typeof(AshRootFruit),
+			typeof(AutumnCherryFruit),
+			typeof(AutumnPomegranateFruit),
+			typeof(BitterDurianFruit),
+			typeof(BittersweetChivesFruit),
+			typeof(BlackChoyFruit),
+			typeof(blattiovesFruit),
+			typeof(blearelFruit),
+			typeof(BlumbFruit),
+			typeof(bosheaShootFruit),
+			typeof(brafulalFruit),
+			typeof(brongerFruit),
+			typeof(BushCerimanFruit),
+			typeof(BushSpinachFruit),
+			typeof(CandyMorindaFruit),
+			typeof(CaveAsparagusFruit),
+			typeof(CavePersimmonFruit),
+			typeof(CavernMangosteenFruit),
+			typeof(chigionutFruit),
+			typeof(chummionachFruit),
+			typeof(ciarryFruit),
+			typeof(CinderGingerFruit),
+			typeof(CliffNectarineFruit),
+			typeof(crennealeryFruit),
+			typeof(criarianFruit),
+			typeof(darantFruit),
+			typeof(DaydreamPommeracFruit),
+			typeof(DesertPlumFruit),
+			typeof(DesertRowanFruit),
+			typeof(DessertBroccoliFruit),
+			typeof(DessertTomatoFruit),
+			typeof(DewKiwiFruit),
+			typeof(DewPawpawFruit),
+			typeof(dimquatFruit),
+			typeof(diowanFruit),
+			typeof(DragoLimeFruit),
+			typeof(DrakeLentilFruit),
+			typeof(DrakeMangoFruit),
+			typeof(eacketFruit),
+			typeof(eacotFruit),
+			typeof(earolaFruit),
+			typeof(EasternBacuriFruit),
+			typeof(eawanFruit),
+			typeof(echocadoFruit),
+			typeof(ElephantBreadnutFruit),
+			typeof(EmberLaurelFruit),
+			typeof(EmberLettuceFruit),
+			typeof(FalseAlmondFruit),
+			typeof(fliavesFruit),
+			typeof(FluxxFruit),
+			typeof(fucrucotFruit),
+			typeof(fudishFruit),
+			typeof(fushewFruit),
+			typeof(geweodineFruit),
+			typeof(gigliachokeFruit),
+			typeof(girinFruit),
+			typeof(glissidillaFruit),
+			typeof(GoldenRocketFruit),
+			typeof(grandaFruit),
+			typeof(gropioveFruit),
+			typeof(GroundPearFruit),
+			typeof(grutatoFruit),
+			typeof(HairyTomatoFruit),
+			typeof(HateCalamansiFruit),
+			typeof(HazelLimeFruit),
+			typeof(hialoupeFruit),
+			typeof(hiorolaFruit),
+			typeof(iaconaFruit),
+			typeof(IceRocketFruit),
+			typeof(iddiochokeFruit),
+			typeof(imberFruit),
+			typeof(ingeFruit),
+			typeof(intineFruit),
+			typeof(ippiocressFruit),
+			typeof(ittianaFruit),
+			typeof(jeorraFruit),
+			typeof(jigreapawFruit),
+			typeof(jochiniFruit),
+			typeof(kledamiaFruit),
+			typeof(kleopeFruit),
+			typeof(kraccaleryFruit),
+			typeof(krevaFruit),
+			typeof(LillypillyFruit),
+			typeof(LoveKumquatFruit),
+			typeof(LoveZucchiniFruit),
+			typeof(MageCherryFruit),
+			typeof(MageDateFruit),
+			typeof(MellowGourdFruit),
+			typeof(MoonPumpkinFruit),
+			typeof(moyiarlanFruit),
+			typeof(MutantLemonFruit),
+			typeof(MysteryFruit),
+			typeof(MysteryGuavaFruit),
+			typeof(MysteryOrangeFruit),
+			typeof(NativeRambutanFruit),
+			typeof(NightCabbageFruit),
+			typeof(NightmareSaguaroFruit),
+			typeof(ocanateFruit),
+			typeof(OceanMuscadineFruit),
+			typeof(omondFruit),
+			typeof(otilFruit),
+			typeof(PeaceAmaranthFruit),
+			typeof(PeaceDateFruit),
+			typeof(PeaceNectarineFruit),
+			typeof(phecceayoteFruit),
+			typeof(piokinFruit),
+			typeof(probbacheeFruit),
+			typeof(puchiniFruit),
+			typeof(PygmyOrangeFruit),
+			typeof(qekliatilloFruit),
+			typeof(RainLaurelFruit),
+			typeof(RainPommeracFruit),
+			typeof(rephoneFruit),
+			typeof(satilFruit),
+			typeof(siheonachFruit),
+			typeof(SilverFruit),
+			typeof(slirindFruit),
+			typeof(slomeloFruit),
+			typeof(SmellyCarrotFruit),
+			typeof(SourAmaranthFruit),
+			typeof(StormBrambleFruit),
+			typeof(striachiniFruit),
+			typeof(strondaFruit),
+			typeof(SwampNectarineFruit),
+			typeof(SweetBoquilaFruit),
+			typeof(TigerBeanFruit),
+			typeof(TropicalCherryFruit),
+			typeof(unaFruit),
+			typeof(uyerdFruit),
+			typeof(veapeFruit),
+			typeof(VoidBrambleFruit),
+			typeof(VoidOkraFruit),
+			typeof(VoidPulasanFruit),
+			typeof(VoidSproutFruit),
+			typeof(vrecequilaFruit),
+			typeof(vropperrotFruit),
+			typeof(vuveFruit),
+			typeof(WinterCoconutFruit),
+			typeof(WonderRambutanFruit),
+			typeof(wriggumondFruit),
+			typeof(XeenBerryFruit),
+			typeof(xekraFruit),
+			typeof(xemeloFruit),
+			typeof(zanioperFruit),
+			typeof(ziongerFruit)
+		};
+
+
+		public static bool UnravelItem(Mobile from, Item item, bool message = true)
+		{
+			double bonus = 0.0;
+
+			if (!CheckSoulForge(from, 2, out bonus))
+				return false;
+
+			// Check specific item lists
+			if (RelicFragmentItems.Contains(item.GetType()))
+			{
+				GiveUnravelResource(from, typeof(RelicFragment), 1);
+				item.Delete();
+				return true;
+			}
+			else if (EnchantedEssenceItems.Contains(item.GetType()))
+			{
+				GiveUnravelResource(from, typeof(EnchantedEssence), 1);
+				item.Delete();
+				return true;
+			}
+			else if (MagicalResidueItems.Contains(item.GetType()))
+			{
+				GiveUnravelResource(from, typeof(MagicalResidue), 1 + Utility.Random(2));
+				item.Delete();
+				return true;
+			}
+
+			// Existing weight-based logic
+			int weight = GetTotalWeight(item, -1, false, true);
+
+			if (weight <= 0)
 			{
 				if (message)
 				{
-					// You cannot magically unravel this item. It appears to possess little or no magic.
-					from.SendLocalizedMessage(1080437);
+					from.SendLocalizedMessage(1080437); // You cannot magically unravel this item. It appears to possess little or no magic.
 				}
-
 				return false;
-		    }
+			}
 
-		    ImbuingContext context = GetContext(from);
-			
-		    Type resType = null;
-		    var resAmount = Math.Max(1, weight / 100);
-
+			Type resType = null;
+			var resAmount = Math.Max(1, weight / 100);
 			var success = false;
 
-		    if (weight >= 480 - bonus)
+			if (weight >= 480 - bonus)
 			{
 				if (from.Skills[SkillName.Imbuing].Value < 95.0)
 				{
 					if (message)
 					{
-						// Your Imbuing skill is not high enough to magically unravel this item.
-						from.SendLocalizedMessage(1080434);
+						from.SendLocalizedMessage(1080434); // Your Imbuing skill is not high enough to magically unravel this item.
 					}
-
 					return false;
 				}
-				
+
 				if (from.CheckSkill(SkillName.Imbuing, 90.1, 120.0))
 				{
 					success = true;
@@ -792,19 +1043,17 @@ namespace Server.SkillHandlers
 					resAmount = Math.Max(1, resAmount - Utility.Random(3));
 				}
 			}
-		    else if (weight > 200 - bonus && weight < 480 - bonus)
+			else if (weight > 200 - bonus && weight < 480 - bonus)
 			{
 				if (from.Skills[SkillName.Imbuing].Value < 45.0)
 				{
 					if (message)
 					{
-						// Your Imbuing skill is not high enough to magically unravel this item.
-						from.SendLocalizedMessage(1080434);
+						from.SendLocalizedMessage(1080434); // Your Imbuing skill is not high enough to magically unravel this item.
 					}
-
 					return false;
 				}
-				
+
 				if (from.CheckSkill(SkillName.Imbuing, 45.0, 95.0))
 				{
 					success = true;
@@ -831,47 +1080,48 @@ namespace Server.SkillHandlers
 			{
 				if (message)
 				{
-					// You cannot magically unravel this item. It appears to possess little or no magic.
-					from.SendLocalizedMessage(1080437);
+					from.SendLocalizedMessage(1080437); // You cannot magically unravel this item. It appears to possess little or no magic.
 				}
-
 				return false;
 			}
 
-		    if (!success)
-		    {
-			    return false;
-		    }
+			if (!success)
+			{
+				return false;
+			}
 
-		    Item res;
+			GiveUnravelResource(from, resType, resAmount);
+			item.Delete();
+			return true;
+		}
 
-		    while (resAmount > 0)
-		    {
-			    res = Activator.CreateInstance(resType) as Item;
+		// Helper method to give unravel resources
+		private static void GiveUnravelResource(Mobile from, Type resType, int amount)
+		{
+			while (amount > 0)
+			{
+				Item res = Activator.CreateInstance(resType) as Item;
 
-			    if (res == null)
-			    {
-				    break;
-			    }
+				if (res == null)
+				{
+					break;
+				}
 
-			    if (res.Stackable)
-			    {
-				    res.Amount = Math.Max(1, Math.Min(60000, resAmount));
-			    }
+				if (res.Stackable)
+				{
+					res.Amount = Math.Max(1, Math.Min(60000, amount));
+				}
 
-			    resAmount -= res.Amount;
+				amount -= res.Amount;
 
-			    from.AddToBackpack(res);
-		    }
+				from.AddToBackpack(res);
+			}
+		}
 
-		    item.Delete();
-
-		    return true;
-	    }
 
         public static int GetMaxWeight(object item)
         {
-            int maxWeight = 450;
+            int maxWeight = 9000;
 
             IQuality quality = item as IQuality;
 

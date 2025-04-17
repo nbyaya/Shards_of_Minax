@@ -12,12 +12,12 @@ namespace Server.Mobiles
         [Constructable]
         public TestCreature2() : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
-            Body = 0x190; // Set a standard creature body
+            Body = 0x2E1; // Set a standard creature body
             Hue = 0; // Default hue
 
             Name = "Test Creature 2";
 			
-			Team = 2;
+
 
             SetStr(100);
             SetDex(100);
@@ -46,8 +46,7 @@ namespace Server.Mobiles
 			
 			CanMove = true;
 
-            // Attach the XmlAxeCircle attachment
-			XmlAttach.AttachTo(this, new XmlRandomAbility());
+
 
 
 

@@ -1273,7 +1273,14 @@ namespace Server.Mobiles
 				new TrainingDefinition(typeof(GloomWolf), Class.MagicalClawedAndTailed, MagicalAbility.Dragon2, SpecialAbilityClawedTailedAndMagical2, WepAbility5, AreaEffectArea1, 1, 10), 
 				new TrainingDefinition(typeof(ShadowProwler), Class.MagicalClawedAndTailed, MagicalAbility.Dragon2, SpecialAbilityClawedTailedAndMagical2, WepAbility5, AreaEffectArea1, 1, 10), 
 				new TrainingDefinition(typeof(StormWolf), Class.MagicalClawedAndTailed, MagicalAbility.Dragon2, SpecialAbilityClawedTailedAndMagical2, WepAbility5, AreaEffectArea1, 1, 10), 
-				new TrainingDefinition(typeof(VenomousWolf), Class.MagicalClawedAndTailed, MagicalAbility.Dragon2, SpecialAbilityClawedTailedAndMagical2, WepAbility5, AreaEffectArea1, 1, 10), 
+				new TrainingDefinition(typeof(VenomousWolf), Class.MagicalClawedAndTailed, MagicalAbility.Dragon2, SpecialAbilityClawedTailedAndMagical2, WepAbility5, AreaEffectArea1, 1, 10),
+				new TrainingDefinition(typeof(AncientHellhound), Class.MagicalClawedAndTailed, MagicalAbility.Dragon2, SpecialAbilityClawedTailedAndMagical2, WepAbility5, AreaEffectArea1, 1, 10),
+				new TrainingDefinition(typeof(Boura), Class.MagicalClawedAndTailed, MagicalAbility.Dragon2, SpecialAbilityClawedTailedAndMagical2, WepAbility5, AreaEffectArea1, 1, 10),
+				new TrainingDefinition(typeof(MagicalPig), Class.MagicalClawedAndTailed, MagicalAbility.Dragon2, SpecialAbilityClawedTailedAndMagical2, WepAbility5, AreaEffectArea1, 1, 10),
+				new TrainingDefinition(typeof(RidablePolarBear), Class.MagicalClawedAndTailed, MagicalAbility.Dragon2, SpecialAbilityClawedTailedAndMagical2, WepAbility5, AreaEffectArea1, 1, 10),
+				new TrainingDefinition(typeof(RidableSerpentineDragon), Class.MagicalClawedAndTailed, MagicalAbility.Dragon2, SpecialAbilityClawedTailedAndMagical2, WepAbility5, AreaEffectArea1, 1, 10),
+				new TrainingDefinition(typeof(SkeletonHorse), Class.MagicalClawedAndTailed, MagicalAbility.Dragon2, SpecialAbilityClawedTailedAndMagical2, WepAbility5, AreaEffectArea1, 1, 10),
+				new TrainingDefinition(typeof(RidableTarantula), Class.MagicalClawedAndTailed, MagicalAbility.Dragon2, SpecialAbilityClawedTailedAndMagical2, WepAbility5, AreaEffectArea1, 1, 10),				
             };
             #endregion
         }

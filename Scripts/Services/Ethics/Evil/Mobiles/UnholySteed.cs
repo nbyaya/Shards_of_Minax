@@ -37,7 +37,7 @@ namespace Server.Mobiles
 
             VirtualArmor = 60;
 
-            Tamable = false;
+            Tamable = true;
             ControlSlots = 1;
 
             SetSpecialAbility(SpecialAbility.DragonBreath);

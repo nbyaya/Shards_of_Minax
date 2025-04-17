@@ -38,6 +38,9 @@ namespace Server.Mobiles
 
             this.Fame = 0;
             this.Karma = 0;
+            Tamable = true;
+            ControlSlots = 1;
+            MinTameSkill = 0.0;
         }
 
         public SkeletalMount(Serial serial)
@@ -77,9 +80,9 @@ namespace Server.Mobiles
                 case 0:
                     {
                         this.Name = "a skeletal steed";
-                        this.Tamable = false;
+                        this.Tamable = true;
                         this.MinTameSkill = 0.0;
-                        this.ControlSlots = 0;
+                        this.ControlSlots = 1;
                         break;
                     }
             }

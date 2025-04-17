@@ -709,6 +709,8 @@ namespace Server.Mobiles
             SetInt(Utility.RandomMinMax(50, 500));
             SetHits(Utility.RandomMinMax(100, 500));
             
+			Team = 1;
+			
             BaseSoundID = 357;
             
             AI = aiTypes[Utility.Random(aiTypes.Length)];

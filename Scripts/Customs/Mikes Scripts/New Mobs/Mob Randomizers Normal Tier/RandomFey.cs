@@ -702,6 +702,8 @@ namespace Server.Mobiles
             SetHits(Utility.RandomMinMax(100, 500));
             
             BaseSoundID = 0x4B0;
+			
+			Team = 5;
             
             AI = aiTypes[Utility.Random(aiTypes.Length)];
             FightMode = fightModes[Utility.Random(fightModes.Length)];

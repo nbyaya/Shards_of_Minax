@@ -15,6 +15,7 @@ namespace Server.Mobiles
             Name = NameList.RandomName("daemon");
             Body = 9;
             BaseSoundID = 357;
+			Team = 1;
 
             SetStr(476, 505);
             SetDex(76, 95);

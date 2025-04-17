@@ -1,0 +1,64 @@
+using System;
+using Server;
+using Server.Items;
+
+namespace Server.Items
+{
+    public class VoidBrambleFruit : BaseFruit
+    {
+        public override string FruitName => "Void Bramble";
+        public override int FruitHue => 1657;
+        public override int FruitGraphic => 0x1726; // Example fruit graphic
+        public override Type SeedType => typeof(VoidBrambleFruitSeed);
+
+        [Constructable]
+        public VoidBrambleFruit() : base()
+        {
+        }
+
+        [Constructable]
+        public VoidBrambleFruit(int amount) : base(amount)
+        {
+        }
+
+        public VoidBrambleFruit(Serial serial) : base(serial)
+        {
+        }
+    }
+    
+	public class VoidBrambleFruitplant : BaseFruitPlant
+	{
+		public override string PlantName => "a Void Bramble plant";
+		public override int PlantHue => 1657;
+		public override int SeedGraphic => 0x0C45; // Seeds graphic
+		public override int HarvestableGraphic => 0x0DC4; // Harvestable plant graphic
+		public override Type FruitType => typeof(VoidBrambleFruit);
+
+		[Constructable]
+		public VoidBrambleFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+		{
+		}
+
+		public VoidBrambleFruitplant(Serial serial) : base(serial)
+		{
+		}
+	}
+
+
+    public class VoidBrambleFruitSeed : BaseFruitSeed
+    {
+        public override string SeedName => "a Void Bramble seed";
+        public override int SeedHue => 1657;
+        public override int SeedGraphic => 0xF27; // Example seed graphic
+        public override Type PlantType => typeof(VoidBrambleFruitplant);
+
+        [Constructable]
+        public VoidBrambleFruitSeed() : base()
+        {
+        }
+
+        public VoidBrambleFruitSeed(Serial serial) : base(serial)
+        {
+        }
+    }	
+}

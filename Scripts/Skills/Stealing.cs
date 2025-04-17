@@ -68,22 +68,6 @@ namespace Server.SkillHandlers
 				{
 					m_Thief.SendLocalizedMessage(1005584); // Both hands must be free to steal.
 				}
-				else if (root is Mobile && ((Mobile)root).Player && !IsInGuild(m_Thief))
-				{
-					m_Thief.SendLocalizedMessage(1005596); // You must be in the thieves guild to steal from other players.
-				}
-				else if (SuspendOnMurder && root is Mobile && ((Mobile)root).Player && IsInGuild(m_Thief) && m_Thief.Kills > 0)
-				{
-					m_Thief.SendLocalizedMessage(502706); // You are currently suspended from the thieves guild.
-				}
-				else if (root is BaseVendor && ((BaseVendor)root).IsInvulnerable)
-				{
-					m_Thief.SendLocalizedMessage(1005598); // You can't steal from shopkeepers.
-				}
-				else if (root is PlayerVendor)
-				{
-					m_Thief.SendLocalizedMessage(502709); // You can't steal from vendors.
-				}
 				else if (!m_Thief.CanSee(toSteal))
 				{
 					m_Thief.SendLocalizedMessage(500237); // Target can not be seen.

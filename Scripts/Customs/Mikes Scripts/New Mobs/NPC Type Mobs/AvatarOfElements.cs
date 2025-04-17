@@ -17,7 +17,7 @@ namespace Server.Mobiles
             Hue = 0x4001; // You can modify this for a unique hue if you want.
             Body = 0x190;
             Name = "The Avatar of Elements";
-			Team = Utility.RandomMinMax(1, 5);
+			Team = 2;
 
             // Equipment
             Item robe = new Robe();

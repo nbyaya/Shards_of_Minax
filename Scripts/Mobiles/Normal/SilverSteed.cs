@@ -21,7 +21,7 @@ namespace Server.Mobiles
             this.Skills[SkillName.Tactics].Base = 30.0 + (Utility.RandomDouble() * 15.0);
 
             this.ControlSlots = 1;
-            this.Tamable = false;
+            this.Tamable = true;
             this.MinTameSkill = 103.1;
         }
 

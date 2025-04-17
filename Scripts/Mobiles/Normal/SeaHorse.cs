@@ -10,6 +10,9 @@ namespace Server.Mobiles
             : this("a sea horse")
         {
 			this.CanSwim = true;
+            Tamable = true;
+            ControlSlots = 1;
+            MinTameSkill = 83.1;
         }
 
         [Constructable]

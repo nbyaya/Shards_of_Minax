@@ -59,6 +59,7 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo(typeof(Bottle), 5, 100, 0xF0E, 0, true)); 
                 Add(new GenericBuyInfo(typeof(HeatingStand), 2, 100, 0x1849, 0));
                 Add(new GenericBuyInfo(typeof(SkinTingeingTincture), 1255, 20, 0xEFF, 90));
+				Add(new GenericBuyInfo(typeof(TransmutationCauldron), 500, 10, 0xA5B4, 0));
 
                 if (m.Map != Map.TerMur)
                 {
@@ -106,6 +107,72 @@ namespace Server.Mobiles
 				Add(typeof(LesserExplosionPotion), 10);
 				Add(typeof(ExplosionPotion), 15);
 				Add(typeof(GreaterExplosionPotion), 25);
+                Add(typeof(Zychroline), 500);
+                Add(typeof(Aetheralate), 500);
+                Add(typeof(Neontrium), 500);
+                Add(typeof(Oblivionate), 500);
+                Add(typeof(Phantomide), 500);
+                Add(typeof(Quarkothene), 500);
+                Add(typeof(Stygiocarbon), 500);
+                Add(typeof(Cryovitrin), 500);
+                Add(typeof(Fluxidate), 500);
+                Add(typeof(Novaesine), 500);
+                Add(typeof(Xenocrylate), 500);
+                Add(typeof(Gravitoxane), 500);
+                Add(typeof(Eclipsium), 500);
+                Add(typeof(Darkspirite), 500);
+                Add(typeof(Photoplasmene), 500);
+                Add(typeof(Vibranide), 500);
+                Add(typeof(Duskenium), 500);
+                Add(typeof(Chronodyne), 500);
+                Add(typeof(Auroracene), 500);
+                Add(typeof(Voidanate), 500);
+                Add(typeof(Lumicryne), 500);
+                Add(typeof(Prismalium), 500);
+                Add(typeof(Etherothal), 500);
+                Add(typeof(Pyrolythene), 500);
+                Add(typeof(Radiacrylate), 500);
+                Add(typeof(Synthionide), 500);
+                Add(typeof(Morphaloxane), 500);
+                Add(typeof(Astrocyne), 500);
+                Add(typeof(Nyxiolate), 500);
+                Add(typeof(Spectrovanate), 500);
+                Add(typeof(Solvexium), 500);
+                Add(typeof(Helionine), 500);
+                Add(typeof(Thermodrithium), 500);
+                Add(typeof(Arcvaloxate), 500);
+                Add(typeof(Cinderathane), 500);
+                Add(typeof(Zephyrenium), 500);
+                Add(typeof(Kryotoxite), 500);
+                Add(typeof(Starshardine), 500);
+                Add(typeof(Omniplasium), 500);
+                Add(typeof(Nebulifluxate), 500);
+				
+                Add(typeof(GraveNylon), 2250);
+                Add(typeof(Aeroglass), 2250);
+                Add(typeof(Infinityclay), 2250);
+                Add(typeof(Bloodglass), 2250);
+                Add(typeof(DenaturedMorphonite), 2250);
+                Add(typeof(Energite), 2250);
+                Add(typeof(FlammablePlasmine), 2250);
+                Add(typeof(Impervanium), 2250);
+                Add(typeof(NegativePhocite), 2250);
+                Add(typeof(OpaqueHydragyon), 2250);
+                Add(typeof(PositiveEvenium), 2250);
+                Add(typeof(RefractivePotamite), 2250);
+                Add(typeof(Schizonite), 2250);
+                Add(typeof(Thoril), 2250);
+                Add(typeof(TransparentAurarus), 2250);
+                Add(typeof(Turbesium), 2250);
+                Add(typeof(Uranimite), 2250);
+                Add(typeof(ChargedAcoustesium), 2250);
+                Add(typeof(ExoticEun), 2250);
+                Add(typeof(Fibrogen), 2250);
+                Add(typeof(Flurocite), 2250);
+                Add(typeof(GaseousAesthogen), 2250);
+                Add(typeof(HighdensityElectron), 2250);
+                Add(typeof(MorphicHeteril), 2250);
+                Add(typeof(Negite), 2250);
             }
         }
     }

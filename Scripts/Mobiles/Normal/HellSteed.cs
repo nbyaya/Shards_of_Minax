@@ -39,6 +39,10 @@ namespace Server.Mobiles
             Fame = 0;
             Karma = 0;
 
+            Tamable = true;
+            ControlSlots = 4;
+            MinTameSkill = 98.7;
+
             SetSpecialAbility(SpecialAbility.DragonBreath);
         }
 

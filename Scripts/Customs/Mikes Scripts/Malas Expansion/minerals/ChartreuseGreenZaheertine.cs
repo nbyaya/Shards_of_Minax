@@ -1,0 +1,40 @@
+using System;
+using Server;
+using Server.Items;
+
+namespace Server.Items
+{
+    public class ChartreuseGreenZaheertine : BaseMineral
+    {
+        public override string MineralName => "Chartreuse Green Zaheertine";
+        public override int MineralHue => 2158;
+        public override int MineralGraphic => 0x2206; // Example crystal graphic
+
+        [Constructable]
+        public ChartreuseGreenZaheertine() : base()
+        {
+        }
+
+        public ChartreuseGreenZaheertine(Serial serial) : base(serial)
+        {
+        }
+    }
+
+    public class ChartreuseGreenZaheertineVein : BaseMineralVein
+    {
+        public override string VeinName => "a Chartreuse Green Zaheertine vein";
+        public override int VeinHue => 2158;
+        public override int VeinGraphic => 0x0C45; // Example vein graphic
+        public override int HarvestedGraphic => 0x2206; // Example harvested graphic
+        public override Type MineralType => typeof(ChartreuseGreenZaheertine);
+
+        [Constructable]
+        public ChartreuseGreenZaheertineVein() : base(0x0C45) // Pass VeinGraphic to base constructor
+        {
+        }
+
+        public ChartreuseGreenZaheertineVein(Serial serial) : base(serial)
+        {
+        }
+    }
+}

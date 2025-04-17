@@ -564,21 +564,21 @@ namespace Server.Items
 			GlobalEntries.Add("Felucca", new OmniEntry[]
 			{
 				new OmniEntry("Britain", new Point3D(1434, 1699, 2), Map.Felucca ),
-				new OmniEntry("Bucs Den", new Point3D(2705, 2162, 0), Map.Felucca ),
-				new OmniEntry("Cove", new Point3D(2237, 1214, 0), Map.Felucca ),
-				new OmniEntry("Delucia", new Point3D(5274, 3991, 37), Map.Felucca ),
-				new OmniEntry("Jhelom", new Point3D(1417, 3821, 0), Map.Felucca ),
-				new OmniEntry("Magincia", new Point3D(3728, 2164, 20), Map.Felucca ),
+				//new OmniEntry("Bucs Den", new Point3D(2705, 2162, 0), Map.Felucca ),
+				//new OmniEntry("Cove", new Point3D(2237, 1214, 0), Map.Felucca ),
+				//new OmniEntry("Delucia", new Point3D(5274, 3991, 37), Map.Felucca ),
+				//new OmniEntry("Jhelom", new Point3D(1417, 3821, 0), Map.Felucca ),
+				//new OmniEntry("Magincia", new Point3D(3728, 2164, 20), Map.Felucca ),
 				new OmniEntry("Minoc", new Point3D(2525, 582, 0), Map.Felucca ),
-				new OmniEntry("Moonglow", new Point3D(4471, 1177, 0), Map.Felucca ),
-				new OmniEntry("Nujel'm", new Point3D(3770, 1308, 0), Map.Felucca ),
-				new OmniEntry("Ocllo", new Point3D(3626, 2611, 0), Map.Felucca ),
-				new OmniEntry("Papua", new Point3D(5729, 3208, -6), Map.Felucca ),
-				new OmniEntry("Serpents Hold", new Point3D(2895, 3479, 15), Map.Felucca ),
-				new OmniEntry("Skara Brae", new Point3D(596, 2138, 0), Map.Felucca ),
+				//new OmniEntry("Moonglow", new Point3D(4471, 1177, 0), Map.Felucca ),
+				//new OmniEntry("Nujel'm", new Point3D(3770, 1308, 0), Map.Felucca ),
+				//new OmniEntry("Ocllo", new Point3D(3626, 2611, 0), Map.Felucca ),
+				//new OmniEntry("Papua", new Point3D(5729, 3208, -6), Map.Felucca ),
+				//new OmniEntry("Serpents Hold", new Point3D(2895, 3479, 15), Map.Felucca ),
+				//new OmniEntry("Skara Brae", new Point3D(596, 2138, 0), Map.Felucca ),
 				new OmniEntry("Trinsic", new Point3D(1823, 2821, 0), Map.Felucca ),
-				new OmniEntry("Vesper", new Point3D(2899, 676, 0), Map.Felucca ),
-				new OmniEntry("Wind", new Point3D(1361, 895, 0), Map.Felucca ),
+				//new OmniEntry("Vesper", new Point3D(2899, 676, 0), Map.Felucca ),
+				//new OmniEntry("Wind", new Point3D(1361, 895, 0), Map.Felucca ),
 				new OmniEntry("Yew", new Point3D(542, 985, 0), Map.Felucca )
 			});
 
@@ -630,18 +630,18 @@ namespace Server.Items
 
 			GlobalEntries.Add("Ilshenar", new OmniEntry[]
 			{
-				new OmniEntry("Ankh Dungeon", new Point3D(576, 1150, -100), Map.Ilshenar ),
-				new OmniEntry("Blood Dungeon", new Point3D(1747, 1171, -2), Map.Ilshenar ),
-				new OmniEntry("Exodus Dungeon", new Point3D(854, 778, -80), Map.Ilshenar ),
-				new OmniEntry("Lakeshire", new Point3D(1203, 1124, -25), Map.Ilshenar ),
-				new OmniEntry("Mistas", new Point3D(819, 1130, -29), Map.Ilshenar ),
-				new OmniEntry("Montor", new Point3D(1706, 205, 104), Map.Ilshenar ),
-				new OmniEntry("Rock Dungeon", new Point3D(1787, 572, 69), Map.Ilshenar ),
-				new OmniEntry("Savage Camp", new Point3D(1151, 659, -80), Map.Ilshenar ),
-				new OmniEntry("Sorceror's Dungeon", new Point3D(548, 462, -53), Map.Ilshenar ),
-				new OmniEntry("Spectre Dungeon", new Point3D(1363, 1033, -8), Map.Ilshenar ),
-				new OmniEntry("Spider Cave", new Point3D(1420, 913, -16), Map.Ilshenar ),
-				new OmniEntry("Wisp Dungeon", new Point3D(651, 1302, -58), Map.Ilshenar )
+				//new OmniEntry("Ankh Dungeon", new Point3D(576, 1150, -100), Map.Ilshenar ),
+				//new OmniEntry("Blood Dungeon", new Point3D(1747, 1171, -2), Map.Ilshenar ),
+				//new OmniEntry("Exodus Dungeon", new Point3D(854, 778, -80), Map.Ilshenar ),
+				//new OmniEntry("Lakeshire", new Point3D(1203, 1124, -25), Map.Ilshenar ),
+				//new OmniEntry("Mistas", new Point3D(819, 1130, -29), Map.Ilshenar ),
+				//new OmniEntry("Montor", new Point3D(1706, 205, 104), Map.Ilshenar ),
+				//new OmniEntry("Rock Dungeon", new Point3D(1787, 572, 69), Map.Ilshenar ),
+				//new OmniEntry("Savage Camp", new Point3D(1151, 659, -80), Map.Ilshenar ),
+				//new OmniEntry("Sorceror's Dungeon", new Point3D(548, 462, -53), Map.Ilshenar ),
+				//new OmniEntry("Spectre Dungeon", new Point3D(1363, 1033, -8), Map.Ilshenar ),
+				//new OmniEntry("Spider Cave", new Point3D(1420, 913, -16), Map.Ilshenar ),
+				//new OmniEntry("Wisp Dungeon", new Point3D(651, 1302, -58), Map.Ilshenar )
 			});
 
 			GlobalEntries.Add("Ilshenar Shrines", new OmniEntry[]
@@ -659,16 +659,16 @@ namespace Server.Items
 
 			GlobalEntries.Add("Malas", new OmniEntry[]
 			{
-				new OmniEntry("Doom", new Point3D(2368, 1267, -85), Map.Malas ),
-				new OmniEntry("Labyrinth", new Point3D(1730, 981, -80), Map.Malas ),
+				//new OmniEntry("Doom", new Point3D(2368, 1267, -85), Map.Malas ),
+				//new OmniEntry("Labyrinth", new Point3D(1730, 981, -80), Map.Malas ),
 				new OmniEntry("Luna", new Point3D(1015, 527, -65), Map.Malas ),
-				new OmniEntry("Orc Fort 1", new Point3D(912, 215, -90), Map.Malas ),
-				new OmniEntry("Orc Fort 2", new Point3D(1678, 374, -50), Map.Malas ),
-				new OmniEntry("Orc Fort 3", new Point3D(1375, 621, -86), Map.Malas ),
-				new OmniEntry("Orc Fort 4", new Point3D(1184, 715, -89), Map.Malas ),
-				new OmniEntry("Orc Fort 5", new Point3D(1279, 1324, -90), Map.Malas ),
-				new OmniEntry("Orc Fort 6", new Point3D(1598, 1834, -107), Map.Malas ),
-				new OmniEntry("Ruined Temple", new Point3D(1598, 1762, -110), Map.Malas ),
+				//new OmniEntry("Orc Fort 1", new Point3D(912, 215, -90), Map.Malas ),
+				//new OmniEntry("Orc Fort 2", new Point3D(1678, 374, -50), Map.Malas ),
+				//new OmniEntry("Orc Fort 3", new Point3D(1375, 621, -86), Map.Malas ),
+				//new OmniEntry("Orc Fort 4", new Point3D(1184, 715, -89), Map.Malas ),
+				//new OmniEntry("Orc Fort 5", new Point3D(1279, 1324, -90), Map.Malas ),
+				//new OmniEntry("Orc Fort 6", new Point3D(1598, 1834, -107), Map.Malas ),
+				//new OmniEntry("Ruined Temple", new Point3D(1598, 1762, -110), Map.Malas ),
 				new OmniEntry("Umbra", new Point3D(1997, 1386, -85), Map.Malas )
 			});
 
@@ -1223,11 +1223,11 @@ namespace Server.Items
 				AddPageButton( "Felucca Towns", Map.Felucca, p++, 3 );
 			}
 
-			if ( WO.FelDungeons && WO.CanUse( m, true, true ) )
-			{
-				GenerateMapListing( 4 );
-				AddPageButton( "Felucca Dungeons", Map.Felucca, p++, 4 );
-			}
+			//if ( WO.FelDungeons && WO.CanUse( m, true, true ) )
+			//{
+			//	GenerateMapListing( 4 );
+			//	AddPageButton( "Felucca Dungeons", Map.Felucca, p++, 4 );
+			//}
 
 			if ( WO.PublicMoongates && (WO.Felucca || (WO.Trammel && m_Reds)) )
 			{
@@ -1235,11 +1235,11 @@ namespace Server.Items
 				AddPageButton( "<basefont color=#FFFFFF>Public Moongates</basefont>", null, p++, 5 );
 			}
 
-			if ( WO.Ilshenar && m_Reds && m_HasLBR )
-			{
-				GenerateMapListing( 6 );
-				AddPageButton( "Ilshenar", Map.Ilshenar, p++, 6 );
-			}
+			//if ( WO.Ilshenar && m_Reds && m_HasLBR )
+			//{
+			//	GenerateMapListing( 6 );
+			//	AddPageButton( "Ilshenar", Map.Ilshenar, p++, 6 );
+			//}
 
 			if ( WO.IlshenarShrines && m_Reds && m_HasLBR )
 			{

@@ -30,7 +30,6 @@ namespace Server.Mobiles
             SetStr(86, 100);
             SetDex(81, 95);
             SetInt(61, 75);
-			Team = 5;
 
             SetDamage(10, 23);
 

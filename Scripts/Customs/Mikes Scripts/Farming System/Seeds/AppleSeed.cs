@@ -40,7 +40,7 @@ namespace Server.Items
             if (from.Map.CanFit(loc.X, loc.Y, loc.Z, 16, false, true))
             {
                 this.Delete(); // Consume the seed
-                HarvestAppleTree tree = new HarvestAppleTree();
+                HarvestAppleBush tree = new HarvestAppleBush();
                 tree.MoveToWorld(loc, from.Map);
                 from.SendMessage("You plant the seed, and a tree begins to grow.");
             }
