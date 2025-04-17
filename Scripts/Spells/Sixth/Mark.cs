@@ -31,18 +31,7 @@ namespace Server.Spells.Sixth
 
         public override void OnCast()
         {
-            if (Caster.Map.Name == "Felucca")
-            {
-                Caster.SendMessage("Planar Travel Blocked by Minax Magic");
-                FinishSequence();
-                return;
-            }
-            if (Caster.Map.Name == "Ilshenar")
-            {
-                Caster.SendMessage("Planar Travel Blocked by Minax Magic");
-                FinishSequence();
-                return;
-            }
+
             Caster.Target = new InternalTarget(this);
         }
 
@@ -51,33 +40,11 @@ namespace Server.Spells.Sixth
             if (!base.CheckCast())
                 return false;
 
-            if (Caster.Map.Name == "Felucca")
-            {
-                Caster.SendMessage("Planar Travel Blocked by Minax Magic");
-                return false;
-            }
-            if (Caster.Map.Name == "Ilshenar")
-            {
-                Caster.SendMessage("Planar Travel Blocked by Minax Magic");
-                return false;
-            }
             return SpellHelper.CheckTravel(Caster, TravelCheckType.Mark);
         }
 
         public void Target(RecallRune rune)
-        {
-            if (Caster.Map.Name == "Felucca")
-            {
-                Caster.SendMessage("Planar Travel Blocked by Minax Magic");
-                FinishSequence();
-                return;
-            }
-            if (Caster.Map.Name == "Ilshenar")
-            {
-                Caster.SendMessage("Planar Travel Blocked by Minax Magic");
-                FinishSequence();
-                return;
-            }            
+        {           
 
             BaseBoat boat = BaseBoat.FindBoatAt(Caster.Location, Caster.Map);
 
@@ -122,18 +89,7 @@ namespace Server.Spells.Sixth
 
             protected override void OnTarget(Mobile from, object o)
             {
-                if (from.Map.Name == "Felucca")
-                {
-                    from.SendMessage("Planar Travel Blocked by Minax Magic");
-                    m_Owner.FinishSequence();
-                    return;
-                }
-                if (from.Map.Name == "Ilshenar")
-                {
-                    from.SendMessage("Planar Travel Blocked by Minax Magic");
-                    m_Owner.FinishSequence();
-                    return;
-                }                
+              
 
                 if (o is RecallRune)
                 {

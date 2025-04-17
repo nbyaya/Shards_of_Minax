@@ -47,6 +47,9 @@ namespace Server.Custom
             AddItemWithProbability(new RandomFancyMedicine(), 0.05);
             AddItemWithProbability(new RandomFancyMedicine(), 0.05);
             AddItemWithProbability(new RandomFancyMedicine(), 0.05);
+			AddItemWithProbability(new TeleportToTokuno(), 0.03);
+			AddItemWithProbability(new TeleportToMalasItem(), 0.03);
+			AddItemWithProbability(new TeleportToIlshenarItem(), 0.03);
 
             _initialized = true; // Mark as initialized
         }

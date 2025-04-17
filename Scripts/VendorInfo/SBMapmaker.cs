@@ -34,6 +34,9 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo(typeof(BlankMap), 5, 40, 0x14EC, 0));
                 Add(new GenericBuyInfo(typeof(MapmakersPen), 8, 20, 0x0FBF, 0));
                 Add(new GenericBuyInfo(typeof(BlankScroll), 12, 40, 0xEF3, 0));
+				Add(new GenericBuyInfo(typeof(TeleportToTokuno), 5000, 40, 0x1F14, 0));
+				Add(new GenericBuyInfo(typeof(TeleportToMalasItem), 5000, 40, 0x1ECD, 0));
+				Add(new GenericBuyInfo(typeof(TeleportToIlshenarItem), 5000, 40, 0x1F14, 0));
 				
                 for (int i = 0; i < PresetMapEntry.Table.Length; ++i)
                     Add(new PresetMapBuyInfo(PresetMapEntry.Table[i], Utility.RandomMinMax(7, 10), 20));

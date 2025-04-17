@@ -154,16 +154,7 @@ namespace Server.Spells.Fourth
             if (Factions.Sigil.ExistsOn(Caster))
             {
                 Caster.SendLocalizedMessage(1061632); // You can't do that while carrying the sigil.
-            }
-            else if (map == Map.Felucca)
-            {
-                Caster.SendMessage("Planar Travel Blocked by Minax Magic");
-            }
-			if (map == Map.Ilshenar)
-			{
-				Caster.SendMessage("Planar Travel Blocked by Minax Magic");
-				return; // Block the spell and exit the method
-			}            
+            }           
             else if (map == null || (!Core.AOS && Caster.Map != map))
             {
                 Caster.SendLocalizedMessage(1005569); // You can not recall to another facet.

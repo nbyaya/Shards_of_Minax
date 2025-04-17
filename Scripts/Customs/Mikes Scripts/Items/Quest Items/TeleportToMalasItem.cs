@@ -4,7 +4,7 @@ using Server.Network;
 using Server.Mobiles;
 using Server.Items;
 
-namespace Server.Custom.Items
+namespace Server.Items
 {
     public class TeleportToMalasItem : Item
     {

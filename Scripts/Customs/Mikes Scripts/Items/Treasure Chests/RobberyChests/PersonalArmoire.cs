@@ -69,6 +69,9 @@ namespace Server.Custom
             AddItemWithProbability(new RandomMagicClothing(), 0.004);
             AddItemWithProbability(new RandomMagicClothing(), 0.004);
             AddItemWithProbability(new RandomMagicClothing(), 0.004);
+			AddItemWithProbability(new TeleportToTokuno(), 0.03);
+			AddItemWithProbability(new TeleportToMalasItem(), 0.03);
+			AddItemWithProbability(new TeleportToIlshenarItem(), 0.03);
 
             AddItemWithProbability(Loot.RandomWeapon(), 0.10); // Add personal notes
             AddItemWithProbability(CreatePersonalNote(), 0.20);

@@ -21,75 +21,72 @@ namespace Server.Commands
         {
             Mobile from = e.Mobile;
 
-            // Store the player's old location so we can come back.
             Point3D oldLocation = from.Location;
             Map oldMap = from.Map;
 
-            // Define the new location to flee to.
             Point3D newLocation = new Point3D(1325, 1624, 55);
             Map newMap = Map.Trammel;
 
-            // Gather the player's pets (controlled or summoned).
             List<BaseCreature> pets = new List<BaseCreature>();
+            BaseCreature playersMount = from.Mount as BaseCreature; // Get current mount
+
             foreach (Mobile m in World.Mobiles.Values)
             {
                 if (m is BaseCreature bc)
                 {
+                    // Skip the player's current mount
+                    if (bc == playersMount)
+                        continue;
+
                     if ((bc.Controlled && bc.ControlMaster == from) ||
-                        (bc.Summoned  && bc.SummonMaster  == from))
+                        (bc.Summoned && bc.SummonMaster == from))
                     {
                         pets.Add(bc);
                     }
                 }
             }
 
-            // Teleport the player to the "runaway" location.
-            from.MoveToWorld(newLocation, newMap);
-
-            // Teleport each pet as well, dismounting them first if necessary.
+            // Teleport pets first (excluding current mount)
             foreach (BaseCreature pet in pets)
             {
                 if (pet is IMount mount && mount.Rider != null)
                 {
-                    mount.Rider = null; // forcibly dismount
+                    mount.Rider = null;
                 }
                 pet.MoveToWorld(newLocation, newMap);
             }
 
-            // Display a message to the player.
+            // Teleport player and their mount together
+            from.MoveToWorld(newLocation, newMap);
+
             from.SendMessage("You bravely run away, taking your pets with you!");
 
-            // Create a portal at your new location that will send you back.
-            // It will last for 2 minutes (customize as needed).
-            TemporaryReturnPortal portal = new TemporaryReturnPortal(oldLocation, oldMap, TimeSpan.FromMinutes(2.0));
+            TemporaryReturnPortal portal = new TemporaryReturnPortal(oldLocation, oldMap, TimeSpan.FromMinutes(2.0), pets);
             portal.MoveToWorld(newLocation, newMap);
 
-            // Notify the player that the portal exists.
             from.SendMessage("A magical portal opens nearby! Double-click it within 2 minutes to return.");
         }
     }
 
-    // ------------------------------------------------------------
-    // TemporaryReturnPortal
-    // ------------------------------------------------------------
     public class TemporaryReturnPortal : Item
     {
         private Point3D m_ReturnLocation;
         private Map m_ReturnMap;
         private DateTime m_ExpireTime;
         private Timer m_Timer;
+        private List<BaseCreature> m_Pets;
 
         [Constructable]
-        public TemporaryReturnPortal(Point3D returnLocation, Map returnMap, TimeSpan duration)
-            : base(0xF6C)  // 0xF6C is the item ID for a moongate graphic
+        public TemporaryReturnPortal(Point3D returnLocation, Map returnMap, TimeSpan duration, List<BaseCreature> pets)
+            : base(0xF6C)
         {
             Movable = false;
-            Hue = 0x490;  // Optional: Change hue if desired
+            Hue = 0x490;
             m_ReturnLocation = returnLocation;
             m_ReturnMap = returnMap;
             m_ExpireTime = DateTime.UtcNow + duration;
+            m_Pets = pets;
 
-            // Check every second if the portal should expire
             m_Timer = Timer.DelayCall(TimeSpan.FromSeconds(1.0), TimeSpan.FromSeconds(1.0), CheckExpire);
         }
 
@@ -97,11 +94,20 @@ namespace Server.Commands
         {
         }
 
-        // When a player double-clicks the portal, if they're close enough, teleport them back.
         public override void OnDoubleClick(Mobile from)
         {
             if (from.InRange(this.GetWorldLocation(), 2))
             {
+                // Teleport pets back
+                foreach (BaseCreature pet in m_Pets)
+                {
+                    if (pet.Map != Map.Internal)
+                    {
+                        pet.MoveToWorld(m_ReturnLocation, m_ReturnMap);
+                    }
+                }
+
+                // Teleport player and their mount together
                 from.MoveToWorld(m_ReturnLocation, m_ReturnMap);
                 from.SendMessage("You step through the portal and return to where you fled from!");
                 Delete();
@@ -116,10 +122,12 @@ namespace Server.Commands
         {
             if (DateTime.UtcNow >= m_ExpireTime)
             {
-                Delete(); // Portal expires
+                Delete();
             }
         }
 
+        // Remaining methods unchanged for brevity
+        // (Serialization/Deserialization same as previous version)
         public override void OnDelete()
         {
             base.OnDelete();
@@ -134,6 +142,7 @@ namespace Server.Commands
             writer.Write(m_ReturnLocation);
             writer.Write(m_ReturnMap);
             writer.WriteDeltaTime(m_ExpireTime);
+            writer.WriteMobileList<BaseCreature>(m_Pets);
         }
 
         public override void Deserialize(GenericReader reader)
@@ -143,9 +152,10 @@ namespace Server.Commands
             m_ReturnLocation = reader.ReadPoint3D();
             m_ReturnMap = reader.ReadMap();
             m_ExpireTime = reader.ReadDeltaTime();
+            m_Pets = reader.ReadStrongMobileList<BaseCreature>();
 
             // Restart the expiration timer if server restarts while portal still active.
             m_Timer = Timer.DelayCall(TimeSpan.FromSeconds(1.0), TimeSpan.FromSeconds(1.0), CheckExpire);
-        }
+        }		
     }
 }

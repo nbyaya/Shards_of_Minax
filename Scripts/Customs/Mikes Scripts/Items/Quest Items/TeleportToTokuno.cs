@@ -12,7 +12,6 @@ namespace Server.Items
             Name = "Teleport Stone to Tokuno";
             Hue = 1161;
             Movable = true;
-            LootType = LootType.Blessed;
         }
 
         public TeleportToTokuno(Serial serial) : base(serial)

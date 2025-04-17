@@ -2709,7 +2709,10 @@ namespace Server
 			new LootPackItem(typeof(WyvernBoneHelm), 25),
 			new LootPackItem(typeof(YamandonLordsStoneChest), 25),
 			new LootPackItem(typeof(YomotsuWarlordsYumi), 25),
-			new LootPackItem(typeof(YoungNinjasShadowblade), 25),			
+			new LootPackItem(typeof(YoungNinjasShadowblade), 25),
+			new LootPackItem(typeof(TeleportToIlshenarItem), 100),
+			new LootPackItem(typeof(TeleportToMalasItem), 100),		
+			new LootPackItem(typeof(TeleportToTokuno), 100),					
 			new LootPackItem(typeof(AncientWood), 100)
 			
 		};

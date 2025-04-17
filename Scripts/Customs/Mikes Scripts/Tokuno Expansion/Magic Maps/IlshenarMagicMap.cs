@@ -131,7 +131,7 @@ namespace Server.Items
         public override int MaxMonsters => 15; // More monsters
 
         // Override expiration time
-        public override TimeSpan ExpirationTime => TimeSpan.FromMinutes(45); // Longer duration
+        public override TimeSpan ExpirationTime => TimeSpan.FromMinutes(5); // Longer duration
 
         // Override portal hue and sound
         public override int PortalHue => 302; // Gold hue

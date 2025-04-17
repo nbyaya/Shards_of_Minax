@@ -126,6 +126,9 @@ namespace Server.Custom
             AddItemWithProbability(new RandomFancyCheese(), 0.05);
             AddItemWithProbability(new RandomFancyDinner(), 0.10);
             AddItemWithProbability(new RandomFancyFish(), 0.05);
+			AddItemWithProbability(new TeleportToTokuno(), 0.03);
+			AddItemWithProbability(new TeleportToMalasItem(), 0.03);
+			AddItemWithProbability(new TeleportToIlshenarItem(), 0.03);
 
             // Add personal notes
             AddItemWithProbability(CreateRecipeNote(), 0.20);

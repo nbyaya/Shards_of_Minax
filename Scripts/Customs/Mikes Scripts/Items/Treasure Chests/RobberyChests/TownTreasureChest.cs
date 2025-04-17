@@ -124,6 +124,9 @@ namespace Server.Custom
             AddItemWithProbability(new RandomMagicJewelry(), 0.004);
             AddItemWithProbability(new RandomMagicJewelry(), 0.004);
             AddItemWithProbability(new RandomMagicJewelry(), 0.004);
+			AddItemWithProbability(new TeleportToTokuno(), 0.03);
+			AddItemWithProbability(new TeleportToMalasItem(), 0.03);
+			AddItemWithProbability(new TeleportToIlshenarItem(), 0.03);
 
             // Add valuable documents
             AddItemWithProbability(CreateValuableDocument(), 0.2);

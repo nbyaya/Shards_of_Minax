@@ -44,16 +44,51 @@ namespace Server.Items
             // Create content manager with expiration timer
             SpawnedContent content = new SpawnedContent(ExpirationTime);
 
+            // Gather and teleport pets first
+            List<BaseCreature> pets = GatherPets(from);
+            TeleportPets(pets, destination, destinationMap);
+
             // Spawn challenges (monsters, chests, etc.)
-            SpawnChallenges(destination, destinationMap, content, from); // Add 'from' parameter
+            SpawnChallenges(destination, destinationMap, content, from);
 
             // Create portals (origin and return)
             CreatePortals(origin, originMap, destination, destinationMap, content);
 
-            // Teleport player
+            // Teleport player last to maintain mount
             from.SendMessage("The magic map dissolves as you're transported to a mysterious location!");
             from.MoveToWorld(destination, destinationMap);
             Delete();
+        }
+
+        private List<BaseCreature> GatherPets(Mobile from)
+        {
+            List<BaseCreature> pets = new List<BaseCreature>();
+            BaseCreature playersMount = from.Mount as BaseCreature;
+
+            foreach (Mobile m in World.Mobiles.Values)
+            {
+                if (m is BaseCreature bc && bc != playersMount)
+                {
+                    if ((bc.Controlled && bc.ControlMaster == from) ||
+                        (bc.Summoned && bc.SummonMaster == from))
+                    {
+                        pets.Add(bc);
+                    }
+                }
+            }
+            return pets;
+        }
+
+        private void TeleportPets(List<BaseCreature> pets, Point3D destination, Map map)
+        {
+            foreach (BaseCreature pet in pets)
+            {
+                if (pet is IMount mount && mount.Rider != null && mount.Rider != pet.ControlMaster)
+                {
+                    mount.Rider = null; // Dismount only non-owner riders
+                }
+                pet.MoveToWorld(destination, map);
+            }
         }
 
         protected virtual Point3D GetRandomLocation()
@@ -65,23 +100,23 @@ namespace Server.Items
             return PredefinedLocations[index];
         }
 
-		protected virtual void SpawnChallenges(Point3D center, Map map, SpawnedContent content, Mobile from)
-		{
-			// Spawn monsters
-			for (int i = 0; i < MaxMonsters; i++)
-			{
-				SpawnMonster(center, map, content);
-			}
+        protected virtual void SpawnChallenges(Point3D center, Map map, SpawnedContent content, Mobile from)
+        {
+            // Spawn monsters
+            for (int i = 0; i < MaxMonsters; i++)
+            {
+                SpawnMonster(center, map, content);
+            }
 
-			// Spawn treasure chests
-			for (int i = 0; i < MaxChests; i++)
-			{
-				SpawnChest(center, map, content, from); // Pass 'from' here
-			}
+            // Spawn treasure chests
+            for (int i = 0; i < MaxChests; i++)
+            {
+                SpawnChest(center, map, content, from);
+            }
 
-			// Spawn other objects
-			SpawnMiscObjects(center, map, content);
-		}
+            // Spawn other objects
+            SpawnMiscObjects(center, map, content);
+        }
 
         protected virtual void SpawnMonster(Point3D center, Map map, SpawnedContent content)
         {
@@ -101,23 +136,18 @@ namespace Server.Items
             }
         }
 
-		protected virtual void SpawnChest(Point3D center, Map map, SpawnedContent content, Mobile from)
-		{
-			// Create the chest with the player as the owner
-			TreasureMapChest chest = new TreasureMapChest(from, ChestLevel, false);
-			Point3D chestLoc = GetRandomSpawnPoint(center, SpawnRadius);
-			chest.MoveToWorld(chestLoc, map);
+        protected virtual void SpawnChest(Point3D center, Map map, SpawnedContent content, Mobile from)
+        {
+            TreasureMapChest chest = new TreasureMapChest(from, ChestLevel, false);
+            Point3D chestLoc = GetRandomSpawnPoint(center, SpawnRadius);
+            chest.MoveToWorld(chestLoc, map);
 
-			// Fill the chest with loot
-			TreasureMapChest.Fill(from, chest, ChestLevel, false); // 'false' indicates it's not a SOS chest
-
-			content.SpawnedEntities.Add(chest);
-		}
+            TreasureMapChest.Fill(from, chest, ChestLevel, false);
+            content.SpawnedEntities.Add(chest);
+        }
 
         protected virtual void SpawnMiscObjects(Point3D center, Map map, SpawnedContent content)
         {
-            // Default implementation (can be overridden in subclasses)
-            // Example: Spawn environmental hazards or decorations
             if (Utility.RandomDouble() < 0.3)
             {
                 Point3D oreLoc = GetRandomSpawnPoint(center, SpawnRadius);
@@ -134,32 +164,32 @@ namespace Server.Items
             return new Point3D(x, y, center.Z);
         }
 
-		protected virtual void CreatePortals(Point3D origin, Map originMap, Point3D destination, Map destinationMap, SpawnedContent content)
-		{
-			// Origin portal (where player came from)
-			MagicPortal originPortal = new MagicPortal(PortalHue, PortalSound) // Pass values here
-			{
-				Destination = destination,
-				DestinationMap = destinationMap
-			};
-			originPortal.MoveToWorld(origin, originMap);
-			content.OriginPortal = originPortal;
+        protected virtual void CreatePortals(Point3D origin, Map originMap, Point3D destination, Map destinationMap, SpawnedContent content)
+        {
+            // Origin portal (where player came from)
+            MagicPortal originPortal = new MagicPortal(PortalHue, PortalSound)
+            {
+                Destination = destination,
+                DestinationMap = destinationMap
+            };
+            originPortal.MoveToWorld(origin, originMap);
+            content.OriginPortal = originPortal;
 
-			// Destination portal (return portal)
-			MagicPortal destPortal = new MagicPortal(PortalHue, PortalSound) // Pass values here
-			{
-				Destination = origin,
-				DestinationMap = originMap
-			};
-			destPortal.MoveToWorld(destination, destinationMap);
-			content.ReturnPortal = destPortal;
+            // Destination portal (return portal)
+            MagicPortal destPortal = new MagicPortal(PortalHue, PortalSound)
+            {
+                Destination = origin,
+                DestinationMap = originMap
+            };
+            destPortal.MoveToWorld(destination, destinationMap);
+            content.ReturnPortal = destPortal;
 
-			// Add visual effects
-			Effects.SendLocationParticles(originPortal, 0x3728, 10, 10, 2023);
-			Effects.SendLocationParticles(destPortal, 0x3728, 10, 10, 2023);
-			Effects.PlaySound(originPortal.Location, originMap, PortalSound);
-			Effects.PlaySound(destPortal.Location, destinationMap, PortalSound);
-		}
+            // Add visual effects
+            Effects.SendLocationParticles(originPortal, 0x3728, 10, 10, 2023);
+            Effects.SendLocationParticles(destPortal, 0x3728, 10, 10, 2023);
+            Effects.PlaySound(originPortal.Location, originMap, PortalSound);
+            Effects.PlaySound(destPortal.Location, destinationMap, PortalSound);
+        }
 
         // Serialization
         public MagicMapBase(Serial serial) : base(serial) { }
@@ -211,60 +241,87 @@ namespace Server.Items
         }
 
         // Supporting class for the magic portal
-		public class MagicPortal : Item
-		{
-			public Point3D Destination { get; set; }
-			public Map DestinationMap { get; set; }
-			private int _portalHue; // Store the hue
-			private int _portalSound; // Store the sound
+        public class MagicPortal : Item
+        {
+            public Point3D Destination { get; set; }
+            public Map DestinationMap { get; set; }
+            private int _portalHue;
+            private int _portalSound;
 
-			[Constructable]
-			public MagicPortal(int portalHue, int portalSound) : base(0x0DDA)
-			{
-				_portalHue = portalHue;
-				_portalSound = portalSound;
-				Name = "Magic Portal";
-				Hue = _portalHue; // Use the passed hue
-				Movable = false;
-				Light = LightType.Circle300;
-			}
+            [Constructable]
+            public MagicPortal(int portalHue, int portalSound) : base(0x0DDA)
+            {
+                _portalHue = portalHue;
+                _portalSound = portalSound;
+                Name = "Magic Portal";
+                Hue = _portalHue;
+                Movable = false;
+                Light = LightType.Circle300;
+            }
 
-			public override void OnDoubleClick(Mobile from)
-			{
-				if (!from.InRange(this, 3))
-				{
-					from.SendLocalizedMessage(500446); // That is too far away.
-					return;
-				}
+            public override void OnDoubleClick(Mobile from)
+            {
+                if (!from.InRange(this, 3))
+                {
+                    from.SendLocalizedMessage(500446); // That is too far away.
+                    return;
+                }
 
-				from.SendMessage("You step through the magical portal...");
-				Effects.SendLocationParticles(EffectItem.Create(Location, Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
-				Timer.DelayCall(TimeSpan.FromSeconds(1), () =>
-				{
-					from.MoveToWorld(Destination, DestinationMap);
-					Effects.SendLocationParticles(EffectItem.Create(Destination, DestinationMap, EffectItem.DefaultDuration), 0x3728, 10, 10, 5023);
-					Effects.PlaySound(Destination, DestinationMap, _portalSound); // Use the passed sound
-				});
-			}
+                List<BaseCreature> pets = new List<BaseCreature>();
+                BaseCreature playersMount = from.Mount as BaseCreature;
 
-			// Serialization
-			public MagicPortal(Serial serial) : base(serial) { }
+                foreach (Mobile m in World.Mobiles.Values)
+                {
+                    if (m is BaseCreature bc && bc != playersMount)
+                    {
+                        if ((bc.Controlled && bc.ControlMaster == from) ||
+                            (bc.Summoned && bc.SummonMaster == from))
+                        {
+                            pets.Add(bc);
+                        }
+                    }
+                }
 
-			public override void Serialize(GenericWriter writer)
-			{
-				base.Serialize(writer);
-				writer.Write(0); // version
-				writer.Write(_portalHue); // Save the hue
-				writer.Write(_portalSound); // Save the sound
-			}
+                from.SendMessage("You step through the magical portal...");
+                Effects.SendLocationParticles(EffectItem.Create(Location, Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
 
-			public override void Deserialize(GenericReader reader)
-			{
-				base.Deserialize(reader);
-				int version = reader.ReadInt();
-				_portalHue = reader.ReadInt(); // Load the hue
-				_portalSound = reader.ReadInt(); // Load the sound
-			}
-		}
+                Timer.DelayCall(TimeSpan.FromSeconds(1), () =>
+                {
+                    // Teleport pets first
+                    foreach (BaseCreature pet in pets)
+                    {
+                        if (pet is IMount mount && mount.Rider != null && mount.Rider != pet.ControlMaster)
+                        {
+                            mount.Rider = null;
+                        }
+                        pet.MoveToWorld(Destination, DestinationMap);
+                    }
+
+                    // Teleport player last
+                    from.MoveToWorld(Destination, DestinationMap);
+                    Effects.SendLocationParticles(EffectItem.Create(Destination, DestinationMap, EffectItem.DefaultDuration), 0x3728, 10, 10, 5023);
+                    Effects.PlaySound(Destination, DestinationMap, _portalSound);
+                });
+            }
+
+            // Serialization
+            public MagicPortal(Serial serial) : base(serial) { }
+
+            public override void Serialize(GenericWriter writer)
+            {
+                base.Serialize(writer);
+                writer.Write(0); // version
+                writer.Write(_portalHue);
+                writer.Write(_portalSound);
+            }
+
+            public override void Deserialize(GenericReader reader)
+            {
+                base.Deserialize(reader);
+                int version = reader.ReadInt();
+                _portalHue = reader.ReadInt();
+                _portalSound = reader.ReadInt();
+            }
+        }
     }
 }

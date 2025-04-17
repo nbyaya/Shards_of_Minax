@@ -11,7 +11,7 @@ namespace Server.Items
         [Constructable]
         public TeleportToIlshenarItem() : base(0x1F14)
         {
-            Name = "Teleport to Ilshenar";
+            Name = "Ilshenar Teleporter";
             Hue = 0x482;
             Movable = true;
         }

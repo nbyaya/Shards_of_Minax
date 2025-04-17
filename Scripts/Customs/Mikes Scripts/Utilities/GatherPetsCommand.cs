@@ -18,15 +18,15 @@ namespace Server.Commands
         public static void GatherPets_OnCommand(CommandEventArgs e)
         {
             Mobile from = e.Mobile;
+            BaseCreature currentMount = from.Mount as BaseCreature;
 
-            // Gather the player's pets (controlled or summoned).
             List<BaseCreature> pets = new List<BaseCreature>();
             foreach (Mobile m in World.Mobiles.Values)
             {
-                if (m is BaseCreature bc)
+                if (m is BaseCreature bc && bc != currentMount)
                 {
                     if ((bc.Controlled && bc.ControlMaster == from) ||
-                        (bc.Summoned  && bc.SummonMaster  == from))
+                        (bc.Summoned && bc.SummonMaster == from))
                     {
                         pets.Add(bc);
                     }
@@ -37,26 +37,22 @@ namespace Server.Commands
             {
                 foreach (BaseCreature pet in pets)
                 {
-                    // If the pet is mounted, dismount it first.
+                    // Only move pets that aren't currently being ridden
                     if (pet is IMount mount && mount.Rider != null)
                     {
-                        mount.Rider = null; // forcibly dismount
+                        if (mount.Rider != from) // Only dismount other riders
+                            mount.Rider = null;
                     }
-
-                    // Teleport the pet to the player's current location.
+                    
                     pet.MoveToWorld(from.Location, from.Map);
-
-                    // Optional: Visual effect for pet arrival.
-                    Effects.SendLocationEffect(from.Location, from.Map, 0x3728, 10, 30); // Replace EffectItem
+                    Effects.SendLocationEffect(from.Location, from.Map, 0x3728, 10, 30);
                     Effects.PlaySound(from.Location, from.Map, 0x201);
                 }
 
-                // Inform the player.
                 from.SendMessage("Your pets have been summoned to your location.");
             }
             else
             {
-                // Inform the player that no pets were found.
                 from.SendMessage("You do not have any pets to summon.");
             }
         }

@@ -121,6 +121,9 @@ namespace Server.Custom
             AddItemWithProbability(new RandomMagicJewelry(), 0.004);
             AddItemWithProbability(new RandomMagicJewelry(), 0.004);
             AddItemWithProbability(new RandomMagicJewelry(), 0.004);
+			AddItemWithProbability(new TeleportToTokuno(), 0.06);
+			AddItemWithProbability(new TeleportToMalasItem(), 0.06);
+			AddItemWithProbability(new TeleportToIlshenarItem(), 0.06);
 
             _initialized = true; // Mark as initialized
         }

@@ -111,20 +111,25 @@ namespace Server.Items
 
 		public static void CheckItems( Mobile killer, Mobile killed )
 		{
+			// If the killer is a creature and has a ControlMaster, use the master as the killer
+			BaseCreature bc = killer as BaseCreature;
+			if ( bc != null && bc.ControlMaster != null )
+				killer = bc.ControlMaster;
+
 			if ( killer != null )
 			{
-				for( int i = 0; i < 25; ++i )
+				for ( int i = 0; i < 25; ++i )
 				{
 					Item item = killer.FindItemOnLayer( (Layer)i );
 
-                    XmlLevelItem levitem = XmlAttach.FindAttachment(item, typeof(XmlLevelItem)) as XmlLevelItem;
+					XmlLevelItem levitem = XmlAttach.FindAttachment(item, typeof(XmlLevelItem)) as XmlLevelItem;
 
-					//if ( item != null && item is ILevelable )
-                    if (item != null && levitem != null)
-                        CheckLevelable(levitem, killer, killed);
+					if ( item != null && levitem != null )
+						CheckLevelable(levitem, killer, killed);
 				}
 			}
 		}
+
 
 		//public static void InvalidateLevel( ILevelable item )
         public static void InvalidateLevel(XmlLevelItem item)
