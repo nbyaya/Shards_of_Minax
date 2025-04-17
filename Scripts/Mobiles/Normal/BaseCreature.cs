@@ -1656,11 +1656,12 @@ namespace Server.Mobiles
 
 				if (profile != null && profile.Talents.TryGetValue(TalentID.MinionDamageBonus, out Talent minionTalent))
 				{
-					// Example: 5% bonus per point
-					double bonusMultiplier = 0 + (minionTalent.Points * 0.005);
+					// Apply bonus: 0.5% per point, additive to 100%
+					double bonusMultiplier = 1.0 + (minionTalent.Points * 0.005);
 					amount = (int)(amount * bonusMultiplier);
 				}
 			}
+
 
 			// Original AOS bonus logic (optional, you can merge or remove as needed)
 			if (Core.AOS && Controlled && from is BaseCreature && !((BaseCreature)from).Controlled && !((BaseCreature)from).Summoned)
