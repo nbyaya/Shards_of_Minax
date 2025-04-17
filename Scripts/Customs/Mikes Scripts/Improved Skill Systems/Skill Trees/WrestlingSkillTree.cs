@@ -261,29 +261,29 @@ namespace Server.ACC.CSS.Systems.WrestlingMagic
                 profile.Talents[TalentID.WrestlingSpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic bonuses.
+            // Layer 1: Basic bonuses/spell unlocks.
             nodeIndex <<= 1;
-            var grappleGrip = new SkillNode(nodeIndex, "Grapple Grip", 6, "Increases hold strength", (p) =>
+            var grappleGrip = new SkillNode(nodeIndex, "Grapple Grip", 6, "Unlocks a new wrestling spell", (p) =>
             {
-                profile.Talents[TalentID.WrestlingPower].Points += 1;
+                profile.Talents[TalentID.WrestlingSpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
-            var agileFootwork = new SkillNode(nodeIndex, "Agile Footwork", 6, "Improves dodge chance", (p) =>
+            var agileFootwork = new SkillNode(nodeIndex, "Agile Footwork", 6, "Unlocks a new wrestling spell", (p) =>
             {
-                profile.Talents[TalentID.WrestlingAgility].Points += 1;
+                profile.Talents[TalentID.WrestlingSpells].Points |= 0x400;
             });
 
             nodeIndex <<= 1;
-            var slickMoves = new SkillNode(nodeIndex, "Slick Moves", 6, "Unlocks bonus wrestling move", (p) =>
+            var slickMoves = new SkillNode(nodeIndex, "Slick Moves", 6, "Unlocks a new wrestling spell", (p) =>
             {
                 profile.Talents[TalentID.WrestlingSpells].Points |= 0x04;
             });
 
             nodeIndex <<= 1;
-            var ringPresence = new SkillNode(nodeIndex, "Ring Presence", 6, "Enhances stamina", (p) =>
+            var ringPresence = new SkillNode(nodeIndex, "Ring Presence", 6, "Unlocks a new wrestling spell", (p) =>
             {
-                profile.Talents[TalentID.WrestlingStamina].Points += 1;
+                profile.Talents[TalentID.WrestlingSpells].Points |= 0x800;
             });
 
             Root.AddChild(grappleGrip);
@@ -293,27 +293,27 @@ namespace Server.ACC.CSS.Systems.WrestlingMagic
 
             // Layer 2: Advanced moves and bonuses.
             nodeIndex <<= 1;
-            var crowdRoar = new SkillNode(nodeIndex, "Crowd Roar", 7, "Unlocks additional wrestling moves", (p) =>
+            var crowdRoar = new SkillNode(nodeIndex, "Crowd Roar", 7, "Unlocks a new wrestling spell", (p) =>
             {
                 profile.Talents[TalentID.WrestlingSpells].Points |= 0x08;
             });
 
             nodeIndex <<= 1;
-            var momentumShift = new SkillNode(nodeIndex, "Momentum Shift", 7, "Increases damage output", (p) =>
+            var momentumShift = new SkillNode(nodeIndex, "Momentum Shift", 7, "Unlocks a new wrestling spell", (p) =>
             {
-                profile.Talents[TalentID.WrestlingPower].Points += 1;
+                profile.Talents[TalentID.WrestlingSpells].Points |= 0x1000;
             });
 
             nodeIndex <<= 1;
-            var bodySlam = new SkillNode(nodeIndex, "Body Slam", 7, "Unlocks advanced wrestling moves", (p) =>
+            var bodySlam = new SkillNode(nodeIndex, "Body Slam", 7, "Unlocks a new wrestling spell", (p) =>
             {
                 profile.Talents[TalentID.WrestlingSpells].Points |= 0x10;
             });
 
             nodeIndex <<= 1;
-            var matMastery = new SkillNode(nodeIndex, "Mat Mastery", 7, "Improves wrestling technique", (p) =>
+            var matMastery = new SkillNode(nodeIndex, "Mat Mastery", 7, "Unlocks a new wrestling spell", (p) =>
             {
-                profile.Talents[TalentID.WrestlingTechnique].Points += 1;
+                profile.Talents[TalentID.WrestlingSpells].Points |= 0x2000;
             });
 
             grappleGrip.AddChild(crowdRoar);
@@ -335,7 +335,7 @@ namespace Server.ACC.CSS.Systems.WrestlingMagic
             });
 
             nodeIndex <<= 1;
-            var submissionSavvy = new SkillNode(nodeIndex, "Submission Savvy", 8, "Unlocks submission moves", (p) =>
+            var submissionSavvy = new SkillNode(nodeIndex, "Submission Savvy", 8, "Unlocks a new wrestling spell", (p) =>
             {
                 profile.Talents[TalentID.WrestlingSpells].Points |= 0x20;
             });
@@ -359,15 +359,15 @@ namespace Server.ACC.CSS.Systems.WrestlingMagic
             });
 
             nodeIndex <<= 1;
-            var adrenalineRush = new SkillNode(nodeIndex, "Adrenaline Rush", 9, "Unlocks adrenaline move", (p) =>
+            var adrenalineRush = new SkillNode(nodeIndex, "Adrenaline Rush", 9, "Unlocks a new wrestling spell", (p) =>
             {
                 profile.Talents[TalentID.WrestlingSpells].Points |= 0x40;
             });
 
             nodeIndex <<= 1;
-            var wrestlingWisdom = new SkillNode(nodeIndex, "Wrestling Wisdom", 9, "Boosts technical prowess", (p) =>
+            var wrestlingWisdom = new SkillNode(nodeIndex, "Wrestling Wisdom", 9, "Unlocks a new wrestling spell", (p) =>
             {
-                profile.Talents[TalentID.WrestlingTechnique].Points += 1;
+                profile.Talents[TalentID.WrestlingSpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
@@ -382,9 +382,9 @@ namespace Server.ACC.CSS.Systems.WrestlingMagic
 
             // Layer 5: Advanced power moves.
             nodeIndex <<= 1;
-            var ultimateGrip = new SkillNode(nodeIndex, "Ultimate Grip", 10, "Enhances hold effectiveness", (p) =>
+            var ultimateGrip = new SkillNode(nodeIndex, "Ultimate Grip", 10, "Unlocks a new wrestling spell", (p) =>
             {
-                profile.Talents[TalentID.WrestlingPower].Points += 1;
+                profile.Talents[TalentID.WrestlingSpells].Points |= 0x8000;
             });
 
             nodeIndex <<= 1;
@@ -394,7 +394,7 @@ namespace Server.ACC.CSS.Systems.WrestlingMagic
             });
 
             nodeIndex <<= 1;
-            var pinMastery = new SkillNode(nodeIndex, "Pin Mastery", 10, "Unlocks master pin move", (p) =>
+            var pinMastery = new SkillNode(nodeIndex, "Pin Mastery", 10, "Unlocks a new wrestling spell", (p) =>
             {
                 profile.Talents[TalentID.WrestlingSpells].Points |= 0x80;
             });
@@ -423,7 +423,7 @@ namespace Server.ACC.CSS.Systems.WrestlingMagic
             });
 
             nodeIndex <<= 1;
-            var ancientTechnique = new SkillNode(nodeIndex, "Ancient Technique", 11, "Unlocks ancient wrestling moves", (p) =>
+            var ancientTechnique = new SkillNode(nodeIndex, "Ancient Technique", 11, "Unlocks a new wrestling spell", (p) =>
             {
                 profile.Talents[TalentID.WrestlingSpells].Points |= 0x100;
             });
@@ -470,13 +470,9 @@ namespace Server.ACC.CSS.Systems.WrestlingMagic
 
             // Layer 8: Ultimate node.
             nodeIndex <<= 1;
-            var championOfTheRing = new SkillNode(nodeIndex, "Champion of the Ring", 13, "Ultimate bonus: boosts all wrestling skills", (p) =>
+            var championOfTheRing = new SkillNode(nodeIndex, "Champion of the Ring", 13, "Unlocks a new wrestling spell", (p) =>
             {
-                profile.Talents[TalentID.WrestlingSpells].Points |= (0x200 | 0x400);
-                profile.Talents[TalentID.WrestlingPower].Points += 1;
-                profile.Talents[TalentID.WrestlingAgility].Points += 1;
-                profile.Talents[TalentID.WrestlingStamina].Points += 1;
-                profile.Talents[TalentID.WrestlingTechnique].Points += 1;
+                profile.Talents[TalentID.WrestlingSpells].Points |= 0x200;
             });
 
             ringGuardian.AddChild(championOfTheRing);

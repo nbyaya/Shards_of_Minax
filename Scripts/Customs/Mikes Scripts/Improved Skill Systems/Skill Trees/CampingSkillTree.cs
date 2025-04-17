@@ -273,9 +273,10 @@ namespace Server.ACC.CSS.Systems.CampingMagic
                 });
 
                 nodeIndex <<= 1;
-                var quickSetup = new SkillNode(nodeIndex, "Quick Setup", 6, "Reduces tent setup time", (p) =>
+                // Modified: now unlocks a spell instead of reducing tent setup time.
+                var quickSetup = new SkillNode(nodeIndex, "Quick Setup", 6, "Unlocks Quick Setup spell", (p) =>
                 {
-                    profile.Talents[TalentID.CampingTentDuration].Points += 1;
+                    profile.Talents[TalentID.CampingSpells].Points |= 0x02;
                 });
 
                 nodeIndex <<= 1;
@@ -315,9 +316,10 @@ namespace Server.ACC.CSS.Systems.CampingMagic
                 });
 
                 nodeIndex <<= 1;
-                var naturesBoon = new SkillNode(nodeIndex, "Nature's Boon", 7, "Boosts restorative effects", (p) =>
+                // Modified: now unlocks a spell instead of boosting restorative effects.
+                var naturesBoon = new SkillNode(nodeIndex, "Nature's Boon", 7, "Unlocks Nature's Boon spell", (p) =>
                 {
-                    profile.Talents[TalentID.CampingRestoration].Points += 1;
+                    profile.Talents[TalentID.CampingSpells].Points |= 0x10;
                 });
 
                 warmHearth.AddChild(campfireMastery);
@@ -327,9 +329,10 @@ namespace Server.ACC.CSS.Systems.CampingMagic
 
                 // Layer 3: Further improvements.
                 nodeIndex <<= 1;
-                var starlitVigil = new SkillNode(nodeIndex, "Starlit Vigil", 8, "Enhances travel bonus", (p) =>
+                // Modified: now unlocks a spell instead of enhancing travel bonus.
+                var starlitVigil = new SkillNode(nodeIndex, "Starlit Vigil", 8, "Unlocks Starlit Vigil spell", (p) =>
                 {
-                    profile.Talents[TalentID.CampingTravelBonus].Points += 1;
+                    profile.Talents[TalentID.CampingSpells].Points |= 0x80;
                 });
 
                 nodeIndex <<= 1;
@@ -369,9 +372,10 @@ namespace Server.ACC.CSS.Systems.CampingMagic
                 });
 
                 nodeIndex <<= 1;
-                var vigilantWard = new SkillNode(nodeIndex, "Vigilant Ward", 9, "Grants a defensive bonus while camping", (p) =>
+                // Modified: now unlocks a defensive spell instead of a passive bonus.
+                var vigilantWard = new SkillNode(nodeIndex, "Vigilant Ward", 9, "Unlocks Vigilant Ward spell", (p) =>
                 {
-                    // Passive defensive bonus; implement effect elsewhere.
+                    profile.Talents[TalentID.CampingSpells].Points |= 0x2000;
                 });
 
                 nodeIndex <<= 1;
@@ -393,9 +397,10 @@ namespace Server.ACC.CSS.Systems.CampingMagic
                 });
 
                 nodeIndex <<= 1;
-                var bountifulCache = new SkillNode(nodeIndex, "Bountiful Cache", 10, "Increases resource cache", (p) =>
+                // Modified: now unlocks a spell instead of increasing resource cache.
+                var bountifulCache = new SkillNode(nodeIndex, "Bountiful Cache", 10, "Unlocks Bountiful Cache spell", (p) =>
                 {
-                    profile.Talents[TalentID.CampingRestoration].Points += 1;
+                    profile.Talents[TalentID.CampingSpells].Points |= 0x4000;
                 });
 
                 nodeIndex <<= 1;
@@ -435,9 +440,10 @@ namespace Server.ACC.CSS.Systems.CampingMagic
                 });
 
                 nodeIndex <<= 1;
-                var agileAssembly = new SkillNode(nodeIndex, "Agile Assembly", 11, "Further improves setup speed", (p) =>
+                // Modified: now unlocks a spell instead of further improving setup speed.
+                var agileAssembly = new SkillNode(nodeIndex, "Agile Assembly", 11, "Unlocks Agile Assembly spell", (p) =>
                 {
-                    profile.Talents[TalentID.CampingTentDuration].Points += 1;
+                    profile.Talents[TalentID.CampingSpells].Points |= 0x8000;
                 });
 
                 primevalComfort.AddChild(expandedHorizons);
@@ -477,7 +483,7 @@ namespace Server.ACC.CSS.Systems.CampingMagic
 
                 // Layer 8: Ultimate node.
                 nodeIndex <<= 1;
-                var ultimateWayfarer = new SkillNode(nodeIndex, "Ultimate Wayfarer", 13, "Ultimate bonus: boosts all camping skills", (p) =>
+                var ultimateWayfarer = new SkillNode(nodeIndex, "Ultimate Wayfarer", 13, "Ultimate bonus: boosts all camping skills and unlocks two powerful spells", (p) =>
                 {
                     profile.Talents[TalentID.CampingSpells].Points |= 0x800 | 0x1000;
                     profile.Talents[TalentID.CampingTentDuration].Points += 1;

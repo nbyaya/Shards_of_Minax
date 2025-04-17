@@ -266,25 +266,25 @@ namespace Server.ACC.CSS.Systems.SwordsMagic
             });
 
             // Layer 1: Basic bonuses and spell unlocks.
-            nodeIndex <<= 1;
-            var edgeAwareness = new SkillNode(nodeIndex, "Edge Awareness", 6, "Passively increases attack speed", (p) =>
+            nodeIndex <<= 1; // now 0x02
+            var edgeAwareness = new SkillNode(nodeIndex, "Edge Awareness", 6, "Unlocks an extra sword spell", (p) =>
             {
-                profile.Talents[TalentID.SwordsSpeed].Points += 1;
+                profile.Talents[TalentID.SwordsSpellbookSpells].Points |= 0x02;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // now 0x04
             var steelResolve = new SkillNode(nodeIndex, "Steel Resolve", 6, "Passively increases defense", (p) =>
             {
                 profile.Talents[TalentID.SwordsDefense].Points += 1;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // now 0x08
             var quickStrike = new SkillNode(nodeIndex, "Quick Strike", 6, "Unlocks an extra sword spell", (p) =>
             {
                 profile.Talents[TalentID.SwordsSpellbookSpells].Points |= 0x04;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // now 0x10
             var bladeMastery = new SkillNode(nodeIndex, "Blade Mastery", 6, "Passively increases attack damage", (p) =>
             {
                 profile.Talents[TalentID.SwordsAttack].Points += 1;
@@ -296,25 +296,25 @@ namespace Server.ACC.CSS.Systems.SwordsMagic
             Root.AddChild(bladeMastery);
 
             // Layer 2: Advanced spells and passives.
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // now 0x20
             var arcaneParry = new SkillNode(nodeIndex, "Arcane Parry", 7, "Unlocks a parry spell", (p) =>
             {
                 profile.Talents[TalentID.SwordsSpellbookSpells].Points |= 0x08;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // now 0x40
             var swiftSlash = new SkillNode(nodeIndex, "Swift Slash", 7, "Passively increases attack speed", (p) =>
             {
                 profile.Talents[TalentID.SwordsSpeed].Points += 1;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // now 0x80
             var crimsonFlurry = new SkillNode(nodeIndex, "Crimson Flurry", 7, "Unlocks a flurry spell", (p) =>
             {
                 profile.Talents[TalentID.SwordsSpellbookSpells].Points |= 0x10;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // now 0x100
             var guardingStance = new SkillNode(nodeIndex, "Guarding Stance", 7, "Passively increases defense", (p) =>
             {
                 profile.Talents[TalentID.SwordsDefense].Points += 1;
@@ -325,26 +325,26 @@ namespace Server.ACC.CSS.Systems.SwordsMagic
             quickStrike.AddChild(crimsonFlurry);
             bladeMastery.AddChild(guardingStance);
 
-            // Layer 3: Further passive bonuses.
-            nodeIndex <<= 1;
-            var criticalPrecision = new SkillNode(nodeIndex, "Critical Precision", 8, "Passively increases attack damage", (p) =>
+            // Layer 3: Further nodes.
+            nodeIndex <<= 1; // now 0x200
+            var criticalPrecision = new SkillNode(nodeIndex, "Critical Precision", 8, "Unlocks a precise sword spell", (p) =>
             {
-                profile.Talents[TalentID.SwordsAttack].Points += 1;
+                profile.Talents[TalentID.SwordsSpellbookSpells].Points |= 0x1000;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // now 0x400
             var agileFootwork = new SkillNode(nodeIndex, "Agile Footwork", 8, "Passively increases attack speed", (p) =>
             {
                 profile.Talents[TalentID.SwordsSpeed].Points += 1;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // now 0x800
             var bloodthirst = new SkillNode(nodeIndex, "Bloodthirst", 8, "Passively increases attack damage", (p) =>
             {
                 profile.Talents[TalentID.SwordsAttack].Points += 1;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // now 0x1000 (note: this is not used here since we reassigned 0x1000 above)
             var defensivePosture = new SkillNode(nodeIndex, "Defensive Posture", 8, "Passively increases defense", (p) =>
             {
                 profile.Talents[TalentID.SwordsDefense].Points += 1;
@@ -356,28 +356,28 @@ namespace Server.ACC.CSS.Systems.SwordsMagic
             guardingStance.AddChild(defensivePosture);
 
             // Layer 4: Spell unlocks and passives.
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // now 0x2000
             var mysticCleave = new SkillNode(nodeIndex, "Mystic Cleave", 9, "Unlocks a cleave spell", (p) =>
             {
                 profile.Talents[TalentID.SwordsSpellbookSpells].Points |= 0x20;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // now 0x4000 (not used here; we use next for Phantom Strike)
             var phantomStrike = new SkillNode(nodeIndex, "Phantom Strike", 9, "Unlocks a phantom strike spell", (p) =>
             {
                 profile.Talents[TalentID.SwordsSpellbookSpells].Points |= 0x40;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // now 0x8000 (not used here; we use next for Ethereal Guard)
             var etherealGuard = new SkillNode(nodeIndex, "Ethereal Guard", 9, "Unlocks an ethereal guard spell", (p) =>
             {
                 profile.Talents[TalentID.SwordsSpellbookSpells].Points |= 0x80;
             });
 
-            nodeIndex <<= 1;
-            var shadowDance = new SkillNode(nodeIndex, "Shadow Dance", 9, "Passively increases attack speed", (p) =>
+            nodeIndex <<= 1; // now 0x1000, but since 0x1000 is already used we adjust this layer’s extra node
+            var shadowDance = new SkillNode(nodeIndex, "Shadow Dance", 9, "Unlocks a dance of blades spell", (p) =>
             {
-                profile.Talents[TalentID.SwordsSpeed].Points += 1;
+                profile.Talents[TalentID.SwordsSpellbookSpells].Points |= 0x2000;
             });
 
             criticalPrecision.AddChild(mysticCleave);
@@ -385,14 +385,14 @@ namespace Server.ACC.CSS.Systems.SwordsMagic
             bloodthirst.AddChild(etherealGuard);
             defensivePosture.AddChild(shadowDance);
 
-            // Layer 5: More advanced passive nodes.
-            nodeIndex <<= 1;
-            var lethalEdge = new SkillNode(nodeIndex, "Lethal Edge", 10, "Passively increases attack damage", (p) =>
+            // Layer 5: More advanced nodes.
+            nodeIndex <<= 1; // now 0x2000 (already used), so continue shifting:
+            var lethalEdge = new SkillNode(nodeIndex, "Lethal Edge", 10, "Unlocks a lethal edge spell", (p) =>
             {
-                profile.Talents[TalentID.SwordsAttack].Points += 1;
+                profile.Talents[TalentID.SwordsSpellbookSpells].Points |= 0x4000;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // now next value (should be 0x4000 but already used) so adjust to next available by shifting
             var fortifiedDefense = new SkillNode(nodeIndex, "Fortified Defense", 10, "Passively increases defense", (p) =>
             {
                 profile.Talents[TalentID.SwordsDefense].Points += 1;
@@ -429,9 +429,9 @@ namespace Server.ACC.CSS.Systems.SwordsMagic
             });
 
             nodeIndex <<= 1;
-            var bladeOfLegends = new SkillNode(nodeIndex, "Blade of Legends", 11, "Passively increases attack damage", (p) =>
+            var bladeOfLegends = new SkillNode(nodeIndex, "Blade of Legends", 11, "Unlocks a legendary blade spell", (p) =>
             {
-                profile.Talents[TalentID.SwordsAttack].Points += 1;
+                profile.Talents[TalentID.SwordsSpellbookSpells].Points |= 0x8000;
             });
 
             nodeIndex <<= 1;
@@ -445,7 +445,7 @@ namespace Server.ACC.CSS.Systems.SwordsMagic
             rapidAssault.AddChild(bladeOfLegends);
             serratedBlows.AddChild(sonicSlash);
 
-            // Layer 7: Pinnacle passive nodes.
+            // Layer 7: Pinnacle nodes.
             nodeIndex <<= 1;
             var aegisOfValor = new SkillNode(nodeIndex, "Aegis of Valor", 12, "Passively increases defense", (p) =>
             {

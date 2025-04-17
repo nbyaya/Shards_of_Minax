@@ -13,6 +13,8 @@ namespace Bittiez.CustomLoot
         public static void Initialize()
         {
             EventSink.CreatureDeath += EventSink_CreatureDeath;
+			// Initialize the tension system as well.
+			Bittiez.CustomSystems.TensionDeathHandler.Initialize();			
         }
 
 		private static void EventSink_CreatureDeath(CreatureDeathEventArgs e)

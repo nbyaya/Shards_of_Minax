@@ -303,10 +303,11 @@ namespace Server.ACC.CSS.Systems.MiningMagic
                 profile.Talents[TalentID.MiningSpells].Points |= 0x08;
             });
 
+            // Changed from passive to spell unlock.
             nodeIndex <<= 1;
-            var deeperDelve = new SkillNode(nodeIndex, "Deeper Delve", 7, "Increases the yield from mining", (p) =>
+            var deeperDelve = new SkillNode(nodeIndex, "Deeper Delve", 7, "Unlocks a spell that enhances your mining yield", (p) =>
             {
-                profile.Talents[TalentID.MiningYield].Points += 1;
+                profile.Talents[TalentID.MiningSpells].Points |= 0x800;
             });
 
             nodeIndex <<= 1;
@@ -321,16 +322,17 @@ namespace Server.ACC.CSS.Systems.MiningMagic
             veinSeer.AddChild(subterraneanFocus);
 
             // Layer 3: Further efficiency and yield improvements.
+            // Convert two of these nodes into spell unlocks.
             nodeIndex <<= 1;
-            var rapidExtraction = new SkillNode(nodeIndex, "Rapid Extraction", 8, "Allows for faster ore extraction", (p) =>
+            var rapidExtraction = new SkillNode(nodeIndex, "Rapid Extraction", 8, "Unlocks a spell for faster ore extraction", (p) =>
             {
-                profile.Talents[TalentID.MiningEfficiency].Points += 1;
+                profile.Talents[TalentID.MiningSpells].Points |= 0x200;
             });
 
             nodeIndex <<= 1;
-            var mineralMagnet = new SkillNode(nodeIndex, "Mineral Magnet", 8, "Attracts more minerals to you", (p) =>
+            var mineralMagnet = new SkillNode(nodeIndex, "Mineral Magnet", 8, "Unlocks a spell that attracts more minerals", (p) =>
             {
-                profile.Talents[TalentID.MiningYield].Points += 1;
+                profile.Talents[TalentID.MiningSpells].Points |= 0x400;
             });
 
             nodeIndex <<= 1;
@@ -364,7 +366,7 @@ namespace Server.ACC.CSS.Systems.MiningMagic
             });
 
             nodeIndex <<= 1;
-            var gemGlitter = new SkillNode(nodeIndex, "Gem Glitter", 9, "Reveals hidden gems within rock", (p) =>
+            var gemGlitter = new SkillNode(nodeIndex, "Gem Glitter", 9, "Unlocks a spell to reveal hidden gems within rock", (p) =>
             {
                 profile.Talents[TalentID.MiningSpells].Points |= 0x20;
             });
@@ -394,7 +396,7 @@ namespace Server.ACC.CSS.Systems.MiningMagic
             });
 
             nodeIndex <<= 1;
-            var oreOracle = new SkillNode(nodeIndex, "Ore Oracle", 10, "Grants insight into ore locations", (p) =>
+            var oreOracle = new SkillNode(nodeIndex, "Ore Oracle", 10, "Unlocks a spell granting insight into ore locations", (p) =>
             {
                 profile.Talents[TalentID.MiningSpells].Points |= 0x40;
             });
@@ -441,28 +443,29 @@ namespace Server.ACC.CSS.Systems.MiningMagic
             subterraneanMastery.AddChild(deepCoreInsight);
 
             // Layer 7: Pinnacle bonus nodes.
+            // All four nodes in this layer are now spell unlocks.
             nodeIndex <<= 1;
-            var titansGrip = new SkillNode(nodeIndex, "Titan's Grip", 12, "Significantly boosts mining efficiency", (p) =>
+            var titansGrip = new SkillNode(nodeIndex, "Titan's Grip", 12, "Unlocks a spell that boosts mining efficiency", (p) =>
             {
-                profile.Talents[TalentID.MiningEfficiency].Points += 1;
+                profile.Talents[TalentID.MiningSpells].Points |= 0x1000;
             });
 
             nodeIndex <<= 1;
-            var minersEndowment = new SkillNode(nodeIndex, "Miner's Endowment", 12, "Greatly increases your mining yield", (p) =>
+            var minersEndowment = new SkillNode(nodeIndex, "Miner's Endowment", 12, "Unlocks a spell that increases mining yield", (p) =>
             {
-                profile.Talents[TalentID.MiningYield].Points += 1;
+                profile.Talents[TalentID.MiningSpells].Points |= 0x2000;
             });
 
             nodeIndex <<= 1;
-            var cavesFury = new SkillNode(nodeIndex, "Cave's Fury", 12, "Fuels your mining power with raw fury", (p) =>
+            var cavesFury = new SkillNode(nodeIndex, "Cave's Fury", 12, "Unlocks a spell that fuels mining power with raw fury", (p) =>
             {
-                profile.Talents[TalentID.MiningEfficiency].Points += 1;
+                profile.Talents[TalentID.MiningSpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
-            var echoesOfDeep = new SkillNode(nodeIndex, "Echoes of the Deep", 12, "Enhances your range with deep resonance", (p) =>
+            var echoesOfDeep = new SkillNode(nodeIndex, "Echoes of the Deep", 12, "Unlocks a spell that enhances range with deep resonance", (p) =>
             {
-                profile.Talents[TalentID.MiningRange].Points += 1;
+                profile.Talents[TalentID.MiningSpells].Points |= 0x8000;
             });
 
             expandedExcavation.AddChild(titansGrip);

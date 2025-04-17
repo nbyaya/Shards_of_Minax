@@ -7,7 +7,6 @@ using Server.Gumps;
 using Server.Mobiles;
 using VitaNex.Items;
 using VitaNex.SuperGumps;
-using Server.Mobiles; // For Talent access via AcquireTalents()
 
 namespace Server.ACC.CSS.Systems.MeditationMagic
 {
@@ -243,37 +242,35 @@ namespace Server.ACC.CSS.Systems.MeditationMagic
         public MeditationTree(PlayerMobile player)
         {
             var profile = player.AcquireTalents();
-            int nodeIndex = 0x01;
 
-            // Layer 0: Root Node – Unlocks basic meditation spells.
-            Root = new SkillNode(nodeIndex, "Whispering Calm", 5, "Unlocks basic meditation spells", (p) =>
+            // ---------- Layer 0: Root Node ----------
+            // Spell node: Unlocks basic meditation spells (0x01)
+            Root = new SkillNode(0x01, "Whispering Calm", 5, "Unlocks spell: Whispering Calm", (p) =>
             {
-                // Unlock basic meditation spells (bit 0x01)
                 profile.Talents[TalentID.MeditationSpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic bonuses.
-            nodeIndex <<= 1;
-            var sereneMind = new SkillNode(nodeIndex, "Serene Mind", 6, "Enhances your focus, increasing meditation chance slightly", (p) =>
+            // ---------- Layer 1: Basic nodes ----------
+            // Spell node: Unlocks spell: Serene Mind (0x02)
+            var sereneMind = new SkillNode(0x02, "Serene Mind", 6, "Unlocks spell: Serene Mind", (p) =>
             {
-                // Increase MeditationFocus bonus (for example, add +5% chance)
-                profile.Talents[TalentID.MeditationFocus].Points += 1;
+                profile.Talents[TalentID.MeditationSpells].Points |= 0x02;
             });
 
-            nodeIndex <<= 1;
-            var focusedGaze = new SkillNode(nodeIndex, "Focused Gaze", 6, "Improves concentration, further boosting meditation success", (p) =>
-            {
-                profile.Talents[TalentID.MeditationFocus].Points += 1;
-            });
-
-            nodeIndex <<= 1;
-            var innerBalance = new SkillNode(nodeIndex, "Inner Balance", 6, "Unlocks a bonus meditation spell: Tranquility Burst", (p) =>
+            // Spell node: Unlocks spell: Focused Gaze (0x04)
+            var focusedGaze = new SkillNode(0x04, "Focused Gaze", 6, "Unlocks spell: Focused Gaze", (p) =>
             {
                 profile.Talents[TalentID.MeditationSpells].Points |= 0x04;
             });
 
-            nodeIndex <<= 1;
-            var mentalClarity = new SkillNode(nodeIndex, "Mental Clarity", 6, "Passively increases mana regeneration", (p) =>
+            // Spell node: Unlocks spell: Tranquility Burst (0x08)
+            var innerBalance = new SkillNode(0x08, "Inner Balance", 6, "Unlocks spell: Tranquility Burst", (p) =>
+            {
+                profile.Talents[TalentID.MeditationSpells].Points |= 0x08;
+            });
+
+            // Bonus node (passive bonus – increased mana regen or other effect)
+            var mentalClarity = new SkillNode(0x10000, "Mental Clarity", 6, "Passively increases mana regeneration", (p) =>
             {
                 profile.Talents[TalentID.MeditationRecovery].Points += 1;
             });
@@ -283,27 +280,27 @@ namespace Server.ACC.CSS.Systems.MeditationMagic
             Root.AddChild(innerBalance);
             Root.AddChild(mentalClarity);
 
-            // Layer 2: Advanced magical and practical bonuses.
-            nodeIndex <<= 1;
-            var echoesOfSilence = new SkillNode(nodeIndex, "Echoes of Silence", 7, "Unlocks additional meditation spells", (p) =>
-            {
-                profile.Talents[TalentID.MeditationSpells].Points |= 0x08;
-            });
-
-            nodeIndex <<= 1;
-            var deepConcentration = new SkillNode(nodeIndex, "Deep Concentration", 7, "Further improves meditation chance", (p) =>
-            {
-                profile.Talents[TalentID.MeditationFocus].Points += 1;
-            });
-
-            nodeIndex <<= 1;
-            var arcaneInsight = new SkillNode(nodeIndex, "Arcane Insight", 7, "Unlocks advanced meditation spells", (p) =>
+            // ---------- Layer 2: Advanced magical and practical nodes ----------
+            // Spell node: Unlocks spell: Echoes of Silence (0x10)
+            var echoesOfSilence = new SkillNode(0x10, "Echoes of Silence", 7, "Unlocks spell: Echoes of Silence", (p) =>
             {
                 profile.Talents[TalentID.MeditationSpells].Points |= 0x10;
             });
 
-            nodeIndex <<= 1;
-            var steadyPulse = new SkillNode(nodeIndex, "Steady Pulse", 7, "Further increases mana regeneration", (p) =>
+            // Spell node: Unlocks spell: Deep Concentration (0x20)
+            var deepConcentration = new SkillNode(0x20, "Deep Concentration", 7, "Unlocks spell: Deep Concentration", (p) =>
+            {
+                profile.Talents[TalentID.MeditationSpells].Points |= 0x20;
+            });
+
+            // Spell node: Unlocks spell: Arcane Insight (0x40)
+            var arcaneInsight = new SkillNode(0x40, "Arcane Insight", 7, "Unlocks spell: Arcane Insight", (p) =>
+            {
+                profile.Talents[TalentID.MeditationSpells].Points |= 0x40;
+            });
+
+            // Bonus node
+            var steadyPulse = new SkillNode(0x20000, "Steady Pulse", 7, "Further increases mana regeneration", (p) =>
             {
                 profile.Talents[TalentID.MeditationRecovery].Points += 1;
             });
@@ -313,28 +310,27 @@ namespace Server.ACC.CSS.Systems.MeditationMagic
             innerBalance.AddChild(arcaneInsight);
             mentalClarity.AddChild(steadyPulse);
 
-            // Layer 3: Further passive bonuses.
-            nodeIndex <<= 1;
-            var mindfulReflection = new SkillNode(nodeIndex, "Mindful Reflection", 8, "Enhances meditation duration", (p) =>
+            // ---------- Layer 3: Further nodes ----------
+            // Spell node: Unlocks spell: Mindful Reflection (0x80)
+            var mindfulReflection = new SkillNode(0x80, "Mindful Reflection", 8, "Unlocks spell: Mindful Reflection", (p) =>
             {
-                // (Custom logic: e.g., extend meditation effect duration)
-                profile.Talents[TalentID.MeditationSpells].Points |= 0x20;
+                profile.Talents[TalentID.MeditationSpells].Points |= 0x80;
             });
 
-            nodeIndex <<= 1;
-            var calmResolve = new SkillNode(nodeIndex, "Calm Resolve", 8, "Further improves meditation success chance", (p) =>
+            // Bonus node
+            var calmResolve = new SkillNode(0x40000, "Calm Resolve", 8, "Further improves meditation success chance", (p) =>
             {
                 profile.Talents[TalentID.MeditationFocus].Points += 1;
             });
 
-            nodeIndex <<= 1;
-            var mysticResonance = new SkillNode(nodeIndex, "Mystic Resonance", 8, "Unlocks a protective aura during meditation", (p) =>
+            // Spell node: Unlocks spell: Mystic Resonance (0x100)
+            var mysticResonance = new SkillNode(0x100, "Mystic Resonance", 8, "Unlocks spell: Mystic Resonance", (p) =>
             {
-                profile.Talents[TalentID.MeditationSpells].Points |= 0x40;
+                profile.Talents[TalentID.MeditationSpells].Points |= 0x100;
             });
 
-            nodeIndex <<= 1;
-            var soulsHarmony = new SkillNode(nodeIndex, "Soul's Harmony", 8, "Passively enhances overall meditation benefits", (p) =>
+            // Bonus node
+            var soulsHarmony = new SkillNode(0x80000, "Soul's Harmony", 8, "Passively enhances overall meditation benefits", (p) =>
             {
                 profile.Talents[TalentID.MeditationRecovery].Points += 1;
             });
@@ -344,27 +340,27 @@ namespace Server.ACC.CSS.Systems.MeditationMagic
             arcaneInsight.AddChild(mysticResonance);
             steadyPulse.AddChild(soulsHarmony);
 
-            // Layer 4: More advanced magical enhancements.
-            nodeIndex <<= 1;
-            var tranquilVortex = new SkillNode(nodeIndex, "Tranquil Vortex", 9, "Unlocks bonus meditation spells", (p) =>
+            // ---------- Layer 4: More advanced magical enhancements ----------
+            // Spell node: Unlocks spell: Tranquil Vortex (0x200)
+            var tranquilVortex = new SkillNode(0x200, "Tranquil Vortex", 9, "Unlocks spell: Tranquil Vortex", (p) =>
             {
-                profile.Talents[TalentID.MeditationSpells].Points |= 0x80;
+                profile.Talents[TalentID.MeditationSpells].Points |= 0x200;
             });
 
-            nodeIndex <<= 1;
-            var psychicSurge = new SkillNode(nodeIndex, "Psychic Surge", 9, "Further improves mental focus", (p) =>
+            // Bonus node
+            var psychicSurge = new SkillNode(0x100000, "Psychic Surge", 9, "Further improves mental focus", (p) =>
             {
                 profile.Talents[TalentID.MeditationFocus].Points += 1;
             });
 
-            nodeIndex <<= 1;
-            var enlightenedAura = new SkillNode(nodeIndex, "Enlightened Aura", 9, "Unlocks an aura for enhanced meditation", (p) =>
+            // Spell node: Unlocks spell: Enlightened Aura (0x400)
+            var enlightenedAura = new SkillNode(0x400, "Enlightened Aura", 9, "Unlocks spell: Enlightened Aura", (p) =>
             {
-                profile.Talents[TalentID.MeditationSpells].Points |= 0x100;
+                profile.Talents[TalentID.MeditationSpells].Points |= 0x400;
             });
 
-            nodeIndex <<= 1;
-            var zenMastery = new SkillNode(nodeIndex, "Zen Mastery", 9, "Further boosts mana recovery", (p) =>
+            // Bonus node
+            var zenMastery = new SkillNode(0x200000, "Zen Mastery", 9, "Further boosts mana recovery", (p) =>
             {
                 profile.Talents[TalentID.MeditationRecovery].Points += 1;
             });
@@ -374,27 +370,26 @@ namespace Server.ACC.CSS.Systems.MeditationMagic
             mysticResonance.AddChild(enlightenedAura);
             soulsHarmony.AddChild(zenMastery);
 
-            // Layer 5: Expert-level nodes.
-            nodeIndex <<= 1;
-            var primeMeditativeness = new SkillNode(nodeIndex, "Prime Meditativeness", 10, "Boosts overall meditation efficiency", (p) =>
+            // ---------- Layer 5: Expert-level nodes ----------
+            // Bonus nodes
+            var primeMeditativeness = new SkillNode(0x400000, "Prime Meditativeness", 10, "Boosts overall meditation efficiency", (p) =>
             {
                 profile.Talents[TalentID.MeditationFocus].Points += 1;
             });
 
-            nodeIndex <<= 1;
-            var rejuvenatingCalm = new SkillNode(nodeIndex, "Rejuvenating Calm", 10, "Increases mana recovery speed", (p) =>
+            var rejuvenatingCalm = new SkillNode(0x800000, "Rejuvenating Calm", 10, "Increases mana recovery speed", (p) =>
             {
                 profile.Talents[TalentID.MeditationRecovery].Points += 1;
             });
 
-            nodeIndex <<= 1;
-            var mindOverMatter = new SkillNode(nodeIndex, "Mind Over Matter", 10, "Unlocks mastery meditation spells", (p) =>
+            // Spell node: Unlocks spell: Mind Over Matter (0x800)
+            var mindOverMatter = new SkillNode(0x800, "Mind Over Matter", 10, "Unlocks spell: Mind Over Matter", (p) =>
             {
-                profile.Talents[TalentID.MeditationSpells].Points |= 0x200;
+                profile.Talents[TalentID.MeditationSpells].Points |= 0x800;
             });
 
-            nodeIndex <<= 1;
-            var focusedMomentum = new SkillNode(nodeIndex, "Focused Momentum", 10, "Further enhances meditation bonuses", (p) =>
+            // Bonus node
+            var focusedMomentum = new SkillNode(0x1000000, "Focused Momentum", 10, "Further enhances meditation bonuses", (p) =>
             {
                 profile.Talents[TalentID.MeditationFocus].Points += 1;
             });
@@ -404,29 +399,27 @@ namespace Server.ACC.CSS.Systems.MeditationMagic
             enlightenedAura.AddChild(mindOverMatter);
             zenMastery.AddChild(focusedMomentum);
 
-            // Layer 6: Mastery nodes.
-            nodeIndex <<= 1;
-            var expandedAwareness = new SkillNode(nodeIndex, "Expanded Awareness", 11, "Increases overall mental acuity", (p) =>
+            // ---------- Layer 6: Mastery nodes ----------
+            // Bonus nodes
+            var expandedAwareness = new SkillNode(0x2000000, "Expanded Awareness", 11, "Increases overall mental acuity", (p) =>
             {
                 profile.Talents[TalentID.MeditationFocus].Points += 1;
             });
 
-            nodeIndex <<= 1;
-            var mysticClarity = new SkillNode(nodeIndex, "Mystic Clarity", 11, "Boosts passive mana regeneration", (p) =>
+            var mysticClarity = new SkillNode(0x4000000, "Mystic Clarity", 11, "Boosts passive mana regeneration", (p) =>
             {
                 profile.Talents[TalentID.MeditationRecovery].Points += 1;
             });
 
-            nodeIndex <<= 1;
-            var ancientMeditation = new SkillNode(nodeIndex, "Ancient Meditation", 11, "Unlocks ancient meditation spells", (p) =>
+            // Spell node: Unlocks spell: Ancient Meditation (0x1000)
+            var ancientMeditation = new SkillNode(0x1000, "Ancient Meditation", 11, "Unlocks spell: Ancient Meditation", (p) =>
             {
-                profile.Talents[TalentID.MeditationSpells].Points |= 0x400;
+                profile.Talents[TalentID.MeditationSpells].Points |= 0x1000;
             });
 
-            nodeIndex <<= 1;
-            var temporalStillness = new SkillNode(nodeIndex, "Temporal Stillness", 11, "Reduces meditation cooldown", (p) =>
+            // Bonus node
+            var temporalStillness = new SkillNode(0x8000000, "Temporal Stillness", 11, "Reduces meditation cooldown", (p) =>
             {
-                // (Custom logic could reduce cooldowns)
                 profile.Talents[TalentID.MeditationFocus].Points += 1;
             });
 
@@ -435,29 +428,29 @@ namespace Server.ACC.CSS.Systems.MeditationMagic
             mindOverMatter.AddChild(ancientMeditation);
             focusedMomentum.AddChild(temporalStillness);
 
-            // Layer 7: Final, pinnacle bonuses.
-            nodeIndex <<= 1;
-            var barrierOfTranquility = new SkillNode(nodeIndex, "Barrier of Tranquility", 12, "Provides a protective shield during meditation", (p) =>
+            // ---------- Layer 7: Final, pinnacle nodes ----------
+            // Spell node: Unlocks spell: Barrier of Tranquility (0x2000)
+            var barrierOfTranquility = new SkillNode(0x2000, "Barrier of Tranquility", 12, "Unlocks spell: Barrier of Tranquility", (p) =>
             {
-                profile.Talents[TalentID.MeditationSpells].Points |= 0x800;
+                profile.Talents[TalentID.MeditationSpells].Points |= 0x2000;
             });
 
-            nodeIndex <<= 1;
-            var innerSanctuary = new SkillNode(nodeIndex, "Inner Sanctuary", 12, "Further increases mana recovery", (p) =>
+            // Spell node: Unlocks spell: Inner Sanctuary (0x4000)
+            var innerSanctuary = new SkillNode(0x4000, "Inner Sanctuary", 12, "Unlocks spell: Inner Sanctuary", (p) =>
             {
-                profile.Talents[TalentID.MeditationRecovery].Points += 1;
+                profile.Talents[TalentID.MeditationSpells].Points |= 0x4000;
             });
 
-            nodeIndex <<= 1;
-            var furyOfSilence = new SkillNode(nodeIndex, "Fury of Silence", 12, "Boosts mental resilience", (p) =>
+            // Bonus node
+            var furyOfSilence = new SkillNode(0x10000000, "Fury of Silence", 12, "Boosts mental resilience", (p) =>
             {
                 profile.Talents[TalentID.MeditationFocus].Points += 1;
             });
 
-            nodeIndex <<= 1;
-            var echoingSerenity = new SkillNode(nodeIndex, "Echoing Serenity", 12, "Enhances meditation spell potency", (p) =>
+            // Spell node: Unlocks spell: Echoing Serenity (0x8000)
+            var echoingSerenity = new SkillNode(0x8000, "Echoing Serenity", 12, "Unlocks spell: Echoing Serenity", (p) =>
             {
-                profile.Talents[TalentID.MeditationSpells].Points |= 0x1000;
+                profile.Talents[TalentID.MeditationSpells].Points |= 0x8000;
             });
 
             expandedAwareness.AddChild(barrierOfTranquility);
@@ -465,16 +458,16 @@ namespace Server.ACC.CSS.Systems.MeditationMagic
             ancientMeditation.AddChild(furyOfSilence);
             temporalStillness.AddChild(echoingSerenity);
 
-            // Layer 8: Ultimate node.
-            nodeIndex <<= 1;
-            var ultimateAscendance = new SkillNode(nodeIndex, "Ultimate Ascendance", 13, "Ultimate bonus: boosts all meditation skills", (p) =>
+            // ---------- Layer 8: Ultimate node (Bonus) ----------
+            // This ultimate node now provides an overall bonus without unlocking an additional spell.
+            var ultimateAscendance = new SkillNode(0x20000000, "Ultimate Ascendance", 13, "Ultimate bonus: boosts all meditation skills", (p) =>
             {
-                profile.Talents[TalentID.MeditationSpells].Points |= 0x2000;
                 profile.Talents[TalentID.MeditationFocus].Points += 1;
                 profile.Talents[TalentID.MeditationRecovery].Points += 1;
             });
 
-            foreach (var node in new[] { barrierOfTranquility, echoingSerenity, furyOfSilence, innerSanctuary })
+            // Add ultimateAscendance as a child of each of the four nodes from layer 7.
+            foreach (var node in new[] { barrierOfTranquility, innerSanctuary, furyOfSilence, echoingSerenity })
                 node.AddChild(ultimateAscendance);
         }
     }

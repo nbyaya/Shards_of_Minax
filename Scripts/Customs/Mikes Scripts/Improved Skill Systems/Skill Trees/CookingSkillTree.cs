@@ -257,33 +257,33 @@ namespace Server.ACC.CSS.Systems.CookingMagic
             // Layer 0: Root Node – unlocks basic cooking spells.
             Root = new SkillNode(nodeIndex, "Call of the Kitchen", 5, "Unlocks basic culinary spells", (p) =>
             {
-                // Unlock basic cooking spells.
+                // Unlock spell: 0x01
                 profile.Talents[TalentID.CookingSpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic bonuses.
-            nodeIndex <<= 1;
-            var ingredientInsight = new SkillNode(nodeIndex, "Ingredient Insight", 6, "Improves ingredient detection", (p) =>
+            // Layer 1: Four nodes; all converted to spell unlocks.
+            nodeIndex <<= 1; // becomes 0x02
+            var ingredientInsight = new SkillNode(nodeIndex, "Ingredient Insight", 6, "Unlocks spell: Ingredient Insight", (p) =>
             {
-                profile.Talents[TalentID.CookingEfficiency].Points += 1;
+                profile.Talents[TalentID.CookingSpells].Points |= 0x02;
             });
 
-            nodeIndex <<= 1;
-            var knifeMastery = new SkillNode(nodeIndex, "Knife Mastery", 6, "Enhances slicing speed", (p) =>
-            {
-                profile.Talents[TalentID.CookingSpeed].Points += 1;
-            });
-
-            nodeIndex <<= 1;
-            var flavorFusion = new SkillNode(nodeIndex, "Flavor Fusion", 6, "Unlocks fusion-based spells", (p) =>
+            nodeIndex <<= 1; // becomes 0x04
+            var knifeMastery = new SkillNode(nodeIndex, "Knife Mastery", 6, "Unlocks spell: Knife Mastery", (p) =>
             {
                 profile.Talents[TalentID.CookingSpells].Points |= 0x04;
             });
 
-            nodeIndex <<= 1;
-            var bountifulHarvest = new SkillNode(nodeIndex, "Bountiful Harvest", 6, "Boosts ingredient yields", (p) =>
+            nodeIndex <<= 1; // becomes 0x08
+            var flavorFusion = new SkillNode(nodeIndex, "Flavor Fusion", 6, "Unlocks spell: Flavor Fusion", (p) =>
             {
-                profile.Talents[TalentID.CookingFlavor].Points += 1;
+                profile.Talents[TalentID.CookingSpells].Points |= 0x08;
+            });
+
+            nodeIndex <<= 1; // becomes 0x10
+            var bountifulHarvest = new SkillNode(nodeIndex, "Bountiful Harvest", 6, "Unlocks spell: Bountiful Harvest", (p) =>
+            {
+                profile.Talents[TalentID.CookingSpells].Points |= 0x10;
             });
 
             Root.AddChild(ingredientInsight);
@@ -291,29 +291,29 @@ namespace Server.ACC.CSS.Systems.CookingMagic
             Root.AddChild(flavorFusion);
             Root.AddChild(bountifulHarvest);
 
-            // Layer 2: Advanced bonuses.
-            nodeIndex <<= 1;
-            var spiceWhisper = new SkillNode(nodeIndex, "Spice Whisper", 7, "Unlocks extra recipes", (p) =>
+            // Layer 2: Four nodes; all become spell unlocks.
+            nodeIndex <<= 1; // becomes 0x20
+            var spiceWhisper = new SkillNode(nodeIndex, "Spice Whisper", 7, "Unlocks spell: Spice Whisper", (p) =>
             {
-                profile.Talents[TalentID.CookingSpells].Points |= 0x08;
+                profile.Talents[TalentID.CookingSpells].Points |= 0x20;
             });
 
-            nodeIndex <<= 1;
-            var sizzlingHeat = new SkillNode(nodeIndex, "Sizzling Heat", 7, "Improves cooking efficiency", (p) =>
+            nodeIndex <<= 1; // becomes 0x40
+            var sizzlingHeat = new SkillNode(nodeIndex, "Sizzling Heat", 7, "Unlocks spell: Sizzling Heat", (p) =>
             {
-                profile.Talents[TalentID.CookingEfficiency].Points += 1;
+                profile.Talents[TalentID.CookingSpells].Points |= 0x40;
             });
 
-            nodeIndex <<= 1;
-            var aromaticAlchemy = new SkillNode(nodeIndex, "Aromatic Alchemy", 7, "Unlocks advanced culinary spells", (p) =>
+            nodeIndex <<= 1; // becomes 0x80
+            var aromaticAlchemy = new SkillNode(nodeIndex, "Aromatic Alchemy", 7, "Unlocks spell: Aromatic Alchemy", (p) =>
             {
-                profile.Talents[TalentID.CookingSpells].Points |= 0x10;
+                profile.Talents[TalentID.CookingSpells].Points |= 0x80;
             });
 
-            nodeIndex <<= 1;
-            var herbHarmony = new SkillNode(nodeIndex, "Herb Harmony", 7, "Enhances flavor potential", (p) =>
+            nodeIndex <<= 1; // becomes 0x100
+            var herbHarmony = new SkillNode(nodeIndex, "Herb Harmony", 7, "Unlocks spell: Herb Harmony", (p) =>
             {
-                profile.Talents[TalentID.CookingFlavor].Points += 1;
+                profile.Talents[TalentID.CookingSpells].Points |= 0x100;
             });
 
             ingredientInsight.AddChild(spiceWhisper);
@@ -321,29 +321,29 @@ namespace Server.ACC.CSS.Systems.CookingMagic
             flavorFusion.AddChild(aromaticAlchemy);
             bountifulHarvest.AddChild(herbHarmony);
 
-            // Layer 3: Intermediate improvements.
-            nodeIndex <<= 1;
-            var savorySurge = new SkillNode(nodeIndex, "Savory Surge", 8, "Boosts flavor output", (p) =>
+            // Layer 3: Four nodes; all become spell unlocks.
+            nodeIndex <<= 1; // becomes 0x200
+            var savorySurge = new SkillNode(nodeIndex, "Savory Surge", 8, "Unlocks spell: Savory Surge", (p) =>
             {
-                profile.Talents[TalentID.CookingFlavor].Points += 1;
+                profile.Talents[TalentID.CookingSpells].Points |= 0x200;
             });
 
-            nodeIndex <<= 1;
-            var rapidSear = new SkillNode(nodeIndex, "Rapid Sear", 8, "Increases cooking speed", (p) =>
+            nodeIndex <<= 1; // becomes 0x400
+            var rapidSear = new SkillNode(nodeIndex, "Rapid Sear", 8, "Unlocks spell: Rapid Sear", (p) =>
             {
-                profile.Talents[TalentID.CookingSpeed].Points += 1;
+                profile.Talents[TalentID.CookingSpells].Points |= 0x400;
             });
 
-            nodeIndex <<= 1;
-            var goldenGriddle = new SkillNode(nodeIndex, "Golden Griddle", 8, "Unlocks bonus griddle spells", (p) =>
+            nodeIndex <<= 1; // becomes 0x800
+            var goldenGriddle = new SkillNode(nodeIndex, "Golden Griddle", 8, "Unlocks spell: Golden Griddle", (p) =>
             {
-                profile.Talents[TalentID.CookingSpells].Points |= 0x20;
+                profile.Talents[TalentID.CookingSpells].Points |= 0x800;
             });
 
-            nodeIndex <<= 1;
-            var precisePrep = new SkillNode(nodeIndex, "Precise Preparation", 8, "Further improves efficiency", (p) =>
+            nodeIndex <<= 1; // becomes 0x1000
+            var precisePrep = new SkillNode(nodeIndex, "Precise Preparation", 8, "Unlocks spell: Precise Preparation", (p) =>
             {
-                profile.Talents[TalentID.CookingEfficiency].Points += 1;
+                profile.Talents[TalentID.CookingSpells].Points |= 0x1000;
             });
 
             spiceWhisper.AddChild(savorySurge);
@@ -351,37 +351,37 @@ namespace Server.ACC.CSS.Systems.CookingMagic
             aromaticAlchemy.AddChild(goldenGriddle);
             herbHarmony.AddChild(precisePrep);
 
-            // Layer 4: More refined techniques.
-            nodeIndex <<= 1;
-            var marinationMastery = new SkillNode(nodeIndex, "Marination Mastery", 9, "Enhances food flavor", (p) =>
+            // Layer 4: Four nodes; the first three become spell unlocks and the fourth remains passive.
+            nodeIndex <<= 1; // becomes 0x2000
+            var marinationMastery = new SkillNode(nodeIndex, "Marination Mastery", 9, "Unlocks spell: Marination Mastery", (p) =>
             {
-                profile.Talents[TalentID.CookingFlavor].Points += 1;
+                profile.Talents[TalentID.CookingSpells].Points |= 0x2000;
             });
 
-            nodeIndex <<= 1;
-            var flameFocus = new SkillNode(nodeIndex, "Flame Focus", 9, "Unlocks flame-based spells", (p) =>
+            nodeIndex <<= 1; // becomes 0x4000
+            var flameFocus = new SkillNode(nodeIndex, "Flame Focus", 9, "Unlocks spell: Flame Focus", (p) =>
             {
-                profile.Talents[TalentID.CookingSpells].Points |= 0x40;
+                profile.Talents[TalentID.CookingSpells].Points |= 0x4000;
             });
 
-            nodeIndex <<= 1;
-            var herbalHarmony = new SkillNode(nodeIndex, "Herbal Harmony", 9, "Unleashes herbal culinary bonuses", (p) =>
+            nodeIndex <<= 1; // becomes 0x8000
+            var herbalHarmony_L4 = new SkillNode(nodeIndex, "Herbal Harmony", 9, "Unlocks spell: Herbal Harmony", (p) =>
             {
-                profile.Talents[TalentID.CookingSpells].Points |= 0x80;
+                profile.Talents[TalentID.CookingSpells].Points |= 0x8000;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // next flag would be 0x10000, so leave this node as passive.
             var quickQuench = new SkillNode(nodeIndex, "Quick Quench", 9, "Boosts rapid cooking", (p) =>
             {
                 profile.Talents[TalentID.CookingSpeed].Points += 1;
             });
 
             marinationMastery.AddChild(flameFocus);
-            goldenGriddle.AddChild(herbalHarmony);
+            goldenGriddle.AddChild(herbalHarmony_L4);
             precisePrep.AddChild(quickQuench);
 
-            // Layer 5: Expert-level nodes.
-            nodeIndex <<= 1;
+            // Layer 5: Expert-level nodes remain passive.
+            nodeIndex <<= 1; // now 0x10000 (unused for spells)
             var primePrep = new SkillNode(nodeIndex, "Prime Prep", 10, "Boosts overall efficiency", (p) =>
             {
                 profile.Talents[TalentID.CookingEfficiency].Points += 1;
@@ -394,9 +394,9 @@ namespace Server.ACC.CSS.Systems.CookingMagic
             });
 
             nodeIndex <<= 1;
-            var recipeRevelation = new SkillNode(nodeIndex, "Recipe Revelation", 10, "Unlocks mastery culinary spells", (p) =>
+            var recipeRevelation = new SkillNode(nodeIndex, "Recipe Revelation", 10, "Enhances recipe mastery", (p) =>
             {
-                profile.Talents[TalentID.CookingSpells].Points |= 0x100;
+                profile.Talents[TalentID.CookingEfficiency].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -406,11 +406,11 @@ namespace Server.ACC.CSS.Systems.CookingMagic
             });
 
             flameFocus.AddChild(primePrep);
-            herbalHarmony.AddChild(bountifulBanquet);
+            herbalHarmony_L4.AddChild(bountifulBanquet);
             quickQuench.AddChild(recipeRevelation);
             rapidSear.AddChild(culinaryCadence);
 
-            // Layer 6: Advanced mastery.
+            // Layer 6: Advanced mastery nodes remain passive.
             nodeIndex <<= 1;
             var expandedPalate = new SkillNode(nodeIndex, "Expanded Palate", 11, "Enhances taste perception", (p) =>
             {
@@ -424,9 +424,9 @@ namespace Server.ACC.CSS.Systems.CookingMagic
             });
 
             nodeIndex <<= 1;
-            var ancientCulinarian = new SkillNode(nodeIndex, "Ancient Culinarian", 11, "Unlocks ancient culinary spells", (p) =>
+            var ancientCulinarian = new SkillNode(nodeIndex, "Ancient Culinarian", 11, "Draws on age-old culinary wisdom", (p) =>
             {
-                profile.Talents[TalentID.CookingSpells].Points |= 0x200;
+                profile.Talents[TalentID.CookingEfficiency].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -440,11 +440,11 @@ namespace Server.ACC.CSS.Systems.CookingMagic
             recipeRevelation.AddChild(ancientCulinarian);
             culinaryCadence.AddChild(thermalTransformation);
 
-            // Layer 7: Pinnacle bonuses.
+            // Layer 7: Pinnacle bonuses remain passive.
             nodeIndex <<= 1;
             var spiceShield = new SkillNode(nodeIndex, "Spice Shield", 12, "Grants a protective barrier", (p) =>
             {
-                profile.Talents[TalentID.CookingSpells].Points |= 0x400;
+                profile.Talents[TalentID.CookingFlavor].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -470,11 +470,10 @@ namespace Server.ACC.CSS.Systems.CookingMagic
             ancientCulinarian.AddChild(flameFury);
             thermalTransformation.AddChild(echoesOfAroma);
 
-            // Layer 8: Ultimate node.
+            // Layer 8: Ultimate node remains passive.
             nodeIndex <<= 1;
             var ultimateCulinarian = new SkillNode(nodeIndex, "Ultimate Culinarian", 13, "Ultimate bonus: boosts all culinary skills", (p) =>
             {
-                profile.Talents[TalentID.CookingSpells].Points |= 0x800 | 0x1000;
                 profile.Talents[TalentID.CookingEfficiency].Points += 1;
                 profile.Talents[TalentID.CookingSpeed].Points += 1;
                 profile.Talents[TalentID.CookingFlavor].Points += 1;

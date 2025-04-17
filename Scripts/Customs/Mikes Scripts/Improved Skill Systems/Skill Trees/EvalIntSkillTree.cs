@@ -256,14 +256,14 @@ namespace Server.ACC.CSS.Systems.EvalIntMagic
 
             // Layer 1: Basic bonuses.
             nodeIndex <<= 1;
-            var keenPerception = new SkillNode(nodeIndex, "Keen Perception", 6, "Reduces evaluation error margin by 1", (p) =>
+            var keenPerception = new SkillNode(nodeIndex, "Keen Perception", 6, "Unlocks additional EvalInt spell", (p) =>
             {
-                // Passive bonus; margin reduction is applied in the EvalInt skill handler.
+                profile.Talents[TalentID.EvalIntSpells].Points |= 0x02;
             });
             nodeIndex <<= 1;
-            var mindsEye = new SkillNode(nodeIndex, "Mind's Eye", 6, "Improves mana evaluation accuracy", (p) =>
+            var mindsEye = new SkillNode(nodeIndex, "Mind's Eye", 6, "Unlocks enhanced EvalInt spell", (p) =>
             {
-                // Passive bonus.
+                profile.Talents[TalentID.EvalIntSpells].Points |= 0x10;
             });
             nodeIndex <<= 1;
             var cogentCalculation = new SkillNode(nodeIndex, "Cogent Calculation", 6, "Unlocks bonus EvalInt spell", (p) =>
@@ -287,9 +287,9 @@ namespace Server.ACC.CSS.Systems.EvalIntMagic
                 profile.Talents[TalentID.EvalIntSpells].Points |= 0x08;
             });
             nodeIndex <<= 1;
-            var focusedIntellect = new SkillNode(nodeIndex, "Focused Intellect", 7, "Further reduces evaluation error margin by 1", (p) =>
+            var focusedIntellect = new SkillNode(nodeIndex, "Focused Intellect", 7, "Unlocks further EvalInt spell", (p) =>
             {
-                // Passive bonus.
+                profile.Talents[TalentID.EvalIntSpells].Points |= 0x40;
             });
             nodeIndex <<= 1;
             var intuitiveJudgement = new SkillNode(nodeIndex, "Intuitive Judgement", 7, "Boosts mana evaluation", (p) =>
@@ -417,19 +417,19 @@ namespace Server.ACC.CSS.Systems.EvalIntMagic
                 profile.Talents[TalentID.EvalIntSpells].Points |= 0x400;
             });
             nodeIndex <<= 1;
-            var cerebralEndowment = new SkillNode(nodeIndex, "Cerebral Endowment", 12, "Further enhances EvalInt effectiveness", (p) =>
+            var cerebralEndowment = new SkillNode(nodeIndex, "Cerebral Endowment", 12, "Unlocks a potent EvalInt spell", (p) =>
             {
-                // Passive bonus.
+                profile.Talents[TalentID.EvalIntSpells].Points |= 0x2000;
             });
             nodeIndex <<= 1;
-            var intellectsFury = new SkillNode(nodeIndex, "Intellect's Fury", 12, "Unleashes a burst of mental power", (p) =>
+            var intellectsFury = new SkillNode(nodeIndex, "Intellect's Fury", 12, "Unlocks a powerful EvalInt spell", (p) =>
             {
-                // Passive bonus.
+                profile.Talents[TalentID.EvalIntSpells].Points |= 0x4000;
             });
             nodeIndex <<= 1;
-            var echoesOfWisdom = new SkillNode(nodeIndex, "Echoes of Wisdom", 12, "Augments mental evaluation abilities", (p) =>
+            var echoesOfWisdom = new SkillNode(nodeIndex, "Echoes of Wisdom", 12, "Unlocks an ultimate EvalInt spell", (p) =>
             {
-                // Passive bonus.
+                profile.Talents[TalentID.EvalIntSpells].Points |= 0x8000;
             });
             expandedCognition.AddChild(thoughtBarrier);
             mysticMind.AddChild(cerebralEndowment);

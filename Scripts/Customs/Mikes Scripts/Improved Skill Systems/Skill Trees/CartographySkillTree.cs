@@ -263,11 +263,12 @@ namespace Server.ACC.CSS.Systems.CartographyMagic
                 profile.Talents[TalentID.CartographySpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic bonuses.
+            // Layer 1: Basic bonuses / spell unlocks.
             nodeIndex <<= 1;
-            var compassSense = new SkillNode(nodeIndex, "Compass Sense", 6, "Improves navigation accuracy", (p) =>
+            // Changed from a passive bonus to a spell unlock: 0x02.
+            var compassSense = new SkillNode(nodeIndex, "Compass Sense", 6, "Unlocks a spell", (p) =>
             {
-                profile.Talents[TalentID.CartographyAccuracy].Points += 1;
+                profile.Talents[TalentID.CartographySpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
@@ -451,15 +452,17 @@ namespace Server.ACC.CSS.Systems.CartographyMagic
             });
 
             nodeIndex <<= 1;
-            var cartographersEndowment = new SkillNode(nodeIndex, "Cartographer's Endowment", 12, "Further enhances mapping skills", (p) =>
+            // Changed from a passive bonus to a spell unlock: 0x4000.
+            var cartographersEndowment = new SkillNode(nodeIndex, "Cartographer's Endowment", 12, "Unlocks a spell", (p) =>
             {
-                profile.Talents[TalentID.CartographyMapping].Points += 1;
+                profile.Talents[TalentID.CartographySpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
-            var cartographersFury = new SkillNode(nodeIndex, "Cartographer's Fury", 12, "Boosts spellcasting power", (p) =>
+            // Changed from a passive bonus to a spell unlock: 0x8000.
+            var cartographersFury = new SkillNode(nodeIndex, "Cartographer's Fury", 12, "Unlocks a spell", (p) =>
             {
-                profile.Talents[TalentID.CartographyEfficiency].Points += 1;
+                profile.Talents[TalentID.CartographySpells].Points |= 0x8000;
             });
 
             nodeIndex <<= 1;
@@ -477,6 +480,7 @@ namespace Server.ACC.CSS.Systems.CartographyMagic
             nodeIndex <<= 1;
             var ultimateCartographer = new SkillNode(nodeIndex, "Ultimate Cartographer", 13, "Ultimate bonus: boosts all cartography skills", (p) =>
             {
+                // Unlocks two spell bits: 0x1000 and 0x2000.
                 profile.Talents[TalentID.CartographySpells].Points |= 0x1000 | 0x2000;
                 profile.Talents[TalentID.CartographyAccuracy].Points += 1;
                 profile.Talents[TalentID.CartographyEfficiency].Points += 1;

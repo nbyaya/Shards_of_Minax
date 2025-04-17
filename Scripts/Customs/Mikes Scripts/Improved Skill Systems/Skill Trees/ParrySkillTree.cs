@@ -263,17 +263,17 @@ namespace Server.ACC.CSS.Systems.ParryMagic
                 profile.Talents[TalentID.ParrySpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic bonuses.
+            // Layer 1: Basic bonuses / Spell unlocks.
             nodeIndex <<= 1;
-            var swiftGuard = new SkillNode(nodeIndex, "Swift Guard", 6, "Increases parry speed", (p) =>
+            var swiftGuard = new SkillNode(nodeIndex, "Swift Guard", 6, "Unlocks swift guard spell", (p) =>
             {
-                profile.Talents[TalentID.ParryAgility].Points += 1;
+                profile.Talents[TalentID.ParrySpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
-            var ironWall = new SkillNode(nodeIndex, "Iron Wall", 6, "Improves blocking efficiency", (p) =>
+            var ironWall = new SkillNode(nodeIndex, "Iron Wall", 6, "Unlocks iron wall spell", (p) =>
             {
-                profile.Talents[TalentID.ParryBlock].Points += 1;
+                profile.Talents[TalentID.ParrySpells].Points |= 0x80;
             });
 
             nodeIndex <<= 1;
@@ -283,9 +283,9 @@ namespace Server.ACC.CSS.Systems.ParryMagic
             });
 
             nodeIndex <<= 1;
-            var riposteInstinct = new SkillNode(nodeIndex, "Riposte Instinct", 6, "Enhances counterattack timing", (p) =>
+            var riposteInstinct = new SkillNode(nodeIndex, "Riposte Instinct", 6, "Unlocks riposte instinct spell", (p) =>
             {
-                profile.Talents[TalentID.ParryCounter].Points += 1;
+                profile.Talents[TalentID.ParrySpells].Points |= 0x10;
             });
 
             Root.AddChild(swiftGuard);
@@ -301,13 +301,13 @@ namespace Server.ACC.CSS.Systems.ParryMagic
             });
 
             nodeIndex <<= 1;
-            var counterStance = new SkillNode(nodeIndex, "Counter Stance", 7, "Enhances counterattack", (p) =>
+            var counterStance = new SkillNode(nodeIndex, "Counter Stance", 7, "Unlocks counter stance spell", (p) =>
             {
-                profile.Talents[TalentID.ParryCounter].Points += 1;
+                profile.Talents[TalentID.ParrySpells].Points |= 0x400;
             });
 
             nodeIndex <<= 1;
-            var guardiansResolve = new SkillNode(nodeIndex, "Guardian's Resolve", 7, "Increases parry defense", (p) =>
+            var guardiansResolve = new SkillNode(nodeIndex, "Guardian's Resolve", 7, "Improves reaction to attacks", (p) =>
             {
                 profile.Talents[TalentID.ParryBlock].Points += 1;
             });
@@ -325,15 +325,15 @@ namespace Server.ACC.CSS.Systems.ParryMagic
 
             // Layer 3: Yield and efficiency improvements.
             nodeIndex <<= 1;
-            var vigilantWatch = new SkillNode(nodeIndex, "Vigilant Watch", 8, "Boosts parry perception", (p) =>
+            var vigilantWatch = new SkillNode(nodeIndex, "Vigilant Watch", 8, "Unlocks vigilant watch spell", (p) =>
             {
-                profile.Talents[TalentID.ParryAgility].Points += 1;
+                profile.Talents[TalentID.ParrySpells].Points |= 0x800;
             });
 
             nodeIndex <<= 1;
-            var reinforcedGuard = new SkillNode(nodeIndex, "Reinforced Guard", 8, "Enhances blocking strength", (p) =>
+            var reinforcedGuard = new SkillNode(nodeIndex, "Reinforced Guard", 8, "Unlocks reinforced guard spell", (p) =>
             {
-                profile.Talents[TalentID.ParryBlock].Points += 1;
+                profile.Talents[TalentID.ParrySpells].Points |= 0x1000;
             });
 
             nodeIndex <<= 1;
@@ -355,9 +355,9 @@ namespace Server.ACC.CSS.Systems.ParryMagic
 
             // Layer 4: More advanced magical enhancements.
             nodeIndex <<= 1;
-            var resoluteDefense = new SkillNode(nodeIndex, "Resolute Defense", 9, "Enhances defensive stance", (p) =>
+            var resoluteDefense = new SkillNode(nodeIndex, "Resolute Defense", 9, "Unlocks resolute defense spell", (p) =>
             {
-                profile.Talents[TalentID.ParryBlock].Points += 1;
+                profile.Talents[TalentID.ParrySpells].Points |= 0x2000;
             });
 
             nodeIndex <<= 1;
@@ -373,9 +373,9 @@ namespace Server.ACC.CSS.Systems.ParryMagic
             });
 
             nodeIndex <<= 1;
-            var enduringStance = new SkillNode(nodeIndex, "Enduring Stance", 9, "Increases parry stamina", (p) =>
+            var enduringStance = new SkillNode(nodeIndex, "Enduring Stance", 9, "Unlocks enduring stance spell", (p) =>
             {
-                profile.Talents[TalentID.ParryStamina].Points += 1;
+                profile.Talents[TalentID.ParrySpells].Points |= 0x4000;
             });
 
             vigilantWatch.AddChild(resoluteDefense);
@@ -477,7 +477,7 @@ namespace Server.ACC.CSS.Systems.ParryMagic
             nodeIndex <<= 1;
             var ultimateParry = new SkillNode(nodeIndex, "Ultimate Parry", 13, "Ultimate bonus: boosts all parry skills", (p) =>
             {
-                profile.Talents[TalentID.ParrySpells].Points |= 0x800 | 0x1000;
+                profile.Talents[TalentID.ParrySpells].Points |= 0x8000;
                 profile.Talents[TalentID.ParryBlock].Points += 1;
                 profile.Talents[TalentID.ParryAgility].Points += 1;
                 profile.Talents[TalentID.ParryCounter].Points += 1;

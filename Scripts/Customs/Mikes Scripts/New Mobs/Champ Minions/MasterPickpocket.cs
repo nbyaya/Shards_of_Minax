@@ -121,19 +121,30 @@ namespace Server.Mobiles
 			if (target == null || target.Backpack == null)
 				return;
 
-			List<Item> items = new List<Item>(target.Backpack.Items);
+			List<Item> items = new List<Item>();
+
+			// Iterate through the player's backpack to find stealable items
+			foreach (Item i in target.Backpack.Items)
+			{
+				if (i != null && i.Movable && !i.CheckBlessed(target)) // Check if the item is blessed
+				{
+					items.Add(i);
+				}
+			}
 
 			if (items.Count > 0)
 			{
 				Item item = items[Utility.Random(items.Count)];
 
-				if (item != null && item.Movable)
+				if (item != null)
 				{
 					target.Backpack.RemoveItem(item);
+
 					if (this.Backpack == null)
 					{
 						this.AddItem(new Backpack());
 					}
+
 					this.Backpack.DropItem(item);
 					this.Say(true, "I'll be taking this!");
 
@@ -141,6 +152,8 @@ namespace Server.Mobiles
 				}
 			}
 		}
+
+
 
         public MasterPickpocket(Serial serial) : base(serial)
         {

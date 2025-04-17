@@ -286,10 +286,10 @@ namespace Server.ACC.CSS.Systems.LumberjackingMagic
             });
 
             nodeIndex <<= 1;
-            var efficientChopping = new SkillNode(nodeIndex, "Efficient Chopping", 6, "Improves chopping efficiency", (p) =>
+            // Modified: now unlocks spell bit 0x02 instead of adding efficiency bonus.
+            var efficientChopping = new SkillNode(nodeIndex, "Efficient Chopping", 6, "Unlocks Efficient Chopping Spell", (p) =>
             {
-                // Improve chopping efficiency.
-                profile.Talents[TalentID.LumberjackingEfficiency].Points += 1;
+                profile.Talents[TalentID.LumberjackingSpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
@@ -413,9 +413,10 @@ namespace Server.ACC.CSS.Systems.LumberjackingMagic
             });
 
             nodeIndex <<= 1;
-            var bountifulHarvest = new SkillNode(nodeIndex, "Bountiful Harvest", 10, "Boosts wood yield", (p) =>
+            // Modified: now unlocks spell bit 0x2000 instead of boosting yield.
+            var bountifulHarvest = new SkillNode(nodeIndex, "Bountiful Harvest", 10, "Unlocks Bountiful Harvest Spell", (p) =>
             {
-                profile.Talents[TalentID.LumberjackingYield].Points += 1;
+                profile.Talents[TalentID.LumberjackingSpells].Points |= 0x2000;
             });
 
             nodeIndex <<= 1;
@@ -444,9 +445,10 @@ namespace Server.ACC.CSS.Systems.LumberjackingMagic
             });
 
             nodeIndex <<= 1;
-            var mysticSapling = new SkillNode(nodeIndex, "Mystic Sapling", 11, "Boosts wood yield with magic", (p) =>
+            // Modified: now unlocks spell bit 0x4000 instead of boosting yield.
+            var mysticSapling = new SkillNode(nodeIndex, "Mystic Sapling", 11, "Unlocks Mystic Sapling Spell", (p) =>
             {
-                profile.Talents[TalentID.LumberjackingYield].Points += 1;
+                profile.Talents[TalentID.LumberjackingSpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
@@ -481,9 +483,10 @@ namespace Server.ACC.CSS.Systems.LumberjackingMagic
             });
 
             nodeIndex <<= 1;
-            var forestsFury = new SkillNode(nodeIndex, "Forest's Fury", 12, "Boosts chopping power", (p) =>
+            // Modified: now unlocks spell bit 0x8000 instead of boosting efficiency.
+            var forestsFury = new SkillNode(nodeIndex, "Forest's Fury", 12, "Unlocks Forest's Fury Spell", (p) =>
             {
-                profile.Talents[TalentID.LumberjackingEfficiency].Points += 1;
+                profile.Talents[TalentID.LumberjackingSpells].Points |= 0x8000;
             });
 
             nodeIndex <<= 1;

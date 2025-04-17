@@ -264,11 +264,12 @@ namespace Server.ACC.CSS.Systems.InscribeMagic
                 profile.Talents[TalentID.InscribeSpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic bonuses.
+            // Layer 1: Basic bonuses and spell unlock.
             nodeIndex <<= 1;
-            var steadyHand = new SkillNode(nodeIndex, "Steady Hand", 6, "Increases inscription accuracy", (p) =>
+            // Changed Steady Hand to unlock spell 0x02.
+            var steadyHand = new SkillNode(nodeIndex, "Steady Hand", 6, "Unlocks inscription spell 0x02", (p) =>
             {
-                profile.Talents[TalentID.InscribeAccuracy].Points += 1;
+                profile.Talents[TalentID.InscribeSpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
@@ -416,7 +417,7 @@ namespace Server.ACC.CSS.Systems.InscribeMagic
 
             // Layer 6: Mastery nodes.
             nodeIndex <<= 1;
-            var ancientScripts = new SkillNode(nodeIndex, "Ancient Scripts", 11, "Deepens inscription knowledge", (p) =>
+            var ancientScripts = new SkillNode(nodeIndex, "Ancient Scripts", 11, "Unlocks additional spells", (p) =>
             {
                 profile.Talents[TalentID.InscribeSpells].Points |= 0x200;
             });
@@ -458,15 +459,17 @@ namespace Server.ACC.CSS.Systems.InscribeMagic
             });
 
             nodeIndex <<= 1;
-            var infiniteInscriptions = new SkillNode(nodeIndex, "Infinite Inscriptions", 12, "Further enhances inscription accuracy", (p) =>
+            // Changed Infinite Inscriptions to unlock spell 0x4000.
+            var infiniteInscriptions = new SkillNode(nodeIndex, "Infinite Inscriptions", 12, "Unlocks inscription spell 0x4000", (p) =>
             {
-                profile.Talents[TalentID.InscribeAccuracy].Points += 1;
+                profile.Talents[TalentID.InscribeSpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
-            var sagesScript = new SkillNode(nodeIndex, "Sage's Script", 12, "Boosts inscription efficiency", (p) =>
+            // Changed Sage's Script to unlock spell 0x8000.
+            var sagesScript = new SkillNode(nodeIndex, "Sage's Script", 12, "Unlocks inscription spell 0x8000", (p) =>
             {
-                profile.Talents[TalentID.InscribeEfficiency].Points += 1;
+                profile.Talents[TalentID.InscribeSpells].Points |= 0x8000;
             });
 
             eternalEpistles.AddChild(divineDraft);
@@ -475,7 +478,7 @@ namespace Server.ACC.CSS.Systems.InscribeMagic
 
             // Layer 8: Ultimate node.
             nodeIndex <<= 1;
-            var ultimateIlluminator = new SkillNode(nodeIndex, "Ultimate Illuminator", 13, "Ultimate bonus: boosts all inscription skills", (p) =>
+            var ultimateIlluminator = new SkillNode(nodeIndex, "Ultimate Illuminator", 13, "Ultimate bonus: boosts all inscription skills and unlocks spells 0x1000 & 0x2000", (p) =>
             {
                 profile.Talents[TalentID.InscribeSpells].Points |= 0x1000 | 0x2000;
                 profile.Talents[TalentID.InscribeAccuracy].Points += 1;

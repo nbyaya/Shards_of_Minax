@@ -259,29 +259,33 @@ namespace Server.ACC.CSS.Systems.MacingMagic
             // Layer 0: Root Node – Unlocks basic macing spells.
             Root = new SkillNode(nodeIndex, "Call of the Strike", 5, "Unlocks basic macing spells", (p) =>
             {
-                profile.Talents[TalentID.MacingSpells].Points |= 0x01;
+                profile.Talents[TalentID.MacingSpells].Points |= 0x01; // Spell bit 0x01
             });
 
-            // Layer 1: Basic bonuses.
+            // Layer 1: Basic nodes.
             nodeIndex <<= 1;
-            var maceGrip = new SkillNode(nodeIndex, "Mace Grip", 6, "Enhances weapon handling", (p) =>
+            // Converted to spell unlock: Mace Grip now unlocks a spell.
+            var maceGrip = new SkillNode(nodeIndex, "Mace Grip", 6, "Unlocks a macing spell", (p) =>
             {
-                profile.Talents[TalentID.MacingGripBonus].Points += 1;
+                profile.Talents[TalentID.MacingSpells].Points |= 0x02; // Spell bit 0x02
             });
 
             nodeIndex <<= 1;
+            // Swift Swing remains a bonus.
             var swiftSwing = new SkillNode(nodeIndex, "Swift Swing", 6, "Increases attack speed", (p) =>
             {
                 profile.Talents[TalentID.MacingSpeedBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Balanced Swing remains as a spell unlock.
             var balancedSwing = new SkillNode(nodeIndex, "Balanced Swing", 6, "Improves accuracy and control, unlocking additional spells", (p) =>
             {
-                profile.Talents[TalentID.MacingSpells].Points |= 0x04;
+                profile.Talents[TalentID.MacingSpells].Points |= 0x04; // Spell bit 0x04
             });
 
             nodeIndex <<= 1;
+            // Heavy Swing remains a bonus.
             var heavySwing = new SkillNode(nodeIndex, "Heavy Swing", 6, "Increases damage output", (p) =>
             {
                 profile.Talents[TalentID.MacingDamageBonus].Points += 1;
@@ -292,26 +296,30 @@ namespace Server.ACC.CSS.Systems.MacingMagic
             Root.AddChild(balancedSwing);
             Root.AddChild(heavySwing);
 
-            // Layer 2: Advanced bonuses.
+            // Layer 2: Advanced nodes.
             nodeIndex <<= 1;
+            // Crushing Blow remains as a spell unlock.
             var crushingBlow = new SkillNode(nodeIndex, "Crushing Blow", 7, "Unlocks advanced macing spells", (p) =>
             {
-                profile.Talents[TalentID.MacingSpells].Points |= 0x08;
+                profile.Talents[TalentID.MacingSpells].Points |= 0x08; // Spell bit 0x08
             });
 
             nodeIndex <<= 1;
+            // Momentum Strike remains a bonus.
             var momentumStrike = new SkillNode(nodeIndex, "Momentum Strike", 7, "Enhances critical hit chance", (p) =>
             {
                 profile.Talents[TalentID.MacingCriticalBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
-            var armorShatter = new SkillNode(nodeIndex, "Armor Shatter", 7, "Increases armor penetration", (p) =>
+            // Converted to spell unlock: Armor Shatter now unlocks a spell.
+            var armorShatter = new SkillNode(nodeIndex, "Armor Shatter", 7, "Unlocks a macing spell", (p) =>
             {
-                profile.Talents[TalentID.MacingArmorPenetrationBonus].Points += 1;
+                profile.Talents[TalentID.MacingSpells].Points |= 0x10; // Spell bit 0x10
             });
 
             nodeIndex <<= 1;
+            // Iron Will remains a bonus.
             var ironWill = new SkillNode(nodeIndex, "Iron Will", 7, "Boosts physical defense", (p) =>
             {
                 profile.Talents[TalentID.MacingDefenseBonus].Points += 1;
@@ -322,26 +330,30 @@ namespace Server.ACC.CSS.Systems.MacingMagic
             balancedSwing.AddChild(armorShatter);
             heavySwing.AddChild(ironWill);
 
-            // Layer 3: Further bonuses.
+            // Layer 3: Further nodes.
             nodeIndex <<= 1;
-            var bluntMastery = new SkillNode(nodeIndex, "Blunt Mastery", 8, "Improves macing spell effects", (p) =>
+            // Converted: Blunt Mastery now uses spell bit 0x20.
+            var bluntMastery = new SkillNode(nodeIndex, "Blunt Mastery", 8, "Unlocks a macing spell", (p) =>
             {
-                profile.Talents[TalentID.MacingSpells].Points |= 0x10;
+                profile.Talents[TalentID.MacingSpells].Points |= 0x20; // Spell bit 0x20
             });
 
             nodeIndex <<= 1;
+            // Spiritual Impact remains a bonus.
             var spiritualImpact = new SkillNode(nodeIndex, "Spiritual Impact", 8, "Enhances chance to stun opponents", (p) =>
             {
                 profile.Talents[TalentID.MacingStunChance].Points += 1;
             });
 
             nodeIndex <<= 1;
-            var echoingStrike = new SkillNode(nodeIndex, "Echoing Strike", 8, "Grants chance for a secondary attack", (p) =>
+            // Converted: Echoing Strike now unlocks a spell.
+            var echoingStrike = new SkillNode(nodeIndex, "Echoing Strike", 8, "Unlocks a macing spell", (p) =>
             {
-                profile.Talents[TalentID.MacingSecondaryAttack].Points += 1;
+                profile.Talents[TalentID.MacingSpells].Points |= 0x40; // Spell bit 0x40
             });
 
             nodeIndex <<= 1;
+            // Steel Resolve remains a bonus.
             var steelResolve = new SkillNode(nodeIndex, "Steel Resolve", 8, "Improves damage mitigation", (p) =>
             {
                 profile.Talents[TalentID.MacingDamageReduction].Points += 1;
@@ -352,29 +364,33 @@ namespace Server.ACC.CSS.Systems.MacingMagic
             armorShatter.AddChild(echoingStrike);
             ironWill.AddChild(steelResolve);
 
-            // Layer 4: Advanced magical enhancements.
+            // Layer 4: Magical enhancements.
             nodeIndex <<= 1;
+            // Converted: Guardian's Ward now uses spell bit 0x80.
             var guardiansWard = new SkillNode(nodeIndex, "Guardian's Ward", 9, "Unlocks defensive macing spells", (p) =>
             {
-                profile.Talents[TalentID.MacingSpells].Points |= 0x20;
+                profile.Talents[TalentID.MacingSpells].Points |= 0x80; // Spell bit 0x80
             });
 
             nodeIndex <<= 1;
+            // Brutal Force remains a bonus.
             var brutalForce = new SkillNode(nodeIndex, "Brutal Force", 9, "Further increases damage", (p) =>
             {
                 profile.Talents[TalentID.MacingDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Resolute Stance remains a bonus.
             var resoluteStance = new SkillNode(nodeIndex, "Resolute Stance", 9, "Improves parry and blocking", (p) =>
             {
                 profile.Talents[TalentID.MacingParryBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
-            var unyieldingMight = new SkillNode(nodeIndex, "Unyielding Might", 9, "Boosts all macing abilities", (p) =>
+            // Converted: Unyielding Might now uses spell bit 0x100.
+            var unyieldingMight = new SkillNode(nodeIndex, "Unyielding Might", 9, "Unlocks a macing spell", (p) =>
             {
-                profile.Talents[TalentID.MacingSpells].Points |= 0x40;
+                profile.Talents[TalentID.MacingSpells].Points |= 0x100; // Spell bit 0x100
             });
 
             bluntMastery.AddChild(guardiansWard);
@@ -384,24 +400,28 @@ namespace Server.ACC.CSS.Systems.MacingMagic
 
             // Layer 5: Expert-level nodes.
             nodeIndex <<= 1;
-            var primevalFury = new SkillNode(nodeIndex, "Primeval Fury", 10, "Boosts overall offensive power", (p) =>
+            // Converted: Primeval Fury now uses spell bit 0x200.
+            var primevalFury = new SkillNode(nodeIndex, "Primeval Fury", 10, "Unlocks a macing spell", (p) =>
             {
-                profile.Talents[TalentID.MacingDamageBonus].Points += 1;
+                profile.Talents[TalentID.MacingSpells].Points |= 0x200; // Spell bit 0x200
             });
 
             nodeIndex <<= 1;
+            // Savage Momentum remains a bonus.
             var savageMomentum = new SkillNode(nodeIndex, "Savage Momentum", 10, "Enhances attack speed further", (p) =>
             {
                 profile.Talents[TalentID.MacingSpeedBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
-            var concussiveImpact = new SkillNode(nodeIndex, "Concussive Impact", 10, "Chance to daze enemy", (p) =>
+            // Converted: Concussive Impact now uses spell bit 0x400.
+            var concussiveImpact = new SkillNode(nodeIndex, "Concussive Impact", 10, "Unlocks a macing spell", (p) =>
             {
-                profile.Talents[TalentID.MacingStunChance].Points += 1;
+                profile.Talents[TalentID.MacingSpells].Points |= 0x400; // Spell bit 0x400
             });
 
             nodeIndex <<= 1;
+            // Mighty Strike remains a bonus.
             var mightyStrike = new SkillNode(nodeIndex, "Mighty Strike", 10, "Increases damage significantly", (p) =>
             {
                 profile.Talents[TalentID.MacingDamageBonus].Points += 1;
@@ -414,27 +434,31 @@ namespace Server.ACC.CSS.Systems.MacingMagic
 
             // Layer 6: Mastery nodes.
             nodeIndex <<= 1;
+            // Expanded Reach remains a bonus.
             var expandedReach = new SkillNode(nodeIndex, "Expanded Reach", 11, "Increases attack range", (p) =>
             {
                 profile.Talents[TalentID.MacingRangeBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Mystic Impact remains a bonus.
             var mysticImpact = new SkillNode(nodeIndex, "Mystic Impact", 11, "Boosts spell power of macing spells", (p) =>
             {
                 profile.Talents[TalentID.MacingSpellPowerBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Converted: Ancient Pummeling now uses spell bit 0x800.
             var ancientPummeling = new SkillNode(nodeIndex, "Ancient Pummeling", 11, "Unlocks advanced macing spells", (p) =>
             {
-                profile.Talents[TalentID.MacingSpells].Points |= 0x80;
+                profile.Talents[TalentID.MacingSpells].Points |= 0x800; // Spell bit 0x800
             });
 
             nodeIndex <<= 1;
-            var transformativeForce = new SkillNode(nodeIndex, "Transformative Force", 11, "Enhances overall macing bonuses", (p) =>
+            // Converted: Transformative Force now uses spell bit 0x1000.
+            var transformativeForce = new SkillNode(nodeIndex, "Transformative Force", 11, "Unlocks a macing spell", (p) =>
             {
-                profile.Talents[TalentID.MacingSpells].Points |= 0x100;
+                profile.Talents[TalentID.MacingSpells].Points |= 0x1000; // Spell bit 0x1000
             });
 
             primevalFury.AddChild(expandedReach);
@@ -444,24 +468,28 @@ namespace Server.ACC.CSS.Systems.MacingMagic
 
             // Layer 7: Pinnacle bonuses.
             nodeIndex <<= 1;
-            var bastionOfForce = new SkillNode(nodeIndex, "Bastion of Force", 12, "Grants an ultimate defensive bonus", (p) =>
+            // Converted: Bastion of Force now uses spell bit 0x2000.
+            var bastionOfForce = new SkillNode(nodeIndex, "Bastion of Force", 12, "Unlocks a macing spell", (p) =>
             {
-                profile.Talents[TalentID.MacingDefenseBonus].Points += 1;
+                profile.Talents[TalentID.MacingSpells].Points |= 0x2000; // Spell bit 0x2000
             });
 
             nodeIndex <<= 1;
+            // Nature's Retaliation remains a bonus.
             var naturesRetaliation = new SkillNode(nodeIndex, "Nature's Retaliation", 12, "Grants passive counter-attack bonus", (p) =>
             {
                 profile.Talents[TalentID.MacingSecondaryAttack].Points += 1;
             });
 
             nodeIndex <<= 1;
-            var unstoppableCharge = new SkillNode(nodeIndex, "Unstoppable Charge", 12, "Further boosts offensive power", (p) =>
+            // Converted: Unstoppable Charge now uses spell bit 0x4000.
+            var unstoppableCharge = new SkillNode(nodeIndex, "Unstoppable Charge", 12, "Unlocks a macing spell", (p) =>
             {
-                profile.Talents[TalentID.MacingDamageBonus].Points += 1;
+                profile.Talents[TalentID.MacingSpells].Points |= 0x4000; // Spell bit 0x4000
             });
 
             nodeIndex <<= 1;
+            // Phantom Strike remains a bonus.
             var phantomStrike = new SkillNode(nodeIndex, "Phantom Strike", 12, "Chance to bypass enemy armor", (p) =>
             {
                 profile.Talents[TalentID.MacingArmorPenetrationBonus].Points += 1;
@@ -474,9 +502,10 @@ namespace Server.ACC.CSS.Systems.MacingMagic
 
             // Layer 8: Ultimate node.
             nodeIndex <<= 1;
+            // Converted: Ultimate Macebearer now uses spell bit 0x8000.
             var ultimateMacebearer = new SkillNode(nodeIndex, "Ultimate Macebearer", 13, "Ultimate bonus: boosts all macing skills", (p) =>
             {
-                profile.Talents[TalentID.MacingSpells].Points |= 0x200;
+                profile.Talents[TalentID.MacingSpells].Points |= 0x8000; // Spell bit 0x8000
                 // Grant bonus to all passive talents:
                 profile.Talents[TalentID.MacingDamageBonus].Points += 1;
                 profile.Talents[TalentID.MacingSpeedBonus].Points += 1;

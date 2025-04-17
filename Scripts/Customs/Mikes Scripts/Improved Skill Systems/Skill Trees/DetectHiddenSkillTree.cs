@@ -263,7 +263,7 @@ namespace Server.ACC.CSS.Systems.DetectHiddenMagic
             // Layer 0: Root Node – Unlocks basic detect hidden spells.
             Root = new SkillNode(nodeIndex, "Eye of the Seeker", 5, "Unlocks basic detect hidden spells", (p) =>
             {
-                // Unlock basic detect hidden spells.
+                // Unlocks spell: 0x01
                 profile.Talents[TalentID.DetectHiddenSpells].Points |= 0x01;
             });
 
@@ -281,21 +281,22 @@ namespace Server.ACC.CSS.Systems.DetectHiddenMagic
             });
 
             nodeIndex <<= 1;
+            // Converted from passive to spell unlock: Silent Steps now unlocks spell 0x02.
+            var silentSteps = new SkillNode(nodeIndex, "Silent Steps", 6, "Unlocks a hidden spell", (p) =>
+            {
+                profile.Talents[TalentID.DetectHiddenSpells].Points |= 0x02;
+            });
+
+            nodeIndex <<= 1;
             var etherealInsight = new SkillNode(nodeIndex, "Ethereal Insight", 6, "Unlocks an additional detection spell", (p) =>
             {
                 profile.Talents[TalentID.DetectHiddenSpells].Points |= 0x04;
             });
 
-            nodeIndex <<= 1;
-            var silentSteps = new SkillNode(nodeIndex, "Silent Steps", 6, "Reduces enemy stealth effectiveness", (p) =>
-            {
-                profile.Talents[TalentID.DetectHiddenStealthReduction].Points += 1;
-            });
-
             Root.AddChild(keenVision);
             Root.AddChild(shadowDiscernment);
-            Root.AddChild(etherealInsight);
             Root.AddChild(silentSteps);
+            Root.AddChild(etherealInsight);
 
             // Layer 2: Advanced bonuses.
             nodeIndex <<= 1;
@@ -305,9 +306,10 @@ namespace Server.ACC.CSS.Systems.DetectHiddenMagic
             });
 
             nodeIndex <<= 1;
-            var mysticAwareness = new SkillNode(nodeIndex, "Mystic Awareness", 7, "Further improves detection chance", (p) =>
+            // Converted from passive to spell unlock: Mystic Awareness now unlocks spell 0x400.
+            var mysticAwareness = new SkillNode(nodeIndex, "Mystic Awareness", 7, "Unlocks an advanced spell", (p) =>
             {
-                profile.Talents[TalentID.DetectHiddenChance].Points += 1;
+                profile.Talents[TalentID.DetectHiddenSpells].Points |= 0x400;
             });
 
             nodeIndex <<= 1;
@@ -347,9 +349,10 @@ namespace Server.ACC.CSS.Systems.DetectHiddenMagic
             });
 
             nodeIndex <<= 1;
-            var nocturnalReflexes = new SkillNode(nodeIndex, "Nocturnal Reflexes", 8, "Enhances passive detection activation", (p) =>
+            // Converted from passive to spell unlock: Nocturnal Reflexes now unlocks spell 0x800.
+            var nocturnalReflexes = new SkillNode(nodeIndex, "Nocturnal Reflexes", 8, "Unlocks a hidden spell", (p) =>
             {
-                // (Passive bonus – you might later check for this bonus in your detection routines)
+                profile.Talents[TalentID.DetectHiddenSpells].Points |= 0x800;
             });
 
             phantomSight.AddChild(allSeeingEye);
@@ -365,9 +368,10 @@ namespace Server.ACC.CSS.Systems.DetectHiddenMagic
             });
 
             nodeIndex <<= 1;
-            var shadowbane = new SkillNode(nodeIndex, "Shadowbane", 9, "Further improves detection chance", (p) =>
+            // Converted from passive to spell unlock: Shadowbane now unlocks spell 0x1000.
+            var shadowbane = new SkillNode(nodeIndex, "Shadowbane", 9, "Unlocks a hidden spell", (p) =>
             {
-                profile.Talents[TalentID.DetectHiddenChance].Points += 1;
+                profile.Talents[TalentID.DetectHiddenSpells].Points |= 0x1000;
             });
 
             nodeIndex <<= 1;
@@ -395,9 +399,10 @@ namespace Server.ACC.CSS.Systems.DetectHiddenMagic
             });
 
             nodeIndex <<= 1;
-            var ghostlyAura = new SkillNode(nodeIndex, "Ghostly Aura", 10, "Boosts detection chance", (p) =>
+            // Converted from passive to spell unlock: Ghostly Aura now unlocks spell 0x2000.
+            var ghostlyAura = new SkillNode(nodeIndex, "Ghostly Aura", 10, "Unlocks a hidden spell", (p) =>
             {
-                profile.Talents[TalentID.DetectHiddenChance].Points += 1;
+                profile.Talents[TalentID.DetectHiddenSpells].Points |= 0x2000;
             });
 
             nodeIndex <<= 1;
@@ -437,9 +442,10 @@ namespace Server.ACC.CSS.Systems.DetectHiddenMagic
             });
 
             nodeIndex <<= 1;
-            var evasiveShadow = new SkillNode(nodeIndex, "Evasive Shadow", 11, "Further reduces enemy stealth", (p) =>
+            // Converted from passive to spell unlock: Evasive Shadow now unlocks spell 0x4000.
+            var evasiveShadow = new SkillNode(nodeIndex, "Evasive Shadow", 11, "Unlocks a hidden spell", (p) =>
             {
-                profile.Talents[TalentID.DetectHiddenStealthReduction].Points += 1;
+                profile.Talents[TalentID.DetectHiddenSpells].Points |= 0x4000;
             });
 
             luminousFocus.AddChild(primalPerception);
@@ -467,9 +473,10 @@ namespace Server.ACC.CSS.Systems.DetectHiddenMagic
             });
 
             nodeIndex <<= 1;
-            var eclipseOfShadows = new SkillNode(nodeIndex, "Eclipse of Shadows", 12, "Massively reduces enemy stealth", (p) =>
+            // Converted from passive to spell unlock: Eclipse of Shadows now unlocks spell 0x8000.
+            var eclipseOfShadows = new SkillNode(nodeIndex, "Eclipse of Shadows", 12, "Unlocks a hidden spell", (p) =>
             {
-                profile.Talents[TalentID.DetectHiddenStealthReduction].Points += 1;
+                profile.Talents[TalentID.DetectHiddenSpells].Points |= 0x8000;
             });
 
             primalPerception.AddChild(celestialInsight);
@@ -479,9 +486,10 @@ namespace Server.ACC.CSS.Systems.DetectHiddenMagic
 
             // Layer 8: Ultimate Node.
             nodeIndex <<= 1;
+            // Modified Ultimate Seer now only unlocks spell 0x200.
             var ultimateSeer = new SkillNode(nodeIndex, "Ultimate Seer", 13, "Ultimate bonus: boosts all Detect Hidden skills", (p) =>
             {
-                profile.Talents[TalentID.DetectHiddenSpells].Points |= 0x200 | 0x400;
+                profile.Talents[TalentID.DetectHiddenSpells].Points |= 0x200;
                 profile.Talents[TalentID.DetectHiddenRange].Points += 1;
                 profile.Talents[TalentID.DetectHiddenChance].Points += 1;
                 profile.Talents[TalentID.DetectHiddenStealthReduction].Points += 1;

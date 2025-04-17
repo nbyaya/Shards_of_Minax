@@ -299,15 +299,17 @@ namespace Server.ACC.CSS.Systems.VeterinaryMagic
             });
 
             nodeIndex <<= 1;
-            var vigorBoost = new SkillNode(nodeIndex, "Vigor Boost", 7, "Increases pet stamina", (p) =>
+            // Converted from passive bonus to spell unlock (new bit 0x200)
+            var vigorBoost = new SkillNode(nodeIndex, "Vigor Boost", 7, "Unlocks a veterinary spell (Stamina Enchantment)", (p) =>
             {
-                profile.Talents[TalentID.VeterinaryStamina] = new Talent(TalentID.VeterinaryStamina) { Points = 1 };
+                profile.Talents[TalentID.VeterinarySpells].Points |= 0x200;
             });
 
             nodeIndex <<= 1;
-            var keenSenses = new SkillNode(nodeIndex, "Keen Senses", 7, "Enhances pet detection range", (p) =>
+            // Converted from passive bonus to spell unlock (new bit 0x400)
+            var keenSenses = new SkillNode(nodeIndex, "Keen Senses", 7, "Unlocks a veterinary spell (Sense of Detection)", (p) =>
             {
-                profile.Talents[TalentID.VeterinaryWisdom] = new Talent(TalentID.VeterinaryWisdom) { Points = 1 };
+                profile.Talents[TalentID.VeterinarySpells].Points |= 0x400;
             });
 
             nodeIndex <<= 1;
@@ -321,17 +323,19 @@ namespace Server.ACC.CSS.Systems.VeterinaryMagic
             beastBonding.AddChild(keenSenses);
             wildInstincts.AddChild(primalRoar);
 
-            // Layer 3: Further passive bonuses.
+            // Layer 3: Further unlocks (replacing some passive bonuses with spell unlocks).
             nodeIndex <<= 1;
-            var nurturingSpirit = new SkillNode(nodeIndex, "Nurturing Spirit", 8, "Enhances pet healing speed", (p) =>
+            // Converted from passive bonus to spell unlock (new bit 0x800)
+            var nurturingSpirit = new SkillNode(nodeIndex, "Nurturing Spirit", 8, "Unlocks a veterinary spell (Healing Resonance)", (p) =>
             {
-                // Passive bonus – implement effect elsewhere.
+                profile.Talents[TalentID.VeterinarySpells].Points |= 0x800;
             });
 
             nodeIndex <<= 1;
-            var steadyHands = new SkillNode(nodeIndex, "Steady Hands", 8, "Improves precision in animal care", (p) =>
+            // Converted from passive bonus to spell unlock (new bit 0x1000)
+            var steadyHands = new SkillNode(nodeIndex, "Steady Hands", 8, "Unlocks a veterinary spell (Precision Touch)", (p) =>
             {
-                // Passive bonus – implement effect elsewhere.
+                profile.Talents[TalentID.VeterinarySpells].Points |= 0x1000;
             });
 
             nodeIndex <<= 1;
@@ -353,9 +357,10 @@ namespace Server.ACC.CSS.Systems.VeterinaryMagic
 
             // Layer 4: Advanced magical enhancements.
             nodeIndex <<= 1;
-            var ancientWisdom = new SkillNode(nodeIndex, "Ancient Wisdom", 9, "Boosts experience gain with animals", (p) =>
+            // Converted from passive bonus to spell unlock (new bit 0x2000)
+            var ancientWisdom = new SkillNode(nodeIndex, "Ancient Wisdom", 9, "Unlocks a veterinary spell (Primal Insight)", (p) =>
             {
-                // Passive bonus – implement effect elsewhere.
+                profile.Talents[TalentID.VeterinarySpells].Points |= 0x2000;
             });
 
             nodeIndex <<= 1;
@@ -383,9 +388,10 @@ namespace Server.ACC.CSS.Systems.VeterinaryMagic
 
             // Layer 5: Expert-level nodes.
             nodeIndex <<= 1;
-            var primevalCare = new SkillNode(nodeIndex, "Primeval Care", 10, "Overall enhancement to pet care", (p) =>
+            // Converted from passive bonus to spell unlock (new bit 0x4000)
+            var primevalCare = new SkillNode(nodeIndex, "Primeval Care", 10, "Unlocks a veterinary spell (Vital Surge)", (p) =>
             {
-                // Passive bonus – implement effect elsewhere.
+                profile.Talents[TalentID.VeterinarySpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
@@ -413,9 +419,10 @@ namespace Server.ACC.CSS.Systems.VeterinaryMagic
 
             // Layer 6: Mastery nodes.
             nodeIndex <<= 1;
-            var expandedEmpathy = new SkillNode(nodeIndex, "Expanded Empathy", 11, "Further increases taming and healing", (p) =>
+            // Converted from passive bonus to spell unlock (new bit 0x8000)
+            var expandedEmpathy = new SkillNode(nodeIndex, "Expanded Empathy", 11, "Unlocks a veterinary spell (Empathic Surge)", (p) =>
             {
-                // Passive bonus – implement effect elsewhere.
+                profile.Talents[TalentID.VeterinarySpells].Points |= 0x8000;
             });
 
             nodeIndex <<= 1;
@@ -475,6 +482,7 @@ namespace Server.ACC.CSS.Systems.VeterinaryMagic
             nodeIndex <<= 1;
             var ultimateVeterinarian = new SkillNode(nodeIndex, "Ultimate Veterinarian", 13, "Ultimate bonus: boosts all veterinary abilities", (p) =>
             {
+                // Unlock two more spell bits.
                 profile.Talents[TalentID.VeterinarySpells].Points |= 0x80 | 0x100;
                 profile.Talents[TalentID.VeterinaryEmpathy].Points += 1;
                 profile.Talents[TalentID.VeterinaryHealing].Points += 1;

@@ -251,32 +251,36 @@ namespace Server.ACC.CSS.Systems.TrackingMagic
             int nodeIndex = 0x01;
 
             // Layer 0: Root Node – Unlocks basic tracking spells.
+            // Spell 1: 0x01
             Root = new SkillNode(nodeIndex, "Eyes of the Wild", 5, "Unlocks basic tracking spells", (p) =>
             {
-                // Unlock basic tracking spells (bit flag 0x01).
                 profile.Talents[TalentID.TrackingSpells].Points |= 0x01;
             });
 
             // Layer 1: Basic bonuses.
             nodeIndex <<= 1;
-            var trailSense = new SkillNode(nodeIndex, "Trail Sense", 6, "Increases tracking range", (p) =>
+            // Spell 2: 0x02 (changed from bonus to spell unlock)
+            var trailSense = new SkillNode(nodeIndex, "Trail Sense", 6, "Unlocks a tracking spell", (p) =>
             {
-                profile.Talents[TalentID.TrackingRange].Points += 1;
+                profile.Talents[TalentID.TrackingSpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
+            // Remains passive: +1 tracking stealth
             var silentStep = new SkillNode(nodeIndex, "Silent Step", 6, "Enhances detection of hidden movement", (p) =>
             {
                 profile.Talents[TalentID.TrackingStealth].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Remains passive: +1 tracking detection
             var pathfindersIntuition = new SkillNode(nodeIndex, "Pathfinder's Intuition", 6, "Improves detection of subtle clues", (p) =>
             {
                 profile.Talents[TalentID.TrackingDetection].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Spell 3: 0x04
             var predatorsFocus = new SkillNode(nodeIndex, "Predator's Focus", 6, "Unlocks an extra tracking spell", (p) =>
             {
                 profile.Talents[TalentID.TrackingSpells].Points |= 0x04;
@@ -289,24 +293,28 @@ namespace Server.ACC.CSS.Systems.TrackingMagic
 
             // Layer 2: Advanced magical and practical bonuses.
             nodeIndex <<= 1;
+            // Spell 4: 0x08
             var naturesClues = new SkillNode(nodeIndex, "Nature's Clues", 7, "Unlocks additional tracking spells", (p) =>
             {
                 profile.Talents[TalentID.TrackingSpells].Points |= 0x08;
             });
 
             nodeIndex <<= 1;
-            var windWhisper = new SkillNode(nodeIndex, "Wind Whisper", 7, "Further increases tracking range", (p) =>
+            // Spell 5: 0x10 (converted from bonus)
+            var windWhisper = new SkillNode(nodeIndex, "Wind Whisper", 7, "Unlocks a tracking spell", (p) =>
             {
-                profile.Talents[TalentID.TrackingRange].Points += 1;
+                profile.Talents[TalentID.TrackingSpells].Points |= 0x10;
             });
 
             nodeIndex <<= 1;
+            // Remains passive: +1 tracking stealth
             var shadowVeil = new SkillNode(nodeIndex, "Shadow Veil", 7, "Further enhances hidden detection", (p) =>
             {
                 profile.Talents[TalentID.TrackingStealth].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Remains passive: +1 tracking detection
             var beastsInstinct = new SkillNode(nodeIndex, "Beast's Instinct", 7, "Improves detection of subtle clues", (p) =>
             {
                 profile.Talents[TalentID.TrackingDetection].Points += 1;
@@ -319,24 +327,28 @@ namespace Server.ACC.CSS.Systems.TrackingMagic
 
             // Layer 3: Further enhancements.
             nodeIndex <<= 1;
-            var huntersEye = new SkillNode(nodeIndex, "Hunter's Eye", 8, "Unlocks bonus tracking ability", (p) =>
+            // Spell 6: 0x20 (reassigned from original 0x10)
+            var huntersEye = new SkillNode(nodeIndex, "Hunter's Eye", 8, "Unlocks a tracking spell", (p) =>
             {
-                profile.Talents[TalentID.TrackingSpells].Points |= 0x10;
+                profile.Talents[TalentID.TrackingSpells].Points |= 0x20;
             });
 
             nodeIndex <<= 1;
-            var swiftPursuit = new SkillNode(nodeIndex, "Swift Pursuit", 8, "Increases tracking range further", (p) =>
+            // Spell 15: 0x4000 (converted from bonus)
+            var swiftPursuit = new SkillNode(nodeIndex, "Swift Pursuit", 8, "Unlocks a tracking spell", (p) =>
             {
-                profile.Talents[TalentID.TrackingRange].Points += 1;
+                profile.Talents[TalentID.TrackingSpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
+            // Remains passive: +1 tracking stealth
             var silentPredator = new SkillNode(nodeIndex, "Silent Predator", 8, "Further boosts hidden detection", (p) =>
             {
                 profile.Talents[TalentID.TrackingStealth].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Remains passive: +1 tracking detection
             var furtiveSteps = new SkillNode(nodeIndex, "Furtive Steps", 8, "Enhances clue detection", (p) =>
             {
                 profile.Talents[TalentID.TrackingDetection].Points += 1;
@@ -349,24 +361,28 @@ namespace Server.ACC.CSS.Systems.TrackingMagic
 
             // Layer 4: More advanced magical enhancements.
             nodeIndex <<= 1;
-            var primalTracker = new SkillNode(nodeIndex, "Primal Tracker", 9, "Unlocks more tracking spells", (p) =>
+            // Spell 7: 0x40 (reassigned from original 0x20)
+            var primalTracker = new SkillNode(nodeIndex, "Primal Tracker", 9, "Unlocks a tracking spell", (p) =>
             {
-                profile.Talents[TalentID.TrackingSpells].Points |= 0x20;
+                profile.Talents[TalentID.TrackingSpells].Points |= 0x40;
             });
 
             nodeIndex <<= 1;
+            // Remains passive: +1 tracking range
             var rangersEndurance = new SkillNode(nodeIndex, "Ranger's Endurance", 9, "Further increases tracking range", (p) =>
             {
                 profile.Talents[TalentID.TrackingRange].Points += 1;
             });
 
             nodeIndex <<= 1;
-            var ghostWalker = new SkillNode(nodeIndex, "Ghost Walker", 9, "Enhances hidden detection", (p) =>
+            // Spell 16: 0x8000 (converted from bonus)
+            var ghostWalker = new SkillNode(nodeIndex, "Ghost Walker", 9, "Unlocks a tracking spell", (p) =>
             {
-                profile.Talents[TalentID.TrackingStealth].Points += 1;
+                profile.Talents[TalentID.TrackingSpells].Points |= 0x8000;
             });
 
             nodeIndex <<= 1;
+            // Remains passive: +1 tracking detection
             var clairvoyant = new SkillNode(nodeIndex, "Clairvoyant", 9, "Improves subtle clue detection", (p) =>
             {
                 profile.Talents[TalentID.TrackingDetection].Points += 1;
@@ -379,24 +395,28 @@ namespace Server.ACC.CSS.Systems.TrackingMagic
 
             // Layer 5: Expert-level nodes.
             nodeIndex <<= 1;
-            var predatorsInstinct = new SkillNode(nodeIndex, "Predator's Instinct", 10, "Unlocks mastery tracking spells", (p) =>
+            // Spell 8: 0x80 (reassigned from original 0x40)
+            var predatorsInstinct = new SkillNode(nodeIndex, "Predator's Instinct", 10, "Unlocks a tracking spell", (p) =>
             {
-                profile.Talents[TalentID.TrackingSpells].Points |= 0x40;
+                profile.Talents[TalentID.TrackingSpells].Points |= 0x80;
             });
 
             nodeIndex <<= 1;
+            // Remains passive: +1 tracking range
             var fleetfoot = new SkillNode(nodeIndex, "Fleetfoot", 10, "Further increases tracking range", (p) =>
             {
                 profile.Talents[TalentID.TrackingRange].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Remains passive: +1 tracking stealth
             var silentProwler = new SkillNode(nodeIndex, "Silent Prowler", 10, "Further boosts hidden detection", (p) =>
             {
                 profile.Talents[TalentID.TrackingStealth].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Remains passive: +1 tracking detection
             var sharpSenses = new SkillNode(nodeIndex, "Sharp Senses", 10, "Further enhances clue detection", (p) =>
             {
                 profile.Talents[TalentID.TrackingDetection].Points += 1;
@@ -409,24 +429,28 @@ namespace Server.ACC.CSS.Systems.TrackingMagic
 
             // Layer 6: Mastery nodes.
             nodeIndex <<= 1;
-            var eaglesEye = new SkillNode(nodeIndex, "Eagle Eye", 11, "Unlocks an ultimate tracking spell", (p) =>
+            // Spell 9: 0x100 (reassigned from original 0x80)
+            var eaglesEye = new SkillNode(nodeIndex, "Eagle Eye", 11, "Unlocks a tracking spell", (p) =>
             {
-                profile.Talents[TalentID.TrackingSpells].Points |= 0x80;
+                profile.Talents[TalentID.TrackingSpells].Points |= 0x100;
             });
 
             nodeIndex <<= 1;
+            // Remains passive: +1 tracking range
             var boundlessHorizon = new SkillNode(nodeIndex, "Boundless Horizon", 11, "Increases tracking range further", (p) =>
             {
                 profile.Talents[TalentID.TrackingRange].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Remains passive: +1 tracking stealth
             var veiledPresence = new SkillNode(nodeIndex, "Veiled Presence", 11, "Enhances hidden detection further", (p) =>
             {
                 profile.Talents[TalentID.TrackingStealth].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Remains passive: +1 tracking detection
             var intuitiveTracking = new SkillNode(nodeIndex, "Intuitive Tracking", 11, "Improves clue detection further", (p) =>
             {
                 profile.Talents[TalentID.TrackingDetection].Points += 1;
@@ -439,42 +463,44 @@ namespace Server.ACC.CSS.Systems.TrackingMagic
 
             // Layer 7: Final, pinnacle bonuses.
             nodeIndex <<= 1;
-            var spiritOfTheHunt = new SkillNode(nodeIndex, "Spirit of the Hunt", 12, "Unlocks advanced tracking spells", (p) =>
+            // Spell 10: 0x200 (reassigned from original 0x100)
+            var spiritOfTheHunt = new SkillNode(nodeIndex, "Spirit of the Hunt", 12, "Unlocks a tracking spell", (p) =>
             {
-                profile.Talents[TalentID.TrackingSpells].Points |= 0x100;
+                profile.Talents[TalentID.TrackingSpells].Points |= 0x200;
             });
 
             nodeIndex <<= 1;
-            var naturesEndowment = new SkillNode(nodeIndex, "Nature's Endowment", 12, "Further increases tracking range", (p) =>
+            // Spell 11: 0x400 (converted from bonus)
+            var naturesEndowment = new SkillNode(nodeIndex, "Nature's Endowment", 12, "Unlocks a tracking spell", (p) =>
             {
-                profile.Talents[TalentID.TrackingRange].Points += 1;
+                profile.Talents[TalentID.TrackingSpells].Points |= 0x400;
             });
 
             nodeIndex <<= 1;
-            var silentShadows = new SkillNode(nodeIndex, "Silent Shadows", 12, "Further improves hidden detection", (p) =>
+            // Spell 12: 0x800 (converted from bonus)
+            var silentShadows = new SkillNode(nodeIndex, "Silent Shadows", 12, "Unlocks a tracking spell", (p) =>
             {
-                profile.Talents[TalentID.TrackingStealth].Points += 1;
+                profile.Talents[TalentID.TrackingSpells].Points |= 0x800;
             });
 
             nodeIndex <<= 1;
-            var farsight = new SkillNode(nodeIndex, "Farsight", 12, "Further enhances clue detection", (p) =>
+            // Spell 13: 0x1000 (converted from bonus)
+            var farsight = new SkillNode(nodeIndex, "Farsight", 12, "Unlocks a tracking spell", (p) =>
             {
-                profile.Talents[TalentID.TrackingDetection].Points += 1;
+                profile.Talents[TalentID.TrackingSpells].Points |= 0x1000;
             });
 
-            primalTracker.AddChild(spiritOfTheHunt);
+            predatorsInstinct.AddChild(spiritOfTheHunt);
             rangersEndurance.AddChild(naturesEndowment);
             ghostWalker.AddChild(silentShadows);
             clairvoyant.AddChild(farsight);
 
             // Layer 8: Ultimate node.
             nodeIndex <<= 1;
+            // Spell 14: 0x2000 (changed to unlock a single spell)
             var ultimateTracker = new SkillNode(nodeIndex, "Ultimate Tracker", 13, "Ultimate bonus: boosts all tracking spells and passive abilities", (p) =>
             {
-                profile.Talents[TalentID.TrackingSpells].Points |= 0x200 | 0x400;
-                profile.Talents[TalentID.TrackingRange].Points += 1;
-                profile.Talents[TalentID.TrackingStealth].Points += 1;
-                profile.Talents[TalentID.TrackingDetection].Points += 1;
+                profile.Talents[TalentID.TrackingSpells].Points |= 0x2000;
             });
 
             // Attach the ultimate node to all Layer 7 nodes.

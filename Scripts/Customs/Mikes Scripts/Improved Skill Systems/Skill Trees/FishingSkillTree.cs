@@ -182,15 +182,15 @@ namespace Server.ACC.CSS.Systems.FishingMagic
                 profile.Talents[TalentID.FishingSpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic bonuses.
+            // Layer 1: Basic bonuses and spell unlocks.
             nodeIndex <<= 1;
-            var waterWhisper = new SkillNode(nodeIndex, "Water's Whisper", 6, "Improves fish yield", (p) =>
+            var waterWhisper = new SkillNode(nodeIndex, "Water's Whisper", 6, "Unlocks a fluid fishing spell", (p) =>
             {
-                profile.Talents[TalentID.FishingYield].Points += 1;
+                profile.Talents[TalentID.FishingSpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
-            var steadyHand = new SkillNode(nodeIndex, "Steady Hand", 6, "Increases fishing efficiency", (p) =>
+            var steadyHand = new SkillNode(nodeIndex, "Steady Hand", 6, "Improves fishing efficiency", (p) =>
             {
                 profile.Talents[TalentID.FishingEfficiency].Points += 1;
             });
@@ -212,9 +212,9 @@ namespace Server.ACC.CSS.Systems.FishingMagic
             Root.AddChild(tidalInsight);
             Root.AddChild(deepFocus);
 
-            // Layer 2: Advanced bonuses.
+            // Layer 2: Advanced bonuses and spells.
             nodeIndex <<= 1;
-            var currentsMurmur = new SkillNode(nodeIndex, "Currents' Murmur", 7, "Unlocks additional spells", (p) =>
+            var currentsMurmur = new SkillNode(nodeIndex, "Currents' Murmur", 7, "Unlocks additional fishing spells", (p) =>
             {
                 profile.Talents[TalentID.FishingSpells].Points |= 0x08;
             });
@@ -226,7 +226,7 @@ namespace Server.ACC.CSS.Systems.FishingMagic
             });
 
             nodeIndex <<= 1;
-            var mysticLure = new SkillNode(nodeIndex, "Mystic Lure", 7, "Enhances magical fishing abilities", (p) =>
+            var mysticLure = new SkillNode(nodeIndex, "Mystic Lure", 7, "Unlocks magical fishing abilities", (p) =>
             {
                 profile.Talents[TalentID.FishingSpells].Points |= 0x10;
             });
@@ -262,9 +262,9 @@ namespace Server.ACC.CSS.Systems.FishingMagic
             });
 
             nodeIndex <<= 1;
-            var luckyStrike = new SkillNode(nodeIndex, "Lucky Strike", 8, "Increases your luck", (p) =>
+            var luckyStrike = new SkillNode(nodeIndex, "Lucky Strike", 8, "Unlocks a luck-enhancing fishing spell", (p) =>
             {
-                profile.Talents[TalentID.FishingLuck].Points += 1;
+                profile.Talents[TalentID.FishingSpells].Points |= 0x2000;
             });
 
             currentsMurmur.AddChild(bountifulCatch);
@@ -300,13 +300,13 @@ namespace Server.ACC.CSS.Systems.FishingMagic
             bountifulCatch.AddChild(tidalBlessing);
             steadyCast.AddChild(enchantedBait);
             anglersFortitude.AddChild(oceansMight);
-            luckyStrike.AddChild(farReach);
+            expansiveWaters.AddChild(farReach);
 
             // Layer 5: Expert-level nodes.
             nodeIndex <<= 1;
-            var primeCatch = new SkillNode(nodeIndex, "Prime Catch", 10, "Enhances efficiency for prime catches", (p) =>
+            var primeCatch = new SkillNode(nodeIndex, "Prime Catch", 10, "Unlocks a prime catch fishing spell", (p) =>
             {
-                profile.Talents[TalentID.FishingEfficiency].Points += 1;
+                profile.Talents[TalentID.FishingSpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
@@ -340,9 +340,9 @@ namespace Server.ACC.CSS.Systems.FishingMagic
             });
 
             nodeIndex <<= 1;
-            var mysticBounty = new SkillNode(nodeIndex, "Mystic Bounty", 11, "Enhances magical fish yield", (p) =>
+            var mysticBounty = new SkillNode(nodeIndex, "Mystic Bounty", 11, "Unlocks a mystical bounty fishing spell", (p) =>
             {
-                profile.Talents[TalentID.FishingYield].Points += 1;
+                profile.Talents[TalentID.FishingSpells].Points |= 0x1000;
             });
 
             nodeIndex <<= 1;
@@ -376,9 +376,9 @@ namespace Server.ACC.CSS.Systems.FishingMagic
             });
 
             nodeIndex <<= 1;
-            var luckyAngler = new SkillNode(nodeIndex, "Lucky Angler", 12, "Further boosts your fishing luck", (p) =>
+            var luckyAngler = new SkillNode(nodeIndex, "Lucky Angler", 12, "Unlocks a lucky angler fishing spell", (p) =>
             {
-                profile.Talents[TalentID.FishingLuck].Points += 1;
+                profile.Talents[TalentID.FishingSpells].Points |= 0x8000;
             });
 
             nodeIndex <<= 1;
@@ -394,9 +394,9 @@ namespace Server.ACC.CSS.Systems.FishingMagic
 
             // Layer 8: Ultimate node.
             nodeIndex <<= 1;
-            var ultimateFisher = new SkillNode(nodeIndex, "Ultimate Fisher", 13, "Ultimate bonus: enhances all fishing skills", (p) =>
+            var ultimateFisher = new SkillNode(nodeIndex, "Ultimate Fisher", 13, "Ultimate bonus: enhances all fishing skills and unlocks an ultimate fishing spell", (p) =>
             {
-                profile.Talents[TalentID.FishingSpells].Points |= (0x800 | 0x1000);
+                profile.Talents[TalentID.FishingSpells].Points |= 0x800;
                 profile.Talents[TalentID.FishingRange].Points += 1;
                 profile.Talents[TalentID.FishingEfficiency].Points += 1;
                 profile.Talents[TalentID.FishingYield].Points += 1;

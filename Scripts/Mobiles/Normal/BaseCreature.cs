@@ -919,24 +919,22 @@ namespace Server.Mobiles
 
         [CommandProperty(AccessLevel.GameMaster)]
 		public bool IsParagon
-        {
-            get { return m_Paragon; }
-            set
-            {
-                // Xml Spawner 3.26c XmlParagon - SOF
-                if (m_Paragon == value)
-                    return;
-                else if (value)
-                    XmlParagon.Convert(this);
-                else
-                    XmlParagon.UnConvert(this);
-                // Xml Spawner 3.26c XmlParagon - EOF
+		{
+			get{ return m_Paragon; }
+			set
+			{
+				if ( m_Paragon == value )
+					return;
+				else if ( value )
+					Paragon.Convert( this );
+				else
+					Paragon.UnConvert( this );
 
-                m_Paragon = value;
+				m_Paragon = value;
 
-                InvalidateProperties();
-            }
-        }
+				InvalidateProperties();
+			}
+		}
 
         [CommandProperty(AccessLevel.GameMaster)]
         public bool IsChampionSpawn
@@ -1462,18 +1460,33 @@ namespace Server.Mobiles
                 ((c.m_bSummoned && c.SummonMaster != null) || c.m_bControlled));
 		}
 
-		public override string ApplyNameSuffix( string suffix )
+		// In BaseCreature:
+
+		private string m_ParagonName; 
+		[CommandProperty(AccessLevel.GameMaster)]
+		public string ParagonName
 		{
-			if ( IsParagon )
+			get { return m_ParagonName; }
+			set { m_ParagonName = value; }
+		}
+
+		// Override to show the custom name
+		public override string ApplyNameSuffix(string suffix)
+		{
+			if (IsParagon)
 			{
-				if ( suffix.Length == 0 )
-					suffix = "(Paragon)";
+				// If we do not have a specific paragon name, fall back to default
+				var displayName = String.IsNullOrWhiteSpace(ParagonName) ? "Paragon" : ParagonName;
+
+				if (suffix.Length == 0)
+					suffix = $"({displayName} Paragon)";
 				else
-					suffix = String.Concat( suffix, " (Paragon)" );
+					suffix = $"{suffix} ({displayName} Paragon)";
 			}
 
-			return base.ApplyNameSuffix( suffix );
+			return base.ApplyNameSuffix(suffix);
 		}
+
 
         public virtual bool CheckControlChance(Mobile m)
         {
@@ -1666,9 +1679,8 @@ namespace Server.Mobiles
 
         public override void OnBeforeSpawn(Point3D location, Map m)
         {
-            // Xml Spawner 3.26c XmlParagon - SOF
-            if (XmlParagon.CheckConvert(this, location, m))
-            // Xml Spawner 3.26c XmlParagon - EOF
+            
+            if (Paragon.CheckConvert(this, location, m))
                 IsParagon = true;
 				
 			// Xml Spawner 3.26c XmlSockets - SOF
@@ -5901,15 +5913,13 @@ namespace Server.Mobiles
             {
                 if (treasureLevel >= 0)
                 {
-					if (!Summoned && !NoKillAwards && !IsBonded && treasureLevel >= 0)
-					{
-						// Xml Spawner 3.26c XmlParagon - SOF
-						if (m_Paragon && XmlParagon.GetChestChance(this) > Utility.RandomDouble())
-							XmlParagon.AddChest(this,treasureLevel);
-						// Xml Spawner 3.26c XmlParagon - EOF
-						else if ((Map == Map.Felucca || Map == Map.Trammel) && TreasureMap.LootChance >= Utility.RandomDouble())
-							PackItem(new TreasureMap(treasureLevel, Map));
-					}
+                    if ( !Summoned && !NoKillAwards && !IsBonded && treasureLevel >= 0 )
+                    {
+                        if ( m_Paragon && Paragon.ChestChance > Utility.RandomDouble() )
+                            PackItem( new ParagonChest( this.Name, treasureLevel ) );
+                        else if ( (Map == Map.Felucca || Map == Map.Trammel) && TreasureMap.LootChance >= Utility.RandomDouble() )
+                            PackItem( new TreasureMap( treasureLevel, Map ) );
+                    }
                 }
 
                 if (m_Paragon && Paragon.ChocolateIngredientChance > Utility.RandomDouble())
@@ -6256,12 +6266,10 @@ namespace Server.Mobiles
             InvalidateProperties();
         }
 
-		public virtual void OnKilledBy(Mobile mob)
+		public virtual void OnKilledBy( Mobile mob )
 		{
-			// Xml Spawner 3.26c XmlParagon - SOF
-			if (m_Paragon && XmlParagon.CheckArtifactChance(mob, this))
-				XmlParagon.GiveArtifactTo(mob, this);
-			// Xml Spawner 3.26c XmlParagon - EOF
+			if ( m_Paragon && Paragon.CheckArtifactChance( mob, this ) )
+				Paragon.GiveArtifactTo( mob );
 
 			// Invoke the event after all other logic
 			EventSink.InvokeOnKilledBy(new OnKilledByEventArgs(this, mob));

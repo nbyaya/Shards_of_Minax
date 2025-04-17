@@ -278,10 +278,10 @@ namespace Server.ACC.CSS.Systems.ProvocationMagic
             });
 
             nodeIndex <<= 1;
-            var rhythmicCommand = new SkillNode(nodeIndex, "Rhythmic Command", 6, "Improves your control over provoked targets", (p) =>
+            var rhythmicCommand = new SkillNode(nodeIndex, "Rhythmic Command", 6, "Unlocks an advanced provocation spell", (p) =>
             {
-                // Improve control (passive bonus).
-                profile.Talents[TalentID.ProvocationCooldownReduction].Points += 1;
+                // Unlock the additional provocation spell (0x8000).
+                profile.Talents[TalentID.ProvocationSpells].Points |= 0x8000;
             });
 
             nodeIndex <<= 1;

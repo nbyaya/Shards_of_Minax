@@ -363,9 +363,10 @@ namespace Server.ACC.CSS.Systems.NinjitsuMagic
 
             // Layer 4: More unlocking and passives.
             nodeIndex <<= 1;
-            var nightsVeil = new SkillNode(nodeIndex, "Night's Veil", 9, "Passively improves evasion in darkness", (p) =>
+            // Modified: Now unlocks spell flag 0x4000 instead of a passive bonus.
+            var nightsVeil = new SkillNode(nodeIndex, "Night's Veil", 9, "Unlocks a spell that enhances evasion in darkness", (p) =>
             {
-                p.AcquireTalents().Talents[TalentID.NinjitsuEvasion].Points += 1;
+                p.AcquireTalents().Talents[TalentID.NinjitsuSpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
@@ -381,7 +382,7 @@ namespace Server.ACC.CSS.Systems.NinjitsuMagic
             });
 
             nodeIndex <<= 1;
-            var eclipse = new SkillNode(nodeIndex, "Eclipse", 9, "Grants a chance for temporary invisibility", (p) =>
+            var eclipse = new SkillNode(nodeIndex, "Eclipse", 9, "Passively increases stealth effectiveness", (p) =>
             {
                 p.AcquireTalents().Talents[TalentID.NinjitsuStealth].Points += 1;
             });
@@ -441,7 +442,7 @@ namespace Server.ACC.CSS.Systems.NinjitsuMagic
             });
 
             nodeIndex <<= 1;
-            var shadowsEdge = new SkillNode(nodeIndex, "Shadow's Edge", 11, "Unleashes a hidden blade ability", (p) =>
+            var shadowsEdge = new SkillNode(nodeIndex, "Shadow's Edge", 11, "Unlocks a hidden blade ability", (p) =>
             {
                 p.AcquireTalents().Talents[TalentID.NinjitsuSpells].Points |= 0x200;
             });
@@ -453,9 +454,10 @@ namespace Server.ACC.CSS.Systems.NinjitsuMagic
 
             // Layer 7: Final bonus nodes.
             nodeIndex <<= 1;
-            var phantomGuard = new SkillNode(nodeIndex, "Phantom Guard", 12, "Passively enhances your defenses", (p) =>
+            // Modified: Now unlocks spell flag 0x8000 instead of a passive bonus.
+            var phantomGuard = new SkillNode(nodeIndex, "Phantom Guard", 12, "Unlocks a defensive spell", (p) =>
             {
-                p.AcquireTalents().Talents[TalentID.NinjitsuEvasion].Points += 1;
+                p.AcquireTalents().Talents[TalentID.NinjitsuSpells].Points |= 0x8000;
             });
 
             nodeIndex <<= 1;
@@ -476,8 +478,7 @@ namespace Server.ACC.CSS.Systems.NinjitsuMagic
                 p.AcquireTalents().Talents[TalentID.NinjitsuSpells].Points |= 0x800;
             });
 
-            umbraMastery.AddChild(phantomGuard);
-            darkInsight.AddChild(silentThunder);
+            phantomGuard.AddChild(silentThunder);
             silentFury.AddChild(midnightAssault);
             shadowsEdge.AddChild(voidStrike);
 

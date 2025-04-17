@@ -259,10 +259,10 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
 
             // Layer 1: Basic bonuses.
             nodeIndex <<= 1;
-            var beastBond = new SkillNode(nodeIndex, "Beast Bond", 6, "Enhances your bond with creatures", (p) =>
+            var beastBond = new SkillNode(nodeIndex, "Beast Bond", 6, "Unlocks an additional taming spell", (p) =>
             {
-                // Increase control range or bonding bonus.
-                profile.Talents[TalentID.AnimalTamingControl].Points += 1;
+                // Unlock spell 0x02.
+                profile.Talents[TalentID.AnimalTamingSpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
@@ -275,14 +275,14 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             nodeIndex <<= 1;
             var predatoryProwess = new SkillNode(nodeIndex, "Predatory Prowess", 6, "Unlocks bonus taming spells", (p) =>
             {
-                // Unlock bonus spells.
+                // Unlock spell 0x04.
                 profile.Talents[TalentID.AnimalTamingSpells].Points |= 0x04;
             });
 
             nodeIndex <<= 1;
             var naturalAffinity = new SkillNode(nodeIndex, "Natural Affinity", 6, "Passively boosts pet affinity", (p) =>
             {
-                // Increase pet stamina or bonding.
+                // Increase pet bonding.
                 profile.Talents[TalentID.AnimalTamingBonding].Points += 1;
             });
 
@@ -293,9 +293,10 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
 
             // Layer 2: Advanced bonuses.
             nodeIndex <<= 1;
-            var packInstinct = new SkillNode(nodeIndex, "Pack Instinct", 7, "Increases group control range", (p) =>
+            var packInstinct = new SkillNode(nodeIndex, "Pack Instinct", 7, "Unlocks an additional taming spell", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingControl].Points += 1;
+                // Unlock spell 0x200.
+                profile.Talents[TalentID.AnimalTamingSpells].Points |= 0x200;
             });
 
             nodeIndex <<= 1;
@@ -307,6 +308,7 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             nodeIndex <<= 1;
             var wildCall = new SkillNode(nodeIndex, "Wild Call", 7, "Unlocks additional taming spells", (p) =>
             {
+                // Unlock spell 0x08.
                 profile.Talents[TalentID.AnimalTamingSpells].Points |= 0x08;
             });
 
@@ -329,15 +331,17 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             });
 
             nodeIndex <<= 1;
-            var beastMastery = new SkillNode(nodeIndex, "Beast Mastery", 8, "Boosts taming efficiency", (p) =>
+            var beastMastery = new SkillNode(nodeIndex, "Beast Mastery", 8, "Unlocks bonus taming spells", (p) =>
             {
+                // Unlock spell 0x10.
                 profile.Talents[TalentID.AnimalTamingSpells].Points |= 0x10;
             });
 
             nodeIndex <<= 1;
-            var wildAgility = new SkillNode(nodeIndex, "Wild Agility", 8, "Passively increases pet speed", (p) =>
+            var wildAgility = new SkillNode(nodeIndex, "Wild Agility", 8, "Unlocks an additional taming spell", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingSpeed].Points += 1;
+                // Unlock spell 0x400.
+                profile.Talents[TalentID.AnimalTamingSpells].Points |= 0x400;
             });
 
             nodeIndex <<= 1;
@@ -361,13 +365,15 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             nodeIndex <<= 1;
             var naturesRoar = new SkillNode(nodeIndex, "Nature's Roar", 9, "Unlocks superior taming spells", (p) =>
             {
+                // Unlock spell 0x20.
                 profile.Talents[TalentID.AnimalTamingSpells].Points |= 0x20;
             });
 
             nodeIndex <<= 1;
-            var untamedSpirit = new SkillNode(nodeIndex, "Untamed Spirit", 9, "Enhances pet combat prowess", (p) =>
+            var untamedSpirit = new SkillNode(nodeIndex, "Untamed Spirit", 9, "Unlocks an additional taming spell", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingResilience].Points += 1;
+                // Unlock spell 0x2000.
+                profile.Talents[TalentID.AnimalTamingSpells].Points |= 0x2000;
             });
 
             nodeIndex <<= 1;
@@ -389,14 +395,16 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             });
 
             nodeIndex <<= 1;
-            var enduringHeart = new SkillNode(nodeIndex, "Enduring Heart", 10, "Enhances pet stamina", (p) =>
+            var enduringHeart = new SkillNode(nodeIndex, "Enduring Heart", 10, "Unlocks an additional taming spell", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingStamina].Points += 1;
+                // Unlock spell 0x4000.
+                profile.Talents[TalentID.AnimalTamingSpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
             var unyieldingWill = new SkillNode(nodeIndex, "Unyielding Will", 10, "Unlocks advanced taming spells", (p) =>
             {
+                // Unlock spell 0x40.
                 profile.Talents[TalentID.AnimalTamingSpells].Points |= 0x40;
             });
 
@@ -413,15 +421,17 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
 
             // Layer 6: Mastery nodes.
             nodeIndex <<= 1;
-            var mastersGrace = new SkillNode(nodeIndex, "Master's Grace", 11, "Boosts overall taming efficiency", (p) =>
+            var mastersGrace = new SkillNode(nodeIndex, "Master's Grace", 11, "Unlocks bonus taming spells", (p) =>
             {
+                // Unlock spell 0x80.
                 profile.Talents[TalentID.AnimalTamingSpells].Points |= 0x80;
             });
 
             nodeIndex <<= 1;
-            var primalAwareness = new SkillNode(nodeIndex, "Primal Awareness", 11, "Enhances pet awareness and reaction", (p) =>
+            var primalAwareness = new SkillNode(nodeIndex, "Primal Awareness", 11, "Unlocks an additional taming spell", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingInstinct].Points += 1;
+                // Unlock spell 0x8000.
+                profile.Talents[TalentID.AnimalTamingSpells].Points |= 0x8000;
             });
 
             nodeIndex <<= 1;
@@ -451,6 +461,7 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             nodeIndex <<= 1;
             var primalFury = new SkillNode(nodeIndex, "Primal Fury", 12, "Unlocks elite taming spells", (p) =>
             {
+                // Unlock spell 0x100.
                 profile.Talents[TalentID.AnimalTamingSpells].Points |= 0x100;
             });
 

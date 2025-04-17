@@ -276,11 +276,12 @@ namespace Server.ACC.CSS.Systems.AlchemyMagic
                 profile.Talents[TalentID.AlchemyEfficiency].Points += 1;
             });
 
-            nodeIndex <<= 1;
-            var herbalSense = new SkillNode(nodeIndex, "Herbal Sense", 6, "Improves ingredient detection", (p) =>
-            {
-                profile.Talents[TalentID.AlchemyYield].Points += 1;
-            });
+			nodeIndex <<= 1;
+			var herbalSense = new SkillNode(nodeIndex, "Herbal Sense", 6, "Unlocks a nature-based spell", (p) =>
+			{
+				// Instead of increasing ingredient detection, unlock spell 0x02.
+				profile.Talents[TalentID.AlchemySpells].Points |= 0x02;
+			});
 
             nodeIndex <<= 1;
             var flaskMastery = new SkillNode(nodeIndex, "Flask Mastery", 6, "Unlocks bonus flask transformation", (p) =>
@@ -456,11 +457,12 @@ namespace Server.ACC.CSS.Systems.AlchemyMagic
                 profile.Talents[TalentID.AlchemySpells].Points |= 0x400;
             });
 
-            nodeIndex <<= 1;
-            var elixirFortitude = new SkillNode(nodeIndex, "Elixir of Fortitude", 12, "Passively boosts potion effectiveness", (p) =>
-            {
-                profile.Talents[TalentID.AlchemyPotency].Points += 1;
-            });
+			nodeIndex <<= 1;
+			var elixirFortitude = new SkillNode(nodeIndex, "Elixir of Fortitude", 12, "Unlocks a fortitude spell", (p) =>
+			{
+				// Instead of a passive potency bonus, unlock spell 0x4000.
+				profile.Talents[TalentID.AlchemySpells].Points |= 0x4000;
+			});
 
             nodeIndex <<= 1;
             var sovereignSpirit = new SkillNode(nodeIndex, "Sovereign Spirit", 12, "Unlocks spirit-based potion effects", (p) =>
@@ -468,11 +470,12 @@ namespace Server.ACC.CSS.Systems.AlchemyMagic
                 profile.Talents[TalentID.AlchemySpells].Points |= 0x800;
             });
 
-            nodeIndex <<= 1;
-            var brewedBrilliance = new SkillNode(nodeIndex, "Brewed Brilliance", 12, "Enhances all alchemy spells passively", (p) =>
-            {
-                profile.Talents[TalentID.AlchemyEfficiency].Points += 1;
-            });
+			nodeIndex <<= 1;
+			var brewedBrilliance = new SkillNode(nodeIndex, "Brewed Brilliance", 12, "Unlocks a brilliance spell", (p) =>
+			{
+				// Instead of a passive efficiency bonus, unlock spell 0x8000.
+				profile.Talents[TalentID.AlchemySpells].Points |= 0x8000;
+			});
 
             expandedAlchemy.AddChild(alchemicalAegis);
             mysticMixtureII.AddChild(elixirFortitude);

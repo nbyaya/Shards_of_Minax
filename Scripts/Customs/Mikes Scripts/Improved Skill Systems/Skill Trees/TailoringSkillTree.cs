@@ -261,9 +261,10 @@ namespace Server.ACC.CSS.Systems.TailoringMagic
 
             // Layer 1: Basic bonuses.
             nodeIndex <<= 1;
-            var fabricSense = new TailoringSkillNode(nodeIndex, "Fabric Sense", 6, "Improves fabric detection", (p) =>
+            // Changed: Fabric Sense now unlocks spell flag 0x02 instead of a passive quality bonus.
+            var fabricSense = new TailoringSkillNode(nodeIndex, "Fabric Sense", 6, "Unlocks spell: Fabric Insight", (p) =>
             {
-                profile.Talents[TalentID.TailoringQuality].Points += 1;
+                profile.Talents[TalentID.TailoringSpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
@@ -297,9 +298,10 @@ namespace Server.ACC.CSS.Systems.TailoringMagic
             });
 
             nodeIndex <<= 1;
-            var seamlessStitch = new TailoringSkillNode(nodeIndex, "Seamless Stitch", 7, "Further reduces crafting time", (p) =>
+            // Changed: Seamless Stitch now unlocks spell flag 0x2000 instead of a passive efficiency bonus.
+            var seamlessStitch = new TailoringSkillNode(nodeIndex, "Seamless Stitch", 7, "Unlocks spell: Seamless Weave", (p) =>
             {
-                profile.Talents[TalentID.TailoringEfficiency].Points += 1;
+                profile.Talents[TalentID.TailoringSpells].Points |= 0x2000;
             });
 
             nodeIndex <<= 1;
@@ -321,9 +323,10 @@ namespace Server.ACC.CSS.Systems.TailoringMagic
 
             // Layer 3: Further improvements.
             nodeIndex <<= 1;
-            var bountifulBolt = new TailoringSkillNode(nodeIndex, "Bountiful Bolt", 8, "Increases cloth yield", (p) =>
+            // Changed: Bountiful Bolt now unlocks spell flag 0x4000 instead of a passive quality bonus.
+            var bountifulBolt = new TailoringSkillNode(nodeIndex, "Bountiful Bolt", 8, "Unlocks spell: Bolt of Plenty", (p) =>
             {
-                profile.Talents[TalentID.TailoringQuality].Points += 1;
+                profile.Talents[TalentID.TailoringSpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
@@ -417,9 +420,10 @@ namespace Server.ACC.CSS.Systems.TailoringMagic
             });
 
             nodeIndex <<= 1;
-            var mysticFabric = new TailoringSkillNode(nodeIndex, "Mystic Fabric", 11, "Boosts cloth yield with magic", (p) =>
+            // Changed: Mystic Fabric now unlocks spell flag 0x8000 instead of a passive quality bonus.
+            var mysticFabric = new TailoringSkillNode(nodeIndex, "Mystic Fabric", 11, "Unlocks spell: Mystic Weave", (p) =>
             {
-                profile.Talents[TalentID.TailoringQuality].Points += 1;
+                profile.Talents[TalentID.TailoringSpells].Points |= 0x8000;
             });
 
             nodeIndex <<= 1;

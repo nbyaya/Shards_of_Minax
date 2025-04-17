@@ -262,9 +262,10 @@ namespace Server.ACC.CSS.Systems.TasteIDMagic
 
             // Layer 1: Basic bonuses.
             nodeIndex <<= 1;
-            var palateAwakening = new SkillNode(nodeIndex, "Palate Awakening", 6, "Increases your taste sensitivity", (p) =>
+            var palateAwakening = new SkillNode(nodeIndex, "Palate Awakening", 6, "Unlocks an additional taste spell", (p) =>
             {
-                profile.Talents[TalentID.TasteIDSensitivity].Points += 1;
+                // Now unlocks spell 0x02 instead of a bonus
+                profile.Talents[TalentID.TasteIDSpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
@@ -298,9 +299,10 @@ namespace Server.ACC.CSS.Systems.TasteIDMagic
             });
 
             nodeIndex <<= 1;
-            var aromaFlow = new SkillNode(nodeIndex, "Aroma Flow", 7, "Enhances ingredient analysis", (p) =>
+            var aromaFlow = new SkillNode(nodeIndex, "Aroma Flow", 7, "Unlocks further taste spells", (p) =>
             {
-                profile.Talents[TalentID.TasteIDAnalysis].Points += 1;
+                // Changed: now unlocks spell 0x2000 instead of bonus analysis
+                profile.Talents[TalentID.TasteIDSpells].Points |= 0x2000;
             });
 
             nodeIndex <<= 1;
@@ -310,9 +312,10 @@ namespace Server.ACC.CSS.Systems.TasteIDMagic
             });
 
             nodeIndex <<= 1;
-            var herbalInsight = new SkillNode(nodeIndex, "Herbal Insight", 7, "Increases taste sensitivity further", (p) =>
+            var herbalInsight = new SkillNode(nodeIndex, "Herbal Insight", 7, "Unlocks an ancient taste spell", (p) =>
             {
-                profile.Talents[TalentID.TasteIDSensitivity].Points += 1;
+                // Changed: now unlocks spell 0x4000 instead of bonus sensitivity
+                profile.Talents[TalentID.TasteIDSpells].Points |= 0x4000;
             });
 
             palateAwakening.AddChild(spiceWhisper);
@@ -370,9 +373,10 @@ namespace Server.ACC.CSS.Systems.TasteIDMagic
             });
 
             nodeIndex <<= 1;
-            var aromaticBoost = new SkillNode(nodeIndex, "Aromatic Boost", 9, "Increases taste sensitivity", (p) =>
+            var aromaticBoost = new SkillNode(nodeIndex, "Aromatic Boost", 9, "Unlocks an ultimate taste spell", (p) =>
             {
-                profile.Talents[TalentID.TasteIDSensitivity].Points += 1;
+                // Changed: now unlocks spell 0x8000 instead of bonus sensitivity
+                profile.Talents[TalentID.TasteIDSpells].Points |= 0x8000;
             });
 
             savoryGrove.AddChild(tastefulBlessing);

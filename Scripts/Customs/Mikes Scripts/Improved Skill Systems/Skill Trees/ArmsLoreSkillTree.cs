@@ -272,11 +272,12 @@ namespace Server.ACC.CSS.Systems.ArmsLoreMagic
                 profile.Talents[TalentID.MartialManualSpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic bonuses.
+            // Layer 1: Basic bonuses / spell unlocks.
             nodeIndex <<= 1;
-            var weaponInsight = new SkillNode(nodeIndex, "Weapon Insight", 6, "Passive bonus: Increases damage", (p) =>
+            // Changed from passive bonus to spell unlock 0x02.
+            var weaponInsight = new SkillNode(nodeIndex, "Weapon Insight", 6, "Unlocks Martial Manual spell (0x02)", (p) =>
             {
-                profile.Talents[TalentID.MartialManualDamageBonus].Points += 1;
+                profile.Talents[TalentID.MartialManualSpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
@@ -286,7 +287,7 @@ namespace Server.ACC.CSS.Systems.ArmsLoreMagic
             });
 
             nodeIndex <<= 1;
-            var strikeForesight = new SkillNode(nodeIndex, "Strike Foresight", 6, "Unlocks additional Martial Manual spell bits", (p) =>
+            var strikeForesight = new SkillNode(nodeIndex, "Strike Foresight", 6, "Unlocks additional Martial Manual spell bits (0x04)", (p) =>
             {
                 profile.Talents[TalentID.MartialManualSpells].Points |= 0x04;
             });
@@ -303,17 +304,18 @@ namespace Server.ACC.CSS.Systems.ArmsLoreMagic
             Root.AddChild(strikeForesight);
             Root.AddChild(guardedStance);
 
-            // Layer 2: Intermediate bonuses.
+            // Layer 2: Intermediate bonuses / spell unlocks.
             nodeIndex <<= 1;
-            var keenEdge = new SkillNode(nodeIndex, "Keen Edge", 7, "Enhances Martial Manual spells", (p) =>
+            var keenEdge = new SkillNode(nodeIndex, "Keen Edge", 7, "Unlocks Martial Manual spell (0x08)", (p) =>
             {
                 profile.Talents[TalentID.MartialManualSpells].Points |= 0x08;
             });
 
             nodeIndex <<= 1;
-            var reinforcedMail = new SkillNode(nodeIndex, "Reinforced Mail", 7, "Passive bonus: Increases defense further", (p) =>
+            // Changed from passive bonus to spell unlock 0x800.
+            var reinforcedMail = new SkillNode(nodeIndex, "Reinforced Mail", 7, "Unlocks Martial Manual spell (0x800)", (p) =>
             {
-                profile.Talents[TalentID.MartialManualDefenseBonus].Points += 1;
+                profile.Talents[TalentID.MartialManualSpells].Points |= 0x800;
             });
 
             nodeIndex <<= 1;
@@ -323,7 +325,7 @@ namespace Server.ACC.CSS.Systems.ArmsLoreMagic
             });
 
             nodeIndex <<= 1;
-            var battleFocus = new SkillNode(nodeIndex, "Battle Focus", 7, "Unlocks additional Martial Manual spells", (p) =>
+            var battleFocus = new SkillNode(nodeIndex, "Battle Focus", 7, "Unlocks additional Martial Manual spells (0x10)", (p) =>
             {
                 profile.Talents[TalentID.MartialManualSpells].Points |= 0x10;
             });
@@ -336,9 +338,10 @@ namespace Server.ACC.CSS.Systems.ArmsLoreMagic
 
             // Layer 3: Advanced techniques.
             nodeIndex <<= 1;
-            var mightySwing = new SkillNode(nodeIndex, "Mighty Swing", 8, "Passive bonus: Increases damage", (p) =>
+            // Changed from passive bonus to spell unlock 0x1000.
+            var mightySwing = new SkillNode(nodeIndex, "Mighty Swing", 8, "Unlocks Martial Manual spell (0x1000)", (p) =>
             {
-                profile.Talents[TalentID.MartialManualDamageBonus].Points += 1;
+                profile.Talents[TalentID.MartialManualSpells].Points |= 0x1000;
             });
 
             nodeIndex <<= 1;
@@ -354,7 +357,7 @@ namespace Server.ACC.CSS.Systems.ArmsLoreMagic
             });
 
             nodeIndex <<= 1;
-            var precisionStrike = new SkillNode(nodeIndex, "Precision Strike", 8, "Unlocks additional spell bits", (p) =>
+            var precisionStrike = new SkillNode(nodeIndex, "Precision Strike", 8, "Unlocks additional spell bits (0x20)", (p) =>
             {
                 profile.Talents[TalentID.MartialManualSpells].Points |= 0x20;
             });
@@ -367,9 +370,10 @@ namespace Server.ACC.CSS.Systems.ArmsLoreMagic
 
             // Layer 4: Enhanced abilities.
             nodeIndex <<= 1;
-            var furyUnleashed = new SkillNode(nodeIndex, "Fury Unleashed", 9, "Passive bonus: Further increases damage", (p) =>
+            // Changed from passive bonus to spell unlock 0x2000.
+            var furyUnleashed = new SkillNode(nodeIndex, "Fury Unleashed", 9, "Unlocks Martial Manual spell (0x2000)", (p) =>
             {
-                profile.Talents[TalentID.MartialManualDamageBonus].Points += 1;
+                profile.Talents[TalentID.MartialManualSpells].Points |= 0x2000;
             });
 
             nodeIndex <<= 1;
@@ -404,13 +408,14 @@ namespace Server.ACC.CSS.Systems.ArmsLoreMagic
             });
 
             nodeIndex <<= 1;
-            var unyieldingSpirit = new SkillNode(nodeIndex, "Unyielding Spirit", 10, "Passive bonus: Boosts defense further", (p) =>
+            // Changed from passive bonus to spell unlock 0x4000.
+            var unyieldingSpirit = new SkillNode(nodeIndex, "Unyielding Spirit", 10, "Unlocks Martial Manual spell (0x4000)", (p) =>
             {
-                profile.Talents[TalentID.MartialManualDefenseBonus].Points += 1;
+                profile.Talents[TalentID.MartialManualSpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
-            var flawlessTechnique = new SkillNode(nodeIndex, "Flawless Technique", 10, "Unlocks further Martial Manual spells", (p) =>
+            var flawlessTechnique = new SkillNode(nodeIndex, "Flawless Technique", 10, "Unlocks further Martial Manual spells (0x40)", (p) =>
             {
                 profile.Talents[TalentID.MartialManualSpells].Points |= 0x40;
             });
@@ -435,15 +440,16 @@ namespace Server.ACC.CSS.Systems.ArmsLoreMagic
             });
 
             nodeIndex <<= 1;
-            var forcefulImpact = new SkillNode(nodeIndex, "Forceful Impact", 11, "Unlocks additional Martial Manual spells", (p) =>
+            var forcefulImpact = new SkillNode(nodeIndex, "Forceful Impact", 11, "Unlocks additional Martial Manual spells (0x80)", (p) =>
             {
                 profile.Talents[TalentID.MartialManualSpells].Points |= 0x80;
             });
 
             nodeIndex <<= 1;
-            var resilientArmor = new SkillNode(nodeIndex, "Resilient Armor", 11, "Passive bonus: Further increases defense", (p) =>
+            // Changed from passive bonus to spell unlock 0x8000.
+            var resilientArmor = new SkillNode(nodeIndex, "Resilient Armor", 11, "Unlocks Martial Manual spell (0x8000)", (p) =>
             {
-                profile.Talents[TalentID.MartialManualDefenseBonus].Points += 1;
+                profile.Talents[TalentID.MartialManualSpells].Points |= 0x8000;
             });
 
             nodeIndex <<= 1;
@@ -478,7 +484,7 @@ namespace Server.ACC.CSS.Systems.ArmsLoreMagic
             });
 
             nodeIndex <<= 1;
-            var unbreakableWill = new SkillNode(nodeIndex, "Unbreakable Will", 12, "Unlocks further Martial Manual spells", (p) =>
+            var unbreakableWill = new SkillNode(nodeIndex, "Unbreakable Will", 12, "Unlocks further Martial Manual spells (0x100)", (p) =>
             {
                 profile.Talents[TalentID.MartialManualSpells].Points |= 0x100;
             });

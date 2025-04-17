@@ -37,58 +37,57 @@ namespace Server.ACC.CSS.Systems.BeggingMagic
             User.SendGump(this);
         }
 
-		private void CalculateNodePositions(SkillNode root, int x, int y, int depth)
-		{
-			if (root == null)
-				return;
+        private void CalculateNodePositions(SkillNode root, int x, int y, int depth)
+        {
+            if (root == null)
+                return;
 
-			var levelNodes = new Dictionary<int, List<SkillNode>>();
-			var queue = new Queue<(SkillNode node, int level)>();
+            var levelNodes = new Dictionary<int, List<SkillNode>>();
+            var queue = new Queue<(SkillNode node, int level)>();
 
-			// This HashSet will ensure each node is only placed once.
-			var visited = new HashSet<SkillNode>();
+            // This HashSet will ensure each node is only placed once.
+            var visited = new HashSet<SkillNode>();
 
-			queue.Enqueue((root, 0));
+            queue.Enqueue((root, 0));
 
-			while (queue.Count > 0)
-			{
-				var (node, level) = queue.Dequeue();
+            while (queue.Count > 0)
+            {
+                var (node, level) = queue.Dequeue();
 
-				// If we've already visited this node, skip it.
-				if (!visited.Add(node))
-					continue;
+                // If we've already visited this node, skip it.
+                if (!visited.Add(node))
+                    continue;
 
-				if (!levelNodes.ContainsKey(level))
-					levelNodes[level] = new List<SkillNode>();
+                if (!levelNodes.ContainsKey(level))
+                    levelNodes[level] = new List<SkillNode>();
 
-				levelNodes[level].Add(node);
+                levelNodes[level].Add(node);
 
-				foreach (var child in node.Children)
-				{
-					queue.Enqueue((child, level + 1));
-				}
-			}
+                foreach (var child in node.Children)
+                {
+                    queue.Enqueue((child, level + 1));
+                }
+            }
 
-			// Now position each level's nodes centered around rootX
-			foreach (var kvp in levelNodes)
-			{
-				int level = kvp.Key;
-				var nodes = kvp.Value;
+            // Now position each level's nodes centered around rootX
+            foreach (var kvp in levelNodes)
+            {
+                int level = kvp.Key;
+                var nodes = kvp.Value;
 
-				// Spread them out horizontally based on how many nodes are in this level
-				int totalWidth = (nodes.Count - 1) * xSpacing;
-				int startX = rootX - (totalWidth / 2);
+                // Spread them out horizontally based on how many nodes are in this level
+                int totalWidth = (nodes.Count - 1) * xSpacing;
+                int startX = rootX - (totalWidth / 2);
 
-				for (int i = 0; i < nodes.Count; i++)
-				{
-					int nodeX = startX + (i * xSpacing);
-					int nodeY = rootY + (level * ySpacing);
+                for (int i = 0; i < nodes.Count; i++)
+                {
+                    int nodeX = startX + (i * xSpacing);
+                    int nodeY = rootY + (level * ySpacing);
 
-					nodePositions[nodes[i]] = new Point2D(nodeX, nodeY);
-				}
-			}
-		}
-
+                    nodePositions[nodes[i]] = new Point2D(nodeX, nodeY);
+                }
+            }
+        }
 
         private void InitializeEdgeThickness()
         {
@@ -285,9 +284,10 @@ namespace Server.ACC.CSS.Systems.BeggingMagic
             });
 
             nodeIndex <<= 1;
-            var quickAppeal = new SkillNode(nodeIndex, "Quick Appeal", 6, "Reduces delay between beg attempts", (p) =>
+            // Changed from a passive bonus to unlocking a spell (0x02)
+            var quickAppeal = new SkillNode(nodeIndex, "Quick Appeal", 6, "Unlocks bonus begging spell", (p) =>
             {
-                // Implement bonus effect as needed.
+                profile.Talents[TalentID.BeggingSpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
@@ -341,9 +341,10 @@ namespace Server.ACC.CSS.Systems.BeggingMagic
 
             // Layer 3: Further active abilities and bonuses.
             nodeIndex <<= 1;
-            var goldenRequest = new SkillNode(nodeIndex, "Golden Request", 8, "Enhances bonus rewards", (p) =>
+            // Changed from increasing luck bonus to unlocking a spell (0x1000)
+            var goldenRequest = new SkillNode(nodeIndex, "Golden Request", 8, "Unlocks bonus begging spell", (p) =>
             {
-                profile.Talents[TalentID.BeggingLuck].Points += 1;
+                profile.Talents[TalentID.BeggingSpells].Points |= 0x1000;
             });
 
             nodeIndex <<= 1;
@@ -378,21 +379,24 @@ namespace Server.ACC.CSS.Systems.BeggingMagic
             });
 
             nodeIndex <<= 1;
-            var wealthWhisperer = new SkillNode(nodeIndex, "Wealth Whisperer", 9, "Boosts luck in begging", (p) =>
+            // Changed from boosting luck to unlocking a spell (0x2000)
+            var wealthWhisperer = new SkillNode(nodeIndex, "Wealth Whisperer", 9, "Unlocks bonus begging spell", (p) =>
             {
-                profile.Talents[TalentID.BeggingLuck].Points += 1;
+                profile.Talents[TalentID.BeggingSpells].Points |= 0x2000;
             });
 
             nodeIndex <<= 1;
-            var luckOfTheStreets = new SkillNode(nodeIndex, "Luck of the Streets", 9, "Improves karmic outcomes", (p) =>
+            // Changed from boosting karma to unlocking a spell (0x4000)
+            var luckOfTheStreets = new SkillNode(nodeIndex, "Luck of the Streets", 9, "Unlocks bonus begging spell", (p) =>
             {
-                profile.Talents[TalentID.BeggingKarma].Points += 1;
+                profile.Talents[TalentID.BeggingSpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
-            var slyRequest = new SkillNode(nodeIndex, "Sly Request", 9, "Enhances persuasion subtly", (p) =>
+            // Changed from boosting persuasion to unlocking a spell (0x8000)
+            var slyRequest = new SkillNode(nodeIndex, "Sly Request", 9, "Unlocks bonus begging spell", (p) =>
             {
-                profile.Talents[TalentID.BeggingPersuasion].Points += 1;
+                profile.Talents[TalentID.BeggingSpells].Points |= 0x8000;
             });
 
             // Attach Layer 4 nodes.

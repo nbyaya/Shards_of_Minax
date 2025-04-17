@@ -263,26 +263,26 @@ namespace Server.ACC.CSS.Systems.NecromancyMagic
                 profile.Talents[TalentID.NecromancySpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic bonuses.
-            nodeIndex <<= 1;
-            var boneSense = new SkillNode(nodeIndex, "Bone Sense", 6, "Enhances undead detection range", (p) =>
+            // Layer 1: Basic bonuses / Spell unlocks.
+            nodeIndex <<= 1; // becomes 0x02
+            var boneSense = new SkillNode(nodeIndex, "Bone Sense", 6, "Unlocks spell: Bone Sense", (p) =>
             {
-                profile.Talents[TalentID.NecromancyRange].Points += 1;
+                profile.Talents[TalentID.NecromancySpells].Points |= 0x02;
             });
 
-            nodeIndex <<= 1;
-            var grimEfficiency = new SkillNode(nodeIndex, "Grim Efficiency", 6, "Improves casting efficiency", (p) =>
+            nodeIndex <<= 1; // becomes 0x04
+            var grimEfficiency = new SkillNode(nodeIndex, "Grim Efficiency", 6, "Enhances casting efficiency", (p) =>
             {
                 profile.Talents[TalentID.NecromancyEfficiency].Points += 1;
             });
 
-            nodeIndex <<= 1;
-            var darkConversion = new SkillNode(nodeIndex, "Dark Conversion", 6, "Unlocks bonus necromantic spells", (p) =>
+            nodeIndex <<= 1; // becomes 0x08
+            var darkConversion = new SkillNode(nodeIndex, "Dark Conversion", 6, "Unlocks spell: Dark Conversion", (p) =>
             {
                 profile.Talents[TalentID.NecromancySpells].Points |= 0x04;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // becomes 0x10
             var necroticBounty = new SkillNode(nodeIndex, "Necrotic Bounty", 6, "Increases necrotic energy yield", (p) =>
             {
                 profile.Talents[TalentID.NecromancyYield].Points += 1;
@@ -294,25 +294,25 @@ namespace Server.ACC.CSS.Systems.NecromancyMagic
             Root.AddChild(necroticBounty);
 
             // Layer 2: Advanced magical and practical bonuses.
-            nodeIndex <<= 1;
-            var phantomWhisper = new SkillNode(nodeIndex, "Phantom Whisper", 7, "Unlocks additional necromancy spells", (p) =>
+            nodeIndex <<= 1; // becomes 0x20 (but used here only for node ordering)
+            var phantomWhisper = new SkillNode(nodeIndex, "Phantom Whisper", 7, "Unlocks spell: Phantom Whisper", (p) =>
             {
                 profile.Talents[TalentID.NecromancySpells].Points |= 0x08;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // becomes 0x40
             var corpseFlow = new SkillNode(nodeIndex, "Corpse Flow", 7, "Further improves casting efficiency", (p) =>
             {
                 profile.Talents[TalentID.NecromancyEfficiency].Points += 1;
             });
 
-            nodeIndex <<= 1;
-            var arcaneOssuary = new SkillNode(nodeIndex, "Arcane Ossuary", 7, "Unlocks advanced necromancy spells", (p) =>
+            nodeIndex <<= 1; // becomes 0x80
+            var arcaneOssuary = new SkillNode(nodeIndex, "Arcane Ossuary", 7, "Unlocks spell: Arcane Ossuary", (p) =>
             {
                 profile.Talents[TalentID.NecromancySpells].Points |= 0x10;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // becomes 0x100
             var deepMourning = new SkillNode(nodeIndex, "Deep Mourning", 7, "Further increases undead detection range", (p) =>
             {
                 profile.Talents[TalentID.NecromancyRange].Points += 1;
@@ -324,25 +324,25 @@ namespace Server.ACC.CSS.Systems.NecromancyMagic
             necroticBounty.AddChild(deepMourning);
 
             // Layer 3: Yield and potency improvements.
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // becomes 0x200
             var bountifulGrave = new SkillNode(nodeIndex, "Bountiful Grave", 8, "Enhances necrotic energy yield", (p) =>
             {
                 profile.Talents[TalentID.NecromancyYield].Points += 1;
             });
 
-            nodeIndex <<= 1;
-            var ectoplasmicSap = new SkillNode(nodeIndex, "Ectoplasmic Sap", 8, "Further increases spell potency", (p) =>
-            {
-                profile.Talents[TalentID.NecromancyEfficiency].Points += 1;
-            });
-
-            nodeIndex <<= 1;
-            var ghoulFortitude = new SkillNode(nodeIndex, "Ghoul Fortitude", 8, "Unlocks a fortitude bonus", (p) =>
+            nodeIndex <<= 1; // becomes 0x400
+            var ectoplasmicSap = new SkillNode(nodeIndex, "Ectoplasmic Sap", 8, "Unlocks spell: Ectoplasmic Sap", (p) =>
             {
                 profile.Talents[TalentID.NecromancySpells].Points |= 0x20;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // becomes 0x800
+            var ghoulFortitude = new SkillNode(nodeIndex, "Ghoul Fortitude", 8, "Unlocks spell: Ghoul Fortitude", (p) =>
+            {
+                profile.Talents[TalentID.NecromancySpells].Points |= 0x40;
+            });
+
+            nodeIndex <<= 1; // becomes 0x1000
             var deathlyReflexes = new SkillNode(nodeIndex, "Deathly Reflexes", 8, "Increases reaction speed", (p) =>
             {
                 profile.Talents[TalentID.NecromancyEfficiency].Points += 1;
@@ -354,28 +354,28 @@ namespace Server.ACC.CSS.Systems.NecromancyMagic
             deepMourning.AddChild(deathlyReflexes);
 
             // Layer 4: More advanced magical enhancements.
-            nodeIndex <<= 1;
-            var mournersBlessing = new SkillNode(nodeIndex, "Mourner's Blessing", 9, "Enhances necrotic energy yield further", (p) =>
-            {
-                profile.Talents[TalentID.NecromancyYield].Points += 1;
-            });
-
-            nodeIndex <<= 1;
-            var spectralGrace = new SkillNode(nodeIndex, "Spectral Grace", 9, "Unlocks spectral bonus spells", (p) =>
-            {
-                profile.Talents[TalentID.NecromancySpells].Points |= 0x40;
-            });
-
-            nodeIndex <<= 1;
-            var ancientRemains = new SkillNode(nodeIndex, "Ancient Remains", 9, "Unlocks elder necromancy spells", (p) =>
+            nodeIndex <<= 1; // becomes 0x2000
+            var mournersBlessing = new SkillNode(nodeIndex, "Mourner's Blessing", 9, "Unlocks spell: Mourner's Blessing", (p) =>
             {
                 profile.Talents[TalentID.NecromancySpells].Points |= 0x80;
             });
 
-            nodeIndex <<= 1;
-            var wraithSurge = new SkillNode(nodeIndex, "Wraith Surge", 9, "Boosts undead summoning power", (p) =>
+            nodeIndex <<= 1; // becomes 0x4000
+            var spectralGrace = new SkillNode(nodeIndex, "Spectral Grace", 9, "Unlocks spell: Spectral Grace", (p) =>
             {
-                profile.Talents[TalentID.NecromancySummon].Points += 1;
+                profile.Talents[TalentID.NecromancySpells].Points |= 0x100;
+            });
+
+            nodeIndex <<= 1; // becomes 0x8000
+            var ancientRemains = new SkillNode(nodeIndex, "Ancient Remains", 9, "Unlocks spell: Ancient Remains", (p) =>
+            {
+                profile.Talents[TalentID.NecromancySpells].Points |= 0x200;
+            });
+
+            nodeIndex <<= 1; // becomes 0x10000
+            var wraithSurge = new SkillNode(nodeIndex, "Wraith Surge", 9, "Unlocks spell: Wraith Surge", (p) =>
+            {
+                profile.Talents[TalentID.NecromancySpells].Points |= 0x400;
             });
 
             bountifulGrave.AddChild(mournersBlessing);
@@ -384,28 +384,28 @@ namespace Server.ACC.CSS.Systems.NecromancyMagic
             deathlyReflexes.AddChild(wraithSurge);
 
             // Layer 5: Expert-level nodes.
-            nodeIndex <<= 1;
-            var primevalEfficiency = new SkillNode(nodeIndex, "Primeval Efficiency", 10, "Boosts overall casting efficiency", (p) =>
+            nodeIndex <<= 1; // becomes 0x20000
+            var primevalEfficiency = new SkillNode(nodeIndex, "Primeval Efficiency", 10, "Unlocks spell: Primeval Efficiency", (p) =>
             {
-                profile.Talents[TalentID.NecromancyEfficiency].Points += 1;
+                profile.Talents[TalentID.NecromancySpells].Points |= 0x800;
             });
 
-            nodeIndex <<= 1;
-            var bountifulHarvest = new SkillNode(nodeIndex, "Bountiful Harvest", 10, "Boosts necrotic energy yield", (p) =>
+            nodeIndex <<= 1; // becomes 0x40000
+            var bountifulHarvest = new SkillNode(nodeIndex, "Bountiful Harvest", 10, "Unlocks spell: Bountiful Harvest", (p) =>
             {
-                profile.Talents[TalentID.NecromancyYield].Points += 1;
+                profile.Talents[TalentID.NecromancySpells].Points |= 0x1000;
             });
 
-            nodeIndex <<= 1;
-            var boneMastery = new SkillNode(nodeIndex, "Bone Mastery", 10, "Unlocks mastery level necromancy spells", (p) =>
+            nodeIndex <<= 1; // becomes 0x80000
+            var boneMastery = new SkillNode(nodeIndex, "Bone Mastery", 10, "Unlocks spell: Bone Mastery", (p) =>
             {
-                profile.Talents[TalentID.NecromancySpells].Points |= 0x100;
+                profile.Talents[TalentID.NecromancySpells].Points |= 0x2000;
             });
 
-            nodeIndex <<= 1;
-            var rapidDecay = new SkillNode(nodeIndex, "Rapid Decay", 10, "Increases casting speed", (p) =>
+            nodeIndex <<= 1; // becomes 0x100000
+            var rapidDecay = new SkillNode(nodeIndex, "Rapid Decay", 10, "Unlocks spell: Rapid Decay", (p) =>
             {
-                profile.Talents[TalentID.NecromancyEfficiency].Points += 1;
+                profile.Talents[TalentID.NecromancySpells].Points |= 0x4000;
             });
 
             mournersBlessing.AddChild(primevalEfficiency);
@@ -414,25 +414,25 @@ namespace Server.ACC.CSS.Systems.NecromancyMagic
             wraithSurge.AddChild(rapidDecay);
 
             // Layer 6: Mastery nodes.
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // becomes 0x200000
             var expandedPerception = new SkillNode(nodeIndex, "Expanded Perception", 11, "Enhances perception of the undead", (p) =>
             {
                 profile.Talents[TalentID.NecromancyRange].Points += 1;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // becomes 0x400000
             var mysticOssicle = new SkillNode(nodeIndex, "Mystic Ossicle", 11, "Boosts energy yield with magic", (p) =>
             {
                 profile.Talents[TalentID.NecromancyYield].Points += 1;
             });
 
-            nodeIndex <<= 1;
-            var ancientHarbinger = new SkillNode(nodeIndex, "Ancient Harbinger", 11, "Unlocks ancient necromancy spells", (p) =>
+            nodeIndex <<= 1; // becomes 0x800000
+            var ancientHarbinger = new SkillNode(nodeIndex, "Ancient Harbinger", 11, "Unlocks spell: Ancient Harbinger", (p) =>
             {
-                profile.Talents[TalentID.NecromancySpells].Points |= 0x200;
+                profile.Talents[TalentID.NecromancySpells].Points |= 0x8000;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // becomes 0x1000000
             var transmutation = new SkillNode(nodeIndex, "Transmutation", 11, "Increases conversion efficiency", (p) =>
             {
                 profile.Talents[TalentID.NecromancyEfficiency].Points += 1;
@@ -444,25 +444,26 @@ namespace Server.ACC.CSS.Systems.NecromancyMagic
             rapidDecay.AddChild(transmutation);
 
             // Layer 7: Final, pinnacle bonuses.
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // becomes 0x2000000
             var boneBarrier = new SkillNode(nodeIndex, "Bone Barrier", 12, "Provides a protective barrier", (p) =>
             {
-                profile.Talents[TalentID.NecromancySpells].Points |= 0x400;
+                // Changed: no spell unlock here – bonus only.
+                profile.Talents[TalentID.NecromancyRange].Points += 1;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // becomes 0x4000000
             var soulEndowment = new SkillNode(nodeIndex, "Soul Endowment", 12, "Further increases necrotic energy yield", (p) =>
             {
                 profile.Talents[TalentID.NecromancyYield].Points += 1;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // becomes 0x8000000
             var necroticFury = new SkillNode(nodeIndex, "Necrotic Fury", 12, "Boosts spell potency", (p) =>
             {
                 profile.Talents[TalentID.NecromancyEfficiency].Points += 1;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // becomes 0x10000000
             var echoesOfTheGrave = new SkillNode(nodeIndex, "Echoes of the Grave", 12, "Enhances spell range", (p) =>
             {
                 profile.Talents[TalentID.NecromancyRange].Points += 1;
@@ -474,10 +475,10 @@ namespace Server.ACC.CSS.Systems.NecromancyMagic
             transmutation.AddChild(echoesOfTheGrave);
 
             // Layer 8: Ultimate node.
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // becomes 0x20000000
             var ultimateHarbinger = new SkillNode(nodeIndex, "Ultimate Harbinger", 13, "Ultimate bonus: boosts all necromancy skills", (p) =>
             {
-                profile.Talents[TalentID.NecromancySpells].Points |= 0x800 | 0x1000;
+                // Removed spell unlock bits here.
                 profile.Talents[TalentID.NecromancyRange].Points += 1;
                 profile.Talents[TalentID.NecromancyEfficiency].Points += 1;
                 profile.Talents[TalentID.NecromancyYield].Points += 1;

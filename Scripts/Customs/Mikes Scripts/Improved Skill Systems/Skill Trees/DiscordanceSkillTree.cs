@@ -256,22 +256,22 @@ namespace Server.ACC.CSS.Systems.DiscordanceMagic
             });
 
             // Layer 1: Basic bonuses.
-            nodeIndex <<= 1;
-            var sonicRipple = new SkillNode(nodeIndex, "Sonic Ripple", 6, "Increases discordance range", (p) =>
+            nodeIndex <<= 1; // 0x02
+            var sonicRipple = new SkillNode(nodeIndex, "Sonic Ripple", 6, "Unlocks spell: Sonic Ripple", (p) =>
             {
-                profile.Talents[TalentID.DiscordanceRange].Points += 1;
+                profile.Talents[TalentID.DiscordanceSpells].Points |= 0x02;
             });
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x04
             var dissonantChord = new SkillNode(nodeIndex, "Dissonant Chord", 6, "Improves discordance effectiveness", (p) =>
             {
                 profile.Talents[TalentID.DiscordanceEffect].Points += 1;
             });
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x08
             var echoMastery = new SkillNode(nodeIndex, "Echo Mastery", 6, "Unlocks bonus echo spells", (p) =>
             {
                 profile.Talents[TalentID.DiscordanceSpells].Points |= 0x04;
             });
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x10
             var harmonicSurge = new SkillNode(nodeIndex, "Harmonic Surge", 6, "Boosts passive resistance reduction", (p) =>
             {
                 profile.Talents[TalentID.DiscordancePassive].Points += 1;
@@ -282,25 +282,25 @@ namespace Server.ACC.CSS.Systems.DiscordanceMagic
             Root.AddChild(harmonicSurge);
 
             // Layer 2: Advanced bonuses.
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x20
             var reverberation = new SkillNode(nodeIndex, "Reverberation", 7, "Unlocks additional discordance spells", (p) =>
             {
                 profile.Talents[TalentID.DiscordanceSpells].Points |= 0x08;
             });
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x40
             var attenuatedEcho = new SkillNode(nodeIndex, "Attenuated Echo", 7, "Enhances effect duration", (p) =>
             {
                 profile.Talents[TalentID.DiscordanceEffect].Points += 1;
             });
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x80
             var spectralChord = new SkillNode(nodeIndex, "Spectral Chord", 7, "Unlocks advanced discordance spells", (p) =>
             {
                 profile.Talents[TalentID.DiscordanceSpells].Points |= 0x10;
             });
-            nodeIndex <<= 1;
-            var vibrationalShift = new SkillNode(nodeIndex, "Vibrational Shift", 7, "Increases discordance range further", (p) =>
+            nodeIndex <<= 1; // 0x100
+            var vibrationalShift = new SkillNode(nodeIndex, "Vibrational Shift", 7, "Unlocks spell: Vibrational Shift", (p) =>
             {
-                profile.Talents[TalentID.DiscordanceRange].Points += 1;
+                profile.Talents[TalentID.DiscordanceSpells].Points |= 0x1000;
             });
             sonicRipple.AddChild(reverberation);
             dissonantChord.AddChild(attenuatedEcho);
@@ -308,22 +308,22 @@ namespace Server.ACC.CSS.Systems.DiscordanceMagic
             harmonicSurge.AddChild(vibrationalShift);
 
             // Layer 3: Further improvements.
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x200
             var resonantBoost = new SkillNode(nodeIndex, "Resonant Boost", 8, "Enhances discordance potency", (p) =>
             {
                 profile.Talents[TalentID.DiscordanceEffect].Points += 1;
             });
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x400
             var discordantFlow = new SkillNode(nodeIndex, "Discordant Flow", 8, "Improves casting speed", (p) =>
             {
                 profile.Talents[TalentID.DiscordanceCastSpeed].Points += 1;
             });
-            nodeIndex <<= 1;
-            var echoResilience = new SkillNode(nodeIndex, "Echo Resilience", 8, "Grants passive echo protection", (p) =>
+            nodeIndex <<= 1; // 0x800
+            var echoResilience = new SkillNode(nodeIndex, "Echo Resilience", 8, "Unlocks spell: Echo Resilience", (p) =>
             {
-                profile.Talents[TalentID.DiscordancePassive].Points += 1;
+                profile.Talents[TalentID.DiscordanceSpells].Points |= 0x2000;
             });
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x1000
             var riftEdge = new SkillNode(nodeIndex, "Rift Edge", 8, "Unlocks minor spell enhancements", (p) =>
             {
                 profile.Talents[TalentID.DiscordanceSpells].Points |= 0x20;
@@ -334,22 +334,22 @@ namespace Server.ACC.CSS.Systems.DiscordanceMagic
             vibrationalShift.AddChild(riftEdge);
 
             // Layer 4: More advanced.
-            nodeIndex <<= 1;
-            var sonicBarrier = new SkillNode(nodeIndex, "Sonic Barrier", 9, "Enhances defensive capabilities", (p) =>
+            nodeIndex <<= 1; // 0x2000
+            var sonicBarrier = new SkillNode(nodeIndex, "Sonic Barrier", 9, "Unlocks spell: Sonic Barrier", (p) =>
             {
-                profile.Talents[TalentID.DiscordancePassive].Points += 1;
+                profile.Talents[TalentID.DiscordanceSpells].Points |= 0x4000;
             });
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x4000
             var dissonanceSurge = new SkillNode(nodeIndex, "Dissonance Surge", 9, "Unlocks surge spells", (p) =>
             {
                 profile.Talents[TalentID.DiscordanceSpells].Points |= 0x40;
             });
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x8000
             var spectralMastery = new SkillNode(nodeIndex, "Spectral Mastery", 9, "Unlocks master-level discordance spells", (p) =>
             {
                 profile.Talents[TalentID.DiscordanceSpells].Points |= 0x80;
             });
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x10000 (bit value not used for spells)
             var harmonicFortitude = new SkillNode(nodeIndex, "Harmonic Fortitude", 9, "Boosts passive benefits", (p) =>
             {
                 profile.Talents[TalentID.DiscordancePassive].Points += 1;
@@ -360,7 +360,7 @@ namespace Server.ACC.CSS.Systems.DiscordanceMagic
             riftEdge.AddChild(harmonicFortitude);
 
             // Layer 5: Expert nodes.
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // next available bit (not used for spells)
             var intensifiedResonance = new SkillNode(nodeIndex, "Intensified Resonance", 10, "Boosts overall discordance effectiveness", (p) =>
             {
                 profile.Talents[TalentID.DiscordanceEffect].Points += 1;
@@ -376,16 +376,16 @@ namespace Server.ACC.CSS.Systems.DiscordanceMagic
                 profile.Talents[TalentID.DiscordanceSpells].Points |= 0x200;
             });
             nodeIndex <<= 1;
-            var cadenceFlow = new SkillNode(nodeIndex, "Cadence Flow", 10, "Improves spell cadence", (p) =>
+            var cadenceFlow = new SkillNode(nodeIndex, "Cadence Flow", 10, "Unlocks spell: Cadence Flow", (p) =>
             {
-                profile.Talents[TalentID.DiscordanceCastSpeed].Points += 1;
+                profile.Talents[TalentID.DiscordanceSpells].Points |= 0x8000;
             });
             sonicBarrier.AddChild(intensifiedResonance);
             dissonanceSurge.AddChild(echoAmplification);
             spectralMastery.AddChild(discordanceMastery);
             harmonicFortitude.AddChild(cadenceFlow);
 
-            // Layer 6: Mastery nodes.
+            // Layer 6: Mastery nodes. (All remain passive.)
             nodeIndex <<= 1;
             var spatialAwareness = new SkillNode(nodeIndex, "Spatial Awareness", 11, "Enhances positional advantage", (p) =>
             {
@@ -441,7 +441,7 @@ namespace Server.ACC.CSS.Systems.DiscordanceMagic
             nodeIndex <<= 1;
             var ultimateDiscordance = new SkillNode(nodeIndex, "Ultimate Discordance", 13, "Ultimate bonus: boosts all discordance abilities", (p) =>
             {
-                profile.Talents[TalentID.DiscordanceSpells].Points |= 0x800 | 0x1000;
+                profile.Talents[TalentID.DiscordanceSpells].Points |= 0x800;
                 profile.Talents[TalentID.DiscordanceRange].Points += 1;
                 profile.Talents[TalentID.DiscordanceEffect].Points += 1;
                 profile.Talents[TalentID.DiscordanceCastSpeed].Points += 1;

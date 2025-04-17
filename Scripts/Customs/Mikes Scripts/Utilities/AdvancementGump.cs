@@ -72,8 +72,7 @@ namespace Server.Gumps
             int xpForNext = Talents.GetXPThresholdForLevel(currentLevel + 1);
             AddLabel(860, 700, 0, $"XP: {currentXP}/{xpForNext}");
 
-            // Title and header
-            AddHtml(10, 10, 580, 20, "<CENTER><B>Character Advancement</B></CENTER>", false, false);
+
 
             // Bottom Panel Values
             AddLabel(1030, 720, 0, $"{(int)(m_From.SkillsCap / 10)}");

@@ -266,12 +266,14 @@ namespace Server.ACC.CSS.Systems.StealthMagic
             nodeIndex <<= 1;
             var silentFootfalls = new SkillNode(nodeIndex, "Silent Footfalls", 6, "Increases allowed stealth steps", (p) =>
             {
+                // Remains a passive bonus.
                 profile.Talents[TalentID.StealthStepsBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
             var cloakOfShadows = new SkillNode(nodeIndex, "Cloak of Shadows", 6, "Reduces chance to be detected", (p) =>
             {
+                // Remains a passive bonus.
                 profile.Talents[TalentID.StealthDetectionBonus].Points += 1;
             });
 
@@ -294,20 +296,23 @@ namespace Server.ACC.CSS.Systems.StealthMagic
             });
 
             nodeIndex <<= 1;
-            var quickEscape = new SkillNode(nodeIndex, "Quick Escape", 7, "Reduces recovery time when discovered", (p) =>
+            var quickEscape = new SkillNode(nodeIndex, "Quick Escape", 7, "Unlocks an escape spell", (p) =>
             {
-                profile.Talents[TalentID.StealthRecoveryBonus].Points += 1;
+                // Converted from a passive bonus to unlock spell 0x400.
+                profile.Talents[TalentID.StealthSpells].Points |= 0x400;
             });
 
             nodeIndex <<= 1;
             var ghostWalk = new SkillNode(nodeIndex, "Ghost Walk", 7, "Increases movement speed while stealthed", (p) =>
             {
+                // Remains a passive bonus.
                 profile.Talents[TalentID.StealthSpeedBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
             var evasiveManeuvers = new SkillNode(nodeIndex, "Evasive Maneuvers", 7, "Improves dodge chance while stealthed", (p) =>
             {
+                // Remains a passive bonus.
                 profile.Talents[TalentID.StealthDodgeBonus].Points += 1;
             });
 
@@ -324,21 +329,23 @@ namespace Server.ACC.CSS.Systems.StealthMagic
             });
 
             nodeIndex <<= 1;
-            var darkenedAura = new SkillNode(nodeIndex, "Darkened Aura", 8, "Enhances your detection resistance", (p) =>
+            var darkenedAura = new SkillNode(nodeIndex, "Darkened Aura", 8, "Unlocks a defensive stealth spell", (p) =>
             {
-                // You might combine this with other detection bonuses.
-                profile.Talents[TalentID.StealthDetectionBonus].Points += 1;
+                // Converted from a detection bonus to unlock spell 0x800.
+                profile.Talents[TalentID.StealthSpells].Points |= 0x800;
             });
 
             nodeIndex <<= 1;
             var whisperingWind = new SkillNode(nodeIndex, "Whispering Wind", 8, "Further increases allowed stealth steps", (p) =>
             {
+                // Remains a passive bonus.
                 profile.Talents[TalentID.StealthStepsBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
             var spectralShift = new SkillNode(nodeIndex, "Spectral Shift", 8, "Provides a defensive bonus when stealthed", (p) =>
             {
+                // Remains a passive bonus.
                 profile.Talents[TalentID.StealthDefenseBonus].Points += 1;
             });
 
@@ -349,9 +356,10 @@ namespace Server.ACC.CSS.Systems.StealthMagic
 
             // Layer 4: More advanced magical enhancements.
             nodeIndex <<= 1;
-            var moonlitVeil = new SkillNode(nodeIndex, "Moonlit Veil", 9, "Further reduces detection chance", (p) =>
+            var moonlitVeil = new SkillNode(nodeIndex, "Moonlit Veil", 9, "Unlocks an additional stealth spell", (p) =>
             {
-                profile.Talents[TalentID.StealthDetectionBonus].Points += 1;
+                // Converted from a detection bonus to unlock spell 0x1000.
+                profile.Talents[TalentID.StealthSpells].Points |= 0x1000;
             });
 
             nodeIndex <<= 1;
@@ -363,12 +371,14 @@ namespace Server.ACC.CSS.Systems.StealthMagic
             nodeIndex <<= 1;
             var veilOfShadows = new SkillNode(nodeIndex, "Veil of Shadows", 9, "Increases invisibility duration", (p) =>
             {
+                // Remains a passive bonus.
                 profile.Talents[TalentID.StealthRecoveryBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
             var spectralAgility = new SkillNode(nodeIndex, "Spectral Agility", 9, "Boosts movement speed while stealthed", (p) =>
             {
+                // Remains a passive bonus.
                 profile.Talents[TalentID.StealthSpeedBonus].Points += 1;
             });
 
@@ -379,14 +389,16 @@ namespace Server.ACC.CSS.Systems.StealthMagic
 
             // Layer 5: Expert-level nodes.
             nodeIndex <<= 1;
-            var umbralEfficiency = new SkillNode(nodeIndex, "Umbral Efficiency", 10, "General bonus to stealth abilities", (p) =>
+            var umbralEfficiency = new SkillNode(nodeIndex, "Umbral Efficiency", 10, "Unlocks an efficiency spell", (p) =>
             {
-                profile.Talents[TalentID.StealthNodes].Points += 1;
+                // Converted from a general bonus to unlock spell 0x2000.
+                profile.Talents[TalentID.StealthSpells].Points |= 0x2000;
             });
 
             nodeIndex <<= 1;
             var nightProwler = new SkillNode(nodeIndex, "Night Prowler", 10, "Increases chance to avoid traps", (p) =>
             {
+                // Remains a passive bonus.
                 profile.Talents[TalentID.StealthDodgeBonus].Points += 1;
             });
 
@@ -399,6 +411,7 @@ namespace Server.ACC.CSS.Systems.StealthMagic
             nodeIndex <<= 1;
             var stalkersPersistence = new SkillNode(nodeIndex, "Stalker's Persistence", 10, "Provides extra defensive bonuses", (p) =>
             {
+                // Remains a passive bonus.
                 profile.Talents[TalentID.StealthDefenseBonus].Points += 1;
             });
 
@@ -409,14 +422,16 @@ namespace Server.ACC.CSS.Systems.StealthMagic
 
             // Layer 6: Mastery nodes.
             nodeIndex <<= 1;
-            var ghostlyPerception = new SkillNode(nodeIndex, "Ghostly Perception", 11, "Enhances your hidden awareness", (p) =>
+            var ghostlyPerception = new SkillNode(nodeIndex, "Ghostly Perception", 11, "Unlocks a perception spell", (p) =>
             {
-                profile.Talents[TalentID.StealthDetectionBonus].Points += 1;
+                // Converted from a detection bonus to unlock spell 0x4000.
+                profile.Talents[TalentID.StealthSpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
             var shadowsReflex = new SkillNode(nodeIndex, "Shadow's Reflex", 11, "Increases reaction speed", (p) =>
             {
+                // Remains a passive bonus.
                 profile.Talents[TalentID.StealthSpeedBonus].Points += 1;
             });
 
@@ -429,6 +444,7 @@ namespace Server.ACC.CSS.Systems.StealthMagic
             nodeIndex <<= 1;
             var stealthTransformation = new SkillNode(nodeIndex, "Stealth Transformation", 11, "Improves overall stealth capabilities", (p) =>
             {
+                // Remains a passive bonus.
                 profile.Talents[TalentID.StealthNodes].Points += 1;
             });
 
@@ -439,20 +455,23 @@ namespace Server.ACC.CSS.Systems.StealthMagic
 
             // Layer 7: Final, pinnacle bonuses.
             nodeIndex <<= 1;
-            var silentSentinel = new SkillNode(nodeIndex, "Silent Sentinel", 12, "Grants a defensive buff while stealthed", (p) =>
+            var silentSentinel = new SkillNode(nodeIndex, "Silent Sentinel", 12, "Unlocks a defensive stealth spell", (p) =>
             {
-                profile.Talents[TalentID.StealthDefenseBonus].Points += 1;
+                // Converted from a defensive bonus to unlock spell 0x8000.
+                profile.Talents[TalentID.StealthSpells].Points |= 0x8000;
             });
 
             nodeIndex <<= 1;
             var phantomEndowment = new SkillNode(nodeIndex, "Phantom Endowment", 12, "Further increases stealth potential", (p) =>
             {
+                // Remains a passive bonus.
                 profile.Talents[TalentID.StealthNodes].Points += 1;
             });
 
             nodeIndex <<= 1;
             var creepingDread = new SkillNode(nodeIndex, "Creeping Dread", 12, "Enhances dodge chance", (p) =>
             {
+                // Remains a passive bonus.
                 profile.Talents[TalentID.StealthDodgeBonus].Points += 1;
             });
 

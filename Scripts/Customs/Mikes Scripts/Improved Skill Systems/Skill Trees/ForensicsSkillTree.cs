@@ -247,27 +247,27 @@ namespace Server.ACC.CSS.Systems.ForensicsMagic
             var profile = player.AcquireTalents();
             int nodeIndex = 0x01;
 
-            // Layer 0: Root Node – Unlocks basic forensic spells.
+            // Layer 0: Root Node – Spell node 0x01.
             Root = new SkillNode(nodeIndex, "Eye of the Investigator", 5, "Unlocks basic forensic spells", (p) =>
             {
                 profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic bonuses.
-            nodeIndex <<= 1;
-            var traceDetection = new SkillNode(nodeIndex, "Trace Detection", 6, "Increases detection range", (p) =>
+            // Layer 1: 4 nodes, 2 spell nodes.
+            nodeIndex <<= 1; // next flag for tree tracking (used in ForensicNodes)
+            var traceDetection = new SkillNode(nodeIndex, "Trace Detection", 6, "Unlocks forensic spell (0x02)", (p) =>
             {
-                profile.Talents[(TalentID)TalentID.ForensicInsight].Points += 1;
+                profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
-            var evidenceCollection = new SkillNode(nodeIndex, "Evidence Collection", 6, "Improves evaluation efficiency", (p) =>
+            var evidenceCollection = new SkillNode(nodeIndex, "Evidence Collection", 6, "Increases evaluation efficiency", (p) =>
             {
                 profile.Talents[(TalentID)TalentID.ForensicEfficiency].Points += 1;
             });
 
             nodeIndex <<= 1;
-            var chainOfCustody = new SkillNode(nodeIndex, "Chain of Custody", 6, "Unlocks bonus forensic spell", (p) =>
+            var chainOfCustody = new SkillNode(nodeIndex, "Chain of Custody", 6, "Unlocks forensic spell (0x04)", (p) =>
             {
                 profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x04;
             });
@@ -283,9 +283,9 @@ namespace Server.ACC.CSS.Systems.ForensicsMagic
             Root.AddChild(chainOfCustody);
             Root.AddChild(crimeSceneAnalysis);
 
-            // Layer 2: Advanced magical and practical bonuses.
+            // Layer 2: 4 nodes, 2 spell nodes.
             nodeIndex <<= 1;
-            var forensicInsight = new SkillNode(nodeIndex, "Forensic Insight", 7, "Unlocks additional forensic spells", (p) =>
+            var forensicInsight = new SkillNode(nodeIndex, "Forensic Insight", 7, "Unlocks forensic spell (0x08)", (p) =>
             {
                 profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x08;
             });
@@ -297,7 +297,7 @@ namespace Server.ACC.CSS.Systems.ForensicsMagic
             });
 
             nodeIndex <<= 1;
-            var analyticalReasoning = new SkillNode(nodeIndex, "Analytical Reasoning", 7, "Unlocks advanced forensic spells", (p) =>
+            var analyticalReasoning = new SkillNode(nodeIndex, "Analytical Reasoning", 7, "Unlocks forensic spell (0x10)", (p) =>
             {
                 profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x10;
             });
@@ -308,16 +308,15 @@ namespace Server.ACC.CSS.Systems.ForensicsMagic
                 profile.Talents[(TalentID)TalentID.ForensicInsight].Points += 1;
             });
 
-            traceDetection.AddChild(forensicInsight);
-            evidenceCollection.AddChild(methodicalObservation);
+            forensicInsight.AddChild(methodicalObservation);
+            evidenceCollection.AddChild(preciseSampling);
             chainOfCustody.AddChild(analyticalReasoning);
-            crimeSceneAnalysis.AddChild(preciseSampling);
 
-            // Layer 3: Further bonuses.
+            // Layer 3: 4 nodes, 2 spell nodes.
             nodeIndex <<= 1;
-            var detailedReconstruction = new SkillNode(nodeIndex, "Detailed Reconstruction", 8, "Enhances case reconstruction", (p) =>
+            var detailedReconstruction = new SkillNode(nodeIndex, "Detailed Reconstruction", 8, "Unlocks forensic spell (0x40)", (p) =>
             {
-                profile.Talents[(TalentID)TalentID.ForensicRevelation].Points += 1;
+                profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x40;
             });
 
             nodeIndex <<= 1;
@@ -327,7 +326,7 @@ namespace Server.ACC.CSS.Systems.ForensicsMagic
             });
 
             nodeIndex <<= 1;
-            var witnessExamination = new SkillNode(nodeIndex, "Witness Examination", 8, "Unlocks additional forensic spell", (p) =>
+            var witnessExamination = new SkillNode(nodeIndex, "Witness Examination", 8, "Unlocks forensic spell (0x20)", (p) =>
             {
                 profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x20;
             });
@@ -343,7 +342,7 @@ namespace Server.ACC.CSS.Systems.ForensicsMagic
             analyticalReasoning.AddChild(witnessExamination);
             preciseSampling.AddChild(logicalDeduction);
 
-            // Layer 4: More advanced enhancements.
+            // Layer 4: 4 nodes, 2 spell nodes.
             nodeIndex <<= 1;
             var dnaProfiling = new SkillNode(nodeIndex, "DNA Profiling", 9, "Enhances evidence interpretation", (p) =>
             {
@@ -351,15 +350,15 @@ namespace Server.ACC.CSS.Systems.ForensicsMagic
             });
 
             nodeIndex <<= 1;
-            var fingerprintMastery = new SkillNode(nodeIndex, "Fingerprint Mastery", 9, "Unlocks fingerprint analysis spell", (p) =>
+            var fingerprintMastery = new SkillNode(nodeIndex, "Fingerprint Mastery", 9, "Unlocks forensic spell (0x80)", (p) =>
             {
-                profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x40;
+                profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x80;
             });
 
             nodeIndex <<= 1;
-            var ballisticAnalysis = new SkillNode(nodeIndex, "Ballistic Analysis", 9, "Unlocks ballistics spell", (p) =>
+            var ballisticAnalysis = new SkillNode(nodeIndex, "Ballistic Analysis", 9, "Unlocks forensic spell (0x100)", (p) =>
             {
-                profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x80;
+                profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x100;
             });
 
             nodeIndex <<= 1;
@@ -373,11 +372,11 @@ namespace Server.ACC.CSS.Systems.ForensicsMagic
             witnessExamination.AddChild(ballisticAnalysis);
             logicalDeduction.AddChild(toxicologyExpertise);
 
-            // Layer 5: Expert-level nodes.
+            // Layer 5: 4 nodes, 2 spell nodes.
             nodeIndex <<= 1;
-            var advancedReconstruction = new SkillNode(nodeIndex, "Advanced Reconstruction", 10, "Boosts evidence interpretation", (p) =>
+            var advancedReconstruction = new SkillNode(nodeIndex, "Advanced Reconstruction", 10, "Unlocks forensic spell (0x400)", (p) =>
             {
-                profile.Talents[(TalentID)TalentID.ForensicRevelation].Points += 1;
+                profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x400;
             });
 
             nodeIndex <<= 1;
@@ -387,9 +386,9 @@ namespace Server.ACC.CSS.Systems.ForensicsMagic
             });
 
             nodeIndex <<= 1;
-            var forensicMastery = new SkillNode(nodeIndex, "Forensic Mastery", 10, "Unlocks mastery level forensic spells", (p) =>
+            var forensicMastery = new SkillNode(nodeIndex, "Forensic Mastery", 10, "Unlocks forensic spell (0x200)", (p) =>
             {
-                profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x100;
+                profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x200;
             });
 
             nodeIndex <<= 1;
@@ -399,11 +398,11 @@ namespace Server.ACC.CSS.Systems.ForensicsMagic
             });
 
             dnaProfiling.AddChild(advancedReconstruction);
-            fingerprintMastery.AddChild(evidencePreservation);
+            subtleClues.AddChild(evidencePreservation);
             ballisticAnalysis.AddChild(forensicMastery);
             toxicologyExpertise.AddChild(deductiveMomentum);
 
-            // Layer 6: Mastery nodes.
+            // Layer 6: 4 nodes, 2 spell nodes.
             nodeIndex <<= 1;
             var heightenedPerception = new SkillNode(nodeIndex, "Heightened Perception", 11, "Increases detection range", (p) =>
             {
@@ -411,15 +410,15 @@ namespace Server.ACC.CSS.Systems.ForensicsMagic
             });
 
             nodeIndex <<= 1;
-            var subtleNuance = new SkillNode(nodeIndex, "Subtle Nuance", 11, "Boosts evidence interpretation", (p) =>
+            var subtleNuance = new SkillNode(nodeIndex, "Subtle Nuance", 11, "Unlocks forensic spell (0x1000)", (p) =>
             {
-                profile.Talents[(TalentID)TalentID.ForensicRevelation].Points += 1;
+                profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x1000;
             });
 
             nodeIndex <<= 1;
-            var caseBreaker = new SkillNode(nodeIndex, "Case Breaker", 11, "Unlocks breakthrough forensic spells", (p) =>
+            var caseBreaker = new SkillNode(nodeIndex, "Case Breaker", 11, "Unlocks forensic spell (0x800)", (p) =>
             {
-                profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x200;
+                profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x800;
             });
 
             nodeIndex <<= 1;
@@ -433,11 +432,11 @@ namespace Server.ACC.CSS.Systems.ForensicsMagic
             forensicMastery.AddChild(caseBreaker);
             deductiveMomentum.AddChild(interrogationProwess);
 
-            // Layer 7: Pinnacle bonuses.
+            // Layer 7: 4 nodes, 2 spell nodes.
             nodeIndex <<= 1;
-            var criticalBarrier = new SkillNode(nodeIndex, "Critical Barrier", 12, "Unlocks a protective forensic spell", (p) =>
+            var criticalBarrier = new SkillNode(nodeIndex, "Critical Barrier", 12, "Unlocks forensic spell (0x2000)", (p) =>
             {
-                profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x400;
+                profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x2000;
             });
 
             nodeIndex <<= 1;
@@ -447,9 +446,9 @@ namespace Server.ACC.CSS.Systems.ForensicsMagic
             });
 
             nodeIndex <<= 1;
-            var crimeSolvingInstinct = new SkillNode(nodeIndex, "Crime Solving Instinct", 12, "Improves evaluation efficiency", (p) =>
+            var crimeSolvingInstinct = new SkillNode(nodeIndex, "Crime Solving Instinct", 12, "Unlocks forensic spell (0x4000)", (p) =>
             {
-                profile.Talents[(TalentID)TalentID.ForensicEfficiency].Points += 1;
+                profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
@@ -463,11 +462,11 @@ namespace Server.ACC.CSS.Systems.ForensicsMagic
             caseBreaker.AddChild(crimeSolvingInstinct);
             interrogationProwess.AddChild(finalAnalysis);
 
-            // Layer 8: Ultimate node.
+            // Layer 8: Ultimate node, 1 spell node.
             nodeIndex <<= 1;
-            var ultimateForensics = new SkillNode(nodeIndex, "Ultimate Forensics", 13, "Ultimate bonus: boosts all forensic skills", (p) =>
+            var ultimateForensics = new SkillNode(nodeIndex, "Ultimate Forensics", 13, "Unlocks forensic spell (0x8000) and boosts all forensic skills", (p) =>
             {
-                profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x800 | 0x1000;
+                profile.Talents[(TalentID)TalentID.ForensicSpells].Points |= 0x8000;
                 profile.Talents[(TalentID)TalentID.ForensicInsight].Points += 1;
                 profile.Talents[(TalentID)TalentID.ForensicEfficiency].Points += 1;
                 profile.Talents[(TalentID)TalentID.ForensicRevelation].Points += 1;

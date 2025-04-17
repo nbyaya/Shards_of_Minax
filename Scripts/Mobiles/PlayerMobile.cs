@@ -2350,31 +2350,31 @@ namespace Server.Mobiles
 
                 list.Add(new OpenBackpackEntry(this));
 
-                if (Alive && InsuranceEnabled)
-                {
-                    if (Core.SA)
-                    {
-                        list.Add(new CallbackEntry(1114299, OpenItemInsuranceMenu));
-                    }
-
-                    list.Add(new CallbackEntry(6201, ToggleItemInsurance));
-
-                    if (!Core.SA)
-                    {
-                        if (AutoRenewInsurance)
-                        {
-                            list.Add(new CallbackEntry(6202, CancelRenewInventoryInsurance));
-                        }
-                        else
-                        {
-                            list.Add(new CallbackEntry(6200, AutoRenewInventoryInsurance));
-                        }
-                    }
-                }
-                else if (Siege.SiegeShard)
-                {
-                    list.Add(new CallbackEntry(3006168, SiegeBlessItem));
-                }
+//                if (Alive && InsuranceEnabled)
+//                {
+//                    if (Core.SA)
+//                    {
+//                        list.Add(new CallbackEntry(1114299, OpenItemInsuranceMenu));
+//                   }
+//
+//                    list.Add(new CallbackEntry(6201, ToggleItemInsurance));
+//
+//                    if (!Core.SA)
+//                    {
+//                        if (AutoRenewInsurance)
+//                        {
+//                            list.Add(new CallbackEntry(6202, CancelRenewInventoryInsurance));
+//                        }
+//                        else
+//                        {
+//                            list.Add(new CallbackEntry(6200, AutoRenewInventoryInsurance));
+//                        }
+//                   }
+//                }
+//                else if (Siege.SiegeShard)
+//                {
+//                    list.Add(new CallbackEntry(3006168, SiegeBlessItem));
+//                }
 
                 if (Core.ML && Alive)
                 {
@@ -2447,6 +2447,8 @@ namespace Server.Mobiles
 				{
 					list.Add(new CallbackEntry(1113797, EnablePvpWarning));
 				}
+				
+				list.Add(new Server.Achievements.AchivementGumpEntry(this));
 			}
 			else
 			{
@@ -2493,6 +2495,11 @@ namespace Server.Mobiles
 					{
 						list.Add(new EjectPlayerEntry(from, this));
 					}
+
+            		if (from is PlayerMobile)
+            		{
+                			list.Add(new Server.Achievements.AchivementGumpEntry((PlayerMobile)from, this));
+            		}					
 				}
 			}
 		}

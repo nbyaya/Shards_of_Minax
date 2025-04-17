@@ -262,29 +262,29 @@ namespace Server.ACC.CSS.Systems.FencingMagic
                 profile.Talents[TalentID.FencingSpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic bonuses.
-            nodeIndex <<= 1;
-            var quickParry = new SkillNode(nodeIndex, "Quick Parry", 6, "Improves evasion", (p) =>
+            // Layer 1: Convert basic bonuses into spell unlocks.
+            nodeIndex <<= 1; // now 0x02
+            var quickParry = new SkillNode(nodeIndex, "Quick Parry", 6, "Unlocks spell (0x02)", (p) =>
             {
-                profile.Talents[TalentID.FencingEvasion].Points += 1;
+                profile.Talents[TalentID.FencingSpells].Points |= 0x02;
             });
 
-            nodeIndex <<= 1;
-            var preciseStrike = new SkillNode(nodeIndex, "Precise Strike", 6, "Enhances accuracy", (p) =>
-            {
-                profile.Talents[TalentID.FencingAccuracy].Points += 1;
-            });
-
-            nodeIndex <<= 1;
-            var riposteMastery = new SkillNode(nodeIndex, "Riposte Mastery", 6, "Unlocks extra counter spells", (p) =>
+            nodeIndex <<= 1; // now 0x04
+            var preciseStrike = new SkillNode(nodeIndex, "Precise Strike", 6, "Unlocks spell (0x04)", (p) =>
             {
                 profile.Talents[TalentID.FencingSpells].Points |= 0x04;
             });
 
-            nodeIndex <<= 1;
-            var stanceAwareness = new SkillNode(nodeIndex, "Stance Awareness", 6, "Increases speed in combat", (p) =>
+            nodeIndex <<= 1; // now 0x08
+            var riposteMastery = new SkillNode(nodeIndex, "Riposte Mastery", 6, "Unlocks spell (0x08)", (p) =>
             {
-                profile.Talents[TalentID.FencingSpeed].Points += 1;
+                profile.Talents[TalentID.FencingSpells].Points |= 0x08;
+            });
+
+            nodeIndex <<= 1; // now 0x10
+            var stanceAwareness = new SkillNode(nodeIndex, "Stance Awareness", 6, "Unlocks spell (0x10)", (p) =>
+            {
+                profile.Talents[TalentID.FencingSpells].Points |= 0x10;
             });
 
             Root.AddChild(quickParry);
@@ -292,29 +292,29 @@ namespace Server.ACC.CSS.Systems.FencingMagic
             Root.AddChild(riposteMastery);
             Root.AddChild(stanceAwareness);
 
-            // Layer 2: Advanced magical and practical bonuses.
-            nodeIndex <<= 1;
-            var bladeDance = new SkillNode(nodeIndex, "Blade Dance", 7, "Unlocks additional spells", (p) =>
+            // Layer 2: Advanced magical and practical bonuses converted.
+            nodeIndex <<= 1; // now 0x20
+            var bladeDance = new SkillNode(nodeIndex, "Blade Dance", 7, "Unlocks spell (0x20)", (p) =>
             {
-                profile.Talents[TalentID.FencingSpells].Points |= 0x08;
+                profile.Talents[TalentID.FencingSpells].Points |= 0x20;
             });
 
-            nodeIndex <<= 1;
-            var shadowStep = new SkillNode(nodeIndex, "Shadow Step", 7, "Enhances movement speed", (p) =>
+            nodeIndex <<= 1; // now 0x40
+            var shadowStep = new SkillNode(nodeIndex, "Shadow Step", 7, "Unlocks spell (0x40)", (p) =>
             {
-                profile.Talents[TalentID.FencingSpeed].Points += 1;
+                profile.Talents[TalentID.FencingSpells].Points |= 0x40;
             });
 
-            nodeIndex <<= 1;
-            var lethalEdge = new SkillNode(nodeIndex, "Lethal Edge", 7, "Unlocks aggressive spells", (p) =>
+            nodeIndex <<= 1; // now 0x80
+            var lethalEdge = new SkillNode(nodeIndex, "Lethal Edge", 7, "Unlocks spell (0x80)", (p) =>
             {
-                profile.Talents[TalentID.FencingSpells].Points |= 0x10;
+                profile.Talents[TalentID.FencingSpells].Points |= 0x80;
             });
 
-            nodeIndex <<= 1;
-            var steadyGuard = new SkillNode(nodeIndex, "Steady Guard", 7, "Improves defensive capability", (p) =>
+            nodeIndex <<= 1; // now 0x100
+            var steadyGuard = new SkillNode(nodeIndex, "Steady Guard", 7, "Unlocks spell (0x100)", (p) =>
             {
-                profile.Talents[TalentID.FencingEvasion].Points += 1;
+                profile.Talents[TalentID.FencingSpells].Points |= 0x100;
             });
 
             quickParry.AddChild(bladeDance);
@@ -322,29 +322,29 @@ namespace Server.ACC.CSS.Systems.FencingMagic
             riposteMastery.AddChild(lethalEdge);
             stanceAwareness.AddChild(steadyGuard);
 
-            // Layer 3: Further bonuses.
-            nodeIndex <<= 1;
-            var flurryOfBlows = new SkillNode(nodeIndex, "Flurry of Blows", 8, "Boosts damage output", (p) =>
+            // Layer 3: Further bonuses converted.
+            nodeIndex <<= 1; // now 0x200
+            var flurryOfBlows = new SkillNode(nodeIndex, "Flurry of Blows", 8, "Unlocks spell (0x200)", (p) =>
             {
-                profile.Talents[TalentID.FencingDamage].Points += 1;
+                profile.Talents[TalentID.FencingSpells].Points |= 0x200;
             });
 
-            nodeIndex <<= 1;
-            var precisionThrust = new SkillNode(nodeIndex, "Precision Thrust", 8, "Further enhances accuracy", (p) =>
+            nodeIndex <<= 1; // now 0x400
+            var precisionThrust = new SkillNode(nodeIndex, "Precision Thrust", 8, "Unlocks spell (0x400)", (p) =>
             {
-                profile.Talents[TalentID.FencingAccuracy].Points += 1;
+                profile.Talents[TalentID.FencingSpells].Points |= 0x400;
             });
 
-            nodeIndex <<= 1;
-            var guardingPosture = new SkillNode(nodeIndex, "Guarding Posture", 8, "Unlocks defensive bonuses", (p) =>
+            nodeIndex <<= 1; // now 0x800
+            var guardingPosture = new SkillNode(nodeIndex, "Guarding Posture", 8, "Unlocks spell (0x800)", (p) =>
             {
-                profile.Talents[TalentID.FencingSpells].Points |= 0x20;
+                profile.Talents[TalentID.FencingSpells].Points |= 0x800;
             });
 
-            nodeIndex <<= 1;
-            var agileFootwork = new SkillNode(nodeIndex, "Agile Footwork", 8, "Improves combat agility", (p) =>
+            nodeIndex <<= 1; // now 0x1000
+            var agileFootwork = new SkillNode(nodeIndex, "Agile Footwork", 8, "Unlocks spell (0x1000)", (p) =>
             {
-                profile.Talents[TalentID.FencingSpeed].Points += 1;
+                profile.Talents[TalentID.FencingSpells].Points |= 0x1000;
             });
 
             bladeDance.AddChild(flurryOfBlows);
@@ -353,25 +353,26 @@ namespace Server.ACC.CSS.Systems.FencingMagic
             steadyGuard.AddChild(agileFootwork);
 
             // Layer 4: More advanced magical enhancements.
-            nodeIndex <<= 1;
-            var bladesGrace = new SkillNode(nodeIndex, "Blade's Grace", 9, "Enhances damage further", (p) =>
+            // Only three of these four become spell unlocks.
+            nodeIndex <<= 1; // now 0x2000
+            var bladesGrace = new SkillNode(nodeIndex, "Blade's Grace", 9, "Unlocks spell (0x2000)", (p) =>
             {
-                profile.Talents[TalentID.FencingDamage].Points += 1;
+                profile.Talents[TalentID.FencingSpells].Points |= 0x2000;
             });
 
-            nodeIndex <<= 1;
-            var counterAttack = new SkillNode(nodeIndex, "Counter Attack", 9, "Unlocks counter-attack spells", (p) =>
+            nodeIndex <<= 1; // now 0x4000
+            var counterAttack = new SkillNode(nodeIndex, "Counter Attack", 9, "Unlocks spell (0x4000)", (p) =>
             {
-                profile.Talents[TalentID.FencingSpells].Points |= 0x40;
+                profile.Talents[TalentID.FencingSpells].Points |= 0x4000;
             });
 
-            nodeIndex <<= 1;
-            var ironWill = new SkillNode(nodeIndex, "Iron Will", 9, "Boosts defensive resolve", (p) =>
+            nodeIndex <<= 1; // now 0x8000
+            var ironWill = new SkillNode(nodeIndex, "Iron Will", 9, "Unlocks spell (0x8000)", (p) =>
             {
-                profile.Talents[TalentID.FencingEvasion].Points += 1;
+                profile.Talents[TalentID.FencingSpells].Points |= 0x8000;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // next available bit – keep this as a passive bonus.
             var swiftRecovery = new SkillNode(nodeIndex, "Swift Recovery", 9, "Enhances recovery speed", (p) =>
             {
                 profile.Talents[TalentID.FencingSpeed].Points += 1;
@@ -382,7 +383,7 @@ namespace Server.ACC.CSS.Systems.FencingMagic
             guardingPosture.AddChild(ironWill);
             agileFootwork.AddChild(swiftRecovery);
 
-            // Layer 5: Expert-level nodes.
+            // Layer 5: Expert-level nodes (remain unchanged).
             nodeIndex <<= 1;
             var unyieldingStrike = new SkillNode(nodeIndex, "Unyielding Strike", 10, "Increases damage potential", (p) =>
             {
@@ -398,7 +399,8 @@ namespace Server.ACC.CSS.Systems.FencingMagic
             nodeIndex <<= 1;
             var duelistsPoise = new SkillNode(nodeIndex, "Duelist's Poise", 10, "Unlocks advanced fencing spells", (p) =>
             {
-                profile.Talents[TalentID.FencingSpells].Points |= 0x100;
+                // Retained as a passive bonus here.
+                profile.Talents[TalentID.FencingAccuracy].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -412,7 +414,7 @@ namespace Server.ACC.CSS.Systems.FencingMagic
             ironWill.AddChild(duelistsPoise);
             swiftRecovery.AddChild(momentumShift);
 
-            // Layer 6: Mastery nodes.
+            // Layer 6: Mastery nodes (remain unchanged).
             nodeIndex <<= 1;
             var expandedVision = new SkillNode(nodeIndex, "Expanded Vision", 11, "Improves situational awareness", (p) =>
             {
@@ -428,7 +430,8 @@ namespace Server.ACC.CSS.Systems.FencingMagic
             nodeIndex <<= 1;
             var masterSwordsman = new SkillNode(nodeIndex, "Master Swordsman", 11, "Unlocks ultimate fencing spells", (p) =>
             {
-                profile.Talents[TalentID.FencingSpells].Points |= 0x200;
+                // Retained as a passive bonus.
+                profile.Talents[TalentID.FencingAccuracy].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -442,11 +445,12 @@ namespace Server.ACC.CSS.Systems.FencingMagic
             duelistsPoise.AddChild(masterSwordsman);
             momentumShift.AddChild(rapidAssault);
 
-            // Layer 7: Final, pinnacle bonuses.
+            // Layer 7: Final, pinnacle bonuses (remain unchanged).
             nodeIndex <<= 1;
             var shieldingAura = new SkillNode(nodeIndex, "Shielding Aura", 12, "Provides a protective barrier", (p) =>
             {
-                profile.Talents[TalentID.FencingSpells].Points |= 0x400;
+                // Retained as a passive bonus.
+                profile.Talents[TalentID.FencingEvasion].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -472,7 +476,7 @@ namespace Server.ACC.CSS.Systems.FencingMagic
             masterSwordsman.AddChild(flashingSpeed);
             rapidAssault.AddChild(criticalPrecision);
 
-            // Layer 8: Ultimate node.
+            // Layer 8: Ultimate node (remain unchanged).
             nodeIndex <<= 1;
             var ultimateDuelist = new SkillNode(nodeIndex, "Ultimate Duelist", 13, "Ultimate bonus: boosts all fencing skills", (p) =>
             {

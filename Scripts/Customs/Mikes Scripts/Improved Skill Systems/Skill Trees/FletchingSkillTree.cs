@@ -256,32 +256,37 @@ namespace Server.ACC.CSS.Systems.FletchingMagic
             var profile = player.AcquireTalents();
             int nodeIndex = 0x01;
 
-            // Layer 0: Root Node – Unlocks basic fletching spells.
+            // --- Layer 0: Root Node ---
+            // Spell Node 1: Call of the Archer – Unlocks basic fletching spells (0x01)
             Root = new SkillNode(nodeIndex, "Call of the Archer", 5, "Unlocks basic fletching spells", (p) =>
             {
                 profile.Talents[TalentID.FletchingSpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic bonuses.
+            // --- Layer 1: Basic bonuses and spells ---
             nodeIndex <<= 1;
-            var eagleEye = new SkillNode(nodeIndex, "Eagle Eye", 6, "Increases arrow accuracy", (p) =>
+            // Spell Node 2: Eagle Eye – now unlocks precision arrow spells (0x02)
+            var eagleEye = new SkillNode(nodeIndex, "Eagle Eye", 6, "Unlocks precision arrow spells", (p) =>
             {
-                profile.Talents[TalentID.FletchingAccuracy].Points += 1;
+                profile.Talents[TalentID.FletchingSpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
-            var swiftFletching = new SkillNode(nodeIndex, "Swift Fletching", 6, "Increases crafting speed", (p) =>
+            // Spell Node 13 (converted): Swift Fletching – now unlocks swift fletching spells (0x1000)
+            var swiftFletching = new SkillNode(nodeIndex, "Swift Fletching", 6, "Unlocks swift fletching spells", (p) =>
             {
-                profile.Talents[TalentID.FletchingSpeed].Points += 1;
+                profile.Talents[TalentID.FletchingSpells].Points |= 0x1000;
             });
 
             nodeIndex <<= 1;
+            // Spell Node 3: Arrow Mastery – Unlocks bonus arrow spells (0x04)
             var arrowMastery = new SkillNode(nodeIndex, "Arrow Mastery", 6, "Unlocks bonus arrow spells", (p) =>
             {
                 profile.Talents[TalentID.FletchingSpells].Points |= 0x04;
             });
 
             nodeIndex <<= 1;
+            // Passive Node: Quiver's Bounty – Increases arrow yield
             var quiversBounty = new SkillNode(nodeIndex, "Quiver's Bounty", 6, "Increases arrow yield", (p) =>
             {
                 profile.Talents[TalentID.FletchingYield].Points += 1;
@@ -292,29 +297,33 @@ namespace Server.ACC.CSS.Systems.FletchingMagic
             Root.AddChild(arrowMastery);
             Root.AddChild(quiversBounty);
 
-            // Layer 2: Advanced magical and practical bonuses.
+            // --- Layer 2: Advanced magical and practical bonuses ---
             nodeIndex <<= 1;
+            // Spell Node 4: Whispering Wood – Unlocks additional arrow spells (0x08)
             var whisperingWood = new SkillNode(nodeIndex, "Whispering Wood", 7, "Unlocks additional arrow spells", (p) =>
             {
                 profile.Talents[TalentID.FletchingSpells].Points |= 0x08;
             });
 
             nodeIndex <<= 1;
+            // Passive Node: Featherlight Craft – Improves crafting speed further
             var featherlightCraft = new SkillNode(nodeIndex, "Featherlight Craft", 7, "Improves crafting speed further", (p) =>
             {
                 profile.Talents[TalentID.FletchingSpeed].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Spell Node 5: Mystic Flight – Unlocks advanced arrow spells (0x10)
             var mysticFlight = new SkillNode(nodeIndex, "Mystic Flight", 7, "Unlocks advanced arrow spells", (p) =>
             {
                 profile.Talents[TalentID.FletchingSpells].Points |= 0x10;
             });
 
             nodeIndex <<= 1;
-            var eaglesGrace = new SkillNode(nodeIndex, "Eagle's Grace", 7, "Further increases arrow accuracy", (p) =>
+            // Spell Node 14 (converted): Eagle's Grace – Unlocks graceful arrow spells (0x2000)
+            var eaglesGrace = new SkillNode(nodeIndex, "Eagle's Grace", 7, "Unlocks graceful arrow spells", (p) =>
             {
-                profile.Talents[TalentID.FletchingAccuracy].Points += 1;
+                profile.Talents[TalentID.FletchingSpells].Points |= 0x2000;
             });
 
             eagleEye.AddChild(whisperingWood);
@@ -322,29 +331,33 @@ namespace Server.ACC.CSS.Systems.FletchingMagic
             arrowMastery.AddChild(mysticFlight);
             quiversBounty.AddChild(eaglesGrace);
 
-            // Layer 3: Further improvements.
+            // --- Layer 3: Further improvements ---
             nodeIndex <<= 1;
+            // Passive Node: Bountiful Quiver – Enhances arrow yield
             var bountifulQuiver = new SkillNode(nodeIndex, "Bountiful Quiver", 8, "Enhances arrow yield", (p) =>
             {
                 profile.Talents[TalentID.FletchingYield].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Passive Node: Rapid Nock – Increases crafting speed
             var rapidNock = new SkillNode(nodeIndex, "Rapid Nock", 8, "Increases crafting speed", (p) =>
             {
                 profile.Talents[TalentID.FletchingSpeed].Points += 1;
             });
 
             nodeIndex <<= 1;
-            var steadyHand = new SkillNode(nodeIndex, "Steady Hand", 8, "Unlocks a defensive bonus", (p) =>
+            // Spell Node 6: Steady Hand – Unlocks defensive arrow spells (0x20)
+            var steadyHand = new SkillNode(nodeIndex, "Steady Hand", 8, "Unlocks defensive arrow spells", (p) =>
             {
                 profile.Talents[TalentID.FletchingSpells].Points |= 0x20;
             });
 
             nodeIndex <<= 1;
-            var keenFocus = new SkillNode(nodeIndex, "Keen Focus", 8, "Further increases arrow accuracy", (p) =>
+            // Spell Node 15 (converted): Keen Focus – Unlocks focused arrow spells (0x4000)
+            var keenFocus = new SkillNode(nodeIndex, "Keen Focus", 8, "Unlocks focused arrow spells", (p) =>
             {
-                profile.Talents[TalentID.FletchingAccuracy].Points += 1;
+                profile.Talents[TalentID.FletchingSpells].Points |= 0x4000;
             });
 
             whisperingWood.AddChild(bountifulQuiver);
@@ -352,26 +365,30 @@ namespace Server.ACC.CSS.Systems.FletchingMagic
             mysticFlight.AddChild(steadyHand);
             eaglesGrace.AddChild(keenFocus);
 
-            // Layer 4: More advanced magical enhancements.
+            // --- Layer 4: More advanced magical enhancements ---
             nodeIndex <<= 1;
-            var quiversBlessing = new SkillNode(nodeIndex, "Quiver's Blessing", 9, "Enhances arrow yield further", (p) =>
+            // Spell Node 16 (converted): Quiver's Blessing – Unlocks blessed arrow spells (0x8000)
+            var quiversBlessing = new SkillNode(nodeIndex, "Quiver's Blessing", 9, "Unlocks blessed arrow spells", (p) =>
             {
-                profile.Talents[TalentID.FletchingYield].Points += 1;
+                profile.Talents[TalentID.FletchingSpells].Points |= 0x8000;
             });
 
             nodeIndex <<= 1;
+            // Spell Node 7: Feather's Touch – Unlocks bonus arrow spells (0x40)
             var feathersTouch = new SkillNode(nodeIndex, "Feather's Touch", 9, "Unlocks bonus arrow spells", (p) =>
             {
                 profile.Talents[TalentID.FletchingSpells].Points |= 0x40;
             });
 
             nodeIndex <<= 1;
+            // Spell Node 8: Arcane Arrow – Unlocks mystical arrow spells (0x80)
             var arcaneArrow = new SkillNode(nodeIndex, "Arcane Arrow", 9, "Unlocks mystical arrow spells", (p) =>
             {
                 profile.Talents[TalentID.FletchingSpells].Points |= 0x80;
             });
 
             nodeIndex <<= 1;
+            // Passive Node: Eagle's Roar – Boosts arrow accuracy
             var eaglesRoar = new SkillNode(nodeIndex, "Eagle's Roar", 9, "Boosts arrow accuracy", (p) =>
             {
                 profile.Talents[TalentID.FletchingAccuracy].Points += 1;
@@ -382,26 +399,30 @@ namespace Server.ACC.CSS.Systems.FletchingMagic
             steadyHand.AddChild(arcaneArrow);
             keenFocus.AddChild(eaglesRoar);
 
-            // Layer 5: Expert-level nodes.
+            // --- Layer 5: Expert-level nodes ---
             nodeIndex <<= 1;
+            // Passive Node: Primeval Precision – Boosts overall arrow accuracy
             var primevalPrecision = new SkillNode(nodeIndex, "Primeval Precision", 10, "Boosts overall arrow accuracy", (p) =>
             {
                 profile.Talents[TalentID.FletchingAccuracy].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Passive Node: Bountiful Barrage – Boosts arrow yield
             var bountifulBarrage = new SkillNode(nodeIndex, "Bountiful Barrage", 10, "Boosts arrow yield", (p) =>
             {
                 profile.Talents[TalentID.FletchingYield].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Spell Node 9: Arrow Mastery II – Unlocks mastery arrow spells (0x100)
             var arrowMasteryII = new SkillNode(nodeIndex, "Arrow Mastery II", 10, "Unlocks mastery arrow spells", (p) =>
             {
                 profile.Talents[TalentID.FletchingSpells].Points |= 0x100;
             });
 
             nodeIndex <<= 1;
+            // Passive Node: Nocking Momentum – Increases crafting speed
             var nockingMomentum = new SkillNode(nodeIndex, "Nocking Momentum", 10, "Increases crafting speed", (p) =>
             {
                 profile.Talents[TalentID.FletchingSpeed].Points += 1;
@@ -412,26 +433,30 @@ namespace Server.ACC.CSS.Systems.FletchingMagic
             arcaneArrow.AddChild(arrowMasteryII);
             eaglesRoar.AddChild(nockingMomentum);
 
-            // Layer 6: Mastery nodes.
+            // --- Layer 6: Mastery nodes ---
             nodeIndex <<= 1;
+            // Passive Node: Expanded Range – Enhances fletching range
             var expandedRange = new SkillNode(nodeIndex, "Expanded Range", 11, "Enhances fletching range", (p) =>
             {
                 profile.Talents[TalentID.FletchingRange].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Passive Node: Mystic Quiver – Boosts arrow yield with magic
             var mysticQuiver = new SkillNode(nodeIndex, "Mystic Quiver", 11, "Boosts arrow yield with magic", (p) =>
             {
                 profile.Talents[TalentID.FletchingYield].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Spell Node 10: Ancient Archer – Unlocks ancient arrow spells (0x200)
             var ancientArcher = new SkillNode(nodeIndex, "Ancient Archer", 11, "Unlocks ancient arrow spells", (p) =>
             {
                 profile.Talents[TalentID.FletchingSpells].Points |= 0x200;
             });
 
             nodeIndex <<= 1;
+            // Passive Node: Rapid Reload – Increases crafting speed
             var rapidReload = new SkillNode(nodeIndex, "Rapid Reload", 11, "Increases crafting speed", (p) =>
             {
                 profile.Talents[TalentID.FletchingSpeed].Points += 1;
@@ -442,27 +467,31 @@ namespace Server.ACC.CSS.Systems.FletchingMagic
             arrowMasteryII.AddChild(ancientArcher);
             nockingMomentum.AddChild(rapidReload);
 
-            // Layer 7: Pinnacle bonuses.
+            // --- Layer 7: Pinnacle bonuses ---
             nodeIndex <<= 1;
-            var shieldOfFeathers = new SkillNode(nodeIndex, "Shield of Feathers", 12, "Provides a protective barrier", (p) =>
+            // Spell Node 11: Shield of Feathers – Unlocks protective arrow spells (0x400)
+            var shieldOfFeathers = new SkillNode(nodeIndex, "Shield of Feathers", 12, "Unlocks protective arrow spells", (p) =>
             {
                 profile.Talents[TalentID.FletchingSpells].Points |= 0x400;
             });
 
             nodeIndex <<= 1;
+            // Passive Node: Quiver's Endowment – Further increases arrow yield
             var quiversEndowment = new SkillNode(nodeIndex, "Quiver's Endowment", 12, "Further increases arrow yield", (p) =>
             {
                 profile.Talents[TalentID.FletchingYield].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Passive Node: Archer's Fury – Boosts arrow accuracy
             var archersFury = new SkillNode(nodeIndex, "Archer's Fury", 12, "Boosts arrow accuracy", (p) =>
             {
                 profile.Talents[TalentID.FletchingAccuracy].Points += 1;
             });
 
             nodeIndex <<= 1;
-            var echoesOfTheWind = new SkillNode(nodeIndex, "Echoes of the Wind", 12, "Enhances fletching range", (p) =>
+            // Passive Node: Echoes of The Wind – Enhances fletching range
+            var echoesOfTheWind = new SkillNode(nodeIndex, "Echoes of The Wind", 12, "Enhances fletching range", (p) =>
             {
                 profile.Talents[TalentID.FletchingRange].Points += 1;
             });
@@ -472,11 +501,12 @@ namespace Server.ACC.CSS.Systems.FletchingMagic
             ancientArcher.AddChild(archersFury);
             rapidReload.AddChild(echoesOfTheWind);
 
-            // Layer 8: Ultimate node.
+            // --- Layer 8: Ultimate node ---
             nodeIndex <<= 1;
-            var ultimateFletcher = new SkillNode(nodeIndex, "Ultimate Fletcher", 13, "Ultimate bonus: boosts all fletching skills", (p) =>
+            // Spell Node 12: Ultimate Fletcher – Ultimate bonus now unlocks a single spell (0x800)
+            var ultimateFletcher = new SkillNode(nodeIndex, "Ultimate Fletcher", 13, "Ultimate bonus: unlocks complete spell power", (p) =>
             {
-                profile.Talents[TalentID.FletchingSpells].Points |= 0x800 | 0x1000;
+                profile.Talents[TalentID.FletchingSpells].Points |= 0x800;
                 profile.Talents[TalentID.FletchingAccuracy].Points += 1;
                 profile.Talents[TalentID.FletchingSpeed].Points += 1;
                 profile.Talents[TalentID.FletchingYield].Points += 1;

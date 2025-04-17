@@ -1,0 +1,77 @@
+100% plug and play. This system keeps track of simple achievements which are account based.
+
+Your players can open the achievement gump by utilzing the command [MyAchievements
+Your players can open other players achievements by utilizing the comment [Achievements
+Staff can wipe all achievement data to start over by utilizing command [ResetAchievements
+
+If you do not want players seeing other players achievements, in AchievementSystem.cs, approximately line 77, you would set "ViewOthersAchievements" to false. It is true by default
+
+In the event you want to add a context menu entry to PlayerMobile.cs, approximately line 2292, you replace this:
+
+				if (DisabledPvpWarning)
+				{
+					list.Add(new CallbackEntry(1113797, EnablePvpWarning));
+				}
+
+with
+
+				if (DisabledPvpWarning)
+				{
+					list.Add(new CallbackEntry(1113797, EnablePvpWarning));
+				}
+
+
+				list.Add(new Server.Achievements.AchivementGumpEntry(this));
+
+then, approximately line 2335, replace:
+
+
+				if (curhouse != null)
+				{
+					if (Alive && curhouse.IsAosRules && curhouse.IsFriend(from))
+					{
+						list.Add(new EjectPlayerEntry(from, this));
+					}
+				}
+
+with
+
+				if (curhouse != null)
+				{
+					if (Alive && curhouse.IsAosRules && curhouse.IsFriend(from))
+					{
+						list.Add(new EjectPlayerEntry(from, this));
+					}
+				}
+
+                		if (from is PlayerMobile)
+                		{
+                    			list.Add(new Server.Achievements.AchivementGumpEntry((PlayerMobile)from, this));
+                		}
+
+Awarding Items:
+
+To Award Sovereigns (for UO Store):
+1. AchievementSystem.cs,  approximately line 81, change AwardSovereigns to 'true'
+***note*** line 82 awards, by default, 5x the achievement points as sovereigns
+
+To award custom items:
+1. As explained above, change AwardSovereigns to true.
+2. in Achievement.cs approximately line 206, comment out this code:
+
+			pm.AccountSovereigns += award;
+			pm.SendMessage("You have earned {0} account sovereigns!", award);
+
+3. and replace it with the appropriate code to add your custom item. For example:
+
+			int award = (int)((double)Points * AchievementSystem.SovereignMultiplier);
+
+			if (award > 0)
+			{
+				//pm.AccountSovereigns += award;
+				//pm.SendMessage("You have earned {0} account sovereigns!", award);
+
+				var item = new ChainLegs();
+				pm.AddToBackpack(item);
+				pm.SendMessage("You have been awarded chainmail leggins for completing this achievement!")
+			}

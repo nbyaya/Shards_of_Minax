@@ -265,33 +265,36 @@ namespace Server.ACC.CSS.Systems.MageryMagic
             // Layer 0: Root Node – Unlocks basic magery spells.
             Root = new SkillNode(nodeIndex, "Arcane Awakening", 5, "Unlocks basic magery spells", (p) =>
             {
-                // Unlock basic spells.
                 profile.Talents[TalentID.MagerySpells].Points |= 0x01;
             });
 
             // Layer 1: Basic bonuses and spell unlocks.
             nodeIndex <<= 1;
-            var mysticFocus = new SkillNode(nodeIndex, "Mystic Focus", 6, "Enhances mana regeneration", (p) =>
+            // Convert Mystic Focus to a spell unlock (0x800)
+            var mysticFocus = new SkillNode(0x800, "Mystic Focus", 6, "Unlocks a new magery spell", (p) =>
             {
-                profile.Talents[TalentID.MageryManaRegen].Points += 1;
+                profile.Talents[TalentID.MagerySpells].Points |= 0x800;
             });
 
             nodeIndex <<= 1;
-            var elementalAffinity = new SkillNode(nodeIndex, "Elemental Affinity", 6, "Reduces elemental spell costs", (p) =>
+            // Elemental Affinity becomes spell unlock (0x02)
+            var elementalAffinity = new SkillNode(0x02, "Elemental Affinity", 6, "Unlocks elemental spells", (p) =>
             {
                 profile.Talents[TalentID.MagerySpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
-            var runicEmpowerment = new SkillNode(nodeIndex, "Runic Empowerment", 6, "Unlocks bonus runic spells", (p) =>
+            // Runic Empowerment becomes spell unlock (0x04)
+            var runicEmpowerment = new SkillNode(0x04, "Runic Empowerment", 6, "Unlocks bonus runic spells", (p) =>
             {
                 profile.Talents[TalentID.MagerySpells].Points |= 0x04;
             });
 
             nodeIndex <<= 1;
-            var ethericInsight = new SkillNode(nodeIndex, "Etheric Insight", 6, "Increases casting speed", (p) =>
+            // Convert Etheric Insight to a spell unlock (0x1000)
+            var ethericInsight = new SkillNode(0x1000, "Etheric Insight", 6, "Unlocks a new magery spell", (p) =>
             {
-                profile.Talents[TalentID.MageryCastSpeed].Points += 1;
+                profile.Talents[TalentID.MagerySpells].Points |= 0x1000;
             });
 
             Root.AddChild(mysticFocus);
@@ -301,27 +304,31 @@ namespace Server.ACC.CSS.Systems.MageryMagic
 
             // Layer 2: Advanced spell unlocks and bonuses.
             nodeIndex <<= 1;
-            var spellWeaving = new SkillNode(nodeIndex, "Spell Weaving", 7, "Unlocks advanced magery spells", (p) =>
+            // Spell Weaving becomes spell unlock (0x08)
+            var spellWeaving = new SkillNode(0x08, "Spell Weaving", 7, "Unlocks advanced magery spells", (p) =>
             {
                 profile.Talents[TalentID.MagerySpells].Points |= 0x08;
             });
 
             nodeIndex <<= 1;
-            var arcaneEfficiency = new SkillNode(nodeIndex, "Arcane Efficiency", 7, "Reduces mana costs further", (p) =>
+            // Convert Arcane Efficiency to a spell unlock (0x2000)
+            var arcaneEfficiency = new SkillNode(0x2000, "Arcane Efficiency", 7, "Unlocks a new magery spell", (p) =>
             {
-                profile.Talents[TalentID.MageryManaPool].Points += 1;
+                profile.Talents[TalentID.MagerySpells].Points |= 0x2000;
             });
 
             nodeIndex <<= 1;
-            var sigilMastery = new SkillNode(nodeIndex, "Sigil Mastery", 7, "Boosts spell potency", (p) =>
+            // Convert Sigil Mastery to a spell unlock (0x4000)
+            var sigilMastery = new SkillNode(0x4000, "Sigil Mastery", 7, "Unlocks a new magery spell", (p) =>
             {
-                profile.Talents[TalentID.MagerySpellPower].Points += 1;
+                profile.Talents[TalentID.MagerySpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
-            var mindOverMatter = new SkillNode(nodeIndex, "Mind Over Matter", 7, "Increases maximum mana", (p) =>
+            // Convert Mind Over Matter to a spell unlock (0x8000)
+            var mindOverMatter = new SkillNode(0x8000, "Mind Over Matter", 7, "Unlocks a new magery spell", (p) =>
             {
-                profile.Talents[TalentID.MageryManaPool].Points += 1;
+                profile.Talents[TalentID.MagerySpells].Points |= 0x8000;
             });
 
             mysticFocus.AddChild(spellWeaving);
@@ -331,24 +338,28 @@ namespace Server.ACC.CSS.Systems.MageryMagic
 
             // Layer 3: Further improvements.
             nodeIndex <<= 1;
+            // Mystic Surge remains passive.
             var mysticSurge = new SkillNode(nodeIndex, "Mystic Surge", 8, "Enhances spell damage", (p) =>
             {
                 profile.Talents[TalentID.MagerySpellPower].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Focusing Runes remains passive.
             var focusingRunes = new SkillNode(nodeIndex, "Focusing Runes", 8, "Increases casting speed further", (p) =>
             {
                 profile.Talents[TalentID.MageryCastSpeed].Points += 1;
             });
 
             nodeIndex <<= 1;
-            var enchantedResonance = new SkillNode(nodeIndex, "Enchanted Resonance", 8, "Unlocks resonant spells", (p) =>
+            // Enchanted Resonance becomes spell unlock (0x10)
+            var enchantedResonance = new SkillNode(0x10, "Enchanted Resonance", 8, "Unlocks resonant spells", (p) =>
             {
                 profile.Talents[TalentID.MagerySpells].Points |= 0x10;
             });
 
             nodeIndex <<= 1;
+            // Arcane Shielding remains passive.
             var arcaneShielding = new SkillNode(nodeIndex, "Arcane Shielding", 8, "Boosts magic resistance", (p) =>
             {
                 profile.Talents[TalentID.MageryMagicResist].Points += 1;
@@ -361,24 +372,28 @@ namespace Server.ACC.CSS.Systems.MageryMagic
 
             // Layer 4: More refined bonuses.
             nodeIndex <<= 1;
+            // Eldritch Wisdom remains passive.
             var eldritchWisdom = new SkillNode(nodeIndex, "Eldritch Wisdom", 9, "Enhances magical knowledge", (p) =>
             {
                 profile.Talents[TalentID.MageryXPBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Mana Torrent remains passive.
             var manaTorrent = new SkillNode(nodeIndex, "Mana Torrent", 9, "Accelerates mana regeneration", (p) =>
             {
                 profile.Talents[TalentID.MageryManaRegen].Points += 1;
             });
 
             nodeIndex <<= 1;
-            var spellSynergy = new SkillNode(nodeIndex, "Spell Synergy", 9, "Combines spells for greater effect", (p) =>
+            // Spell Synergy becomes spell unlock (0x20)
+            var spellSynergy = new SkillNode(0x20, "Spell Synergy", 9, "Combines spells for greater effect", (p) =>
             {
                 profile.Talents[TalentID.MagerySpells].Points |= 0x20;
             });
 
             nodeIndex <<= 1;
+            // Temporal Distortion remains passive.
             var temporalDistortion = new SkillNode(nodeIndex, "Temporal Distortion", 9, "Reduces casting delays", (p) =>
             {
                 profile.Talents[TalentID.MageryCastSpeed].Points += 1;
@@ -391,24 +406,28 @@ namespace Server.ACC.CSS.Systems.MageryMagic
 
             // Layer 5: Expert-level improvements.
             nodeIndex <<= 1;
+            // Primal Conduit remains passive.
             var primalConduit = new SkillNode(nodeIndex, "Primal Conduit", 10, "Increases overall spell power", (p) =>
             {
                 profile.Talents[TalentID.MagerySpellPower].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Sorcerers Insight remains passive.
             var sorcerersInsight = new SkillNode(nodeIndex, "Sorcerer's Insight", 10, "Enhances magical insight", (p) =>
             {
                 profile.Talents[TalentID.MageryXPBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
-            var arcaneConvergence = new SkillNode(nodeIndex, "Arcane Convergence", 10, "Unlocks convergent spells", (p) =>
+            // Arcane Convergence becomes spell unlock (0x40)
+            var arcaneConvergence = new SkillNode(0x40, "Arcane Convergence", 10, "Unlocks convergent spells", (p) =>
             {
                 profile.Talents[TalentID.MagerySpells].Points |= 0x40;
             });
 
             nodeIndex <<= 1;
+            // Mystic Rejuvenation remains passive.
             var mysticRejuvenation = new SkillNode(nodeIndex, "Mystic Rejuvenation", 10, "Improves mana regeneration", (p) =>
             {
                 profile.Talents[TalentID.MageryManaRegen].Points += 1;
@@ -421,25 +440,28 @@ namespace Server.ACC.CSS.Systems.MageryMagic
 
             // Layer 6: Mastery nodes.
             nodeIndex <<= 1;
+            // Essence of the Archmage remains passive.
             var essenceOfTheArchmage = new SkillNode(nodeIndex, "Essence of the Archmage", 11, "Passively enhances all magery abilities", (p) =>
             {
-                // For demonstration, we add a bonus to a general MageryNodes talent.
                 profile.Talents[TalentID.MageryNodes].Points += 1;
             });
 
             nodeIndex <<= 1;
-            var runicTransmutation = new SkillNode(nodeIndex, "Runic Transmutation", 11, "Unlocks transmutation spells", (p) =>
+            // Runic Transmutation becomes spell unlock (0x80)
+            var runicTransmutation = new SkillNode(0x80, "Runic Transmutation", 11, "Unlocks transmutation spells", (p) =>
             {
                 profile.Talents[TalentID.MagerySpells].Points |= 0x80;
             });
 
             nodeIndex <<= 1;
+            // Celestial Alignment remains passive.
             var celestialAlignment = new SkillNode(nodeIndex, "Celestial Alignment", 11, "Further increases casting speed", (p) =>
             {
                 profile.Talents[TalentID.MageryCastSpeed].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Magical Fortitude remains passive.
             var magicalFortitude = new SkillNode(nodeIndex, "Magical Fortitude", 11, "Enhances magic resistance", (p) =>
             {
                 profile.Talents[TalentID.MageryMagicResist].Points += 1;
@@ -452,25 +474,29 @@ namespace Server.ACC.CSS.Systems.MageryMagic
 
             // Layer 7: Pinnacle bonuses.
             nodeIndex <<= 1;
-            var aetherialBarrier = new SkillNode(nodeIndex, "Aetherial Barrier", 12, "Unlocks barrier spells", (p) =>
+            // Aetherial Barrier becomes spell unlock (0x100)
+            var aetherialBarrier = new SkillNode(0x100, "Aetherial Barrier", 12, "Unlocks barrier spells", (p) =>
             {
                 profile.Talents[TalentID.MagerySpells].Points |= 0x100;
             });
 
             nodeIndex <<= 1;
+            // Luminous Vigor remains passive.
             var luminousVigor = new SkillNode(nodeIndex, "Luminous Vigor", 12, "Boosts maximum mana", (p) =>
             {
                 profile.Talents[TalentID.MageryManaPool].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Infinite Wisdom remains passive.
             var infiniteWisdom = new SkillNode(nodeIndex, "Infinite Wisdom", 12, "Increases magical experience gain", (p) =>
             {
                 profile.Talents[TalentID.MageryXPBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
-            var spellbindMastery = new SkillNode(nodeIndex, "Spellbind Mastery", 12, "Enhances ultimate spellcasting abilities", (p) =>
+            // Spellbind Mastery becomes spell unlock (0x200)
+            var spellbindMastery = new SkillNode(0x200, "Spellbind Mastery", 12, "Unlocks ultimate spellcasting abilities", (p) =>
             {
                 profile.Talents[TalentID.MagerySpells].Points |= 0x200;
             });
@@ -482,9 +508,10 @@ namespace Server.ACC.CSS.Systems.MageryMagic
 
             // Layer 8: Ultimate node.
             nodeIndex <<= 1;
-            var archmageAscension = new SkillNode(nodeIndex, "Archmage Ascension", 13, "Ultimate bonus: greatly enhances all magery abilities", (p) =>
+            // Archmage Ascension becomes spell unlock (0x400 only)
+            var archmageAscension = new SkillNode(0x400, "Archmage Ascension", 13, "Ultimate bonus: greatly enhances all magery abilities", (p) =>
             {
-                profile.Talents[TalentID.MagerySpells].Points |= 0x400 | 0x800;
+                profile.Talents[TalentID.MagerySpells].Points |= 0x400;
                 profile.Talents[TalentID.MageryManaRegen].Points += 1;
                 profile.Talents[TalentID.MageryCastSpeed].Points += 1;
                 profile.Talents[TalentID.MagerySpellPower].Points += 1;

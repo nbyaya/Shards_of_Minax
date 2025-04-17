@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+using Server.Custom;
 using Server.Commands;
 using Server.Mobiles;
 using Server.Items;
@@ -79,6 +80,20 @@ namespace Server.Engines.UOStore
         public static void Initialize()
         {
             // Featured
+			UltimaStore.Register<KingLootbox>(new TextDefinition[] { new TextDefinition("Kings Lootbox"), new TextDefinition("A Kings Ransom!") }, 0, 0xE41, 0, 2331, 400, StoreCategory.Featured);
+			UltimaStore.Register<WorldLootbox>(new TextDefinition[] { new TextDefinition("World Lootbox"), new TextDefinition("Treasures of the World") }, 0, 0xE41, 0, 2534, 250, StoreCategory.Featured);
+			UltimaStore.Register<GearLootbox>(new TextDefinition[] { new TextDefinition("Gear Lootbox"), new TextDefinition("Powerful Gear") }, 0, 0xE41, 0, 1005, 250, StoreCategory.Featured);
+			UltimaStore.Register<MagicalLootbox>(new TextDefinition[] { new TextDefinition("Magical Lootbox"), new TextDefinition("Items of Power") }, 0, 0xE41, 0, 2704, 200, StoreCategory.Featured);			
+			UltimaStore.Register<DecorativeLootbox>(new TextDefinition[] { new TextDefinition("Decorative Lootbox"), new TextDefinition("Decorative Items") }, 0, 0xE41, 0, 2534, 200, StoreCategory.Featured);		
+			UltimaStore.Register<OneHandedTransformDeed>(new TextDefinition[] { new TextDefinition("OneHanded Transform Deed"), new TextDefinition("Make a weapon one handed") }, 0, 0x14F0, 0, 0, 50, StoreCategory.Featured);
+			UltimaStore.Register<MirrorOfKalandra>(new TextDefinition[] { new TextDefinition("Mirror Of Kalandra"), new TextDefinition("Duplicate an Item") }, 0, 0x4044, 0, 0, 1000, StoreCategory.Featured);
+			UltimaStore.Register<MirrorOfHonesty>(new TextDefinition[] { new TextDefinition("Mirror Of Honesty"), new TextDefinition("Finds Secrets") }, 0, 0x2252, 0, 0, 1000, StoreCategory.Featured);
+			UltimaStore.Register<MedalOfHonor>(new TextDefinition[] { new TextDefinition("Medal Of Honor"), new TextDefinition("The highest honor is Britannia") }, 0, 0x14F0, 0, 0, 1200, StoreCategory.Featured);				
+			UltimaStore.Register<ZeonRune>(new TextDefinition[] { new TextDefinition("ZeonRune"), new TextDefinition("Advanced") }, 0, 0x1423, 0, 0, 750, StoreCategory.Featured);
+
+
+
+
             StoreCategory cat = StoreCategory.Featured;
             Register<VirtueShield>(1109616, 1158384, 0x7818, 0, 0, 1500, cat);
             Register<SoulstoneToken>(1158404, 1158405, 0x2A93, 0, 2598, 1000, cat, ConstructSoulstone);
@@ -88,6 +103,23 @@ namespace Server.Engines.UOStore
             Register<MythicCharacterToken>(new TextDefinition[] { 1156614, 1156615 }, 1156679, 0x2AAA, 0, 0, 2500, cat);
 
             // Character
+			UltimaStore.Register<MaxxiaScroll>(new TextDefinition[] { new TextDefinition("Maxxia Scroll"), new TextDefinition("For Advancement") }, 0, 0xE34, 0, 0, 750, StoreCategory.Character);
+			UltimaStore.Register<VirtueDistillationFlask>(new TextDefinition[] { new TextDefinition("Virtue Distillation Flask"), new TextDefinition("Distills Virtues into Orbs") }, 0, 0x1832, 0, 0, 750, StoreCategory.Character);
+			UltimaStore.Register<CompassionStone>(new TextDefinition[] { new TextDefinition("Compassion Stone"), new TextDefinition("Consentrated Compassion") }, 0, 0x1869, 0, 0, 750, StoreCategory.Character);
+			UltimaStore.Register<HonestyStone>(new TextDefinition[] { new TextDefinition("Honesty Stone"), new TextDefinition("Consentrated Honesty") }, 0, 0x186A, 0, 0, 750, StoreCategory.Character);
+			UltimaStore.Register<HonorStone>(new TextDefinition[] { new TextDefinition("Honor Stone"), new TextDefinition("Consentrated Honor") }, 0, 0x186B, 0, 0, 750, StoreCategory.Character);
+			UltimaStore.Register<JusticeStone>(new TextDefinition[] { new TextDefinition("Justice Stone"), new TextDefinition("Consentrated Justice") }, 0, 0x186C, 0, 0, 750, StoreCategory.Character);
+			UltimaStore.Register<SacrificeStone>(new TextDefinition[] { new TextDefinition("Sacrifice Stone"), new TextDefinition("Sacrifice Compassion") }, 0, 0x186D, 0, 0, 750, StoreCategory.Character);
+			UltimaStore.Register<SpiritualityStone>(new TextDefinition[] { new TextDefinition("Spirituality Stone"), new TextDefinition("Consentrated Spirituality") }, 0, 0x186E, 0, 0, 750, StoreCategory.Character);
+			UltimaStore.Register<ValorStone>(new TextDefinition[] { new TextDefinition("Valor Stone"), new TextDefinition("Consentrated Valor") }, 0, 0x186F, 0, 0, 750, StoreCategory.Character);
+			UltimaStore.Register<HumilityStone>(new TextDefinition[] { new TextDefinition("Humility Stone"), new TextDefinition("Consentrated Humility") }, 0, 0x1870, 0, 0, 750, StoreCategory.Character);		
+			UltimaStore.Register<GenderChangeDeed>(new TextDefinition[] { new TextDefinition("Gender Change Deed"), new TextDefinition("Change the slot of gender") }, 0, 0x14F0, 0, 0, 750, StoreCategory.Character);
+			UltimaStore.Register<CapacityIncreaseDeed>(new TextDefinition[] { new TextDefinition("Capacity Increase Deed"), new TextDefinition("Increase backpack") }, 0, 0x14F0, 0, 0, 750, StoreCategory.Character);			
+			UltimaStore.Register<StatCapOrb>(new TextDefinition[] { new TextDefinition("StatCap Orb"), new TextDefinition("Raise stat cap +1") }, 0, 0x1869, 0, 0, 750, StoreCategory.Character);
+			UltimaStore.Register<SkillOrb>(new TextDefinition[] { new TextDefinition("SkillOrb"), new TextDefinition("Raise skillcap +1") }, 0, 0x1869, 0, 0, 750, StoreCategory.Character);			
+			UltimaStore.Register<MurderRemovalDeed>(new TextDefinition[] { new TextDefinition("Murder Removal Deed"), new TextDefinition("pay off the guards") }, 0, 0x14F0, 0, 0, 750, StoreCategory.Character);
+
+			
             cat = StoreCategory.Character;
 
             Register<HABPromotionalToken>(new TextDefinition[] { 1158741, 1156615 }, 1158740, 0x2AAA, 0, 0, 600, cat);

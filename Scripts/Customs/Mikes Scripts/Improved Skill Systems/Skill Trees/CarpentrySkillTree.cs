@@ -260,33 +260,32 @@ namespace Server.ACC.CSS.Systems.CarpentryMagic
             // Layer 0: Root Node – Unlocks basic carpentry spells.
             Root = new SkillNode(nodeIndex, "Carpenter's Call", 5, "Unlocks basic carpentry spells", (p) =>
             {
-                // Unlock basic carpentry spells.
-                profile.Talents[TalentID.CarpentrySpells].Points |= 0x01;
+                profile.Talents[TalentID.CarpentrySpells].Points |= 0x01; // Spell 0x01
             });
 
-            // Layer 1: Basic bonuses.
-            nodeIndex <<= 1;
-            var woodWhisper = new SkillNode(nodeIndex, "Wood Whisper", 6, "Enhances wood quality", (p) =>
+            // Layer 1: Basic unlocks.
+            nodeIndex <<= 1; // becomes 0x02
+            var woodWhisper = new SkillNode(nodeIndex, "Wood Whisper", 6, "Unlocks a carpentry spell", (p) =>
             {
-                profile.Talents[TalentID.CarpentryEfficiency].Points += 1;
+                profile.Talents[TalentID.CarpentrySpells].Points |= 0x02; // Spell 0x02
             });
 
-            nodeIndex <<= 1;
-            var nailPrecision = new SkillNode(nodeIndex, "Nail Precision", 6, "Improves crafting speed", (p) =>
+            nodeIndex <<= 1; // becomes 0x04
+            var nailPrecision = new SkillNode(nodeIndex, "Nail Precision", 6, "Unlocks a carpentry spell", (p) =>
             {
-                profile.Talents[TalentID.CarpentryEfficiency].Points += 1;
+                profile.Talents[TalentID.CarpentrySpells].Points |= 0x04; // Spell 0x04
             });
 
-            nodeIndex <<= 1;
-            var planingMastery = new SkillNode(nodeIndex, "Planing Mastery", 6, "Unlocks bonus board conversion spells", (p) =>
+            nodeIndex <<= 1; // becomes 0x08
+            var planingMastery = new SkillNode(nodeIndex, "Planing Mastery", 6, "Unlocks a carpentry spell", (p) =>
             {
-                profile.Talents[TalentID.CarpentrySpells].Points |= 0x04;
+                profile.Talents[TalentID.CarpentrySpells].Points |= 0x08; // Spell 0x08
             });
 
-            nodeIndex <<= 1;
-            var timberYield = new SkillNode(nodeIndex, "Timber Yield", 6, "Increases material yield", (p) =>
+            nodeIndex <<= 1; // becomes 0x10
+            var timberYield = new SkillNode(nodeIndex, "Timber Yield", 6, "Unlocks a carpentry spell", (p) =>
             {
-                profile.Talents[TalentID.CarpentryYield].Points += 1;
+                profile.Talents[TalentID.CarpentrySpells].Points |= 0x10; // Spell 0x10
             });
 
             Root.AddChild(woodWhisper);
@@ -294,29 +293,29 @@ namespace Server.ACC.CSS.Systems.CarpentryMagic
             Root.AddChild(planingMastery);
             Root.AddChild(timberYield);
 
-            // Layer 2: Advanced magical and practical bonuses.
-            nodeIndex <<= 1;
-            var forestCrafts = new SkillNode(nodeIndex, "Forest Crafts", 7, "Unlocks additional carpentry spells", (p) =>
+            // Layer 2: Advanced magical and practical unlocks.
+            nodeIndex <<= 1; // becomes 0x20
+            var forestCrafts = new SkillNode(nodeIndex, "Forest Crafts", 7, "Unlocks a carpentry spell", (p) =>
             {
-                profile.Talents[TalentID.CarpentrySpells].Points |= 0x08;
+                profile.Talents[TalentID.CarpentrySpells].Points |= 0x20; // Spell 0x20
             });
 
-            nodeIndex <<= 1;
-            var carvingMastery = new SkillNode(nodeIndex, "Carving Mastery", 7, "Improves crafting efficiency", (p) =>
+            nodeIndex <<= 1; // becomes 0x40
+            var carvingMastery = new SkillNode(nodeIndex, "Carving Mastery", 7, "Unlocks a carpentry spell", (p) =>
             {
-                profile.Talents[TalentID.CarpentryEfficiency].Points += 1;
+                profile.Talents[TalentID.CarpentrySpells].Points |= 0x40; // Spell 0x40
             });
 
-            nodeIndex <<= 1;
-            var arcaneJoinery = new SkillNode(nodeIndex, "Arcane Joinery", 7, "Unlocks advanced carpentry spells", (p) =>
+            nodeIndex <<= 1; // becomes 0x80
+            var arcaneJoinery = new SkillNode(nodeIndex, "Arcane Joinery", 7, "Unlocks a carpentry spell", (p) =>
             {
-                profile.Talents[TalentID.CarpentrySpells].Points |= 0x10;
+                profile.Talents[TalentID.CarpentrySpells].Points |= 0x80; // Spell 0x80
             });
 
-            nodeIndex <<= 1;
-            var extendedReach = new SkillNode(nodeIndex, "Extended Reach", 7, "Increases crafting range", (p) =>
+            nodeIndex <<= 1; // becomes 0x100
+            var extendedReach = new SkillNode(nodeIndex, "Extended Reach", 7, "Unlocks a carpentry spell", (p) =>
             {
-                profile.Talents[TalentID.CarpentryRange].Points += 1;
+                profile.Talents[TalentID.CarpentrySpells].Points |= 0x100; // Spell 0x100
             });
 
             woodWhisper.AddChild(forestCrafts);
@@ -325,28 +324,28 @@ namespace Server.ACC.CSS.Systems.CarpentryMagic
             timberYield.AddChild(extendedReach);
 
             // Layer 3: Further yield and efficiency improvements.
-            nodeIndex <<= 1;
-            var grainInsight = new SkillNode(nodeIndex, "Grain Insight", 8, "Enhances material quality", (p) =>
+            nodeIndex <<= 1; // becomes 0x200
+            var grainInsight = new SkillNode(nodeIndex, "Grain Insight", 8, "Unlocks a carpentry spell", (p) =>
             {
-                profile.Talents[TalentID.CarpentryYield].Points += 1;
+                profile.Talents[TalentID.CarpentrySpells].Points |= 0x200; // Spell 0x200
             });
 
-            nodeIndex <<= 1;
-            var precisionCuts = new SkillNode(nodeIndex, "Precision Cuts", 8, "Further improves crafting efficiency", (p) =>
+            nodeIndex <<= 1; // becomes 0x400
+            var precisionCuts = new SkillNode(nodeIndex, "Precision Cuts", 8, "Unlocks a carpentry spell", (p) =>
             {
-                profile.Talents[TalentID.CarpentryEfficiency].Points += 1;
+                profile.Talents[TalentID.CarpentrySpells].Points |= 0x400; // Spell 0x400
             });
 
-            nodeIndex <<= 1;
-            var structuralFortitude = new SkillNode(nodeIndex, "Structural Fortitude", 8, "Unlocks a protective bonus", (p) =>
+            nodeIndex <<= 1; // becomes 0x800
+            var structuralFortitude = new SkillNode(nodeIndex, "Structural Fortitude", 8, "Unlocks a carpentry spell", (p) =>
             {
-                profile.Talents[TalentID.CarpentrySpells].Points |= 0x20;
+                profile.Talents[TalentID.CarpentrySpells].Points |= 0x800; // Spell 0x800
             });
 
-            nodeIndex <<= 1;
-            var agileAssembly = new SkillNode(nodeIndex, "Agile Assembly", 8, "Improves reaction speed", (p) =>
+            nodeIndex <<= 1; // becomes 0x1000
+            var agileAssembly = new SkillNode(nodeIndex, "Agile Assembly", 8, "Unlocks a carpentry spell", (p) =>
             {
-                profile.Talents[TalentID.CarpentryEfficiency].Points += 1;
+                profile.Talents[TalentID.CarpentrySpells].Points |= 0x1000; // Spell 0x1000
             });
 
             forestCrafts.AddChild(grainInsight);
@@ -355,25 +354,25 @@ namespace Server.ACC.CSS.Systems.CarpentryMagic
             extendedReach.AddChild(agileAssembly);
 
             // Layer 4: More advanced magical enhancements.
-            nodeIndex <<= 1;
-            var artisanBlessing = new SkillNode(nodeIndex, "Artisan's Blessing", 9, "Enhances material yield further", (p) =>
+            nodeIndex <<= 1; // becomes 0x2000
+            var artisanBlessing = new SkillNode(nodeIndex, "Artisan's Blessing", 9, "Unlocks a carpentry spell", (p) =>
             {
-                profile.Talents[TalentID.CarpentryYield].Points += 1;
+                profile.Talents[TalentID.CarpentrySpells].Points |= 0x2000; // Spell 0x2000
             });
 
-            nodeIndex <<= 1;
-            var enchantedHammer = new SkillNode(nodeIndex, "Enchanted Hammer", 9, "Unlocks enchanted bonus spells", (p) =>
+            nodeIndex <<= 1; // becomes 0x4000
+            var enchantedHammer = new SkillNode(nodeIndex, "Enchanted Hammer", 9, "Unlocks a carpentry spell", (p) =>
             {
-                profile.Talents[TalentID.CarpentrySpells].Points |= 0x40;
+                profile.Talents[TalentID.CarpentrySpells].Points |= 0x4000; // Spell 0x4000
             });
 
-            nodeIndex <<= 1;
-            var elderCrafting = new SkillNode(nodeIndex, "Elder Crafting", 9, "Unlocks elder carpentry spells", (p) =>
+            nodeIndex <<= 1; // becomes 0x8000
+            var elderCrafting = new SkillNode(nodeIndex, "Elder Crafting", 9, "Unlocks a carpentry spell", (p) =>
             {
-                profile.Talents[TalentID.CarpentrySpells].Points |= 0x80;
+                profile.Talents[TalentID.CarpentrySpells].Points |= 0x8000; // Spell 0x8000
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // Next node (for Steady Hands) remains as a passive bonus.
             var steadyHands = new SkillNode(nodeIndex, "Steady Hands", 9, "Boosts crafting range", (p) =>
             {
                 profile.Talents[TalentID.CarpentryRange].Points += 1;
@@ -384,7 +383,7 @@ namespace Server.ACC.CSS.Systems.CarpentryMagic
             structuralFortitude.AddChild(elderCrafting);
             agileAssembly.AddChild(steadyHands);
 
-            // Layer 5: Expert-level nodes.
+            // Layer 5: Expert-level nodes (passive bonuses remain).
             nodeIndex <<= 1;
             var masterfulEfficiency = new SkillNode(nodeIndex, "Masterful Efficiency", 10, "Boosts overall crafting efficiency", (p) =>
             {
@@ -400,7 +399,8 @@ namespace Server.ACC.CSS.Systems.CarpentryMagic
             nodeIndex <<= 1;
             var craftingMastery = new SkillNode(nodeIndex, "Crafting Mastery", 10, "Unlocks mastery level spells", (p) =>
             {
-                profile.Talents[TalentID.CarpentrySpells].Points |= 0x100;
+                // Remains as a passive bonus.
+                profile.Talents[TalentID.CarpentryEfficiency].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -414,7 +414,7 @@ namespace Server.ACC.CSS.Systems.CarpentryMagic
             elderCrafting.AddChild(craftingMastery);
             steadyHands.AddChild(momentumCreation);
 
-            // Layer 6: Mastery nodes.
+            // Layer 6: Mastery nodes (passive bonuses remain).
             nodeIndex <<= 1;
             var expandedVision = new SkillNode(nodeIndex, "Expanded Vision", 11, "Enhances spatial awareness", (p) =>
             {
@@ -430,7 +430,8 @@ namespace Server.ACC.CSS.Systems.CarpentryMagic
             nodeIndex <<= 1;
             var ancientArtificer = new SkillNode(nodeIndex, "Ancient Artificer", 11, "Unlocks ancient carpentry spells", (p) =>
             {
-                profile.Talents[TalentID.CarpentrySpells].Points |= 0x200;
+                // Remains as a passive bonus.
+                profile.Talents[TalentID.CarpentryYield].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -444,11 +445,12 @@ namespace Server.ACC.CSS.Systems.CarpentryMagic
             craftingMastery.AddChild(ancientArtificer);
             momentumCreation.AddChild(transformationTouch);
 
-            // Layer 7: Final, pinnacle bonuses.
+            // Layer 7: Final, pinnacle bonuses (passive bonuses remain).
             nodeIndex <<= 1;
             var ironcladBarrier = new SkillNode(nodeIndex, "Ironclad Barrier", 12, "Provides a protective bonus", (p) =>
             {
-                profile.Talents[TalentID.CarpentrySpells].Points |= 0x400;
+                // Passive bonus.
+                profile.Talents[TalentID.CarpentryEfficiency].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -474,11 +476,10 @@ namespace Server.ACC.CSS.Systems.CarpentryMagic
             ancientArtificer.AddChild(forgeFury);
             transformationTouch.AddChild(echoesOfCraft);
 
-            // Layer 8: Ultimate node.
+            // Layer 8: Ultimate node (passive bonus remains).
             nodeIndex <<= 1;
             var ultimateArtificer = new SkillNode(nodeIndex, "Ultimate Artificer", 13, "Ultimate bonus: boosts all carpentry skills", (p) =>
             {
-                profile.Talents[TalentID.CarpentrySpells].Points |= 0x800 | 0x1000;
                 profile.Talents[TalentID.CarpentryRange].Points += 1;
                 profile.Talents[TalentID.CarpentryEfficiency].Points += 1;
                 profile.Talents[TalentID.CarpentryYield].Points += 1;

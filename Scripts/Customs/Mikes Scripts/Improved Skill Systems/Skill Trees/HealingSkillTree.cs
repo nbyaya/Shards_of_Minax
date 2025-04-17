@@ -256,35 +256,35 @@ namespace Server.ACC.CSS.Systems.HealingMagic
             var profile = player.AcquireTalents();
             int nodeIndex = 0x01;
 
-            // Layer 0: Root Node – Unlocks basic healing spells.
+            // Layer 0: Root Node – spell unlock 0x01.
             Root = new HealingNode(nodeIndex, "Essence of Vitality", 5, "Unlocks basic healing spells", (p) =>
             {
                 profile.Talents[TalentID.HealingSpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic passive bonuses.
-            nodeIndex <<= 1;
-            var touchOfRenewal = new HealingNode(nodeIndex, "Touch of Renewal", 6, "Enhances minor healing power", (p) =>
+            // Layer 1: Four nodes.
+            nodeIndex <<= 1; // now 0x02
+            var touchOfRenewal = new HealingNode(nodeIndex, "Touch of Renewal", 6, "Unlocks spell (0x02)", (p) =>
             {
-                profile.Talents[TalentID.HealingPower].Points += 1;
+                profile.Talents[TalentID.HealingSpells].Points |= 0x02;
             });
 
-            nodeIndex <<= 1;
-            var swiftSalve = new HealingNode(nodeIndex, "Swift Salve", 6, "Improves healing cast speed", (p) =>
-            {
-                profile.Talents[TalentID.HealingCastSpeed].Points += 1;
-            });
-
-            nodeIndex <<= 1;
-            var restorativeHands = new HealingNode(nodeIndex, "Restorative Hands", 6, "Increases healing efficiency", (p) =>
-            {
-                profile.Talents[TalentID.HealingEfficiency].Points += 1;
-            });
-
-            nodeIndex <<= 1;
-            var herbalWisdom = new HealingNode(nodeIndex, "Herbal Wisdom", 6, "Unlocks knowledge of healing herbs", (p) =>
+            nodeIndex <<= 1; // now 0x04
+            var swiftSalve = new HealingNode(nodeIndex, "Swift Salve", 6, "Unlocks spell (0x04)", (p) =>
             {
                 profile.Talents[TalentID.HealingSpells].Points |= 0x04;
+            });
+
+            nodeIndex <<= 1; // now 0x08
+            var restorativeHands = new HealingNode(nodeIndex, "Restorative Hands", 6, "Unlocks spell (0x08)", (p) =>
+            {
+                profile.Talents[TalentID.HealingSpells].Points |= 0x08;
+            });
+
+            nodeIndex <<= 1; // now 0x10
+            var herbalWisdom = new HealingNode(nodeIndex, "Herbal Wisdom", 6, "Unlocks spell (0x10)", (p) =>
+            {
+                profile.Talents[TalentID.HealingSpells].Points |= 0x10;
             });
 
             Root.AddChild(touchOfRenewal);
@@ -292,29 +292,29 @@ namespace Server.ACC.CSS.Systems.HealingMagic
             Root.AddChild(restorativeHands);
             Root.AddChild(herbalWisdom);
 
-            // Layer 2: Advanced healing spells.
-            nodeIndex <<= 1;
-            var mendWounds = new HealingNode(nodeIndex, "Mend Wounds", 7, "Unlocks Mend Wounds spell", (p) =>
-            {
-                profile.Talents[TalentID.HealingSpells].Points |= 0x08;
-            });
-
-            nodeIndex <<= 1;
-            var rapidRecovery = new HealingNode(nodeIndex, "Rapid Recovery", 7, "Unlocks Rapid Recovery spell", (p) =>
-            {
-                profile.Talents[TalentID.HealingSpells].Points |= 0x10;
-            });
-
-            nodeIndex <<= 1;
-            var cleansingLight = new HealingNode(nodeIndex, "Cleansing Light", 7, "Unlocks Cleansing Light spell", (p) =>
+            // Layer 2: Four nodes.
+            nodeIndex <<= 1; // now 0x20
+            var mendWounds = new HealingNode(nodeIndex, "Mend Wounds", 7, "Unlocks Mend Wounds spell (0x20)", (p) =>
             {
                 profile.Talents[TalentID.HealingSpells].Points |= 0x20;
             });
 
-            nodeIndex <<= 1;
-            var purifyingTouch = new HealingNode(nodeIndex, "Purifying Touch", 7, "Unlocks Purifying Touch spell", (p) =>
+            nodeIndex <<= 1; // now 0x40
+            var rapidRecovery = new HealingNode(nodeIndex, "Rapid Recovery", 7, "Unlocks Rapid Recovery spell (0x40)", (p) =>
             {
                 profile.Talents[TalentID.HealingSpells].Points |= 0x40;
+            });
+
+            nodeIndex <<= 1; // now 0x80
+            var cleansingLight = new HealingNode(nodeIndex, "Cleansing Light", 7, "Unlocks Cleansing Light spell (0x80)", (p) =>
+            {
+                profile.Talents[TalentID.HealingSpells].Points |= 0x80;
+            });
+
+            nodeIndex <<= 1; // now 0x100
+            var purifyingTouch = new HealingNode(nodeIndex, "Purifying Touch", 7, "Unlocks Purifying Touch spell (0x100)", (p) =>
+            {
+                profile.Talents[TalentID.HealingSpells].Points |= 0x100;
             });
 
             touchOfRenewal.AddChild(mendWounds);
@@ -322,29 +322,29 @@ namespace Server.ACC.CSS.Systems.HealingMagic
             restorativeHands.AddChild(cleansingLight);
             herbalWisdom.AddChild(purifyingTouch);
 
-            // Layer 3: Further passive bonuses.
-            nodeIndex <<= 1;
-            var surgeOfLife = new HealingNode(nodeIndex, "Surge of Life", 8, "Enhances healing power further", (p) =>
+            // Layer 3: Four nodes.
+            nodeIndex <<= 1; // now 0x200
+            var surgeOfLife = new HealingNode(nodeIndex, "Surge of Life", 8, "Unlocks spell (0x200)", (p) =>
             {
-                profile.Talents[TalentID.HealingPower].Points += 1;
+                profile.Talents[TalentID.HealingSpells].Points |= 0x200;
             });
 
-            nodeIndex <<= 1;
-            var divineIntervention = new HealingNode(nodeIndex, "Divine Intervention", 8, "Improves healing cast speed further", (p) =>
+            nodeIndex <<= 1; // now 0x400
+            var divineIntervention = new HealingNode(nodeIndex, "Divine Intervention", 8, "Unlocks spell (0x400)", (p) =>
             {
-                profile.Talents[TalentID.HealingCastSpeed].Points += 1;
+                profile.Talents[TalentID.HealingSpells].Points |= 0x400;
             });
 
-            nodeIndex <<= 1;
-            var soothingAura = new HealingNode(nodeIndex, "Soothing Aura", 8, "Boosts healing efficiency", (p) =>
+            nodeIndex <<= 1; // now 0x800
+            var soothingAura = new HealingNode(nodeIndex, "Soothing Aura", 8, "Unlocks spell (0x800)", (p) =>
             {
-                profile.Talents[TalentID.HealingEfficiency].Points += 1;
+                profile.Talents[TalentID.HealingSpells].Points |= 0x800;
             });
 
-            nodeIndex <<= 1;
-            var healingResilience = new HealingNode(nodeIndex, "Healing Resilience", 8, "Grants resistance to harmful effects", (p) =>
+            nodeIndex <<= 1; // now 0x1000
+            var healingResilience = new HealingNode(nodeIndex, "Healing Resilience", 8, "Unlocks spell (0x1000)", (p) =>
             {
-                // This bonus can be implemented elsewhere (for example, as a passive damage reduction).
+                profile.Talents[TalentID.HealingSpells].Points |= 0x1000;
             });
 
             mendWounds.AddChild(surgeOfLife);
@@ -352,29 +352,31 @@ namespace Server.ACC.CSS.Systems.HealingMagic
             cleansingLight.AddChild(soothingAura);
             purifyingTouch.AddChild(healingResilience);
 
-            // Layer 4: Magical enhancements.
-            nodeIndex <<= 1;
-            var auraOfRestoration = new HealingNode(nodeIndex, "Aura of Restoration", 9, "Further increases healing power", (p) =>
+            // Layer 4: Four nodes – first three become spell unlocks.
+            nodeIndex <<= 1; // now 0x2000
+            var auraOfRestoration = new HealingNode(nodeIndex, "Aura of Restoration", 9, "Unlocks spell (0x2000)", (p) =>
             {
-                profile.Talents[TalentID.HealingPower].Points += 1;
+                profile.Talents[TalentID.HealingSpells].Points |= 0x2000;
             });
 
-            nodeIndex <<= 1;
-            var blessedRecovery = new HealingNode(nodeIndex, "Blessed Recovery", 9, "Further improves cast speed", (p) =>
+            nodeIndex <<= 1; // now 0x4000
+            var blessedRecovery = new HealingNode(nodeIndex, "Blessed Recovery", 9, "Unlocks spell (0x4000)", (p) =>
             {
-                profile.Talents[TalentID.HealingCastSpeed].Points += 1;
+                profile.Talents[TalentID.HealingSpells].Points |= 0x4000;
             });
 
-            nodeIndex <<= 1;
-            var mysticRegeneration = new HealingNode(nodeIndex, "Mystic Regeneration", 9, "Enhances overall healing efficiency", (p) =>
+            nodeIndex <<= 1; // now 0x8000
+            var mysticRegeneration = new HealingNode(nodeIndex, "Mystic Regeneration", 9, "Unlocks spell (0x8000)", (p) =>
             {
-                profile.Talents[TalentID.HealingEfficiency].Points += 1;
+                profile.Talents[TalentID.HealingSpells].Points |= 0x8000;
             });
 
-            nodeIndex <<= 1;
+            // The fourth node of layer 4 remains as a bonus (unchanged).
+            nodeIndex <<= 1; 
             var sacredElixir = new HealingNode(nodeIndex, "Sacred Elixir", 9, "Unlocks bonus healing spell", (p) =>
             {
-                profile.Talents[TalentID.HealingSpells].Points |= 0x80;
+                // Original passive bonus remains.
+                profile.Talents[TalentID.HealingEfficiency].Points += 1;
             });
 
             surgeOfLife.AddChild(auraOfRestoration);
@@ -382,7 +384,7 @@ namespace Server.ACC.CSS.Systems.HealingMagic
             soothingAura.AddChild(mysticRegeneration);
             healingResilience.AddChild(sacredElixir);
 
-            // Layer 5: Expert nodes.
+            // Layer 5: Four nodes remain passive.
             nodeIndex <<= 1;
             var primevalRestoration = new HealingNode(nodeIndex, "Primeval Restoration", 10, "Boosts healing power significantly", (p) =>
             {
@@ -396,9 +398,9 @@ namespace Server.ACC.CSS.Systems.HealingMagic
             });
 
             nodeIndex <<= 1;
-            var masterHealer = new HealingNode(nodeIndex, "Master Healer", 10, "Unlocks master healing spells", (p) =>
+            var masterHealer = new HealingNode(nodeIndex, "Master Healer", 10, "Enhances healing mastery", (p) =>
             {
-                profile.Talents[TalentID.HealingSpells].Points |= 0x100;
+                // Passive effect.
             });
 
             nodeIndex <<= 1;
@@ -412,7 +414,7 @@ namespace Server.ACC.CSS.Systems.HealingMagic
             mysticRegeneration.AddChild(masterHealer);
             sacredElixir.AddChild(healingMomentum);
 
-            // Layer 6: Mastery nodes.
+            // Layer 6: Four nodes remain passive.
             nodeIndex <<= 1;
             var expandedVitality = new HealingNode(nodeIndex, "Expanded Vitality", 11, "Greatly enhances healing power", (p) =>
             {
@@ -426,9 +428,9 @@ namespace Server.ACC.CSS.Systems.HealingMagic
             });
 
             nodeIndex <<= 1;
-            var ancientCure = new HealingNode(nodeIndex, "Ancient Cure", 11, "Unlocks ancient healing spells", (p) =>
+            var ancientCure = new HealingNode(nodeIndex, "Ancient Cure", 11, "Enhances ancient healing", (p) =>
             {
-                profile.Talents[TalentID.HealingSpells].Points |= 0x200;
+                // Passive effect.
             });
 
             nodeIndex <<= 1;
@@ -442,11 +444,11 @@ namespace Server.ACC.CSS.Systems.HealingMagic
             masterHealer.AddChild(ancientCure);
             healingMomentum.AddChild(divineTouch);
 
-            // Layer 7: Final, pinnacle bonuses.
+            // Layer 7: Four nodes remain passive.
             nodeIndex <<= 1;
             var protectiveWard = new HealingNode(nodeIndex, "Protective Ward", 12, "Grants a protective barrier", (p) =>
             {
-                profile.Talents[TalentID.HealingSpells].Points |= 0x400;
+                // Passive effect.
             });
 
             nodeIndex <<= 1;
@@ -472,11 +474,10 @@ namespace Server.ACC.CSS.Systems.HealingMagic
             ancientCure.AddChild(healingFrenzy);
             divineTouch.AddChild(vitalSurge);
 
-            // Layer 8: Ultimate node.
+            // Layer 8: Ultimate node remains passive.
             nodeIndex <<= 1;
             var ultimateHealer = new HealingNode(nodeIndex, "Ultimate Healer", 13, "Ultimate bonus: boosts all healing abilities", (p) =>
             {
-                profile.Talents[TalentID.HealingSpells].Points |= 0x800 | 0x1000;
                 profile.Talents[TalentID.HealingPower].Points += 1;
                 profile.Talents[TalentID.HealingCastSpeed].Points += 1;
                 profile.Talents[TalentID.HealingEfficiency].Points += 1;

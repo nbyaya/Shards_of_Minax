@@ -271,19 +271,19 @@ namespace Server.ACC.CSS.Systems.ChivalryMagic
             });
 
             nodeIndex <<= 1;
-            var swordsmanship = new ChivalrySkillNode(nodeIndex, "Swordsmanship", 6, "Improves offensive damage", (p) =>
+            var swordsmanship = new ChivalrySkillNode(nodeIndex, "Swordsmanship", 6, "Unlocks an offensive spell", (p) =>
             {
-                profile.Talents[TalentID.ChivalryDamage].Points += 1;
+                profile.Talents[TalentID.ChivalrySpells].Points |= 0x40;
             });
 
             nodeIndex <<= 1;
-            var holyFocus = new ChivalrySkillNode(nodeIndex, "Holy Focus", 6, "Boosts healing abilities", (p) =>
+            var holyFocus = new ChivalrySkillNode(nodeIndex, "Holy Focus", 6, "Unlocks a healing spell", (p) =>
             {
-                profile.Talents[TalentID.ChivalryHealing].Points += 1;
+                profile.Talents[TalentID.ChivalrySpells].Points |= 0x80;
             });
 
             nodeIndex <<= 1;
-            var valorBeacon = new ChivalrySkillNode(nodeIndex, "Valor's Beacon", 6, "Increases aura of courage", (p) =>
+            var valorBeacon = new ChivalrySkillNode(nodeIndex, "Valor's Beacon", 6, "Passively increases aura of courage", (p) =>
             {
                 // (Passive bonus – effect to be implemented elsewhere)
             });
@@ -307,9 +307,9 @@ namespace Server.ACC.CSS.Systems.ChivalryMagic
             });
 
             nodeIndex <<= 1;
-            var blessedArmor = new ChivalrySkillNode(nodeIndex, "Blessed Armor", 7, "Strengthens defensive stance", (p) =>
+            var blessedArmor = new ChivalrySkillNode(nodeIndex, "Blessed Armor", 7, "Unlocks a defensive spell", (p) =>
             {
-                profile.Talents[TalentID.ChivalryDefense].Points += 1;
+                profile.Talents[TalentID.ChivalrySpells].Points |= 0x100;
             });
 
             nodeIndex <<= 1;
@@ -337,15 +337,15 @@ namespace Server.ACC.CSS.Systems.ChivalryMagic
             });
 
             nodeIndex <<= 1;
-            var healingLight = new ChivalrySkillNode(nodeIndex, "Healing Light", 8, "Enhances recovery rates", (p) =>
+            var healingLight = new ChivalrySkillNode(nodeIndex, "Healing Light", 8, "Unlocks a healing spell", (p) =>
             {
-                profile.Talents[TalentID.ChivalryHealing].Points += 1;
+                profile.Talents[TalentID.ChivalrySpells].Points |= 0x200;
             });
 
             nodeIndex <<= 1;
-            var inspiringPresence = new ChivalrySkillNode(nodeIndex, "Inspiring Presence", 8, "Boosts allies' morale passively", (p) =>
+            var inspiringPresence = new ChivalrySkillNode(nodeIndex, "Inspiring Presence", 8, "Unlocks an inspirational spell", (p) =>
             {
-                // (Passive bonus – effect to be implemented elsewhere)
+                profile.Talents[TalentID.ChivalrySpells].Points |= 0x400;
             });
 
             knightlyResolve.AddChild(righteousStrike);
@@ -367,9 +367,9 @@ namespace Server.ACC.CSS.Systems.ChivalryMagic
             });
 
             nodeIndex <<= 1;
-            var piercingSmite = new ChivalrySkillNode(nodeIndex, "Piercing Smite", 9, "Improves offensive smites", (p) =>
+            var piercingSmite = new ChivalrySkillNode(nodeIndex, "Piercing Smite", 9, "Unlocks an offensive spell", (p) =>
             {
-                profile.Talents[TalentID.ChivalryDamage].Points += 1;
+                profile.Talents[TalentID.ChivalrySpells].Points |= 0x800;
             });
 
             nodeIndex <<= 1;
@@ -403,9 +403,9 @@ namespace Server.ACC.CSS.Systems.ChivalryMagic
             });
 
             nodeIndex <<= 1;
-            var gallantStride = new ChivalrySkillNode(nodeIndex, "Gallant Stride", 10, "Passively increases movement and combat readiness", (p) =>
+            var gallantStride = new ChivalrySkillNode(nodeIndex, "Gallant Stride", 10, "Unlocks a movement spell", (p) =>
             {
-                // (Passive bonus – effect to be implemented elsewhere)
+                profile.Talents[TalentID.ChivalrySpells].Points |= 0x1000;
             });
 
             sacredCharge.AddChild(valorUnleashed);
@@ -415,9 +415,9 @@ namespace Server.ACC.CSS.Systems.ChivalryMagic
 
             // Layer 6: Mastery nodes.
             nodeIndex <<= 1;
-            var unyieldingValor = new ChivalrySkillNode(nodeIndex, "Unyielding Valor", 11, "Further enhances offensive prowess", (p) =>
+            var unyieldingValor = new ChivalrySkillNode(nodeIndex, "Unyielding Valor", 11, "Unlocks an offensive spell", (p) =>
             {
-                profile.Talents[TalentID.ChivalryDamage].Points += 1;
+                profile.Talents[TalentID.ChivalrySpells].Points |= 0x2000;
             });
 
             nodeIndex <<= 1;
@@ -433,9 +433,9 @@ namespace Server.ACC.CSS.Systems.ChivalryMagic
             });
 
             nodeIndex <<= 1;
-            var tacticalMastery = new ChivalrySkillNode(nodeIndex, "Tactical Mastery", 11, "Passively enhances combat tactics", (p) =>
+            var tacticalMastery = new ChivalrySkillNode(nodeIndex, "Tactical Mastery", 11, "Unlocks a tactical spell", (p) =>
             {
-                // (Passive bonus – effect to be implemented elsewhere)
+                profile.Talents[TalentID.ChivalrySpells].Points |= 0x4000;
             });
 
             valorUnleashed.AddChild(unyieldingValor);
@@ -457,9 +457,9 @@ namespace Server.ACC.CSS.Systems.ChivalryMagic
             });
 
             nodeIndex <<= 1;
-            var sanctifiedTouch = new ChivalrySkillNode(nodeIndex, "Sanctified Touch", 12, "Passively boosts healing effects", (p) =>
+            var sanctifiedTouch = new ChivalrySkillNode(nodeIndex, "Sanctified Touch", 12, "Unlocks a healing spell", (p) =>
             {
-                profile.Talents[TalentID.ChivalryHealing].Points += 1;
+                profile.Talents[TalentID.ChivalrySpells].Points |= 0x8000;
             });
 
             nodeIndex <<= 1;

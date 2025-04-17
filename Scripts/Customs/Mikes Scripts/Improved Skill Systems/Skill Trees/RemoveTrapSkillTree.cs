@@ -270,7 +270,7 @@ namespace Server.ACC.CSS.Systems.RemoveTrapMagic
                 profile.Talents[TalentID.RemoveTrapSpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic passive bonuses.
+            // Layer 1: Basic nodes.
             nodeIndex <<= 1;
             var trapAwareness = new SkillNode(nodeIndex, "Trap Awareness", 6, "Increases trap detection chance", (p) =>
             {
@@ -278,15 +278,16 @@ namespace Server.ACC.CSS.Systems.RemoveTrapMagic
             });
 
             nodeIndex <<= 1;
-            var steadyHands = new SkillNode(nodeIndex, "Steady Hands", 6, "Improves disarming speed", (p) =>
+            // Changed to spell unlock (0x1000)
+            var tinkersInsight = new SkillNode(nodeIndex, "Tinker's Insight", 6, "Unlocks additional trap removal spell", (p) =>
             {
-                profile.Talents[TalentID.RemoveTrapSpeed].Points += 1;
+                profile.Talents[TalentID.RemoveTrapSpells].Points |= 0x1000;
             });
 
             nodeIndex <<= 1;
-            var tinkersInsight = new SkillNode(nodeIndex, "Tinker's Insight", 6, "Boosts disarm success chance", (p) =>
+            var steadyHands = new SkillNode(nodeIndex, "Steady Hands", 6, "Improves disarming speed", (p) =>
             {
-                profile.Talents[TalentID.RemoveTrapSuccessChance].Points += 1;
+                profile.Talents[TalentID.RemoveTrapSpeed].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -297,8 +298,8 @@ namespace Server.ACC.CSS.Systems.RemoveTrapMagic
             });
 
             Root.AddChild(trapAwareness);
-            Root.AddChild(steadyHands);
             Root.AddChild(tinkersInsight);
+            Root.AddChild(steadyHands);
             Root.AddChild(trapproof);
 
             // Layer 2: Unlock additional trap spells and bonuses.
@@ -315,9 +316,10 @@ namespace Server.ACC.CSS.Systems.RemoveTrapMagic
             });
 
             nodeIndex <<= 1;
-            var silentApproach = new SkillNode(nodeIndex, "Silent Approach", 7, "Improves success chance by reducing noise", (p) =>
+            // Changed to spell unlock (0x2000)
+            var silentApproach = new SkillNode(nodeIndex, "Silent Approach", 7, "Unlocks additional trap removal spell", (p) =>
             {
-                profile.Talents[TalentID.RemoveTrapSuccessChance].Points += 1;
+                profile.Talents[TalentID.RemoveTrapSpells].Points |= 0x2000;
             });
 
             nodeIndex <<= 1;
@@ -333,9 +335,10 @@ namespace Server.ACC.CSS.Systems.RemoveTrapMagic
 
             // Layer 3: More advanced skills.
             nodeIndex <<= 1;
-            var preciseManipulation = new SkillNode(nodeIndex, "Precise Manipulation", 8, "Further increases disarm success", (p) =>
+            // Changed to spell unlock (0x4000)
+            var preciseManipulation = new SkillNode(nodeIndex, "Precise Manipulation", 8, "Unlocks additional trap removal spell", (p) =>
             {
-                profile.Talents[TalentID.RemoveTrapSuccessChance].Points += 1;
+                profile.Talents[TalentID.RemoveTrapSpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
@@ -382,9 +385,10 @@ namespace Server.ACC.CSS.Systems.RemoveTrapMagic
             });
 
             nodeIndex <<= 1;
-            var mechanicsLuck = new SkillNode(nodeIndex, "Mechanic's Luck", 9, "Improves overall chance of trap removal", (p) =>
+            // Changed to spell unlock (0x8000)
+            var mechanicsLuck = new SkillNode(nodeIndex, "Mechanic's Luck", 9, "Unlocks additional trap removal spell", (p) =>
             {
-                profile.Talents[TalentID.RemoveTrapSuccessChance].Points += 1;
+                profile.Talents[TalentID.RemoveTrapSpells].Points |= 0x8000;
             });
 
             preciseManipulation.AddChild(explosiveCounter);

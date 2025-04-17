@@ -266,36 +266,36 @@ namespace Server.ACC.CSS.Systems.TacticsMagic
             // Layer 0: Root Node – Unlocks basic tactics spells.
             Root = new SkillNode(nodeIndex, "Commander's Call", 5, "Unlocks basic tactical maneuvers", (p) =>
             {
-                // Unlock basic tactics spells.
+                // Spell unlock using 0x01.
                 profile.Talents[TalentID.TacticsSpells].Points |= 0x01;
             });
 
             // Layer 1: Basic tactical bonuses.
             nodeIndex <<= 1;
-            var flankingManeuver = new SkillNode(nodeIndex, "Flanking Maneuver", 6, "Enhances positioning for attack", (p) =>
+            // Flanking Maneuver now unlocks a spell (0x02)
+            var flankingManeuver = new SkillNode(nodeIndex, "Flanking Maneuver", 6, "Unlocks a tactical spell", (p) =>
             {
-                // Increase chance to flank enemies.
-                profile.Talents[TalentID.TacticsPassive].Points += 1;
+                profile.Talents[TalentID.TacticsSpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
             var defensiveStance = new SkillNode(nodeIndex, "Defensive Stance", 6, "Boosts defensive capabilities", (p) =>
             {
-                // Improve damage reduction.
+                // Remains passive.
                 profile.Talents[TalentID.TacticsPassive].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Quick Deployment remains a spell unlock (0x04)
             var quickDeployment = new SkillNode(nodeIndex, "Quick Deployment", 6, "Reduces delay in executing tactics", (p) =>
             {
-                // Decrease spell casting delay.
                 profile.Talents[TalentID.TacticsSpells].Points |= 0x04;
             });
 
             nodeIndex <<= 1;
             var fieldAwareness = new SkillNode(nodeIndex, "Field Awareness", 6, "Increases battlefield perception", (p) =>
             {
-                // Enhance detection of enemy weaknesses.
+                // Remains passive.
                 profile.Talents[TalentID.TacticsPassive].Points += 1;
             });
 
@@ -306,18 +306,21 @@ namespace Server.ACC.CSS.Systems.TacticsMagic
 
             // Layer 2: Advanced tactical maneuvers.
             nodeIndex <<= 1;
-            var ambushTactics = new SkillNode(nodeIndex, "Ambush Tactics", 7, "Unlocks surprise attack spells", (p) =>
+            // Ambush Tactics remains a spell unlock (0x08)
+            var ambushTactics = new SkillNode(nodeIndex, "Ambush Tactics", 7, "Unlocks a surprise attack spell", (p) =>
             {
                 profile.Talents[TalentID.TacticsSpells].Points |= 0x08;
             });
 
             nodeIndex <<= 1;
-            var coveringFire = new SkillNode(nodeIndex, "Covering Fire", 7, "Unlocks suppressive fire abilities", (p) =>
+            // Covering Fire remains a spell unlock (0x10)
+            var coveringFire = new SkillNode(nodeIndex, "Covering Fire", 7, "Unlocks a suppressive fire ability", (p) =>
             {
                 profile.Talents[TalentID.TacticsSpells].Points |= 0x10;
             });
 
             nodeIndex <<= 1;
+            // Strategic Withdrawal remains a spell unlock (0x20)
             var strategicWithdrawal = new SkillNode(nodeIndex, "Strategic Withdrawal", 7, "Unlocks evasive maneuvers", (p) =>
             {
                 profile.Talents[TalentID.TacticsSpells].Points |= 0x20;
@@ -326,6 +329,7 @@ namespace Server.ACC.CSS.Systems.TacticsMagic
             nodeIndex <<= 1;
             var battlefieldControl = new SkillNode(nodeIndex, "Battlefield Control", 7, "Increases control over combat flow", (p) =>
             {
+                // Remains passive.
                 profile.Talents[TalentID.TacticsPassive].Points += 1;
             });
 
@@ -336,26 +340,30 @@ namespace Server.ACC.CSS.Systems.TacticsMagic
 
             // Layer 3: Coordination and counter tactics.
             nodeIndex <<= 1;
-            var coordinatedStrike = new SkillNode(nodeIndex, "Coordinated Strike", 8, "Enhances attack speed", (p) =>
+            // Coordinated Strike now unlocks a spell (0x800)
+            var coordinatedStrike = new SkillNode(nodeIndex, "Coordinated Strike", 8, "Unlocks an offensive tactical spell", (p) =>
             {
-                profile.Talents[TalentID.TacticsPassive].Points += 1;
+                profile.Talents[TalentID.TacticsSpells].Points |= 0x800;
             });
 
             nodeIndex <<= 1;
-            var counterManeuver = new SkillNode(nodeIndex, "Counter Maneuver", 8, "Improves enemy evasion", (p) =>
+            // Counter Maneuver now unlocks a spell (0x1000)
+            var counterManeuver = new SkillNode(nodeIndex, "Counter Maneuver", 8, "Unlocks a defensive tactical spell", (p) =>
             {
-                profile.Talents[TalentID.TacticsPassive].Points += 1;
+                profile.Talents[TalentID.TacticsSpells].Points |= 0x1000;
             });
 
             nodeIndex <<= 1;
             var commandPresence = new SkillNode(nodeIndex, "Command Presence", 8, "Boosts leadership and morale", (p) =>
             {
+                // Remains passive.
                 profile.Talents[TalentID.TacticsPassive].Points += 1;
             });
 
             nodeIndex <<= 1;
             var rapidReorganization = new SkillNode(nodeIndex, "Rapid Reorganization", 8, "Quickly adapts strategy mid-battle", (p) =>
             {
+                // Remains passive.
                 profile.Talents[TalentID.TacticsPassive].Points += 1;
             });
 
@@ -368,22 +376,26 @@ namespace Server.ACC.CSS.Systems.TacticsMagic
             nodeIndex <<= 1;
             var flawlessExecution = new SkillNode(nodeIndex, "Flawless Execution", 9, "Optimizes tactical efficiency", (p) =>
             {
+                // Remains passive.
                 profile.Talents[TalentID.TacticsPassive].Points += 1;
             });
 
             nodeIndex <<= 1;
-            var adaptiveTactics = new SkillNode(nodeIndex, "Adaptive Tactics", 9, "Improves reaction to enemy moves", (p) =>
+            // Adaptive Tactics now unlocks a spell (0x2000)
+            var adaptiveTactics = new SkillNode(nodeIndex, "Adaptive Tactics", 9, "Unlocks a reactive tactical spell", (p) =>
             {
-                profile.Talents[TalentID.TacticsPassive].Points += 1;
+                profile.Talents[TalentID.TacticsSpells].Points |= 0x2000;
             });
 
             nodeIndex <<= 1;
             var fortifiedPosition = new SkillNode(nodeIndex, "Fortified Position", 9, "Strengthens defensive formations", (p) =>
             {
+                // Remains passive.
                 profile.Talents[TalentID.TacticsPassive].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Inspiring Rally remains a spell unlock (0x40)
             var inspiringRally = new SkillNode(nodeIndex, "Inspiring Rally", 9, "Unlocks rallying cries and buffs", (p) =>
             {
                 profile.Talents[TalentID.TacticsSpells].Points |= 0x40;
@@ -398,25 +410,29 @@ namespace Server.ACC.CSS.Systems.TacticsMagic
             nodeIndex <<= 1;
             var precisionTargeting = new SkillNode(nodeIndex, "Precision Targeting", 10, "Boosts accuracy in combat", (p) =>
             {
+                // Remains passive.
                 profile.Talents[TalentID.TacticsPassive].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Battle Rhythm remains a spell unlock (0x80)
             var battleRhythm = new SkillNode(nodeIndex, "Battle Rhythm", 10, "Improves timing and execution", (p) =>
             {
                 profile.Talents[TalentID.TacticsSpells].Points |= 0x80;
             });
 
             nodeIndex <<= 1;
+            // Tactical Mastery remains a spell unlock (0x100)
             var tacticalMastery = new SkillNode(nodeIndex, "Tactical Mastery", 10, "Unlocks advanced tactical spells", (p) =>
             {
                 profile.Talents[TalentID.TacticsSpells].Points |= 0x100;
             });
 
             nodeIndex <<= 1;
-            var decisiveStrike = new SkillNode(nodeIndex, "Decisive Strike", 10, "Enhances offensive damage", (p) =>
+            // Decisive Strike now unlocks a spell (0x4000)
+            var decisiveStrike = new SkillNode(nodeIndex, "Decisive Strike", 10, "Unlocks an offensive burst spell", (p) =>
             {
-                profile.Talents[TalentID.TacticsPassive].Points += 1;
+                profile.Talents[TalentID.TacticsSpells].Points |= 0x4000;
             });
 
             flawlessExecution.AddChild(precisionTargeting);
@@ -426,26 +442,30 @@ namespace Server.ACC.CSS.Systems.TacticsMagic
 
             // Layer 6: Strategic insight.
             nodeIndex <<= 1;
-            var insightfulAnalysis = new SkillNode(nodeIndex, "Insightful Analysis", 11, "Improves overall strategy", (p) =>
+            // Insightful Analysis now unlocks a spell (0x8000)
+            var insightfulAnalysis = new SkillNode(nodeIndex, "Insightful Analysis", 11, "Unlocks a strategic insight spell", (p) =>
             {
-                profile.Talents[TalentID.TacticsPassive].Points += 1;
+                profile.Talents[TalentID.TacticsSpells].Points |= 0x8000;
             });
 
             nodeIndex <<= 1;
             var rapidAdjustment = new SkillNode(nodeIndex, "Rapid Adjustment", 11, "Quickly shifts tactics", (p) =>
             {
+                // Remains passive.
                 profile.Talents[TalentID.TacticsPassive].Points += 1;
             });
 
             nodeIndex <<= 1;
             var unyieldingResolve = new SkillNode(nodeIndex, "Unyielding Resolve", 11, "Boosts defense in adversity", (p) =>
             {
+                // Remains passive.
                 profile.Talents[TalentID.TacticsPassive].Points += 1;
             });
 
             nodeIndex <<= 1;
             var dynamicFormation = new SkillNode(nodeIndex, "Dynamic Formation", 11, "Enhances group synergy", (p) =>
             {
+                // Remains passive.
                 profile.Talents[TalentID.TacticsPassive].Points += 1;
             });
 
@@ -458,16 +478,19 @@ namespace Server.ACC.CSS.Systems.TacticsMagic
             nodeIndex <<= 1;
             var steadfastCommand = new SkillNode(nodeIndex, "Steadfast Command", 12, "Greatly improves leadership", (p) =>
             {
+                // Remains passive.
                 profile.Talents[TalentID.TacticsPassive].Points += 1;
             });
 
             nodeIndex <<= 1;
             var tacticalSupremacy = new SkillNode(nodeIndex, "Tactical Supremacy", 12, "Dominates the battlefield with strategy", (p) =>
             {
+                // Remains passive.
                 profile.Talents[TalentID.TacticsPassive].Points += 1;
             });
 
             nodeIndex <<= 1;
+            // Master Strategist remains a spell unlock (0x200)
             var masterStrategist = new SkillNode(nodeIndex, "Master Strategist", 12, "Unlocks unique strategic spells", (p) =>
             {
                 profile.Talents[TalentID.TacticsSpells].Points |= 0x200;
@@ -476,6 +499,7 @@ namespace Server.ACC.CSS.Systems.TacticsMagic
             nodeIndex <<= 1;
             var lastStand = new SkillNode(nodeIndex, "Last Stand", 12, "Boosts survival in dire moments", (p) =>
             {
+                // Remains passive.
                 profile.Talents[TalentID.TacticsPassive].Points += 1;
             });
 
@@ -486,10 +510,10 @@ namespace Server.ACC.CSS.Systems.TacticsMagic
 
             // Layer 8: Ultimate node.
             nodeIndex <<= 1;
+            // Ultimate Strategist now unlocks a spell (0x400)
             var ultimateStrategist = new SkillNode(nodeIndex, "Ultimate Strategist", 13, "Ultimate bonus: enhances all tactical abilities", (p) =>
             {
-                profile.Talents[TalentID.TacticsSpells].Points |= 0x400 | 0x800;
-                profile.Talents[TalentID.TacticsPassive].Points += 1;
+                profile.Talents[TalentID.TacticsSpells].Points |= 0x400;
             });
 
             steadfastCommand.AddChild(ultimateStrategist);

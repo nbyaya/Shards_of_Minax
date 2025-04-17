@@ -262,11 +262,11 @@ namespace Server.ACC.CSS.Systems.MusicianshipMagic
                 profile.Talents[TalentID.MusicianshipSpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic bonuses.
+            // Layer 1: Basic bonuses and spells.
             nodeIndex <<= 1;
-            var rhythmicPerception = new SkillNode(nodeIndex, "Rhythmic Perception", 6, "Enhances your sense of rhythm", (p) =>
+            var rhythmicPerception = new SkillNode(nodeIndex, "Rhythmic Perception", 6, "Unlocks a minor melody spell", (p) =>
             {
-                profile.Talents[TalentID.MusicianshipPerformance].Points += 1;
+                profile.Talents[TalentID.MusicianshipSpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
@@ -293,7 +293,7 @@ namespace Server.ACC.CSS.Systems.MusicianshipMagic
             Root.AddChild(harmonicConvergence);
             Root.AddChild(soundMastery);
 
-            // Layer 2: Advanced bonuses.
+            // Layer 2: Advanced bonuses and spells.
             nodeIndex <<= 1;
             var stageWhisper = new SkillNode(nodeIndex, "Stage Whisper", 7, "Unlocks additional performance spells", (p) =>
             {
@@ -355,9 +355,9 @@ namespace Server.ACC.CSS.Systems.MusicianshipMagic
 
             // Layer 4: More advanced enhancements.
             nodeIndex <<= 1;
-            var sonorousAria = new SkillNode(nodeIndex, "Sonorous Aria", 9, "Enhances your vocal abilities", (p) =>
+            var sonorousAria = new SkillNode(nodeIndex, "Sonorous Aria", 9, "Unlocks a vocal spell", (p) =>
             {
-                profile.Talents[TalentID.MusicianshipResonance].Points += 1;
+                profile.Talents[TalentID.MusicianshipSpells].Points |= 0x2000;
             });
 
             nodeIndex <<= 1;
@@ -391,9 +391,9 @@ namespace Server.ACC.CSS.Systems.MusicianshipMagic
             });
 
             nodeIndex <<= 1;
-            var bountifulEncore = new SkillNode(nodeIndex, "Bountiful Encore", 10, "Increases bonus performance effects", (p) =>
+            var bountifulEncore = new SkillNode(nodeIndex, "Bountiful Encore", 10, "Unlocks a performance spell", (p) =>
             {
-                profile.Talents[TalentID.MusicianshipResonance].Points += 1;
+                profile.Talents[TalentID.MusicianshipSpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
@@ -421,9 +421,9 @@ namespace Server.ACC.CSS.Systems.MusicianshipMagic
             });
 
             nodeIndex <<= 1;
-            var mysticMelody = new SkillNode(nodeIndex, "Mystic Melody", 11, "Boosts bonus musical yield", (p) =>
+            var mysticMelody = new SkillNode(nodeIndex, "Mystic Melody", 11, "Unlocks an ethereal musical spell", (p) =>
             {
-                profile.Talents[TalentID.MusicianshipResonance].Points += 1;
+                profile.Talents[TalentID.MusicianshipSpells].Points |= 0x8000;
             });
 
             nodeIndex <<= 1;

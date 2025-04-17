@@ -272,11 +272,16 @@ namespace Server.Custom
 			merchant.MoveToWorld(locations[maxClues], facets[maxClues]);
 		}
 
-        private static int CalculateMaxClues(Mobile from)
-        {
-            int itemIDSkill = from.Skills[SkillName.ItemID].Fixed / 10; // 0 to 1000 -> 0 to 100
-            return Math.Max(3, Math.Min(10, 200 / itemIDSkill));
-        }
+		private static int CalculateMaxClues(Mobile from)
+		{
+			int itemIDSkill = from.Skills[SkillName.ItemID].Fixed / 10;
+			if (itemIDSkill == 0)
+			{
+				itemIDSkill = 1; // Set a default value to avoid division by zero
+			}
+			return Math.Max(3, Math.Min(10, 200 / itemIDSkill));
+		}
+
 
         private static void GetRandomLocations(int count, List<Point3D> locations, List<Map> facets)
         {

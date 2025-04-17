@@ -252,34 +252,34 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
             int nodeIndex = 0x01;
 
             // Layer 0: Root Node – Unlocks basic Animal Lore spells.
-            Root = new AnimalLoreSkillNode(nodeIndex, "Call of the Wild", 5, "Unlocks basic Animal Lore spells", (p) =>
+            Root = new AnimalLoreSkillNode(nodeIndex, "Call of the Wild", 5, "Unlocks spell", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic bonuses.
+            // Layer 1: Basic nodes.
             nodeIndex <<= 1;
-            var beastSense = new AnimalLoreSkillNode(nodeIndex, "Beast Sense", 6, "Increases detection range of animals", (p) =>
+            var beastSense = new AnimalLoreSkillNode(nodeIndex, "Beast Sense", 6, "Unlocks spell", (p) =>
             {
-                profile.Talents[TalentID.AnimalLoreRange].Points += 1;
+                profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x02;
             });
 
             nodeIndex <<= 1;
-            var feralAgility = new AnimalLoreSkillNode(nodeIndex, "Feral Agility", 6, "Enhances movement speed when near animals", (p) =>
+            var feralAgility = new AnimalLoreSkillNode(nodeIndex, "Feral Agility", 6, "Unlocks spell", (p) =>
             {
-                profile.Talents[TalentID.AnimalLoreAgility].Points += 1;
+                profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x80;
             });
 
             nodeIndex <<= 1;
-            var predatorInstinct = new AnimalLoreSkillNode(nodeIndex, "Predator's Instinct", 6, "Unlocks bonus animal lore spells", (p) =>
+            var predatorInstinct = new AnimalLoreSkillNode(nodeIndex, "Predator's Instinct", 6, "Unlocks spell", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x04;
             });
 
             nodeIndex <<= 1;
-            var natureBond = new AnimalLoreSkillNode(nodeIndex, "Nature's Bond", 6, "Improves animal taming success", (p) =>
+            var natureBond = new AnimalLoreSkillNode(nodeIndex, "Nature's Bond", 6, "Unlocks spell", (p) =>
             {
-                profile.Talents[TalentID.AnimalLoreTaming].Points += 1;
+                profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x2000;
             });
 
             Root.AddChild(beastSense);
@@ -287,29 +287,29 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
             Root.AddChild(predatorInstinct);
             Root.AddChild(natureBond);
 
-            // Layer 2: Advanced magical and practical bonuses.
+            // Layer 2: Advanced magical and practical nodes.
             nodeIndex <<= 1;
-            var primalWhisper = new AnimalLoreSkillNode(nodeIndex, "Primal Whisper", 7, "Unlocks additional animal lore spells", (p) =>
+            var primalWhisper = new AnimalLoreSkillNode(nodeIndex, "Primal Whisper", 7, "Unlocks spell", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x08;
             });
 
             nodeIndex <<= 1;
-            var packTactics = new AnimalLoreSkillNode(nodeIndex, "Pack Tactics", 7, "Enhances group animal interactions", (p) =>
+            var packTactics = new AnimalLoreSkillNode(nodeIndex, "Pack Tactics", 7, "Unlocks spell", (p) =>
             {
-                profile.Talents[TalentID.AnimalLoreGroup].Points += 1;
+                profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x4000;
             });
 
             nodeIndex <<= 1;
-            var beastlyMight = new AnimalLoreSkillNode(nodeIndex, "Beastly Might", 7, "Unlocks advanced animal lore spells", (p) =>
+            var beastlyMight = new AnimalLoreSkillNode(nodeIndex, "Beastly Might", 7, "Unlocks spell", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x10;
             });
 
             nodeIndex <<= 1;
-            var wildEmpathy = new AnimalLoreSkillNode(nodeIndex, "Wild Empathy", 7, "Increases animal friendliness", (p) =>
+            var wildEmpathy = new AnimalLoreSkillNode(nodeIndex, "Wild Empathy", 7, "Unlocks spell", (p) =>
             {
-                profile.Talents[TalentID.AnimalLoreEmpathy].Points += 1;
+                profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x8000;
             });
 
             beastSense.AddChild(primalWhisper);
@@ -331,7 +331,7 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
             });
 
             nodeIndex <<= 1;
-            var alphaRoar = new AnimalLoreSkillNode(nodeIndex, "Alpha Roar", 8, "Unlocks a powerful roar spell", (p) =>
+            var alphaRoar = new AnimalLoreSkillNode(nodeIndex, "Alpha Roar", 8, "Unlocks spell", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x20;
             });
@@ -355,7 +355,7 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
             });
 
             nodeIndex <<= 1;
-            var callOfTheHunt = new AnimalLoreSkillNode(nodeIndex, "Call of the Hunt", 9, "Unlocks a bonus hunting spell", (p) =>
+            var callOfTheHunt = new AnimalLoreSkillNode(nodeIndex, "Call of the Hunt", 9, "Unlocks spell", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x40;
             });
@@ -391,7 +391,7 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
             });
 
             nodeIndex <<= 1;
-            var animalMastery = new AnimalLoreSkillNode(nodeIndex, "Animal Mastery", 10, "Unlocks mastery level animal lore spells", (p) =>
+            var animalMastery = new AnimalLoreSkillNode(nodeIndex, "Animal Mastery", 10, "Unlocks spell", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x100;
             });
@@ -421,7 +421,7 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
             });
 
             nodeIndex <<= 1;
-            var ancientBeastmaster = new AnimalLoreSkillNode(nodeIndex, "Ancient Beastmaster", 11, "Unlocks ancient animal lore spells", (p) =>
+            var ancientBeastmaster = new AnimalLoreSkillNode(nodeIndex, "Ancient Beastmaster", 11, "Unlocks spell", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x200;
             });
@@ -439,19 +439,19 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
 
             // Layer 7: Final, pinnacle bonuses.
             nodeIndex <<= 1;
-            var furBarrier = new AnimalLoreSkillNode(nodeIndex, "Fur Barrier", 12, "Provides a protective barrier", (p) =>
+            var furBarrier = new AnimalLoreSkillNode(nodeIndex, "Fur Barrier", 12, "Unlocks spell", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x400;
             });
 
             nodeIndex <<= 1;
-            var wildEndowment = new AnimalLoreSkillNode(nodeIndex, "Wild Endowment", 12, "Further enhances animal affinity", (p) =>
+            var wildEndowment = new AnimalLoreSkillNode(nodeIndex, "Wild Endowment", 12, "Provides further enhancement", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreHealth].Points += 1;
             });
 
             nodeIndex <<= 1;
-            var savageFury = new AnimalLoreSkillNode(nodeIndex, "Savage Fury", 12, "Boosts physical attack power", (p) =>
+            var savageFury = new AnimalLoreSkillNode(nodeIndex, "Savage Fury", 12, "Provides increased attack power", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreDamage].Points += 1;
             });
@@ -471,6 +471,7 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
             nodeIndex <<= 1;
             var ultimateBeastmaster = new AnimalLoreSkillNode(nodeIndex, "Ultimate Beastmaster", 13, "Ultimate bonus: boosts all animal lore skills", (p) =>
             {
+                // Unlocks two spells here.
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x800 | 0x1000;
                 profile.Talents[TalentID.AnimalLoreAgility].Points += 1;
                 profile.Talents[TalentID.AnimalLoreFocus].Points += 1;

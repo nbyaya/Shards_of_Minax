@@ -1,5 +1,6 @@
 using System;
 using Server.Items;
+using Bittiez.CustomSystems;
 
 namespace Server.Mobiles
 {
@@ -137,26 +138,36 @@ namespace Server.Mobiles
             return CheckConvert(bc, bc.Location, bc.Map);
         }
 
-        public static bool CheckConvert(BaseCreature bc, Point3D location, Map m)
-        {
-            if (!Core.AOS)
-                return false;
+		public static bool CheckConvert(BaseCreature bc, Point3D location, Map m)
+		{
+			if (!Core.AOS)
+				return false;
 
-            if (Array.IndexOf(Maps, m) == -1)
-                return false;
+			// existing checks
+			if (bc is BaseChampion || bc is Harrower || bc is BaseVendor || bc is BaseEscortable || bc is Clone || bc.IsParagon)
+				return false;
 
-            if (bc is BaseChampion || bc is Harrower || bc is BaseVendor || bc is BaseEscortable || bc is Clone || bc.IsParagon)
-                return false;
+			// tension-based chance + fame-based chance
+			int tension = TensionManager.Tension;
+			double tensionChance = Math.Min(tension / 300000.0, 1.0);
 
-            int fame = bc.Fame;
+			int fame = bc.Fame > 32000 ? 32000 : bc.Fame;
+			double fameChance = 1 / Math.Round(20.0 - (fame / 3200));
 
-            if (fame > 32000)
-                fame = 32000;
+			double combinedChance = Math.Max(tensionChance, fameChance);
 
-            double chance = 1 / Math.Round(20.0 - (fame / 3200));
+			// If combinedChance beats the random roll, we convert to an Augmented Paragon
+			if (combinedChance > Utility.RandomDouble())
+			{
+				// Instead of: Paragon.Convert(bc);
+				// Use our new multi-type approach:
+				ExtendedParagon.ConvertToAugmentedParagon(bc);
+				return true;
+			}
 
-            return (chance > Utility.RandomDouble());
-        }
+			return false;
+		}
+
 
         public static bool CheckArtifactChance(Mobile m, BaseCreature bc)
         {

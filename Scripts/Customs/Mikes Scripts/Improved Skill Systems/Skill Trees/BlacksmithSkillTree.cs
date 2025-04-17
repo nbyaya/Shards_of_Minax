@@ -259,35 +259,34 @@ namespace Server.ACC.CSS.Systems.BlacksmithMagic
             int nodeIndex = 0x01;
 
             // Layer 0: Root Node – Unlocks basic blacksmith spells.
-            Root = new SkillNode(nodeIndex, "Hammer of the Forge", 5, "Unlocks basic blacksmith spells", (p) =>
+            Root = new SkillNode(nodeIndex, "Hammer of the Forge", 5, "Unlocks spell: Hammer of the Forge", (p) =>
             {
-                // Unlock basic spells (bit flag example)
                 profile.Talents[TalentID.BlacksmithSpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic forging bonuses.
-            nodeIndex <<= 1;
-            var flameInitiation = new SkillNode(nodeIndex, "Flame Initiation", 6, "Enhances heat control for improved forging", (p) =>
+            // Layer 1: Four nodes become spell unlocks.
+            nodeIndex <<= 1; // 0x02
+            var flameInitiation = new SkillNode(nodeIndex, "Flame Initiation", 6, "Unlocks spell: Flame Initiation", (p) =>
             {
-                profile.Talents[TalentID.BlacksmithEfficiency].Points += 1;
+                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x02;
             });
 
-            nodeIndex <<= 1;
-            var metalSense = new SkillNode(nodeIndex, "Metal Sense", 6, "Increases ability to detect high quality ore", (p) =>
+            nodeIndex <<= 1; // 0x04
+            var metalSense = new SkillNode(nodeIndex, "Metal Sense", 6, "Unlocks spell: Metal Sense", (p) =>
             {
-                profile.Talents[TalentID.BlacksmithQuality].Points += 1;
+                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x04;
             });
 
-            nodeIndex <<= 1;
-            var efficientForging = new SkillNode(nodeIndex, "Efficient Forging", 6, "Improves forging speed", (p) =>
+            nodeIndex <<= 1; // 0x08
+            var efficientForging = new SkillNode(nodeIndex, "Efficient Forging", 6, "Unlocks spell: Efficient Forging", (p) =>
             {
-                profile.Talents[TalentID.BlacksmithEfficiency].Points += 1;
+                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x08;
             });
 
-            nodeIndex <<= 1;
-            var anvilMastery = new SkillNode(nodeIndex, "Anvil Mastery", 6, "Enhances overall forging strength", (p) =>
+            nodeIndex <<= 1; // 0x10
+            var anvilMastery = new SkillNode(nodeIndex, "Anvil Mastery", 6, "Unlocks spell: Anvil Mastery", (p) =>
             {
-                profile.Talents[TalentID.BlacksmithStrength].Points += 1;
+                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x10;
             });
 
             Root.AddChild(flameInitiation);
@@ -295,29 +294,29 @@ namespace Server.ACC.CSS.Systems.BlacksmithMagic
             Root.AddChild(efficientForging);
             Root.AddChild(anvilMastery);
 
-            // Layer 2: Advanced magical and practical bonuses.
-            nodeIndex <<= 1;
-            var sparkOfCreation = new SkillNode(nodeIndex, "Spark of Creation", 7, "Unlocks additional blacksmith spells", (p) =>
+            // Layer 2: Next four nodes become spell unlocks.
+            nodeIndex <<= 1; // 0x20
+            var sparkOfCreation = new SkillNode(nodeIndex, "Spark of Creation", 7, "Unlocks spell: Spark of Creation", (p) =>
             {
-                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x02;
+                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x20;
             });
 
-            nodeIndex <<= 1;
-            var ironWill = new SkillNode(nodeIndex, "Iron Will", 7, "Improves resistance to forge heat", (p) =>
+            nodeIndex <<= 1; // 0x40
+            var ironWill = new SkillNode(nodeIndex, "Iron Will", 7, "Unlocks spell: Iron Will", (p) =>
             {
-                profile.Talents[TalentID.BlacksmithStrength].Points += 1;
+                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x40;
             });
 
-            nodeIndex <<= 1;
-            var moltenMight = new SkillNode(nodeIndex, "Molten Might", 7, "Boosts your forging power", (p) =>
+            nodeIndex <<= 1; // 0x80
+            var moltenMight = new SkillNode(nodeIndex, "Molten Might", 7, "Unlocks spell: Molten Might", (p) =>
             {
-                profile.Talents[TalentID.BlacksmithEfficiency].Points += 1;
+                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x80;
             });
 
-            nodeIndex <<= 1;
-            var steelResolve = new SkillNode(nodeIndex, "Steel Resolve", 7, "Enhances durability of created items", (p) =>
+            nodeIndex <<= 1; // 0x100
+            var steelResolve = new SkillNode(nodeIndex, "Steel Resolve", 7, "Unlocks spell: Steel Resolve", (p) =>
             {
-                profile.Talents[TalentID.BlacksmithQuality].Points += 1;
+                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x100;
             });
 
             flameInitiation.AddChild(sparkOfCreation);
@@ -325,29 +324,29 @@ namespace Server.ACC.CSS.Systems.BlacksmithMagic
             efficientForging.AddChild(moltenMight);
             anvilMastery.AddChild(steelResolve);
 
-            // Layer 3: Further passive bonuses.
-            nodeIndex <<= 1;
-            var burningPrecision = new SkillNode(nodeIndex, "Burning Precision", 8, "Improves accuracy of forged weapons", (p) =>
+            // Layer 3: Next four nodes become spell unlocks.
+            nodeIndex <<= 1; // 0x200
+            var burningPrecision = new SkillNode(nodeIndex, "Burning Precision", 8, "Unlocks spell: Burning Precision", (p) =>
             {
-                // Implement bonus effect elsewhere.
+                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x200;
             });
 
-            nodeIndex <<= 1;
-            var refinedHeat = new SkillNode(nodeIndex, "Refined Heat", 8, "Optimizes forge temperature control", (p) =>
+            nodeIndex <<= 1; // 0x400
+            var refinedHeat = new SkillNode(nodeIndex, "Refined Heat", 8, "Unlocks spell: Refined Heat", (p) =>
             {
-                // Implement bonus effect elsewhere.
+                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x400;
             });
 
-            nodeIndex <<= 1;
-            var temperedEdge = new SkillNode(nodeIndex, "Tempered Edge", 8, "Increases weapon sharpness", (p) =>
+            nodeIndex <<= 1; // 0x800
+            var temperedEdge = new SkillNode(nodeIndex, "Tempered Edge", 8, "Unlocks spell: Tempered Edge", (p) =>
             {
-                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x04;
+                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x800;
             });
 
-            nodeIndex <<= 1;
-            var resilientMetal = new SkillNode(nodeIndex, "Resilient Metal", 8, "Enhances item durability", (p) =>
+            nodeIndex <<= 1; // 0x1000
+            var resilientMetal = new SkillNode(nodeIndex, "Resilient Metal", 8, "Unlocks spell: Resilient Metal", (p) =>
             {
-                profile.Talents[TalentID.BlacksmithQuality].Points += 1;
+                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x1000;
             });
 
             sparkOfCreation.AddChild(burningPrecision);
@@ -355,26 +354,27 @@ namespace Server.ACC.CSS.Systems.BlacksmithMagic
             moltenMight.AddChild(temperedEdge);
             steelResolve.AddChild(resilientMetal);
 
-            // Layer 4: More advanced magical enhancements.
-            nodeIndex <<= 1;
-            var blazingArtistry = new SkillNode(nodeIndex, "Blazing Artistry", 9, "Further unlocks advanced spells", (p) =>
+            // Layer 4: In this layer the first three nodes become spell unlocks.
+            nodeIndex <<= 1; // 0x2000
+            var blazingArtistry = new SkillNode(nodeIndex, "Blazing Artistry", 9, "Unlocks spell: Blazing Artistry", (p) =>
             {
-                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x08;
+                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x2000;
             });
 
-            nodeIndex <<= 1;
-            var infernoStrength = new SkillNode(nodeIndex, "Inferno Strength", 9, "Boosts forging strength", (p) =>
+            nodeIndex <<= 1; // 0x4000
+            var infernoStrength = new SkillNode(nodeIndex, "Inferno Strength", 9, "Unlocks spell: Inferno Strength", (p) =>
             {
-                profile.Talents[TalentID.BlacksmithStrength].Points += 1;
+                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x4000;
             });
 
-            nodeIndex <<= 1;
-            var radiantForge = new SkillNode(nodeIndex, "Radiant Forge", 9, "Improves overall forging efficiency", (p) =>
+            nodeIndex <<= 1; // 0x8000
+            var radiantForge = new SkillNode(nodeIndex, "Radiant Forge", 9, "Unlocks spell: Radiant Forge", (p) =>
             {
-                profile.Talents[TalentID.BlacksmithEfficiency].Points += 1;
+                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x8000;
             });
 
-            nodeIndex <<= 1;
+            // The remaining node in Layer 4 stays as a bonus.
+            nodeIndex <<= 1; // 0x10000
             var perfectedMetals = new SkillNode(nodeIndex, "Perfected Metals", 9, "Enhances quality of finished items", (p) =>
             {
                 profile.Talents[TalentID.BlacksmithQuality].Points += 1;
@@ -385,26 +385,26 @@ namespace Server.ACC.CSS.Systems.BlacksmithMagic
             temperedEdge.AddChild(radiantForge);
             resilientMetal.AddChild(perfectedMetals);
 
-            // Layer 5: Expert-level nodes.
-            nodeIndex <<= 1;
+            // Layer 5: Expert-level nodes (passive bonuses).
+            nodeIndex <<= 1; // 0x20000
             var primeForge = new SkillNode(nodeIndex, "Prime Forge", 10, "Boosts overall forging efficiency", (p) =>
             {
                 profile.Talents[TalentID.BlacksmithEfficiency].Points += 1;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x40000
             var masterHammer = new SkillNode(nodeIndex, "Master Hammer", 10, "Improves weapon strength", (p) =>
             {
                 profile.Talents[TalentID.BlacksmithStrength].Points += 1;
             });
 
-            nodeIndex <<= 1;
-            var arcaneAnvil = new SkillNode(nodeIndex, "Arcane Anvil", 10, "Unlocks mastery level blacksmith spells", (p) =>
+            nodeIndex <<= 1; // 0x80000
+            var arcaneAnvil = new SkillNode(nodeIndex, "Arcane Anvil", 10, "Enhances forging bonuses", (p) =>
             {
-                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x10;
+                profile.Talents[TalentID.BlacksmithEfficiency].Points += 1;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x100000
             var rapidQuench = new SkillNode(nodeIndex, "Rapid Quench", 10, "Increases forging speed", (p) =>
             {
                 profile.Talents[TalentID.BlacksmithEfficiency].Points += 1;
@@ -415,26 +415,26 @@ namespace Server.ACC.CSS.Systems.BlacksmithMagic
             radiantForge.AddChild(arcaneAnvil);
             perfectedMetals.AddChild(rapidQuench);
 
-            // Layer 6: Mastery nodes.
-            nodeIndex <<= 1;
+            // Layer 6: Mastery nodes (passive bonuses).
+            nodeIndex <<= 1; // 0x200000
             var focusedFlame = new SkillNode(nodeIndex, "Focused Flame", 11, "Enhances control over forge heat", (p) =>
             {
                 // Bonus effect implemented elsewhere.
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x400000
             var superiorMetallurgy = new SkillNode(nodeIndex, "Superior Metallurgy", 11, "Improves quality of forged items", (p) =>
             {
                 profile.Talents[TalentID.BlacksmithQuality].Points += 1;
             });
 
-            nodeIndex <<= 1;
-            var mysticalSmithing = new SkillNode(nodeIndex, "Mystical Smithing", 11, "Unlocks ancient blacksmith spells", (p) =>
+            nodeIndex <<= 1; // 0x800000
+            var mysticalSmithing = new SkillNode(nodeIndex, "Mystical Smithing", 11, "Enhances forging bonuses", (p) =>
             {
-                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x20;
+                profile.Talents[TalentID.BlacksmithEfficiency].Points += 1;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x1000000
             var swiftStrike = new SkillNode(nodeIndex, "Swift Strike", 11, "Improves the speed of weapon creation", (p) =>
             {
                 profile.Talents[TalentID.BlacksmithEfficiency].Points += 1;
@@ -445,26 +445,26 @@ namespace Server.ACC.CSS.Systems.BlacksmithMagic
             arcaneAnvil.AddChild(mysticalSmithing);
             rapidQuench.AddChild(swiftStrike);
 
-            // Layer 7: Final, pinnacle bonuses.
-            nodeIndex <<= 1;
+            // Layer 7: Final, pinnacle bonuses (passive bonuses).
+            nodeIndex <<= 1; // 0x2000000
             var adamantBarrier = new SkillNode(nodeIndex, "Adamant Barrier", 12, "Provides a protective forging bonus", (p) =>
             {
-                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x40;
+                profile.Talents[TalentID.BlacksmithStrength].Points += 1;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x4000000
             var legendaryQuality = new SkillNode(nodeIndex, "Legendary Quality", 12, "Greatly improves item quality", (p) =>
             {
                 profile.Talents[TalentID.BlacksmithQuality].Points += 1;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x8000000
             var forgingFury = new SkillNode(nodeIndex, "Forging Fury", 12, "Boosts forging power dramatically", (p) =>
             {
                 profile.Talents[TalentID.BlacksmithStrength].Points += 1;
             });
 
-            nodeIndex <<= 1;
+            nodeIndex <<= 1; // 0x10000000
             var relentlessHammer = new SkillNode(nodeIndex, "Relentless Hammer", 12, "Enhances overall forging speed", (p) =>
             {
                 profile.Talents[TalentID.BlacksmithEfficiency].Points += 1;
@@ -475,11 +475,10 @@ namespace Server.ACC.CSS.Systems.BlacksmithMagic
             mysticalSmithing.AddChild(forgingFury);
             swiftStrike.AddChild(relentlessHammer);
 
-            // Layer 8: Ultimate node.
-            nodeIndex <<= 1;
+            // Layer 8: Ultimate node (passive bonus).
+            nodeIndex <<= 1; // 0x20000000
             var ultimateSmith = new SkillNode(nodeIndex, "Ultimate Smith", 13, "Ultimate bonus: boosts all blacksmith skills", (p) =>
             {
-                profile.Talents[TalentID.BlacksmithSpells].Points |= 0x80 | 0x100;
                 profile.Talents[TalentID.BlacksmithEfficiency].Points += 1;
                 profile.Talents[TalentID.BlacksmithStrength].Points += 1;
                 profile.Talents[TalentID.BlacksmithQuality].Points += 1;
