@@ -60,10 +60,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you could command more creatures now!");
 
-                // Start summon timer
+                // Start summon timer if auto summon is enabled
                 StopSummonTimer();
                 m_Timer = new SummonTurkeyTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm)) // Only start the timer if autosummon is enabled
+                {
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -115,7 +118,10 @@ namespace Server.Items
             if (Parent is Mobile mob)
             {
                 m_Timer = new SummonTurkeyTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob)) // Check if auto-summon is enabled after loading
+                {
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -137,6 +143,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Check if auto-summon is enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return; // If auto-summon is off, stop summoning.
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

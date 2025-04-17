@@ -52,10 +52,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a wave of pestilence empower your ability to command creatures!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonPestilentBandageTimer(pm);
-                m_Timer.Start();
+                // Start summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StopSummonTimer();
+                    m_Timer = new SummonPestilentBandageTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -107,8 +110,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonPestilentBandageTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonPestilentBandageTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -131,17 +137,18 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
-                {
-                    PestilentBandage bandage = new PestilentBandage
-                    {
-                        Controlled = true,
-                        ControlMaster = m_Owner
-                    };
+                // Only summon if autosummon is enabled and the player has room for more followers
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner) || m_Owner.Followers >= m_Owner.FollowersMax)
+                    return;
 
-                    bandage.MoveToWorld(m_Owner.Location, m_Owner.Map);
-                    m_Owner.SendMessage(38, "A Pestilent Bandage appears to serve you!");
-                }
+                PestilentBandage bandage = new PestilentBandage
+                {
+                    Controlled = true,
+                    ControlMaster = m_Owner
+                };
+
+                bandage.MoveToWorld(m_Owner.Location, m_Owner.Map);
+                m_Owner.SendMessage(38, "A Pestilent Bandage appears to serve you!");
             }
         }
     }

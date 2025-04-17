@@ -114,7 +114,7 @@ namespace Server.Items
             private Mobile m_Owner;
 
             public SummonCorrosiveSlimeTimer(Mobile owner)
-                : base(TimeSpan.FromSeconds(10.0), TimeSpan.FromSeconds(10.0))
+                : base(TimeSpan.FromSeconds(10.0), TimeSpan.FromSeconds(10.0)) // Summon every 10 seconds
             {
                 m_Owner = owner;
                 Priority = TimerPriority.OneSecond;
@@ -122,12 +122,18 @@ namespace Server.Items
 
             protected override void OnTick()
             {
+                // Stop if owner is invalid or the item is no longer equipped
                 if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Neck) is AmuletOfCorrosion))
                 {
                     Stop();
                     return;
                 }
 
+                // Check if the player has autosummon enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Ensure there is room for new followers before summoning
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     CorrosiveSlime slime = new CorrosiveSlime

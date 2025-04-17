@@ -132,6 +132,10 @@ namespace Server.Items
                     return;
                 }
 
+                // Check if autosummon is enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     FanDancer dancer = new FanDancer

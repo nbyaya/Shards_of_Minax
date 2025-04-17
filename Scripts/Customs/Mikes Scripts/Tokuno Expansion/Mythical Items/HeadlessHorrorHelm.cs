@@ -57,10 +57,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel the power to command more creatures!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonHeadlessHorrorTimer(pm);
-                m_Timer.Start();
+                // Start summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StopSummonTimer();
+                    m_Timer = new SummonHeadlessHorrorTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -111,8 +114,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonHeadlessHorrorTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonHeadlessHorrorTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -129,12 +135,14 @@ namespace Server.Items
 
             protected override void OnTick()
             {
-                if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Helm) is HeadlessHorrorHelm))
+                // Stop if the owner is invalid, the item is not equipped, or autosummon is off
+                if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Helm) is HeadlessHorrorHelm) || !AutoSummonManager.IsAutoSummonEnabled(m_Owner))
                 {
                     Stop();
                     return;
                 }
 
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     HeadlessOne headless = new HeadlessOne

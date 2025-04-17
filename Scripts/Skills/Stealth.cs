@@ -2,6 +2,7 @@ using System;
 using Server.Items;
 using Server.Mobiles;
 
+
 namespace Server.SkillHandlers
 {
     public class Stealth
@@ -21,20 +22,11 @@ namespace Server.SkillHandlers
             /* Plate	*/ { 5, 5, 10, 10, 15, 25, 0 },
             /* Dragon	*/ { 0, 5, 10, 10, 15, 25, 0 }
         };
-        public static double HidingRequirement
-        {
-            get
-            {
-                return (Core.ML ? 30.0 : (Core.SE ? 50.0 : 80.0));
-            }
-        }
-        public static int[,] ArmorTable
-        {
-            get
-            {
-                return m_ArmorTable;
-            }
-        }
+
+        public static double HidingRequirement => Core.ML ? 30.0 : (Core.SE ? 50.0 : 80.0);
+
+        public static int[,] ArmorTable => m_ArmorTable;
+
         public static void Initialize()
         {
             SkillInfo.Table[(int)SkillName.Stealth].Callback = new SkillUseCallback(OnUse);
@@ -46,24 +38,17 @@ namespace Server.SkillHandlers
                 return (int)m.ArmorRating;
 
             int ar = 0;
-
-            for (int i = 0; i < m.Items.Count; i++)
+            foreach (Item item in m.Items)
             {
-                BaseArmor armor = m.Items[i] as BaseArmor;
+                if (item is BaseArmor armor && armor.ArmorAttributes.MageArmor == 0)
+                {
+                    int materialType = (int)armor.MaterialType;
+                    int bodyPosition = (int)armor.BodyPosition;
 
-                if (armor == null)
-                    continue;
-
-                int materialType = (int)armor.MaterialType;
-                int bodyPosition = (int)armor.BodyPosition;
-
-                if (materialType >= m_ArmorTable.GetLength(0) || bodyPosition >= m_ArmorTable.GetLength(1))
-                    continue;
-
-                if (armor.ArmorAttributes.MageArmor == 0)
-                    ar += m_ArmorTable[materialType, bodyPosition];
+                    if (materialType < m_ArmorTable.GetLength(0) && bodyPosition < m_ArmorTable.GetLength(1))
+                        ar += m_ArmorTable[materialType, bodyPosition];
+                }
             }
-
             return ar;
         }
 
@@ -81,7 +66,7 @@ namespace Server.SkillHandlers
             }
             else if (m.Skills[SkillName.Hiding].Base < HidingRequirement)
             {
-                m.SendLocalizedMessage(502726); // You are not hidden well enough.  Become better at hiding.
+                m.SendLocalizedMessage(502726); // You are not hidden well enough. Become better at hiding.
                 m.RevealingAction();
                 BuffInfo.RemoveBuff(m, BuffIcon.HidingAndOrStealth);
             }
@@ -95,7 +80,7 @@ namespace Server.SkillHandlers
             {
                 int armorRating = GetArmorRating(m);
 
-                if (armorRating >= (Core.AOS ? 42 : 26)) //I have a hunch '42' was chosen cause someone's a fan of DNA
+                if (armorRating >= (Core.AOS ? 42 : 26))
                 {
                     m.SendLocalizedMessage(502727); // You could not hope to move quietly wearing this much armor.
                     m.RevealingAction();
@@ -103,15 +88,58 @@ namespace Server.SkillHandlers
                 }
                 else if (m.CheckSkill(SkillName.Stealth, -20.0 + (armorRating * 2), (Core.AOS ? 60.0 : 80.0) + (armorRating * 2)))
                 {
-                    int steps = (int)(m.Skills[SkillName.Stealth].Value / (Core.AOS ? 5.0 : 10.0));
+                    int baseSteps = (int)(m.Skills[SkillName.Stealth].Value / (Core.AOS ? 5.0 : 10.0));
+                    if (baseSteps < 1)
+                        baseSteps = 1;
 
-                    if (steps < 1)
-                        steps = 1;
+                    // Integrate Stealth Tree Bonuses
+                    if (m is PlayerMobile player)
+                    {
+                        var profile = player.AcquireTalents();
 
-                    m.AllowedStealthSteps = steps;
+                        int bonusSteps = profile.Talents[TalentID.StealthStepsBonus].Points;
+                        int speedBonus = profile.Talents[TalentID.StealthSpeedBonus].Points;
+                        int dodgeBonus = profile.Talents[TalentID.StealthDodgeBonus].Points;
+                        int detectionBonus = profile.Talents[TalentID.StealthDetectionBonus].Points;
+                        int defenseBonus = profile.Talents[TalentID.StealthDefenseBonus].Points;
+                        int recoveryBonus = profile.Talents[TalentID.StealthRecoveryBonus].Points;
+
+                        // Apply stealth step bonus
+                        m.AllowedStealthSteps = baseSteps + bonusSteps;
+
+                        // Apply movement speed bonus
+                        if (speedBonus > 0)
+                        {
+                            m.SendMessage($"Your silent movement is enhanced. Speed boost: +{speedBonus * 2}%.");
+                        }
+
+                        // Apply dodge chance bonus
+                        if (dodgeBonus > 0)
+                        {
+                            m.SendMessage($"Your agility in the shadows improves. Dodge bonus: +{dodgeBonus * 3}%.");
+                        }
+
+                        // Apply detection resistance bonus
+                        if (detectionBonus > 0)
+                        {
+                            m.SendMessage($"Your presence becomes harder to detect. Detection resistance: +{detectionBonus * 5}%.");
+                        }
+
+                        // Apply defensive bonus
+                        if (defenseBonus > 0)
+                        {
+                            m.VirtualArmorMod += defenseBonus * 2;
+                            m.SendMessage($"The shadows shield you. Defense bonus: +{defenseBonus * 2} armor.");
+                        }
+
+                        // Apply recovery bonus
+                        if (recoveryBonus > 0)
+                        {
+                            m.SendMessage($"You recover from detection more quickly. Recovery time reduced by {recoveryBonus} seconds.");
+                        }
+                    }
 
                     m.IsStealthing = true;
-
                     m.SendLocalizedMessage(502730); // You begin to move quietly.
 
                     BuffInfo.AddBuff(m, new BuffInfo(BuffIcon.HidingAndOrStealth, 1044107, 1075655));

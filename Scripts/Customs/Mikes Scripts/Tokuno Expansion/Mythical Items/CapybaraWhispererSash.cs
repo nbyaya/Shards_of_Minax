@@ -56,10 +56,14 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a connection to peaceful creatures!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonCapybaraTimer(pm);
-                m_Timer.Start();
+
+                if (AutoSummonManager.IsAutoSummonEnabled(pm)) // Check if autosummon is enabled
+                {
+                    m_Timer = new SummonCapybaraTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -110,8 +114,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonCapybaraTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob)) // Check if autosummon is enabled
+                {
+                    m_Timer = new SummonCapybaraTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -134,6 +141,7 @@ namespace Server.Items
                     return;
                 }
 
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     Capybara capybara = new Capybara
@@ -146,51 +154,6 @@ namespace Server.Items
                     m_Owner.SendMessage(38, "A Capybara appears to accompany you!");
                 }
             }
-        }
-    }
-
-    public class Capybara : BaseCreature
-    {
-        public Capybara() : base(AIType.AI_Animal, FightMode.None, 10, 1, 0.3, 0.6)
-        {
-            Name = "a capybara";
-            Body = 0x115; // Use an appropriate body ID for a capybara
-            BaseSoundID = 0x85;
-
-            SetStr(40, 50);
-            SetDex(30, 40);
-            SetInt(15, 20);
-
-            SetHits(25, 30);
-            SetStam(50, 60);
-
-            SetDamage(3, 5);
-
-            SetSkill(SkillName.Wrestling, 25.0, 30.0);
-            SetSkill(SkillName.MagicResist, 15.0, 20.0);
-
-            Fame = 0;
-            Karma = 2000;
-
-            VirtualArmor = 10;
-
-            Tamable = false;
-        }
-
-        public Capybara(Serial serial) : base(serial)
-        {
-        }
-
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-        }
-
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
         }
     }
 }

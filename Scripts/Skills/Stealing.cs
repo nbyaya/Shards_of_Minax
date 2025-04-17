@@ -12,6 +12,7 @@ using Server.Spells.Ninjitsu;
 using Server.Spells.Seventh;
 using Server.Targeting;
 using Server.Engines.VvV;
+using Server.Misc;
 #endregion
 
 namespace Server.SkillHandlers
@@ -45,20 +46,35 @@ namespace Server.SkillHandlers
 			private readonly Mobile m_Thief;
 
 			public StealingTarget(Mobile thief)
-				: base(1, false, TargetFlags.None)
-			{
-				m_Thief = thief;
-
+				: base(GetStealingRange(thief), false, TargetFlags.None, GetStealingLoS(thief))
+            {
+                m_Thief = thief;
 				AllowNonlocal = true;
-			}
+            }
+            private static int GetStealingRange(Mobile thief)
+            {
+                PlayerMobile player = thief as PlayerMobile;
+                var profile = player.AcquireTalents();
 
-			private Item TryStealItem(Item toSteal, ref bool caught)
+                return 1 + profile.Talents[TalentID.StealingDistance].Points;
+            }
+            private static bool GetStealingLoS(Mobile thief)
+            {
+                PlayerMobile player = thief as PlayerMobile;
+                var profile = player.AcquireTalents();
+                return profile.Talents[TalentID.StealingLoS].Points > 0 ? false : true; 
+            }
+
+            private Item TryStealItem(Item toSteal, ref bool caught)
 			{
 				Item stolen = null;
 
 				object root = toSteal.RootParent;
 
-				StealableArtifactsSpawner.StealableInstance si = null;
+                PlayerMobile player = m_Thief as PlayerMobile;
+                var profile = player.AcquireTalents();
+
+                StealableArtifactsSpawner.StealableInstance si = null;
 				if (toSteal.Parent == null || !toSteal.Movable)
 				{
 					si = toSteal is AddonComponent ? StealableArtifactsSpawner.GetStealableInstance(((AddonComponent)toSteal).Addon) : StealableArtifactsSpawner.GetStealableInstance(toSteal);
@@ -68,7 +84,7 @@ namespace Server.SkillHandlers
 				{
 					m_Thief.SendLocalizedMessage(1005584); // Both hands must be free to steal.
 				}
-				else if (!m_Thief.CanSee(toSteal))
+				else if ((!m_Thief.CanSee(toSteal)) && (profile.Talents[TalentID.StealingLoS].Points == 0))
 				{
 					m_Thief.SendLocalizedMessage(500237); // Target can not be seen.
 				}
@@ -229,9 +245,9 @@ namespace Server.SkillHandlers
                     }
                 }
                 #endregion
-
-                else if (si == null && (toSteal.Parent == null || !toSteal.Movable) && !ItemFlags.GetStealable(toSteal))
+                else if (si == null && ((toSteal.Parent == null || !toSteal.Movable) && (profile.Talents[TalentID.StealingImmovable].Points == 0)) && !ItemFlags.GetStealable(toSteal))
 				{
+                    Console.WriteLine("!toSteal.Movable");
 					m_Thief.SendLocalizedMessage(502710); // You can't steal that!
 				}
 				else if ((toSteal.LootType == LootType.Newbied || toSteal.CheckBlessed(root)) && !ItemFlags.GetStealable(toSteal))
@@ -241,8 +257,8 @@ namespace Server.SkillHandlers
 				else if (Core.AOS && si == null && toSteal is Container && !ItemFlags.GetStealable(toSteal))
 				{
 					m_Thief.SendLocalizedMessage(502710); // You can't steal that!
-				}
-				else if (!m_Thief.InRange(toSteal.GetWorldLocation(), 1))
+                }
+				else if (!m_Thief.InRange(toSteal.GetWorldLocation(), 1 + profile.Talents[TalentID.StealingDistance].Points)) // Stealing Range
 				{
 					m_Thief.SendLocalizedMessage(502703); // You must be standing next to an item to steal it.
 				}
@@ -250,8 +266,8 @@ namespace Server.SkillHandlers
 				{
 					m_Thief.SendLocalizedMessage(1060025, "", 0x66D); // You're not skilled enough to attempt the theft of this item.
 				}
-				else if (toSteal.Parent is Mobile)
-				{
+				else if ((toSteal.Parent is Mobile) && (profile.Talents[TalentID.StealingEquipped].Points == 0))
+                {
 					m_Thief.SendLocalizedMessage(1005585); // You cannot steal items which are equiped.
 				}
 				else if (root == m_Thief)
@@ -268,11 +284,45 @@ namespace Server.SkillHandlers
 				{
 					m_Thief.SendLocalizedMessage(502710); // You can't steal that!
 				}
-				else
+                else if ((!toSteal.Movable) && (profile.Talents[TalentID.StealingImmovable].Points > 0))
+                {
+                    if (toSteal is Item)
+                    {
+                        Item targetItem = toSteal;
+                        Random rand = new Random();
+
+                        if (!targetItem.Movable)
+                        {
+                            if (rand.Next(0, 100) < player.Skills.Stealing.Value)
+                            {
+                                // Success
+                                Item copiedItem = new Item(targetItem.ItemID);
+                                copiedItem.Name = targetItem.Name;
+                                copiedItem.Hue = targetItem.Hue;
+                                copiedItem.Movable = true;
+
+                                player.AddToBackpack(copiedItem);
+                                player.SendMessage("You successfully stole the item!");
+
+                                if (player.Skills[SkillName.Stealing].Base < 100.0)
+                                {
+                                    player.Skills[SkillName.Stealing].Base += 1.0; // Increase skill by 1%
+                                }
+                            }
+                            else
+                            {
+                                // Failure
+                                player.SendMessage("You failed to steal the item.");
+                            }
+                        }
+                    }
+                }
+                else
 				{
 					double w = toSteal.Weight + toSteal.TotalWeight;
+                    double maxStealWeight = 10.0 + (profile.Talents[TalentID.StealingWeight].Points * 10);
 
-					if (w > 10)
+                    if (w > maxStealWeight)
 					{
 						m_Thief.SendMessage("That is too heavy to steal.");
 					}
@@ -321,7 +371,12 @@ namespace Server.SkillHandlers
 						}
 						else
 						{
-							int iw = (int)Math.Ceiling(w);
+                            /* 
+                             * This (int)Math.Ceiling(w - (profile.Talents[TalentID.StealingWeight].Points * 10)) is to prevent w to go above 10. a w above 10
+                             * skyrockets the stealing skill required to steal something. There are other ways you could deal with this, but this was a simple
+                             * fix to get this rolling.
+                            */
+                            int iw = (int)Math.Ceiling(w - (profile.Talents[TalentID.StealingWeight].Points * 10));                            
 							iw *= 10;
 
 							if (m_Thief.CheckTargetSkill(SkillName.Stealing, toSteal, iw - 22.5, iw + 27.5))
@@ -500,10 +555,9 @@ namespace Server.SkillHandlers
 				m.SendLocalizedMessage(1005584); // Both hands must be free to steal.
 			}
 			else
-			{
-				m.Target = new StealingTarget(m);
+            {
+                m.Target = new StealingTarget(m);
 				m.RevealingAction();
-
 				m.SendLocalizedMessage(502698); // Which item do you want to steal?
 			}
 

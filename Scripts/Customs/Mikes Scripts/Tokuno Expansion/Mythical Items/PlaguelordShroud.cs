@@ -57,10 +57,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel an unholy connection to the PlagueSpawn!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonPlagueSpawnTimer(pm);
-                m_Timer.Start();
+                // Only start the summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StopSummonTimer();
+                    m_Timer = new SummonPlagueSpawnTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -111,8 +114,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonPlagueSpawnTimer(mob);
-                m_Timer.Start();
+                // Start summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonPlagueSpawnTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -135,6 +142,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Only summon if autosummon is enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Summon the PlagueSpawn if there's room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     PlagueSpawn spawn = new PlagueSpawn

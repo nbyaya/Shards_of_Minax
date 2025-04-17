@@ -31,7 +31,6 @@ namespace Server.Items
             Attributes.SpellDamage = 10;
             Attributes.NightSight = 1;
 
-
             // Skill Bonuses
             SkillBonuses.SetValues(0, SkillName.Macing, 15.0);
             SkillBonuses.SetValues(1, SkillName.AnimalLore, 10.0);
@@ -58,10 +57,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a deep connection to nature, allowing you to command more creatures.");
 
-                // Start summon timer
+                // Start summon timer only if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonTreefellowTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonTreefellowTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -112,8 +114,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonTreefellowTimer(mob);
-                m_Timer.Start();
+                // Start summon timer only if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonTreefellowTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -136,6 +142,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Check if autosummon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     Treefellow treefellow = new Treefellow

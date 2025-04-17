@@ -51,10 +51,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel the fiery power of dragons empowering you!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonDragonsFlameMageTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm)) // Check if autosummon is enabled
+                {
+                    m_Timer = new SummonDragonsFlameMageTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -106,8 +109,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonDragonsFlameMageTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob)) // Check if autosummon is enabled
+                {
+                    m_Timer = new SummonDragonsFlameMageTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -129,6 +135,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Check if autosummon is enabled before summoning
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

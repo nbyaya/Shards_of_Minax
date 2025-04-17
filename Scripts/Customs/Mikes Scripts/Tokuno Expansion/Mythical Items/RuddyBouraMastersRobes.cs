@@ -74,10 +74,14 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you could command more creatures now!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonRuddyBouraTimer(pm);
-                m_Timer.Start();
+                // Check if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    // Start summon timer if autosummon is enabled
+                    StopSummonTimer();
+                    m_Timer = new SummonRuddyBouraTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -128,8 +132,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonRuddyBouraTimer(mob);
-                m_Timer.Start();
+                // Check if autosummon is enabled before starting the timer
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonRuddyBouraTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -152,7 +160,8 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                // Only summon if autosummon is enabled and the player has space for more followers
+                if (AutoSummonManager.IsAutoSummonEnabled(m_Owner) && m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     RuddyBoura boura = new RuddyBoura
                     {

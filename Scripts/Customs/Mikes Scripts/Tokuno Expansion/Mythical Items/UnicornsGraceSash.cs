@@ -66,10 +66,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a magical connection to the creatures of the forest!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonUnicornTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonUnicornTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -118,7 +121,7 @@ namespace Server.Items
             m_BonusFollowers = reader.ReadInt();
 
             // Reinitialize timer if equipped on restart
-            if (Parent is Mobile mob)
+            if (Parent is Mobile mob && AutoSummonManager.IsAutoSummonEnabled(mob))
             {
                 m_Timer = new SummonUnicornTimer(mob);
                 m_Timer.Start();
@@ -144,6 +147,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Check if autosummon is enabled before proceeding
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Summon if there is room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     Unicorn unicorn = new Unicorn

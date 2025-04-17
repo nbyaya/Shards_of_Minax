@@ -54,10 +54,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel the presence of mighty crustaceans ready to aid you!");
 
-                // Start summon timer
+                // Only start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonCoconutCrabTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonCoconutCrabTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -109,7 +112,8 @@ namespace Server.Items
             if (Parent is Mobile mob)
             {
                 m_Timer = new SummonCoconutCrabTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                    m_Timer.Start();
             }
         }
 
@@ -132,7 +136,8 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                // Only summon if autosummon is enabled and there is space for more followers
+                if (AutoSummonManager.IsAutoSummonEnabled(m_Owner) && m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     CoconutCrab crab = new CoconutCrab
                     {

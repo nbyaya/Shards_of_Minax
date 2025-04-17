@@ -50,10 +50,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel an ancient arcane presence empowering your control over followers!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonMeerMageTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm)) // Check if autosummon is enabled
+                {
+                    m_Timer = new SummonMeerMageTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -104,8 +107,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonMeerMageTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob)) // Check if autosummon is enabled
+                {
+                    m_Timer = new SummonMeerMageTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -128,7 +134,8 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                // Only summon if the player has room for more followers
+                if (m_Owner.Followers < m_Owner.FollowersMax && AutoSummonManager.IsAutoSummonEnabled(m_Owner)) // Check if autosummon is enabled
                 {
                     MeerMage mage = new MeerMage
                     {

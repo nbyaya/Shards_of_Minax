@@ -57,10 +57,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a gentle connection to the spirits of nature!");
 
-                // Start summon timer
+                // Start summon timer only if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonPixieTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonPixieTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -109,7 +112,7 @@ namespace Server.Items
             m_BonusFollowers = reader.ReadInt();
 
             // Reinitialize timer if equipped on restart
-            if (Parent is Mobile mob)
+            if (Parent is Mobile mob && AutoSummonManager.IsAutoSummonEnabled(mob))
             {
                 m_Timer = new SummonPixieTimer(mob);
                 m_Timer.Start();
@@ -134,6 +137,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Check if autosummon is enabled before summoning
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

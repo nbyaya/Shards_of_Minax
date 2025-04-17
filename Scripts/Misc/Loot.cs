@@ -3,6 +3,49 @@ using System;
 
 using Server.Items;
 using Server.Mobiles;
+using Server.ACC.CSS.Systems.AlchemyMagic;
+using Server.ACC.CSS.Systems.AnimalLoreMagic;
+using Server.ACC.CSS.Systems.AnimalTamingMagic;
+using Server.ACC.CSS.Systems.ArcheryMagic;
+using Server.ACC.CSS.Systems.ArmsLoreMagic;
+using Server.ACC.CSS.Systems.BeggingMagic;
+using Server.ACC.CSS.Systems.BlacksmithMagic;
+using Server.ACC.CSS.Systems.CampingMagic;
+using Server.ACC.CSS.Systems.CarpentryMagic;
+using Server.ACC.CSS.Systems.CartographyMagic;
+using Server.ACC.CSS.Systems.ChivalryMagic;
+using Server.ACC.CSS.Systems.CookingMagic;
+using Server.ACC.CSS.Systems.DetectHiddenMagic;
+using Server.ACC.CSS.Systems.DiscordanceMagic;
+using Server.ACC.CSS.Systems.EvalIntMagic;
+using Server.ACC.CSS.Systems.FencingMagic;
+using Server.ACC.CSS.Systems.FishingMagic;
+using Server.ACC.CSS.Systems.FletchingMagic;
+using Server.ACC.CSS.Systems.ForensicsMagic;
+using Server.ACC.CSS.Systems.HealingMagic;
+using Server.ACC.CSS.Systems.HidingMagic;
+using Server.ACC.CSS.Systems.InscribeMagic;
+using Server.ACC.CSS.Systems.LockpickingMagic;
+using Server.ACC.CSS.Systems.LumberjackingMagic;
+using Server.ACC.CSS.Systems.MacingMagic;
+using Server.ACC.CSS.Systems.MageryMagic;
+using Server.ACC.CSS.Systems.MeditationMagic;
+using Server.ACC.CSS.Systems.MiningMagic;
+using Server.ACC.CSS.Systems.MusicianshipMagic;
+using Server.ACC.CSS.Systems.NecromancyMagic;
+using Server.ACC.CSS.Systems.NinjitsuMagic;
+using Server.ACC.CSS.Systems.ParryMagic;
+using Server.ACC.CSS.Systems.ProvocationMagic;
+using Server.ACC.CSS.Systems.RemoveTrapMagic;
+using Server.ACC.CSS.Systems.StealingMagic;
+using Server.ACC.CSS.Systems.StealthMagic;
+using Server.ACC.CSS.Systems.SwordsMagic;
+using Server.ACC.CSS.Systems.TacticsMagic;
+using Server.ACC.CSS.Systems.TailoringMagic;
+using Server.ACC.CSS.Systems.TasteIDMagic;
+using Server.ACC.CSS.Systems.TrackingMagic;
+using Server.ACC.CSS.Systems.VeterinaryMagic;
+using Server.ACC.CSS.Systems.WrestlingMagic;
 #endregion
 
 namespace Server
@@ -149,7 +192,7 @@ namespace Server
         private static readonly Type[] m_ShieldTypes = new[]
 		{
 			typeof(BronzeShield), typeof(Buckler), typeof(HeaterShield), typeof(MetalShield), typeof(MetalKiteShield),
-			typeof(WoodenKiteShield), typeof(WoodenShield)
+			typeof(WoodenKiteShield)
 		};
 
         public static Type[] ShieldTypes { get { return m_ShieldTypes; } }
@@ -628,6 +671,50 @@ namespace Server
 				typeof( AlmanacOfAethericArtifacts ),
 				typeof( SecretsOfTheLunarCult ),
 				typeof( FragmentsOfFuturity ),
+				typeof( AlchemySpellbook ),
+				typeof( AnimalLoreSpellbook ),
+				typeof( AnimalTamingSpellbook ),
+				typeof( ArcherySpellbook ),
+				typeof( ArmsLoreSpellbook ),
+				typeof( BeggingSpellbook ),
+				typeof( BlacksmithSpellbook ),
+				typeof( BookOfBushido ),
+				typeof( CampingSpellbook ),
+				typeof( CarpentrySpellbook ),
+				typeof( CartographySpellbook ),
+				typeof( ChivalrySpellbook2 ),
+				typeof( CookingSpellbook ),
+				typeof( DetectHiddenSpellbook ),
+				typeof( DiscordanceSpellbook ),
+				typeof( EvalIntSpellbook ),
+				typeof( FencingSpellbook ),
+				typeof( FishingSpellbook ),
+				typeof( FletchingSpellbook ),
+				typeof( ForensicsSpellbook ),
+				typeof( HealingSpellbook ),
+				typeof( HidingSpellbook ),
+				typeof( InscribeSpellbook ),
+				typeof( LockpickingSpellbook ),
+				typeof( LumberjackingSpellbook ),
+				typeof( MacingSpellbook ),
+				typeof( MagerySpellbook ),
+				typeof( MeditationSpellbook ),
+				typeof( MiningSpellbook ),
+				typeof( MusicianshipSpellbook ),
+				typeof( NecromancySpellbook ),
+				typeof( NinjitsuSpellbook ),
+				typeof( ParrySpellbook ),
+				typeof( ProvocationSpellbook ),
+				typeof( RemoveTrapSpellbook ),
+				typeof( StealingSpellbook ),
+				typeof( StealthSpellbook ),
+				typeof( SwordsSpellbook ),
+				typeof( TacticsSpellbook ),
+				typeof( TailoringSpellbook ),
+				typeof( TasteIDSpellbook ),
+				typeof( TrackingSpellbook ),
+				typeof( VeterinarySpellbook ),
+				typeof( WrestlingSpellbook ),
 				typeof( TheForgottenFortress ),
 				typeof( EnigmaOfElementalEquilibrium )
 		};

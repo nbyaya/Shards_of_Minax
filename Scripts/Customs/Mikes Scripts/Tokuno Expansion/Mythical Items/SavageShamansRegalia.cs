@@ -52,7 +52,6 @@ namespace Server.Items
             SkillBonuses.SetValues(3, SkillName.Focus, 15.0);
             SkillBonuses.SetValues(4, SkillName.Meditation, 15.0);
 
-
             // Attach XmlLevelItem
             XmlAttach.AttachTo(this, new XmlLevelItem());
 
@@ -74,7 +73,7 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you could command more creatures now!");
 
-                // Start summon timer
+                // Start summon timer if auto summon is enabled
                 StopSummonTimer();
                 m_Timer = new SummonSavageShamanTimer(pm);
                 m_Timer.Start();
@@ -146,12 +145,18 @@ namespace Server.Items
 
             protected override void OnTick()
             {
+                // Stop if the owner is invalid or the item is not equipped
                 if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.OuterTorso) is SavageShamansRegalia))
                 {
                     Stop();
                     return;
                 }
 
+                // Check if auto-summon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     SavageShaman shaman = new SavageShaman

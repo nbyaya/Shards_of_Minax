@@ -145,6 +145,10 @@ namespace Server.Items
                     return;
                 }
 
+                // Check if autosummon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     RuneBeetle beetle = new RuneBeetle

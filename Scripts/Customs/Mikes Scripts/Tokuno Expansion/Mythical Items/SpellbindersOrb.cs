@@ -53,10 +53,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "The power of the Spellbinder's Orb flows through you!");
 
-                // Start summon timer
+                // Start summon timer only if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonSpellbinderTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonSpellbinderTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -108,8 +111,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonSpellbinderTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonSpellbinderTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -132,7 +138,8 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                // Only summon if autosummon is enabled and if the player has space for more followers
+                if (AutoSummonManager.IsAutoSummonEnabled(m_Owner) && m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     Spellbinder spellbinder = new Spellbinder
                     {

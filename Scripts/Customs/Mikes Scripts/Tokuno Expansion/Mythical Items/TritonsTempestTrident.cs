@@ -137,6 +137,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Check if autosummon is enabled before proceeding
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Check if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     Triton triton = new Triton

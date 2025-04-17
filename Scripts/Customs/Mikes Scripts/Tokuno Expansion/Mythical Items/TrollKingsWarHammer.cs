@@ -27,7 +27,6 @@ namespace Server.Items
             Attributes.Luck = 50; // Moderate luck bonus
             Attributes.WeaponSpeed = 10; // Faster swing speed
 
-
             // Skill Bonuses
             SkillBonuses.SetValues(0, SkillName.Macing, 15.0); // Bonus to mace fighting
             SkillBonuses.SetValues(1, SkillName.Tactics, 10.0); // Bonus to tactics for better combat strategy
@@ -54,10 +53,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you could command more creatures now!");
 
-                // Start summon timer
+                // Start summon timer if auto-summon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonTrollTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonTrollTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -108,8 +110,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonTrollTimer(mob);
-                m_Timer.Start();
+                // Start summon timer if auto-summon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonTrollTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -131,6 +137,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Check if auto-summon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

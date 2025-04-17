@@ -85,5 +85,10 @@ namespace Server.Mobiles
             m_AbilitiesInitialized = false; // Reset flag on deserialize
             // Reinitialize abilities
         }
+
+		public AncientDragonBoss(Serial serial) : base(serial)
+		{
+		}
+		
     }
 }

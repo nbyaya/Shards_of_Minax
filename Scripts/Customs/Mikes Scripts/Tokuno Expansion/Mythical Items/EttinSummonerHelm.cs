@@ -53,10 +53,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a primal power coursing through you, ready to summon mighty Ettins!");
 
-                // Start summon timer
+                // Start summon timer only if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonEttinTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm)) // Check if autosummon is enabled
+                {
+                    m_Timer = new SummonEttinTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -107,8 +110,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonEttinTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob)) // Check if autosummon is enabled
+                {
+                    m_Timer = new SummonEttinTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -131,6 +137,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Only summon if autosummon is enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     Ettin ettin = new Ettin

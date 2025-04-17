@@ -60,10 +60,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a dark power coursing through you, granting control over more followers!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonLichLordTimer(pm);
-                m_Timer.Start();
+                // Check if autosummon is enabled and start the summon timer accordingly
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StopSummonTimer();
+                    m_Timer = new SummonLichLordTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -115,8 +118,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonLichLordTimer(mob);
-                m_Timer.Start();
+                // Check if autosummon is enabled and start the timer accordingly
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonLichLordTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -139,7 +146,8 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                // Only summon if autosummon is enabled and the player has room for more followers
+                if (AutoSummonManager.IsAutoSummonEnabled(m_Owner) && m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     LichLord lichLord = new LichLord
                     {

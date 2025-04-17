@@ -56,7 +56,7 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel the call of the wild and can command more creatures!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
                 m_Timer = new SummonGreyWolfTimer(pm);
                 m_Timer.Start();
@@ -134,6 +134,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Only summon if autosummon is enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     GreyWolf wolf = new GreyWolf

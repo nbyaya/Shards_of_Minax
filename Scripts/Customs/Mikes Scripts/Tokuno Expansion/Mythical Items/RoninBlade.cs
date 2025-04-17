@@ -30,7 +30,6 @@ namespace Server.Items
             Attributes.CastSpeed = 1;
             Attributes.CastRecovery = 1;
 
-
             // Skill Bonuses
             SkillBonuses.SetValues(0, SkillName.Bushido, 20.0); // Thematic with Ronin
             SkillBonuses.SetValues(1, SkillName.Parry, 15.0);
@@ -61,10 +60,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you can command more warriors now!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonRoninTimer(pm);
-                m_Timer.Start();
+                // Check if autosummon is enabled before starting the summon timer
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StopSummonTimer();
+                    m_Timer = new SummonRoninTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -115,8 +117,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonRoninTimer(mob);
-                m_Timer.Start();
+                // Check if autosummon is enabled before starting the summon timer
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonRoninTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -139,7 +145,8 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                // Only summon if autosummon is enabled and the player has room for more followers
+                if (AutoSummonManager.IsAutoSummonEnabled(m_Owner) && m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     YoungRonin ronin = new YoungRonin
                     {

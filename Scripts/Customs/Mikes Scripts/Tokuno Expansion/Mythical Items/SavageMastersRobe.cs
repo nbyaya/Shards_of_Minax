@@ -73,10 +73,14 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a deeper connection to wild creatures!");
 
-                // Start summon timer
+                // Start summon timer only if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonSavageRidgebackTimer(pm);
-                m_Timer.Start();
+
+                if (AutoSummonManager.IsAutoSummonEnabled(pm)) // Check autosummon toggle
+                {
+                    m_Timer = new SummonSavageRidgebackTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -124,8 +128,8 @@ namespace Server.Items
             int version = reader.ReadInt();
             m_BonusFollowers = reader.ReadInt();
 
-            // Reinitialize timer if equipped on restart
-            if (Parent is Mobile mob)
+            // Reinitialize timer if equipped on restart and autosummon is enabled
+            if (Parent is Mobile mob && AutoSummonManager.IsAutoSummonEnabled(mob))
             {
                 m_Timer = new SummonSavageRidgebackTimer(mob);
                 m_Timer.Start();
@@ -151,6 +155,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Check if autosummon is enabled before proceeding
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     SavageRidgeback ridgeback = new SavageRidgeback

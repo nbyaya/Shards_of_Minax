@@ -21,7 +21,7 @@ namespace Server.SkillHandlers
 
         public static TimeSpan OnUse(Mobile m)
         {
-            m.Target = new ForensicTarget();
+            m.Target = new ForensicTarget(m);
             m.RevealingAction();
 
             m.SendLocalizedMessage(501000); // Show me the crime.
@@ -31,120 +31,136 @@ namespace Server.SkillHandlers
 
         public class ForensicTarget : Target
         {
-            public ForensicTarget()
-                : base(10, false, TargetFlags.None)
+            private PlayerMobile _player;
+
+            public ForensicTarget(Mobile from)
+                : base(GetMaxRange(from), false, TargetFlags.None)
             {
+                _player = from as PlayerMobile;
+            }
+
+            private static int GetMaxRange(Mobile from)
+            {
+                if (from is PlayerMobile player)
+                {
+                    var profile = player.AcquireTalents();
+                    return 10 + profile.Talents[(TalentID)TalentID.ForensicInsight].Points; // Base 10 + bonus range
+                }
+                return 10;
             }
 
             protected override void OnTarget(Mobile from, object target)
             {
-                double skill = from.Skills[SkillName.Forensics].Value;
-                double minSkill = 30.0;
+                if (_player == null)
+                    return;
 
-                if (target is Corpse)
+                var profile = _player.AcquireTalents();
+                int efficiencyBonus = profile.Talents[(TalentID)TalentID.ForensicEfficiency].Points;
+                int revelationBonus = profile.Talents[(TalentID)TalentID.ForensicRevelation].Points;
+
+                double minSkillCorpse = Math.Max(10.0, 30.0 - efficiencyBonus); // Reduce corpse analysis requirement
+                double minSkillMobile = Math.Max(15.0, 36.0 - efficiencyBonus); // Reduce thief detection requirement
+                double minSkillLocks = Math.Max(20.0, 41.0 - efficiencyBonus); // Reduce lock analysis requirement
+
+                if (target is Corpse corpse)
                 {
-                    if (skill < minSkill)
+                    if (_player.Skills[SkillName.Forensics].Value < minSkillCorpse)
                     {
-                        from.SendLocalizedMessage(501003); //You notice nothing unusual.
+                        from.SendLocalizedMessage(501003); // You notice nothing unusual.
                         return;
                     }
 
-                    if (from.CheckTargetSkill(SkillName.Forensics, target, minSkill, 55.0))
+                    if (_player.CheckTargetSkill(SkillName.Forensics, target, minSkillCorpse, 55.0))
                     {
-                        Corpse c = (Corpse)target;
-
-                        if (c.m_Forensicist != null)
-                            from.SendLocalizedMessage(1042750, c.m_Forensicist); // The forensicist  ~1_NAME~ has already discovered that:
+                        if (corpse.m_Forensicist != null)
+                            from.SendMessage($"This crime has already been examined by {_player.Name}.");
                         else
-                            c.m_Forensicist = from.Name;
+                            corpse.m_Forensicist = _player.Name;
 
-                        if (((Body)c.Amount).IsHuman)
-                            from.SendLocalizedMessage(1042751, (c.Killer == null ? "no one" : c.Killer.Name));//This person was killed by ~1_KILLER_NAME~
-
-                        if (c.Looters.Count > 0)
+                        if (((Body)corpse.Amount).IsHuman)
                         {
-                            StringBuilder sb = new StringBuilder();
+                            from.SendMessage($"This person was killed by {corpse.Killer?.Name ?? "an unknown assailant"}.");
+                        }
 
-                            for (int i = 0; i < c.Looters.Count; i++)
-                            {
-                                if (i > 0)
-                                    sb.Append(", ");
-
-                                sb.Append(((Mobile)c.Looters[i]).Name);
-                            }
-
-                            from.SendLocalizedMessage(1042752, sb.ToString());//This body has been distrubed by ~1_PLAYER_NAMES~
+                        if (corpse.Looters.Count > 0)
+                        {
+                            var looters = string.Join(", ", corpse.Looters.Select(l => ((Mobile)l).Name));
+                            from.SendMessage($"The body has been disturbed by: {looters}");
                         }
                         else
                         {
-                            from.SendLocalizedMessage(501002);//The corpse has not be desecrated.
+                            from.SendLocalizedMessage(501002); // The corpse has not been desecrated.
+                        }
+
+                        if (revelationBonus > 0)
+                        {
+                            from.SendMessage($"Forensic Revelation reveals deeper clues... (Bonus: {revelationBonus})");
                         }
                     }
                     else
                     {
-                        from.SendLocalizedMessage(501001);//You cannot determain anything useful.
+                        from.SendLocalizedMessage(501001); // You cannot determine anything useful.
                     }
                 }
-                else if (target is Mobile)
+                else if (target is Mobile mobileTarget)
                 {
-                    if (skill < 36.0)
+                    if (_player.Skills[SkillName.Forensics].Value < minSkillMobile)
                     {
-                        from.SendLocalizedMessage(501003);//You notice nothing unusual.
-                    }
-                    else if (from.CheckTargetSkill(SkillName.Forensics, target, 36.0, 100.0))
-                    {
-                        if (target is PlayerMobile && ((PlayerMobile)target).NpcGuild == NpcGuild.ThievesGuild)
-                        {
-                            from.SendLocalizedMessage(501004);//That individual is a thief!
-                        }
-                        else
-                        {
-                            from.SendLocalizedMessage(501003);//You notice nothing unusual.
-                        }
-                    }
-                    else
-                    {
-                        from.SendLocalizedMessage(501001);//You cannot determain anything useful.
-                    }
-                }
-                else if (target is ILockpickable)
-                {
-                    if (skill < 41.0)
-                    {
-                        from.SendLocalizedMessage(501003); //You notice nothing unusual.
-                    }
-                    else if (from.CheckTargetSkill(SkillName.Forensics, target, 41.0, 100.0))
-                    {
-                        ILockpickable p = (ILockpickable)target;
-
-                        if (p.Picker != null)
-                        {
-                            from.SendLocalizedMessage(1042749, p.Picker.Name);//This lock was opened by ~1_PICKER_NAME~
-                        }
-                        else
-                        {
-                            from.SendLocalizedMessage(501003);//You notice nothing unusual.
-                        }
-                    }
-                    else
-                    {
-                        from.SendLocalizedMessage(501001);//You cannot determain anything useful.
-                    }
-                }
-                else if (Core.SA && target is Item)
-                {
-                    Item item = (Item)target;
-
-                    if (item is IForensicTarget)
-                    {
-                        ((IForensicTarget)item).OnForensicEval(from);
-                    }
-                    else  if (skill < 41.0)
-                    {
-                        from.SendLocalizedMessage(501001);//You cannot determain anything useful.
+                        from.SendLocalizedMessage(501003); // You notice nothing unusual.
                         return;
                     }
 
+                    if (_player.CheckTargetSkill(SkillName.Forensics, target, minSkillMobile, 100.0))
+                    {
+                        if (mobileTarget is PlayerMobile playerMobile && playerMobile.NpcGuild == NpcGuild.ThievesGuild)
+                        {
+                            from.SendMessage($"Forensic insight reveals that {playerMobile.Name} is a **thief**!");
+                        }
+                        else
+                        {
+                            from.SendLocalizedMessage(501003); // You notice nothing unusual.
+                        }
+
+                        if (revelationBonus >= 5)
+                        {
+                            from.SendMessage($"Forensic Revelation uncovers additional behavior patterns...");
+                        }
+                    }
+                    else
+                    {
+                        from.SendLocalizedMessage(501001); // You cannot determine anything useful.
+                    }
+                }
+                else if (target is ILockpickable lockpickable)
+                {
+                    if (_player.Skills[SkillName.Forensics].Value < minSkillLocks)
+                    {
+                        from.SendLocalizedMessage(501003); // You notice nothing unusual.
+                        return;
+                    }
+
+                    if (_player.CheckTargetSkill(SkillName.Forensics, target, minSkillLocks, 100.0))
+                    {
+                        if (lockpickable.Picker != null)
+                        {
+                            from.SendMessage($"This lock was opened by {lockpickable.Picker.Name}.");
+                        }
+                        else
+                        {
+                            from.SendLocalizedMessage(501003); // You notice nothing unusual.
+                        }
+                    }
+                    else
+                    {
+                        from.SendLocalizedMessage(501001); // You cannot determine anything useful.
+                    }
+                }
+                else if (target is IForensicTarget forensicTarget)
+                {
+                    forensicTarget.OnForensicEval(from);
+                }
+                else if (target is Item item)
+                {
                     var honestySocket = item.GetSocket<HonestyItemSocket>();
 
                     if (honestySocket != null)
@@ -152,17 +168,16 @@ namespace Server.SkillHandlers
                         if (honestySocket.HonestyOwner == null)
                             Server.Services.Virtues.HonestyVirtue.AssignOwner(honestySocket);
 
-                        if (from.CheckTargetSkill(SkillName.Forensics, target, 41.0, 100.0))
+                        if (_player.CheckTargetSkill(SkillName.Forensics, target, minSkillLocks, 100.0))
                         {
-                            string region = honestySocket.HonestyRegion == null ? "an unknown place" : honestySocket.HonestyRegion;
-
-                            if (from.Skills.Forensics.Value >= 61.0)
+                            string region = honestySocket.HonestyRegion ?? "an unknown place";
+                            if (_player.Skills.Forensics.Value >= 61.0)
                             {
-                                from.SendLocalizedMessage(1151521, String.Format("{0}\t{1}", honestySocket.HonestyOwner.Name, region)); // This item belongs to ~1_val~ who lives in ~2_val~.
+                                from.SendMessage($"This item belongs to {honestySocket.HonestyOwner.Name}, who lives in {region}.");
                             }
                             else
                             {
-                                from.SendLocalizedMessage(1151522, region); // You find seeds from a familiar plant stuck to the item which suggests that this item is from ~1_val~.
+                                from.SendMessage($"You find evidence suggesting this item comes from {region}.");
                             }
                         }
                     }

@@ -254,44 +254,50 @@ namespace Server.Engines.Harvest
             return false;
         }
 
-        public override Type MutateType(Type type, Mobile from, Item tool, HarvestDefinition def, Map map, Point3D loc, HarvestResource resource)
-        {
-            if (FishInfo.IsRareFish(type))
-                return type;
+		public override Type MutateType(Type type, Mobile from, Item tool, HarvestDefinition def, Map map, Point3D loc, HarvestResource resource)
+		{
+			if (FishInfo.IsRareFish(type))
+				return type;
 
-            bool deepWater = IsDeepWater(loc, map);
-            bool junkproof = HasTypeHook(tool, HookType.JunkProof); 
+			bool deepWater = IsDeepWater(loc, map);
+			bool junkproof = HasTypeHook(tool, HookType.JunkProof);
+			double skillBase = from.Skills[SkillName.Fishing].Base;
+			double skillValue = from.Skills[SkillName.Fishing].Value;
 
-            double skillBase = from.Skills[SkillName.Fishing].Base;
-            double skillValue = from.Skills[SkillName.Fishing].Value;
+			var table = Siege.SiegeShard ? m_SiegeMutateTable : m_MutateTable;
 
-            var table = Siege.SiegeShard ? m_SiegeMutateTable : m_MutateTable;
+			for (int i = 0; i < table.Length; ++i)
+			{
+				MutateEntry entry = table[i];
 
-            for (int i = 0; i < table.Length; ++i)
-            {
-                MutateEntry entry = m_MutateTable[i];
+				if (i == 6 && (from.Region == null || !from.Region.IsPartOf("Underworld")))
+					continue;
 
-                // RedHerring / MudPuppy
-                if (i == 6 && (from.Region == null || !from.Region.IsPartOf("Underworld")))
-                    continue;
+				if (junkproof && i == 5 && 0.80 >= Utility.RandomDouble())
+					continue;
 
-                if (junkproof && i == 5 && 0.80 >= Utility.RandomDouble())
-                    continue;
+				if (!deepWater && entry.m_DeepWater)
+					continue;
 
-                if (!deepWater && entry.m_DeepWater)
-                    continue;
+				if (skillBase >= entry.m_ReqSkill)
+				{
+					double chance = (skillValue - entry.m_MinSkill) / (entry.m_MaxSkill - entry.m_MinSkill);
 
-                if (skillBase >= entry.m_ReqSkill)
-                {
-                    double chance = (skillValue - entry.m_MinSkill) / (entry.m_MaxSkill - entry.m_MinSkill);
+					if (from is PlayerMobile p)
+					{
+						var prof = p.AcquireTalents();
+						int bonusLuck = prof.Talents.ContainsKey(TalentID.FishingLuck) ? prof.Talents[TalentID.FishingLuck].Points : 0;
+						chance += bonusLuck * 0.01;
+					}
 
-                    if (chance > Utility.RandomDouble())
-                        return entry.m_Types[Utility.Random(entry.m_Types.Length)];
-                }
-            }
+					if (chance > Utility.RandomDouble())
+						return entry.m_Types[Utility.Random(entry.m_Types.Length)];
+				}
+			}
 
-            return type;
-        }
+			return type;
+		}
+
 
         private bool IsDeepWater(Point3D p, Map map)
         {
@@ -575,105 +581,113 @@ namespace Server.Engines.Harvest
             return base.Give(m, item, placeAtFeet);
         }
 
-        public override void SendSuccessTo(Mobile from, Item item, HarvestResource resource)
-        {
-            if (item is BigFish)
-            {
-                from.SendLocalizedMessage(1042635); // Your fishing pole bends as you pull a big fish from the depths!
+		public override void SendSuccessTo(Mobile from, Item item, HarvestResource resource)
+		{
+			if (item is BigFish)
+			{
+				from.SendLocalizedMessage(1042635); // Big fish message
+				((BigFish)item).Fisher = from;
+				((BigFish)item).DateCaught = DateTime.Now;
+			}
+			else if (item is RedHerring)
+				from.SendLocalizedMessage(1095047, null, 0x23);
+			else if (item is MudPuppy)
+				from.SendLocalizedMessage(1095064, null, 0x23);
+			else if (item is WoodenChest || item is MetalGoldenChest)
+			{
+				from.SendLocalizedMessage(503175);
+			}
+			else
+			{
+				int number;
+				string name;
 
-                ((BigFish)item).Fisher = from;
-                ((BigFish)item).DateCaught = DateTime.Now;
-            }
+				if (item is BaseMagicFish)
+				{
+					number = 1008124;
+					name = "a mess of small fish";
+				}
+				else if (item is Fish)
+				{
+					number = 1008124;
+					name = item.ItemData.Name;
+				}
+				else if (item is BaseShoes)
+				{
+					number = 1008124;
+					name = item.ItemData.Name;
+				}
+				else if (item is TreasureMap)
+				{
+					number = 1008125;
+					name = "a sodden piece of parchment";
+				}
+				else if (item is MessageInABottle)
+				{
+					number = 1008125;
+					name = "a bottle, with a message in it";
+				}
+				else if (item is SpecialFishingNet)
+				{
+					number = 1008125;
+					name = "a special fishing net";
+				}
+				else if (item is BaseHighseasFish)
+				{
+					if (FishInfo.IsRareFish(item.GetType()))
+					{
+						from.SendLocalizedMessage(1043297, "a rare fish");
+					}
+					else if (item.LabelNumber < 1)
+					{
+						from.SendLocalizedMessage(1043297, "a fish");
+					}
+					else
+						from.SendLocalizedMessage(1043297, String.Format("#{0}", item.LabelNumber));
+					return;
+				}
+				else if (item.LabelNumber > 0)
+				{
+					from.SendLocalizedMessage(1043297, String.Format("#{0}", item.LabelNumber));
+					return;
+				}
+				else
+				{
+					number = 1043297;
+					if ((item.ItemData.Flags & TileFlag.ArticleA) != 0)
+						name = "a " + item.ItemData.Name;
+					else if ((item.ItemData.Flags & TileFlag.ArticleAn) != 0)
+						name = "an " + item.ItemData.Name;
+					else
+						name = item.ItemData.Name;
+				}
 
-            #region Stygian Abyss
-            else if (item is RedHerring)
-                from.SendLocalizedMessage(1095047, null, 0x23); // You take the Red Herring and put it into your pack.  The only thing more surprising than the fact that there is a fish called the Red Herring is the fact that you fished for it!
-            else if (item is MudPuppy)
-                from.SendLocalizedMessage(1095064, null, 0x23); // You take the Mud Puppy and put it into your pack.  Not surprisingly, it is very muddy.
-            #endregion
+				NetState ns = from.NetState;
+				if (ns == null)
+					return;
 
-            else if (item is WoodenChest || item is MetalGoldenChest)
-            {
-                from.SendLocalizedMessage(503175); // You pull up a heavy chest from the depths of the ocean!
-            }
-            else
-            {
-                int number;
-                string name;
+				if (number == 1043297 || ns.HighSeas)
+					from.SendLocalizedMessage(number, name);
+				else
+					from.SendLocalizedMessage(number, true, name);
+			}
 
-                if (item is BaseMagicFish)
-                {
-                    number = 1008124;
-                    name = "a mess of small fish";
-                }
-                else if (item is Fish)
-                {
-                    number = 1008124;
-                    name = item.ItemData.Name;
-                }
-                else if (item is BaseShoes)
-                {
-                    number = 1008124;
-                    name = item.ItemData.Name;
-                }
-                else if (item is TreasureMap)
-                {
-                    number = 1008125;
-                    name = "a sodden piece of parchment";
-                }
-                else if (item is MessageInABottle)
-                {
-                    number = 1008125;
-                    name = "a bottle, with a message in it";
-                }
-                else if (item is SpecialFishingNet)
-                {
-                    number = 1008125;
-                    name = "a special fishing net"; // TODO: this is just a guess--what should it really be named?
-                }
-                else if (item is BaseHighseasFish)
-                {
-                    if (FishInfo.IsRareFish(item.GetType()))
-                    {
-                        from.SendLocalizedMessage(1043297, "a rare fish");
-                    }
-                    else if (item.LabelNumber < 1)
-                    {
-                        from.SendLocalizedMessage(1043297, "a fish");
-                    }
-                    else
-                        from.SendLocalizedMessage(1043297, String.Format("#{0}", item.LabelNumber));
+			// PASSIVE BONUS: Extra fish from FishingYield talent.
+			if (from is PlayerMobile player)
+			{
+				var profile = player.AcquireTalents();
+				int bonusYield = profile.Talents.ContainsKey(TalentID.FishingYield) ? profile.Talents[TalentID.FishingYield].Points : 0;
+				if (bonusYield > 0 && item is Fish && !(item is BigFish))
+				{
+					for (int i = 0; i < bonusYield; i++)
+					{
+						from.AddToBackpack(new Fish());
+					}
+					player.SendMessage($"Bumper Harvest grants you {bonusYield} extra fish!");
+				}
+			}
+		}
 
-                    return;
-                }
-                else if (item.LabelNumber > 0)
-                {
-                    from.SendLocalizedMessage(1043297, String.Format("#{0}", item.LabelNumber));
-                    return;
-                }
-                else
-                {
-                    number = 1043297;
-
-                    if ((item.ItemData.Flags & TileFlag.ArticleA) != 0)
-                        name = "a " + item.ItemData.Name;
-                    else if ((item.ItemData.Flags & TileFlag.ArticleAn) != 0)
-                        name = "an " + item.ItemData.Name;
-                    else
-                        name = item.ItemData.Name;
-                }
-
-                NetState ns = from.NetState;
-
-                if (ns == null)
-                    return;
-
-                if (number == 1043297 || ns.HighSeas)
-                    from.SendLocalizedMessage(number, name);
-                else
-                    from.SendLocalizedMessage(number, true, name);
-            }
-        }
 
         public override void StartHarvesting(Mobile from, Item tool, object toHarvest)
         {
@@ -748,19 +762,27 @@ namespace Server.Engines.Harvest
             return true;
         }
 
-        public override bool CheckHarvest(Mobile from, Item tool)
-        {
-            if (!base.CheckHarvest(from, tool))
-                return false;
+		public override bool CheckHarvest(Mobile from, Item tool)
+		{
+			if (!base.CheckHarvest(from, tool))
+				return false;
 
-            if (from.Mounted || from.Flying)
-            {
-                from.SendLocalizedMessage(500971); // You can't fish while riding!
-                return false;
-            }
+			if (from.Mounted || from.Flying)
+			{
+				from.SendLocalizedMessage(500971); // You can't fish while riding!
+				return false;
+			}
 
-            return true;
-        }
+			if (from is PlayerMobile player)
+			{
+				var profile = player.AcquireTalents();
+				int bonusRange = profile.Talents.ContainsKey(TalentID.FishingRange) ? profile.Talents[TalentID.FishingRange].Points : 0;
+				Definition.MaxRange = 4 + bonusRange; // Base range 4 plus bonus
+			}
+
+			return true;
+		}
+
 
         public override bool CheckHarvest(Mobile from, Item tool, HarvestDefinition def, object toHarvest)
         {

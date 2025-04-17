@@ -58,10 +58,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel an attunement with nature, able to command more creatures!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonTimberWolfTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm)) // Check if autosummon is enabled
+                {
+                    m_Timer = new SummonTimberWolfTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -112,8 +115,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonTimberWolfTimer(mob);
-                m_Timer.Start();
+                // Only start the timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonTimberWolfTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -136,6 +143,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Check if autosummon is enabled before proceeding
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     TimberWolf wolf = new TimberWolf

@@ -54,10 +54,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you could command more creatures now!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonYoungNinjaTimer(pm);
-                m_Timer.Start();
+                // Only start summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StopSummonTimer();
+                    m_Timer = new SummonYoungNinjaTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -107,7 +110,7 @@ namespace Server.Items
             m_BonusFollowers = reader.ReadInt();
 
             // Reinitialize timer if equipped on restart
-            if (Parent is Mobile mob)
+            if (Parent is Mobile mob && AutoSummonManager.IsAutoSummonEnabled(mob))
             {
                 m_Timer = new SummonYoungNinjaTimer(mob);
                 m_Timer.Start();
@@ -127,12 +130,14 @@ namespace Server.Items
 
             protected override void OnTick()
             {
-                if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.OneHanded) is YoungNinjasShadowblade))
+                // Stop if the owner is invalid, the item is not equipped, or autosummon is off
+                if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.OneHanded) is YoungNinjasShadowblade) || !AutoSummonManager.IsAutoSummonEnabled(m_Owner))
                 {
                     Stop();
                     return;
                 }
 
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     YoungNinja ninja = new YoungNinja

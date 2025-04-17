@@ -54,10 +54,11 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "The Toxic Warden's essence allows you to command more creatures!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonAcidElementalTimer(pm);
-                m_Timer.Start();
+                // Check if autosummon is enabled and start summon timer if so
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StartSummonTimer(pm);
+                }
             }
         }
 
@@ -74,6 +75,13 @@ namespace Server.Items
 
             // Stop the summon timer
             StopSummonTimer();
+        }
+
+        private void StartSummonTimer(PlayerMobile pm)
+        {
+            StopSummonTimer(); // Ensure any existing timers are stopped before starting a new one
+            m_Timer = new SummonAcidElementalTimer(pm);
+            m_Timer.Start();
         }
 
         private void StopSummonTimer()
@@ -108,8 +116,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonAcidElementalTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonAcidElementalTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -126,12 +137,18 @@ namespace Server.Items
 
             protected override void OnTick()
             {
+                // Stop if the owner is invalid or the item is not equipped
                 if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Waist) is ToxicWardensSash))
                 {
                     Stop();
                     return;
                 }
 
+                // Only summon if autosummon is enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     AcidElemental popper = new AcidElemental

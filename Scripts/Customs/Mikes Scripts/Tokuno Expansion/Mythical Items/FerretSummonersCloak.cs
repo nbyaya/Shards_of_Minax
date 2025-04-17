@@ -53,7 +53,7 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel the presence of ferrets at your side!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
                 m_Timer = new SummonFerretTimer(pm);
                 m_Timer.Start();
@@ -131,6 +131,10 @@ namespace Server.Items
                     return;
                 }
 
+                // Check if auto summon is enabled before proceeding
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     Ferret ferret = new Ferret
@@ -142,51 +146,6 @@ namespace Server.Items
                     ferret.MoveToWorld(m_Owner.Location, m_Owner.Map);
                     m_Owner.SendMessage(38, "A playful ferret scurries to your side!");
                 }
-            }
-        }
-
-        // Simple ferret mobile implementation
-        public class Ferret : BaseCreature
-        {
-            public Ferret() : base(AIType.AI_Animal, FightMode.None, 10, 1, 0.2, 0.4)
-            {
-                Name = "a ferret";
-                Body = 0xD7; // Ferret body ID
-                Hue = 1153;
-                BaseSoundID = 0xCC;
-
-                SetStr(20);
-                SetDex(30);
-                SetInt(5);
-
-                SetHits(10);
-                SetStam(30);
-                SetMana(0);
-
-                SetDamage(1, 2);
-
-                SetSkill(SkillName.Wrestling, 20.0);
-                SetSkill(SkillName.Tactics, 20.0);
-
-                Tamable = true;
-                ControlSlots = 1;
-                MinTameSkill = 10.0;
-            }
-
-            public Ferret(Serial serial) : base(serial)
-            {
-            }
-
-            public override void Serialize(GenericWriter writer)
-            {
-                base.Serialize(writer);
-                writer.Write((int)0); // version
-            }
-
-            public override void Deserialize(GenericReader reader)
-            {
-                base.Deserialize(reader);
-                int version = reader.ReadInt();
             }
         }
     }

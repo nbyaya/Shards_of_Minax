@@ -53,7 +53,7 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel the fiery power of dragons empowering your command over creatures!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
                 m_Timer = new SummonDragonMageTimer(pm);
                 m_Timer.Start();
@@ -131,6 +131,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Check if autosummon is enabled before summoning
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     DragonsFlameGrandMage dragonMage = new DragonsFlameGrandMage

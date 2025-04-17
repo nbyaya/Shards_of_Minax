@@ -28,7 +28,6 @@ namespace Server.Items
             Attributes.WeaponSpeed = 20;
             Attributes.SpellChanneling = 1; // Allows spellcasting while equipped
 
-
             // Skill Bonuses
             SkillBonuses.SetValues(0, SkillName.Necromancy, 15.0);
             SkillBonuses.SetValues(1, SkillName.SpiritSpeak, 10.0);
@@ -58,10 +57,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you could command more creatures now!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonSkeletalMountTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm)) // Check if autosummon is enabled
+                {
+                    m_Timer = new SummonSkeletalMountTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -112,8 +114,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonSkeletalMountTimer(mob);
-                m_Timer.Start();
+                // Check if autosummon is enabled when re-equip
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonSkeletalMountTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -136,6 +142,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Only summon if autosummon is enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Check if there is room for another follower
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     SkeletalMount mount = new SkeletalMount

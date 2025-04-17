@@ -129,6 +129,10 @@ namespace Server.Items
                     return;
                 }
 
+                // Check if auto summon is enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     FireRabbit rabbit = new FireRabbit
@@ -141,52 +145,6 @@ namespace Server.Items
                     m_Owner.SendMessage(38, "A Fire Rabbit appears to serve you!");
                 }
             }
-        }
-    }
-
-    public class FireRabbit : BaseCreature
-    {
-        public FireRabbit() : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
-        {
-            Name = "Fire Rabbit";
-            Body = 205; // Rabbit body
-            Hue = 1359; // Fiery red-orange
-
-            SetStr(50);
-            SetDex(75);
-            SetInt(25);
-
-            SetHits(40);
-            SetStam(60);
-            SetMana(30);
-
-            SetDamage(5, 10);
-
-            SetSkill(SkillName.MagicResist, 40.0);
-            SetSkill(SkillName.Tactics, 30.0);
-            SetSkill(SkillName.Wrestling, 35.0);
-
-            VirtualArmor = 10;
-            ControlSlots = 1;
-
-            // Adds a fire-based attack effect
-            AddItem(new LightSource());
-        }
-
-        public FireRabbit(Serial serial) : base(serial)
-        {
-        }
-
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)0); // version
-        }
-
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
         }
     }
 }

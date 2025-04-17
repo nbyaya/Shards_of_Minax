@@ -597,7 +597,7 @@ namespace Server.Engines.Harvest
             }
         }
 
-        private static bool FindValidTile(Mobile m, HarvestDefinition definition, out object toHarvest)
+        public static bool FindValidTile(Mobile m, HarvestDefinition definition, out object toHarvest)
         {
             Map map = m.Map;
             toHarvest = null;

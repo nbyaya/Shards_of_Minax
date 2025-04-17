@@ -114,37 +114,43 @@ namespace Server.Items
             }
         }
 
-        private class SummonAbysmalHorrorTimer : Timer
-        {
-            private Mobile m_Owner;
+		private class SummonAbysmalHorrorTimer : Timer
+		{
+			private Mobile m_Owner;
 
-            public SummonAbysmalHorrorTimer(Mobile owner)
-                : base(TimeSpan.FromSeconds(15.0), TimeSpan.FromSeconds(15.0)) // Summons every 15 seconds
-            {
-                m_Owner = owner;
-                Priority = TimerPriority.OneSecond;
-            }
+			public SummonAbysmalHorrorTimer(Mobile owner)
+				: base(TimeSpan.FromSeconds(15.0), TimeSpan.FromSeconds(15.0)) // Summons every 15 seconds
+			{
+				m_Owner = owner;
+				Priority = TimerPriority.OneSecond;
+			}
 
-            protected override void OnTick()
-            {
-                if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Helm) is AbyssalCrownOfCommand))
-                {
-                    Stop();
-                    return;
-                }
+			protected override void OnTick()
+			{
+				// Stop if owner is invalid or the item is no longer equipped
+				if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Helm) is AbyssalCrownOfCommand))
+				{
+					Stop();
+					return;
+				}
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
-                {
-                    AbysmalHorror horror = new AbysmalHorror
-                    {
-                        Controlled = true,
-                        ControlMaster = m_Owner
-                    };
+				// Check if the player has autosummon enabled
+				if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+					return;
 
-                    horror.MoveToWorld(m_Owner.Location, m_Owner.Map);
-                    m_Owner.SendMessage(38, "An Abysmal Horror is summoned to serve you!");
-                }
-            }
-        }
+				if (m_Owner.Followers < m_Owner.FollowersMax)
+				{
+					AbysmalHorror horror = new AbysmalHorror
+					{
+						Controlled = true,
+						ControlMaster = m_Owner
+					};
+
+					horror.MoveToWorld(m_Owner.Location, m_Owner.Map);
+					m_Owner.SendMessage(38, "An Abysmal Horror is summoned to serve you!");
+				}
+			}
+		}
+
     }
 }

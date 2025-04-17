@@ -57,10 +57,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(1152, "The icy power of Ortanord courses through you, bolstering your command over minions!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonOrtanordMinionTimer(pm);
-                m_Timer.Start();
+                // Start summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StopSummonTimer();
+                    m_Timer = new SummonOrtanordMinionTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -111,8 +114,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonOrtanordMinionTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonOrtanordMinionTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -134,6 +140,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Stop if autosummon is disabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

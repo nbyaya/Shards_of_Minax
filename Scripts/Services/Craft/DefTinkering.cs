@@ -350,6 +350,7 @@ namespace Server.Engines.Craft
             AddCraft(typeof(ScribesPen), 1044046, 1044168, 25.0, 75.0, typeof(IronIngot), 1044036, 1, 1044037);
             AddCraft(typeof(Clippers), 1044046, 1112117, 50.0, 50.0, typeof(IronIngot), 1044036, 4, 1044037);
 			AddCraft(typeof(CartographersScope), 1044046, "Cartographers Scope", 50.0, 50.0, typeof(IronIngot), 1044036, 4, 1044037);
+			AddCraft(typeof(SnoopersMasterScope), 1044046, "Snoopers MasterScope", 50.0, 50.0, typeof(IronIngot), 1044036, 4, 1044037);
 			AddCraft(typeof(TransmutationCauldron), 1044046, "Transmutation Cauldron", 30.0, 80.0, typeof(IronIngot), "IronIngot", 5, 1044037);
             
             if (Core.ML)

@@ -22,17 +22,25 @@ namespace Server.Targeting
 
 		public DateTime TimeoutTime { get { return m_TimeoutTime; } }
 
-		protected Target(int range, bool allowGround, TargetFlags flags)
-		{
-			m_TargetID = ++m_NextTargetID;
-			m_Range = range;
-			AllowGround = allowGround;
-			Flags = flags;
+        protected Target(int range, bool allowGround, TargetFlags flags)
+        {
+            m_TargetID = ++m_NextTargetID;
+            m_Range = range;
+            AllowGround = allowGround;
+            Flags = flags;
+            m_CheckLOS = true;
+        }
 
-			m_CheckLOS = true;
-		}
+        protected Target(int range, bool allowGround, TargetFlags flags, bool checkLos) //alternative constructor to be able to break LoS
+        {
+            m_TargetID = ++m_NextTargetID;
+            m_Range = range;
+            AllowGround = allowGround;
+            Flags = flags;
+            m_CheckLOS = checkLos;
+        }
 
-		public static void Cancel(Mobile m)
+        public static void Cancel(Mobile m)
 		{
 			NetState ns = m.NetState;
 

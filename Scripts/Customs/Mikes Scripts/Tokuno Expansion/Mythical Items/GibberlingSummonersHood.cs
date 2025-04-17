@@ -56,10 +56,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "A chaotic aura surrounds you, allowing you to command more creatures!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonGibberlingTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm)) // Check if autosummon is enabled
+                {
+                    m_Timer = new SummonGibberlingTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -110,8 +113,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonGibberlingTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob)) // Ensure autosummon is enabled before starting the timer
+                {
+                    m_Timer = new SummonGibberlingTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -133,6 +139,9 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner)) // Check if autosummon is enabled before summoning
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

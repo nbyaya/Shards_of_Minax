@@ -54,10 +54,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel attuned to summon whimsical creatures!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonVorpalBunnyTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonVorpalBunnyTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -105,11 +108,14 @@ namespace Server.Items
             int version = reader.ReadInt();
             m_BonusFollowers = reader.ReadInt();
 
-            // Reinitialize timer if equipped on restart
+            // Reinitialize timer if equipped on restart and autosummon is enabled
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonVorpalBunnyTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonVorpalBunnyTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -132,6 +138,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Check if autosummon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     VorpalBunny bunny = new VorpalBunny

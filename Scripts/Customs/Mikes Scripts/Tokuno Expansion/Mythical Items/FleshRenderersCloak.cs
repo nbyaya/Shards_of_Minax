@@ -54,10 +54,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel the dark power of command coursing through you.");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonFleshRendererTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm)) 
+                {
+                    m_Timer = new SummonFleshRendererTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -108,8 +111,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonFleshRendererTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonFleshRendererTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -131,6 +137,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Check if autosummon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

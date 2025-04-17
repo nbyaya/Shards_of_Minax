@@ -25,7 +25,7 @@ namespace Server.Items
             Attributes.LowerManaCost = 15;
             Attributes.SpellDamage = 15;
             Attributes.NightSight = 1;
-            
+
             Resistances.Physical = 5;
             Resistances.Fire = 15;
             Resistances.Cold = 5;
@@ -53,7 +53,7 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel the dark power of the infernal pact coursing through you.");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
                 m_Timer = new SummonDaemonTimer(pm);
                 m_Timer.Start();
@@ -130,6 +130,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Check if autosummon is enabled before summoning
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

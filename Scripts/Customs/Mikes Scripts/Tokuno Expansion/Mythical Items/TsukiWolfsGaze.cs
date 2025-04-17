@@ -59,10 +59,14 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a primal connection to the moon's power.");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonTsukiWolfTimer(pm);
-                m_Timer.Start();
+
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonTsukiWolfTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -113,8 +117,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonTsukiWolfTimer(mob);
-                m_Timer.Start();
+                // Start the timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonTsukiWolfTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -137,7 +145,8 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                // Only summon if autosummon is enabled and the player has room for more followers
+                if (AutoSummonManager.IsAutoSummonEnabled(m_Owner) && m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     TsukiWolf wolf = new TsukiWolf
                     {

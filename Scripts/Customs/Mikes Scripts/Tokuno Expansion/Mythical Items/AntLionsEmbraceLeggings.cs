@@ -55,7 +55,7 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel the embrace of the sands, empowering you to command more creatures.");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
                 m_Timer = new SummonAntLionTimer(pm);
                 m_Timer.Start();
@@ -132,6 +132,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Check if autosummon is enabled before proceeding
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

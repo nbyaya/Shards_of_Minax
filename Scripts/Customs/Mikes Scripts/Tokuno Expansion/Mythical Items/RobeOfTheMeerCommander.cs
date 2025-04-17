@@ -57,10 +57,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a surge of command over mystical warriors!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonMeerWarriorTimer(pm);
-                m_Timer.Start();
+                // Only start summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StopSummonTimer();
+                    m_Timer = new SummonMeerWarriorTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -111,8 +114,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonMeerWarriorTimer(mob);
-                m_Timer.Start();
+                // Only start timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonMeerWarriorTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -129,13 +136,15 @@ namespace Server.Items
 
             protected override void OnTick()
             {
+                // Stop if the owner is invalid or the item is not equipped
                 if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.OuterTorso) is RobeOfTheMeerCommander))
                 {
                     Stop();
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                // Only summon if autosummon is enabled and the player has room for more followers
+                if (AutoSummonManager.IsAutoSummonEnabled(m_Owner) && m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     MeerWarrior warrior = new MeerWarrior
                     {

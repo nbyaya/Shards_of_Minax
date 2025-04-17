@@ -56,10 +56,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel the strength of the Orcish Warchief empowering you!");
 
-                // Start summon timer
+                // Start summon timer only if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonOrcTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonOrcTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -107,8 +110,8 @@ namespace Server.Items
             int version = reader.ReadInt();
             m_BonusFollowers = reader.ReadInt();
 
-            // Reinitialize timer if equipped on restart
-            if (Parent is Mobile mob)
+            // Reinitialize timer if equipped on restart and autosummon is enabled
+            if (Parent is Mobile mob && AutoSummonManager.IsAutoSummonEnabled(mob))
             {
                 m_Timer = new SummonOrcTimer(mob);
                 m_Timer.Start();
@@ -134,6 +137,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Only summon if autosummon is enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     Orc orc = new Orc

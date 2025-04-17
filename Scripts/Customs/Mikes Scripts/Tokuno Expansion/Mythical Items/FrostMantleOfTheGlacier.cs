@@ -52,10 +52,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "The chill of the glacier empowers you to command more creatures!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonFrostMiteTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonFrostMiteTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -106,8 +109,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonFrostMiteTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonFrostMiteTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -130,6 +136,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Only summon if autosummon is enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Summon if there's room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     FrostMite mite = new FrostMite

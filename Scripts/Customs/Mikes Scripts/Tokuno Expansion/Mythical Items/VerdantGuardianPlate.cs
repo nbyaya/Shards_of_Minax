@@ -60,10 +60,11 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you could command more creatures now!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonVeriteElementalTimer(pm);
-                m_Timer.Start();
+                // Only start summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StartSummonTimer(pm);
+                }
             }
         }
 
@@ -80,6 +81,15 @@ namespace Server.Items
 
             // Stop the summon timer
             StopSummonTimer();
+        }
+
+        private void StartSummonTimer(PlayerMobile pm)
+        {
+            StopSummonTimer(); // Ensure previous timer is stopped if any
+
+            // Start the summon timer
+            m_Timer = new SummonVeriteElementalTimer(pm);
+            m_Timer.Start();
         }
 
         private void StopSummonTimer()
@@ -114,8 +124,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonVeriteElementalTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonVeriteElementalTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -137,6 +150,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Check if autosummon is enabled before summoning
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

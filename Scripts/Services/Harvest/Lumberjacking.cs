@@ -1,14 +1,17 @@
 using System;
-using Server.Items;
-using Server.Network;
 using System.Linq;
+using Server;
+using Server.Engines.Harvest;
+using Server.Items;
+using Server.Mobiles;
+using Server.Network;
+using Server.Targeting; // if needed
 
 namespace Server.Engines.Harvest
 {
     public class Lumberjacking : HarvestSystem
     {
         private static Lumberjacking m_System;
-
         public static Lumberjacking System
         {
             get
@@ -21,13 +24,9 @@ namespace Server.Engines.Harvest
         }
 
         private readonly HarvestDefinition m_Definition;
-
         public HarvestDefinition Definition
         {
-            get
-            {
-                return this.m_Definition;
-            }
+            get { return this.m_Definition; }
         }
 
         private Lumberjacking()
@@ -35,7 +34,7 @@ namespace Server.Engines.Harvest
             HarvestResource[] res;
             HarvestVein[] veins;
 
-            #region Lumberjacking
+            #region Lumberjacking Definition
             HarvestDefinition lumber = new HarvestDefinition();
 
             // Resource banks are every 4x3 tiles
@@ -56,7 +55,7 @@ namespace Server.Engines.Harvest
             // Set the list of harvestable tiles
             lumber.Tiles = m_TreeTiles;
 
-            // Players must be within 2 tiles to harvest
+            // Players must be within 2 tiles to harvest (this will be modified dynamically)
             lumber.MaxRange = 2;
 
             // Ten logs per harvest action
@@ -71,10 +70,10 @@ namespace Server.Engines.Harvest
             lumber.EffectSoundDelay = TimeSpan.FromSeconds(0.9);
 
             lumber.NoResourcesMessage = 500493; // There's not enough wood here to harvest.
-            lumber.FailMessage = 500495; // You hack at the tree for a while, but fail to produce any useable wood.
-            lumber.OutOfRangeMessage = 500446; // That is too far away.
-            lumber.PackFullMessage = 500497; // You can't place any wood into your backpack!
-            lumber.ToolBrokeMessage = 500499; // You broke your axe.
+            lumber.FailMessage = 500495;        // You hack at the tree for a while, but fail to produce any useable wood.
+            lumber.OutOfRangeMessage = 500446;    // That is too far away.
+            lumber.PackFullMessage = 500497;      // You can't place any wood into your backpack!
+            lumber.ToolBrokeMessage = 500499;       // You broke your axe.
 
             if (Core.ML)
             {
@@ -102,7 +101,7 @@ namespace Server.Engines.Harvest
 
                 lumber.BonusResources = new BonusHarvestResource[]
                 {
-                    new BonusHarvestResource(0, 82.0, null, null), //Nothing
+                    new BonusHarvestResource(0, 82.0, null, null), // Nothing
                     new BonusHarvestResource(100, 10.0, 1072548, typeof(BarkFragment)),
                     new BonusHarvestResource(100, 03.0, 1072550, typeof(LuminescentFungi)),
                     new BonusHarvestResource(100, 02.0, 1072547, typeof(SwitchItem)),
@@ -135,84 +134,35 @@ namespace Server.Engines.Harvest
             #endregion
         }
 
-        public override Type MutateType(Type type, Mobile from, Item tool, HarvestDefinition def, Map map, Point3D loc, HarvestResource resource)
-        {
-            var newType = type;
-
-            if (tool is HarvestersAxe && ((HarvestersAxe)tool).Charges > 0)
-            {
-                if (type == typeof(Log))
-                    newType = typeof(Board);
-                else if (type == typeof(OakLog))
-                    newType = typeof(OakBoard);
-                else if (type == typeof(AshLog))
-                    newType = typeof(AshBoard);
-                else if (type == typeof(YewLog))
-                    newType = typeof(YewBoard);
-                else if (type == typeof(HeartwoodLog))
-                    newType = typeof(HeartwoodBoard);
-                else if (type == typeof(BloodwoodLog))
-                    newType = typeof(BloodwoodBoard);
-                else if (type == typeof(FrostwoodLog))
-                    newType = typeof(FrostwoodBoard);
-
-                if (newType != type)
-                {
-                    ((HarvestersAxe)tool).Charges--;
-                }
-            }
-
-            return newType;
-        }
-
-        public override void SendSuccessTo(Mobile from, Item item, HarvestResource resource)
-        {
-            if (item != null)
-            {
-                if (item != null && item.GetType().IsSubclassOf(typeof(BaseWoodBoard)))
-                {
-                    from.SendLocalizedMessage(1158776); // The axe magically creates boards from your logs.
-                    return;
-                }
-                else
-                {
-                    foreach (var res in m_Definition.Resources.Where(r => r.Types != null))
-                    {
-                        foreach (var type in res.Types)
-                        {
-                            if (item.GetType() == type)
-                            {
-                                res.SendSuccessTo(from);
-                                return;
-                            }
-                        }
-                    }
-                }
-            }
-
-            base.SendSuccessTo(from, item, resource);
-        }
-
+        // Override CheckHarvest (only Mobile and Item) to adjust harvesting range based on LumberjackingRange talent.
         public override bool CheckHarvest(Mobile from, Item tool)
         {
             if (!base.CheckHarvest(from, tool))
                 return false;
 
+            if (from is PlayerMobile player)
+            {
+                var profile = player.AcquireTalents();
+                int bonusRange = profile.Talents[TalentID.LumberjackingRange].Points; // Each point adds +1 tile
+                Definition.MaxRange = 2 + bonusRange;
+            }
+
             return true;
         }
 
+        // Additional CheckHarvest override (with HarvestDefinition and target) remains unchanged.
         public override bool CheckHarvest(Mobile from, Item tool, HarvestDefinition def, object toHarvest)
         {
             if (!base.CheckHarvest(from, tool, def, toHarvest))
                 return false;
 
-			if (tool.Parent != from && from.Backpack != null && !tool.IsChildOf(from.Backpack))
-			{
-				from.SendLocalizedMessage(1080058); // This must be in your backpack to use it.
-				return false;
-			}
+            if (tool.Parent != from && from.Backpack != null && !tool.IsChildOf(from.Backpack))
+            {
+                from.SendLocalizedMessage(1080058); // This must be in your backpack to use it.
+                return false;
+            }
 
-			return true;
+            return true;
         }
 
         public override Type GetResourceType(Mobile from, Item tool, HarvestDefinition def, Map map, Point3D loc, HarvestResource resource)
@@ -261,6 +211,106 @@ namespace Server.Engines.Harvest
 
             if (Core.ML)
                 from.RevealingAction();
+        }
+
+        // Override MutateType to support board conversion if the Lumberjacking skill tree has unlocked Board Conversion Mastery.
+        public override Type MutateType(Type type, Mobile from, Item tool, HarvestDefinition def, Map map, Point3D loc, HarvestResource resource)
+        {
+            var newType = type;
+
+            if (tool is HarvestersAxe && ((HarvestersAxe)tool).Charges > 0)
+            {
+                if (type == typeof(Log))
+                    newType = typeof(Board);
+                else if (type == typeof(OakLog))
+                    newType = typeof(OakBoard);
+                else if (type == typeof(AshLog))
+                    newType = typeof(AshBoard);
+                else if (type == typeof(YewLog))
+                    newType = typeof(YewBoard);
+                else if (type == typeof(HeartwoodLog))
+                    newType = typeof(HeartwoodBoard);
+                else if (type == typeof(BloodwoodLog))
+                    newType = typeof(BloodwoodBoard);
+                else if (type == typeof(FrostwoodLog))
+                    newType = typeof(FrostwoodBoard);
+
+                if (newType != type)
+                {
+                    ((HarvestersAxe)tool).Charges--;
+                }
+            }
+
+            if (from is PlayerMobile player)
+            {
+                var profile = player.AcquireTalents();
+                // Board Conversion Mastery is unlocked if the bit flag 0x04 is set in LumberjackingSpells
+                bool hasBoardMastery = (profile.Talents[TalentID.LumberjackingSpells].Points & 0x04) != 0;
+                if (hasBoardMastery)
+                {
+                    if (type == typeof(Log))
+                        newType = typeof(Board);
+                    else if (type == typeof(OakLog))
+                        newType = typeof(OakBoard);
+                    else if (type == typeof(AshLog))
+                        newType = typeof(AshBoard);
+                    else if (type == typeof(YewLog))
+                        newType = typeof(YewBoard);
+                    else if (type == typeof(HeartwoodLog))
+                        newType = typeof(HeartwoodBoard);
+                    else if (type == typeof(BloodwoodLog))
+                        newType = typeof(BloodwoodBoard);
+                    else if (type == typeof(FrostwoodLog))
+                        newType = typeof(FrostwoodBoard);
+                }
+            }
+
+            return newType;
+        }
+
+        public override void SendSuccessTo(Mobile from, Item item, HarvestResource resource)
+        {
+            // If the harvested item is a board, display a special message.
+            if (item != null)
+            {
+                if (item.GetType().IsSubclassOf(typeof(BaseWoodBoard)))
+                {
+                    from.SendLocalizedMessage(1158776); // The axe magically creates boards from your logs.
+                    return;
+                }
+                else
+                {
+                    foreach (var res in m_Definition.Resources.Where(r => r.Types != null))
+                    {
+                        foreach (var type in res.Types)
+                        {
+                            if (item.GetType() == type)
+                            {
+                                res.SendSuccessTo(from);
+                                goto AfterSuccess;
+                            }
+                        }
+                    }
+                }
+            }
+
+        AfterSuccess:
+            // Apply the Lumberjacking Yield bonus: add extra logs based on talent points.
+            if (from is PlayerMobile player)
+            {
+                var profile = player.AcquireTalents();
+                int bonusYield = profile.Talents[TalentID.LumberjackingYield].Points;
+                if (bonusYield > 0)
+                {
+                    for (int i = 0; i < bonusYield; i++)
+                    {
+                        from.AddToBackpack(new Log());
+                    }
+                    player.SendMessage($"Nature's Bounty grants you {bonusYield} extra log(s)!");
+                }
+            }
+
+            base.SendSuccessTo(from, item, resource);
         }
 
         public static void Initialize()

@@ -50,7 +50,6 @@ namespace Server.Items
             SkillBonuses.SetValues(2, SkillName.Tactics, 10.0);
             SkillBonuses.SetValues(3, SkillName.Wrestling, 10.0);
 
-
             // Follower bonus
             m_BonusFollowers = 2;
 
@@ -72,10 +71,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you could command more creatures now!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonSavageRiderTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonSavageRiderTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -126,8 +128,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonSavageRiderTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonSavageRiderTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -150,7 +155,7 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                if (AutoSummonManager.IsAutoSummonEnabled(m_Owner) && m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     SavageRider rider = new SavageRider
                     {

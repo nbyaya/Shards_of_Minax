@@ -54,10 +54,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "The fiery essence of the amulet increases your command over creatures!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonFireAntTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm)) // Check if autosummon is enabled
+                {
+                    m_Timer = new SummonFireAntTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -126,12 +129,18 @@ namespace Server.Items
 
             protected override void OnTick()
             {
+                // Stop if the owner is invalid or the item is not equipped
                 if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Neck) is FireAntAmulet))
                 {
                     Stop();
                     return;
                 }
 
+                // Check if autosummon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     FireAnt ant = new FireAnt

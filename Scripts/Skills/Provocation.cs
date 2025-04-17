@@ -1,12 +1,9 @@
-#region References
 using System;
-
 using Server.Engines.XmlSpawner2;
 using Server.Items;
 using Server.Mobiles;
 using Server.Targeting;
 using Server.Engines.Quests;
-#endregion
 
 namespace Server.SkillHandlers
 {
@@ -20,10 +17,8 @@ namespace Server.SkillHandlers
         public static TimeSpan OnUse(Mobile m)
         {
             m.RevealingAction();
-
             BaseInstrument.PickInstrument(m, OnPickedInstrument);
-
-            return TimeSpan.FromSeconds(1.0); // Cannot use another skill for 1 second
+            return TimeSpan.FromSeconds(1.0); // Base cooldown before another skill can be used
         }
 
         public static void OnPickedInstrument(Mobile from, BaseInstrument instrument)
@@ -38,7 +33,7 @@ namespace Server.SkillHandlers
             private readonly BaseInstrument m_Instrument;
 
             public InternalFirstTarget(Mobile from, BaseInstrument instrument)
-                : base(BaseInstrument.GetBardRange(from, SkillName.Provocation), false, TargetFlags.None)
+                : base(GetProvokeRange(from), false, TargetFlags.None)
             {
                 m_Instrument = instrument;
             }
@@ -68,7 +63,6 @@ namespace Server.SkillHandlers
                         from.RevealingAction();
                         m_Instrument.PlayInstrumentWell(from);
                         from.SendLocalizedMessage(1008085);
-                        // You play your music and your target becomes angered.  Whom do you wish them to attack?
                         from.Target = new InternalSecondTarget(from, m_Instrument, creature);
                     }
                 }
@@ -85,7 +79,7 @@ namespace Server.SkillHandlers
             private readonly BaseInstrument m_Instrument;
 
             public InternalSecondTarget(Mobile from, BaseInstrument instrument, BaseCreature creature)
-                : base(BaseInstrument.GetBardRange(from, SkillName.Provocation), false, TargetFlags.None)
+                : base(GetProvokeRange(from), false, TargetFlags.None)
             {
                 m_Instrument = instrument;
                 m_Creature = creature;
@@ -99,30 +93,27 @@ namespace Server.SkillHandlers
                 {
                     BaseCreature creature = targeted as BaseCreature;
                     Mobile target = targeted as Mobile;
-
                     bool questTargets = QuestTargets(creature, from);
 
                     if (!m_Instrument.IsChildOf(from.Backpack))
                     {
-                        from.SendLocalizedMessage(1062488); // The instrument you are trying to play is no longer in your backpack!
+                        from.SendLocalizedMessage(1062488);
                     }
                     else if (m_Creature.Unprovokable)
                     {
-                        from.SendLocalizedMessage(1049446); // You have no chance of provoking those creatures.
+                        from.SendLocalizedMessage(1049446);
                     }
                     else if (creature != null && creature.Unprovokable && !(creature is DemonKnight) && !questTargets)
                     {
-                        from.SendLocalizedMessage(1049446); // You have no chance of provoking those creatures.
+                        from.SendLocalizedMessage(1049446);
                     }
-                    else if (m_Creature.Map != target.Map ||
-                             !m_Creature.InRange(target, BaseInstrument.GetBardRange(from, SkillName.Provocation)))
+                    else if (m_Creature.Map != target.Map || !m_Creature.InRange(target, GetProvokeRange(from)))
                     {
                         from.SendLocalizedMessage(1049450);
-                        // The creatures you are trying to provoke are too far away from each other for your music to have an effect.
                     }
                     else if (m_Creature != target)
                     {
-                        from.NextSkillTime = Core.TickCount + 10000;
+                        from.NextSkillTime = Core.TickCount + GetCooldownReduction(from);
 
                         double diff = ((m_Instrument.GetDifficultyFor(m_Creature) + m_Instrument.GetDifficultyFor(target)) * 0.5) - 5.0;
                         double music = from.Skills[SkillName.Musicianship].Value;
@@ -135,26 +126,28 @@ namespace Server.SkillHandlers
                             diff -= (diff * ((double)masteryBonus / 100));
 
                         if (music > 100.0)
-                        {
                             diff -= (music - 100.0) * 0.5;
+
+                        // **Apply passive difficulty reduction from skill tree**
+                        if (from is PlayerMobile player)
+                        {
+                            var profile = player.AcquireTalents();
+                            int passiveBonus = profile.Talents[TalentID.ProvocationBonus].Points;
+                            diff -= passiveBonus; // Each bonus point reduces required diff by 1
                         }
 
                         if (questTargets || (from.CanBeHarmful(m_Creature, true) && from.CanBeHarmful(target, true)))
                         {
                             if (from.Player && !BaseInstrument.CheckMusicianship(from))
                             {
-                                from.NextSkillTime = Core.TickCount + (10000 - ((masteryBonus / 5) * 1000));
                                 from.SendLocalizedMessage(500612); // You play poorly, and there is no effect.
                                 m_Instrument.PlayInstrumentBadly(from);
                                 m_Instrument.ConsumeUse(from);
                             }
                             else
                             {
-                                //from.DoHarmful( m_Creature );
-                                //from.DoHarmful( creature );
                                 if (!from.CheckTargetSkill(SkillName.Provocation, target, diff - 25.0, diff + 25.0))
                                 {
-                                    from.NextSkillTime = Core.TickCount + (10000 - ((masteryBonus / 5) * 1000));
                                     from.SendLocalizedMessage(501599); // Your music fails to incite enough anger.
                                     m_Instrument.PlayInstrumentBadly(from);
                                     m_Instrument.ConsumeUse(from);
@@ -165,19 +158,6 @@ namespace Server.SkillHandlers
                                     m_Instrument.PlayInstrumentWell(from);
                                     m_Instrument.ConsumeUse(from);
                                     m_Creature.Provoke(from, target, true);
-
-                                    #region Bard Mastery Quest
-                                    if (questTargets)
-                                    {
-                                        BaseQuest quest = QuestHelper.GetQuest((PlayerMobile)from, typeof(IndoctrinationOfABattleRouserQuest));
-
-                                        if (quest != null)
-                                        {
-                                            foreach (BaseObjective objective in quest.Objectives)
-                                                objective.Update(creature);
-                                        }
-                                    }
-                                    #endregion
                                 }
                             }
                         }
@@ -197,24 +177,40 @@ namespace Server.SkillHandlers
             {
                 if (creature != null)
                 {
-                    Mobile getmaster = creature.GetMaster();
+                    Mobile master = creature.GetMaster();
+                    if (master != null && master is PlayerMobile)
+                        return false;
 
-                    if (getmaster != null)
-                    {
-                        if (getmaster is PlayerMobile)
-                            return false;
-                    }
-
-                    if (from is PlayerMobile && (m_Creature.GetType() == typeof(Rabbit) || m_Creature.GetType() == typeof(JackRabbit)) && ((creature is WanderingHealer) || (creature is EvilWanderingHealer)))
-                        return true;
-
-                    return false;
+                    return from is PlayerMobile && (m_Creature is Rabbit || m_Creature is JackRabbit) && (creature is WanderingHealer || creature is EvilWanderingHealer);
                 }
-                else
-                {
-                    return false;
-                }
+                return false;
             }
+        }
+
+        // **Passive Bonus: Extended Provocation Range**
+        public static int GetProvokeRange(Mobile from)
+        {
+            int baseRange = 8; // Default bard skill range
+            if (from is PlayerMobile player)
+            {
+                var profile = player.AcquireTalents();
+                int extraRange = profile.Talents[TalentID.ProvocationRange].Points;
+                return baseRange + extraRange;
+            }
+            return baseRange;
+        }
+
+        // **Passive Bonus: Reduced Cooldown**
+        public static int GetCooldownReduction(Mobile from)
+        {
+            int baseCooldown = 10000; // Default cooldown (10 seconds)
+            if (from is PlayerMobile player)
+            {
+                var profile = player.AcquireTalents();
+                int reduction = profile.Talents[TalentID.ProvocationCooldownReduction].Points * 500; // Each point reduces cooldown by 0.5 sec
+                return Math.Max(5000, baseCooldown - reduction); // Minimum 5 sec cooldown
+            }
+            return baseCooldown;
         }
     }
 }

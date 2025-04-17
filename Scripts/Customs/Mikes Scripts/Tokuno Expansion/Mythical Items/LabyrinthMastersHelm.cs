@@ -54,7 +54,7 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you can command more creatures within the labyrinth!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
                 m_Timer = new SummonMinotaurGeneralTimer(pm);
                 m_Timer.Start();
@@ -126,12 +126,18 @@ namespace Server.Items
 
             protected override void OnTick()
             {
+                // Stop if the owner is invalid or the item is not equipped
                 if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Helm) is LabyrinthMastersHelm))
                 {
                     Stop();
                     return;
                 }
 
+                // Check if autosummon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     MinotaurGeneral minotaur = new MinotaurGeneral

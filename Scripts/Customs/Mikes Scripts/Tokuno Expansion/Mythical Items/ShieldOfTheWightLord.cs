@@ -56,10 +56,14 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel the power to command more undead!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonWightTimer(pm);
-                m_Timer.Start();
+                // Check if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    // Start summon timer if autosummon is enabled
+                    StopSummonTimer();
+                    m_Timer = new SummonWightTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -110,8 +114,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonWightTimer(mob);
-                m_Timer.Start();
+                // Check if autosummon is enabled on load
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonWightTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -133,6 +141,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Only summon if autosummon is enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

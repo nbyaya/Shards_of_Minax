@@ -27,7 +27,6 @@ namespace Server.Items
             Attributes.WeaponSpeed = 15;
             Attributes.NightSight = 1;
 
-
             // Skill Bonuses
             SkillBonuses.SetValues(0, SkillName.Fencing, 15.0);
             SkillBonuses.SetValues(1, SkillName.Tactics, 10.0);
@@ -53,10 +52,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel empowered to command more creatures!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonTroglodyteTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonTroglodyteTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -107,8 +109,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonTroglodyteTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonTroglodyteTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -130,6 +135,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Check if autosummon is enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

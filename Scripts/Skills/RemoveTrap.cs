@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using Server.Factions;
 using Server.Items;
 using Server.Network;
@@ -9,6 +8,7 @@ using Server.Targeting;
 using Server.Engines.VvV;
 using Server.Guilds;
 using Server.Mobiles;
+using Server.Misc;
 
 namespace Server.SkillHandlers
 {
@@ -28,26 +28,24 @@ namespace Server.SkillHandlers
         {
             if (!Core.EJ && m.Skills[SkillName.Lockpicking].Value < 50)
             {
-                m.SendLocalizedMessage(502366); // You do not know enough about locks.  Become better at picking locks.
+                m.SendLocalizedMessage(502366); // You do not know enough about locks. Become better at picking locks.
             }
             else if (!Core.EJ && m.Skills[SkillName.DetectHidden].Value < 50)
             {
-                m.SendLocalizedMessage(502367); // You are not perceptive enough.  Become better at detect hidden.
+                m.SendLocalizedMessage(502367); // You are not perceptive enough. Become better at detect hidden.
             }
             else
             {
                 m.Target = new InternalTarget();
-
-                m.SendLocalizedMessage(502368); // Wich trap will you attempt to disarm?
+                m.SendLocalizedMessage(502368); // Which trap will you attempt to disarm?
             }
 
-            return TimeSpan.FromSeconds(10.0); // 10 second delay before beign able to re-use a skill
+            return TimeSpan.FromSeconds(10.0); // 10 second delay before re-use
         }
 
         private class InternalTarget : Target
         {
-            public InternalTarget()
-                : base(2, false, TargetFlags.None)
+            public InternalTarget() : base(2, false, TargetFlags.None)
             {
             }
 
@@ -68,16 +66,15 @@ namespace Server.SkillHandlers
                 else if (targeted is TrapableContainer)
                 {
                     TrapableContainer targ = (TrapableContainer)targeted;
-
                     from.Direction = from.GetDirectionTo(targ);
 
-                   if (targ.TrapType == Server.Items.TrapType.None)
+                    if (targ.TrapType == Server.Items.TrapType.None)
                     {
                         from.SendLocalizedMessage(502373); // That doesn't appear to be trapped
                     }
                     else if (targ is TreasureMapChest && TreasureMapInfo.NewSystem)
                     {
-                        var tChest = (TreasureMapChest)targ;
+                        TreasureMapChest tChest = targ as TreasureMapChest;
 
                         if (tChest.Owner != from)
                         {
@@ -93,21 +90,18 @@ namespace Server.SkillHandlers
                         }
                         else if (tChest.AncientGuardians.Any(g => !g.Deleted))
                         {
-                            from.PrivateOverheadMessage(MessageType.Regular, 1150, 1159060, from.NetState); // *Your attempt fails as the the mechanism jams and you are attacked by an Ancient Chest Guardian!*
+                            from.PrivateOverheadMessage(MessageType.Regular, 1150, 1159060, from.NetState); // *Your attempt fails as the mechanism jams and you are attacked by an Ancient Chest Guardian!*
                         }
                         else
                         {
                             from.PlaySound(0x241);
-
                             from.PrivateOverheadMessage(MessageType.Regular, 1150, 1159057, from.NetState); // *You delicately manipulate the trigger mechanism...*
-
                             StartChestDisarmTimer(from, tChest);
                         }
                     }
                     else
                     {
                         from.PlaySound(0x241);
-
                         if (from.CheckTargetSkill(SkillName.RemoveTrap, targ, targ.TrapPower, targ.TrapPower + 10))
                         {
                             targ.TrapPower = 0;
@@ -126,9 +120,7 @@ namespace Server.SkillHandlers
                 {
                     BaseFactionTrap trap = (BaseFactionTrap)targeted;
                     Faction faction = Faction.Find(from);
-
                     FactionTrapRemovalKit kit = (from.Backpack == null ? null : from.Backpack.FindItemByType(typeof(FactionTrapRemovalKit)) as FactionTrapRemovalKit);
-
                     bool isOwner = (trap.Placer == from || (trap.Faction != null && trap.Faction.IsCommander(from)));
 
                     if (faction == null)
@@ -148,15 +140,12 @@ namespace Server.SkillHandlers
                         if ((Core.ML && isOwner) || (from.CheckTargetSkill(SkillName.RemoveTrap, trap, 80.0, 100.0) && from.CheckTargetSkill(SkillName.Tinkering, trap, 80.0, 100.0)))
                         {
                             from.PrivateOverheadMessage(MessageType.Regular, trap.MessageHue, trap.DisarmMessage, from.NetState);
-
                             if (!isOwner)
                             {
                                 int silver = faction.AwardSilver(from, trap.SilverFromDisarm);
-
                                 if (silver > 0)
-                                    from.SendLocalizedMessage(1008113, true, silver.ToString("N0")); // You have been granted faction silver for removing the enemy trap :
+                                    from.SendLocalizedMessage(1008113, true, silver.ToString("N0")); // You have been granted faction silver for removing the enemy trap.
                             }
-
                             trap.Delete();
                         }
                         else
@@ -171,7 +160,6 @@ namespace Server.SkillHandlers
                 else if (targeted is VvVTrap)
                 {
                     VvVTrap trap = targeted as VvVTrap;
-
                     if (!ViceVsVirtueSystem.IsVvV(from))
                     {
                         from.SendLocalizedMessage(1155496); // This item can only be used by VvV participants!
@@ -190,15 +178,13 @@ namespace Server.SkillHandlers
                             {
                                 Guild fromG = from.Guild as Guild;
                                 Guild ownerG = trap.Owner.Guild as Guild;
-
-                                if (fromG != null && fromG != ownerG && !fromG.IsAlly(ownerG) && ViceVsVirtueSystem.Instance != null
-                                    && ViceVsVirtueSystem.Instance.Battle != null && ViceVsVirtueSystem.Instance.Battle.OnGoing)
+                                if (fromG != null && fromG != ownerG && !fromG.IsAlly(ownerG) && ViceVsVirtueSystem.Instance != null &&
+                                    ViceVsVirtueSystem.Instance.Battle != null && ViceVsVirtueSystem.Instance.Battle.OnGoing)
                                 {
                                     ViceVsVirtueSystem.Instance.Battle.Update(from, UpdateType.Disarm);
                                 }
                             }
-
-                            from.PrivateOverheadMessage(Server.Network.MessageType.Regular, 1154, 1155413, from.NetState);
+                            from.PrivateOverheadMessage(MessageType.Regular, 1154, 1155413, from.NetState);
                         }
                         else if (.1 > Utility.RandomDouble())
                         {
@@ -209,26 +195,22 @@ namespace Server.SkillHandlers
                 else if (targeted is GoblinFloorTrap)
                 {
                     GoblinFloorTrap targ = (GoblinFloorTrap)targeted;
-
                     if (from.InRange(targ.Location, 3))
                     {
                         from.Direction = from.GetDirectionTo(targ);
-
                         if (targ.Owner == null)
                         {
                             Item item = new FloorTrapComponent();
-
                             if (from.Backpack == null || !from.Backpack.TryDropItem(from, item, false))
                                 item.MoveToWorld(from.Location, from.Map);
                         }
-
                         targ.Delete();
                         from.SendLocalizedMessage(502377); // You successfully render the trap harmless
                     }
                 }
                 else
                 {
-                    from.SendLocalizedMessage(502373); // That does'nt appear to be trapped
+                    from.SendLocalizedMessage(502373); // That doesn't appear to be trapped.
                 }
             }
 
@@ -236,12 +218,10 @@ namespace Server.SkillHandlers
             {
                 if (targeted is TreasureMapChest && TreasureMapInfo.NewSystem)
                 {
-                    // put here to prevent abuse
                     if (from.NextSkillTime > Core.TickCount)
                     {
                         from.NextSkillTime = Core.TickCount;
                     }
-
                     from.SendLocalizedMessage(1159058); // You are too far away from the chest to manipulate the trigger mechanism.
                 }
                 else
@@ -251,14 +231,12 @@ namespace Server.SkillHandlers
             }
         }
 
+        // Dictionary to track players disarming chests.
         public static Dictionary<Mobile, RemoveTrapTimer> _Table;
-
         public static void StartChestDisarmTimer(Mobile from, TreasureMapChest chest)
         {
             if (_Table == null)
-            {
                 _Table = new Dictionary<Mobile, RemoveTrapTimer>();
-            }
 
             _Table[from] = new RemoveTrapTimer(from, chest, from.Skills[SkillName.RemoveTrap].Value >= 100);
         }
@@ -268,35 +246,22 @@ namespace Server.SkillHandlers
             if (_Table != null && _Table.ContainsKey(from))
             {
                 var timer = _Table[from];
-
                 if (timer != null)
-                {
                     timer.Stop();
-                }
-
                 _Table.Remove(from);
-
                 if (_Table.Count == 0)
-                {
                     _Table = null;
-                }
             }
         }
 
         public static bool IsDisarming(Mobile from, TreasureMapChest chest)
         {
-            if (_Table == null)
-                return false;
-
-            return _Table.ContainsKey(from);
+            return _Table != null && _Table.ContainsKey(from);
         }
 
         public static bool IsBeingDisarmed(TreasureMapChest chest)
         {
-            if (_Table == null)
-                return false;
-
-            return _Table.Values.Any(timer => timer.Chest == chest);
+            return _Table != null && _Table.Values.Any(timer => timer.Chest == chest);
         }
     }
 
@@ -304,10 +269,8 @@ namespace Server.SkillHandlers
     {
         public Mobile From { get; set; }
         public TreasureMapChest Chest { get; set; }
-
-        public DateTime SafetyEndTime { get; set; } // Used for 100 Remove Trap
-        public int Stage { get; set; } // Used for 99.9- Remove Trap
-
+        public DateTime SafetyEndTime { get; set; } // For GM removal
+        public int Stage { get; set; } // For potential stage-based logic
         public bool GMRemover { get; set; }
 
         public RemoveTrapTimer(Mobile from, TreasureMapChest chest, bool gmRemover)
@@ -320,7 +283,6 @@ namespace Server.SkillHandlers
             if (gmRemover)
             {
                 TimeSpan duration;
-
                 switch ((TreasureLevel)chest.Level)
                 {
                     default:
@@ -330,10 +292,8 @@ namespace Server.SkillHandlers
                     case TreasureLevel.Hoard: duration = TimeSpan.FromSeconds(420); break;
                     case TreasureLevel.Trove: duration = TimeSpan.FromSeconds(540); break;
                 }
-
                 SafetyEndTime = Chest.DigTime + duration;
             }
-
             Start();
         }
 
@@ -342,28 +302,48 @@ namespace Server.SkillHandlers
             if (Chest.Deleted)
             {
                 RemoveTrap.EndChestDisarmTimer(From);
+                return;
             }
             if (!From.Alive)
             {
                 From.SendLocalizedMessage(1159061); // Your ghostly fingers cannot manipulate the mechanism...
                 RemoveTrap.EndChestDisarmTimer(From);
+                return;
             }
-            else if (!From.InRange(Chest.GetWorldLocation(), 16) || Chest.Deleted)
+            if (!From.InRange(Chest.GetWorldLocation(), 16) || Chest.Deleted)
             {
                 From.SendLocalizedMessage(1159058); // You are too far away from the chest to manipulate the trigger mechanism.
                 RemoveTrap.EndChestDisarmTimer(From);
+                return;
             }
-            else if (GMRemover)
-            {
-                From.RevealingAction();
 
+            // Retrieve bonus values from Remove Trap talents.
+            int bonusSuccess = 0;
+            int bonusSpeed = 0;
+            int bonusDetection = 0;
+            if (From is PlayerMobile player)
+            {
+                var profile = player.AcquireTalents();
+                if (profile.Talents.ContainsKey(TalentID.RemoveTrapSuccessChance))
+                    bonusSuccess = profile.Talents[TalentID.RemoveTrapSuccessChance].Points;
+                if (profile.Talents.ContainsKey(TalentID.RemoveTrapSpeed))
+                    bonusSpeed = profile.Talents[TalentID.RemoveTrapSpeed].Points;
+                if (profile.Talents.ContainsKey(TalentID.RemoveTrapDetection))
+                    bonusDetection = profile.Talents[TalentID.RemoveTrapDetection].Points;
+            }
+
+            From.RevealingAction();
+
+            if (GMRemover)
+            {
                 if (SafetyEndTime < DateTime.UtcNow)
                 {
                     DisarmTrap();
                 }
                 else
                 {
-                    if (From.CheckTargetSkill(SkillName.RemoveTrap, Chest, 80, 120 + (Chest.Level * 10)))
+                    // Lower the target skill thresholds based on bonus success chance.
+                    if (From.CheckTargetSkill(SkillName.RemoveTrap, Chest, 80 - bonusSuccess, 120 + (Chest.Level * 10) - bonusSuccess))
                     {
                         DisarmTrap();
                     }
@@ -372,16 +352,13 @@ namespace Server.SkillHandlers
                         Chest.SpawnAncientGuardian(From);
                     }
                 }
-
                 RemoveTrap.EndChestDisarmTimer(From);
             }
             else
             {
-                From.RevealingAction();
-
-                var min = (double)Math.Ceiling(From.Skills[SkillName.RemoveTrap].Value * .75);
-
-                if (From.CheckTargetSkill(SkillName.RemoveTrap, Chest, min, min > 50 ? min + 50 : 100))
+                // Adjust the minimum required skill value by subtracting bonusSuccess.
+                double min = Math.Ceiling(From.Skills[SkillName.RemoveTrap].Value * 0.75) - bonusSuccess;
+                if (From.CheckTargetSkill(SkillName.RemoveTrap, Chest, min, (min > 50 ? min + 50 : 100) - bonusSuccess))
                 {
                     DisarmTrap();
                     RemoveTrap.EndChestDisarmTimer(From);
@@ -389,11 +366,8 @@ namespace Server.SkillHandlers
                 else
                 {
                     Chest.SpawnAncientGuardian(From);
-
                     if (From.Alive)
-                    {
                         From.PrivateOverheadMessage(MessageType.Regular, 1150, 1159057, From.NetState); // *You delicately manipulate the trigger mechanism...*
-                    }
                 }
             }
         }
@@ -404,7 +378,6 @@ namespace Server.SkillHandlers
             Chest.TrapLevel = 0;
             Chest.TrapType = TrapType.None;
             Chest.InvalidateProperties();
-
             From.PrivateOverheadMessage(MessageType.Regular, 1150, 1159009, From.NetState); // You successfully disarm the trap!
         }
     }

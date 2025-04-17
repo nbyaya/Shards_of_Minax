@@ -77,10 +77,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you could command more creatures now!");
 
-                // Start summon timer
+                // Start or stop summon timer based on the autosummon setting
                 StopSummonTimer();
-                m_Timer = new SummonSilverSerpentTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonSilverSerpentTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -131,8 +134,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonSilverSerpentTimer(mob);
-                m_Timer.Start();
+                // Check autosummon before starting the timer
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonSilverSerpentTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -154,6 +161,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Check if autosummon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

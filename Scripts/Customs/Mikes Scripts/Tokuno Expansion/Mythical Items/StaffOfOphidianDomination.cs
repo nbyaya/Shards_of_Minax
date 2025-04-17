@@ -52,10 +52,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "The staff empowers you to command more minions!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonOphidianArchmageTimer(pm);
-                m_Timer.Start();
+                // Start summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StopSummonTimer();
+                    m_Timer = new SummonOphidianArchmageTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -70,7 +73,7 @@ namespace Server.Items
                 pm.SendMessage(37, "The staff's influence fades, reducing your command over minions.");
             }
 
-            // Stop the summon timer
+            // Stop the summon timer if it's running
             StopSummonTimer();
         }
 
@@ -106,8 +109,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonOphidianArchmageTimer(mob);
-                m_Timer.Start();
+                // Check if autosummon is enabled and restart the summon timer accordingly
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonOphidianArchmageTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -124,12 +131,14 @@ namespace Server.Items
 
             protected override void OnTick()
             {
-                if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.OneHanded) is StaffOfOphidianDomination))
+                // Stop if the owner is invalid, the item is not equipped, or autosummon is disabled
+                if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.OneHanded) is StaffOfOphidianDomination) || !AutoSummonManager.IsAutoSummonEnabled(m_Owner))
                 {
                     Stop();
                     return;
                 }
 
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     OphidianArchmage archmage = new OphidianArchmage

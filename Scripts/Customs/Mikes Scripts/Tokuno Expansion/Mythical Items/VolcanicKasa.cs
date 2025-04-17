@@ -53,10 +53,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel empowered to control more fiery creatures!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonFireBeetleTimer(pm);
-                m_Timer.Start();
+                // Start summon timer only if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StopSummonTimer();
+                    m_Timer = new SummonFireBeetleTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -107,8 +110,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonFireBeetleTimer(mob);
-                m_Timer.Start();
+                // Only start the timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonFireBeetleTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -125,12 +132,18 @@ namespace Server.Items
 
             protected override void OnTick()
             {
+                // Stop if the owner is invalid or the item is not equipped
                 if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Helm) is VolcanicKasa))
                 {
                     Stop();
                     return;
                 }
 
+                // Only summon if autosummon is enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     FireBeetle beetle = new FireBeetle

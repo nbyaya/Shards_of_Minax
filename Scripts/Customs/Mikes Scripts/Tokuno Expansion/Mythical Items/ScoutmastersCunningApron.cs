@@ -53,10 +53,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel an unseen force ready to obey your commands.");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonGreenGoblinScoutTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonGreenGoblinScoutTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -107,8 +110,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonGreenGoblinScoutTimer(mob);
-                m_Timer.Start();
+                // Only start the timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonGreenGoblinScoutTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -125,23 +132,25 @@ namespace Server.Items
 
             protected override void OnTick()
             {
+                // Stop if the owner is invalid or the item is not equipped
                 if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Waist) is ScoutmastersCunningApron))
                 {
                     Stop();
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
-                {
-                    GreenGoblinScout goblin = new GreenGoblinScout
-                    {
-                        Controlled = true,
-                        ControlMaster = m_Owner
-                    };
+                // Only summon if autosummon is enabled and the player has room for followers
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner) || m_Owner.Followers >= m_Owner.FollowersMax)
+                    return;
 
-                    goblin.MoveToWorld(m_Owner.Location, m_Owner.Map);
-                    m_Owner.SendMessage(38, "A Green Goblin Scout emerges from the shadows to aid you!");
-                }
+                GreenGoblinScout goblin = new GreenGoblinScout
+                {
+                    Controlled = true,
+                    ControlMaster = m_Owner
+                };
+
+                goblin.MoveToWorld(m_Owner.Location, m_Owner.Map);
+                m_Owner.SendMessage(38, "A Green Goblin Scout emerges from the shadows to aid you!");
             }
         }
     }

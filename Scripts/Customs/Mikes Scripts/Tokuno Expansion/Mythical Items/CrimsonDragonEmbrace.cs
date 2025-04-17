@@ -136,6 +136,10 @@ namespace Server.Items
                     return;
                 }
 
+                // Check if autosummon is enabled for the player
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     CrimsonDrake drake = new CrimsonDrake

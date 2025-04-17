@@ -6,7 +6,7 @@ using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
-    public class FrostcallersShard : QuarterStaff
+    public class FrostcallersShard : Longsword
     {
         private Timer m_Timer;
         private int m_BonusFollowers;
@@ -53,10 +53,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "The shard empowers you to summon Frost Dragons!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonFrostDragonTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonFrostDragonTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -107,8 +110,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonFrostDragonTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonFrostDragonTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -130,6 +136,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Check if autosummon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

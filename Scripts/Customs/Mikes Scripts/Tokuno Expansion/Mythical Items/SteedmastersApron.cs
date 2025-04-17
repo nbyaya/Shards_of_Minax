@@ -58,10 +58,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel capable of commanding more powerful steeds!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonSilverSteedTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm)) // Only start if autosummon is on
+                {
+                    m_Timer = new SummonSilverSteedTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -112,8 +115,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonSilverSteedTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob)) // Check if autosummon is enabled on equip
+                {
+                    m_Timer = new SummonSilverSteedTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -136,6 +142,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Check if autosummon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     SilverSteed steed = new SilverSteed

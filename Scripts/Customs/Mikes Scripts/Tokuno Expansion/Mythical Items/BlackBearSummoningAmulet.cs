@@ -53,10 +53,15 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel the strength of the bear coursing through you!");
 
-                // Start summon timer
+                // Start summon timer if auto summon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonBlackBearTimer(pm);
-                m_Timer.Start();
+
+                // Check if auto-summon is enabled before starting the timer
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonBlackBearTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -107,8 +112,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonBlackBearTimer(mob);
-                m_Timer.Start();
+                // Start the timer only if auto-summon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonBlackBearTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -130,6 +139,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Only summon if auto-summon is enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

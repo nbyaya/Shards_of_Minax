@@ -24,7 +24,7 @@ namespace Server.Items
             Attributes.RegenHits = 3;
             Attributes.DefendChance = 10;
             Attributes.WeaponDamage = 10;
-            
+
             PhysicalBonus = 15;
             FireBonus = 10;
             ColdBonus = 10;
@@ -57,10 +57,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel the commanding presence of a war chief!");
 
-                // Start summon timer
+                // Start summon timer only if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonOrcCaptainTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonOrcCaptainTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -111,8 +114,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonOrcCaptainTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonOrcCaptainTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -134,6 +140,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Ensure autosummon is enabled before summoning
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

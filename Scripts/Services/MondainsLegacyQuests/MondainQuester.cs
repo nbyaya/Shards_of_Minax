@@ -46,7 +46,7 @@ namespace Server.Engines.Quests
         {
             get
             {
-                return true;
+                return false;
             }
         }
         public override bool DisallowAllMoves

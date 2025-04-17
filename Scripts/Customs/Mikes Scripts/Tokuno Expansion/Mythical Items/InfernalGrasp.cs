@@ -58,10 +58,15 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel empowered to control more infernal minions!");
 
-                // Start summon timer
+                // Start summon timer only if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonDeadlyImpTimer(pm);
-                m_Timer.Start();
+
+                // Check if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonDeadlyImpTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -112,8 +117,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonDeadlyImpTimer(mob);
-                m_Timer.Start();
+                // Check if autosummon is enabled upon restart
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonDeadlyImpTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -136,7 +145,8 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                // Only summon if the player has room for more followers and autosummon is enabled
+                if (m_Owner.Followers < m_Owner.FollowersMax && AutoSummonManager.IsAutoSummonEnabled(m_Owner))
                 {
                     DeadlyImp imp = new DeadlyImp
                     {

@@ -87,6 +87,7 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo(typeof(LapHarp), 21, 20, 0x0EB2, 0));
                 Add(new GenericBuyInfo(typeof(Lute), 21, 20, 0x0EB3, 0));
 				Add(new GenericBuyInfo(typeof(CartographersScope), 21, 20, 0x14F5, 0));
+				Add(new GenericBuyInfo(typeof(SnoopersMasterScope), 500, 10, 0x14F5, 0));
 
                 if (owner != null && owner.Race == Race.Gargoyle)
                 {

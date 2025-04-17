@@ -60,10 +60,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel empowered to command more creatures!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonYomotsuElderTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonYomotsuElderTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -111,8 +114,8 @@ namespace Server.Items
             int version = reader.ReadInt();
             m_BonusFollowers = reader.ReadInt();
 
-            // Reinitialize timer if equipped on restart
-            if (Parent is Mobile mob)
+            // Reinitialize timer if equipped on restart and autosummon is enabled
+            if (Parent is Mobile mob && AutoSummonManager.IsAutoSummonEnabled(mob))
             {
                 m_Timer = new SummonYomotsuElderTimer(mob);
                 m_Timer.Start();
@@ -138,17 +141,18 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
-                {
-                    YomotsuElder elder = new YomotsuElder
-                    {
-                        Controlled = true,
-                        ControlMaster = m_Owner
-                    };
+                // Only summon if autosummon is enabled and the player has room for more followers
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner) || m_Owner.Followers >= m_Owner.FollowersMax)
+                    return;
 
-                    elder.MoveToWorld(m_Owner.Location, m_Owner.Map);
-                    m_Owner.SendMessage(38, "A Yomotsu Elder emerges to serve you!");
-                }
+                YomotsuElder elder = new YomotsuElder
+                {
+                    Controlled = true,
+                    ControlMaster = m_Owner
+                };
+
+                elder.MoveToWorld(m_Owner.Location, m_Owner.Map);
+                m_Owner.SendMessage(38, "A Yomotsu Elder emerges to serve you!");
             }
         }
     }

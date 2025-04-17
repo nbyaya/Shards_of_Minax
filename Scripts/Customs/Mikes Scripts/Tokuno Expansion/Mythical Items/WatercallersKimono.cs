@@ -56,10 +56,14 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel an affinity with aquatic creatures!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonKappaTimer(pm);
-                m_Timer.Start();
+                // Only start summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    // Start summon timer
+                    StopSummonTimer();
+                    m_Timer = new SummonKappaTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -110,8 +114,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonKappaTimer(mob);
-                m_Timer.Start();
+                // Start the summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonKappaTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -134,6 +142,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Check if autosummon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     Kappa kappa = new Kappa

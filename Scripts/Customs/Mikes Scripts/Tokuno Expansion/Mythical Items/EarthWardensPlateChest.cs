@@ -24,7 +24,7 @@ namespace Server.Items
             Attributes.DefendChance = 15;
             Attributes.ReflectPhysical = 10;
             Attributes.BonusHits = 15;
-            
+
             PhysicalBonus = 15;
             FireBonus = 5;
             ColdBonus = 10;
@@ -57,7 +57,7 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a deep connection to the earth, allowing you to command more creatures!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
                 m_Timer = new SummonEarthElementalTimer(pm);
                 m_Timer.Start();
@@ -135,6 +135,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Check if autosummon is enabled before summoning
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

@@ -50,6 +50,8 @@ namespace Server.Mobiles
 			Karma = 0;
 
 			VirtualArmor = 350;
+			
+			GuardImmune = true;
 
 		}
 

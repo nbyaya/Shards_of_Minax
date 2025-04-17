@@ -54,10 +54,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a deep connection to beasts of burden!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonPackHorseTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonPackHorseTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -106,7 +109,7 @@ namespace Server.Items
             m_BonusFollowers = reader.ReadInt();
 
             // Reinitialize timer if equipped on restart
-            if (Parent is Mobile mob)
+            if (Parent is Mobile mob && AutoSummonManager.IsAutoSummonEnabled(mob))
             {
                 m_Timer = new SummonPackHorseTimer(mob);
                 m_Timer.Start();
@@ -132,7 +135,8 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                // Only summon if autosummon is enabled and the player has room for more followers
+                if (AutoSummonManager.IsAutoSummonEnabled(m_Owner) && m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     PackHorse horse = new PackHorse
                     {

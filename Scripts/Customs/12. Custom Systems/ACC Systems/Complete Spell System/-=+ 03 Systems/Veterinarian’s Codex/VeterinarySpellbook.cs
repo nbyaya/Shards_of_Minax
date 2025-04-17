@@ -1,65 +1,102 @@
 using System;
+using System.Collections.Generic;
+using Server.Commands;
 using Server.Items;
 using Server.Spells;
+using Server.Mobiles;
+using Server.ContextMenus;
 
 namespace Server.ACC.CSS.Systems.VeterinaryMagic
 {
-	public class VeterinarySpellbook : CSpellbook
-	{
-		public override School School{ get{ return School.VeterinariansCodex; } }
+    public class VeterinarySpellbook : CSpellbook
+    {
+        public override School School { get { return School.VeterinariansCodex; } }
 
-		[Constructable]
-		public VeterinarySpellbook() : this( (ulong)0, CSSettings.FullSpellbooks )
-		{
-		}
+        [Constructable]
+        public VeterinarySpellbook() : this((ulong)0, CSSettings.FullSpellbooks)
+        {
+        }
 
-		[Constructable]
-		public VeterinarySpellbook( bool full ) : this( (ulong)0, full )
-		{
-		}
+        [Constructable]
+        public VeterinarySpellbook(bool full) : this((ulong)0, full)
+        {
+        }
 
-		[Constructable]
-		public VeterinarySpellbook( ulong content, bool full ) : base( content, 0xEFA, full )
-		{
-			Hue = 2548;
-			Name = "Veterinarians Codex";
-		}
+        [Constructable]
+        public VeterinarySpellbook(ulong content, bool full) : base(content, 0xEFA, full)
+        {
+            Hue = 2548;
+            Name = "Veterinarians Codex";
+        }
 
-		public override void OnDoubleClick( Mobile from )
-		{
-			if ( from.AccessLevel == AccessLevel.Player )
-			{
-				//Container pack = from.Backpack;
-				//if( !(Parent == from || (pack != null && Parent == pack)) )
-				//{
-					//from.SendMessage( "The spellbook must be in your backpack [and not in a container within] to open." );
-					//return;
-				//}
-				//else
-				if( SpellRestrictions.UseRestrictions && !SpellRestrictions.CheckRestrictions( from, this.School ) )
-				{
-					return;
-				}
-			}
+        public override void OnDoubleClick(Mobile from)
+        {
+            if (from.AccessLevel == AccessLevel.Player)
+            {
+                if (SpellRestrictions.UseRestrictions && !SpellRestrictions.CheckRestrictions(from, this.School))
+                {
+                    return;
+                }
+            }
 
-			from.CloseGump( typeof( VeterinarySpellbookGump ) );
-			from.SendGump( new VeterinarySpellbookGump( this ) );
-		}
+            if (from is PlayerMobile player)
+            {
+                var profile = player.AcquireTalents();
+                // Update the spellbook content based on the VeterinarySpells talent.
+                if (profile.Talents.ContainsKey(TalentID.VeterinarySpells))
+                    this.Content = (ulong)profile.Talents[TalentID.VeterinarySpells].Points;
+            }
 
-		public VeterinarySpellbook( Serial serial ) : base( serial )
-		{
-		}
+            from.CloseGump(typeof(VeterinarySpellbookGump));
+            from.SendGump(new VeterinarySpellbookGump(this));
+        }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 ); // version
-		}
+        public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
+        {
+            base.GetContextMenuEntries(from, list);
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+            if (from is PlayerMobile player)
+            {
+                list.Add(new VeterinarySpellbookEntry(player, this));
+            }
+        }
+
+        public VeterinarySpellbook(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
+    }
+
+    // Custom Context Menu Entry to open the Veterinary Skill Tree.
+    public class VeterinarySpellbookEntry : ContextMenuEntry
+    {
+        private PlayerMobile m_Player;
+        private VeterinarySpellbook m_Spellbook;
+
+        public VeterinarySpellbookEntry(PlayerMobile player, VeterinarySpellbook spellbook)
+            : base(1078990) // Custom Cliloc for Skill Tree
+        {
+            m_Player = player;
+            m_Spellbook = spellbook;
+        }
+
+        public override void OnClick()
+        {
+            if (m_Player == null || m_Spellbook == null)
+                return;
+
+            m_Player.SendGump(new VeterinarySkillTree(m_Player));
+        }
+    }
 }

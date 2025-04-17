@@ -59,10 +59,14 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a dark presence enabling you to command more creatures.");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonImpalerTimer(pm);
-                m_Timer.Start();
+
+                if (AutoSummonManager.IsAutoSummonEnabled(pm)) // Check if autosummon is enabled for the player
+                {
+                    m_Timer = new SummonImpalerTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -113,8 +117,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonImpalerTimer(mob);
-                m_Timer.Start();
+                // Start the summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonImpalerTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -136,6 +144,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Check if autosummon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

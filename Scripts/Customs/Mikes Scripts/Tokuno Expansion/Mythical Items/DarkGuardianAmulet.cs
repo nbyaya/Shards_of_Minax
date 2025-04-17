@@ -58,10 +58,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel the power of the Dark Guardian flowing through you, allowing you to command more creatures!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonDarkGuardianTimer(pm);
-                m_Timer.Start();
+                // Start summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StopSummonTimer();
+                    m_Timer = new SummonDarkGuardianTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -112,8 +115,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonDarkGuardianTimer(mob);
-                m_Timer.Start();
+                // Only restart the summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonDarkGuardianTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -136,7 +143,8 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                // Only summon if auto-summon is enabled and the player has room for more followers
+                if (AutoSummonManager.IsAutoSummonEnabled(m_Owner) && m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     DarkGuardian guardian = new DarkGuardian
                     {

@@ -56,10 +56,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel the presence of serpentine allies at your command!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonSerpentTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonSerpentTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -107,8 +110,8 @@ namespace Server.Items
             int version = reader.ReadInt();
             m_BonusFollowers = reader.ReadInt();
 
-            // Reinitialize timer if equipped on restart
-            if (Parent is Mobile mob)
+            // Reinitialize timer if equipped on restart and autosummon is enabled
+            if (Parent is Mobile mob && AutoSummonManager.IsAutoSummonEnabled(mob))
             {
                 m_Timer = new SummonSerpentTimer(mob);
                 m_Timer.Start();
@@ -128,12 +131,14 @@ namespace Server.Items
 
             protected override void OnTick()
             {
-                if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Ring) is SerpentmastersRing))
+                // Stop if the owner is invalid, the item is not equipped, or autosummon is off
+                if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Ring) is SerpentmastersRing) || !AutoSummonManager.IsAutoSummonEnabled(m_Owner))
                 {
                     Stop();
                     return;
                 }
 
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     GiantSerpent serpent = new GiantSerpent

@@ -56,10 +56,11 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel empowered to command more minions of technology!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonExodusOverseerTimer(pm);
-                m_Timer.Start();
+                // Start summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StartSummonTimer(pm);
+                }
             }
         }
 
@@ -76,6 +77,13 @@ namespace Server.Items
 
             // Stop the summon timer
             StopSummonTimer();
+        }
+
+        private void StartSummonTimer(PlayerMobile pm)
+        {
+            StopSummonTimer(); // Ensure we stop any existing timer before starting a new one
+            m_Timer = new SummonExodusOverseerTimer(pm);
+            m_Timer.Start();
         }
 
         private void StopSummonTimer()
@@ -108,10 +116,13 @@ namespace Server.Items
             m_BonusFollowers = reader.ReadInt();
 
             // Reinitialize timer if equipped on restart
-            if (Parent is Mobile mob)
+            if (Parent is PlayerMobile pm)
             {
-                m_Timer = new SummonExodusOverseerTimer(mob);
-                m_Timer.Start();
+                // Start summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StartSummonTimer(pm);
+                }
             }
         }
 
@@ -134,7 +145,8 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                // Only summon if autosummon is enabled and there is room for more followers
+                if (AutoSummonManager.IsAutoSummonEnabled(m_Owner) && m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     ExodusOverseer overseer = new ExodusOverseer
                     {

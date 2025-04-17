@@ -55,10 +55,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a deep connection to the bovine world!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonCowTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm)) // Check if auto summon is enabled
+                {
+                    m_Timer = new SummonCowTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -109,8 +112,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonCowTimer(mob);
-                m_Timer.Start();
+                // Check if autosummon is enabled when the hat is equipped after restart
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonCowTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -133,7 +140,8 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                // Only summon if the player has room for more followers and autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(m_Owner) && m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     Cow cow = new Cow
                     {

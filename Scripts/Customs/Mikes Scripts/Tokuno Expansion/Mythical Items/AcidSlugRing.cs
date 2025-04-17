@@ -115,7 +115,7 @@ namespace Server.Items
             private Mobile m_Owner;
 
             public SummonAcidSlugTimer(Mobile owner)
-                : base(TimeSpan.FromSeconds(10.0), TimeSpan.FromSeconds(10.0))
+                : base(TimeSpan.FromSeconds(10.0), TimeSpan.FromSeconds(10.0)) // Summons every 10 seconds
             {
                 m_Owner = owner;
                 Priority = TimerPriority.OneSecond;
@@ -123,11 +123,16 @@ namespace Server.Items
 
             protected override void OnTick()
             {
+                // Stop if owner is invalid or item is no longer equipped
                 if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Ring) is AcidSlugRing))
                 {
                     Stop();
                     return;
                 }
+
+                // Check if autosummon is enabled for the player
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

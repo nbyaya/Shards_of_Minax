@@ -55,10 +55,14 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a surge of wild energy empowering your command over creatures!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonFrenziedOstardTimer(pm);
-                m_Timer.Start();
+                // Check if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    // Start summon timer if autosummon is enabled
+                    StopSummonTimer();
+                    m_Timer = new SummonFrenziedOstardTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -109,8 +113,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonFrenziedOstardTimer(mob);
-                m_Timer.Start();
+                // Start summon timer only if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonFrenziedOstardTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -132,6 +140,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Check if autosummon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

@@ -54,10 +54,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a bond with the natural world, able to command more creatures.");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonCuSidheTimer(pm);
-                m_Timer.Start();
+                // Start summon timer only if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StopSummonTimer();
+                    m_Timer = new SummonCuSidheTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -108,8 +111,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonCuSidheTimer(mob);
-                m_Timer.Start();
+                // Only start the timer if auto summon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonCuSidheTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -132,7 +139,8 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                // Only summon if auto-summon is enabled and the player has room for more followers
+                if (AutoSummonManager.IsAutoSummonEnabled(m_Owner) && m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     CuSidhe cuSidhe = new CuSidhe
                     {

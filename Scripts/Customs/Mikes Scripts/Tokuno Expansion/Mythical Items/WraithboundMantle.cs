@@ -59,10 +59,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "The mantle binds wraiths to your will.");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonCursedSoulTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonCursedSoulTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -113,8 +116,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonCursedSoulTimer(mob);
-                m_Timer.Start();
+                // Only start the timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonCursedSoulTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -131,12 +138,14 @@ namespace Server.Items
 
             protected override void OnTick()
             {
-                if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Cloak) is WraithboundMantle))
+                // Check if the autosummon is enabled for the owner before proceeding
+                if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Cloak) is WraithboundMantle) || !AutoSummonManager.IsAutoSummonEnabled(m_Owner))
                 {
                     Stop();
                     return;
                 }
 
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     CursedSoul soul = new CursedSoul

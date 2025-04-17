@@ -1084,7 +1084,6 @@ namespace Server
 			new LootPackItem(typeof(ExtraPack), 25),
 			new LootPackItem(typeof(FrostwoodAxe), 25),
 			new LootPackItem(typeof(GoldenCrown), 25),
-			new LootPackItem(typeof(GoldenDragon), 25),
 			new LootPackItem(typeof(GoldenDrakelingScaleShield), 25),
 			new LootPackItem(typeof(HeartwoodAxe), 25),
 			new LootPackItem(typeof(IcicleStaff), 25),

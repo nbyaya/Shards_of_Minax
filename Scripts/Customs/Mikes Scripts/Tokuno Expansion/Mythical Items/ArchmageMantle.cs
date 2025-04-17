@@ -58,10 +58,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel an overwhelming surge of magical power, granting you greater command!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonEvilMageLordTimer(pm);
-                m_Timer.Start();
+                // Only start the summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StopSummonTimer();
+                    m_Timer = new SummonEvilMageLordTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -112,8 +115,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonEvilMageLordTimer(mob);
-                m_Timer.Start();
+                // Only start the summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonEvilMageLordTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -136,7 +143,8 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                // Only summon if autosummon is enabled and there is room for followers
+                if (AutoSummonManager.IsAutoSummonEnabled(m_Owner) && m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     EvilMageLord mage = new EvilMageLord
                     {

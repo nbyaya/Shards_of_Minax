@@ -1,6 +1,7 @@
 using Server;
 using Server.Items;
 using Server.Mobiles;
+using Server.Misc;
 using System;
 using Ultima;
 using Server.Engines.XmlSpawner2;
@@ -14,53 +15,75 @@ namespace Bittiez.CustomLoot
             EventSink.CreatureDeath += EventSink_CreatureDeath;
         }
 
-        private static void EventSink_CreatureDeath(CreatureDeathEventArgs e)
-        {
-            if (e.Creature == null)
-                return;
+		private static void EventSink_CreatureDeath(CreatureDeathEventArgs e)
+		{
+			if (e.Creature == null)
+				return;
 
-            // Ignore summoned creatures (temporary summons shouldn't give XP)
-            if (e.Creature is BaseCreature baseCreature && baseCreature.Summoned)
-                return;
+			// Ignore summoned creatures (temporary summons shouldn't give XP)
+			if (e.Creature is BaseCreature baseCreature && baseCreature.Summoned)
+				return;
 
-            PlayerMobile player = null;
+			PlayerMobile player = null;
 
-            // Check if the killer is a player or a player's controlled creature
-            if (e.Killer is PlayerMobile directPlayer)
-            {
-                player = directPlayer;
-            }
-            else if (e.Killer is BaseCreature killerCreature && killerCreature.Controlled && killerCreature.ControlMaster is PlayerMobile master)
-            {
-                player = master; // Assign XP to the master of the pet
-            }
+			// Check if the killer is a player or a player's controlled creature
+			if (e.Killer is PlayerMobile directPlayer)
+			{
+				player = directPlayer;
+			}
+			else if (e.Killer is BaseCreature killerCreature && killerCreature.Controlled && killerCreature.ControlMaster is PlayerMobile master)
+			{
+				player = master; // Assign XP to the master of the pet
+			}
 
-            if (player != null)
-            {
-                var profile = player.AcquireTalents();
-                int xpAward = CalcExp(e.Creature); // Use the new XP formula
+			if (player != null)
+			{
+				var profile = player.AcquireTalents();
+				int xpAward = CalcExp(e.Creature); // Use the new XP formula
 
-                profile.XP += xpAward;
-                player.SendMessage($"You gained {xpAward} XP from defeating {e.Creature.Name}.");
+				profile.XP += xpAward;
+				player.SendMessage($"You gained {xpAward} XP from defeating {e.Creature.Name}.");
 
-                // Check for level-up(s)
-                while (profile.XP >= Talents.GetXPThresholdForLevel(profile.Level + 1))
-                {
-                    profile.Level++;
+				// Check for level-up(s)
+				while (profile.XP >= Talents.GetXPThresholdForLevel(profile.Level + 1))
+				{
+					profile.Level++;
 
-                    if (!profile.Talents.TryGetValue(TalentID.AncientKnowledge, out var talent))
-                    {
-                        talent = new Talent(TalentID.AncientKnowledge);
-                        profile.Talents[TalentID.AncientKnowledge] = talent;
-                    }
-                    talent.Points += 5;
-                    player.SendMessage($"Congratulations! You've reached level {profile.Level} and received 3 Maxxia points!");
-                }
+					if (!profile.Talents.TryGetValue(TalentID.AncientKnowledge, out var talent))
+					{
+						talent = new Talent(TalentID.AncientKnowledge);
+						profile.Talents[TalentID.AncientKnowledge] = talent;
+					}
+					talent.Points += 5;
+					player.SendMessage($"Congratulations! You've reached level {profile.Level} and received 5 Maxxia points!");
+				}
 
-                // Award XP to levelable gear (if any)
-                AwardXPToLevelableItems(player, e.Creature);
-            }
-        }
+				// Award XP to levelable gear (if any)
+				AwardXPToLevelableItems(player, e.Creature);
+
+				// If the kill was made by a pet, attempt to gain Animal Taming and Animal Lore.
+				if (e.Killer is BaseCreature pet && pet.Controlled)
+				{
+					// Animal-related skills gains
+					SkillCheck.Gain(player, player.Skills[SkillName.AnimalTaming]);
+					SkillCheck.Gain(player, player.Skills[SkillName.AnimalLore]);
+					player.SendMessage("Your pet's performance has improved your Animal Taming and Animal Lore skills!");
+
+					// Check if the player is wielding a Shepherds Crook to also gain Herding.
+					Item heldItem = player.FindItemOnLayer(Layer.OneHanded);
+					if (heldItem == null)
+						heldItem = player.FindItemOnLayer(Layer.TwoHanded);
+
+					if (heldItem != null && heldItem is ShepherdsCrook)
+					{
+						SkillCheck.Gain(player, player.Skills[SkillName.Herding]);
+						player.SendMessage("Your Shepherds Crook aids your Herding training!");
+					}
+				}
+			}
+		}
+
+
 
         private static int CalcExp(Mobile targ)
         {

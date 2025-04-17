@@ -17,6 +17,49 @@ using Server.ACC.CSS.Systems.Ranger;
 using Server.ACC.CSS.Systems.Rogue;
 using Server.ACC.CSS.Systems.MartialManual;
 using Server.ACC.CSS.Systems.Pastoralicon;
+using Server.ACC.CSS.Systems.AlchemyMagic;
+using Server.ACC.CSS.Systems.FishingMagic;
+using Server.ACC.CSS.Systems.EvalIntMagic;
+using Server.ACC.CSS.Systems.ArcheryMagic;
+using Server.ACC.CSS.Systems.MageryMagic;
+using Server.ACC.CSS.Systems.ArmsLoreMagic;
+using Server.ACC.CSS.Systems.AnimalTamingMagic;
+using Server.ACC.CSS.Systems.AnimalLoreMagic;
+using Server.ACC.CSS.Systems.CarpentryMagic;
+using Server.ACC.CSS.Systems.CartographyMagic;
+using Server.ACC.CSS.Systems.TasteIDMagic;
+using Server.ACC.CSS.Systems.CookingMagic;
+using Server.ACC.CSS.Systems.DiscordanceMagic;
+using Server.ACC.CSS.Systems.FencingMagic;
+using Server.ACC.CSS.Systems.FletchingMagic;
+using Server.ACC.CSS.Systems.ForensicsMagic;
+using Server.ACC.CSS.Systems.WrestlingMagic;
+using Server.ACC.CSS.Systems.ParryMagic;
+using Server.ACC.CSS.Systems.HealingMagic;
+using Server.ACC.CSS.Systems.DetectHiddenMagic;
+using Server.ACC.CSS.Systems.ProvocationMagic;
+using Server.ACC.CSS.Systems.LockpickingMagic;
+using Server.ACC.CSS.Systems.MacingMagic;
+using Server.ACC.CSS.Systems.MeditationMagic;
+using Server.ACC.CSS.Systems.BeggingMagic;
+using Server.ACC.CSS.Systems.MiningMagic;
+using Server.ACC.CSS.Systems.ChivalryMagic;
+using Server.ACC.CSS.Systems.StealingMagic;
+using Server.ACC.CSS.Systems.InscribeMagic;
+using Server.ACC.CSS.Systems.NinjitsuMagic;
+using Server.ACC.CSS.Systems.HidingMagic;
+using Server.ACC.CSS.Systems.StealthMagic;
+using Server.ACC.CSS.Systems.BlacksmithMagic;
+using Server.ACC.CSS.Systems.TacticsMagic;
+using Server.ACC.CSS.Systems.SwordsMagic;
+using Server.ACC.CSS.Systems.TailoringMagic;
+using Server.ACC.CSS.Systems.NecromancyMagic;
+using Server.ACC.CSS.Systems.TrackingMagic;
+using Server.ACC.CSS.Systems.RemoveTrapMagic;
+using Server.ACC.CSS.Systems.VeterinaryMagic;
+using Server.ACC.CSS.Systems.MusicianshipMagic;
+using Server.ACC.CSS.Systems.CampingMagic;
+using Server.ACC.CSS.Systems.LumberjackingMagic;
 using Server.Multis.Deeds;
 using Server.Custom;
 using Server.Multis;
@@ -733,7 +776,7 @@ namespace Server.Misc
 						EquipItem(new GargishClothKiltArmor(hue));
 					}
 
-					PackItem(new SmokeBomb());
+
 
 					Spellbook book = new BookOfNinjitsu();
 					PackItem(book);
@@ -921,6 +964,7 @@ namespace Server.Misc
 					PackItem(new Bottle(4));
 					PackItem(new MortarPestle());
 					PackItem(new StartingMedicine());
+					PackItem(new AlchemySpellbook());
 
 					var hue = Utility.RandomPinkHue();
 
@@ -960,6 +1004,7 @@ namespace Server.Misc
 				case SkillName.AnimalLore:
 				{
 					PackItem(new BootsOfCommand());
+					PackItem(new AnimalLoreSpellbook());
 					var hue = Utility.RandomBlueHue();
 
 					if (elf)
@@ -981,7 +1026,7 @@ namespace Server.Misc
 				case SkillName.Archery:
 				{
 					PackItem(new Arrow(25));
-					PackItem(new RangerSpellbook());
+					PackItem(new ArcherySpellbook());
 
 					if (elf)
 						EquipItem(new ElvenCompositeLongbow());
@@ -1045,7 +1090,7 @@ namespace Server.Misc
 				case SkillName.Begging:
 				{
 					PackItem(new StartingGarbage());
-					PackItem(new BeggarKingsCrown());					if (elf)
+					PackItem(new BeggingSpellbook());					if (elf)
 						EquipItem(new WildStaff());
 					else if (human)
 						EquipItem(new GnarledStaff());
@@ -1059,6 +1104,7 @@ namespace Server.Misc
 					PackItem(new Tongs());
 					PackItem(new Pickaxe());
 					PackItem(new Pickaxe());
+					PackItem(new BlacksmithSpellbook());
 					PackItem(new IronIngot(50));
 
 					if (human || elf)
@@ -1085,6 +1131,7 @@ namespace Server.Misc
 					PackItem(new Feather(50));
 					PackItem(new Shaft(50));
 					PackItem(new Gold(5000));
+					PackItem(new FletchingSpellbook());
 					PackItem(new StartingCrate());					break;
 				}
 				case SkillName.Camping:
@@ -1092,6 +1139,7 @@ namespace Server.Misc
 					PackItem(new Bedroll());
 					PackItem(new Kindling(5));
 					PackItem(new CampersBackpack());
+					PackItem(new CampingSpellbook());
 					PackItem(new TentDeed());					break;
 				}
 				case SkillName.Carpentry:
@@ -1101,6 +1149,7 @@ namespace Server.Misc
 					PackItem(new Saw());
 					PackItem(new Saw());
 					PackItem(new WoodHouseDeed());
+					PackItem(new CarpentrySpellbook());
 					if (human || elf)
 					{
 						EquipItem(new HalfApron(Utility.RandomYellowHue()));
@@ -1114,6 +1163,7 @@ namespace Server.Misc
 					PackItem(new BlankMap());
 					PackItem(new BlankMap());
 					PackItem(new BlankMap());
+					PackItem(new CartographySpellbook());
 					PackItem(new CartographersScope());
 					PackItem(new Sextant());
 					PackItem(new BritannianShipDeed());
@@ -1127,12 +1177,14 @@ namespace Server.Misc
 					PackItem(new RawChickenLeg());
 					PackItem(new RawFishSteak());
 					PackItem(new SackFlour());
+					PackItem(new CookingSpellbook());
 					PackItem(new Pitcher(BeverageType.Water));
 					PackItem(new CookingSpellbook());
 					PackItem(new StartingKitchen());					break;
 				}
 				case SkillName.Chivalry:
 				{
+					PackItem(new ChivalrySpellbook2());
 					if (Core.ML)
 						PackItem(new BookOfChivalry((ulong)0x3FF));
 
@@ -1140,7 +1192,7 @@ namespace Server.Misc
 				}
 				case SkillName.DetectHidden:
 				{
-					PackItem(new MirrorOfHonesty());
+					PackItem(new DetectHiddenSpellbook());
 					PackItem(new UniversalAbsorbingDyeTub());					if (human || elf)
 						EquipItem(new Cloak(0x455));
 
@@ -1149,11 +1201,13 @@ namespace Server.Misc
 				case SkillName.Discordance:
 				{
 					PackInstrument();
+					PackItem(new DiscordanceSpellbook());
 					PackItem(new JesterHatOfCommand());
 					break;
 				}
 				case SkillName.Fencing:
 				{
+					PackItem(new FencingSpellbook());
 					if (elf)
 						EquipItem(new Leafblade());
 					else if (human)
@@ -1166,6 +1220,7 @@ namespace Server.Misc
 				case SkillName.Fishing:
 				{
 					EquipItem(new FishingPole());
+					PackItem(new FishingSpellbook());
 					PackItem(new FishingPole());
 					PackItem(new FishingPole());
 					PackItem(new StartingGarbage());
@@ -1189,6 +1244,7 @@ namespace Server.Misc
 				case SkillName.Healing:
 				{
 					PackItem(new Bandage(50));
+					PackItem(new HealingSpellbook());
 					PackItem(new Scissors());
 					PackItem(new StartingMedicine());
 					PackItem(new StartingMedicine());					break;
@@ -1207,6 +1263,7 @@ namespace Server.Misc
 				case SkillName.Hiding:
 				{
 					PackItem(new AssassinsDagger());
+					PackItem(new HidingSpellbook());
 					PackItem(new StartingJewelryBox());					if (human || elf)
 						EquipItem(new Cloak(0x455));
 
@@ -1215,6 +1272,7 @@ namespace Server.Misc
 				case SkillName.Inscribe:
 				{
 					PackItem(new BlankScroll(2));
+					PackItem(new InscribeSpellbook());
 					PackItem(new BlueBook());
 					PackItem(new AncientSpellbook());
 					PackItem(new AvatarSpellbook());
@@ -1243,11 +1301,13 @@ namespace Server.Misc
 				case SkillName.Lockpicking:
 				{
 					PackItem(new Lockpick(40));
+					PackItem(new LockpickingSpellbook());
 					break;
 				}
 				case SkillName.Lumberjacking:
 				{
 					PackItem(new RangerSpellbook());
+					PackItem(new LumberjackingSpellbook());
 					PackItem(new TentDeed());						if (human || elf)
 						EquipItem(new Hatchet());
 					else if (gargoyle)
@@ -1257,6 +1317,7 @@ namespace Server.Misc
 				}
 				case SkillName.Macing:
 				{
+					PackItem(new MacingSpellbook());
 					if (elf)
 						EquipItem(new DiamondMace());
 					else if (human)
@@ -1269,6 +1330,7 @@ namespace Server.Misc
 				case SkillName.Magery:
 				{
 					var regs = new BagOfReagents(50);
+					PackItem(new MagerySpellbook());
 
 					if (!Core.AOS)
 					{
@@ -1310,6 +1372,7 @@ namespace Server.Misc
 				case SkillName.Mining:
 				{
 					PackItem(new Pickaxe());
+					PackItem(new MiningSpellbook());
 					PackItem(new GraveAxe());
 					PackItem(new Gold(10000));
 					PackItem(new TentDeed());					break;
@@ -1317,11 +1380,13 @@ namespace Server.Misc
 				case SkillName.Musicianship:
 				{
 					PackInstrument();
+					PackItem(new MusicianshipSpellbook());
 					PackItem(new BardSpellbook());
 					break;
 				}
 				case SkillName.Necromancy:
 				{
+					PackItem(new NecromancySpellbook());
 					if (Core.ML)
 					{
 						Container regs = new BagOfNecroReagents(50);
@@ -1342,6 +1407,7 @@ namespace Server.Misc
 				}
 				case SkillName.Ninjitsu:
 				{
+					PackItem(new NinjitsuSpellbook());
 					if (human || elf)
 					{
 						EquipItem(new Hakama(0x2C3)); //Only ninjas get the hued one.
@@ -1353,9 +1419,10 @@ namespace Server.Misc
 				}
 				case SkillName.Parry:
 				{
+					PackItem(new ParrySpellbook());
 					PackItem(new StartingClothes());
 					if (human || elf)
-						EquipItem(new WoodenShield());
+						EquipItem(new MetalShield());
 					else if (gargoyle)
 						EquipItem(new GargishWoodenShield());
 
@@ -1377,6 +1444,7 @@ namespace Server.Misc
 				}
 				case SkillName.Provocation:
 				{
+					PackItem(new ProvocationSpellbook());
 					PackInstrument();
 					break;
 				}
@@ -1399,6 +1467,7 @@ namespace Server.Misc
 				}
 				case SkillName.Stealing:
 				{
+					PackItem(new StealingSpellbook());
 					PackItem(new Lockpick(40));
 					PackItem(new StartingJewelryBox());
 					PackItem(new StartingTreasureChest());
@@ -1407,6 +1476,7 @@ namespace Server.Misc
 				}
 				case SkillName.Swords:
 				{
+					PackItem(new SwordsSpellbook());
 					if (elf)
 						EquipItem(new RuneBlade());
 					else if (human)
@@ -1418,6 +1488,7 @@ namespace Server.Misc
 				}
 				case SkillName.Tactics:
 				{
+					PackItem(new TacticsSpellbook());
 					if (elf)
 						EquipItem(new RuneBlade());
 					else if (human)
@@ -1429,6 +1500,7 @@ namespace Server.Misc
 				}
 				case SkillName.Tailoring:
 				{
+					PackItem(new TailoringSpellbook());
 					PackItem(new BoltOfCloth());
 					PackItem(new BoltOfCloth());
 					PackItem(new SewingKit());
@@ -1447,6 +1519,7 @@ namespace Server.Misc
 				}
 				case SkillName.Tracking:
 				{
+					PackItem(new TrackingSpellbook());
 					PackItem(new TravelAtlas());
 					PackItem(new SmallBoatDeed());
 					PackItem(new Gold(5000));					if (human || elf)
@@ -1475,6 +1548,7 @@ namespace Server.Misc
 				}
 				case SkillName.Veterinary:
 				{
+					PackItem(new VeterinarySpellbook());
 					PackItem(new Bandage(5));
 					PackItem(new Scissors());
 					PackItem(new RoyalPetsCharter());
@@ -1482,6 +1556,7 @@ namespace Server.Misc
 				}
 				case SkillName.Wrestling:
 				{
+					PackItem(new WrestlingSpellbook());
 					if (elf)
 						EquipItem(new LeafGloves());
 					else if (human)

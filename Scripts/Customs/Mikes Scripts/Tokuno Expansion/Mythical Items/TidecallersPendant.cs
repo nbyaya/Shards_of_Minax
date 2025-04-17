@@ -56,10 +56,14 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a deep connection to the tides, granting you the ability to control more creatures!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonWaterElementalTimer(pm);
-                m_Timer.Start();
+                // Check if autosummon is enabled before starting the timer
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    // Start summon timer
+                    StopSummonTimer();
+                    m_Timer = new SummonWaterElementalTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -110,8 +114,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonWaterElementalTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob)) 
+                {
+                    m_Timer = new SummonWaterElementalTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -134,6 +141,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Check if autosummon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     WaterElemental elemental = new WaterElemental

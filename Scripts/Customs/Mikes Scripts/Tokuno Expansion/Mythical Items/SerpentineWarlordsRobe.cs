@@ -74,10 +74,8 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you could command more creatures now!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonSerpentineDragonTimer(pm);
-                m_Timer.Start();
+                // Start summon timer if autosummon is enabled
+                StartSummonTimer(pm);
             }
         }
 
@@ -94,6 +92,17 @@ namespace Server.Items
 
             // Stop the summon timer
             StopSummonTimer();
+        }
+
+        private void StartSummonTimer(PlayerMobile pm)
+        {
+            // If autosummon is enabled, start the summon timer
+            if (AutoSummonManager.IsAutoSummonEnabled(pm))
+            {
+                StopSummonTimer();
+                m_Timer = new SummonSerpentineDragonTimer(pm);
+                m_Timer.Start();
+            }
         }
 
         private void StopSummonTimer()
@@ -126,10 +135,20 @@ namespace Server.Items
             m_BonusFollowers = reader.ReadInt();
 
             // Reinitialize timer if equipped on restart
-            if (Parent is Mobile mob)
+            if (Parent is PlayerMobile pm)
             {
-                m_Timer = new SummonSerpentineDragonTimer(mob);
-                m_Timer.Start();
+                StartSummonTimer(pm);
+            }
+        }
+
+        // Method to handle when the autosummon toggle is changed
+        public void OnAutoSummonToggle(PlayerMobile pm)
+        {
+            if (Parent != null && Parent == pm)
+            {
+                // Stop and restart the timer based on toggle
+                StopSummonTimer();
+                StartSummonTimer(pm);
             }
         }
 

@@ -1,65 +1,100 @@
 using System;
+using System.Collections.Generic;
+using Server;
+using Server.Commands;
+using Server.ContextMenus;
 using Server.Items;
+using Server.Mobiles;
 using Server.Spells;
 
 namespace Server.ACC.CSS.Systems.AlchemyMagic
 {
-	public class AlchemySpellbook : CSpellbook
-	{
-		public override School School{ get{ return School.AlchemistsCompendium; } }
+    public class AlchemySpellbook : CSpellbook
+    {
+        public override School School { get { return School.AlchemistsCompendium; } }
 
-		[Constructable]
-		public AlchemySpellbook() : this( (ulong)0, CSSettings.FullSpellbooks )
-		{
-		}
+        [Constructable]
+        public AlchemySpellbook() : this((ulong)0, CSSettings.FullSpellbooks)
+        {
+        }
 
-		[Constructable]
-		public AlchemySpellbook( bool full ) : this( (ulong)0, full )
-		{
-		}
+        [Constructable]
+        public AlchemySpellbook(bool full) : this((ulong)0, full)
+        {
+        }
 
-		[Constructable]
-		public AlchemySpellbook( ulong content, bool full ) : base( content, 0xEFA, full )
-		{
-			Hue = 2385;
-			Name = "Alchemists Compendium";
-		}
+        [Constructable]
+        public AlchemySpellbook(ulong content, bool full) : base(content, 0xEFA, full)
+        {
+            Hue = 2385;
+            Name = "Alchemists Compendium";
+        }
 
-		public override void OnDoubleClick( Mobile from )
-		{
-			if ( from.AccessLevel == AccessLevel.Player )
-			{
-				//Container pack = from.Backpack;
-				//if( !(Parent == from || (pack != null && Parent == pack)) )
-				//{
-					//from.SendMessage( "The spellbook must be in your backpack [and not in a container within] to open." );
-					//return;
-				//}
-				//else
-				if( SpellRestrictions.UseRestrictions && !SpellRestrictions.CheckRestrictions( from, this.School ) )
-				{
-					return;
-				}
-			}
+        public override void OnDoubleClick(Mobile from)
+        {
+            if (from.AccessLevel == AccessLevel.Player)
+            {
+                if (SpellRestrictions.UseRestrictions && !SpellRestrictions.CheckRestrictions(from, this.School))
+                    return;
+            }
 
-			from.CloseGump( typeof( AlchemySpellbookGump ) );
-			from.SendGump( new AlchemySpellbookGump( this ) );
-		}
+            // Update the content based on the AlchemySpells talent.
+            if (from is PlayerMobile player)
+            {
+                var profile = player.AcquireTalents();
+                this.Content = (ulong)profile.Talents[TalentID.AlchemySpells].Points;
+            }
 
-		public AlchemySpellbook( Serial serial ) : base( serial )
-		{
-		}
+            from.CloseGump(typeof(AlchemySpellbookGump));
+            from.SendGump(new AlchemySpellbookGump(this));
+        }
 
-		public override void Serialize( GenericWriter writer )
-		{
-			base.Serialize( writer );
-			writer.Write( (int) 0 ); // version
-		}
+        public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
+        {
+            base.GetContextMenuEntries(from, list);
 
-		public override void Deserialize( GenericReader reader )
-		{
-			base.Deserialize( reader );
-			int version = reader.ReadInt();
-		}
-	}
+            if (from is PlayerMobile player)
+            {
+                list.Add(new AlchemySpellbookEntry(player, this));
+            }
+        }
+
+        public AlchemySpellbook(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
+    }
+
+    // Custom Context Menu Entry to open the Alchemy Skill Tree.
+    public class AlchemySpellbookEntry : ContextMenuEntry
+    {
+        private PlayerMobile m_Player;
+        private AlchemySpellbook m_Spellbook;
+
+        public AlchemySpellbookEntry(PlayerMobile player, AlchemySpellbook spellbook)
+            : base(1078990) // Custom Cliloc for Skill Tree (adjust as needed)
+        {
+            m_Player = player;
+            m_Spellbook = spellbook;
+        }
+
+        public override void OnClick()
+        {
+            if (m_Player == null || m_Spellbook == null)
+                return;
+
+            m_Player.SendGump(new AlchemySkillTree(m_Player));
+        }
+    }
 }

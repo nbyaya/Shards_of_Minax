@@ -67,10 +67,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you can command more aquatic creatures now!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonSeahorseTimer(pm);
-                m_Timer.Start();
+                // Start summon timer only if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StopSummonTimer();
+                    m_Timer = new SummonSeahorseTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -121,8 +124,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonSeahorseTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob)) // Check if autosummon is enabled
+                {
+                    m_Timer = new SummonSeahorseTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -145,6 +151,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Stop if autosummon is disabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     SeaHorse seahorse = new SeaHorse

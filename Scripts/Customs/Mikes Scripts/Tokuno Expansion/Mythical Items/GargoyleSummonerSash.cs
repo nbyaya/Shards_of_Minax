@@ -58,10 +58,11 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel empowered to command more creatures!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonStoneGargoyleTimer(pm);
-                m_Timer.Start();
+                // Check if autosummon is enabled, and start summon timer if so
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StartSummonTimer(pm);
+                }
             }
         }
 
@@ -78,6 +79,14 @@ namespace Server.Items
 
             // Stop the summon timer
             StopSummonTimer();
+        }
+
+        private void StartSummonTimer(PlayerMobile pm)
+        {
+            // Start summon timer
+            StopSummonTimer(); // Ensure no previous timer is running
+            m_Timer = new SummonStoneGargoyleTimer(pm);
+            m_Timer.Start();
         }
 
         private void StopSummonTimer()
@@ -112,8 +121,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonStoneGargoyleTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonStoneGargoyleTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -135,6 +147,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Only summon if auto-summon is enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

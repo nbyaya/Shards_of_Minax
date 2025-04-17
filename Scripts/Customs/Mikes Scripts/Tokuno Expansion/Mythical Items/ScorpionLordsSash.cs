@@ -77,10 +77,11 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you could command more creatures now!");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonScorpionTimer(pm);
-                m_Timer.Start();
+                // Check if autosummon is enabled and start summon timer accordingly
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StartSummonTimer(pm);
+                }
             }
         }
 
@@ -97,6 +98,14 @@ namespace Server.Items
 
             // Stop the summon timer
             StopSummonTimer();
+        }
+
+        private void StartSummonTimer(PlayerMobile pm)
+        {
+            // Start summon timer
+            StopSummonTimer(); // Ensure no duplicate timers
+            m_Timer = new SummonScorpionTimer(pm);
+            m_Timer.Start();
         }
 
         private void StopSummonTimer()
@@ -131,8 +140,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonScorpionTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonScorpionTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -154,6 +166,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Check if autosummon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

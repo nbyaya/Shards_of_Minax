@@ -56,10 +56,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you can command an orcish squad!");
 
-                // Start summon timer
+                // Start summon timer if auto-summon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonOrcBomberTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))  // Check if auto-summon is enabled
+                {
+                    m_Timer = new SummonOrcBomberTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -110,8 +113,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonOrcBomberTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))  // Check if auto-summon is enabled
+                {
+                    m_Timer = new SummonOrcBomberTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -133,6 +139,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Check if auto-summon is enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

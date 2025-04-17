@@ -54,10 +54,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you can lead more companions now!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonJackRabbitTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonJackRabbitTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -108,8 +111,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonJackRabbitTimer(mob);
-                m_Timer.Start();
+                // Start summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonJackRabbitTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -132,6 +139,14 @@ namespace Server.Items
                     return;
                 }
 
+                // Stop if autosummon is disabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                {
+                    Stop();
+                    return;
+                }
+
+                // Summon a JackRabbit if there is room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     JackRabbit rabbit = new JackRabbit

@@ -60,10 +60,14 @@ namespace Server.Items
             {
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "Your connection to the predator realm increases your follower capacity!");
-                
+
+                // Check if autosummon is enabled and start the summon timer accordingly
                 StopSummonTimer();
-                m_Timer = new SummonHellCatTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonHellCatTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -76,6 +80,8 @@ namespace Server.Items
                 pm.FollowersMax -= m_BonusFollowers;
                 pm.SendMessage(37, "Your connection to the predator realm fades...");
             }
+
+            // Stop the summon timer
             StopSummonTimer();
         }
 
@@ -108,8 +114,12 @@ namespace Server.Items
 
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonHellCatTimer(mob);
-                m_Timer.Start();
+                // Reinitialize the timer if the item is equipped upon load
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonHellCatTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -138,7 +148,7 @@ namespace Server.Items
                         Controlled = true,
                         ControlMaster = m_Owner
                     };
-                    
+
                     hellCat.MoveToWorld(m_Owner.Location, m_Owner.Map);
                     m_Owner.SendMessage(54, "A Predator Hell Cat answers your call!");
                 }

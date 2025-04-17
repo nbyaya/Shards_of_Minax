@@ -58,10 +58,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel an otherworldly presence bolstering your control over the dead.");
 
-                // Start summon timer
-                StopSummonTimer();
-                m_Timer = new SummonLichTimer(pm);
-                m_Timer.Start();
+                // Start summon timer only if auto summon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    StopSummonTimer();
+                    m_Timer = new SummonLichTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -112,8 +115,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonLichTimer(mob);
-                m_Timer.Start();
+                // Ensure the timer only starts if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonLichTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -130,12 +137,18 @@ namespace Server.Items
 
             protected override void OnTick()
             {
+                // Stop if the owner is invalid or the item is not equipped
                 if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Cloak) is LichKingsCloak))
                 {
                     Stop();
                     return;
                 }
 
+                // Only summon if autosummon is enabled
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Check if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     Lich lich = new Lich

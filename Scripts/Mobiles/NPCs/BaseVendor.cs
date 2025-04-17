@@ -15,6 +15,7 @@ using Server.Network;
 using Server.Regions;
 using Server.Services.Virtues;
 using Server.Targeting;
+using Server.Custom;
 #endregion
 
 namespace Server.Mobiles
@@ -68,7 +69,7 @@ namespace Server.Mobiles
 
         public virtual bool ChangeRace { get { return true; } }
 
-		public override bool IsInvulnerable { get { return true; } }
+
 
 		public virtual DateTime NextTrickOrTreat { get; set; }
         public virtual double GetMoveDelay { get { return (double)Utility.RandomMinMax(30, 120); } }
@@ -332,6 +333,8 @@ namespace Server.Mobiles
 			pack.Movable = false;
 			pack.Visible = false;
 			AddItem(pack);
+			
+			SpecialLootHelper.AddLoot(this);
 
             BribeMultiplier = Utility.Random(10);
 

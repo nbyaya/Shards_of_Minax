@@ -58,10 +58,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a stronger connection to nature, allowing you to command more creatures.");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonWhippingVineTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonWhippingVineTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -112,8 +115,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonWhippingVineTimer(mob);
-                m_Timer.Start();
+                // Check if autosummon is enabled when the item is re-equipped
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonWhippingVineTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -130,7 +137,8 @@ namespace Server.Items
 
             protected override void OnTick()
             {
-                if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Waist) is VineweaversSash))
+                // Stop if the owner is invalid, item is not equipped, or autosummon is disabled
+                if (m_Owner == null || m_Owner.Deleted || !(m_Owner.FindItemOnLayer(Layer.Waist) is VineweaversSash) || !AutoSummonManager.IsAutoSummonEnabled(m_Owner))
                 {
                     Stop();
                     return;

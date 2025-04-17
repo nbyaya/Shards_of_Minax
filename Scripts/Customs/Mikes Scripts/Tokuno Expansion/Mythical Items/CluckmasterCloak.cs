@@ -53,10 +53,15 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you can command a flock!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
                 m_Timer = new SummonChickenLizardTimer(pm);
-                m_Timer.Start();
+                
+                // Start the timer only if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -108,7 +113,12 @@ namespace Server.Items
             if (Parent is Mobile mob)
             {
                 m_Timer = new SummonChickenLizardTimer(mob);
-                m_Timer.Start();
+
+                // Start the timer only if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -131,7 +141,8 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                // Only summon if the player has room for more followers and autosummon is enabled
+                if (m_Owner.Followers < m_Owner.FollowersMax && AutoSummonManager.IsAutoSummonEnabled(m_Owner))
                 {
                     ChickenLizard chickenLizard = new ChickenLizard
                     {

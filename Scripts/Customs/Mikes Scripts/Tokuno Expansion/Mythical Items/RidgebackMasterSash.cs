@@ -72,10 +72,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you could command more creatures now!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonRidgebackTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonRidgebackTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -126,8 +129,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonRidgebackTimer(mob);
-                m_Timer.Start();
+                // Start the summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonRidgebackTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -150,7 +157,8 @@ namespace Server.Items
                     return;
                 }
 
-                if (m_Owner.Followers < m_Owner.FollowersMax)
+                // Only summon if the player has room for more followers and autosummon is enabled
+                if (m_Owner.Followers < m_Owner.FollowersMax && AutoSummonManager.IsAutoSummonEnabled(m_Owner))
                 {
                     Ridgeback ridgeback = new Ridgeback
                     {

@@ -27,7 +27,6 @@ namespace Server.Items
             Attributes.Luck = 100; // Increases luck
             Attributes.NightSight = 1; // Grants night sight
 
-
             // Skill Bonuses
             SkillBonuses.SetValues(0, SkillName.Magery, 15.0); // Enhances Magery
             SkillBonuses.SetValues(1, SkillName.EvalInt, 10.0); // Enhances Eval Int
@@ -54,10 +53,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel a surge of power, allowing you to command more creatures!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonWhiteWyrmTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonWhiteWyrmTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -109,8 +111,12 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonWhiteWyrmTimer(mob);
-                m_Timer.Start();
+                // Start the summon timer if autosummon is enabled
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonWhiteWyrmTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -133,6 +139,11 @@ namespace Server.Items
                     return;
                 }
 
+                // Check if autosummon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
+
+                // Only summon if the player has room for more followers
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {
                     WhiteWyrm wyrm = new WhiteWyrm

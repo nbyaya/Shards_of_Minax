@@ -26,7 +26,7 @@ namespace Server.Items
             Attributes.ReflectPhysical = 10;
             SkillBonuses.SetValues(0, SkillName.Archery, 15.0);
             SkillBonuses.SetValues(1, SkillName.AnimalTaming, 10.0);
-            
+
             Resistances.Physical = 10;
             Resistances.Poison = 10;
             Resistances.Cold = 5;
@@ -52,10 +52,13 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel in harmony with nature, capable of commanding more creatures!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonCentaurTimer(pm);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonCentaurTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -106,8 +109,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonCentaurTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonCentaurTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -129,6 +135,10 @@ namespace Server.Items
                     Stop();
                     return;
                 }
+
+                // Check if autosummon is enabled before continuing
+                if (!AutoSummonManager.IsAutoSummonEnabled(m_Owner))
+                    return;
 
                 if (m_Owner.Followers < m_Owner.FollowersMax)
                 {

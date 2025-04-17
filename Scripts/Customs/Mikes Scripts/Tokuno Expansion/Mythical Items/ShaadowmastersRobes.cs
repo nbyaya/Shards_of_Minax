@@ -95,10 +95,14 @@ namespace Server.Items
                 pm.FollowersMax += m_BonusFollowers;
                 pm.SendMessage(78, "You feel like you could command more creatures now!");
 
-                // Start summon timer
+                // Start summon timer if autosummon is enabled
                 StopSummonTimer();
-                m_Timer = new SummonShadowWyrmTimer(pm);
-                m_Timer.Start();
+
+                if (AutoSummonManager.IsAutoSummonEnabled(pm))
+                {
+                    m_Timer = new SummonShadowWyrmTimer(pm);
+                    m_Timer.Start();
+                }
             }
         }
 
@@ -149,8 +153,11 @@ namespace Server.Items
             // Reinitialize timer if equipped on restart
             if (Parent is Mobile mob)
             {
-                m_Timer = new SummonShadowWyrmTimer(mob);
-                m_Timer.Start();
+                if (AutoSummonManager.IsAutoSummonEnabled(mob))
+                {
+                    m_Timer = new SummonShadowWyrmTimer(mob);
+                    m_Timer.Start();
+                }
             }
         }
 
