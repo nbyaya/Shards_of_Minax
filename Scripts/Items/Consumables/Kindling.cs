@@ -72,7 +72,11 @@ namespace Server.Items
                 if (!Deleted && Parent == null)
                     from.PlaceInBackpack(this);
 
-                new Campfire().MoveToWorld(fireLocation, from.Map);
+                //new Campfire().MoveToWorld(fireLocation, from.Map);
+		Campfire campfire = new Campfire();
+		campfire.MoveToWorld(fireLocation, from.Map);
+		campfire.Owner = from;
+		
             }
         }
 
