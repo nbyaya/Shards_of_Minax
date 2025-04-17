@@ -24,25 +24,51 @@ namespace Server.Items
         public ArcticParsnipFruit(Serial serial) : base(serial)
         {
         }
+
+        // This ensures the serialization works correctly for this class
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer); // Call the base class Serialize method
+            writer.Write((int)0); // Version number (useful for future changes in serialization)
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader); // Call the base class Deserialize method
+            int version = reader.ReadInt(); // Read the version
+        }
     }
     
-	public class ArcticParsnipFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a Arctic Parsnip plant";
-		public override int PlantHue => 1345;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0C8D; // Harvestable plant graphic
-		public override Type FruitType => typeof(ArcticParsnipFruit);
+    public class ArcticParsnipFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Arctic Parsnip plant";
+        public override int PlantHue => 1345;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0C8D; // Harvestable plant graphic
+        public override Type FruitType => typeof(ArcticParsnipFruit);
 
-		[Constructable]
-		public ArcticParsnipFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+        [Constructable]
+        public ArcticParsnipFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
-		public ArcticParsnipFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        public ArcticParsnipFruitplant(Serial serial) : base(serial)
+        {
+        }
+
+        // This ensures the serialization works correctly for this class
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer); // Call the base class Serialize method
+            writer.Write((int)0); // Version number (useful for future changes in serialization)
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader); // Call the base class Deserialize method
+            int version = reader.ReadInt(); // Read the version
+        }
+    }
 
 
     public class ArcticParsnipFruitSeed : BaseFruitSeed
@@ -60,5 +86,18 @@ namespace Server.Items
         public ArcticParsnipFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        // This ensures the serialization works correctly for this class
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer); // Call the base class Serialize method
+            writer.Write((int)0); // Version number (useful for future changes in serialization)
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader); // Call the base class Deserialize method
+            int version = reader.ReadInt(); // Read the version
+        }
+    }
 }

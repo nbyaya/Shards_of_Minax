@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class DragonsBreath : Scimitar
+public class DragonsBreath : MageWand
 {
     [Constructable]
     public DragonsBreath()

@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class GuardianOfTheFey : Crossbow
+public class GuardianOfTheFey : ResonantHarp
 {
     [Constructable]
     public GuardianOfTheFey()

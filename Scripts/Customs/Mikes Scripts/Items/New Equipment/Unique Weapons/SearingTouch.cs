@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class SearingTouch : BlackStaff
+public class SearingTouch : SpellWeaversWand
 {
     [Constructable]
     public SearingTouch()

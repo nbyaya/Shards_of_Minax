@@ -3,12 +3,12 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class HelmOfDarkness : Mace
+public class HelmOfDarkness : MerchantsShotgun
 {
     [Constructable]
     public HelmOfDarkness()
     {
-        Name = "Mace of Darkness";
+        Name = "Shotgun of Darkness";
         Hue = Utility.Random(100, 2300);
         MinDamage = Utility.RandomMinMax(20, 50);
         MaxDamage = Utility.RandomMinMax(50, 80);

@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class TouchOfAnguish : Kryss
+public class TouchOfAnguish : MageWand
 {
     [Constructable]
     public TouchOfAnguish()

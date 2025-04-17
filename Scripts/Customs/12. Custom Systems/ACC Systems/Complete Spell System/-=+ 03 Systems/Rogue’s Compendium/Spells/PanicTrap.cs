@@ -4,7 +4,6 @@ using Server.Network;
 using Server.Targeting;
 using Server.Spells;
 using Server.Items;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Server.ACC.CSS.Systems.StealingMagic
@@ -17,14 +16,10 @@ namespace Server.ACC.CSS.Systems.StealingMagic
             9300
         );
 
-        public override SpellCircle Circle
-        {
-            get { return SpellCircle.Second; }
-        }
-
-        public override int RequiredMana { get { return 10; } }
-        public override double CastDelay { get { return 0.1; } }
-        public override double RequiredSkill { get { return 20.0; } }
+        public override SpellCircle Circle => SpellCircle.Second;
+        public override int RequiredMana => 10;
+        public override double CastDelay => 0.1;
+        public override double RequiredSkill => 20.0;
 
         public PanicTrap(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
         {
@@ -88,71 +83,66 @@ namespace Server.ACC.CSS.Systems.StealingMagic
                 m_Caster = caster;
                 m_Expiry = DateTime.UtcNow + TimeSpan.FromMinutes(1.0);
 
-                Timer.DelayCall(TimeSpan.FromSeconds(0.5), TimeSpan.FromSeconds(0.5), new TimerCallback(CheckExpiry));
+                Timer.DelayCall(TimeSpan.FromSeconds(0.5), TimeSpan.FromSeconds(0.5), CheckExpiry);
             }
 
-            public override void OnAfterDelete()
+            // ✅ Add required deserialization constructor
+            public InternalTrap(Serial serial) : base(serial)
             {
-                base.OnAfterDelete();
             }
 
-			private void CheckExpiry()
-			{
-				if (Deleted || DateTime.UtcNow > m_Expiry)
-				{
-					Delete();
-					return;
-				}
+            private void CheckExpiry()
+            {
+                if (Deleted || DateTime.UtcNow > m_Expiry)
+                {
+                    Delete();
+                    return;
+                }
 
-				List<Mobile> targets = new List<Mobile>();
+                List<Mobile> targets = new List<Mobile>();
 
-				foreach (Mobile m in GetMobilesInRange(0))
-				{
-					if (m != m_Caster && m is BaseCreature && m.Alive && !m.IsDeadBondedPet && m.CanBeHarmful(m_Caster, false))
-						targets.Add(m);
-				}
+                foreach (Mobile m in GetMobilesInRange(0))
+                {
+                    if (m != m_Caster && m is BaseCreature && m.Alive && !m.IsDeadBondedPet && m.CanBeHarmful(m_Caster, false))
+                        targets.Add(m);
+                }
 
-				if (targets.Count > 0)
-				{
-					foreach (Mobile target in targets)
-					{
-						if (m_Caster.CanBeHarmful(target, false))
-						{
-							m_Caster.DoHarmful(target);
+                if (targets.Count > 0)
+                {
+                    foreach (Mobile target in targets)
+                    {
+                        if (m_Caster.CanBeHarmful(target, false))
+                        {
+                            m_Caster.DoHarmful(target);
+                            target.SendMessage("You have triggered a panic trap!");
 
-							target.SendMessage("You have triggered a panic trap!");
+                            // Simulated fear effect
+                            target.Frozen = true;
+                            Timer.DelayCall(TimeSpan.FromSeconds(0.5), () =>
+                            {
+                                if (target.Alive)
+                                {
+                                    target.Frozen = false;
+                                    target.Combatant = null;
+                                    target.Direction = (Direction)Utility.Random(8);
+                                    target.Move(target.Direction);
+                                }
+                            });
 
-							// Fear effect - causes target to run away
-							target.Frozen = true;
-							Timer.DelayCall(TimeSpan.FromSeconds(0.5), TimeSpan.FromSeconds(0.5), () => 
-							{
-								if (target.Alive)
-								{
-									target.Frozen = false;
-									target.Combatant = null;
-									target.Direction = (Direction)Utility.Random(8);
-									target.Move(target.Direction);
-								}
+                            Effects.SendLocationParticles(EffectItem.Create(Location, Map, EffectItem.DefaultDuration), 0x3728, 10, 15, 5023);
+                            Effects.PlaySound(Location, Map, 0x209);
 
-								// No need for FearEffect class, just handle the effect here
-							});
-
-							Effects.SendLocationParticles(EffectItem.Create(Location, Map, EffectItem.DefaultDuration), 0x3728, 10, 15, 5023);
-							Effects.PlaySound(Location, Map, 0x209);
-
-							// Destroy trap after trigger
-							Delete();
-							break;
-						}
-					}
-				}
-			}
-
+                            Delete();
+                            break;
+                        }
+                    }
+                }
+            }
 
             public override void Serialize(GenericWriter writer)
             {
                 base.Serialize(writer);
-                writer.Write((int)0); // version
+                writer.Write(0); // version
             }
 
             public override void Deserialize(GenericReader reader)

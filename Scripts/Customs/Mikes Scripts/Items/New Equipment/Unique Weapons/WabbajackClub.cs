@@ -3,12 +3,12 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class WabbajackClub : Club
+public class WabbajackClub : MageWand
 {
     [Constructable]
     public WabbajackClub()
     {
-        Name = "Wabbajack Club";
+        Name = "Wabbajack";
         Hue = Utility.Random(250, 2300);
         MinDamage = Utility.RandomMinMax(15, 55);
         MaxDamage = Utility.RandomMinMax(55, 85);

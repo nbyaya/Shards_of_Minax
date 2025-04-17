@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class YumiOfEmpressJingu : Bow
+public class YumiOfEmpressJingu : FletchersBow
 {
     [Constructable]
     public YumiOfEmpressJingu()

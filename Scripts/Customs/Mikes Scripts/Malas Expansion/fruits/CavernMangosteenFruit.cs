@@ -24,25 +24,53 @@ namespace Server.Items
         public CavernMangosteenFruit(Serial serial) : base(serial)
         {
         }
+
+        // Add the method for serializing (Serialization logic)
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            // You can add custom serialization logic here if needed.
+        }
+
+        // Add the method for deserializing (Deserialization logic)
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            // You can add custom deserialization logic here if needed.
+        }
     }
     
-	public class CavernMangosteenFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a Cavern Mangosteen plant";
-		public override int PlantHue => 1914;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0CAA; // Harvestable plant graphic
-		public override Type FruitType => typeof(CavernMangosteenFruit);
+    public class CavernMangosteenFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Cavern Mangosteen plant";
+        public override int PlantHue => 1914;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0CAA; // Harvestable plant graphic
+        public override Type FruitType => typeof(CavernMangosteenFruit);
 
-		[Constructable]
-		public CavernMangosteenFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+        [Constructable]
+        public CavernMangosteenFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
-		public CavernMangosteenFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        public CavernMangosteenFruitplant(Serial serial) : base(serial)
+        {
+        }
+
+        // Add the method for serializing (Serialization logic)
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            // You can add custom serialization logic here if needed.
+        }
+
+        // Add the method for deserializing (Deserialization logic)
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            // You can add custom deserialization logic here if needed.
+        }
+    }
 
 
     public class CavernMangosteenFruitSeed : BaseFruitSeed
@@ -59,6 +87,20 @@ namespace Server.Items
 
         public CavernMangosteenFruitSeed(Serial serial) : base(serial)
         {
+        }
+
+        // Add the method for serializing (Serialization logic)
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            // You can add custom serialization logic here if needed.
+        }
+
+        // Add the method for deserializing (Deserialization logic)
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            // You can add custom deserialization logic here if needed.
         }
     }	
 }

@@ -24,26 +24,53 @@ namespace Server.Items
         public BushSpinachFruit(Serial serial) : base(serial)
         {
         }
+
+        // Serialization method
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Version number for serialization
+        }
+
+        // Deserialization method
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number
+        }
     }
     
-	public class BushSpinachFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a Bush Spinach plant";
-		public override int PlantHue => 1416;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0CCB; // Harvestable plant graphic
-		public override Type FruitType => typeof(BushSpinachFruit);
+    public class BushSpinachFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Bush Spinach plant";
+        public override int PlantHue => 1416;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0CCB; // Harvestable plant graphic
+        public override Type FruitType => typeof(BushSpinachFruit);
 
-		[Constructable]
-		public BushSpinachFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+        [Constructable]
+        public BushSpinachFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
-		public BushSpinachFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        public BushSpinachFruitplant(Serial serial) : base(serial)
+        {
+        }
 
+        // Serialization method
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Version number for serialization
+        }
+
+        // Deserialization method
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number
+        }
+    }
 
     public class BushSpinachFruitSeed : BaseFruitSeed
     {
@@ -60,5 +87,19 @@ namespace Server.Items
         public BushSpinachFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        // Serialization method
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Version number for serialization
+        }
+
+        // Deserialization method
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number
+        }
+    }
 }

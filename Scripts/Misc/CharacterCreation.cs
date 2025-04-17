@@ -60,6 +60,7 @@ using Server.ACC.CSS.Systems.VeterinaryMagic;
 using Server.ACC.CSS.Systems.MusicianshipMagic;
 using Server.ACC.CSS.Systems.CampingMagic;
 using Server.ACC.CSS.Systems.LumberjackingMagic;
+using Server.ACC.CSS.Systems.SpiritSpeakMagic;
 using Server.Multis.Deeds;
 using Server.Custom;
 using Server.Multis;
@@ -1458,6 +1459,7 @@ namespace Server.Misc
 				case SkillName.SpiritSpeak:
 				{
 					PackItem(new ClericSpellbook());
+					PackItem(new SpiritSpeakSpellbook());
 					if (human || elf)
 					{
 						EquipItem(new Cloak(0x455));

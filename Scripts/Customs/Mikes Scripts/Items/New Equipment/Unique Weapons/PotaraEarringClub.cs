@@ -3,12 +3,12 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class PotaraEarringClub : Club
+public class PotaraEarringClub : NinjaBow
 {
     [Constructable]
     public PotaraEarringClub()
     {
-        Name = "Potara Earring Club";
+        Name = "Potara Bow";
         Hue = Utility.Random(300, 2350);
         MinDamage = Utility.RandomMinMax(20, 60);
         MaxDamage = Utility.RandomMinMax(60, 100);

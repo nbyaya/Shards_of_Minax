@@ -110,10 +110,12 @@ namespace Server.ACC.CSS.Systems.LumberjackingMagic
 
             VirtualArmor = 30;
 
-            // Removed skill setting as SkillName.Woodcutting is not available
-            // If you have a custom skill, you can set it here
-
             Timer.DelayCall(TimeSpan.FromSeconds(1.0), TimeSpan.FromSeconds(5.0), AssistWithWoodcutting);
+        }
+
+        // 🔧 Serialization constructor (this fixes the warning)
+        public WoodSpirit(Serial serial) : base(serial)
+        {
         }
 
         public void AssistWithWoodcutting()
@@ -127,12 +129,11 @@ namespace Server.ACC.CSS.Systems.LumberjackingMagic
                 if (ControlMaster.FindItemOnLayer(Layer.TwoHanded) is Item axe && ControlMaster.Target is IPoint3D target)
                 {
                     ControlMaster.SendMessage("The wood spirit assists you with your chopping.");
-                    // Animation and sound effect to enhance the chopping experience
                     ControlMaster.Animate(32, 5, 1, true, false, 0);
                     Effects.PlaySound(ControlMaster.Location, ControlMaster.Map, 0x13E);
                 }
 
-                if (Utility.RandomDouble() < 0.2) // 20% chance to detect nearby danger
+                if (Utility.RandomDouble() < 0.2)
                 {
                     Mobile danger = GetNearbyDanger(ControlMaster);
 
@@ -140,7 +141,7 @@ namespace Server.ACC.CSS.Systems.LumberjackingMagic
                     {
                         ControlMaster.SendMessage("The wood spirit warns you of nearby danger!");
                         Effects.SendTargetParticles(this, 0x3709, 10, 30, 5052, EffectLayer.Waist);
-                        PlaySound(0x1F8); // Warning sound
+                        PlaySound(0x1F8);
                     }
                 }
             }

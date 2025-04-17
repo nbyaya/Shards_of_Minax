@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class GlassSwordOfValor : Longsword
+public class GlassSwordOfValor : LoreSword
 {
     [Constructable]
     public GlassSwordOfValor()

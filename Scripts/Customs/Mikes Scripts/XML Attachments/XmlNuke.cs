@@ -20,6 +20,11 @@ namespace Server.Engines.XmlSpawner2
         [CommandProperty(AccessLevel.GameMaster)]
         public int Range { get { return m_Range; } set { m_Range = value; } }
 
+        // ✅ CORRECTED: ASerial instead of Serial
+        public XmlNuke(ASerial serial) : base(serial)
+        {
+        }
+
         [Attachable]
         public XmlNuke() { }
 
@@ -44,30 +49,30 @@ namespace Server.Engines.XmlSpawner2
             if (owner == null || owner.Map == null)
                 return;
 
-            Map targetMap = owner.Map; // Renamed variable here
-            owner.Say("Prepare to be incinerated!");
+            Map map = owner.Map;
 
-            Effects.PlaySound(owner.Location, targetMap, 0x349);
+            owner.Say("Prepare to be incinerated!");
+            Effects.PlaySound(owner.Location, map, 0x349);
 
             Timer.DelayCall(TimeSpan.FromSeconds(1), () =>
             {
                 if (owner.Alive)
                 {
-                    Effects.PlaySound(owner.Location, targetMap, 0x44B);
+                    Effects.PlaySound(owner.Location, map, 0x44B);
 
                     for (int i = 0; i < Range; i++)
                     {
-                        Misc.Geometry.Circle2D(owner.Location, targetMap, i, (pnt, map) =>
+                        Misc.Geometry.Circle2D(owner.Location, map, i, (point, m) =>
                         {
-                            Effects.SendLocationEffect(pnt, map, 14000, 14, 10, Utility.RandomMinMax(2497, 2499), 2);
+                            Effects.SendLocationEffect(point, m, 14000, 14, 10, Utility.RandomMinMax(2497, 2499), 2);
                         });
                     }
                 }
             });
 
-            IPooledEnumerable nearbyMobiles = targetMap.GetMobilesInRange(owner.Location, Range);
+            IPooledEnumerable nearby = map.GetMobilesInRange(owner.Location, Range);
 
-            foreach (Mobile m in nearbyMobiles)
+            foreach (Mobile m in nearby)
             {
                 if (m != null && m.Alive && m != owner && !m.IsDeadBondedPet)
                 {
@@ -80,13 +85,13 @@ namespace Server.Engines.XmlSpawner2
                 }
             }
 
-            nearbyMobiles.Free();
+            nearby.Free();
         }
 
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write((int)0);
+            writer.Write((int)0); // version
             writer.Write(m_BaseDamage);
             writer.Write(m_Range);
             writer.WriteDeltaTime(m_NextNukeAllowed);

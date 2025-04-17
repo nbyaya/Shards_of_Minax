@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class DeadMansLegacy : Bow
+public class DeadMansLegacy : IllegalCrossbow
 {
     [Constructable]
     public DeadMansLegacy()
@@ -16,7 +16,7 @@ public class DeadMansLegacy : Bow
         Attributes.BonusDex = 15;
         Slayer = SlayerName.ArachnidDoom;
         WeaponAttributes.HitPoisonArea = 30;
-        SkillBonuses.SetValues(0, SkillName.Archery, 25.0);
+        SkillBonuses.SetValues(0, SkillName.Stealing, 25.0);
         XmlAttach.AttachTo(this, new XmlLevelItem());
     }
 

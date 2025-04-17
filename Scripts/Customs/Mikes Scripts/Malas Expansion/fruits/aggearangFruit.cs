@@ -24,26 +24,53 @@ namespace Server.Items
         public aggearangFruit(Serial serial) : base(serial)
         {
         }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write(0); // version
+            // Add any custom serialization logic here, if needed
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+            // Add any custom deserialization logic here, if needed
+        }
     }
     
-	public class aggearangFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a aggearang fruit plant";
-		public override int PlantHue => 1466;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0C87; // Harvestable plant graphic
-		public override Type FruitType => typeof(aggearangFruit);
+    public class aggearangFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a aggearang fruit plant";
+        public override int PlantHue => 1466;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0C87; // Harvestable plant graphic
+        public override Type FruitType => typeof(aggearangFruit);
 
-		[Constructable]
-		public aggearangFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+        [Constructable]
+        public aggearangFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
-		public aggearangFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        public aggearangFruitplant(Serial serial) : base(serial)
+        {
+        }
 
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write(0); // version
+            // Add any custom serialization logic here, if needed
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+            // Add any custom deserialization logic here, if needed
+        }
+    }
 
     public class aggearangFruitSeed : BaseFruitSeed
     {
@@ -60,5 +87,19 @@ namespace Server.Items
         public aggearangFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write(0); // version
+            // Add any custom serialization logic here, if needed
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+            // Add any custom deserialization logic here, if needed
+        }
+    }
 }

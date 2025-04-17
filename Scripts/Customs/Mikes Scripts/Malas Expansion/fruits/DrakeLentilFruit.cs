@@ -24,26 +24,49 @@ namespace Server.Items
         public DrakeLentilFruit(Serial serial) : base(serial)
         {
         }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version number
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // read version number
+        }
     }
     
-	public class DrakeLentilFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a Drake Lentil plant";
-		public override int PlantHue => 1556;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0C91; // Harvestable plant graphic
-		public override Type FruitType => typeof(DrakeLentilFruit);
+    public class DrakeLentilFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Drake Lentil plant";
+        public override int PlantHue => 1556;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0C91; // Harvestable plant graphic
+        public override Type FruitType => typeof(DrakeLentilFruit);
 
-		[Constructable]
-		public DrakeLentilFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+        [Constructable]
+        public DrakeLentilFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
-		public DrakeLentilFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        public DrakeLentilFruitplant(Serial serial) : base(serial)
+        {
+        }
 
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version number
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // read version number
+        }
+    }
 
     public class DrakeLentilFruitSeed : BaseFruitSeed
     {
@@ -59,6 +82,18 @@ namespace Server.Items
 
         public DrakeLentilFruitSeed(Serial serial) : base(serial)
         {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version number
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // read version number
         }
     }	
 }

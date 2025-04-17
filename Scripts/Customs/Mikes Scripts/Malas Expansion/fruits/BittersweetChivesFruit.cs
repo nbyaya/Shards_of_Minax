@@ -24,26 +24,49 @@ namespace Server.Items
         public BittersweetChivesFruit(Serial serial) : base(serial)
         {
         }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
     }
     
-	public class BittersweetChivesFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a Bittersweet Chives plant";
-		public override int PlantHue => 1134;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0C51; // Harvestable plant graphic
-		public override Type FruitType => typeof(BittersweetChivesFruit);
+    public class BittersweetChivesFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Bittersweet Chives plant";
+        public override int PlantHue => 1134;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0C51; // Harvestable plant graphic
+        public override Type FruitType => typeof(BittersweetChivesFruit);
 
-		[Constructable]
-		public BittersweetChivesFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+        [Constructable]
+        public BittersweetChivesFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
-		public BittersweetChivesFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        public BittersweetChivesFruitplant(Serial serial) : base(serial)
+        {
+        }
 
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
+    }
 
     public class BittersweetChivesFruitSeed : BaseFruitSeed
     {
@@ -59,6 +82,18 @@ namespace Server.Items
 
         public BittersweetChivesFruitSeed(Serial serial) : base(serial)
         {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
         }
     }	
 }

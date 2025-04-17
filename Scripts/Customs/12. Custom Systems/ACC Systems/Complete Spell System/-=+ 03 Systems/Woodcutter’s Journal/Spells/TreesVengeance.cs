@@ -115,6 +115,22 @@ namespace Server.ACC.CSS.Systems.LumberjackingMagic
 			m_RemovalTimer.Start();
 		}
 
+		public AnimatedBranch(Serial serial) : base(serial)
+		{
+		}
+
+		public override void Serialize(GenericWriter writer)
+		{
+			base.Serialize(writer);
+			writer.Write((int)0); // version
+		}
+
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = reader.ReadInt();
+		}
+
 		private class BranchAttackTimer : Timer
 		{
 			private Mobile m_Branch;

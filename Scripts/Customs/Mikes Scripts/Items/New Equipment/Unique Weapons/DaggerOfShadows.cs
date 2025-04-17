@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class DaggerOfShadows : Dagger
+public class DaggerOfShadows : ShadowSai
 {
     [Constructable]
     public DaggerOfShadows()

@@ -24,6 +24,18 @@ namespace Server.Items
         public GroundPearFruit(Serial serial) : base(serial)
         {
         }
+		
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future changes, start with version 0.
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number, used for future migrations.
+        }		
     }
     
 	public class GroundPearFruitplant : BaseFruitPlant
@@ -42,6 +54,18 @@ namespace Server.Items
 		public GroundPearFruitplant(Serial serial) : base(serial)
 		{
 		}
+		
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future changes, start with version 0.
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number, used for future migrations.
+        }		
 	}
 
 
@@ -60,5 +84,17 @@ namespace Server.Items
         public GroundPearFruitSeed(Serial serial) : base(serial)
         {
         }
+		
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future changes, start with version 0.
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number, used for future migrations.
+        }		
     }	
 }

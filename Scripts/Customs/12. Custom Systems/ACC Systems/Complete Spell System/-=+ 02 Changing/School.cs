@@ -67,5 +67,6 @@ namespace Server.ACC.CSS
 		VeterinariansCodex  = 0x00001045,
 		GrapplersManual  = 0x00001046,
 		AnglersGuide = 0x00001047,
+		SpiritSpeak = 0x00001048, 
 	}
 }

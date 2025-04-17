@@ -24,26 +24,49 @@ namespace Server.Items
         public CandyMorindaFruit(Serial serial) : base(serial)
         {
         }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Versioning
+        }
     }
     
-	public class CandyMorindaFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a Candy Morinda plant";
-		public override int PlantHue => 1999;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0DED; // Harvestable plant graphic
-		public override Type FruitType => typeof(CandyMorindaFruit);
+    public class CandyMorindaFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Candy Morinda plant";
+        public override int PlantHue => 1999;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0DED; // Harvestable plant graphic
+        public override Type FruitType => typeof(CandyMorindaFruit);
 
-		[Constructable]
-		public CandyMorindaFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+        [Constructable]
+        public CandyMorindaFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
-		public CandyMorindaFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        public CandyMorindaFruitplant(Serial serial) : base(serial)
+        {
+        }
 
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Versioning
+        }
+    }
 
     public class CandyMorindaFruitSeed : BaseFruitSeed
     {
@@ -59,6 +82,18 @@ namespace Server.Items
 
         public CandyMorindaFruitSeed(Serial serial) : base(serial)
         {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Versioning
         }
     }	
 }

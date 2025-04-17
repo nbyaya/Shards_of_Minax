@@ -24,26 +24,49 @@ namespace Server.Items
         public CinderGingerFruit(Serial serial) : base(serial)
         {
         }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version number, can increase if you change serialization structure
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // read version number
+        }
     }
-    
-	public class CinderGingerFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a Cinder Ginger plant";
-		public override int PlantHue => 1986;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0C85; // Harvestable plant graphic
-		public override Type FruitType => typeof(CinderGingerFruit);
 
-		[Constructable]
-		public CinderGingerFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+    public class CinderGingerFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Cinder Ginger plant";
+        public override int PlantHue => 1986;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0C85; // Harvestable plant graphic
+        public override Type FruitType => typeof(CinderGingerFruit);
 
-		public CinderGingerFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        [Constructable]
+        public CinderGingerFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
+        public CinderGingerFruitplant(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version number
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // read version number
+        }
+    }
 
     public class CinderGingerFruitSeed : BaseFruitSeed
     {
@@ -60,5 +83,17 @@ namespace Server.Items
         public CinderGingerFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // version number
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // read version number
+        }
+    }
 }

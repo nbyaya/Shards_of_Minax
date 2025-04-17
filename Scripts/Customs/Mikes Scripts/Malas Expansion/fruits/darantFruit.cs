@@ -23,27 +23,52 @@ namespace Server.Items
 
         public darantFruit(Serial serial) : base(serial)
         {
+            // Ensure that the base class handles the serialization
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer); // Serialize base class properties first
+            writer.Write((int)0); // Versioning for future serialization
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader); // Deserialize base class properties first
+            int version = reader.ReadInt(); // Read the version number
         }
     }
-    
-	public class darantFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a darant fruit plant";
-		public override int PlantHue => 2376;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0DC4; // Harvestable plant graphic
-		public override Type FruitType => typeof(darantFruit);
 
-		[Constructable]
-		public darantFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+    public class darantFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a darant fruit plant";
+        public override int PlantHue => 2376;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0DC4; // Harvestable plant graphic
+        public override Type FruitType => typeof(darantFruit);
 
-		public darantFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        [Constructable]
+        public darantFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
+        public darantFruitplant(Serial serial) : base(serial)
+        {
+            // Ensure that the base class handles the serialization
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer); // Serialize base class properties first
+            writer.Write((int)0); // Versioning for future serialization
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader); // Deserialize base class properties first
+            int version = reader.ReadInt(); // Read the version number
+        }
+    }
 
     public class darantFruitSeed : BaseFruitSeed
     {
@@ -59,6 +84,19 @@ namespace Server.Items
 
         public darantFruitSeed(Serial serial) : base(serial)
         {
+            // Ensure that the base class handles the serialization
         }
-    }	
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer); // Serialize base class properties first
+            writer.Write((int)0); // Versioning for future serialization
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader); // Deserialize base class properties first
+            int version = reader.ReadInt(); // Read the version number
+        }
+    }
 }

@@ -18,16 +18,22 @@ namespace Server.Items
         public static List<BaseFruitPlant> plants = new List<BaseFruitPlant>();
         public bool IsHarvestable;
 
-		public BaseFruitPlant(int itemID) : base(itemID)
-		{
-			Movable = false;
-			Name = PlantName;
-			Hue = PlantHue;
-			IsHarvestable = false;
+        // Constructor used when creating the item in the world
+        public BaseFruitPlant(int itemID) : base(itemID)
+        {
+            Movable = false;
+            Name = PlantName;
+            Hue = PlantHue;
+            IsHarvestable = false;
 
-			ItemID = itemID;
-			plants.Add(this);
-		}
+            ItemID = itemID;
+            plants.Add(this);
+        }
+
+        // ✅ Deserialization constructor (required by the server)
+        public BaseFruitPlant(Serial serial) : base(serial)
+        {
+        }
 
         public static void Initialize()
         {
@@ -39,22 +45,22 @@ namespace Server.Items
             Random rnd = new Random();
             foreach (BaseFruitPlant plant in plants)
             {
-                if (!plant.Deleted && !plant.IsHarvestable) // Only make unharvestable plants harvestable
+                if (!plant.Deleted && !plant.IsHarvestable)
                 {
-                    if (rnd.Next(2) == 0) // 50% chance to become harvestable
+                    if (rnd.Next(2) == 0)
                     {
                         plant.IsHarvestable = true;
                         plant.ItemID = plant.HarvestableGraphic;
                     }
 
-                    plant.Hue = plant.PlantHue; // Ensure hue is always correct
+                    plant.Hue = plant.PlantHue;
                 }
             }
         }
 
         public override void OnDoubleClick(Mobile from)
         {
-            if (!from.InRange(GetWorldLocation(), 2)) // Check if the player is within 2 tiles
+            if (!from.InRange(GetWorldLocation(), 2))
             {
                 from.SendMessage("You are too far away to harvest this.");
                 return;
@@ -62,17 +68,16 @@ namespace Server.Items
 
             if (IsHarvestable)
             {
-                // Calculate the number of fruits to harvest
-                double tasteIDSkill = from.Skills[SkillName.TasteID].Value; // Get TasteID skill value
-                int bonusFruits = (int)((tasteIDSkill / 200.0) * 5); // Scale from 0 to 5 based on skill
-                int totalFruits = 1 + Math.Max(0, bonusFruits); // At least 1 fruit is always harvested
+                double tasteIDSkill = from.Skills[SkillName.TasteID].Value;
+                int bonusFruits = (int)((tasteIDSkill / 200.0) * 5);
+                int totalFruits = 1 + Math.Max(0, bonusFruits);
 
                 for (int i = 0; i < totalFruits; i++)
                 {
                     Item fruit = (Item)Activator.CreateInstance(FruitType);
                     if (from.Backpack != null && from.Backpack.TryDropItem(from, fruit, false))
                     {
-                        if (i == 0) // Only display the harvest message once
+                        if (i == 0)
                         {
                             from.SendMessage($"You harvest {totalFruits} {fruit.Name}{(totalFruits > 1 ? "s" : "")}.");
                         }
@@ -80,26 +85,26 @@ namespace Server.Items
                     else
                     {
                         fruit.Delete();
-                        from.SendLocalizedMessage(500720); // You don't have enough room in your backpack!
+                        from.SendLocalizedMessage(500720);
                         break;
                     }
                 }
 
                 IsHarvestable = false;
-                ItemID = SeedGraphic; // Revert to seed graphic
+                ItemID = SeedGraphic;
             }
             else
             {
-                from.SendMessage("This is not ready to harvest."); // Not ready to harvest message
+                from.SendMessage("This is not ready to harvest.");
             }
 
-            Hue = PlantHue; // Ensure hue remains correct
+            Hue = PlantHue;
         }
 
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write((int)0); // Version
+            writer.Write((int)0); // version
             writer.Write(IsHarvestable);
         }
 

@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class ApollosSong : Bow
+public class ApollosSong : NinjaBow
 {
     [Constructable]
     public ApollosSong()

@@ -24,25 +24,49 @@ namespace Server.Items
         public DessertTomatoFruit(Serial serial) : base(serial)
         {
         }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            // You can add custom serialization code here if needed
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            // You can add custom deserialization code here if needed
+        }
     }
     
-	public class DessertTomatoFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a Dessert Tomato plant";
-		public override int PlantHue => 850;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0C88; // Harvestable plant graphic
-		public override Type FruitType => typeof(DessertTomatoFruit);
+    public class DessertTomatoFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Dessert Tomato plant";
+        public override int PlantHue => 850;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0C88; // Harvestable plant graphic
+        public override Type FruitType => typeof(DessertTomatoFruit);
 
-		[Constructable]
-		public DessertTomatoFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+        [Constructable]
+        public DessertTomatoFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
-		public DessertTomatoFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        public DessertTomatoFruitplant(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            // Add any custom serialization here for the plant if needed
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            // Add any custom deserialization here for the plant if needed
+        }
+    }
 
 
     public class DessertTomatoFruitSeed : BaseFruitSeed
@@ -60,5 +84,17 @@ namespace Server.Items
         public DessertTomatoFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            // You can add custom serialization code here for the seed if needed
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            // You can add custom deserialization code here for the seed if needed
+        }
+    }   
 }

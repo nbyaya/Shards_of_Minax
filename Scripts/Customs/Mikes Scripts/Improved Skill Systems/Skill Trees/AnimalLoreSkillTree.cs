@@ -11,24 +11,25 @@ using VitaNex.SuperGumps;
 
 namespace Server.ACC.CSS.Systems.AnimalLoreMagic
 {
+    // Revised Animal Lore Skill Tree Gump using AncientKnowledge (Maxxia Points) as the cost resource.
     public class AnimalLoreSkillTree : SuperGump
     {
         private AnimalLoreTree tree;
-        private Dictionary<AnimalLoreSkillNode, Point2D> nodePositions;
-        private Dictionary<int, AnimalLoreSkillNode> buttonNodeMap;
-        private Dictionary<AnimalLoreSkillNode, int> edgeThickness;
+        private Dictionary<SkillNode, Point2D> nodePositions;
+        private Dictionary<int, SkillNode> buttonNodeMap;
+        private Dictionary<SkillNode, int> edgeThickness;
         private const int buttonSize = 15;
         private int ySpacing = 50, xSpacing = 60;
         private int rootX = 300, rootY = 150;
-        private AnimalLoreSkillNode selectedNode;
+        private SkillNode selectedNode;
 
         public AnimalLoreSkillTree(PlayerMobile user)
             : base(user, null, 100, 100)
         {
             tree = new AnimalLoreTree(user);
-            nodePositions = new Dictionary<AnimalLoreSkillNode, Point2D>();
-            buttonNodeMap = new Dictionary<int, AnimalLoreSkillNode>();
-            edgeThickness = new Dictionary<AnimalLoreSkillNode, int>();
+            nodePositions = new Dictionary<SkillNode, Point2D>();
+            buttonNodeMap = new Dictionary<int, SkillNode>();
+            edgeThickness = new Dictionary<SkillNode, int>();
 
             CalculateNodePositions(tree.Root, rootX, rootY, 0);
             InitializeEdgeThickness();
@@ -36,14 +37,16 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
             User.SendGump(this);
         }
 
-        private void CalculateNodePositions(AnimalLoreSkillNode root, int x, int y, int depth)
+        private void CalculateNodePositions(SkillNode root, int x, int y, int depth)
         {
             if (root == null)
                 return;
 
-            var levelNodes = new Dictionary<int, List<AnimalLoreSkillNode>>();
-            var queue = new Queue<(AnimalLoreSkillNode node, int level)>();
-            var visited = new HashSet<AnimalLoreSkillNode>();
+            var levelNodes = new Dictionary<int, List<SkillNode>>();
+            var queue = new Queue<(SkillNode node, int level)>();
+
+            // Ensure each node is only placed once.
+            var visited = new HashSet<SkillNode>();
 
             queue.Enqueue((root, 0));
 
@@ -55,7 +58,7 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
                     continue;
 
                 if (!levelNodes.ContainsKey(level))
-                    levelNodes[level] = new List<AnimalLoreSkillNode>();
+                    levelNodes[level] = new List<SkillNode>();
 
                 levelNodes[level].Add(node);
 
@@ -63,12 +66,14 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
                     queue.Enqueue((child, level + 1));
             }
 
+            // Position each level’s nodes centered on rootX.
             foreach (var kvp in levelNodes)
             {
                 int level = kvp.Key;
                 var nodes = kvp.Value;
                 int totalWidth = (nodes.Count - 1) * xSpacing;
                 int startX = rootX - (totalWidth / 2);
+
                 for (int i = 0; i < nodes.Count; i++)
                 {
                     int nodeX = startX + (i * xSpacing);
@@ -95,6 +100,7 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
                 {
                     PlayerMobile player = User as PlayerMobile;
                     string text;
+
                     if (selectedNode.IsActivated(player))
                         text = $"<BASEFONT COLOR=#FFFFFF>{selectedNode.Name}</BASEFONT>";
                     else if (selectedNode.CanBeActivated(player))
@@ -106,6 +112,7 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
                 }
             });
 
+            // New layout element to display the node’s description.
             layout.Add("selectedNodeDescription", () =>
             {
                 if (selectedNode != null)
@@ -149,7 +156,7 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
 
         public override void HandleButtonClick(GumpButton button)
         {
-            if (buttonNodeMap.TryGetValue(button.ButtonID, out AnimalLoreSkillNode node))
+            if (buttonNodeMap.TryGetValue(button.ButtonID, out SkillNode node))
             {
                 if (selectedNode != node)
                 {
@@ -166,27 +173,28 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
         }
     }
 
-    public class AnimalLoreSkillNode
+    // Revised SkillNode that uses AncientKnowledge (Maxxia Points) for costs.
+    public class SkillNode
     {
         public int BitFlag { get; }
         public string Name { get; }
         public int Cost { get; }
         public string Description { get; }
-        public List<AnimalLoreSkillNode> Children { get; }
-        public AnimalLoreSkillNode Parent { get; private set; }
+        public List<SkillNode> Children { get; }
+        public SkillNode Parent { get; private set; }
         private readonly Action<PlayerMobile> onActivate;
 
-        public AnimalLoreSkillNode(int bitFlag, string name, int cost, string description = "", Action<PlayerMobile> onActivate = null)
+        public SkillNode(int bitFlag, string name, int cost, string description = "", Action<PlayerMobile> onActivate = null)
         {
             BitFlag = bitFlag;
             Name = name;
             Cost = cost;
             Description = description;
-            Children = new List<AnimalLoreSkillNode>();
+            Children = new List<SkillNode>();
             this.onActivate = onActivate;
         }
 
-        public void AddChild(AnimalLoreSkillNode child)
+        public void AddChild(SkillNode child)
         {
             child.Parent = this;
             Children.Add(child);
@@ -221,6 +229,7 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
             }
 
             var profile = player.AcquireTalents();
+
             if (!profile.Talents.TryGetValue(TalentID.AncientKnowledge, out var ancientKnowledge))
             {
                 player.SendMessage("You have no Maxxia Points available.");
@@ -242,268 +251,231 @@ namespace Server.ACC.CSS.Systems.AnimalLoreMagic
         }
     }
 
+    // Full Animal Lore tree structure with multiple layers and 30 nodes.
     public class AnimalLoreTree
     {
-        public AnimalLoreSkillNode Root { get; }
+        public SkillNode Root { get; }
 
         public AnimalLoreTree(PlayerMobile player)
         {
             var profile = player.AcquireTalents();
-            int nodeIndex = 0x01;
+            // We'll use the lower 16 bits (the ones given) for spell unlock nodes.
+            // Passive nodes get bit flags starting at 0x10000 so as not to conflict.
+            int passiveBit = 0x10000;
 
-            // Layer 0: Root Node – Unlocks basic Animal Lore spells.
-            Root = new AnimalLoreSkillNode(nodeIndex, "Call of the Wild", 5, "Unlocks spell", (p) =>
+            // Layer 0: Root Node – Spell node.
+            Root = new SkillNode(0x01, "Call of the Wild", 5, "Unlocks basic Animal Lore spells and abilities", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x01;
             });
 
-            // Layer 1: Basic nodes.
-            nodeIndex <<= 1;
-            var beastSense = new AnimalLoreSkillNode(nodeIndex, "Beast Sense", 6, "Unlocks spell", (p) =>
+            // Layer 1: Four nodes.
+            // Spell node:
+            var beastSense = new SkillNode(0x02, "Beast Sense", 6, "Unlocks spell: Beast Sense", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x02;
             });
-
-            nodeIndex <<= 1;
-            var feralAgility = new AnimalLoreSkillNode(nodeIndex, "Feral Agility", 6, "Unlocks spell", (p) =>
+            // Passive nodes:
+            var naturalBond = new SkillNode(passiveBit, "Natural Bond", 6, "Improves your ability to communicate with animals", (p) =>
             {
-                profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x80;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
+            passiveBit <<= 1;
+            var wildInstincts = new SkillNode(passiveBit, "Wild Instincts", 6, "Sharpens your natural instincts", (p) =>
+            {
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+            });
+            passiveBit <<= 1;
+            var feralTouch = new SkillNode(passiveBit, "Feral Touch", 6, "Improves your handling and taming of beasts", (p) =>
+            {
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+            });
+            passiveBit <<= 1;
 
-            nodeIndex <<= 1;
-            var predatorInstinct = new AnimalLoreSkillNode(nodeIndex, "Predator's Instinct", 6, "Unlocks spell", (p) =>
+            Root.AddChild(beastSense);
+            Root.AddChild(naturalBond);
+            Root.AddChild(wildInstincts);
+            Root.AddChild(feralTouch);
+
+            // Layer 2: Four nodes.
+            // Spell nodes:
+            var roarOfTheWild = new SkillNode(0x04, "Roar of the Wild", 7, "Unlocks spell: Roar of the Wild", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x04;
             });
-
-            nodeIndex <<= 1;
-            var natureBond = new AnimalLoreSkillNode(nodeIndex, "Nature's Bond", 6, "Unlocks spell", (p) =>
-            {
-                profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x2000;
-            });
-
-            Root.AddChild(beastSense);
-            Root.AddChild(feralAgility);
-            Root.AddChild(predatorInstinct);
-            Root.AddChild(natureBond);
-
-            // Layer 2: Advanced magical and practical nodes.
-            nodeIndex <<= 1;
-            var primalWhisper = new AnimalLoreSkillNode(nodeIndex, "Primal Whisper", 7, "Unlocks spell", (p) =>
+            var trackingProwess = new SkillNode(0x08, "Tracking Prowess", 7, "Unlocks spell: Tracking Prowess", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x08;
             });
-
-            nodeIndex <<= 1;
-            var packTactics = new AnimalLoreSkillNode(nodeIndex, "Pack Tactics", 7, "Unlocks spell", (p) =>
+            // Passive nodes:
+            var primalCommunication = new SkillNode(passiveBit, "Primal Communication", 7, "Unlocks bonus abilities to understand animals", (p) =>
             {
-                profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x4000;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
+            passiveBit <<= 1;
+            var savageBond = new SkillNode(passiveBit, "Savage Bond", 7, "Strengthens your connection with beasts", (p) =>
+            {
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+            });
+            passiveBit <<= 1;
 
-            nodeIndex <<= 1;
-            var beastlyMight = new AnimalLoreSkillNode(nodeIndex, "Beastly Might", 7, "Unlocks spell", (p) =>
+            beastSense.AddChild(roarOfTheWild);
+            naturalBond.AddChild(primalCommunication);
+            wildInstincts.AddChild(trackingProwess);
+            feralTouch.AddChild(savageBond);
+
+            // Layer 3: Four nodes.
+            // Spell nodes:
+            var predatorsGrace = new SkillNode(0x10, "Predator's Grace", 8, "Unlocks spell: Predator's Grace", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x10;
             });
-
-            nodeIndex <<= 1;
-            var wildEmpathy = new AnimalLoreSkillNode(nodeIndex, "Wild Empathy", 7, "Unlocks spell", (p) =>
+            // Passive node:
+            var gentleWhisper = new SkillNode(passiveBit, "Gentle Whisper", 8, "Calms even the wildest beasts", (p) =>
             {
-                profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x8000;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
-
-            beastSense.AddChild(primalWhisper);
-            feralAgility.AddChild(packTactics);
-            predatorInstinct.AddChild(beastlyMight);
-            natureBond.AddChild(wildEmpathy);
-
-            // Layer 3: Further bonuses.
-            nodeIndex <<= 1;
-            var savageResilience = new AnimalLoreSkillNode(nodeIndex, "Savage Resilience", 8, "Boosts health regeneration in the wild", (p) =>
-            {
-                profile.Talents[TalentID.AnimalLoreHealth].Points += 1;
-            });
-
-            nodeIndex <<= 1;
-            var huntersFocus = new AnimalLoreSkillNode(nodeIndex, "Hunter's Focus", 8, "Improves spell casting concentration", (p) =>
-            {
-                profile.Talents[TalentID.AnimalLoreFocus].Points += 1;
-            });
-
-            nodeIndex <<= 1;
-            var alphaRoar = new AnimalLoreSkillNode(nodeIndex, "Alpha Roar", 8, "Unlocks spell", (p) =>
+            passiveBit <<= 1;
+            // Spell node:
+            var wildFortitude = new SkillNode(0x20, "Wild Fortitude", 8, "Unlocks spell: Wild Fortitude", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x20;
             });
-
-            nodeIndex <<= 1;
-            var camouflage = new AnimalLoreSkillNode(nodeIndex, "Camouflage", 8, "Grants a bonus to stealth detection", (p) =>
+            // Passive node:
+            var spiritKinship = new SkillNode(passiveBit, "Spirit Kinship", 8, "Deepens your connection with animal spirits", (p) =>
             {
-                profile.Talents[TalentID.AnimalLoreStealth].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
+            passiveBit <<= 1;
 
-            primalWhisper.AddChild(savageResilience);
-            packTactics.AddChild(huntersFocus);
-            beastlyMight.AddChild(alphaRoar);
-            wildEmpathy.AddChild(camouflage);
+            roarOfTheWild.AddChild(predatorsGrace);
+            trackingProwess.AddChild(gentleWhisper);
+            primalCommunication.AddChild(wildFortitude);
+            savageBond.AddChild(spiritKinship);
 
-            // Layer 4: More advanced magical enhancements.
-            nodeIndex <<= 1;
-            var spiritOfThePack = new AnimalLoreSkillNode(nodeIndex, "Spirit of the Pack", 9, "Enhances group coordination", (p) =>
-            {
-                profile.Talents[TalentID.AnimalLoreGroup].Points += 1;
-            });
-
-            nodeIndex <<= 1;
-            var callOfTheHunt = new AnimalLoreSkillNode(nodeIndex, "Call of the Hunt", 9, "Unlocks spell", (p) =>
+            // Layer 4: Four nodes.
+            // Spell nodes:
+            var callOfThePack = new SkillNode(0x40, "Call of the Pack", 9, "Unlocks spell: Call of the Pack", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x40;
             });
-
-            nodeIndex <<= 1;
-            var instinctiveReflexes = new AnimalLoreSkillNode(nodeIndex, "Instinctive Reflexes", 9, "Improves reaction speed in combat", (p) =>
+            var naturesEcho = new SkillNode(0x80, "Nature's Echo", 9, "Unlocks spell: Nature's Echo", (p) =>
             {
-                profile.Talents[TalentID.AnimalLoreFocus].Points += 1;
+                profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x80;
             });
-
-            nodeIndex <<= 1;
-            var wildProwess = new AnimalLoreSkillNode(nodeIndex, "Wild Prowess", 9, "Increases damage with animal companions", (p) =>
+            // Passive nodes:
+            var tamersTouch = new SkillNode(passiveBit, "Tamer's Touch", 9, "Unlocks advanced taming techniques", (p) =>
             {
-                profile.Talents[TalentID.AnimalLoreDamage].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
-
-            spiritOfThePack.AddChild(callOfTheHunt);
-            huntersFocus.AddChild(instinctiveReflexes);
-            // Attach wildProwess to spiritOfThePack for this example.
-            spiritOfThePack.AddChild(wildProwess);
-
-            // Layer 5: Expert-level nodes.
-            nodeIndex <<= 1;
-            var predatorEfficiency = new AnimalLoreSkillNode(nodeIndex, "Predator Efficiency", 10, "Boosts overall combat efficiency", (p) =>
+            passiveBit <<= 1;
+            var wildInsight = new SkillNode(passiveBit, "Wild Insight", 9, "Enhances your natural instincts", (p) =>
             {
-                profile.Talents[TalentID.AnimalLoreAgility].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
+            passiveBit <<= 1;
 
-            nodeIndex <<= 1;
-            var primalHarvest = new AnimalLoreSkillNode(nodeIndex, "Primal Harvest", 10, "Enhances rewards from hunts", (p) =>
-            {
-                profile.Talents[TalentID.AnimalLoreHealth].Points += 1;
-            });
+            predatorsGrace.AddChild(callOfThePack);
+            gentleWhisper.AddChild(naturesEcho);
+            wildFortitude.AddChild(tamersTouch);
+            spiritKinship.AddChild(wildInsight);
 
-            nodeIndex <<= 1;
-            var animalMastery = new AnimalLoreSkillNode(nodeIndex, "Animal Mastery", 10, "Unlocks spell", (p) =>
+            // Layer 5: Four nodes.
+            // Spell nodes:
+            var primevalEmpathy = new SkillNode(0x100, "Primeval Empathy", 10, "Unlocks spell: Primeval Empathy", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x100;
             });
-
-            nodeIndex <<= 1;
-            var feralMomentum = new AnimalLoreSkillNode(nodeIndex, "Feral Momentum", 10, "Increases movement and attack speed", (p) =>
-            {
-                profile.Talents[TalentID.AnimalLoreAgility].Points += 1;
-            });
-
-            callOfTheHunt.AddChild(predatorEfficiency);
-            instinctiveReflexes.AddChild(primalHarvest);
-            wildProwess.AddChild(animalMastery);
-            wildProwess.AddChild(feralMomentum);
-
-            // Layer 6: Mastery nodes.
-            nodeIndex <<= 1;
-            var enhancedPerception = new AnimalLoreSkillNode(nodeIndex, "Enhanced Perception", 11, "Heightens senses for detecting prey", (p) =>
-            {
-                profile.Talents[TalentID.AnimalLoreFocus].Points += 1;
-            });
-
-            nodeIndex <<= 1;
-            var mysticFamiliar = new AnimalLoreSkillNode(nodeIndex, "Mystic Familiar", 11, "Boosts effectiveness of summoned creatures", (p) =>
-            {
-                profile.Talents[TalentID.AnimalLoreSummon].Points += 1;
-            });
-
-            nodeIndex <<= 1;
-            var ancientBeastmaster = new AnimalLoreSkillNode(nodeIndex, "Ancient Beastmaster", 11, "Unlocks spell", (p) =>
+            var animalMastery = new SkillNode(0x200, "Animal Mastery", 10, "Unlocks spell: Animal Mastery", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x200;
             });
-
-            nodeIndex <<= 1;
-            var natureTransformation = new AnimalLoreSkillNode(nodeIndex, "Nature's Transformation", 11, "Enhances physical abilities with nature", (p) =>
+            // Passive nodes:
+            var beastlyBond = new SkillNode(passiveBit, "Beastly Bond", 10, "Strengthens your bond with creatures", (p) =>
             {
-                profile.Talents[TalentID.AnimalLoreDamage].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
+            passiveBit <<= 1;
+            var wildMomentum = new SkillNode(passiveBit, "Wild Momentum", 10, "Increases your animal handling speed", (p) =>
+            {
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+            });
+            passiveBit <<= 1;
 
-            predatorEfficiency.AddChild(enhancedPerception);
-            primalHarvest.AddChild(mysticFamiliar);
-            animalMastery.AddChild(ancientBeastmaster);
-            feralMomentum.AddChild(natureTransformation);
+            callOfThePack.AddChild(primevalEmpathy);
+            naturesEcho.AddChild(beastlyBond);
+            tamersTouch.AddChild(animalMastery);
+            wildInsight.AddChild(wildMomentum);
 
-            // Layer 7: Final, pinnacle bonuses.
-            nodeIndex <<= 1;
-            var furBarrier = new AnimalLoreSkillNode(nodeIndex, "Fur Barrier", 12, "Unlocks spell", (p) =>
+            // Layer 6: Four nodes.
+            // Spell nodes:
+            var expandedSenses = new SkillNode(0x400, "Expanded Senses", 11, "Unlocks spell: Expanded Senses", (p) =>
             {
                 profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x400;
             });
-
-            nodeIndex <<= 1;
-            var wildEndowment = new AnimalLoreSkillNode(nodeIndex, "Wild Endowment", 12, "Provides further enhancement", (p) =>
+            // Passive node:
+            var mysticMenagerie = new SkillNode(passiveBit, "Mystic Menagerie", 11, "Boosts your Animal Lore spells", (p) =>
             {
-                profile.Talents[TalentID.AnimalLoreHealth].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
-
-            nodeIndex <<= 1;
-            var savageFury = new AnimalLoreSkillNode(nodeIndex, "Savage Fury", 12, "Provides increased attack power", (p) =>
+            passiveBit <<= 1;
+            // Spell node:
+            var ancientBestiary = new SkillNode(0x800, "Ancient Bestiary", 11, "Unlocks spell: Ancient Bestiary", (p) =>
             {
-                profile.Talents[TalentID.AnimalLoreDamage].Points += 1;
+                profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x800;
             });
-
-            nodeIndex <<= 1;
-            var echoesOfTheWild = new AnimalLoreSkillNode(nodeIndex, "Echoes of the Wild", 12, "Enhances speed and agility", (p) =>
+            // Passive node:
+            var feralTransformation = new SkillNode(passiveBit, "Feral Transformation", 11, "Improves your handling with beasts", (p) =>
             {
-                profile.Talents[TalentID.AnimalLoreAgility].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
+            passiveBit <<= 1;
 
-            enhancedPerception.AddChild(furBarrier);
-            mysticFamiliar.AddChild(wildEndowment);
-            ancientBeastmaster.AddChild(savageFury);
-            natureTransformation.AddChild(echoesOfTheWild);
+            primevalEmpathy.AddChild(expandedSenses);
+            beastlyBond.AddChild(mysticMenagerie);
+            animalMastery.AddChild(ancientBestiary);
+            wildMomentum.AddChild(feralTransformation);
+
+            // Layer 7: Four nodes.
+            // Spell nodes:
+            var barkOfTheBeast = new SkillNode(0x1000, "Bark of the Beast", 12, "Unlocks spell: Bark of the Beast", (p) =>
+            {
+                profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x1000;
+            });
+            var naturesEndowment = new SkillNode(0x2000, "Nature's Endowment", 12, "Unlocks spell: Nature's Endowment", (p) =>
+            {
+                profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x2000;
+            });
+            var savageFury = new SkillNode(0x4000, "Savage Fury", 12, "Unlocks spell: Savage Fury", (p) =>
+            {
+                profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x4000;
+            });
+            // Passive node:
+            var echoesOfTheWild = new SkillNode(passiveBit, "Echoes of the Wild", 12, "Enhances your wild instincts", (p) =>
+            {
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+            });
+            passiveBit <<= 1;
+
+            expandedSenses.AddChild(barkOfTheBeast);
+            mysticMenagerie.AddChild(naturesEndowment);
+            ancientBestiary.AddChild(savageFury);
+            feralTransformation.AddChild(echoesOfTheWild);
 
             // Layer 8: Ultimate node.
-            nodeIndex <<= 1;
-            var ultimateBeastmaster = new AnimalLoreSkillNode(nodeIndex, "Ultimate Beastmaster", 13, "Ultimate bonus: boosts all animal lore skills", (p) =>
+            var ultimateBeastmaster = new SkillNode(0x8000, "Ultimate Beastmaster", 13, "Unlocks spell: Ultimate Beastmaster. Ultimate bonus: boosts all Animal Lore abilities", (p) =>
             {
-                // Unlocks two spells here.
-                profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x800 | 0x1000;
-                profile.Talents[TalentID.AnimalLoreAgility].Points += 1;
-                profile.Talents[TalentID.AnimalLoreFocus].Points += 1;
-                profile.Talents[TalentID.AnimalLoreHealth].Points += 1;
+                profile.Talents[TalentID.AnimalLoreSpells].Points |= 0x8000;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
-            furBarrier.AddChild(ultimateBeastmaster);
-            wildEndowment.AddChild(ultimateBeastmaster);
-            savageFury.AddChild(ultimateBeastmaster);
+            barkOfTheBeast.AddChild(ultimateBeastmaster);
             echoesOfTheWild.AddChild(ultimateBeastmaster);
-        }
-    }
-
-    // Command to open the Animal Lore Skill Tree.
-    public class AnimalLoreSkillTreeCommand
-    {
-        public static void Initialize()
-        {
-            CommandSystem.Register("AnimalLoreTree", AccessLevel.Player, cmd => ShowTree(cmd.Mobile));
-        }
-
-        private static void ShowTree(Mobile m)
-        {
-            if (m is PlayerMobile pm)
-            {
-                pm.SendMessage("Opening Animal Lore Skill Tree...");
-                pm.SendGump(new AnimalLoreSkillTree(pm));
-            }
-            else
-            {
-                m.SendMessage("You must be a player to use this command.");
-            }
+            savageFury.AddChild(ultimateBeastmaster);
+            naturesEndowment.AddChild(ultimateBeastmaster);
         }
     }
 }

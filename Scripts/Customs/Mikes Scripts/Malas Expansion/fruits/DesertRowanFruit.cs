@@ -24,26 +24,49 @@ namespace Server.Items
         public DesertRowanFruit(Serial serial) : base(serial)
         {
         }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Version number for future compatibility
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version (currently version 0)
+        }
     }
     
-	public class DesertRowanFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a Desert Rowan plant";
-		public override int PlantHue => 2734;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0D28; // Harvestable plant graphic
-		public override Type FruitType => typeof(DesertRowanFruit);
+    public class DesertRowanFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Desert Rowan plant";
+        public override int PlantHue => 2734;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0D28; // Harvestable plant graphic
+        public override Type FruitType => typeof(DesertRowanFruit);
 
-		[Constructable]
-		public DesertRowanFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+        [Constructable]
+        public DesertRowanFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
-		public DesertRowanFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        public DesertRowanFruitplant(Serial serial) : base(serial)
+        {
+        }
 
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Version number for future compatibility
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version (currently version 0)
+        }
+    }
 
     public class DesertRowanFruitSeed : BaseFruitSeed
     {
@@ -59,6 +82,18 @@ namespace Server.Items
 
         public DesertRowanFruitSeed(Serial serial) : base(serial)
         {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Version number for future compatibility
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version (currently version 0)
         }
     }	
 }

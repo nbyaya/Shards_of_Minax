@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class RuneAss : BattleAxe
+public class RuneAss : GourmandsFork
 {
     [Constructable]
     public RuneAss()

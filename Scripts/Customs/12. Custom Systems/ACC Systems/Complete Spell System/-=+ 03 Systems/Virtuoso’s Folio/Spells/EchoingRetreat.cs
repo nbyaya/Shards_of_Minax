@@ -68,6 +68,11 @@ namespace Server.ACC.CSS.Systems.MusicianshipMagic
                 m_Timer.Start();
             }
 
+            // ✨ Serialization constructor — REQUIRED
+            public MusicalDecoy(Serial serial) : base(serial)
+            {
+            }
+
             public override void Serialize(GenericWriter writer)
             {
                 base.Serialize(writer);
@@ -85,7 +90,8 @@ namespace Server.ACC.CSS.Systems.MusicianshipMagic
                 private MusicalDecoy m_Decoy;
                 private Mobile m_Caster;
 
-                public DecoyEffectTimer(MusicalDecoy decoy, Mobile caster) : base(TimeSpan.FromSeconds(1.0), TimeSpan.FromSeconds(1.0))
+                public DecoyEffectTimer(MusicalDecoy decoy, Mobile caster)
+                    : base(TimeSpan.FromSeconds(1.0), TimeSpan.FromSeconds(1.0))
                 {
                     m_Decoy = decoy;
                     m_Caster = caster;

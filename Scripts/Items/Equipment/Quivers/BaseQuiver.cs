@@ -3,6 +3,7 @@ using Server.Engines.Craft;
 using System.Linq;
 using Server.ContextMenus;
 using System.Collections.Generic;
+using Server.Engines.XmlSpawner2;
 
 namespace Server.Items
 {
@@ -561,6 +562,19 @@ namespace Server.Items
 
             m_AosSkillBonuses.GetProperties(list);
 
+	   // Xml Spawner 2.36c XmlLevelItem - SOF
+           XmlLevelItem levitem = XmlAttach.FindAttachment(this, typeof(XmlLevelItem)) as XmlLevelItem;
+
+           if (levitem != null)
+           {
+               list.Add(1060658, "Level\t{0}", levitem.Level);
+
+           if (LevelItems.DisplayExpProp)
+               list.Add(1060659, "Experience\t{0}", levitem.Experience);
+
+           }
+	   // Xml Spawner 2.36c XmlLevelItem - EOF
+
             Item ammo = Ammo;
 
             if (ammo != null)
@@ -782,6 +796,14 @@ namespace Server.Items
         public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
         {
             base.GetContextMenuEntries(from, list);
+	    // Xml Spawner 3.26c XmlLevelItem - SOF
+            XmlLevelItem levitem = XmlAttach.FindAttachment(this, typeof(XmlLevelItem)) as XmlLevelItem;
+
+            if (levitem != null)
+            {
+                list.Add(new LevelInfoEntry(from, this, AttributeCategory.Melee));
+            }
+	    // Xml Spawner 3.26c XmlLevelItem - EOF			
             if(from.Items.Contains(this) || (from.Backpack != null && IsChildOf(from.Backpack)))
                 list.Add(new RefillQuiverEntry(this));
         }

@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class MageMasher : Dagger
+public class MageMasher : WitchBurningTorch
 {
     [Constructable]
     public MageMasher()

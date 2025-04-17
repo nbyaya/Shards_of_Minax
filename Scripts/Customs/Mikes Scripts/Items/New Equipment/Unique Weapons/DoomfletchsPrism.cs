@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class DoomfletchsPrism : Bow
+public class DoomfletchsPrism : HolyKnightSword
 {
     [Constructable]
     public DoomfletchsPrism()

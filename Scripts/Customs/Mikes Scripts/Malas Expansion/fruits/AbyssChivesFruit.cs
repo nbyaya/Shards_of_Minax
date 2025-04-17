@@ -24,26 +24,49 @@ namespace Server.Items
         public AbyssChivesFruit(Serial serial) : base(serial)
         {
         }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning, can be incremented if needed for future changes
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // versioning to manage changes over time
+        }
     }
-    
-	public class AbyssChivesFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a Abyss Chives plant";
-		public override int PlantHue => 939;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0CA6; // Harvestable plant graphic
-		public override Type FruitType => typeof(AbyssChivesFruit);
 
-		[Constructable]
-		public AbyssChivesFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+    public class AbyssChivesFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Abyss Chives plant";
+        public override int PlantHue => 939;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0CA6; // Harvestable plant graphic
+        public override Type FruitType => typeof(AbyssChivesFruit);
 
-		public AbyssChivesFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        [Constructable]
+        public AbyssChivesFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
+        public AbyssChivesFruitplant(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning, can be incremented if needed for future changes
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // versioning to manage changes over time
+        }
+    }
 
     public class AbyssChivesFruitSeed : BaseFruitSeed
     {
@@ -60,5 +83,17 @@ namespace Server.Items
         public AbyssChivesFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning, can be incremented if needed for future changes
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // versioning to manage changes over time
+        }
+    }
 }

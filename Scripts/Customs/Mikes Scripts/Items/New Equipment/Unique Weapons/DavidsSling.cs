@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class DavidsSling : Bow
+public class DavidsSling : FireAlchemyBlaster
 {
     [Constructable]
     public DavidsSling()

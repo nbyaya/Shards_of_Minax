@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class Zulfiqar : Scimitar
+public class Zulfiqar : MeatPicks
 {
     [Constructable]
     public Zulfiqar()

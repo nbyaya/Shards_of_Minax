@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class Wizardspike : Dagger
+public class Wizardspike : SewingNeedle
 {
     [Constructable]
     public Wizardspike()

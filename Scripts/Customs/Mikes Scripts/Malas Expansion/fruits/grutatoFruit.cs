@@ -24,6 +24,18 @@ namespace Server.Items
         public grutatoFruit(Serial serial) : base(serial)
         {
         }
+		
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future changes, start with version 0.
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number, used for future migrations.
+        }		
     }
     
 	public class grutatoFruitplant : BaseFruitPlant
@@ -42,6 +54,18 @@ namespace Server.Items
 		public grutatoFruitplant(Serial serial) : base(serial)
 		{
 		}
+		
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future changes, start with version 0.
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number, used for future migrations.
+        }		
 	}
 
 
@@ -60,5 +84,17 @@ namespace Server.Items
         public grutatoFruitSeed(Serial serial) : base(serial)
         {
         }
+		
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future changes, start with version 0.
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number, used for future migrations.
+        }		
     }	
 }

@@ -24,26 +24,49 @@ namespace Server.Items
         public chummionachFruit(Serial serial) : base(serial)
         {
         }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future compatibility
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
     }
     
-	public class chummionachFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a chummionach fruit plant";
-		public override int PlantHue => 2743;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0CAA; // Harvestable plant graphic
-		public override Type FruitType => typeof(chummionachFruit);
+    public class chummionachFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a chummionach fruit plant";
+        public override int PlantHue => 2743;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0CAA; // Harvestable plant graphic
+        public override Type FruitType => typeof(chummionachFruit);
 
-		[Constructable]
-		public chummionachFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+        [Constructable]
+        public chummionachFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
-		public chummionachFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        public chummionachFruitplant(Serial serial) : base(serial)
+        {
+        }
 
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future compatibility
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
+    }
 
     public class chummionachFruitSeed : BaseFruitSeed
     {
@@ -60,5 +83,17 @@ namespace Server.Items
         public chummionachFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future compatibility
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
+    }  
 }

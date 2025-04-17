@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class SaiyanTailWhip : Club
+public class SaiyanTailWhip : Nunchucks
 {
     [Constructable]
     public SaiyanTailWhip()

@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class SoulTaker : BattleAxe
+public class SoulTaker : ResonantHarp
 {
     [Constructable]
     public SoulTaker()

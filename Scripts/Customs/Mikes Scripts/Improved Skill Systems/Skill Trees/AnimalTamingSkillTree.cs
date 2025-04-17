@@ -269,7 +269,7 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             var feralInsight = new SkillNode(nodeIndex, "Feral Insight", 6, "Improves taming success chance", (p) =>
             {
                 // Increase taming chance.
-                profile.Talents[TalentID.AnimalTamingInstinct].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -283,7 +283,7 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             var naturalAffinity = new SkillNode(nodeIndex, "Natural Affinity", 6, "Passively boosts pet affinity", (p) =>
             {
                 // Increase pet bonding.
-                profile.Talents[TalentID.AnimalTamingBonding].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             Root.AddChild(beastBond);
@@ -302,7 +302,7 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             nodeIndex <<= 1;
             var huntersGuile = new SkillNode(nodeIndex, "Hunter's Guile", 7, "Passively increases taming chance", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingInstinct].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -315,7 +315,7 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             nodeIndex <<= 1;
             var savageTactics = new SkillNode(nodeIndex, "Savage Tactics", 7, "Improves pet combat bonuses", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingResilience].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             beastBond.AddChild(packInstinct);
@@ -327,7 +327,7 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             nodeIndex <<= 1;
             var feralFortitude = new SkillNode(nodeIndex, "Feral Fortitude", 8, "Increases pet stamina", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingStamina].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -347,7 +347,7 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             nodeIndex <<= 1;
             var primalBond = new SkillNode(nodeIndex, "Primal Bond", 8, "Strengthens the bond between you and your pet", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingBonding].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             packInstinct.AddChild(feralFortitude);
@@ -359,7 +359,7 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             nodeIndex <<= 1;
             var alphasCommand = new SkillNode(nodeIndex, "Alpha's Command", 9, "Passively increases pet obedience", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingInstinct].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -379,7 +379,7 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             nodeIndex <<= 1;
             var predatoryInstinct = new SkillNode(nodeIndex, "Predatory Instinct", 9, "Further improves taming chance", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingInstinct].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             feralFortitude.AddChild(alphasCommand);
@@ -391,7 +391,7 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             nodeIndex <<= 1;
             var swiftPursuit = new SkillNode(nodeIndex, "Swift Pursuit", 10, "Passively increases pet speed", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingSpeed].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -411,7 +411,7 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             nodeIndex <<= 1;
             var cunningManeuver = new SkillNode(nodeIndex, "Cunning Maneuver", 10, "Improves tactical pet control", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingControl].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             alphasCommand.AddChild(swiftPursuit);
@@ -437,13 +437,13 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             nodeIndex <<= 1;
             var ferociousStrength = new SkillNode(nodeIndex, "Ferocious Strength", 11, "Passively increases pet combat strength", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingResilience].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
             var inexorableLoyalty = new SkillNode(nodeIndex, "Inexorable Loyalty", 11, "Deepens the bond with your pet", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingBonding].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             swiftPursuit.AddChild(mastersGrace);
@@ -455,7 +455,7 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             nodeIndex <<= 1;
             var roaringMight = new SkillNode(nodeIndex, "Roaring Might", 12, "Significantly increases pet power", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingResilience].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -468,13 +468,13 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             nodeIndex <<= 1;
             var guardiansPresence = new SkillNode(nodeIndex, "Guardian's Presence", 12, "Passively protects your pet", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingControl].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
             var sovereignInstinct = new SkillNode(nodeIndex, "Sovereign's Instinct", 12, "Enhances overall taming instincts", (p) =>
             {
-                profile.Talents[TalentID.AnimalTamingInstinct].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             mastersGrace.AddChild(roaringMight);
@@ -488,10 +488,10 @@ namespace Server.ACC.CSS.Systems.AnimalTamingMagic
             {
                 // Grants final bonuses to spells and all passive abilities.
                 profile.Talents[TalentID.AnimalTamingSpells].Points |= 0x800 | 0x1000;
-                profile.Talents[TalentID.AnimalTamingControl].Points += 1;
-                profile.Talents[TalentID.AnimalTamingSpeed].Points += 1;
-                profile.Talents[TalentID.AnimalTamingStamina].Points += 1;
-                profile.Talents[TalentID.AnimalTamingBonding].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             // Attach the ultimate node to all Layer 7 nodes.

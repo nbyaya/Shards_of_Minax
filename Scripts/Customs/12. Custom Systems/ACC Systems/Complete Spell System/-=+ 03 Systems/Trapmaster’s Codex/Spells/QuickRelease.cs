@@ -19,14 +19,10 @@ namespace Server.ACC.CSS.Systems.RemoveTrapMagic
             Reagent.MandrakeRoot
         );
 
-        public override SpellCircle Circle
-        {
-            get { return SpellCircle.Third; }
-        }
-
-        public override double CastDelay { get { return 0.5; } }
-        public override double RequiredSkill { get { return 60.0; } }
-        public override int RequiredMana { get { return 20; } }
+        public override SpellCircle Circle => SpellCircle.Third;
+        public override double CastDelay => 0.5;
+        public override double RequiredSkill => 60.0;
+        public override int RequiredMana => 20;
 
         public QuickRelease(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
         {
@@ -51,19 +47,19 @@ namespace Server.ACC.CSS.Systems.RemoveTrapMagic
                     Effects.PlaySound(trap.Location, trap.Map, 0x1F1);
                     trap.TrapPower = (int)(trap.TrapPower * 0.5); // Reduce trap power by 50%
 
-                    // Further reduce effects for dramatic visuals
+                    // Additional dramatic visuals
                     Effects.SendLocationParticles(EffectItem.Create(trap.Location, trap.Map, EffectItem.DefaultDuration), 0x36BD, 20, 10, 5044);
                     Effects.PlaySound(trap.Location, trap.Map, 0x3B9);
                 }
                 else
                 {
-                    trap.TrapType = TrapType.None; // Disable trap
+                    trap.TrapType = TrapType.None;
                     trap.TrapPower = 0;
                     Effects.SendLocationParticles(EffectItem.Create(trap.Location, trap.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
                     Effects.PlaySound(trap.Location, trap.Map, 0x209);
                 }
 
-                trap.TrapMessage = 0; // Remove trap message
+                trap.TrapMessage = 0;
             }
 
             FinishSequence();
@@ -86,7 +82,7 @@ namespace Server.ACC.CSS.Systems.RemoveTrapMagic
                 }
                 else
                 {
-                    from.SendLocalizedMessage(500237); // Target can not be seen.
+                    from.SendLocalizedMessage(500237); // That is not a trap.
                 }
             }
 
@@ -103,7 +99,37 @@ namespace Server.ACC.CSS.Systems.RemoveTrapMagic
         public int TrapPower { get; set; }
         public int TrapMessage { get; set; }
 
-        // Constructor and other properties/methods
+        [Constructable]
+        public TrapableItem() : base(0x1EB0) // Replace with appropriate ItemID
+        {
+            TrapType = TrapType.None;
+            TrapPower = 0;
+            TrapMessage = 0;
+        }
+
+        public TrapableItem(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+
+            writer.Write((int)0); // version
+            writer.Write((int)TrapType);
+            writer.Write(TrapPower);
+            writer.Write(TrapMessage);
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+
+            int version = reader.ReadInt();
+            TrapType = (TrapType)reader.ReadInt();
+            TrapPower = reader.ReadInt();
+            TrapMessage = reader.ReadInt();
+        }
     }
 
     public enum TrapType
@@ -111,6 +137,6 @@ namespace Server.ACC.CSS.Systems.RemoveTrapMagic
         None,
         Explosion,
         Poison,
-        // Add other types of traps if needed
+        // Add additional trap types as needed
     }
 }

@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class Dreamseeker : Crossbow
+public class Dreamseeker : CampingLanturn
 {
     [Constructable]
     public Dreamseeker()

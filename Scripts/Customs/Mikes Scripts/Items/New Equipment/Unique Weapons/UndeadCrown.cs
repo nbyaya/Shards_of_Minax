@@ -3,12 +3,12 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class UndeadCrown : WarMace
+public class UndeadCrown : Nunchucks
 {
     [Constructable]
     public UndeadCrown()
     {
-        Name = "The Undead Crown";
+        Name = "The Undead Smasher";
         Hue = Utility.Random(650, 2900);
         MinDamage = Utility.RandomMinMax(20, 50);
         MaxDamage = Utility.RandomMinMax(50, 80);

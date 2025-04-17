@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class SamsonsJawbone : Club
+public class SamsonsJawbone : SleepAid
 {
     [Constructable]
     public SamsonsJawbone()

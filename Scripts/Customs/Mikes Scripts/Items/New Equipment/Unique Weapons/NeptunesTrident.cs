@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class NeptunesTrident : Pitchfork
+public class NeptunesTrident : FishermansTrident
 {
     [Constructable]
     public NeptunesTrident()

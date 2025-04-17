@@ -14,6 +14,9 @@ namespace Server.Engines.XmlSpawner2
         [Attachable]
         public XmlBackstab() { }
 
+        // ✅ Correct constructor for XmlSpawner2
+        public XmlBackstab(ASerial serial) : base(serial) { }
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

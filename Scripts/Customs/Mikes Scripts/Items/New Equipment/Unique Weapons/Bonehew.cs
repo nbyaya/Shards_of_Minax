@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class Bonehew : Maul
+public class Bonehew : DetectivesBoneHarvester
 {
     [Constructable]
     public Bonehew()

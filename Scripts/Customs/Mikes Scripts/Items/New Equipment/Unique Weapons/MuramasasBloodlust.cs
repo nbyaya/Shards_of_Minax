@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class MuramasasBloodlust : Katana
+public class MuramasasBloodlust : VivisectionKnife
 {
     [Constructable]
     public MuramasasBloodlust()

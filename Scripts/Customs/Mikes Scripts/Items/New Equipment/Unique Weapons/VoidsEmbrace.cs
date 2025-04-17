@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class VoidsEmbrace : Scimitar
+public class VoidsEmbrace : SpiritScepter
 {
     [Constructable]
     public VoidsEmbrace()

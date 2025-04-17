@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class StaffOfRainsWrath : GnarledStaff
+public class StaffOfRainsWrath : NecromancersStaff
 {
     [Constructable]
     public StaffOfRainsWrath()

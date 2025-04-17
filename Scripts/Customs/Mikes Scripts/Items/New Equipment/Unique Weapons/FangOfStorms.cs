@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class FangOfStorms : Dagger
+public class FangOfStorms : MallKatana
 {
     [Constructable]
     public FangOfStorms()

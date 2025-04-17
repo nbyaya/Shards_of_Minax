@@ -24,26 +24,49 @@ namespace Server.Items
         public crennealeryFruit(Serial serial) : base(serial)
         {
         }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning, useful if you need future updates
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // versioning, useful for future updates
+        }
     }
     
-	public class crennealeryFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a crennealery fruit plant";
-		public override int PlantHue => 520;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0CA3; // Harvestable plant graphic
-		public override Type FruitType => typeof(crennealeryFruit);
+    public class crennealeryFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a crennealery fruit plant";
+        public override int PlantHue => 520;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0CA3; // Harvestable plant graphic
+        public override Type FruitType => typeof(crennealeryFruit);
 
-		[Constructable]
-		public crennealeryFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+        [Constructable]
+        public crennealeryFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
-		public crennealeryFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        public crennealeryFruitplant(Serial serial) : base(serial)
+        {
+        }
 
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning, useful if you need future updates
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // versioning, useful for future updates
+        }
+    }
 
     public class crennealeryFruitSeed : BaseFruitSeed
     {
@@ -60,5 +83,17 @@ namespace Server.Items
         public crennealeryFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning, useful if you need future updates
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // versioning, useful for future updates
+        }
+    }   
 }

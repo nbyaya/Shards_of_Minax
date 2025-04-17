@@ -4,7 +4,6 @@ using Server.Network;
 using Server.Targeting;
 using Server.Spells;
 using Server.Items;
-using System.Collections;
 
 namespace Server.ACC.CSS.Systems.NinjitsuMagic
 {
@@ -18,18 +17,12 @@ namespace Server.ACC.CSS.Systems.NinjitsuMagic
             Reagent.BlackPearl
         );
 
-        public override SpellCircle Circle
-        {
-            get { return SpellCircle.Third; }
-        }
+        public override SpellCircle Circle => SpellCircle.Third;
+        public override int RequiredMana => 20;
+        public override double RequiredSkill => 50.0;
+        public override double CastDelay => 0.2;
 
-        public override int RequiredMana { get { return 20; } }
-        public override double RequiredSkill { get { return 50.0; } }
-        public override double CastDelay { get { return 0.2; } }
-
-        public TrapMastery(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
-        {
-        }
+        public TrapMastery(Mobile caster, Item scroll) : base(caster, scroll, m_Info) { }
 
         public override void OnCast()
         {
@@ -84,8 +77,8 @@ namespace Server.ACC.CSS.Systems.NinjitsuMagic
 
             protected override void OnTarget(Mobile from, object o)
             {
-                if (o is IPoint3D)
-                    m_Owner.Target((IPoint3D)o);
+                if (o is IPoint3D p)
+                    m_Owner.Target(p);
             }
 
             protected override void OnTargetFinish(Mobile from)
@@ -97,9 +90,6 @@ namespace Server.ACC.CSS.Systems.NinjitsuMagic
         // Base class for traps
         public abstract class BaseTrap : Item
         {
-            private Timer m_Timer;
-            private Mobile m_Caster;
-
             public BaseTrap() : base(0x1B72)
             {
                 Movable = false;
@@ -107,9 +97,7 @@ namespace Server.ACC.CSS.Systems.NinjitsuMagic
                 Hue = 1157;
             }
 
-            public BaseTrap(Serial serial) : base(serial)
-            {
-            }
+            public BaseTrap(Serial serial) : base(serial) { }
 
             public override void Serialize(GenericWriter writer)
             {
@@ -143,6 +131,21 @@ namespace Server.ACC.CSS.Systems.NinjitsuMagic
             public ExplosiveTrap() : base()
             {
                 Name = "Explosive Trap";
+            }
+
+            // Serialization constructor
+            public ExplosiveTrap(Serial serial) : base(serial) { }
+
+            public override void Serialize(GenericWriter writer)
+            {
+                base.Serialize(writer);
+                writer.Write((int)0); // version
+            }
+
+            public override void Deserialize(GenericReader reader)
+            {
+                base.Deserialize(reader);
+                int version = reader.ReadInt();
             }
 
             public override void TriggerTrap(Mobile m)

@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class MosesStaff : QuarterStaff
+public class MosesStaff : NecromancersStaff
 {
     [Constructable]
     public MosesStaff()

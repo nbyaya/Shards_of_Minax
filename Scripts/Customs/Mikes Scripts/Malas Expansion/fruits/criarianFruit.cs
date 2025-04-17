@@ -21,29 +21,54 @@ namespace Server.Items
         {
         }
 
-        public criarianFruit(Serial serial) : base(serial)
+        public criarianFruit(Serial serial) : base(serial)  // Ensure proper serialization
         {
         }
+
+        // Override the Serialize and Deserialize methods for correct serialization
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);  // Call base class serialization
+            writer.Write(0); // Versioning, for potential future updates
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader); // Call base class deserialization
+            int version = reader.ReadInt(); // Read version
+        }
     }
-    
-	public class criarianFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a criarian fruit plant";
-		public override int PlantHue => 1114;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0D28; // Harvestable plant graphic
-		public override Type FruitType => typeof(criarianFruit);
 
-		[Constructable]
-		public criarianFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+    public class criarianFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a criarian fruit plant";
+        public override int PlantHue => 1114;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0D28; // Harvestable plant graphic
+        public override Type FruitType => typeof(criarianFruit);
 
-		public criarianFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        [Constructable]
+        public criarianFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
+        public criarianFruitplant(Serial serial) : base(serial) // Ensure proper serialization
+        {
+        }
+
+        // Override the Serialize and Deserialize methods for correct serialization
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);  // Call base class serialization
+            writer.Write(0); // Versioning, for potential future updates
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader); // Call base class deserialization
+            int version = reader.ReadInt(); // Read version
+        }
+    }
 
     public class criarianFruitSeed : BaseFruitSeed
     {
@@ -57,8 +82,21 @@ namespace Server.Items
         {
         }
 
-        public criarianFruitSeed(Serial serial) : base(serial)
+        public criarianFruitSeed(Serial serial) : base(serial) // Ensure proper serialization
         {
         }
-    }	
+
+        // Override the Serialize and Deserialize methods for correct serialization
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);  // Call base class serialization
+            writer.Write(0); // Versioning, for potential future updates
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader); // Call base class deserialization
+            int version = reader.ReadInt(); // Read version
+        }
+    }
 }

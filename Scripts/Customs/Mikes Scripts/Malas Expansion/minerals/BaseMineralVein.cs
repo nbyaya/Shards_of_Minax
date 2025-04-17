@@ -16,7 +16,7 @@ namespace Server.Items
         public static List<BaseMineralVein> veins = new List<BaseMineralVein>();
         public bool IsHarvestable;
 
-        // Constructor allowing derived classes to specify ItemID
+        // Constructor for new instances
         public BaseMineralVein(int itemID) : base(itemID)
         {
             Movable = false;
@@ -26,6 +26,11 @@ namespace Server.Items
 
             ItemID = itemID; // Set the initial graphic
             veins.Add(this);
+        }
+
+        // ✅ Required constructor for deserialization
+        public BaseMineralVein(Serial serial) : base(serial)
+        {
         }
 
         public static void Initialize()

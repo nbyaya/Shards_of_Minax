@@ -24,26 +24,53 @@ namespace Server.Items
         public ameoyoteFruit(Serial serial) : base(serial)
         {
         }
+
+        // Serialize method to save the state of the object
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning
+        }
+
+        // Deserialize method to load the state of the object
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version
+        }
     }
     
-	public class ameoyoteFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a ameoyote fruit plant";
-		public override int PlantHue => 774;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0CA6; // Harvestable plant graphic
-		public override Type FruitType => typeof(ameoyoteFruit);
+    public class ameoyoteFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a ameoyote fruit plant";
+        public override int PlantHue => 774;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0CA6; // Harvestable plant graphic
+        public override Type FruitType => typeof(ameoyoteFruit);
 
-		[Constructable]
-		public ameoyoteFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+        [Constructable]
+        public ameoyoteFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
-		public ameoyoteFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        public ameoyoteFruitplant(Serial serial) : base(serial)
+        {
+        }
 
+        // Serialize method to save the state of the object
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning
+        }
+
+        // Deserialize method to load the state of the object
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version
+        }
+    }
 
     public class ameoyoteFruitSeed : BaseFruitSeed
     {
@@ -60,5 +87,19 @@ namespace Server.Items
         public ameoyoteFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        // Serialize method to save the state of the object
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning
+        }
+
+        // Deserialize method to load the state of the object
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version
+        }
+    }
 }

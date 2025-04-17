@@ -58,6 +58,11 @@ namespace Server.Mobiles
             m_AbilitiesInitialized = false; // Initialize abilities flag
         }
 
+        // ✅ Required deserialization constructor
+        public BansheeCrabBoss(Serial serial) : base(serial)
+        {
+        }
+
         public override void OnThink()
         {
             base.OnThink();
@@ -85,7 +90,6 @@ namespace Server.Mobiles
         {
             base.Deserialize(reader);
             int version = reader.ReadInt();
-
         }
     }
 }

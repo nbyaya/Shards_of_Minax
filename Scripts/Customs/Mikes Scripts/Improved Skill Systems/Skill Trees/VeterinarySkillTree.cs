@@ -265,25 +265,25 @@ namespace Server.ACC.CSS.Systems.VeterinaryMagic
             nodeIndex <<= 1;
             var animalEmpathy = new SkillNode(nodeIndex, "Animal Empathy", 6, "Increases taming success rate", (p) =>
             {
-                profile.Talents[TalentID.VeterinaryEmpathy] = new Talent(TalentID.VeterinaryEmpathy) { Points = 1 };
+                profile.Talents[TalentID.MinionDamageBonus] = new Talent(TalentID.VeterinaryEmpathy) { Points = 1 };
             });
 
             nodeIndex <<= 1;
             var healingTouch = new SkillNode(nodeIndex, "Healing Touch", 6, "Improves pet healing abilities", (p) =>
             {
-                profile.Talents[TalentID.VeterinaryHealing] = new Talent(TalentID.VeterinaryHealing) { Points = 1 };
+                profile.Talents[TalentID.MinionDamageBonus] = new Talent(TalentID.VeterinaryHealing) { Points = 1 };
             });
 
             nodeIndex <<= 1;
             var beastBonding = new SkillNode(nodeIndex, "Beast Bonding", 6, "Strengthens your bond with pets", (p) =>
             {
-                profile.Talents[TalentID.VeterinaryBonding] = new Talent(TalentID.VeterinaryBonding) { Points = 1 };
+                profile.Talents[TalentID.MinionDamageBonus] = new Talent(TalentID.VeterinaryBonding) { Points = 1 };
             });
 
             nodeIndex <<= 1;
             var wildInstincts = new SkillNode(nodeIndex, "Wild Instincts", 6, "Enhances pet reflexes", (p) =>
             {
-                profile.Talents[TalentID.VeterinarySpeed] = new Talent(TalentID.VeterinarySpeed) { Points = 1 };
+                profile.Talents[TalentID.MinionDamageBonus] = new Talent(TalentID.VeterinarySpeed) { Points = 1 };
             });
 
             Root.AddChild(animalEmpathy);
@@ -341,13 +341,13 @@ namespace Server.ACC.CSS.Systems.VeterinaryMagic
             nodeIndex <<= 1;
             var wildResilience = new SkillNode(nodeIndex, "Wild Resilience", 8, "Increases pet vitality", (p) =>
             {
-                // Passive bonus – implement effect elsewhere.
+                profile.Talents[TalentID.MinionDamageBonus] = new Talent(TalentID.VeterinarySpeed) { Points = 1 };
             });
 
             nodeIndex <<= 1;
             var callOfTheHerd = new SkillNode(nodeIndex, "Call of the Herd", 8, "Enhances ability to summon support", (p) =>
             {
-                // Passive bonus – implement effect elsewhere.
+                profile.Talents[TalentID.MinionDamageBonus] = new Talent(TalentID.VeterinarySpeed) { Points = 1 };
             });
 
             soothingPresence.AddChild(nurturingSpirit);
@@ -372,13 +372,13 @@ namespace Server.ACC.CSS.Systems.VeterinaryMagic
             nodeIndex <<= 1;
             var feralFocus = new SkillNode(nodeIndex, "Feral Focus", 9, "Enhances pet combat abilities", (p) =>
             {
-                // Passive bonus – implement effect elsewhere.
+                profile.Talents[TalentID.MinionDamageBonus] = new Talent(TalentID.VeterinarySpeed) { Points = 1 };
             });
 
             nodeIndex <<= 1;
             var soaringSpirit = new SkillNode(nodeIndex, "Soaring Spirit", 9, "Increases pet agility", (p) =>
             {
-                // Passive bonus – implement effect elsewhere.
+                profile.Talents[TalentID.MinionDamageBonus] = new Talent(TalentID.VeterinarySpeed) { Points = 1 };
             });
 
             nurturingSpirit.AddChild(ancientWisdom);
@@ -397,7 +397,7 @@ namespace Server.ACC.CSS.Systems.VeterinaryMagic
             nodeIndex <<= 1;
             var bondOfTheWild = new SkillNode(nodeIndex, "Bond of the Wild", 10, "Deepens pet loyalty", (p) =>
             {
-                // Passive bonus – implement effect elsewhere.
+                profile.Talents[TalentID.MinionDamageBonus] = new Talent(TalentID.VeterinarySpeed) { Points = 1 };
             });
 
             nodeIndex <<= 1;
@@ -409,7 +409,7 @@ namespace Server.ACC.CSS.Systems.VeterinaryMagic
             nodeIndex <<= 1;
             var harmonyOfNature = new SkillNode(nodeIndex, "Harmony of Nature", 10, "Improves synergy between pet and master", (p) =>
             {
-                // Passive bonus – implement effect elsewhere.
+                profile.Talents[TalentID.MinionDamageBonus] = new Talent(TalentID.VeterinarySpeed) { Points = 1 };
             });
 
             ancientWisdom.AddChild(primevalCare);
@@ -428,7 +428,7 @@ namespace Server.ACC.CSS.Systems.VeterinaryMagic
             nodeIndex <<= 1;
             var mysticMenagerie = new SkillNode(nodeIndex, "Mystic Menagerie", 11, "Unlocks magical pet enhancements", (p) =>
             {
-                // Passive bonus – implement effect elsewhere.
+                profile.Talents[TalentID.MinionDamageBonus] = new Talent(TalentID.VeterinarySpeed) { Points = 1 };
             });
 
             nodeIndex <<= 1;
@@ -440,7 +440,7 @@ namespace Server.ACC.CSS.Systems.VeterinaryMagic
             nodeIndex <<= 1;
             var rapidRecovery = new SkillNode(nodeIndex, "Rapid Recovery", 11, "Speeds up pet recovery", (p) =>
             {
-                // Passive bonus – implement effect elsewhere.
+                profile.Talents[TalentID.MinionDamageBonus] = new Talent(TalentID.VeterinarySpeed) { Points = 1 };
             });
 
             primevalCare.AddChild(expandedEmpathy);
@@ -452,13 +452,13 @@ namespace Server.ACC.CSS.Systems.VeterinaryMagic
             nodeIndex <<= 1;
             var guardiansGrace = new SkillNode(nodeIndex, "Guardian's Grace", 12, "Enhances pet defenses", (p) =>
             {
-                // Passive bonus – implement effect elsewhere.
+                profile.Talents[TalentID.MinionDamageBonus] = new Talent(TalentID.VeterinarySpeed) { Points = 1 };
             });
 
             nodeIndex <<= 1;
             var wildSurge = new SkillNode(nodeIndex, "Wild Surge", 12, "Increases pet attack speed", (p) =>
             {
-                // Passive bonus – implement effect elsewhere.
+                profile.Talents[TalentID.MinionDamageBonus] = new Talent(TalentID.VeterinarySpeed) { Points = 1 };
             });
 
             nodeIndex <<= 1;
@@ -470,7 +470,7 @@ namespace Server.ACC.CSS.Systems.VeterinaryMagic
             nodeIndex <<= 1;
             var naturesEndowment = new SkillNode(nodeIndex, "Nature's Endowment", 12, "Boosts overall pet stats", (p) =>
             {
-                // Passive bonus – implement effect elsewhere.
+                profile.Talents[TalentID.MinionDamageBonus] = new Talent(TalentID.VeterinarySpeed) { Points = 1 };
             });
 
             expandedEmpathy.AddChild(guardiansGrace);
@@ -484,12 +484,12 @@ namespace Server.ACC.CSS.Systems.VeterinaryMagic
             {
                 // Unlock two more spell bits.
                 profile.Talents[TalentID.VeterinarySpells].Points |= 0x80 | 0x100;
-                profile.Talents[TalentID.VeterinaryEmpathy].Points += 1;
-                profile.Talents[TalentID.VeterinaryHealing].Points += 1;
-                profile.Talents[TalentID.VeterinaryBonding].Points += 1;
-                profile.Talents[TalentID.VeterinaryStamina].Points += 1;
-                profile.Talents[TalentID.VeterinarySpeed].Points += 1;
-                profile.Talents[TalentID.VeterinaryWisdom].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             guardiansGrace.AddChild(ultimateVeterinarian);

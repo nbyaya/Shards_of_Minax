@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class Thunderstroke : ShortSpear
+public class Thunderstroke : SnoopersPaddle
 {
     [Constructable]
     public Thunderstroke()

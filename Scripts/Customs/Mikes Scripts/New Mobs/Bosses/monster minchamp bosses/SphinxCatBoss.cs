@@ -44,7 +44,12 @@ namespace Server.Mobiles
 
             Tamable = false; // Boss creatures cannot be tamed
             ControlSlots = 0; // No control slots needed as it's a boss
+        }
 
+        // 💥 This constructor is required for deserialization
+        public SphinxCatBoss(Serial serial)
+            : base(serial)
+        {
         }
 
         public override void GenerateLoot()
@@ -75,7 +80,6 @@ namespace Server.Mobiles
         {
             base.Deserialize(reader);
             int version = reader.ReadInt();
-
         }
     }
 }

@@ -24,6 +24,18 @@ namespace Server.Items
         public piokinFruit(Serial serial) : base(serial)
         {
         }
+		
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future changes, start with version 0.
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number, used for future migrations.
+        }		
     }
     
 	public class piokinFruitplant : BaseFruitPlant
@@ -42,6 +54,18 @@ namespace Server.Items
 		public piokinFruitplant(Serial serial) : base(serial)
 		{
 		}
+		
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future changes, start with version 0.
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number, used for future migrations.
+        }		
 	}
 
 
@@ -60,5 +84,17 @@ namespace Server.Items
         public piokinFruitSeed(Serial serial) : base(serial)
         {
         }
+		
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future changes, start with version 0.
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number, used for future migrations.
+        }		
     }	
 }

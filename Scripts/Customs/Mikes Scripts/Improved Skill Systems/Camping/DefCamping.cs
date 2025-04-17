@@ -7,6 +7,7 @@ using Server.Items;
 using Server.Regions;
 using Server.Multis.Deeds;
 using Server.ACC.CSS.Systems.ForagersGuidebook;
+using Server.Custom.Items;
 
 namespace Server.Engines.Craft
 {
@@ -112,6 +113,12 @@ namespace Server.Engines.Craft
             AddCraft(typeof(AdventurersRope), "Gear", "Adventure Rope", 50.0, 50.0, typeof(Leather), "Leather", 25, 1044003);
 			AddCraft(typeof(ForagersBook), "Gear", "Foragers Guide Book", 50.0, 50.0, typeof(Leather), "Leather", 25, 1044003);
 			AddCraft(typeof(CampersBackpack), "Gear", "Campers Backpack", 50.0, 50.0, typeof(Leather), "Leather", 25, 1044003);
+			AddCraft(typeof(OutpostCharter), "Gear", "Outpost Charter", 70.0, 70.0, typeof(Leather), "Leather", 30, 1044003);
+			AddCraft(typeof(CampingMap), "Gear", "Camping Map", 75.0, 75.0, typeof(Leather), "Leather", 30, 1044003);
+			AddCraft(typeof(CampersBagOfHolding), "Gear", "Campers Bag Of Holding", 50.0, 50.0, typeof(Leather), "Leather", 30, 1044003);
+			AddCraft(typeof(CampersBackpackOfHolding), "Gear", "Campers Backpack Of Holding", 85.0, 85.0, typeof(Leather), "Leather", 30, 1044003);
+			AddCraft(typeof(Saddlebag), "Gear", "Saddle Bag", 45.0, 45.0, typeof(Leather), "Leather", 10, 1044003);
+			AddCraft(typeof(CampingLanturn), "Gear", "Camping Lanturn", 45.0, 45.0, typeof(IronIngot), "Iron Ingot", 10, 1044003);
 
             // Ships Menu
             index = AddCraft(typeof(SmallBoatDeed), "Ships", "SmallBoatDeed", 60.0, 60.0, typeof(Board), "Boards", 50, 1044037);

@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class CetrasStaff : GnarledStaff
+public class CetrasStaff : BeggersStick
 {
     [Constructable]
     public CetrasStaff()

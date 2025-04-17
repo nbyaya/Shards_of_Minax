@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class Whelm : WarHammer
+public class Whelm : CarpentersHammer
 {
     [Constructable]
     public Whelm()

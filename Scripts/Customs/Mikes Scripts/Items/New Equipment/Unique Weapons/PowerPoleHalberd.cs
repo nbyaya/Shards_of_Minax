@@ -3,12 +3,12 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class PowerPoleHalberd : Halberd
+public class PowerPoleHalberd : TenFootPole
 {
     [Constructable]
     public PowerPoleHalberd()
     {
-        Name = "Power Pole Halberd";
+        Name = "Power Pole";
         Hue = Utility.Random(150, 2200);
         MinDamage = Utility.RandomMinMax(30, 70);
         MaxDamage = Utility.RandomMinMax(70, 100);

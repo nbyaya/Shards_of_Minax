@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class FrostfireCleaver : Cleaver
+public class FrostfireCleaver : CooksCleaver
 {
     [Constructable]
     public FrostfireCleaver()

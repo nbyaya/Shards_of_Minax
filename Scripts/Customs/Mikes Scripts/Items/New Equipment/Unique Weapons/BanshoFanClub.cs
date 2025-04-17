@@ -3,12 +3,12 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class BanshoFanClub : Club
+public class BanshoFanClub : MeditationFans
 {
     [Constructable]
     public BanshoFanClub()
     {
-        Name = "Bansho Fan Club";
+        Name = "Bansho Fan";
         Hue = Utility.Random(200, 2250);
         MinDamage = Utility.RandomMinMax(20, 60);
         MaxDamage = Utility.RandomMinMax(60, 90);

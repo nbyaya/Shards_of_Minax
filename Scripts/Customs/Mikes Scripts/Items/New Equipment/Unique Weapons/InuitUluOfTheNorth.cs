@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class InuitUluOfTheNorth : ButcherKnife
+public class InuitUluOfTheNorth : MeatPicks
 {
     [Constructable]
     public InuitUluOfTheNorth()

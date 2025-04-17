@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class HeartbreakerSunder : WarHammer
+public class HeartbreakerSunder : NecromancersStaff
 {
     [Constructable]
     public HeartbreakerSunder()

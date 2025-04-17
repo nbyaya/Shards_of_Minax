@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class TitansFury : WarHammer
+public class TitansFury : SmithSmasher
 {
     [Constructable]
     public TitansFury()

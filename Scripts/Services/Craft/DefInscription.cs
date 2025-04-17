@@ -44,6 +44,7 @@ using Server.ACC.CSS.Systems.VeterinaryMagic;
 using Server.ACC.CSS.Systems.MusicianshipMagic;
 using Server.ACC.CSS.Systems.CampingMagic;
 using Server.ACC.CSS.Systems.LumberjackingMagic;
+using Server.ACC.CSS.Systems.SpiritSpeakMagic;
 
 namespace Server.Engines.Craft
 {
@@ -749,6 +750,10 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(Uranimite), "Uranimite", 1, 1044253);
             AddRes(index, typeof(OpaqueHydragyon), "OpaqueHydragyon", 1, 1044253);
             AddRes(index, typeof(Impervanium), "Impervanium", 1, 1044253);
+            index = AddCraft(typeof(SpiritSpeakSpellbook), "Skill Codex", "SpiritSpeak Spellbook", 70.0, 200.0, typeof(MagicalResidue), "MagicalResidue", 20, 1044037);
+            AddRes(index, typeof(ExoticEun), "ExoticEun", 1, 1044253);
+            AddRes(index, typeof(MorphicHeteril), "MorphicHeteril", 1, 1044253);
+            AddRes(index, typeof(Flurocite), "Flurocite", 1, 1044253);			
 
 			//Transcendence Scrolls
             index = AddCraft(typeof(ScrollOfTranscendenceAlchemy), "Transcendence Scrolls", "ScrollOfTranscendenceAlchemy", 30.0, 200.0, typeof(BlankScroll), "BlankScroll", 1, 1044037);

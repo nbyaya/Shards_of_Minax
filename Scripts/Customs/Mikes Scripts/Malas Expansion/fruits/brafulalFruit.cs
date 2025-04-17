@@ -24,25 +24,49 @@ namespace Server.Items
         public brafulalFruit(Serial serial) : base(serial)
         {
         }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Version 0
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version (this allows for future updates)
+        }
     }
     
-	public class brafulalFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a brafulal fruit plant";
-		public override int PlantHue => 1766;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0CBB; // Harvestable plant graphic
-		public override Type FruitType => typeof(brafulalFruit);
+    public class brafulalFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a brafulal fruit plant";
+        public override int PlantHue => 1766;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0CBB; // Harvestable plant graphic
+        public override Type FruitType => typeof(brafulalFruit);
 
-		[Constructable]
-		public brafulalFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+        [Constructable]
+        public brafulalFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
-		public brafulalFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        public brafulalFruitplant(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Version 0
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version
+        }
+    }
 
 
     public class brafulalFruitSeed : BaseFruitSeed
@@ -60,5 +84,17 @@ namespace Server.Items
         public brafulalFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Version 0
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version
+        }
+    }    
 }

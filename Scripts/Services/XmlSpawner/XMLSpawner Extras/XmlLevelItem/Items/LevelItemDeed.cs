@@ -20,7 +20,7 @@ namespace Server.Items
 
 		protected override void OnTarget( Mobile from, object target )
 		{
-			if ( target is BaseWeapon || target is BaseArmor || target is BaseClothing || target is BaseJewel )
+			if ( target is BaseWeapon || target is BaseArmor || target is BaseClothing || target is BaseJewel || target is BaseQuiver)
 			{
 				Item item = (Item)target;
 

@@ -21,29 +21,64 @@ namespace Server.Items
         {
         }
 
+        // Serialization constructor
         public AshRootFruit(Serial serial) : base(serial)
         {
         }
+
+        // Override Serialize method if needed to handle special serialization
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer); // Serialize base class data
+            writer.Write(0); // Versioning for future updates if needed
+            // Additional properties can be serialized here
+        }
+
+        // Override Deserialize method if needed to handle special deserialization
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader); // Deserialize base class data
+            int version = reader.ReadInt(); // Read the version (if any)
+
+            // Handle any additional data here if needed
+        }
     }
-    
-	public class AshRootFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a Ash Root plant";
-		public override int PlantHue => 1344;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0D40; // Harvestable plant graphic
-		public override Type FruitType => typeof(AshRootFruit);
 
-		[Constructable]
-		public AshRootFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+    public class AshRootFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Ash Root plant";
+        public override int PlantHue => 1344;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0D40; // Harvestable plant graphic
+        public override Type FruitType => typeof(AshRootFruit);
 
-		public AshRootFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        [Constructable]
+        public AshRootFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
+        // Serialization constructor
+        public AshRootFruitplant(Serial serial) : base(serial)
+        {
+        }
+
+        // Override Serialize method if needed to handle special serialization
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer); // Serialize base class data
+            writer.Write(0); // Versioning for future updates if needed
+            // Additional properties can be serialized here
+        }
+
+        // Override Deserialize method if needed to handle special deserialization
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader); // Deserialize base class data
+            int version = reader.ReadInt(); // Read the version (if any)
+
+            // Handle any additional data here if needed
+        }
+    }
 
     public class AshRootFruitSeed : BaseFruitSeed
     {
@@ -57,8 +92,26 @@ namespace Server.Items
         {
         }
 
+        // Serialization constructor
         public AshRootFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        // Override Serialize method if needed to handle special serialization
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer); // Serialize base class data
+            writer.Write(0); // Versioning for future updates if needed
+            // Additional properties can be serialized here
+        }
+
+        // Override Deserialize method if needed to handle special deserialization
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader); // Deserialize base class data
+            int version = reader.ReadInt(); // Read the version (if any)
+
+            // Handle any additional data here if needed
+        }
+    }
 }

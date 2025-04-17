@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class BaneOfTheDead : WarMace
+public class BaneOfTheDead : CampingLanturn
 {
     [Constructable]
     public BaneOfTheDead()

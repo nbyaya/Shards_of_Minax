@@ -348,7 +348,7 @@ namespace Server.Mobiles
 		MusicianshipNodes = 4401,       // Used to track activated nodes (if needed).
 		MusicianshipPerformance = 4402, // Bonus: affects performance range (or similar).
 		MusicianshipTechnique = 4403,   // Bonus: increases playing speed or efficiency.
-		MusicianshipResonance = 4404,    // Bonus: increases bonus yield effects.		
+		MusicianshipResonance = 4404,    // Bonus: increases bonus yield effects.	
 		
 		LogCollectionRegular    = 4500,
 		LogCollectionHeartwood  = 4501,
@@ -379,7 +379,92 @@ namespace Server.Mobiles
 		AmethystCollection      = 4524,
 		TourmalineCollection    = 4525,
 		AmberCollection         = 4526,
-		DiamondCollection       = 4527
+		DiamondCollection       = 4527,
+		
+		OrcSlayerQuest = 4528,
+		AbysmalHorrorQuest = 4529,
+		AcidElementalQuest = 4530,
+		AirElementalQuest = 4531,
+		AlligatorSlayerQuest = 4532,
+		BakeKitsuneSlayerQuest = 4533,
+		BalronSlayerQuest = 4534,
+		BloodElementalQuest = 4535,
+		BrownBearSlayerQuest = 4536,
+		CorpserSlayerQuest = 4537,
+		CuSidheHunterQuest = 4538,
+		CyclopsSlayerQuest = 4539,
+		KillDaemonQuest = 4540,
+		DesertOstardQuest = 4541,
+		DireWolfSlayerQuest = 4542,
+		DolphinSlayerQuest = 4543,
+		DragonSlayerQuest = 4544,
+		DrakeSlayerQuest = 4545,
+		DreadSpiderQuest = 4546,
+		EarthElementalSlayerQuest = 4547,
+		EttinSlayerQuest = 4548,
+		FireElementalSlayerQuest = 4549,
+		ForestOstardHunter = 4550,
+		FrenziedOstardSlayerQuest = 4551,
+		GargoyleSlayerQuest = 4552,
+		GazerSlayerQuest = 4553,
+		GhoulSlayerQuest = 4554,
+		GiantSerpentSlayerQuest = 4555,
+		GiantSpiderSlayerQuest = 4556,
+		ToadSlayerQuest = 4557,
+		GoatSlayerQuest = 4558,
+		GorillaSlayerQuest = 4559,
+		GreatHartSlayerQuest = 4560,
+		GrizzlyBearSlayerQuest = 4561,
+		HarpySlayerQuest = 4562,
+		HeadlessSlayerQuest = 4563,
+		HindSlayerQuest = 4564,
+		HiryuSlayerQuest = 4565,
+		HorseSlayerQuest = 4566,
+		JukaLordSlayerQuest = 4567,
+		JukaMageSlayerQuest = 4568,
+		JukaSlayerQuest = 4569,
+		KirinSlayerQuest = 4570,
+		LesserHiryuSlayerQuest = 4571,
+		LichSlayerQuest = 4572,
+		LichLordHunterQuest = 4573,
+		LionSlayerQuest = 4574,
+		LizardmanSlayerQuest = 4575,
+		LlamaSlayerQuest = 4576,
+		MinotaurSlayerQuest = 4577,
+		MongbatSlayerQuest = 4578,
+		MummySlayerQuest = 4579,
+		NightmareSlayerQuest = 4580,
+		OgreSlayerQuest = 4581,
+		OgreLordSlayerQuest = 4582,
+		OphidianWarriorSlayer = 4583,
+		OrcCaptainSlayerQuest = 4584,
+		PantherSlayerQuest = 4585,
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		MinionDamageBonus = 4600,
+		
+		SpiritSpeakSpells = 4601,
+		SpiritSpeakNodes = 4602
 		
 		
     }
@@ -1649,6 +1734,175 @@ namespace Server.Mobiles
 				profile.Talents[TalentID.AmberCollection] = new Talent(TalentID.AmberCollection);
 			if (!profile.Talents.ContainsKey(TalentID.DiamondCollection))
 				profile.Talents[TalentID.DiamondCollection] = new Talent(TalentID.DiamondCollection);
+
+			if (!profile.Talents.ContainsKey(TalentID.MinionDamageBonus))
+			{
+				profile.Talents[TalentID.MinionDamageBonus] = new Talent(TalentID.MinionDamageBonus) { Points = 0 };
+			}
+			
+			if (!profile.Talents.ContainsKey(TalentID.SpiritSpeakSpells))
+			{
+				profile.Talents[TalentID.SpiritSpeakSpells] = new Talent(TalentID.SpiritSpeakSpells) { Points = 0 };
+			}
+			if (!profile.Talents.ContainsKey(TalentID.SpiritSpeakNodes))
+			{
+				profile.Talents[TalentID.SpiritSpeakNodes] = new Talent(TalentID.SpiritSpeakNodes) { Points = 0 };
+			}			
+
+			// In the Talents.AcquireTalents method:
+			if (!profile.Talents.ContainsKey(TalentID.OrcSlayerQuest))
+				profile.Talents[TalentID.OrcSlayerQuest] = new Talent(TalentID.OrcSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.AbysmalHorrorQuest))
+				profile.Talents[TalentID.AbysmalHorrorQuest] = new Talent(TalentID.AbysmalHorrorQuest);
+			if (!profile.Talents.ContainsKey(TalentID.AcidElementalQuest))
+				profile.Talents[TalentID.AcidElementalQuest] = new Talent(TalentID.AcidElementalQuest);
+			if (!profile.Talents.ContainsKey(TalentID.AirElementalQuest))
+				profile.Talents[TalentID.AirElementalQuest] = new Talent(TalentID.AirElementalQuest);
+			if (!profile.Talents.ContainsKey(TalentID.AlligatorSlayerQuest))
+				profile.Talents[TalentID.AlligatorSlayerQuest] = new Talent(TalentID.AlligatorSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.BakeKitsuneSlayerQuest))
+				profile.Talents[TalentID.BakeKitsuneSlayerQuest] = new Talent(TalentID.BakeKitsuneSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.BalronSlayerQuest))
+				profile.Talents[TalentID.BalronSlayerQuest] = new Talent(TalentID.BalronSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.BloodElementalQuest))
+				profile.Talents[TalentID.BloodElementalQuest] = new Talent(TalentID.BloodElementalQuest);
+			if (!profile.Talents.ContainsKey(TalentID.BrownBearSlayerQuest))
+				profile.Talents[TalentID.BrownBearSlayerQuest] = new Talent(TalentID.BrownBearSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.CorpserSlayerQuest))
+				profile.Talents[TalentID.CorpserSlayerQuest] = new Talent(TalentID.CorpserSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.CuSidheHunterQuest))
+				profile.Talents[TalentID.CuSidheHunterQuest] = new Talent(TalentID.CuSidheHunterQuest);
+			if (!profile.Talents.ContainsKey(TalentID.CyclopsSlayerQuest))
+				profile.Talents[TalentID.CyclopsSlayerQuest] = new Talent(TalentID.CyclopsSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.KillDaemonQuest))
+				profile.Talents[TalentID.KillDaemonQuest] = new Talent(TalentID.KillDaemonQuest);
+			if (!profile.Talents.ContainsKey(TalentID.DesertOstardQuest))
+				profile.Talents[TalentID.DesertOstardQuest] = new Talent(TalentID.DesertOstardQuest);
+			if (!profile.Talents.ContainsKey(TalentID.DireWolfSlayerQuest))
+				profile.Talents[TalentID.DireWolfSlayerQuest] = new Talent(TalentID.DireWolfSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.DolphinSlayerQuest))
+				profile.Talents[TalentID.DolphinSlayerQuest] = new Talent(TalentID.DolphinSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.DragonSlayerQuest))
+				profile.Talents[TalentID.DragonSlayerQuest] = new Talent(TalentID.DragonSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.DrakeSlayerQuest))
+				profile.Talents[TalentID.DrakeSlayerQuest] = new Talent(TalentID.DrakeSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.DreadSpiderQuest))
+				profile.Talents[TalentID.DreadSpiderQuest] = new Talent(TalentID.DreadSpiderQuest);
+			if (!profile.Talents.ContainsKey(TalentID.EarthElementalSlayerQuest))
+				profile.Talents[TalentID.EarthElementalSlayerQuest] = new Talent(TalentID.EarthElementalSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.EttinSlayerQuest))
+				profile.Talents[TalentID.EttinSlayerQuest] = new Talent(TalentID.EttinSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.FireElementalSlayerQuest))
+				profile.Talents[TalentID.FireElementalSlayerQuest] = new Talent(TalentID.FireElementalSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.ForestOstardHunter))
+				profile.Talents[TalentID.ForestOstardHunter] = new Talent(TalentID.ForestOstardHunter);
+			if (!profile.Talents.ContainsKey(TalentID.FrenziedOstardSlayerQuest))
+				profile.Talents[TalentID.FrenziedOstardSlayerQuest] = new Talent(TalentID.FrenziedOstardSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.GargoyleSlayerQuest))
+				profile.Talents[TalentID.GargoyleSlayerQuest] = new Talent(TalentID.GargoyleSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.GazerSlayerQuest))
+				profile.Talents[TalentID.GazerSlayerQuest] = new Talent(TalentID.GazerSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.GhoulSlayerQuest))
+				profile.Talents[TalentID.GhoulSlayerQuest] = new Talent(TalentID.GhoulSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.GiantSerpentSlayerQuest))
+				profile.Talents[TalentID.GiantSerpentSlayerQuest] = new Talent(TalentID.GiantSerpentSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.GiantSpiderSlayerQuest))
+				profile.Talents[TalentID.GiantSpiderSlayerQuest] = new Talent(TalentID.GiantSpiderSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.ToadSlayerQuest))
+				profile.Talents[TalentID.ToadSlayerQuest] = new Talent(TalentID.ToadSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.GoatSlayerQuest))
+				profile.Talents[TalentID.GoatSlayerQuest] = new Talent(TalentID.GoatSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.GorillaSlayerQuest))
+				profile.Talents[TalentID.GorillaSlayerQuest] = new Talent(TalentID.GorillaSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.GreatHartSlayerQuest))
+				profile.Talents[TalentID.GreatHartSlayerQuest] = new Talent(TalentID.GreatHartSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.GrizzlyBearSlayerQuest))
+				profile.Talents[TalentID.GrizzlyBearSlayerQuest] = new Talent(TalentID.GrizzlyBearSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.HarpySlayerQuest))
+				profile.Talents[TalentID.HarpySlayerQuest] = new Talent(TalentID.HarpySlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.HeadlessSlayerQuest))
+				profile.Talents[TalentID.HeadlessSlayerQuest] = new Talent(TalentID.HeadlessSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.HindSlayerQuest))
+				profile.Talents[TalentID.HindSlayerQuest] = new Talent(TalentID.HindSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.HiryuSlayerQuest))
+				profile.Talents[TalentID.HiryuSlayerQuest] = new Talent(TalentID.HiryuSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.HorseSlayerQuest))
+				profile.Talents[TalentID.HorseSlayerQuest] = new Talent(TalentID.HorseSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.JukaLordSlayerQuest))
+				profile.Talents[TalentID.JukaLordSlayerQuest] = new Talent(TalentID.JukaLordSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.JukaMageSlayerQuest))
+				profile.Talents[TalentID.JukaMageSlayerQuest] = new Talent(TalentID.JukaMageSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.JukaSlayerQuest))
+				profile.Talents[TalentID.JukaSlayerQuest] = new Talent(TalentID.JukaSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.KirinSlayerQuest))
+				profile.Talents[TalentID.KirinSlayerQuest] = new Talent(TalentID.KirinSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.LesserHiryuSlayerQuest))
+				profile.Talents[TalentID.LesserHiryuSlayerQuest] = new Talent(TalentID.LesserHiryuSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.LichSlayerQuest))
+				profile.Talents[TalentID.LichSlayerQuest] = new Talent(TalentID.LichSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.LichLordHunterQuest))
+				profile.Talents[TalentID.LichLordHunterQuest] = new Talent(TalentID.LichLordHunterQuest);
+			if (!profile.Talents.ContainsKey(TalentID.LionSlayerQuest))
+				profile.Talents[TalentID.LionSlayerQuest] = new Talent(TalentID.LionSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.LizardmanSlayerQuest))
+				profile.Talents[TalentID.LizardmanSlayerQuest] = new Talent(TalentID.LizardmanSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.LlamaSlayerQuest))
+				profile.Talents[TalentID.LlamaSlayerQuest] = new Talent(TalentID.LlamaSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.MinotaurSlayerQuest))
+				profile.Talents[TalentID.MinotaurSlayerQuest] = new Talent(TalentID.MinotaurSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.MongbatSlayerQuest))
+				profile.Talents[TalentID.MongbatSlayerQuest] = new Talent(TalentID.MongbatSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.MummySlayerQuest))
+				profile.Talents[TalentID.MummySlayerQuest] = new Talent(TalentID.MummySlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.NightmareSlayerQuest))
+				profile.Talents[TalentID.NightmareSlayerQuest] = new Talent(TalentID.NightmareSlayerQuest);
+			if (!profile.Talents.ContainsKey(TalentID.OgreSlayerQuest))
+				profile.Talents[TalentID.OgreSlayerQuest] = new Talent(TalentID.OgreSlayerQuest) { Points = 0 };
+			if (!profile.Talents.ContainsKey(TalentID.OgreLordSlayerQuest))
+				profile.Talents[TalentID.OgreLordSlayerQuest] = new Talent(TalentID.OgreLordSlayerQuest) { Points = 0 };
+			if (!profile.Talents.ContainsKey(TalentID.OphidianWarriorSlayer))
+				profile.Talents[TalentID.OphidianWarriorSlayer] = new Talent(TalentID.OphidianWarriorSlayer) { Points = 0 };
+			if (!profile.Talents.ContainsKey(TalentID.OrcCaptainSlayerQuest))
+				profile.Talents[TalentID.OrcCaptainSlayerQuest] = new Talent(TalentID.OrcCaptainSlayerQuest) { Points = 0 };
+			if (!profile.Talents.ContainsKey(TalentID.PantherSlayerQuest))
+				profile.Talents[TalentID.PantherSlayerQuest] = new Talent(TalentID.PantherSlayerQuest) { Points = 0 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
 
 			return profile;
 		}

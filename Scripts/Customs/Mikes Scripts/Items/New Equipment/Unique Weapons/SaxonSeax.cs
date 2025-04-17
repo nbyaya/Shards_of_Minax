@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class SaxonSeax : Dagger
+public class SaxonSeax : TenFootPole
 {
     [Constructable]
     public SaxonSeax()

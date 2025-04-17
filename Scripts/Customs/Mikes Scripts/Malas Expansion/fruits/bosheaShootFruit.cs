@@ -24,26 +24,49 @@ namespace Server.Items
         public bosheaShootFruit(Serial serial) : base(serial)
         {
         }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning, change when structure changes
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
     }
-    
-	public class bosheaShootFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a bosheaShoot fruit plant";
-		public override int PlantHue => 2602;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0D0E; // Harvestable plant graphic
-		public override Type FruitType => typeof(bosheaShootFruit);
 
-		[Constructable]
-		public bosheaShootFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+    public class bosheaShootFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a bosheaShoot fruit plant";
+        public override int PlantHue => 2602;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0D0E; // Harvestable plant graphic
+        public override Type FruitType => typeof(bosheaShootFruit);
 
-		public bosheaShootFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        [Constructable]
+        public bosheaShootFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
+        public bosheaShootFruitplant(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
+    }
 
     public class bosheaShootFruitSeed : BaseFruitSeed
     {
@@ -60,5 +83,17 @@ namespace Server.Items
         public bosheaShootFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
+    }
 }

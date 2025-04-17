@@ -71,7 +71,7 @@ namespace Server.Engines.XmlSpawner2
 
         public void PerformGaleStrike(Mobile target)
         {
-            if (target == null || !target.Alive)
+            if (target != null || !target.Alive)
                 return;
 
             // Use target.Map instead of Map

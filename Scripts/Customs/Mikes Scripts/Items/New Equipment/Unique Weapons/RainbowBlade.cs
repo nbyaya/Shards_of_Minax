@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class RainbowBlade : Longsword
+public class RainbowBlade : HolyKnightSword
 {
     [Constructable]
     public RainbowBlade()

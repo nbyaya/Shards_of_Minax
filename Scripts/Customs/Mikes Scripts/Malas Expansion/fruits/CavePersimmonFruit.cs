@@ -24,26 +24,51 @@ namespace Server.Items
         public CavePersimmonFruit(Serial serial) : base(serial)
         {
         }
+
+        // Serialization Logic for CavePersimmonFruit
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future changes, start with version 0.
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number, used for future migrations.
+        }
     }
     
-	public class CavePersimmonFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a Cave Persimmon plant";
-		public override int PlantHue => 1687;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0D13; // Harvestable plant graphic
-		public override Type FruitType => typeof(CavePersimmonFruit);
+    public class CavePersimmonFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Cave Persimmon plant";
+        public override int PlantHue => 1687;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0D13; // Harvestable plant graphic
+        public override Type FruitType => typeof(CavePersimmonFruit);
 
-		[Constructable]
-		public CavePersimmonFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+        [Constructable]
+        public CavePersimmonFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
-		public CavePersimmonFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        public CavePersimmonFruitplant(Serial serial) : base(serial)
+        {
+        }
 
+        // Serialization Logic for CavePersimmonFruitplant
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future changes, start with version 0.
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number, used for future migrations.
+        }
+    }
 
     public class CavePersimmonFruitSeed : BaseFruitSeed
     {
@@ -60,5 +85,18 @@ namespace Server.Items
         public CavePersimmonFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        // Serialization Logic for CavePersimmonFruitSeed
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future changes, start with version 0.
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number, used for future migrations.
+        }
+    }  
 }

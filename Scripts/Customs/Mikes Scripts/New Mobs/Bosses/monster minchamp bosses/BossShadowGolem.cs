@@ -23,7 +23,7 @@ namespace Server.Mobiles
             SetHits(12000); // Boss-level health
             SetDamage(35, 50); // Increased damage
 
-            SetDamageType(ResistanceType.Physical, 60); // Increased damage distribution
+            SetDamageType(ResistanceType.Physical, 60);
             SetDamageType(ResistanceType.Fire, 30);
             SetDamageType(ResistanceType.Energy, 30);
 
@@ -33,36 +33,40 @@ namespace Server.Mobiles
             SetResistance(ResistanceType.Poison, 80);
             SetResistance(ResistanceType.Energy, 60);
 
-            SetSkill(SkillName.MagicResist, 150.0); // Enhanced magic resistance
+            SetSkill(SkillName.MagicResist, 150.0);
             SetSkill(SkillName.Tactics, 120.0);
             SetSkill(SkillName.Wrestling, 120.0);
-            SetSkill(SkillName.Magery, 120.0); // Enhanced magery skill
+            SetSkill(SkillName.Magery, 120.0);
 
-            Fame = 24000; // Increased fame for the boss
+            Fame = 24000;
             Karma = -24000;
 
-            VirtualArmor = 90; // Boss-level armor
+            VirtualArmor = 90;
 
             PackItem(new BossTreasureBox());
             XmlAttach.AttachTo(this, new XmlRandomAbility());
 
-            // Additional loot on defeat
             for (int i = 0; i < 5; i++)
             {
-                PackItem(new MaxxiaScroll()); // Assuming MaxxiaScroll is a defined item
+                PackItem(new MaxxiaScroll());
             }
+        }
+
+        // ✅ Required constructor for deserialization
+        public BossShadowGolem(Serial serial) : base(serial)
+        {
         }
 
         public override void GenerateLoot()
         {
-            base.GenerateLoot(); // Include base loot
+            base.GenerateLoot();
             this.Say("The shadows will consume you!");
-            PackGold(1500, 2500); // Enhanced gold drop
+            PackGold(1500, 2500);
         }
 
         public override void OnThink()
         {
-            base.OnThink(); // Retain original abilities
+            base.OnThink();
         }
 
         public override void Serialize(GenericWriter writer)

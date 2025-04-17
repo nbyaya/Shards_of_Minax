@@ -25,12 +25,17 @@ namespace Server.Items
             ItemID = FruitGraphic;
         }
 
+        // 🔧 Added deserialization constructor
+        public BaseFruit(Serial serial) : base(serial)
+        {
+        }
+
         public override bool Eat(Mobile from)
         {
             if (!base.Eat(from))
                 return false;
 
-            // 10% chance to give a seed
+            // 20% chance to give a seed
             if (Utility.RandomDouble() < 0.2)
             {
                 Item seed = (Item)Activator.CreateInstance(SeedType);

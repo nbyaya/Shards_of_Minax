@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class DragonsWrath : Longsword
+public class DragonsWrath : FireAlchemyBlaster
 {
     [Constructable]
     public DragonsWrath()

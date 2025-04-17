@@ -3,12 +3,12 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class WondershotCrossbow : HeavyCrossbow
+public class WondershotCrossbow : FireAlchemyBlaster
 {
     [Constructable]
     public WondershotCrossbow()
     {
-        Name = "Wondershot Crossbow";
+        Name = "Wondershot";
         Hue = Utility.Random(300, 2600);
         MinDamage = Utility.RandomMinMax(10, 50);
         MaxDamage = Utility.RandomMinMax(100, 150);

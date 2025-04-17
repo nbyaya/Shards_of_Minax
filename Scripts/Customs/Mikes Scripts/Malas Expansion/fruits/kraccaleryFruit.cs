@@ -24,6 +24,18 @@ namespace Server.Items
         public kraccaleryFruit(Serial serial) : base(serial)
         {
         }
+		
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future changes, start with version 0.
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number, used for future migrations.
+        }		
     }
     
 	public class kraccaleryFruitplant : BaseFruitPlant
@@ -42,6 +54,18 @@ namespace Server.Items
 		public kraccaleryFruitplant(Serial serial) : base(serial)
 		{
 		}
+		
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future changes, start with version 0.
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number, used for future migrations.
+        }		
 	}
 
 
@@ -60,5 +84,17 @@ namespace Server.Items
         public kraccaleryFruitSeed(Serial serial) : base(serial)
         {
         }
+		
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning for future changes, start with version 0.
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version number, used for future migrations.
+        }		
     }	
 }

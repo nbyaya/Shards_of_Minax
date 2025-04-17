@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class SerpentsVenomDagger : Dagger
+public class SerpentsVenomDagger : PoisonBlade
 {
     [Constructable]
     public SerpentsVenomDagger()

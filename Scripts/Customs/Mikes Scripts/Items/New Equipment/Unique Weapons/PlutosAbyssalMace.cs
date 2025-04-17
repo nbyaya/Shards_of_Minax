@@ -3,12 +3,12 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class PlutosAbyssalMace : WarMace
+public class PlutosAbyssalMace : SewingNeedle
 {
     [Constructable]
     public PlutosAbyssalMace()
     {
-        Name = "Pluto's Abyssal Mace";
+        Name = "Pluto's Needle";
         Hue = Utility.Random(700, 2900);
         MinDamage = Utility.RandomMinMax(30, 85);
         MaxDamage = Utility.RandomMinMax(85, 125);

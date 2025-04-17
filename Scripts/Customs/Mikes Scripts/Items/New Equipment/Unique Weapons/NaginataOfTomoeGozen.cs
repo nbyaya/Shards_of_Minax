@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class NaginataOfTomoeGozen : Halberd
+public class NaginataOfTomoeGozen : ShadowSai
 {
     [Constructable]
     public NaginataOfTomoeGozen()

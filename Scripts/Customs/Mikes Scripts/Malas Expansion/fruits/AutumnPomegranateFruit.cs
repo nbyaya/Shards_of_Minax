@@ -24,26 +24,49 @@ namespace Server.Items
         public AutumnPomegranateFruit(Serial serial) : base(serial)
         {
         }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning for future changes
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version
+        }
     }
     
-	public class AutumnPomegranateFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a AutumnP omegranate plant";
-		public override int PlantHue => 1974;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0CA9; // Harvestable plant graphic
-		public override Type FruitType => typeof(AutumnPomegranateFruit);
+    public class AutumnPomegranateFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Autumn Pomegranate plant";
+        public override int PlantHue => 1974;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0CA9; // Harvestable plant graphic
+        public override Type FruitType => typeof(AutumnPomegranateFruit);
 
-		[Constructable]
-		public AutumnPomegranateFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+        [Constructable]
+        public AutumnPomegranateFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
-		public AutumnPomegranateFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        public AutumnPomegranateFruitplant(Serial serial) : base(serial)
+        {
+        }
 
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning for future changes
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version
+        }
+    }
 
     public class AutumnPomegranateFruitSeed : BaseFruitSeed
     {
@@ -60,5 +83,17 @@ namespace Server.Items
         public AutumnPomegranateFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // versioning for future changes
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version
+        }
+    }
 }

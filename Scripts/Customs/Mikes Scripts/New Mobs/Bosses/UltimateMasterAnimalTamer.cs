@@ -122,30 +122,52 @@ namespace Server.Mobiles
             }
         }
 
-        public void WildCommand()
-        {
-            ArrayList targets = new ArrayList();
+		public void WildCommand()
+		{
+			ArrayList targets = new ArrayList();
 
-            foreach (Mobile m in this.GetMobilesInRange(10))
-            {
-                if (m is BaseCreature && m != this && ((BaseCreature)m).Controlled && this.CanBeHarmful(m))
-                    targets.Add(m);
-            }
+			foreach (Mobile m in this.GetMobilesInRange(10))
+			{
+				if (m is BaseCreature bc && bc.Controlled && bc.ControlMaster != null && this.CanBeHarmful(m))
+					targets.Add(bc);
+			}
 
-            for (int i = 0; i < targets.Count; ++i)
-            {
-                Mobile m = (Mobile)targets[i];
+			for (int i = 0; i < targets.Count; ++i)
+			{
+				BaseCreature pet = (BaseCreature)targets[i];
+				Mobile master = pet.ControlMaster;
 
-                DoHarmful(m);
+				DoHarmful(pet);
 
-                ((BaseCreature)m).ControlMaster = this;
-                ((BaseCreature)m).ControlOrder = OrderType.Attack;
-                ((BaseCreature)m).ControlTarget = this.Combatant;
+				// Untame the creature
+				pet.SetControlMaster(null);
+				pet.IsBonded = false; // Optional: remove bonding
+				pet.Controlled = false;
+				pet.ControlTarget = null;
+				pet.ControlOrder = OrderType.None;
 
-                m.FixedParticles(0x3728, 10, 15, 5038, EffectLayer.Head);
-                m.PlaySound(0x209);
-            }
-        }
+				pet.Loyalty = BaseCreature.MaxLoyalty;
+
+				// Optional: make aggressive toward former master
+				if (pet.Combatant == null && pet.LastOwner != null)
+					pet.Combatant = pet.LastOwner;
+
+				pet.FixedParticles(0x3728, 10, 15, 5038, EffectLayer.Head);
+				pet.PlaySound(0x209);
+
+				// Messaging
+				pet.Say("*returns to the wild*");
+
+				if (master != null)
+				{
+					master.SendMessage(0x22, $"{pet.Name} breaks free from your control and returns to the wild!");
+				}
+			}
+
+			// Global emote or message from Steve Irwin
+			this.Say("Back to the wild with ya, mate!");
+		}
+
 
         public void CrocodileSpin()
         {

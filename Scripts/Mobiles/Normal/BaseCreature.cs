@@ -1645,25 +1645,41 @@ namespace Server.Mobiles
             return Damage(amount, from, informMount, false);
         }
 
-        public override int Damage(int amount, Mobile from, bool informMount, bool checkDisrupt)
-        {
-            int oldHits = Hits;
+		public override int Damage(int amount, Mobile from, bool informMount, bool checkDisrupt)
+		{
+			int oldHits = Hits;
 
-            if (Core.AOS && Controlled && from is BaseCreature && !((BaseCreature)from).Controlled && !((BaseCreature)from).Summoned)
-                amount = (int)(amount * ((BaseCreature)from).BonusPetDamageScalar);
+			// ✅ Apply bonus if the *attacker* is a controlled creature (i.e. minion)
+			if (from is BaseCreature attacker && attacker.Controlled && attacker.ControlMaster is PlayerMobile owner)
+			{
+				var profile = owner.AcquireTalents();
 
-            amount = base.Damage(amount, from, informMount, checkDisrupt);
+				if (profile != null && profile.Talents.TryGetValue(TalentID.MinionDamageBonus, out Talent minionTalent))
+				{
+					// Example: 5% bonus per point
+					double bonusMultiplier = 0 + (minionTalent.Points * 0.005);
+					amount = (int)(amount * bonusMultiplier);
+				}
+			}
 
-            if (SubdueBeforeTame && !Controlled)
-            {
-                if ((oldHits > ((double)HitsMax / 10)) && ((double)Hits <= ((double)HitsMax / 10)))
-                {
-                    PublicOverheadMessage(MessageType.Regular, 0x3B2, false, "* The creature has been beaten into subjugation! *");
-                }
-            }
+			// Original AOS bonus logic (optional, you can merge or remove as needed)
+			if (Core.AOS && Controlled && from is BaseCreature && !((BaseCreature)from).Controlled && !((BaseCreature)from).Summoned)
+				amount = (int)(amount * ((BaseCreature)from).BonusPetDamageScalar);
 
-            return amount;
-        }
+			amount = base.Damage(amount, from, informMount, checkDisrupt);
+
+			if (SubdueBeforeTame && !Controlled)
+			{
+				if ((oldHits > ((double)HitsMax / 10)) && ((double)Hits <= ((double)HitsMax / 10)))
+				{
+					PublicOverheadMessage(MessageType.Regular, 0x3B2, false, "* The creature has been beaten into subjugation! *");
+				}
+			}
+
+			return amount;
+		}
+
+
 
         public virtual bool DeleteCorpseOnDeath { get { return !Core.AOS && m_bSummoned; } }
 

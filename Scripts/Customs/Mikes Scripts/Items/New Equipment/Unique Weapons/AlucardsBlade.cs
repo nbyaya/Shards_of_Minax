@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class AlucardsBlade : Longsword
+public class AlucardsBlade : PoisonBlade
 {
     [Constructable]
     public AlucardsBlade()

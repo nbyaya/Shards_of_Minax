@@ -24,26 +24,51 @@ namespace Server.Items
         public BlackChoyFruit(Serial serial) : base(serial)
         {
         }
+
+        // Serialization/Deserialization
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            // Additional serialization logic (if needed)
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            // Additional deserialization logic (if needed)
+        }
     }
-    
-	public class BlackChoyFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a Black Choy plant";
-		public override int PlantHue => 2349;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0CA8; // Harvestable plant graphic
-		public override Type FruitType => typeof(BlackChoyFruit);
 
-		[Constructable]
-		public BlackChoyFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+    public class BlackChoyFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Black Choy plant";
+        public override int PlantHue => 2349;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0CA8; // Harvestable plant graphic
+        public override Type FruitType => typeof(BlackChoyFruit);
 
-		public BlackChoyFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        [Constructable]
+        public BlackChoyFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
+        public BlackChoyFruitplant(Serial serial) : base(serial)
+        {
+        }
+
+        // Serialization/Deserialization
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            // Additional serialization logic (if needed)
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            // Additional deserialization logic (if needed)
+        }
+    }
 
     public class BlackChoyFruitSeed : BaseFruitSeed
     {
@@ -60,5 +85,18 @@ namespace Server.Items
         public BlackChoyFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        // Serialization/Deserialization
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            // Additional serialization logic (if needed)
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            // Additional deserialization logic (if needed)
+        }
+    }
 }

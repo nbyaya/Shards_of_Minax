@@ -24,26 +24,49 @@ namespace Server.Items
         public chigionutFruit(Serial serial) : base(serial)
         {
         }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning, can be used for future updates
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version for future changes
+        }
     }
     
-	public class chigionutFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a chigionut fruit plant";
-		public override int PlantHue => 1634;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0D28; // Harvestable plant graphic
-		public override Type FruitType => typeof(chigionutFruit);
+    public class chigionutFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a chigionut fruit plant";
+        public override int PlantHue => 1634;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0D28; // Harvestable plant graphic
+        public override Type FruitType => typeof(chigionutFruit);
 
-		[Constructable]
-		public chigionutFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+        [Constructable]
+        public chigionutFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
-		public chigionutFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        public chigionutFruitplant(Serial serial) : base(serial)
+        {
+        }
 
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning, can be used for future updates
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version for future changes
+        }
+    }
 
     public class chigionutFruitSeed : BaseFruitSeed
     {
@@ -60,5 +83,17 @@ namespace Server.Items
         public chigionutFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning, can be used for future updates
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version for future changes
+        }
+    }
 }

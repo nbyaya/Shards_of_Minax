@@ -11,7 +11,7 @@ namespace Server.Mobiles
     {
         private DateTime m_NextLavaFlow;
         private DateTime m_NextVolcanicEruption;
-        private bool m_AbilitiesInitialized; // Flag to track if abilities have been initialized
+        private bool m_AbilitiesInitialized;
 
         [Constructable]
         public LavaFiendBoss()
@@ -24,18 +24,18 @@ namespace Server.Mobiles
             Hue = 1500; // Fiery red-orange hue
 
             // Update stats to match or exceed Barracoon
-            SetStr(1200); // Higher strength
-            SetDex(255); // Higher dexterity
-            SetInt(250); // Higher intelligence
+            SetStr(1200);
+            SetDex(255);
+            SetInt(250);
 
-            SetHits(12000); // Boss-tier health
-            SetDamage(45, 55); // Increased damage range for boss
+            SetHits(12000);
+            SetDamage(45, 55);
 
             SetDamageType(ResistanceType.Physical, 50);
             SetDamageType(ResistanceType.Fire, 25);
             SetDamageType(ResistanceType.Energy, 25);
 
-            SetResistance(ResistanceType.Physical, 75, 85); // Increased resistances
+            SetResistance(ResistanceType.Physical, 75, 85);
             SetResistance(ResistanceType.Fire, 80, 90);
             SetResistance(ResistanceType.Cold, 60, 70);
             SetResistance(ResistanceType.Poison, 75, 90);
@@ -49,18 +49,22 @@ namespace Server.Mobiles
             SetSkill(SkillName.Tactics, 100.0, 120.0);
             SetSkill(SkillName.Wrestling, 100.0, 120.0);
 
-            Fame = 30000; // Higher fame for the boss
-            Karma = -30000; // Higher karma loss for the boss
+            Fame = 30000;
+            Karma = -30000;
 
-            VirtualArmor = 100; // More virtual armor for the boss
+            VirtualArmor = 100;
 
             Tamable = false;
             ControlSlots = 0;
 
-            m_AbilitiesInitialized = false; // Initialize flag
+            m_AbilitiesInitialized = false;
 
-            // Attach a random ability
             XmlAttach.AttachTo(this, new XmlRandomAbility());
+        }
+
+        // 🔧 Serialization constructor added here
+        public LavaFiendBoss(Serial serial) : base(serial)
+        {
         }
 
         public override void GenerateLoot()
@@ -78,7 +82,7 @@ namespace Server.Mobiles
         {
             base.OnThink();
 
-            // Additional boss logic could be added here (like a special attack phase)
+            // Additional boss logic could be added here
         }
 
         public override void Serialize(GenericWriter writer)
@@ -92,7 +96,6 @@ namespace Server.Mobiles
             base.Deserialize(reader);
             int version = reader.ReadInt();
 
-            // Reset ability initialization state when deserializing
             m_AbilitiesInitialized = false;
         }
     }

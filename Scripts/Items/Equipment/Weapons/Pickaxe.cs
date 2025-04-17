@@ -128,6 +128,21 @@ namespace Server.Items
                 return WeaponAnimation.Slash1H;
             }
         }
+		
+		public override SkillName DefSkill
+        {
+            get
+            {
+                return SkillName.Mining;
+            }
+        }
+		
+        public override void AddNameProperties(ObjectPropertyList list)
+        {
+            base.AddNameProperties(list);
+            list.Add("Skill Required: Mining");
+        }		
+		
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

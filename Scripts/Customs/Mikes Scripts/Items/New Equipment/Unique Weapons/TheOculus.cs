@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class TheOculus : BlackStaff
+public class TheOculus : SpiritScepter
 {
     [Constructable]
     public TheOculus()

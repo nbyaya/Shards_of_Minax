@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class CelestialScimitar : Scimitar
+public class CelestialScimitar : LoreSword
 {
     [Constructable]
     public CelestialScimitar()

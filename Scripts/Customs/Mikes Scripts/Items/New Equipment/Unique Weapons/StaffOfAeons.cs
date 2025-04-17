@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class StaffOfAeons : GnarledStaff
+public class StaffOfAeons : MysticStaff
 {
     [Constructable]
     public StaffOfAeons()

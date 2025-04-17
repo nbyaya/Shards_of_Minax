@@ -21,29 +21,58 @@ namespace Server.Items
         {
         }
 
+        // This constructor handles serialization
         public AngelTurnipFruit(Serial serial) : base(serial)
         {
         }
+
+        // Implement the Serialize method
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write(0); // Versioning. For now, we're at version 0.
+        }
+
+        // Implement the Deserialize method
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version.
+        }
     }
-    
-	public class AngelTurnipFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a Angel Turnip plant";
-		public override int PlantHue => 2275;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0C84; // Harvestable plant graphic
-		public override Type FruitType => typeof(AngelTurnipFruit);
 
-		[Constructable]
-		public AngelTurnipFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+    public class AngelTurnipFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Angel Turnip plant";
+        public override int PlantHue => 2275;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0C84; // Harvestable plant graphic
+        public override Type FruitType => typeof(AngelTurnipFruit);
 
-		public AngelTurnipFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        [Constructable]
+        public AngelTurnipFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
+        // This constructor handles serialization
+        public AngelTurnipFruitplant(Serial serial) : base(serial)
+        {
+        }
+
+        // Implement the Serialize method
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write(0); // Versioning. For now, we're at version 0.
+        }
+
+        // Implement the Deserialize method
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version.
+        }
+    }
 
     public class AngelTurnipFruitSeed : BaseFruitSeed
     {
@@ -57,8 +86,23 @@ namespace Server.Items
         {
         }
 
+        // This constructor handles serialization
         public AngelTurnipFruitSeed(Serial serial) : base(serial)
         {
+        }
+
+        // Implement the Serialize method
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write(0); // Versioning. For now, we're at version 0.
+        }
+
+        // Implement the Deserialize method
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read the version.
         }
     }	
 }

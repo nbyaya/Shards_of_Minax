@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class ZhugeFeathersFan : GnarledStaff
+public class ZhugeFeathersFan : MeditationFans
 {
     [Constructable]
     public ZhugeFeathersFan()

@@ -14,7 +14,7 @@ namespace Server.Engines.XmlSpawner2
         private Timer m_ThinkTimer;
 
         [Attachable]
-        public XmlBubbleShield() 
+        public XmlBubbleShield()
         {
             StartThinking();
         }
@@ -25,6 +25,33 @@ namespace Server.Engines.XmlSpawner2
             m_BubbleShieldEnd = DateTime.UtcNow + TimeSpan.FromSeconds(duration);
             m_NextBubbleShield = DateTime.UtcNow + TimeSpan.FromSeconds(refractory);
             StartThinking();
+        }
+
+        // ** Required serial constructor **
+        public XmlBubbleShield(ASerial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write(0); // version
+
+            writer.Write(m_BubbleShieldEnd);
+            writer.Write(m_NextBubbleBurst);
+            writer.Write(m_NextBubbleShield);
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+
+            m_BubbleShieldEnd = reader.ReadDateTime();
+            m_NextBubbleBurst = reader.ReadDateTime();
+            m_NextBubbleShield = reader.ReadDateTime();
+
+            StartThinking(); // resume thinking after deserialization
         }
 
         private void StartThinking()

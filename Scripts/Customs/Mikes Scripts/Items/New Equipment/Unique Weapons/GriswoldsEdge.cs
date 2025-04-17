@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class GriswoldsEdge : BattleAxe
+public class GriswoldsEdge : RevealingAxe
 {
     [Constructable]
     public GriswoldsEdge()

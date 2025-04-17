@@ -24,26 +24,49 @@ namespace Server.Items
         public AngelRootFruit(Serial serial) : base(serial)
         {
         }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Version 0
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Version 0
+        }
     }
-    
-	public class AngelRootFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a Angel Root plant";
-		public override int PlantHue => 1495;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0C8B; // Harvestable plant graphic
-		public override Type FruitType => typeof(AngelRootFruit);
 
-		[Constructable]
-		public AngelRootFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+    public class AngelRootFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Angel Root plant";
+        public override int PlantHue => 1495;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0C8B; // Harvestable plant graphic
+        public override Type FruitType => typeof(AngelRootFruit);
 
-		public AngelRootFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        [Constructable]
+        public AngelRootFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
+        public AngelRootFruitplant(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Version 0
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Version 0
+        }
+    }
 
     public class AngelRootFruitSeed : BaseFruitSeed
     {
@@ -60,5 +83,17 @@ namespace Server.Items
         public AngelRootFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Version 0
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Version 0
+        }
+    }
 }

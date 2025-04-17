@@ -14,7 +14,14 @@ namespace Server.Engines.XmlSpawner2
         private int m_FearDuration = 13;
 
         [CommandProperty(AccessLevel.GameMaster)]
-        public int FearDuration { get { return m_FearDuration; } set { m_FearDuration = value; } }
+        public int FearDuration
+        {
+            get { return m_FearDuration; }
+            set { m_FearDuration = value; }
+        }
+
+        // ✅ Correct constructor for ServUO XmlSpawner2 (ASerial, not Serial)
+        public XmlTrueFear(ASerial serial) : base(serial) { }
 
         [Attachable]
         public XmlTrueFear() { }
@@ -52,7 +59,7 @@ namespace Server.Engines.XmlSpawner2
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write((int)0);
+            writer.Write((int)0); // version
             writer.Write(m_FearDuration);
             writer.WriteDeltaTime(m_NextTrueFearAllowed);
         }

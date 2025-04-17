@@ -133,6 +133,7 @@ namespace Server.ACC.CSS.Systems.ProvocationMagic
         // Inner classes for traps and distractions
         private class CaltropTrap : Item
         {
+            [Constructable]
             public CaltropTrap() : base(0x10B2) // Trap item ID
             {
                 Movable = false;
@@ -141,9 +142,27 @@ namespace Server.ACC.CSS.Systems.ProvocationMagic
                 Timer.DelayCall(TimeSpan.FromSeconds(0), CheckForStep);
             }
 
+            public CaltropTrap(Serial serial) : base(serial)
+            {
+            }
+
+            public override void Serialize(GenericWriter writer)
+            {
+                base.Serialize(writer);
+                writer.Write((int)0); // version
+            }
+
+            public override void Deserialize(GenericReader reader)
+            {
+                base.Deserialize(reader);
+                int version = reader.ReadInt();
+
+                // Restart trap logic after load
+                Timer.DelayCall(TimeSpan.FromSeconds(0), CheckForStep);
+            }
+
             private void CheckForStep()
             {
-                // Register a movement listener to detect when a mobile steps on the trap
                 new TrapDetectionTimer(this).Start();
             }
 
@@ -176,12 +195,29 @@ namespace Server.ACC.CSS.Systems.ProvocationMagic
 
         private class NoiseMaker : Item
         {
+            [Constructable]
             public NoiseMaker() : base(0x1E2D) // Noise item ID
             {
                 Movable = false;
                 Name = "Noise Maker";
                 Hue = 1150;
                 Timer.DelayCall(TimeSpan.FromSeconds(10), Delete); // Deletes after 10 seconds
+            }
+
+            public NoiseMaker(Serial serial) : base(serial)
+            {
+            }
+
+            public override void Serialize(GenericWriter writer)
+            {
+                base.Serialize(writer);
+                writer.Write((int)0); // version
+            }
+
+            public override void Deserialize(GenericReader reader)
+            {
+                base.Deserialize(reader);
+                int version = reader.ReadInt();
             }
 
             public override void OnDoubleClick(Mobile from)
@@ -191,5 +227,6 @@ namespace Server.ACC.CSS.Systems.ProvocationMagic
                 from.SendMessage("The noise maker creates a loud distraction!");
             }
         }
+
     }
 }

@@ -46,6 +46,7 @@ using Server.ACC.CSS.Systems.TasteIDMagic;
 using Server.ACC.CSS.Systems.TrackingMagic;
 using Server.ACC.CSS.Systems.VeterinaryMagic;
 using Server.ACC.CSS.Systems.WrestlingMagic;
+using Server.ACC.CSS.Systems.SpiritSpeakMagic;
 #endregion
 
 namespace Server
@@ -715,6 +716,7 @@ namespace Server
 				typeof( TrackingSpellbook ),
 				typeof( VeterinarySpellbook ),
 				typeof( WrestlingSpellbook ),
+				typeof( SpiritSpeakSpellbook ),
 				typeof( TheForgottenFortress ),
 				typeof( EnigmaOfElementalEquilibrium )
 		};

@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class PaladinsChrysblade : TwoHandedAxe
+public class PaladinsChrysblade : HolyKnightSword
 {
     [Constructable]
     public PaladinsChrysblade()

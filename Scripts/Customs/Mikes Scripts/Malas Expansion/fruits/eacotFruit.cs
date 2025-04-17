@@ -24,26 +24,53 @@ namespace Server.Items
         public eacotFruit(Serial serial) : base(serial)
         {
         }
+
+        // Override the OnSerialize method to define what gets serialized for this class
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            // Add any custom serialization logic here if needed (e.g. properties, fields).
+        }
+
+        // Override the OnDeserialize method to define how the object is restored
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            // Add any custom deserialization logic here if needed.
+        }
     }
     
-	public class eacotFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a eacot fruit plant";
-		public override int PlantHue => 2225;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0CA5; // Harvestable plant graphic
-		public override Type FruitType => typeof(eacotFruit);
+    public class eacotFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a eacot fruit plant";
+        public override int PlantHue => 2225;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0CA5; // Harvestable plant graphic
+        public override Type FruitType => typeof(eacotFruit);
 
-		[Constructable]
-		public eacotFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+        [Constructable]
+        public eacotFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
-		public eacotFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        public eacotFruitplant(Serial serial) : base(serial)
+        {
+        }
 
+        // Override the OnSerialize method to define what gets serialized for this class
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            // Add any custom serialization logic here if needed (e.g. properties, fields).
+        }
+
+        // Override the OnDeserialize method to define how the object is restored
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            // Add any custom deserialization logic here if needed.
+        }
+    }
 
     public class eacotFruitSeed : BaseFruitSeed
     {
@@ -60,5 +87,19 @@ namespace Server.Items
         public eacotFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        // Override the OnSerialize method to define what gets serialized for this class
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            // Add any custom serialization logic here if needed (e.g. properties, fields).
+        }
+
+        // Override the OnDeserialize method to define how the object is restored
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            // Add any custom deserialization logic here if needed.
+        }
+    }
 }

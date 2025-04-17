@@ -21,6 +21,65 @@ namespace Server.Items
         {
         }
 
+		private double _herdingBonus = 0.0;
+
+		public override bool OnEquip(Mobile from)
+		{
+			if (from is PlayerMobile pm)
+			{
+				double herdingSkill = pm.Skills[SkillName.Herding].Value;
+				double bonus = herdingSkill * 0.10;
+
+				var profile = pm.AcquireTalents();
+				if (!profile.Talents.TryGetValue(TalentID.MinionDamageBonus, out Talent talent))
+				{
+					talent = new Talent(TalentID.MinionDamageBonus);
+					profile.Talents[TalentID.MinionDamageBonus] = talent;
+				}
+
+				_herdingBonus = bonus;
+				talent.Points += (int)(_herdingBonus / 0.05); // Assuming 5% = 1 point
+
+				pm.SendMessage(0x3B2, $"The Shepherd's Crook grants your minions +{bonus * 5:0.0}% damage based on your Herding skill.");
+
+			}
+
+			return base.OnEquip(from);
+		}
+
+		public override void OnRemoved(object parent)
+		{
+			if (parent is PlayerMobile pm && _herdingBonus > 0)
+			{
+				var profile = pm.AcquireTalents();
+				if (profile.Talents.TryGetValue(TalentID.MinionDamageBonus, out Talent talent))
+				{
+					int pointsToRemove = (int)(_herdingBonus / 0.05);
+					talent.Points = Math.Max(0, talent.Points - pointsToRemove);
+				}
+
+				pm.SendMessage(0x3B2, $"The Shepherd's Crook's minion bonus has worn off.");
+				_herdingBonus = 0;
+			}
+
+			base.OnRemoved(parent);
+		}
+
+		public override void GetProperties(ObjectPropertyList list)
+		{
+			base.GetProperties(list);
+
+			if (RootParent is PlayerMobile pm)
+			{
+				double herdingSkill = pm.Skills[SkillName.Herding].Value;
+				double bonusPoints = herdingSkill * 0.10; // Each point = +5%
+				double totalBonusPercent = bonusPoints * 5; // Convert to percent
+
+				list.Add($"Minion Damage Bonus: +{totalBonusPercent:0.0}% (from Herding)");
+			}
+		}
+
+
         public override WeaponAbility PrimaryAbility
         {
             get
@@ -112,6 +171,20 @@ namespace Server.Items
                 return 50;
             }
         }
+
+		public override SkillName DefSkill
+        {
+            get
+            {
+                return SkillName.Herding;
+            }
+        }
+		
+        public override void AddNameProperties(ObjectPropertyList list)
+        {
+            base.AddNameProperties(list);
+            list.Add("Skill Required: Herding");
+        }	
 
         public override bool CanBeWornByGargoyles { get { return true; } }
 

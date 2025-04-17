@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class WandOfWoh : BlackStaff
+public class WandOfWoh : MageWand
 {
     [Constructable]
     public WandOfWoh()

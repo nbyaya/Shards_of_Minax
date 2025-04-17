@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class FrostflameKatana : Katana
+public class FrostflameKatana : MallKatana
 {
     [Constructable]
     public FrostflameKatana()

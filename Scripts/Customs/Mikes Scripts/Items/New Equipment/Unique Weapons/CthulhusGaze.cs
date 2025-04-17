@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class CthulhusGaze : WarHammer
+public class CthulhusGaze : BoltRod
 {
     [Constructable]
     public CthulhusGaze()

@@ -1,4 +1,5 @@
 using System;
+using Server;
 using Server.Mobiles;
 using Server.Network;
 using Server.Spells;
@@ -18,14 +19,10 @@ namespace Server.ACC.CSS.Systems.TacticsMagic
             Reagent.SpidersSilk
         );
 
-        public override SpellCircle Circle
-        {
-            get { return SpellCircle.Fifth; }
-        }
-
-        public override double CastDelay { get { return 0.1; } }
-        public override double RequiredSkill { get { return 50.0; } }
-        public override int RequiredMana { get { return 20; } }
+        public override SpellCircle Circle => SpellCircle.Fifth;
+        public override double CastDelay => 0.1;
+        public override double RequiredSkill => 50.0;
+        public override int RequiredMana => 20;
 
         public TacticalRetreat(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
         {
@@ -59,7 +56,6 @@ namespace Server.ACC.CSS.Systems.TacticsMagic
 
         private Point3D GetRetreatLocation(Mobile caster)
         {
-            // Calculate a location a few tiles away from the caster
             Point3D location = caster.Location;
             Map map = caster.Map;
 
@@ -73,67 +69,79 @@ namespace Server.ACC.CSS.Systems.TacticsMagic
                     return new Point3D(x, y, z);
             }
 
-            return location; // Fallback to the original location if no suitable location is found
+            return location; // fallback if no good spot found
         }
 
-		private class Decoy : BaseCreature
-		{
-			private Timer m_Timer;
+        private class Decoy : BaseCreature
+        {
+            private Timer m_Timer;
 
-			// Parameterless constructor for serialization
-			public Decoy() : base(AIType.AI_Archer, FightMode.None, 10, 1, 0.2, 0.4)
-			{
-				// Default properties
-				Body = 0; // Default body ID, will be set later
-				Blessed = true;
-			}
+            // Parameterless constructor
+            public Decoy() : base(AIType.AI_Archer, FightMode.None, 10, 1, 0.2, 0.4)
+            {
+                Body = 0; // will be set later
+                Blessed = true;
+            }
 
-			public Decoy(int bodyID) : this()
-			{
-				Body = bodyID;
+            public Decoy(int bodyID) : this()
+            {
+                Body = bodyID;
+                SetStr(50);
+                SetDex(50);
+                SetInt(10);
+                Hits = HitsMax;
 
-				// Initialize stats for the decoy
-				SetStr(50); // Set appropriate strength
-				SetDex(50); // Set appropriate dexterity
-				SetInt(10); // Set appropriate intelligence
+                Hue = 0;
+                Name = "Decoy";
+                SpeechHue = 0;
+                HairItemID = 0;
+                FacialHairItemID = 0;
 
-				Hits = HitsMax; // Now HitsMax will be based on the initialized stats
+                m_Timer = new DecoyTimer(this);
+                m_Timer.Start();
+            }
 
-				// Basic appearance and properties
-				Hue = 0; // Default or set appropriate hue if needed
-				Name = "Decoy";
-				SpeechHue = 0; // Default or set appropriate speech hue if needed
-				HairItemID = 0; // Default or set appropriate hair item ID if needed
-				FacialHairItemID = 0; // Default or set appropriate facial hair item ID if needed
+            // Required for serialization
+            public Decoy(Serial serial) : base(serial)
+            {
+            }
 
-				// Start the timer to delete the decoy after a short duration
-				m_Timer = new DecoyTimer(this);
-				m_Timer.Start();
-			}
+            public override void Serialize(GenericWriter writer)
+            {
+                base.Serialize(writer);
+                writer.Write((int)0); // version
+            }
 
-			public override void OnDelete()
-			{
-				base.OnDelete();
-				if (m_Timer != null)
-					m_Timer.Stop();
-			}
+            public override void Deserialize(GenericReader reader)
+            {
+                base.Deserialize(reader);
+                int version = reader.ReadInt();
 
-			private class DecoyTimer : Timer
-			{
-				private BaseCreature m_Decoy;
+                // Restart timer when loaded if needed
+                m_Timer = new DecoyTimer(this);
+                m_Timer.Start();
+            }
 
-				public DecoyTimer(BaseCreature decoy) : base(TimeSpan.FromSeconds(10.0))
-				{
-					m_Decoy = decoy;
-				}
+            public override void OnDelete()
+            {
+                base.OnDelete();
+                m_Timer?.Stop();
+            }
 
-				protected override void OnTick()
-				{
-					m_Decoy.Delete();
-				}
-			}
-		}
+            private class DecoyTimer : Timer
+            {
+                private BaseCreature m_Decoy;
 
+                public DecoyTimer(BaseCreature decoy) : base(TimeSpan.FromSeconds(10.0))
+                {
+                    m_Decoy = decoy;
+                }
 
+                protected override void OnTick()
+                {
+                    m_Decoy?.Delete();
+                }
+            }
+        }
     }
 }

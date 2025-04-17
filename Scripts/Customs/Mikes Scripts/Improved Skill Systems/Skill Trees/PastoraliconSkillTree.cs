@@ -272,13 +272,13 @@ namespace Server.ACC.CSS.Systems.PastoraliconMagic
             nodeIndex <<= 1;
             var shepherdsInsight = new SkillNode(nodeIndex, "Shepherd's Insight", 6, "Increases flock awareness", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconGuidance].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
             var gentleHand = new SkillNode(nodeIndex, "Gentle Hand", 6, "Improves animal handling", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconEfficiency].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -290,7 +290,7 @@ namespace Server.ACC.CSS.Systems.PastoraliconMagic
             nodeIndex <<= 1;
             var naturesProvision = new SkillNode(nodeIndex, "Nature's Provision", 6, "Increases yield from livestock", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconYield].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             Root.AddChild(shepherdsInsight);
@@ -308,7 +308,7 @@ namespace Server.ACC.CSS.Systems.PastoraliconMagic
             nodeIndex <<= 1;
             var quickCommand = new SkillNode(nodeIndex, "Quick Command", 7, "Improves handling speed", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconEfficiency].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -320,7 +320,7 @@ namespace Server.ACC.CSS.Systems.PastoraliconMagic
             nodeIndex <<= 1;
             var fieldsBlessing = new SkillNode(nodeIndex, "Field's Blessing", 7, "Increases flock guidance", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconGuidance].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             shepherdsInsight.AddChild(animalEmpathy);
@@ -332,13 +332,13 @@ namespace Server.ACC.CSS.Systems.PastoraliconMagic
             nodeIndex <<= 1;
             var flockFortitude = new SkillNode(nodeIndex, "Flock Fortitude", 8, "Enhances livestock yield", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconYield].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
             var swiftPacing = new SkillNode(nodeIndex, "Swift Pacing", 8, "Further improves handling speed", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconEfficiency].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -350,7 +350,7 @@ namespace Server.ACC.CSS.Systems.PastoraliconMagic
             nodeIndex <<= 1;
             var naturalGrace = new SkillNode(nodeIndex, "Natural Grace", 8, "Improves reaction to animal cues", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconEfficiency].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             animalEmpathy.AddChild(flockFortitude);
@@ -362,7 +362,7 @@ namespace Server.ACC.CSS.Systems.PastoraliconMagic
             nodeIndex <<= 1;
             var meadowsBoon = new SkillNode(nodeIndex, "Meadow's Boon", 9, "Enhances livestock yield further", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconYield].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -380,7 +380,7 @@ namespace Server.ACC.CSS.Systems.PastoraliconMagic
             nodeIndex <<= 1;
             var openRange = new SkillNode(nodeIndex, "Open Range", 9, "Boosts herd guidance", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconGuidance].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             flockFortitude.AddChild(meadowsBoon);
@@ -392,13 +392,13 @@ namespace Server.ACC.CSS.Systems.PastoraliconMagic
             nodeIndex <<= 1;
             var primevalHerding = new SkillNode(nodeIndex, "Primeval Herding", 10, "Boosts overall handling efficiency", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconEfficiency].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
             var abundantGrazing = new SkillNode(nodeIndex, "Abundant Grazing", 10, "Boosts yield from livestock", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconYield].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -410,7 +410,7 @@ namespace Server.ACC.CSS.Systems.PastoraliconMagic
             nodeIndex <<= 1;
             var herdMomentum = new SkillNode(nodeIndex, "Herd Momentum", 10, "Increases command speed", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconEfficiency].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             meadowsBoon.AddChild(primevalHerding);
@@ -422,13 +422,13 @@ namespace Server.ACC.CSS.Systems.PastoraliconMagic
             nodeIndex <<= 1;
             var expandedPerception = new SkillNode(nodeIndex, "Expanded Perception", 11, "Enhances flock awareness", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconGuidance].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
             var mysticPasture = new SkillNode(nodeIndex, "Mystic Pasture", 11, "Boosts yield with magic", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconYield].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
@@ -440,7 +440,7 @@ namespace Server.ACC.CSS.Systems.PastoraliconMagic
             nodeIndex <<= 1;
             var herdingTransformation = new SkillNode(nodeIndex, "Herding Transformation", 11, "Increases magical efficiency", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconEfficiency].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             primevalHerding.AddChild(expandedPerception);
@@ -458,19 +458,19 @@ namespace Server.ACC.CSS.Systems.PastoraliconMagic
             nodeIndex <<= 1;
             var naturesEndowment = new SkillNode(nodeIndex, "Nature's Endowment", 12, "Further increases yield", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconYield].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
             var pastoralFury = new SkillNode(nodeIndex, "Pastoral Fury", 12, "Boosts herding power", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconEfficiency].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             nodeIndex <<= 1;
             var wildEchoes = new SkillNode(nodeIndex, "Wild Echoes", 12, "Enhances guidance with wild energy", (p) =>
             {
-                profile.Talents[TalentID.PastoraliconGuidance].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             expandedPerception.AddChild(barrierOfFleece);
@@ -483,9 +483,9 @@ namespace Server.ACC.CSS.Systems.PastoraliconMagic
             var ultimateShepherd = new SkillNode(nodeIndex, "Ultimate Shepherd", 13, "Ultimate bonus: boosts all herding skills", (p) =>
             {
                 profile.Talents[TalentID.PastoraliconSpells].Points |= 0x800 | 0x1000;
-                profile.Talents[TalentID.PastoraliconGuidance].Points += 1;
-                profile.Talents[TalentID.PastoraliconEfficiency].Points += 1;
-                profile.Talents[TalentID.PastoraliconYield].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
+                profile.Talents[TalentID.MinionDamageBonus].Points += 1;
             });
 
             foreach (var node in new[] { barrierOfFleece, wildEchoes, pastoralFury, naturesEndowment })

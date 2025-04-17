@@ -3,12 +3,12 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class ReflectionShield : VikingSword
+public class ReflectionShield : TacticalMultitool
 {
     [Constructable]
     public ReflectionShield()
     {
-        Name = "Reflection Shield";
+        Name = "Reflective Multitool";
         Hue = Utility.Random(150, 2900);
         MinDamage = Utility.RandomMinMax(30, 70);
         MaxDamage = Utility.RandomMinMax(70, 110);

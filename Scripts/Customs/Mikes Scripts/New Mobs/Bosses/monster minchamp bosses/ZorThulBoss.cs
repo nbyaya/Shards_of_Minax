@@ -57,9 +57,13 @@ namespace Server.Mobiles
             ControlSlots = 0;
             MinTameSkill = 0;
 
-
             // Attach a random ability for extra challenge
             XmlAttach.AttachTo(this, new XmlRandomAbility());
+        }
+
+        // ✅ REQUIRED for deserialization!
+        public ZorThulBoss(Serial serial) : base(serial)
+        {
         }
 
         public override void GenerateLoot()
@@ -90,7 +94,6 @@ namespace Server.Mobiles
         {
             base.Deserialize(reader);
             int version = reader.ReadInt();
-
         }
     }
 }

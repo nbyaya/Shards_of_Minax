@@ -21,29 +21,58 @@ namespace Server.Items
         {
         }
 
+        // Deserialize constructor
         public eacketFruit(Serial serial) : base(serial)
         {
         }
+
+        // Properly serialize the object (if necessary for this type)
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write(0); // versioning, can be incremented when breaking backward compatibility
+        }
+
+        // Properly deserialize the object
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version
+        }
     }
-    
-	public class eacketFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a eacket fruit plant";
-		public override int PlantHue => 2502;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0C94; // Harvestable plant graphic
-		public override Type FruitType => typeof(eacketFruit);
 
-		[Constructable]
-		public eacketFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+    public class eacketFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a eacket fruit plant";
+        public override int PlantHue => 2502;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0C94; // Harvestable plant graphic
+        public override Type FruitType => typeof(eacketFruit);
 
-		public eacketFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        [Constructable]
+        public eacketFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
+        // Deserialize constructor
+        public eacketFruitplant(Serial serial) : base(serial)
+        {
+        }
+
+        // Properly serialize the object (if necessary for this type)
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write(0); // versioning, can be incremented when breaking backward compatibility
+        }
+
+        // Properly deserialize the object
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version
+        }
+    }
 
     public class eacketFruitSeed : BaseFruitSeed
     {
@@ -57,8 +86,23 @@ namespace Server.Items
         {
         }
 
+        // Deserialize constructor
         public eacketFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        // Properly serialize the object (if necessary for this type)
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write(0); // versioning, can be incremented when breaking backward compatibility
+        }
+
+        // Properly deserialize the object
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version
+        }
+    }
 }

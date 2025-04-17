@@ -24,26 +24,51 @@ namespace Server.Items
         public DaydreamPommeracFruit(Serial serial) : base(serial)
         {
         }
+
+        // Add proper serialization
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning: 0 for this version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version, currently not used, but for future proofing
+        }
     }
-    
-	public class DaydreamPommeracFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a Daydream Pommerac plant";
-		public override int PlantHue => 1330;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0D27; // Harvestable plant graphic
-		public override Type FruitType => typeof(DaydreamPommeracFruit);
 
-		[Constructable]
-		public DaydreamPommeracFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+    public class DaydreamPommeracFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Daydream Pommerac plant";
+        public override int PlantHue => 1330;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0D27; // Harvestable plant graphic
+        public override Type FruitType => typeof(DaydreamPommeracFruit);
 
-		public DaydreamPommeracFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        [Constructable]
+        public DaydreamPommeracFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
+        public DaydreamPommeracFruitplant(Serial serial) : base(serial)
+        {
+        }
+
+        // Add proper serialization
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning: 0 for this version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version, currently not used, but for future proofing
+        }
+    }
 
     public class DaydreamPommeracFruitSeed : BaseFruitSeed
     {
@@ -60,5 +85,18 @@ namespace Server.Items
         public DaydreamPommeracFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        // Add proper serialization
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)0); // Versioning: 0 for this version
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt(); // Read version, currently not used, but for future proofing
+        }
+    }
 }

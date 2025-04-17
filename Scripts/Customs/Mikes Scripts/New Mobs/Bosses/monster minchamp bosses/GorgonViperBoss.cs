@@ -16,8 +16,7 @@ namespace Server.Mobiles
         private bool m_AbilitiesInitialized;
 
         [Constructable]
-        public GorgonViperBoss()
-            : base()
+        public GorgonViperBoss() : base()
         {
             Name = "Gorgon Viper, the Overlord";
             Title = "the Supreme Serpent";
@@ -41,24 +40,28 @@ namespace Server.Mobiles
             SetResistance(ResistanceType.Poison, 80, 95);   // Enhanced poison resistance
             SetResistance(ResistanceType.Energy, 50, 70);   // Enhanced energy resistance
 
-            SetSkill(SkillName.Anatomy, 50.0, 75.0);   // Slightly higher skill in anatomy
-            SetSkill(SkillName.EvalInt, 100.0, 120.0); // Higher EvalInt skill
-            SetSkill(SkillName.Magery, 100.0, 120.0);  // Higher Magery skill
-            SetSkill(SkillName.Meditation, 50.0, 75.0); // Slightly higher meditation
-            SetSkill(SkillName.MagicResist, 150.0, 200.0); // Boss-level magic resistance
-            SetSkill(SkillName.Tactics, 100.0, 120.0);  // Higher Tactics skill
-            SetSkill(SkillName.Wrestling, 100.0, 120.0); // Higher Wrestling skill
+            SetSkill(SkillName.Anatomy, 50.0, 75.0);
+            SetSkill(SkillName.EvalInt, 100.0, 120.0);
+            SetSkill(SkillName.Magery, 100.0, 120.0);
+            SetSkill(SkillName.Meditation, 50.0, 75.0);
+            SetSkill(SkillName.MagicResist, 150.0, 200.0);
+            SetSkill(SkillName.Tactics, 100.0, 120.0);
+            SetSkill(SkillName.Wrestling, 100.0, 120.0);
 
-            Fame = 30000; // Enhanced fame
-            Karma = -30000; // Enhanced karma for a boss
+            Fame = 30000;
+            Karma = -30000;
 
-            VirtualArmor = 120; // Enhanced virtual armor
+            VirtualArmor = 120;
 
-            Tamable = false; // Not tamable, as a boss should be
+            Tamable = false;
 
             // Attach a random ability for additional boss flair
             XmlAttach.AttachTo(this, new XmlRandomAbility());
+        }
 
+        // Serialization constructor - this is what was missing
+        public GorgonViperBoss(Serial serial) : base(serial)
+        {
         }
 
         public override void GenerateLoot()
@@ -77,8 +80,6 @@ namespace Server.Mobiles
             base.OnThink();
             // Additional logic for the boss could be added here
         }
-
-        // Boss-specific ability overrides remain the same as the original class
 
         public override void Serialize(GenericWriter writer)
         {

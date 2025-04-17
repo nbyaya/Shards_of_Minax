@@ -59,6 +59,11 @@ namespace Server.Mobiles
             m_AbilitiesInitialized = false; // Set the flag to false
         }
 
+        // ✨ MISSING constructor added here:
+        public BengalStormBoss(Serial serial) : base(serial)
+        {
+        }
+
         public override void GenerateLoot()
         {
             base.GenerateLoot();
@@ -87,7 +92,6 @@ namespace Server.Mobiles
         {
             base.Deserialize(reader);
             int version = reader.ReadInt();
-
         }
     }
 }

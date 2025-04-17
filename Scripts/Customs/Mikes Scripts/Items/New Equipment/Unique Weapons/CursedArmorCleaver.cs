@@ -3,12 +3,12 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class CursedArmorCleaver : Cleaver
+public class CursedArmorCleaver : CooksCleaver
 {
     [Constructable]
     public CursedArmorCleaver()
     {
-        Name = "Cursed Armor Cleaver";
+        Name = "Cursed Cleaver";
         Hue = Utility.Random(700, 2900);
         MinDamage = Utility.RandomMinMax(15, 65);
         MaxDamage = Utility.RandomMinMax(65, 105);

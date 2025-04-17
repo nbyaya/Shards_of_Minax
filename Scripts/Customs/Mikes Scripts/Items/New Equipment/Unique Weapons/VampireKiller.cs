@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class VampireKiller : WarFork
+public class VampireKiller : GourmandsFork
 {
     [Constructable]
     public VampireKiller()

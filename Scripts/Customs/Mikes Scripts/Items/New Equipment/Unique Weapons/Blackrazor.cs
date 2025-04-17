@@ -3,7 +3,7 @@ using Server;
 using Server.Items;
 using Server.Engines.XmlSpawner2;
 
-public class Blackrazor : Longsword
+public class Blackrazor : Scalpel
 {
     [Constructable]
     public Blackrazor()

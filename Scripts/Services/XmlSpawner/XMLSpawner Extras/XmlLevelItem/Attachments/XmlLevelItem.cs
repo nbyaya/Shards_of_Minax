@@ -54,7 +54,7 @@ namespace Server.Engines.XmlSpawner2
         {
             base.OnAttach();
 
-            if (AttachedTo is BaseWeapon || AttachedTo is BaseArmor || AttachedTo is BaseJewel || AttachedTo is BaseClothing)
+            if (AttachedTo is BaseWeapon || AttachedTo is BaseArmor || AttachedTo is BaseJewel || AttachedTo is BaseClothing || AttachedTo is BaseQuiver)
             {
                 InvalidateParentProperties();
             }

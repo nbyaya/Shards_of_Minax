@@ -24,26 +24,57 @@ namespace Server.Items
         public DrakeMangoFruit(Serial serial) : base(serial)
         {
         }
+
+        // Override the Serialize method to handle custom serialization
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer); // Serialize the base class first
+            writer.Write((int)0); // Version number
+            // Additional fields can be serialized here if needed
+        }
+
+        // Override the Deserialize method to handle custom deserialization
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader); // Deserialize the base class first
+            int version = reader.ReadInt(); // Read the version number
+            // Additional deserialization logic can be added here if needed
+        }
     }
-    
-	public class DrakeMangoFruitplant : BaseFruitPlant
-	{
-		public override string PlantName => "a Drake Mango plant";
-		public override int PlantHue => 512;
-		public override int SeedGraphic => 0x0C45; // Seeds graphic
-		public override int HarvestableGraphic => 0x0D2C; // Harvestable plant graphic
-		public override Type FruitType => typeof(DrakeMangoFruit);
 
-		[Constructable]
-		public DrakeMangoFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
-		{
-		}
+    public class DrakeMangoFruitplant : BaseFruitPlant
+    {
+        public override string PlantName => "a Drake Mango plant";
+        public override int PlantHue => 512;
+        public override int SeedGraphic => 0x0C45; // Seeds graphic
+        public override int HarvestableGraphic => 0x0D2C; // Harvestable plant graphic
+        public override Type FruitType => typeof(DrakeMangoFruit);
 
-		public DrakeMangoFruitplant(Serial serial) : base(serial)
-		{
-		}
-	}
+        [Constructable]
+        public DrakeMangoFruitplant() : base(0x0C45) // Pass SeedGraphic to base constructor
+        {
+        }
 
+        public DrakeMangoFruitplant(Serial serial) : base(serial)
+        {
+        }
+
+        // Override the Serialize method to handle custom serialization
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer); // Serialize the base class first
+            writer.Write((int)0); // Version number
+            // Additional fields can be serialized here if needed
+        }
+
+        // Override the Deserialize method to handle custom deserialization
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader); // Deserialize the base class first
+            int version = reader.ReadInt(); // Read the version number
+            // Additional deserialization logic can be added here if needed
+        }
+    }
 
     public class DrakeMangoFruitSeed : BaseFruitSeed
     {
@@ -60,5 +91,21 @@ namespace Server.Items
         public DrakeMangoFruitSeed(Serial serial) : base(serial)
         {
         }
-    }	
+
+        // Override the Serialize method to handle custom serialization
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer); // Serialize the base class first
+            writer.Write((int)0); // Version number
+            // Additional fields can be serialized here if needed
+        }
+
+        // Override the Deserialize method to handle custom deserialization
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader); // Deserialize the base class first
+            int version = reader.ReadInt(); // Read the version number
+            // Additional deserialization logic can be added here if needed
+        }
+    }
 }

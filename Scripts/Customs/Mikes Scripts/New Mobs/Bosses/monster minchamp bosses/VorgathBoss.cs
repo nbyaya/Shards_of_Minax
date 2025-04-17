@@ -64,6 +64,11 @@ namespace Server.Mobiles
             XmlAttach.AttachTo(this, new XmlRandomAbility());
         }
 
+        // This is the missing serialization constructor
+        public VorgathBoss(Serial serial) : base(serial)
+        {
+        }
+
         public override void GenerateLoot()
         {
             base.GenerateLoot();

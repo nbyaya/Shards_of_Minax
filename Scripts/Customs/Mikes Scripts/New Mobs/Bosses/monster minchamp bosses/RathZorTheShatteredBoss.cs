@@ -22,13 +22,13 @@ namespace Server.Mobiles
             BaseSoundID = 377;
 
             // Enhanced Stats for Boss
-            SetStr(1200); // Upper range of strength for boss-tier
-            SetDex(255); // Upper range of dexterity
-            SetInt(250); // High intelligence for more power
+            SetStr(1200);
+            SetDex(255);
+            SetInt(250);
 
-            SetHits(12000); // High health for a boss-tier creature
+            SetHits(12000);
 
-            SetDamage(35, 50); // Increased damage output
+            SetDamage(35, 50);
 
             SetDamageType(ResistanceType.Physical, 50);
             SetDamageType(ResistanceType.Fire, 30);
@@ -53,11 +53,18 @@ namespace Server.Mobiles
 
             VirtualArmor = 100;
 
-            Tamable = false; // Boss should not be tamable
-            MinTameSkill = 0; // Ensure no one can tame
+            Tamable = false;
+            MinTameSkill = 0;
 
-            m_AbilitiesInitialized = false; // Initialize flag
-            XmlAttach.AttachTo(this, new XmlRandomAbility()); PackItem(new BossTreasureBox());
+            m_AbilitiesInitialized = false;
+
+            XmlAttach.AttachTo(this, new XmlRandomAbility());
+            PackItem(new BossTreasureBox());
+        }
+
+        // 🔧 THIS is the missing constructor that fixes the warning!
+        public RathZorTheShatteredBoss(Serial serial) : base(serial)
+        {
         }
 
         public override void GenerateLoot()
@@ -65,14 +72,15 @@ namespace Server.Mobiles
             base.GenerateLoot();
 
             PackItem(new BossTreasureBox());
+
             for (int i = 0; i < 5; i++)
             {
                 PackItem(new MaxxiaScroll());
             }
 
-            this.AddLoot(LootPack.FilthyRich, 2); // Rich loot
+            this.AddLoot(LootPack.FilthyRich, 2);
             this.AddLoot(LootPack.Rich);
-            this.AddLoot(LootPack.Gems, 8); // Add additional gems for the boss-tier loot
+            this.AddLoot(LootPack.Gems, 8);
         }
 
         public override void OnThink()

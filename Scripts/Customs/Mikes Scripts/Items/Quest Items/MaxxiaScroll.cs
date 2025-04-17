@@ -25,40 +25,41 @@ namespace Server.Items
         {
         }
 
-        public override void OnDoubleClick(Mobile from)
-        {
-            if (from is PlayerMobile player)
-            {
-                // Ensure the player is alive and can see the item
-                if (!IsChildOf(player.Backpack))
-                {
-                    player.SendMessage("This must be in your backpack to use.");
-                    return;
-                }
+		public override void OnDoubleClick(Mobile from)
+		{
+			if (from is PlayerMobile player)
+			{
+				if (!IsChildOf(player.Backpack))
+				{
+					player.SendMessage("This must be in your backpack to use.");
+					return;
+				}
 
-                // Award one Talent Point
-                var profile = player.AcquireTalents();
-                if (!profile.Talents.TryGetValue(TalentID.AncientKnowledge, out var talent))
-                {
-                    talent = new Talent(TalentID.AncientKnowledge);
-                    profile.Talents[TalentID.AncientKnowledge] = talent;
-                }
-                talent.Points++;
+				int consumed = this.Amount;
 
-                // Inform the player
-                player.SendMessage("You have consumed a Maxxia Scroll and gained a Talent Point!");
+				if (consumed <= 0)
+				{
+					player.SendMessage("There are no scrolls to consume.");
+					return;
+				}
 
-                // Consume one scroll
-                if (Amount > 1)
-                {
-                    Amount--; // Reduce stack by one
-                }
-                else
-                {
-                    Delete(); // Remove the item if it's the last one
-                }
-            }
-        }
+				// Award one Talent Point per scroll
+				var profile = player.AcquireTalents();
+				if (!profile.Talents.TryGetValue(TalentID.AncientKnowledge, out var talent))
+				{
+					talent = new Talent(TalentID.AncientKnowledge);
+					profile.Talents[TalentID.AncientKnowledge] = talent;
+				}
+
+				talent.Points += consumed;
+
+				player.SendMessage($"You have consumed {consumed} Maxxia Scroll{(consumed > 1 ? "s" : "")} and gained {consumed} Talent Point{(consumed > 1 ? "s" : "")}!");
+
+				// Delete the entire stack
+				Delete();
+			}
+		}
+
 
         public override void Serialize(GenericWriter writer)
         {
