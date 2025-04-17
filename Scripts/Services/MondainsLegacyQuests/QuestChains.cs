@@ -46,7 +46,7 @@ namespace Server.Engines.Quests
 
         static BaseChain()
         {
-            Chains = new Type[30][];
+            Chains = new Type[Enum.GetValues(typeof(QuestChain)).Length][];
 
             Chains[(int)QuestChain.None] = new Type[] { };
 
@@ -79,6 +79,18 @@ namespace Server.Engines.Quests
             Chains[(int)QuestChain.PaladinsOfTrinsic] = new Type[] { typeof(PaladinsOfTrinsic), typeof(PaladinsOfTrinsic2) };
             Chains[(int)QuestChain.RightingWrong] = new Type[] { typeof(RightingWrongQuest2), typeof(RightingWrongQuest3), typeof(RightingWrongQuest4) };
             Chains[(int)QuestChain.Ritual] = new Type[] { typeof(Server.Engines.Quests.RitualQuest.ScalesOfADreamSerpentQuest), typeof(Server.Engines.Quests.RitualQuest.TearsOfASoulbinderQuest), typeof(Server.Engines.Quests.RitualQuest.PristineCrystalLotusQuest) };
+			Chains[(int)QuestChain.HolyGrailQuest] = new Type[]
+			{
+				typeof(HolyGrailQuest1),
+				typeof(HolyGrailQuest2),
+				typeof(HolyGrailQuest3),
+				typeof(HolyGrailQuest4),
+				typeof(HolyGrailQuest5),
+				typeof(HolyGrailQuest6),
+				typeof(HolyGrailQuest7),
+				typeof(HolyGrailQuest8)
+			};
+
         }
 
 		public Type CurrentQuest { get; set; }

@@ -74,7 +74,7 @@ public class RandomMagicArmor : BaseArmor
 		typeof(LeatherArms), typeof(PlateArms), typeof(StuddedArms), typeof(BoneArms), // Added StuddedArms and BoneArms
 		typeof(RingmailChest), typeof(ChainChest), typeof(PlateChest), typeof(LeatherChest),
 		typeof(FemaleLeatherChest), typeof(FemalePlateChest), typeof(StuddedChest), typeof(BoneChest), // Added StuddedChest and BoneChest
-		typeof(PlateLegs), typeof(LeatherLegs), typeof(ChainLegs), typeof(StuddedLegs), typeof(AssassinsCowl),
+		typeof(PlateLegs), typeof(LeatherLegs), typeof(ChainLegs), typeof(StuddedLegs),
 		typeof(Bascinet),
 		typeof(ChainHatsuburi),
 		typeof(ChainCoif),
