@@ -51,19 +51,37 @@ namespace Server.SkillHandlers
                 m_Thief = thief;
 				AllowNonlocal = true;
             }
-            private static int GetStealingRange(Mobile thief)
-            {
-                PlayerMobile player = thief as PlayerMobile;
-                var profile = player.AcquireTalents();
+			private static int GetStealingRange(Mobile thief)
+			{
+				if (thief is PlayerMobile player)
+				{
+					var profile = player.AcquireTalents();
 
-                return 1 + profile.Talents[TalentID.StealingDistance].Points;
-            }
-            private static bool GetStealingLoS(Mobile thief)
-            {
-                PlayerMobile player = thief as PlayerMobile;
-                var profile = player.AcquireTalents();
-                return profile.Talents[TalentID.StealingLoS].Points > 0 ? false : true; 
-            }
+					if (profile?.Talents != null && profile.Talents.ContainsKey(TalentID.StealingDistance))
+					{
+						return 1 + profile.Talents[TalentID.StealingDistance].Points;
+					}
+				}
+
+				// Fallback for non-player thieves or missing talent data
+				return 1;
+			}
+
+			private static bool GetStealingLoS(Mobile thief)
+			{
+				if (thief is PlayerMobile player)
+				{
+					var profile = player.AcquireTalents();
+
+					if (profile?.Talents != null && profile.Talents.ContainsKey(TalentID.StealingLoS))
+					{
+						return profile.Talents[TalentID.StealingLoS].Points <= 0;
+					}
+				}
+
+				return true; // Default to true if not a player or missing talent
+			}
+
 
             private Item TryStealItem(Item toSteal, ref bool caught)
 			{
@@ -250,14 +268,14 @@ namespace Server.SkillHandlers
                     Console.WriteLine("!toSteal.Movable");
 					m_Thief.SendLocalizedMessage(502710); // You can't steal that!
 				}
-				else if ((toSteal.LootType == LootType.Newbied || toSteal.CheckBlessed(root)) && !ItemFlags.GetStealable(toSteal))
-				{
-					m_Thief.SendLocalizedMessage(502710); // You can't steal that!
-				}
-				else if (Core.AOS && si == null && toSteal is Container && !ItemFlags.GetStealable(toSteal))
-				{
-					m_Thief.SendLocalizedMessage(502710); // You can't steal that!
-                }
+				//else if ((toSteal.LootType == LootType.Newbied || toSteal.CheckBlessed(root)) && !ItemFlags.GetStealable(toSteal))
+				//{
+				//	m_Thief.SendLocalizedMessage(502710); // You can't steal that!
+				//}
+				//else if (Core.AOS && si == null && toSteal is Container && !ItemFlags.GetStealable(toSteal))
+				//{
+				//	m_Thief.SendLocalizedMessage(502710); // You can't steal that!
+                //}
 				else if (!m_Thief.InRange(toSteal.GetWorldLocation(), 1 + profile.Talents[TalentID.StealingDistance].Points)) // Stealing Range
 				{
 					m_Thief.SendLocalizedMessage(502703); // You must be standing next to an item to steal it.
@@ -320,7 +338,7 @@ namespace Server.SkillHandlers
                 else
 				{
 					double w = toSteal.Weight + toSteal.TotalWeight;
-                    double maxStealWeight = 10.0 + (profile.Talents[TalentID.StealingWeight].Points * 10);
+                    double maxStealWeight = 10.0 + (profile.Talents[TalentID.StealingWeight].Points * 20);
 
                     if (w > maxStealWeight)
 					{
