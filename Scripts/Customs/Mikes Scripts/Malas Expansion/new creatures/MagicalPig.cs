@@ -13,7 +13,7 @@ namespace Server.Mobiles
 
         [Constructable]
         public MagicalPig(string name)
-            : base(name, 0x122, 0x3ED2, AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4)
+            : base(name, 0xA554, 0x3ED2, AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4)
         {
             this.BaseSoundID = 0xC4;
 

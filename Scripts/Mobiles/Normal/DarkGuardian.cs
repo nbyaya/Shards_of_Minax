@@ -58,6 +58,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.MedScrolls, 2);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new DarkGuardianAmulet());
+            }
         }
 
         public override OppositionGroup OppositionGroup

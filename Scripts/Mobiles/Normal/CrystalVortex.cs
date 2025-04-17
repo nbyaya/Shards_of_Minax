@@ -58,6 +58,11 @@ namespace Server.Mobiles
             AddLoot( LootPack.Parrot );
             AddLoot(LootPack.MedScrolls);
             AddLoot(LootPack.HighScrolls);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new CrystalSummonersCirclet());
+            }
         }
 
         public override void OnDeath( Container c )

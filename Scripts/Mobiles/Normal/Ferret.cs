@@ -1,5 +1,6 @@
 using System;
 using Server.Engines.Quests;
+using Server.Items;
 
 namespace Server.Mobiles
 {
@@ -94,6 +95,14 @@ namespace Server.Mobiles
                 Timer.DelayCall(TimeSpan.FromSeconds(Utility.RandomMinMax(20, 30)), new TimerCallback(delegate() { this.m_CanTalk = true; }));
             }
         }
+
+        public override void GenerateLoot()
+        {
+            if (Utility.RandomDouble() < 0.01) // 1 in 1000 chance
+            {
+                this.PackItem(new FerretSummonersCloak());
+            }
+		}
 
         public override void Serialize(GenericWriter writer)
         {

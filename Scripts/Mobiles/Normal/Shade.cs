@@ -76,6 +76,11 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             this.AddLoot(LootPack.Meager);
+			
+            if (Utility.RandomDouble() < 0.01) // 1 in 1000 chance
+            {
+                this.PackItem(new ShadecloakOfTheAbyss());
+            }				
         }
 
         public override void Serialize(GenericWriter writer)

@@ -59,6 +59,11 @@ namespace Server.Mobiles
             this.AddLoot(LootPack.Average, 2);
             this.AddLoot(LootPack.MedScrolls);
             this.AddLoot(LootPack.Gems, Utility.RandomMinMax(1, 4));
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new CloakOfTheGargoylesVengeance());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

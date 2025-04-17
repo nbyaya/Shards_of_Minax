@@ -142,6 +142,14 @@ namespace Server.Mobiles
             return true;
         }
 
+        public override void GenerateLoot()
+        {		
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new BeetlemastersCarapace());
+            }
+		}
+
         public override DeathMoveResult GetInventoryMoveResultFor(Item item)
         {
             return DeathMoveResult.MoveToCorpse;

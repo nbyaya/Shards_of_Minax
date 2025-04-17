@@ -1,4 +1,5 @@
 using System;
+using Server.Items;
 
 namespace Server.Mobiles
 {
@@ -61,6 +62,11 @@ namespace Server.Mobiles
         {
             this.AddLoot(LootPack.FilthyRich);
             this.AddLoot(LootPack.Rich);
+
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new BloodSword());
+            }
         }
 
         public override void Serialize(GenericWriter writer)

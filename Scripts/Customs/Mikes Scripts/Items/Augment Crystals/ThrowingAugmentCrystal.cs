@@ -39,7 +39,7 @@ namespace Server.Items
                 return;
             }
 
-            from.SendMessage("Which throwing weapon would you like to augment?");
+            from.SendMessage("Which item would you like to augment with a throwing bonus?");
             from.Target = new ThrowingAugmentTarget(this);
         }
 
@@ -57,18 +57,128 @@ namespace Server.Items
                 if (m_Crystal.Deleted || m_Crystal.RootParent != from)
                     return;
 
-                int bonus = Utility.Random(1, 25); // Generates a random number between 1 and 25.
-
-                if (targeted is BaseWeapon && ((BaseWeapon)targeted).Skill == SkillName.Throwing)
+                if (targeted is BaseWeapon weapon)
                 {
-                    BaseWeapon weapon = targeted as BaseWeapon;
-                    weapon.Attributes.WeaponSpeed = bonus; // Setting the random bonus as weapon speed.
-                    from.SendMessage(String.Format("The weapon has been augmented with a {0} bonus to weapon speed.", bonus));
-                    m_Crystal.Delete();
+                    // Only apply the bonus to Throwing weapons
+                    if (weapon.Skill == SkillName.Throwing)
+                    {
+                        AugmentItem(from, weapon, m_Crystal, SkillName.Throwing);
+                    }
+                    else
+                    {
+                        from.SendMessage("You can only augment throwing weapons.");
+                    }
+                }
+                else if (targeted is BaseArmor armor)
+                {
+                    AugmentItem(from, armor, m_Crystal, SkillName.Throwing);
+                }
+                else if (targeted is BaseClothing clothing)
+                {
+                    AugmentItem(from, clothing, m_Crystal, SkillName.Throwing);
+                }
+                else if (targeted is BaseJewel jewel)
+                {
+                    AugmentItem(from, jewel, m_Crystal, SkillName.Throwing);
                 }
                 else
                 {
-                    from.SendMessage("You can't augment that with a throwing bonus.");
+                    from.SendMessage("You can't augment that item with a throwing bonus.");
+                }
+            }
+
+            private void AugmentItem(Mobile from, Item item, ThrowingAugmentCrystal crystal, SkillName skillName)
+            {
+                const int maxSlots = 5; // Number of skill slots
+                int existingSlot = -1;
+                int emptySlot = -1;
+
+                // Loop through skill slots to check if a Throwing bonus exists or if there's an empty slot
+                for (int i = 0; i < maxSlots; i++)
+                {
+                    SkillName skill;
+                    double value;
+
+                    if (item is BaseArmor armor)
+                        armor.SkillBonuses.GetValues(i, out skill, out value);
+                    else if (item is BaseClothing clothing)
+                        clothing.SkillBonuses.GetValues(i, out skill, out value);
+                    else if (item is BaseJewel jewel)
+                        jewel.SkillBonuses.GetValues(i, out skill, out value);
+                    else if (item is BaseWeapon weapon)
+                        weapon.SkillBonuses.GetValues(i, out skill, out value);
+                    else
+                        continue;
+
+                    if (skill == skillName)
+                    {
+                        existingSlot = i;
+                        break;
+                    }
+
+                    if (value == 0 && emptySlot == -1) // Check for unused slot
+                    {
+                        emptySlot = i;
+                    }
+                }
+
+                if (existingSlot != -1)
+                {
+                    // Increment existing bonus
+                    SkillName skill;
+                    double value;
+
+                    if (item is BaseArmor armor)
+                        armor.SkillBonuses.GetValues(existingSlot, out skill, out value);
+                    else if (item is BaseClothing clothing)
+                        clothing.SkillBonuses.GetValues(existingSlot, out skill, out value);
+                    else if (item is BaseJewel jewel)
+                        jewel.SkillBonuses.GetValues(existingSlot, out skill, out value);
+                    else if (item is BaseWeapon weapon)
+                        weapon.SkillBonuses.GetValues(existingSlot, out skill, out value);
+                    else
+                        return;
+
+                    if (value >= 25)
+                    {
+                        from.SendMessage("The item already has the maximum throwing bonus.");
+                        return;
+                    }
+
+                    double newValue = value + 1;
+
+                    if (item is BaseArmor armorToUpdate)
+                        armorToUpdate.SkillBonuses.SetValues(existingSlot, skillName, newValue);
+                    else if (item is BaseClothing clothingToUpdate)
+                        clothingToUpdate.SkillBonuses.SetValues(existingSlot, skillName, newValue);
+                    else if (item is BaseJewel jewelToUpdate)
+                        jewelToUpdate.SkillBonuses.SetValues(existingSlot, skillName, newValue);
+                    else if (item is BaseWeapon weaponToUpdate)
+                        weaponToUpdate.SkillBonuses.SetValues(existingSlot, skillName, newValue);
+
+                    from.SendMessage($"The throwing bonus has been increased to +{newValue}.");
+                    crystal.Delete();
+                }
+                else if (emptySlot != -1)
+                {
+                    // Add new bonus
+                    int bonus = Utility.Random(1, 25);
+
+                    if (item is BaseArmor armorToUpdate)
+                        armorToUpdate.SkillBonuses.SetValues(emptySlot, skillName, bonus);
+                    else if (item is BaseClothing clothingToUpdate)
+                        clothingToUpdate.SkillBonuses.SetValues(emptySlot, skillName, bonus);
+                    else if (item is BaseJewel jewelToUpdate)
+                        jewelToUpdate.SkillBonuses.SetValues(emptySlot, skillName, bonus);
+                    else if (item is BaseWeapon weaponToUpdate)
+                        weaponToUpdate.SkillBonuses.SetValues(emptySlot, skillName, bonus);
+
+                    from.SendMessage($"The item has been augmented with a +{bonus} throwing bonus.");
+                    crystal.Delete();
+                }
+                else
+                {
+                    from.SendMessage("All skill slots are occupied, and none can be used for throwing.");
                 }
             }
         }

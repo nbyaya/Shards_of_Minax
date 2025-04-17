@@ -118,6 +118,11 @@ namespace Server.Mobiles
         {
             this.AddLoot(LootPack.Meager);
             this.AddLoot(LootPack.Average);
+			
+            if (Utility.RandomDouble() < 0.01) // 1 in 1000 chance
+            {
+                this.PackItem(new WarbossHelm());
+            }			
             // TODO: evil orc helm
         }
 

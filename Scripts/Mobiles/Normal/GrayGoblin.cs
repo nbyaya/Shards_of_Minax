@@ -104,6 +104,11 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Meager);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new GoblinShamansMantle());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

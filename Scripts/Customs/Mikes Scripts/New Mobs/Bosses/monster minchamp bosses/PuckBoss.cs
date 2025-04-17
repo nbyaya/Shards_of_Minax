@@ -53,7 +53,13 @@ namespace Server.Mobiles
             ControlSlots = 0; // Boss doesn't need control slots
 
             m_AbilitiesInitialized = false; // Initialize flag
-            XmlAttach.AttachTo(this, new XmlRandomAbility()); PackItem(new BossTreasureBox());
+            XmlAttach.AttachTo(this, new XmlRandomAbility()); 
+            PackItem(new BossTreasureBox());
+        }
+
+        // Serialization constructor
+        public PuckBoss(Serial serial) : base(serial)
+        {
         }
 
         public override void GenerateLoot()

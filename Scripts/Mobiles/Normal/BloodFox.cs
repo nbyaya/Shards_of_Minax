@@ -51,6 +51,14 @@ namespace Server.Mobiles
         public override bool CanAngerOnTame { get { return true; } }
         public override bool StatLossAfterTame { get { return true; } }
 
+        public override void GenerateLoot()
+        {
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new BloodFoxCloak());
+            }
+		}
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

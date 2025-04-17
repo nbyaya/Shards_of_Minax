@@ -1,5 +1,6 @@
 using System;
 using Server.Gumps;
+using Server.Items;
 
 namespace Server.Mobiles
 {
@@ -92,6 +93,14 @@ namespace Server.Mobiles
         public override int Meat { get { return 3; } }
         public override int Hides { get { return 10; } }
         public override FoodType FavoriteFood { get { return FoodType.Meat; } }
+
+        public override void GenerateLoot()
+        {
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new WindrunnersBulwark());
+            }
+		}
 
         public override void Serialize(GenericWriter writer)
         {

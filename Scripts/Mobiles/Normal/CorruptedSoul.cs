@@ -1,4 +1,5 @@
 using System;
+using Server.Items;
 
 namespace Server.Mobiles
 {
@@ -97,6 +98,14 @@ namespace Server.Mobiles
             Effects.SendLocationEffect(this.Location, this.Map, 0x376A, 10, 1);
             return true;
         }
+		
+        public override void GenerateLoot()
+        {		
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new AmuletOfCorruption());
+            }
+		}
 
         public override void Serialize(GenericWriter writer)
         {

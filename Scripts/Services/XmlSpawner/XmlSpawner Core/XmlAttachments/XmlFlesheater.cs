@@ -52,33 +52,48 @@ namespace Server.Engines.XmlSpawner2
             writer.Write(m_HealthRestore);
         }
 
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
+		public override void Deserialize(GenericReader reader)
+		{
+			base.Deserialize(reader);
+			int version = reader.ReadInt();
 
-            if (version >= 0)
-            {
-                m_BleedDamage = reader.ReadInt();
-                m_Duration = reader.ReadTimeSpan();
-                m_Cooldown = reader.ReadTimeSpan();
-                m_LastUsed = reader.ReadDeltaTime();
-                m_HealthRestore = reader.ReadInt();
-            }
-        }
+			if (version >= 0)
+			{
+				m_BleedDamage = reader.ReadInt();
+				m_Duration = reader.ReadTimeSpan();
+				m_Cooldown = reader.ReadTimeSpan();
+				m_LastUsed = reader.ReadDeltaTime();
+				m_HealthRestore = reader.ReadInt();
+
+				// Validate deserialized values
+				if (m_Cooldown < TimeSpan.Zero)
+					m_Cooldown = TimeSpan.FromSeconds(60); // Reset to default cooldown
+
+				if (m_LastUsed > DateTime.Now || m_LastUsed < DateTime.MinValue)
+					m_LastUsed = DateTime.MinValue; // Reset if corrupted
+			}
+		}
+
 
         public override string OnIdentify(Mobile from)
         {
             return String.Format("Flesheater: Inflicts bleed damage over time. Restores health to the caster.");
         }
 
-        public override void OnWeaponHit(Mobile attacker, Mobile defender, BaseWeapon weapon, int damageGiven)
-        {
-            if (DateTime.Now < m_LastUsed + m_Cooldown) return;
+		public override void OnWeaponHit(Mobile attacker, Mobile defender, BaseWeapon weapon, int damageGiven)
+		{
+			if (m_Cooldown < TimeSpan.Zero) // Ensure cooldown is valid
+				m_Cooldown = TimeSpan.FromSeconds(60); // Reset to default if corrupted
 
-            PerformFlesheaterAttack(attacker, defender);
-            m_LastUsed = DateTime.Now; // Reset cooldown timer
-        }
+			if (m_LastUsed > DateTime.Now) // Ensure m_LastUsed isn't corrupted
+				m_LastUsed = DateTime.MinValue;
+
+			if (DateTime.Now < m_LastUsed + m_Cooldown) return;
+
+			PerformFlesheaterAttack(attacker, defender);
+			m_LastUsed = DateTime.Now; // Reset cooldown timer
+		}
+
 
         private void PerformFlesheaterAttack(Mobile attacker, Mobile initialTarget)
         {

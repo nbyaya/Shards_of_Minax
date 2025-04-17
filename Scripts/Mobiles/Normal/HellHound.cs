@@ -81,6 +81,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Average);
             AddLoot(LootPack.Meager);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new InfernalCloakOfHounds());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

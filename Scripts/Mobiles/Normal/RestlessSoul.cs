@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Server.ContextMenus;
 using Server.Engines.Quests;
 using Server.Engines.Quests.Haven;
+using Server.Items;
 
 namespace Server.Mobiles
 {
@@ -73,6 +74,11 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             this.AddLoot(LootPack.Poor);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new SoulbindersRobe());
+            }				
         }
 
         public override void DisplayPaperdollTo(Mobile to)

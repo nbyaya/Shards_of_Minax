@@ -54,6 +54,11 @@ namespace Server.Mobiles
         {
             this.AddLoot(LootPack.SuperBoss);
             this.AddLoot(LootPack.UltraRich);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new ScelestusDarkMantle());
+            }			
         }
 
 		public override int TreasureMapLevel { get { return 4; } }

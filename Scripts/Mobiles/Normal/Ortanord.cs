@@ -71,6 +71,11 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Average, 2);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new OrtanordsCrownOfFrost());
+            }			
         }
 
         public override void OnDeath(Container c)

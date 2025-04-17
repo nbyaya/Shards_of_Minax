@@ -43,6 +43,9 @@ namespace Server.Mobiles
 
             if (0.75 > Utility.RandomDouble())
                 PackItem(new AcidSac());
+			
+            if (0.001 > Utility.RandomDouble())
+                PackItem(new AcidSlugRing());			
 
             PackItem(new CongealedSlugAcid());
         }
@@ -55,6 +58,7 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Average);
+            
         }
 
         public override int GetIdleSound()

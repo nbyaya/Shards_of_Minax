@@ -78,7 +78,7 @@ namespace Server.Engines.Quests
             // 1078203 You feel more steady and dexterous here. Your Archery skill is enhanced in this area.
             // 1078204 You feel less steady and dexterous here. Your Archery learning potential is no longer enhanced.
 			
-            this.AddReward(new BaseReward(typeof(Heartseeker), 1078210));
+            this.AddReward(new BaseReward(typeof(HeartseekerBow), 1078210));
         }
 		
         public override bool CanOffer()

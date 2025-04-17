@@ -1,6 +1,7 @@
 /* Based on Skeletal Dragon, still have to get detailed info on Skeletal Drake
     2017/4/09 update: brought more into line with the one extant data point*/
 using System;
+using Server.Items;
 
 namespace Server.Mobiles
 {
@@ -65,6 +66,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.FilthyRich, 2);
             AddLoot(LootPack.Gems, 4);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new SkeletalDrakeBreastplate());
+            }				
         }
 
         public override void Serialize(GenericWriter writer)

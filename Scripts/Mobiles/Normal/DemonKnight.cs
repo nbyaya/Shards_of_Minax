@@ -164,6 +164,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.SuperBoss, 2);
             AddLoot(LootPack.HighScrolls, Utility.RandomMinMax(6, 60));
+
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new HellfireCrown());
+            }
         }
         
         public override void OnDamage(int amount, Mobile from, bool willKill)

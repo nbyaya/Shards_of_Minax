@@ -65,6 +65,11 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Poor);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new CloakOfMoltenSerpents());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

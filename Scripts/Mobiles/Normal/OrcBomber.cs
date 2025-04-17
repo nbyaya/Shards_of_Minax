@@ -92,6 +92,11 @@ namespace Server.Mobiles
         {
             this.AddLoot(LootPack.Average);
             this.AddLoot(LootPack.Meager);
+			
+            if (Utility.RandomDouble() < 0.01) // 1 in 1000 chance
+            {
+                this.PackItem(new OrcBombersGauntlets());
+            }			
         }
 
         public override bool IsEnemy(Mobile m)

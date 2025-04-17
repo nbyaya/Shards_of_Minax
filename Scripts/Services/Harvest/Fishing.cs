@@ -182,7 +182,7 @@ namespace Server.Engines.Harvest
                     {
                         if (Utility.RandomDouble() < 0.5)
                         {
-                            player.SendLocalizedMessage(1055086, "", 0x59); // You pull a shellfish out of the water, and find a rainbow pearl inside of it.
+                            player.SendLocalizedMessage(1055086, "", Utility.RandomMinMax(1, 3000)); // You pull a shellfish out of the water, and find a rainbow pearl inside of it.
 
                             obj.CurProgress++;
                         }

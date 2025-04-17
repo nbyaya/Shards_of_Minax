@@ -72,6 +72,11 @@ namespace Server.Mobiles
             this.AddLoot(LootPack.Average, 2);
             this.AddLoot(LootPack.MedScrolls, 2);
             this.AddLoot(LootPack.Potions);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new TerathanMatriarchsScepter());
+            }				
         }
 
         public override void Serialize(GenericWriter writer)

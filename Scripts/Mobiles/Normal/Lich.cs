@@ -107,6 +107,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.MedScrolls, 2);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new LichKingsCloak());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

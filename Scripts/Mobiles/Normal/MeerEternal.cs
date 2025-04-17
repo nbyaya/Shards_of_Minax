@@ -106,6 +106,11 @@ namespace Server.Mobiles
             this.AddLoot(LootPack.FilthyRich, 2);
             this.AddLoot(LootPack.MedScrolls, 2);
             this.AddLoot(LootPack.HighScrolls, 2);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new EternalWisdomRobe());
+            }			
         }
 
         public override int GetHurtSound()

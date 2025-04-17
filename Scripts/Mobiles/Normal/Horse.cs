@@ -1,4 +1,5 @@
 using System;
+using Server.Items;
 
 namespace Server.Mobiles
 {
@@ -13,6 +14,7 @@ namespace Server.Mobiles
             0xE4, 0x3EA1,
             0xCC, 0x3EA2
         };
+
         [Constructable]
         public Horse()
             : this("a horse")
@@ -59,27 +61,20 @@ namespace Server.Mobiles
         {
         }
 
-        public override int Meat
+        public override int Meat => 3;
+
+        public override int Hides => 10;
+
+        public override FoodType FavoriteFood => FoodType.FruitsAndVegies | FoodType.GrainsAndHay;
+
+        public override void GenerateLoot()
         {
-            get
+            if (Utility.RandomDouble() < 0.01) // 1 in 100 chance
             {
-                return 3;
+                this.PackItem(new NecklaceOfTheEquineLord());
             }
         }
-        public override int Hides
-        {
-            get
-            {
-                return 10;
-            }
-        }
-        public override FoodType FavoriteFood
-        {
-            get
-            {
-                return FoodType.FruitsAndVegies | FoodType.GrainsAndHay;
-            }
-        }
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

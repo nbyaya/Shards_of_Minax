@@ -80,6 +80,14 @@ namespace Server.Mobiles
             }
         }
 
+        public override void GenerateLoot()
+        {
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new BeastmastersSaddle());
+            }
+		}
+
         public override bool CanAutoStable { get { return (Backpack == null || Backpack.Items.Count == 0) && base.CanAutoStable; } }
 
         public PackHorse(Serial serial)

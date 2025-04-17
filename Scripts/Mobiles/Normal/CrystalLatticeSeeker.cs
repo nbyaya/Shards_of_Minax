@@ -83,6 +83,11 @@ namespace Server.Mobiles
             AddLoot( LootPack.Parrot );
             this.AddLoot(LootPack.Gems);
             this.AddLoot(LootPack.HighScrolls, 2);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new LatticeAmulet());
+            }
         }
 
         public override void OnGaveMeleeAttack(Mobile defender)

@@ -90,6 +90,11 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.AosUltraRich, 4);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new VirulentWarlordsSash());
+            }				
         }
 
         public override void OnDeath(Container c)

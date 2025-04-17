@@ -117,6 +117,14 @@ namespace Server.Mobiles
             c.DropItem(new BouraSkin());
         }
 
+        public override void GenerateLoot()
+        {
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new BeastmastersMantle());
+            }
+		}
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

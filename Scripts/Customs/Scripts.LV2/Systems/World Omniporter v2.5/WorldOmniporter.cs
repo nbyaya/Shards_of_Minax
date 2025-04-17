@@ -740,7 +740,8 @@ namespace Server.Items
 			{
 				new OmniEntry("Throne Room", new Point3D(1322, 1624, 55), Map.Trammel ),
 				new OmniEntry("Taming Forest", new Point3D(902, 912, 0), Map.Trammel ),
-				new OmniEntry("Beast Hunters Guild", new Point3D(2954, 3352, 15), Map.Trammel )
+				new OmniEntry("Beast Hunters Guild", new Point3D(2954, 3352, 15), Map.Trammel ),
+				new OmniEntry("Ultimate Masters", new Point3D(4311, 993, 15), Map.Trammel )
 
 			});
 			

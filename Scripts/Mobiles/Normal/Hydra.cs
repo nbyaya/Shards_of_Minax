@@ -79,6 +79,11 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.AosUltraRich, 3);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new HydraSummonerHelm());
+            }			
         }
 
         public override void OnDeath(Container c)

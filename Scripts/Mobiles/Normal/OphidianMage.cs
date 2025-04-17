@@ -92,6 +92,11 @@ namespace Server.Mobiles
             this.AddLoot(LootPack.LowScrolls);
             this.AddLoot(LootPack.MedScrolls);
             this.AddLoot(LootPack.Potions);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new OphidiansArcaneSash());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

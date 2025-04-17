@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Server.Items;
 
 namespace Server.Mobiles
 {
@@ -60,6 +61,11 @@ namespace Server.Mobiles
         {
             this.AddLoot(LootPack.Rich, 2);
             this.AddLoot(LootPack.Gems, 2);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new RaijusEmbrace());
+            }				
         }
 
         public override void OnGaveMeleeAttack(Mobile defender)

@@ -114,6 +114,11 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Average);
+
+            if (Utility.RandomDouble() < 0.01) // 1 in 1000 chance
+            {
+                this.PackItem(new BrigandsBand());
+            }
         }
 
         public override void Serialize(GenericWriter writer)

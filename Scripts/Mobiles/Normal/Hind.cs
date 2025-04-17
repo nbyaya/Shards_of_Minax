@@ -1,4 +1,5 @@
 using System;
+using Server.Items;
 
 namespace Server.Mobiles
 {
@@ -80,6 +81,14 @@ namespace Server.Mobiles
         { 
             return 0x84; 
         }
+
+        public override void GenerateLoot()
+        {
+            if (Utility.RandomDouble() < 0.01) // 1 in 1000 chance
+            {
+                this.PackItem(new SylvanWardenBoots());
+            }
+		}
 
         public override void Serialize(GenericWriter writer)
         {

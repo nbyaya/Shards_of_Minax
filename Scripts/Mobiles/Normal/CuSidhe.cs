@@ -111,6 +111,11 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.AosFilthyRich, 5);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new WildwoodMantle());
+            }
         }
 
         public override void OnAfterTame(Mobile tamer)

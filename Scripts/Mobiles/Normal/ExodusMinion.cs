@@ -115,6 +115,11 @@ namespace Server.Mobiles
         {
             this.AddLoot(LootPack.Average);
             this.AddLoot(LootPack.Rich);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new ExodusVanguardPlate());
+            }
         }
 
         public override int GetIdleSound()

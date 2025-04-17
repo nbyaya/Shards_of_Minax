@@ -39,7 +39,7 @@ namespace Server.Items
                 return;
             }
 
-            from.SendMessage("Which armor or clothing item would you like to augment for spellweaving?");
+            from.SendMessage("Which item would you like to augment for spellweaving?");
             from.Target = new SpellweavingAugmentTarget(this);
         }
 
@@ -57,25 +57,98 @@ namespace Server.Items
                 if (m_Crystal.Deleted || m_Crystal.RootParent != from)
                     return;
 
-                int bonus = Utility.Random(1, 25);
+                const SkillName spellweavingSkill = SkillName.Spellweaving;
+                const int maxSlots = 5; // Number of skill slots
 
-                if (targeted is BaseArmor)
+                int existingSlot = -1;
+                int emptySlot = -1;
+
+                // Loop through skill slots
+                for (int i = 0; i < maxSlots; i++)
                 {
-                    BaseArmor armor = targeted as BaseArmor;
-                    armor.SkillBonuses.SetValues(0, SkillName.Spellweaving, bonus);
-                    from.SendMessage(String.Format("The armor has been augmented with a +{0} spellweaving bonus.", bonus));
+                    SkillName skill;
+                    double value;
+
+                    if (targeted is BaseArmor armor)
+                        armor.SkillBonuses.GetValues(i, out skill, out value);
+                    else if (targeted is BaseClothing clothing)
+                        clothing.SkillBonuses.GetValues(i, out skill, out value);
+                    else if (targeted is BaseJewel jewel)
+                        jewel.SkillBonuses.GetValues(i, out skill, out value);
+                    else if (targeted is BaseWeapon weapon)
+                        weapon.SkillBonuses.GetValues(i, out skill, out value);
+                    else
+                        continue;
+
+                    if (skill == spellweavingSkill)
+                    {
+                        existingSlot = i;
+                        break;
+                    }
+
+                    if (value == 0 && emptySlot == -1) // Check for unused slot
+                    {
+                        emptySlot = i;
+                    }
+                }
+
+                if (existingSlot != -1)
+                {
+                    // Increment existing bonus
+                    SkillName skill;
+                    double value;
+
+                    if (targeted is BaseArmor armor)
+                        armor.SkillBonuses.GetValues(existingSlot, out skill, out value);
+                    else if (targeted is BaseClothing clothing)
+                        clothing.SkillBonuses.GetValues(existingSlot, out skill, out value);
+                    else if (targeted is BaseJewel jewel)
+                        jewel.SkillBonuses.GetValues(existingSlot, out skill, out value);
+                    else if (targeted is BaseWeapon weapon)
+                        weapon.SkillBonuses.GetValues(existingSlot, out skill, out value);
+                    else
+                        return;
+
+                    if (value >= 25)
+                    {
+                        from.SendMessage("The item already has the maximum spellweaving bonus.");
+                        return;
+                    }
+
+                    double newValue = value + 1;
+
+                    if (targeted is BaseArmor armorToUpdate)
+                        armorToUpdate.SkillBonuses.SetValues(existingSlot, spellweavingSkill, newValue);
+                    else if (targeted is BaseClothing clothingToUpdate)
+                        clothingToUpdate.SkillBonuses.SetValues(existingSlot, spellweavingSkill, newValue);
+                    else if (targeted is BaseJewel jewelToUpdate)
+                        jewelToUpdate.SkillBonuses.SetValues(existingSlot, spellweavingSkill, newValue);
+                    else if (targeted is BaseWeapon weaponToUpdate)
+                        weaponToUpdate.SkillBonuses.SetValues(existingSlot, spellweavingSkill, newValue);
+
+                    from.SendMessage($"The spellweaving bonus has been increased to +{newValue}.");
                     m_Crystal.Delete();
                 }
-                else if (targeted is BaseClothing)
+                else if (emptySlot != -1)
                 {
-                    BaseClothing clothing = targeted as BaseClothing;
-                    clothing.SkillBonuses.SetValues(0, SkillName.Spellweaving, bonus);
-                    from.SendMessage(String.Format("The clothing has been augmented with a +{0} spellweaving bonus.", bonus));
+                    // Add new bonus
+                    int bonus = Utility.Random(1, 25);
+
+                    if (targeted is BaseArmor armorToUpdate)
+                        armorToUpdate.SkillBonuses.SetValues(emptySlot, spellweavingSkill, bonus);
+                    else if (targeted is BaseClothing clothingToUpdate)
+                        clothingToUpdate.SkillBonuses.SetValues(emptySlot, spellweavingSkill, bonus);
+                    else if (targeted is BaseJewel jewelToUpdate)
+                        jewelToUpdate.SkillBonuses.SetValues(emptySlot, spellweavingSkill, bonus);
+                    else if (targeted is BaseWeapon weaponToUpdate)
+                        weaponToUpdate.SkillBonuses.SetValues(emptySlot, spellweavingSkill, bonus);
+
+                    from.SendMessage($"The item has been augmented with a +{bonus} spellweaving bonus.");
                     m_Crystal.Delete();
                 }
                 else
                 {
-                    from.SendMessage("You can't augment that for spellweaving.");
+                    from.SendMessage("All skill slots are occupied, and none can be used for spellweaving.");
                 }
             }
         }

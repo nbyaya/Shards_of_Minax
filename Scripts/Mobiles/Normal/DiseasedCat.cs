@@ -1,5 +1,6 @@
 using System;
 using Server.Mobiles;
+using Server.Items;
 
 namespace Server.Engines.Quests.Samurai
 {
@@ -46,6 +47,15 @@ namespace Server.Engines.Quests.Samurai
                 return true;
             }
         }
+		
+        public override void GenerateLoot()
+        {
+            if (Utility.RandomDouble() < 0.01) // 1 in 1000 chance
+            {
+                this.PackItem(new PlaguebearersCloak());
+            }
+		}			
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

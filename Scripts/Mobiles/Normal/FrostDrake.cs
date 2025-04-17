@@ -18,6 +18,16 @@ namespace Server.Mobiles
         {
         }
 
+        public override void GenerateLoot()
+        {
+            this.AddLoot(LootPack.Rich);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new FrostDrakeCloak());
+            }
+		}
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

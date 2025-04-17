@@ -102,6 +102,11 @@ namespace Server.Mobiles
             AddLoot(LootPack.AosFilthyRich, 5);
             AddLoot(LootPack.MedScrolls);
             AddLoot(LootPack.Gems, Utility.RandomMinMax(1, 4));
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new GargoyleMastersRobes());
+            }				
         }
 
         public override void Serialize(GenericWriter writer)

@@ -72,6 +72,11 @@ namespace Server.Mobiles
         public override void GenerateLoot() // Need to verify
         {
             AddLoot(LootPack.FilthyRich);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new DecayedBoneHelm());
+            }
         }
 
         public override int GetAngerSound()

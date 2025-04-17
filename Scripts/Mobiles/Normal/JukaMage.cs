@@ -103,6 +103,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Average, 2);
             AddLoot(LootPack.MedScrolls, 2);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new StaffOfJukaMagi());
+            }			
         }
 
         public override int GetIdleSound()

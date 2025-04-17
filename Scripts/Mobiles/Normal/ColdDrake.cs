@@ -69,6 +69,11 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.FilthyRich, 3);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new FrostbindAmulet());
+            }
         }
 
         public override bool CanAngerOnTame { get { return true; } }

@@ -97,6 +97,11 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             this.AddLoot(LootPack.Rich, 2);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new OphidianKnightRelic());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

@@ -85,6 +85,11 @@ namespace Server.Mobiles
             this.AddLoot(LootPack.UltraRich, 3);
             this.AddLoot(LootPack.MedScrolls, 2);
             this.AddLoot(LootPack.HighScrolls, 3);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new VoidcallersStoneChest());
+            }				
         }
 		
 		private DateTime m_NextSummon;

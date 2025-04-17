@@ -116,6 +116,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Average);
             AddLoot(LootPack.MedScrolls);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new RobeOfTheEvilArchmage());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

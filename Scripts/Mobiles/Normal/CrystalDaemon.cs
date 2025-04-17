@@ -67,6 +67,11 @@ namespace Server.Mobiles
         {
             this.AddLoot(LootPack.FilthyRich, 3);
             this.AddLoot(LootPack.HighScrolls);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new CrystalDaemonAmulet());
+            }
         }
 
         public override void Serialize(GenericWriter writer)

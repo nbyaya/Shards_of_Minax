@@ -74,6 +74,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Average, 2);
             AddLoot(LootPack.Gems, 2);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new FrostlaceCloak());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

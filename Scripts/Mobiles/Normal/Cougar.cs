@@ -1,4 +1,5 @@
 using System;
+using Server.Items;
 
 namespace Server.Mobiles
 {
@@ -76,6 +77,15 @@ namespace Server.Mobiles
                 return PackInstinct.Feline;
             }
         }
+		
+        public override void GenerateLoot()
+        {			
+            if (Utility.RandomDouble() < 0.01) // 1 in 1000 chance
+            {
+                this.PackItem(new WildSpiritsAmulet());
+            }
+		}			
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

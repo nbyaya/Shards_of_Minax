@@ -67,6 +67,11 @@ namespace Server.Mobiles
         public override void GenerateLoot() // -- Need to verify
         {
             this.AddLoot(LootPack.FilthyRich);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new GrizzledRingOfDread());
+            }			
         }
 
         public override void OnDamage(int amount, Mobile from, bool willKill)

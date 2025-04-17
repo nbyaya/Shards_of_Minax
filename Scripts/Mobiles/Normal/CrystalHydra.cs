@@ -61,6 +61,11 @@ namespace Server.Mobiles
             AddLoot(LootPack.UltraRich, 2);
             AddLoot(LootPack.HighScrolls);
             AddLoot(LootPack.Parrot);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new ShardmastersDiadem());
+            }
         }
 		
         public override void OnDeath(Container c)

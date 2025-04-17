@@ -1,6 +1,7 @@
 using Server.Gumps;
 using Server.Network;
 using System;
+using Server.Items;
 
 namespace Server.Mobiles
 {
@@ -102,6 +103,14 @@ namespace Server.Mobiles
         public override int Meat => 3;
         public override int Hides => 10;
         public override FoodType FavoriteFood => FoodType.FruitsAndVegies;
+
+        public override void GenerateLoot()
+        {	
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new CapybaraWhispererSash());
+            }
+		}
 
         public override void Serialize(GenericWriter writer)
         {

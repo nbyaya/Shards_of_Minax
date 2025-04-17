@@ -52,6 +52,11 @@ namespace Server.Mobiles
         {
             this.AddLoot(LootPack.FilthyRich, 4);
             this.AddLoot(LootPack.MedScrolls);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new MimicsChestplate());
+            }			
         }
 
         public override void OnDeath(Container c)

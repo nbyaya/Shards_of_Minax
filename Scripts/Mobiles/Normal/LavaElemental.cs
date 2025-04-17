@@ -55,6 +55,11 @@ namespace Server.Mobiles
             AddLoot(LootPack.FilthyRich, 3);
             AddLoot(LootPack.Gems, 2);
             AddLoot(LootPack.MedScrolls);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new MoltenCoreChestplate());
+            }			
         }
 
         public override int GetAttackSound() { return 0x60A; }

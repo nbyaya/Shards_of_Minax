@@ -133,6 +133,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.FilthyRich, 2);
             AddLoot(LootPack.Gems, 4);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new SashOfTheHiryu());
+            }			
         }
 
         public override double GetControlChance(Mobile m, bool useBaseSkill)

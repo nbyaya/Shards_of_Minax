@@ -115,6 +115,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.LowScrolls, 1);
             AddLoot(LootPack.Potions, 1);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new DeathWatchCarapace());
+            }
         }
 
         public override void Serialize(GenericWriter writer)

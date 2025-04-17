@@ -243,6 +243,10 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Rich);
             AddLoot(LootPack.Gems);
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new ChaosDragoonArmor());
+            }
         }
 
         public override bool OnBeforeDeath()

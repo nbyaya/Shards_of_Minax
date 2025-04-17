@@ -91,6 +91,11 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.Average);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new LavaLordsEmbrace());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

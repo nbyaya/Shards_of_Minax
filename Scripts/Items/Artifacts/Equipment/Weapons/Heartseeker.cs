@@ -2,11 +2,11 @@ using System;
 
 namespace Server.Items
 {
-    public class Heartseeker : CompositeBow
+    public class HeartseekerBow : CompositeBow
 	{
 		public override bool IsArtifact { get { return true; } }
         [Constructable]
-        public Heartseeker()
+        public HeartseekerBow()
         {
             LootType = LootType.Blessed;
             Attributes.AttackChance = 5;
@@ -15,7 +15,7 @@ namespace Server.Items
             WeaponAttributes.LowerStatReq = 70;
         }
 
-        public Heartseeker(Serial serial)
+        public HeartseekerBow(Serial serial)
             : base(serial)
         {
         }
@@ -26,7 +26,7 @@ namespace Server.Items
             {
                 return 1078210;
             }
-        }// Heartseeker
+        }// HeartseekerBow
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

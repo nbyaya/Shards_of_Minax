@@ -84,6 +84,11 @@ namespace Server.Mobiles
 
 		{
 			AddLoot(LootPack.Rich);
+			
+            if (Utility.RandomDouble() < 0.01) // 1 in 1000 chance
+            {
+                this.PackItem(new OrcWarchiefsBattleHelm());
+            }			
 		}
 
 		public override bool IsEnemy(Mobile m)

@@ -1,4 +1,5 @@
 using System;
+using Server.Items;
 
 namespace Server.Mobiles
 {
@@ -73,6 +74,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Poor);
             AddLoot(LootPack.Gems);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new SlimeboundSash());
+            }				
         }
 
         public override bool CheckMovement(Direction d, out int newZ)

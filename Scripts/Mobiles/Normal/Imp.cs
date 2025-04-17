@@ -117,6 +117,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Meager);
             AddLoot(LootPack.MedScrolls, 2);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new InfernalPactBracelet());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

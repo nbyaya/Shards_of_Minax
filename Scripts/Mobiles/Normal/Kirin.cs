@@ -154,6 +154,11 @@ namespace Server.Mobiles
             this.AddLoot(LootPack.Rich);
             this.AddLoot(LootPack.LowScrolls);
             this.AddLoot(LootPack.Potions);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new CelestialMantle());
+            }			
         }
 
 		public override void OnDeath(Container c)

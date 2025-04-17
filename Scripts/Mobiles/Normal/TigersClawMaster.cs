@@ -37,6 +37,11 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             AddLoot(LootPack.AosFilthyRich, 6);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new TigersClawHarness());
+            }				
         }
 
         public override void OnDeath(Container c)

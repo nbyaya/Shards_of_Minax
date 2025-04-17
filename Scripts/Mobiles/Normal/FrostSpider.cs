@@ -74,6 +74,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Meager);
             AddLoot(LootPack.Poor);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new FrostweaverCloak());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

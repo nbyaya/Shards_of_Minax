@@ -1001,27 +1001,28 @@ namespace Server.Items
 
         public bool IsCriminalAction(Mobile from)
         {
-            if (from == m_Owner || from.AccessLevel >= AccessLevel.GameMaster)
-            {
-                return false;
-            }
+            return false;
+			//if (from == m_Owner || from.AccessLevel >= AccessLevel.GameMaster)
+            //{
+                //return false;
+            //}
 
-            if (!GetFlag(CorpseFlag.LootCriminal))
-                return false;
+            //if (!GetFlag(CorpseFlag.LootCriminal))
+                //return false;
 
-            Party p = Party.Get(m_Owner);
+            //Party p = Party.Get(m_Owner);
 
-            if (p != null && p.Contains(from))
-            {
-                PartyMemberInfo pmi = p[m_Owner];
+            //if (p != null && p.Contains(from))
+            //{
+                //PartyMemberInfo pmi = p[m_Owner];
 
-                if (pmi != null && pmi.CanLoot)
-                {
-                    return false;
-                }
-            }
+                //if (pmi != null && pmi.CanLoot)
+                //{
+                    //return false;
+                //}
+            //}
 
-            return (NotorietyHandlers.CorpseNotoriety(from, this) == Notoriety.Innocent);
+            //return (NotorietyHandlers.CorpseNotoriety(from, this) == Notoriety.Innocent);
         }
 
         public override bool CheckItemUse(Mobile from, Item item)

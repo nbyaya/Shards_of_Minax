@@ -39,7 +39,7 @@ namespace Server.Items
                 return;
             }
 
-            from.SendMessage("Which armor or clothing item would you like to augment for mace fighting?");
+            from.SendMessage("Which item would you like to augment for mace fighting?");
             from.Target = new MaceFightingAugmentTarget(this);
         }
 
@@ -57,25 +57,122 @@ namespace Server.Items
                 if (m_Crystal.Deleted || m_Crystal.RootParent != from)
                     return;
 
-                int bonus = Utility.Random(1, 25);  // Generates a random number between 1 and 25.
-
-                if (targeted is BaseArmor)
+                if (targeted is BaseArmor armor)
                 {
-                    BaseArmor armor = targeted as BaseArmor;
-                    armor.SkillBonuses.SetValues(0, SkillName.Macing, bonus); // Setting the random bonus for Mace Fighting.
-                    from.SendMessage(String.Format("The armor has been augmented with a +{0} mace fighting bonus.", bonus));
-                    m_Crystal.Delete();
+                    AugmentItem(from, armor, m_Crystal);
                 }
-                else if (targeted is BaseClothing)
+                else if (targeted is BaseClothing clothing)
                 {
-                    BaseClothing clothing = targeted as BaseClothing;
-                    clothing.SkillBonuses.SetValues(0, SkillName.Macing, bonus); // Setting the random bonus for Mace Fighting.
-                    from.SendMessage(String.Format("The clothing has been augmented with a +{0} mace fighting bonus.", bonus));
-                    m_Crystal.Delete();
+                    AugmentItem(from, clothing, m_Crystal);
+                }
+                else if (targeted is BaseJewel jewel)
+                {
+                    AugmentItem(from, jewel, m_Crystal);
+                }
+                else if (targeted is BaseWeapon weapon)
+                {
+                    AugmentItem(from, weapon, m_Crystal);
                 }
                 else
                 {
-                    from.SendMessage("You can't augment that for mace fighting.");
+                    from.SendMessage("You can't augment that item.");
+                }
+            }
+
+            private void AugmentItem(Mobile from, Item item, MaceFightingAugmentCrystal crystal)
+            {
+                const int maxSlots = 5; // Number of skill slots
+                const SkillName maceSkill = SkillName.Macing;
+
+                int existingSlot = -1;
+                int emptySlot = -1;
+
+                // Loop through skill slots
+                for (int i = 0; i < maxSlots; i++)
+                {
+                    SkillName skill;
+                    double value;
+
+                    if (item is BaseArmor armor)
+                        armor.SkillBonuses.GetValues(i, out skill, out value);
+                    else if (item is BaseClothing clothing)
+                        clothing.SkillBonuses.GetValues(i, out skill, out value);
+                    else if (item is BaseJewel jewel)
+                        jewel.SkillBonuses.GetValues(i, out skill, out value);
+                    else if (item is BaseWeapon weapon)
+                        weapon.SkillBonuses.GetValues(i, out skill, out value);
+                    else
+                        continue;
+
+                    if (skill == maceSkill)
+                    {
+                        existingSlot = i;
+                        break;
+                    }
+
+                    if (value == 0 && emptySlot == -1) // Check for unused slot
+                    {
+                        emptySlot = i;
+                    }
+                }
+
+                if (existingSlot != -1)
+                {
+                    // Increment existing bonus
+                    SkillName skill;
+                    double value;
+
+                    if (item is BaseArmor armor)
+                        armor.SkillBonuses.GetValues(existingSlot, out skill, out value);
+                    else if (item is BaseClothing clothing)
+                        clothing.SkillBonuses.GetValues(existingSlot, out skill, out value);
+                    else if (item is BaseJewel jewel)
+                        jewel.SkillBonuses.GetValues(existingSlot, out skill, out value);
+                    else if (item is BaseWeapon weapon)
+                        weapon.SkillBonuses.GetValues(existingSlot, out skill, out value);
+                    else
+                        return;
+
+                    if (value >= 25)
+                    {
+                        from.SendMessage("The item already has the maximum mace fighting bonus.");
+                        return;
+                    }
+
+                    double newValue = value + 1;
+
+                    if (item is BaseArmor armorToUpdate)
+                        armorToUpdate.SkillBonuses.SetValues(existingSlot, maceSkill, newValue);
+                    else if (item is BaseClothing clothingToUpdate)
+                        clothingToUpdate.SkillBonuses.SetValues(existingSlot, maceSkill, newValue);
+                    else if (item is BaseJewel jewelToUpdate)
+                        jewelToUpdate.SkillBonuses.SetValues(existingSlot, maceSkill, newValue);
+                    else if (item is BaseWeapon weaponToUpdate)
+                        weaponToUpdate.SkillBonuses.SetValues(existingSlot, maceSkill, newValue);
+
+                    from.SendMessage($"The mace fighting bonus has been increased to +{newValue}.");
+                    crystal.Delete();
+                }
+                else if (emptySlot != -1)
+                {
+                    // Add new bonus
+                    int bonus = Utility.Random(1, 25);
+
+                    if (item is BaseArmor armorToUpdate)
+                        armorToUpdate.SkillBonuses.SetValues(emptySlot, maceSkill, bonus);
+                    else if (item is BaseClothing clothingToUpdate)
+                        clothingToUpdate.SkillBonuses.SetValues(emptySlot, maceSkill, bonus);
+                    else if (item is BaseJewel jewelToUpdate)
+                        jewelToUpdate.SkillBonuses.SetValues(emptySlot, maceSkill, bonus);
+                    else if (item is BaseWeapon weaponToUpdate)
+                        weaponToUpdate.SkillBonuses.SetValues(emptySlot, maceSkill, bonus);
+
+                    from.SendMessage($"The item has been augmented with a +{bonus} mace fighting bonus.");
+                    crystal.Delete();
+                }
+                else
+                {
+                    from.SendMessage("All skill slots are occupied, and none can be used for mace fighting.");
                 }
             }
         }

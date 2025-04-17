@@ -1,4 +1,5 @@
 using System;
+using Server.Items;
 
 namespace Server.Mobiles
 {
@@ -79,6 +80,11 @@ namespace Server.Mobiles
             this.AddLoot(LootPack.FilthyRich);
             this.AddLoot(LootPack.Average);
             this.AddLoot(LootPack.MedScrolls);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new TitanforgedStoneChest());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

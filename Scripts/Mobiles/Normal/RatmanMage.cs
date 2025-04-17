@@ -114,6 +114,11 @@ namespace Server.Mobiles
         {
             this.AddLoot(LootPack.Rich);
             this.AddLoot(LootPack.LowScrolls);
+			
+            if (Utility.RandomDouble() < 0.01) // 1 in 1000 chance
+            {
+                this.PackItem(new RatmanArchmageRobe());
+            }				
         }
 
         public override void Serialize(GenericWriter writer)

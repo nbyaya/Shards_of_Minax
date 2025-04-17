@@ -58,6 +58,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.UltraRich, 2);
             AddLoot(LootPack.Gems, 8);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new FrostcallersShard());
+            }			
         }
 
         public override void OnAfterTame(Mobile tamer)

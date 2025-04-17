@@ -83,6 +83,14 @@ namespace Server.Mobiles
             return fed;
         }
 
+        public override void GenerateLoot()
+        {
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new CluckmasterCloak());
+            }
+		}
+
         public ChickenLizard(Serial serial)
             : base(serial)
         {

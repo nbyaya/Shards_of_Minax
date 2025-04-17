@@ -90,6 +90,11 @@ namespace Server.Mobiles
             this.AddLoot(LootPack.Average);
             this.AddLoot(LootPack.Meager);
             this.AddLoot(LootPack.Potions);
+			
+            if (Utility.RandomDouble() < 0.01) // 1 in 1000 chance
+            {
+                this.PackItem(new TidecallersPendant());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

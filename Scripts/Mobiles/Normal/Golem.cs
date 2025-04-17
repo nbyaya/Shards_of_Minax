@@ -211,6 +211,14 @@ namespace Server.Mobiles
             base.OnDamage(amount, from, willKill);
         }
 
+        public override void GenerateLoot()
+        {
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new GolemforgeChestplate());
+            }
+		}
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

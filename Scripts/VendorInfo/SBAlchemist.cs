@@ -55,6 +55,9 @@ namespace Server.Mobiles
                 Add(new GenericBuyInfo(typeof(Nightshade), 3, 20, 0xF88, 0));
                 Add(new GenericBuyInfo(typeof(SpidersSilk), 3, 20, 0xF8D, 0));
                 Add(new GenericBuyInfo(typeof(SulfurousAsh), 3, 20, 0xF8C, 0));
+                Add(new GenericBuyInfo(typeof(SpringWater), 4, 20, 0xE24, 0));
+				Add(new GenericBuyInfo(typeof(DestroyingAngel), 4, 20, 0xE24, 0));
+				Add(new GenericBuyInfo(typeof(PetrafiedWood), 4, 20, 0xE24, 0));
 
                 Add(new GenericBuyInfo(typeof(Bottle), 5, 100, 0xF0E, 0, true)); 
                 Add(new GenericBuyInfo(typeof(HeatingStand), 2, 100, 0x1849, 0));
@@ -89,6 +92,9 @@ namespace Server.Mobiles
                 Add(typeof(Bottle), 3);
                 Add(typeof(MortarPestle), 4);
                 Add(typeof(HairDye), 19);
+                Add(typeof(SpringWater), 2);
+				Add(typeof(DestroyingAngel), 2);
+				Add(typeof(PetrafiedWood), 2);
 
                 Add(typeof(NightSightPotion), 7);
                 Add(typeof(AgilityPotion), 7);

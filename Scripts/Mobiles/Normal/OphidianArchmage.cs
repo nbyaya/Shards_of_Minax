@@ -1,4 +1,5 @@
 using System;
+using Server.Items;
 
 namespace Server.Mobiles
 {
@@ -85,6 +86,11 @@ namespace Server.Mobiles
         {
             this.AddLoot(LootPack.Rich);
             this.AddLoot(LootPack.MedScrolls, 2);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new StaffOfOphidianDomination());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

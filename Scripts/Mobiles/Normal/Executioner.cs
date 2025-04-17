@@ -96,6 +96,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.FilthyRich);
             AddLoot(LootPack.Meager);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new ExecutionersCloak());
+            }			
         }
 
         public override void Serialize(GenericWriter writer) 

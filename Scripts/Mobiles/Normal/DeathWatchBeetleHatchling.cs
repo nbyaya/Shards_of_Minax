@@ -111,6 +111,11 @@ namespace Server.Mobiles
         {
             this.AddLoot(LootPack.LowScrolls, 1);
             this.AddLoot(LootPack.Potions, 1);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new InsectlordsGauntlets());
+            }
         }
 
         public override void Serialize(GenericWriter writer)

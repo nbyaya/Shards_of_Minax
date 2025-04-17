@@ -1,5 +1,6 @@
 using System;
 using Server.Mobiles;
+using Server.Items;
 
 namespace Server.Engines.Quests.Samurai
 {
@@ -43,6 +44,14 @@ namespace Server.Engines.Quests.Samurai
         {
             return 0xE9;
         }
+
+        public override void GenerateLoot()
+        {
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new WolfsbaneCloak());
+            }
+		}
 
         public override void Serialize(GenericWriter writer)
         {

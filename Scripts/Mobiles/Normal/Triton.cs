@@ -120,6 +120,14 @@ namespace Server.Mobiles
         public override int Hides { get { return 10; } }
         public override FoodType FavoriteFood { get { return FoodType.Meat; } }
 
+        public override void GenerateLoot()
+        {
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new TritonsTempestTrident());
+            }
+		}
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

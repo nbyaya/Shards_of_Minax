@@ -32,6 +32,14 @@ namespace Server.Mobiles
             list.Add(1049646); // (summoned)
         }
 
+        public override void GenerateLoot()
+        {
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new ParoxysmusBreastplate());
+            }
+		}
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

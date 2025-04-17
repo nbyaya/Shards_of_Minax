@@ -117,6 +117,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Average);
             AddLoot(LootPack.Gems, 2);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new DullCopperAegis());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

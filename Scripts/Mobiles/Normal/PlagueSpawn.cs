@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Server.ContextMenus;
+using Server.Items;
 
 namespace Server.Mobiles
 {
@@ -146,6 +147,11 @@ namespace Server.Mobiles
         {
             this.AddLoot(LootPack.Poor);
             this.AddLoot(LootPack.Gems);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new PlaguelordShroud());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

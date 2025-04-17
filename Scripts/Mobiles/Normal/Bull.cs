@@ -1,4 +1,5 @@
 using System;
+using Server.Items;
 
 namespace Server.Mobiles
 {
@@ -77,6 +78,14 @@ namespace Server.Mobiles
                 return PackInstinct.Bull;
             }
         }
+		
+        public override void GenerateLoot()
+        {		
+            if (Utility.RandomDouble() < 0.01) // 1 in 1000 chance
+            {
+                this.PackItem(new BullmastersHelm());
+            }
+		}
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

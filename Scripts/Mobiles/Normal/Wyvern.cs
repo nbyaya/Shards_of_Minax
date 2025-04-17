@@ -111,6 +111,11 @@ namespace Server.Mobiles
             this.AddLoot(LootPack.Average);
             this.AddLoot(LootPack.Meager);
             this.AddLoot(LootPack.MedScrolls);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new WyvernBoneHelm());
+            }			
         }
 
         public override int GetAttackSound()

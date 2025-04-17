@@ -1,6 +1,7 @@
 using System;
 using Server.Items;
 using Server.Mobiles;
+using Server.Engines.Quests.Samurai;
 
 namespace Server.Engines.Quests.Samurai
 {
@@ -69,6 +70,15 @@ namespace Server.Engines.Quests.Samurai
                 return true;
             }
         }
+		
+        public override void GenerateLoot()
+        {
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new RoninBlade());
+            }
+		}
+		
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

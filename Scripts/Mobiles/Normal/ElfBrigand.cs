@@ -120,6 +120,14 @@ namespace Server.Mobiles
                 c.DropItem(new SeveredElfEars());
         }
 
+        public override void GenerateLoot()
+        {
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new BrigandLordCloak());
+            }
+		}
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

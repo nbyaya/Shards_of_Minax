@@ -65,6 +65,11 @@ namespace Server.Mobiles
         {
             this.AddLoot(LootPack.MlRich);
             this.AddLoot(LootPack.MedScrolls);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new SatyrsEmbrace());
+            }			
         }
 
         public override bool CanDiscord { get { return true; } }

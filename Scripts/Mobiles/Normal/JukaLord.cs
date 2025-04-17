@@ -95,6 +95,11 @@ namespace Server.Mobiles
         {
             this.AddLoot(LootPack.Rich);
             this.AddLoot(LootPack.Average);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new RingOfTheJukanCommander());
+            }			
         }
 
         public override void OnDamage(int amount, Mobile from, bool willKill)

@@ -3806,8 +3806,15 @@ namespace Server.Items
 				if (Type == WeaponType.Axe)
 				{
 					attacker.CheckSkill(SkillName.Lumberjacking, 0.0, 100.0); // Passively check Lumberjacking for gain
-				}
-			}
+                    attacker.CheckSkill(SkillName.Mining, 0.0, 100.0); // Passively check Mining for gain
+                }
+                if (Type == WeaponType.Bashing)
+                {
+                    attacker.CheckSkill(SkillName.Chivalry, 0.0, 125.0); // Passively check Chivilary for gain
+                    attacker.CheckSkill(SkillName.ArmsLore, 0.0, 100.0); // Passively check ArmsLore for gain
+
+                }
+            }
 
 			#region Physical bonuses
 			/*
@@ -3818,11 +3825,19 @@ namespace Server.Items
 			double anatomyBonus = GetBonus(attacker.Skills[SkillName.Anatomy].Value, 0.500, 100.0, 5.00);
 			double tacticsBonus = GetBonus(attacker.Skills[SkillName.Tactics].Value, 0.625, 100.0, 6.25);
 			double lumberBonus = GetBonus(attacker.Skills[SkillName.Lumberjacking].Value, 0.200, 100.0, 10.00);
+            double armsloreBonus = GetBonus(attacker.Skills[SkillName.ArmsLore].Value, 0.250, 100.0, 10.00);
+            double chivBonus = GetBonus(attacker.Skills[SkillName.Chivalry].Value, 0.250, 100.0, 10.00);
 
 			if (Type != WeaponType.Axe)
 			{
 				lumberBonus = 0.0;
 			}
+
+            if (Type != WeaponType.Bashing)
+            {
+                chivBonus = 0.0;
+            }
+
 			#endregion
 
 			#region Modifiers
@@ -3838,7 +3853,7 @@ namespace Server.Items
 			}
 			#endregion
 
-			double totalBonus = strengthBonus + anatomyBonus + tacticsBonus + lumberBonus +
+			double totalBonus = strengthBonus + anatomyBonus + tacticsBonus + lumberBonus + armsloreBonus + chivBonus +
 								((GetDamageBonus() + damageBonus) / 100.0);
 
 			return damage + (int)(damage * totalBonus);
@@ -3858,13 +3873,28 @@ namespace Server.Items
 				attacker.CheckSkill(SkillName.Tactics, 0.0, attacker.Skills[SkillName.Tactics].Cap);
 					// Passively check tactics for gain
 				attacker.CheckSkill(SkillName.Anatomy, 0.0, attacker.Skills[SkillName.Anatomy].Cap);
-					// Passively check Anatomy for gain
+                // Passively check Anatomy for gain
+                attacker.CheckSkill(SkillName.ArmsLore, 0.0, attacker.Skills[SkillName.ArmsLore].Cap);
+                // Passively check ArmsLore for gain
 
-				if (Type == WeaponType.Axe)
+                if (Type == WeaponType.Axe)
 				{
 					attacker.CheckSkill(SkillName.Lumberjacking, 0.0, 100.0); // Passively check Lumberjacking for gain
 				}
-			}
+
+                if (Type == WeaponType.Bashing)
+                {
+                    attacker.CheckSkill(SkillName.Chivalry, 0.0, 125.0); // Passively check Lumberjacking for gain
+                }
+
+                if (Type == WeaponType.Staff)
+                {
+                    attacker.CheckSkill(SkillName.Magery, 0.0, 100.0); // Passively check Magery for gain
+                    attacker.CheckSkill(SkillName.EvalInt, 0.0, 100.0); // Passively check Eval Intelligence for gain
+                    attacker.CheckSkill(SkillName.Spellweaving, 0.0, 100.0); // Passively check Magery for gain
+                }
+
+            }
 
 			/* Compute tactics modifier
             * :   0.0 = 50% loss
@@ -3890,12 +3920,24 @@ namespace Server.Items
 				modifiers += 0.1;
 			}
 
-			/* Compute lumberjacking bonus
+            /* Compute arms lore modifier
+            * : 1% bonus for every 5 points of anatomy
+            * : +10% bonus at Grandmaster or higher
+            */
+            double armsValue = attacker.Skills[SkillName.ArmsLore].Value;
+            modifiers += ((armsValue / 5.0) / 100.0);
+
+            if (armsValue >= 100.0)
+            {
+                modifiers += 0.1;
+            }
+
+            /* Compute lumberjacking bonus
             * : 1% bonus for every 5 points of lumberjacking
             * : +10% bonus at Grandmaster or higher
             */
 
-			if (Type == WeaponType.Axe)
+            if (Type == WeaponType.Axe)
 			{
 				double lumberValue = attacker.Skills[SkillName.Lumberjacking].Value;
 			    lumberValue = (lumberValue/5.0)/100.0;
@@ -3910,8 +3952,28 @@ namespace Server.Items
 				}
 			}
 
-			// New quality bonus:
-			if (m_Quality != ItemQuality.Normal)
+            /* Compute mining bonus
+            * : 1% bonus for every 5 points of mining
+            * : +10% bonus at Grandmaster or higher
+            */
+
+            if (Type == WeaponType.Bashing)
+            {
+                double mineValue = attacker.Skills[SkillName.Mining].Value;
+                mineValue = (mineValue / 5.0) / 100.0;
+                if (mineValue > 0.2)
+                    mineValue = 0.2;
+
+                modifiers += mineValue;
+
+                if (mineValue >= 100.0)
+                {
+                    modifiers += 0.1;
+                }
+            }
+
+            // New quality bonus:
+            if (m_Quality != ItemQuality.Normal)
 			{
 				modifiers += (((int)m_Quality - 1) * 0.2);
 			}

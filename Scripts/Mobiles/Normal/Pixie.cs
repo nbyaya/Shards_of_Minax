@@ -93,6 +93,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.LowScrolls);
             AddLoot(LootPack.Gems, 2);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new PixieWhisperRobes());
+            }			
         }
 
 		public override void OnDeath(Container c)

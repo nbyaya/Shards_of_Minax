@@ -75,6 +75,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.Poor);
             AddLoot(LootPack.Gems);
+
+            if (Utility.RandomDouble() < 0.01) // 1 in 1000 chance
+            {
+                this.PackItem(new AmuletOfCorrosion());
+            }
         }
         public override void OnDeath(Container c)
         {

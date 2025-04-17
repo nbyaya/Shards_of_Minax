@@ -130,6 +130,14 @@ namespace Server.Mobiles
             Body = (DateTime.UtcNow >= m_NextWoolTime) ? 0xCF : 0xDF;
         }
 
+        public override void GenerateLoot()
+        {
+            if (Utility.RandomDouble() < 0.01) // 1 in 1000 chance
+            {
+                this.PackItem(new ShepherdsRobe());
+            }
+		}
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

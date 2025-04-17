@@ -95,6 +95,10 @@ namespace Server.Mobiles
         public override void GenerateLoot()
         {
             this.AddLoot(LootPack.Rich);
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new SolenQueenHiveBand());
+            }
         }
 
         public override void OnGotMeleeAttack(Mobile attacker)

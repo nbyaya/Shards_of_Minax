@@ -139,6 +139,11 @@ namespace Server.Mobiles
         {
             this.AddLoot(LootPack.Rich);
             this.AddLoot(LootPack.Gems, Utility.RandomMinMax(1, 4));
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new RedSolenWarriorRobes());
+            }				
         }
 
         public override bool IsEnemy(Mobile m)

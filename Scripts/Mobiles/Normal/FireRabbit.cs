@@ -57,6 +57,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.FilthyRich);
             AddLoot(LootPack.Rich, 3);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new FlamingVeilOfTheFireRabbit());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

@@ -53,6 +53,14 @@ namespace Server.Mobiles
         public override bool CanAngerOnTame { get { return true; } }
         public override bool StatLossAfterTame { get { return true; } }
 
+        public override void GenerateLoot()
+        {
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new OsseinSummonersHorn());
+            }
+		}
+
         public OsseinRam(Serial serial) : base(serial)
         {
         }

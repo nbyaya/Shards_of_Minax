@@ -146,6 +146,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.FilthyRich, 4);
             AddLoot(LootPack.Gems, 8);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new DragonsHeartBreastplate());
+            }			
         }
 
         public override void Serialize(GenericWriter writer)

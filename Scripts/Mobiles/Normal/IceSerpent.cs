@@ -83,6 +83,11 @@ namespace Server.Mobiles
             PackItem(Loot.RandomArmorOrShieldOrWeapon());
 
             PackBodyPartOrBones();
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new FrostbindersCloak());
+            }			
 
             if (0.025 > Utility.RandomDouble())
                 PackItem(new GlacialStaff());

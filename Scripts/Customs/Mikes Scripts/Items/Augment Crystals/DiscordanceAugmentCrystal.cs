@@ -39,7 +39,7 @@ namespace Server.Items
                 return;
             }
 
-            from.SendMessage("Which armor or clothing item would you like to augment for discordance?");
+            from.SendMessage("Which item would you like to augment for discordance?");
             from.Target = new DiscordanceAugmentTarget(this);
         }
 
@@ -57,25 +57,98 @@ namespace Server.Items
                 if (m_Crystal.Deleted || m_Crystal.RootParent != from)
                     return;
 
-                int bonus = Utility.Random(1, 25);  // Generates a random number between 1 and 25.
+                const int maxSlots = 5; // Number of skill slots
+                const SkillName discordanceSkill = SkillName.Discordance;
 
-                if (targeted is BaseArmor)
+                int existingSlot = -1;
+                int emptySlot = -1;
+
+                // Loop through skill slots
+                for (int i = 0; i < maxSlots; i++)
                 {
-                    BaseArmor armor = targeted as BaseArmor;
-                    armor.SkillBonuses.SetValues(0, SkillName.Discordance, bonus); // Setting the random bonus.
-                    from.SendMessage(String.Format("The armor has been augmented with a +{0} discordance bonus.", bonus));
+                    SkillName skill;
+                    double value;
+
+                    if (targeted is BaseArmor armor)
+                        armor.SkillBonuses.GetValues(i, out skill, out value);
+                    else if (targeted is BaseClothing clothing)
+                        clothing.SkillBonuses.GetValues(i, out skill, out value);
+                    else if (targeted is BaseJewel jewel)
+                        jewel.SkillBonuses.GetValues(i, out skill, out value);
+                    else if (targeted is BaseWeapon weapon)
+                        weapon.SkillBonuses.GetValues(i, out skill, out value);
+                    else
+                        continue;
+
+                    if (skill == discordanceSkill)
+                    {
+                        existingSlot = i;
+                        break;
+                    }
+
+                    if (value == 0 && emptySlot == -1) // Check for unused slot
+                    {
+                        emptySlot = i;
+                    }
+                }
+
+                if (existingSlot != -1)
+                {
+                    // Increment existing bonus
+                    SkillName skill;
+                    double value;
+
+                    if (targeted is BaseArmor armor)
+                        armor.SkillBonuses.GetValues(existingSlot, out skill, out value);
+                    else if (targeted is BaseClothing clothing)
+                        clothing.SkillBonuses.GetValues(existingSlot, out skill, out value);
+                    else if (targeted is BaseJewel jewel)
+                        jewel.SkillBonuses.GetValues(existingSlot, out skill, out value);
+                    else if (targeted is BaseWeapon weapon)
+                        weapon.SkillBonuses.GetValues(existingSlot, out skill, out value);
+                    else
+                        return;
+
+                    if (value >= 25)
+                    {
+                        from.SendMessage("The item already has the maximum discordance bonus.");
+                        return;
+                    }
+
+                    double newValue = value + 1;
+
+                    if (targeted is BaseArmor armorToUpdate)
+                        armorToUpdate.SkillBonuses.SetValues(existingSlot, discordanceSkill, newValue);
+                    else if (targeted is BaseClothing clothingToUpdate)
+                        clothingToUpdate.SkillBonuses.SetValues(existingSlot, discordanceSkill, newValue);
+                    else if (targeted is BaseJewel jewelToUpdate)
+                        jewelToUpdate.SkillBonuses.SetValues(existingSlot, discordanceSkill, newValue);
+                    else if (targeted is BaseWeapon weaponToUpdate)
+                        weaponToUpdate.SkillBonuses.SetValues(existingSlot, discordanceSkill, newValue);
+
+                    from.SendMessage($"The discordance bonus has been increased to +{newValue}.");
                     m_Crystal.Delete();
                 }
-                else if (targeted is BaseClothing)
+                else if (emptySlot != -1)
                 {
-                    BaseClothing clothing = targeted as BaseClothing;
-                    clothing.SkillBonuses.SetValues(0, SkillName.Discordance, bonus); // Setting the random bonus.
-                    from.SendMessage(String.Format("The clothing has been augmented with a +{0} discordance bonus.", bonus));
+                    // Add new bonus
+                    int bonus = Utility.Random(1, 25);
+
+                    if (targeted is BaseArmor armorToUpdate)
+                        armorToUpdate.SkillBonuses.SetValues(emptySlot, discordanceSkill, bonus);
+                    else if (targeted is BaseClothing clothingToUpdate)
+                        clothingToUpdate.SkillBonuses.SetValues(emptySlot, discordanceSkill, bonus);
+                    else if (targeted is BaseJewel jewelToUpdate)
+                        jewelToUpdate.SkillBonuses.SetValues(emptySlot, discordanceSkill, bonus);
+                    else if (targeted is BaseWeapon weaponToUpdate)
+                        weaponToUpdate.SkillBonuses.SetValues(emptySlot, discordanceSkill, bonus);
+
+                    from.SendMessage($"The item has been augmented with a +{bonus} discordance bonus.");
                     m_Crystal.Delete();
                 }
                 else
                 {
-                    from.SendMessage("You can't augment that for discordance.");
+                    from.SendMessage("All skill slots are occupied, and none can be used for discordance.");
                 }
             }
         }

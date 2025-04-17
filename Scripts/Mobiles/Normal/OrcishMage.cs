@@ -104,6 +104,11 @@ namespace Server.Mobiles
         {
             this.AddLoot(LootPack.Average);
             this.AddLoot(LootPack.LowScrolls);
+			
+            if (Utility.RandomDouble() < 0.01) // 1 in 1000 chance
+            {
+                this.PackItem(new OrcishMageRobe());
+            }			
         }
 
         public override bool IsEnemy(Mobile m)

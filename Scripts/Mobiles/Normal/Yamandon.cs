@@ -96,6 +96,11 @@ namespace Server.Mobiles
             AddLoot(LootPack.UltraRich);
             AddLoot(LootPack.FilthyRich, 2);
             AddLoot(LootPack.Gems, 6);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new YamandonLordsStoneChest());
+            }			
         }
 
         public override void OnDamagedBySpell(Mobile attacker)

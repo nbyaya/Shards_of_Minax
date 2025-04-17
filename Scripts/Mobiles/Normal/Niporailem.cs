@@ -68,6 +68,11 @@ namespace Server.Mobiles
         {
             AddLoot(LootPack.FilthyRich, 6);
             AddLoot(LootPack.Gems, 6);
+			
+            if (Utility.RandomDouble() < 0.001) // 1 in 1000 chance
+            {
+                this.PackItem(new NiporailemsShroud());
+            }			
         }
 
         public override int Meat { get { return 1; } }

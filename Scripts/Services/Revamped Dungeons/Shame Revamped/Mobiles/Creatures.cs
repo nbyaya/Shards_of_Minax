@@ -1418,41 +1418,56 @@ namespace Server.Mobiles
             base.AlterMeleeDamageFrom(from, ref damage);
         }
 
-        public void DoTeleport(Mobile m)
-        {
-            if (!InRange(m.Location, 1))
-            {
-                int x, y, z = 0;
-                Point3D p = Point3D.Zero;
+		public void DoTeleport(Mobile m)
+		{
+			// Check if the Mobile is null or its Map/Location is invalid
+			if (m == null || m.Deleted || m.Map == null || !m.Map.CanFit(m.Location, 16, true, false))
+				return;
 
-                for (int i = 0; i < 25; i++)
-                {
-                    x = Utility.RandomMinMax(this.X - 1, this.X + 1);
-                    y = Utility.RandomMinMax(this.Y - 1, this.Y + 1);
-                    z = this.Map.GetAverageZ(x, y);
+			if (!InRange(m.Location, 1))
+			{
+				int x, y, z = 0;
+				Point3D p = Point3D.Zero;
 
-                    if (this.Map.CanSpawnMobile(x, y, z) && (x != this.X || y != this.Y))
-                    {
-                        p = new Point3D(x, y, z);
-                        break;
-                    }
-                }
+				for (int i = 0; i < 25; i++)
+				{
+					x = Utility.RandomMinMax(this.X - 1, this.X + 1);
+					y = Utility.RandomMinMax(this.Y - 1, this.Y + 1);
 
-                if (p == Point3D.Zero)
-                    p = this.Location;
+					// Safely attempt to get Z coordinate
+					if (this.Map != null && this.Map.CanSpawnMobile(x, y, this.Z))
+					{
+						z = this.Map.GetAverageZ(x, y);
+						if (this.Map.CanSpawnMobile(x, y, z) && (x != this.X || y != this.Y))
+						{
+							p = new Point3D(x, y, z);
+							break;
+						}
+					}
+				}
 
-                Point3D from = m.Location;
+				// Default to creature's location if no valid point is found
+				if (p == Point3D.Zero)
+					p = this.Location;
 
-                Effects.SendLocationParticles(EffectItem.Create(from, m.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
-                Effects.SendLocationParticles(EffectItem.Create(p, m.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 5023);
+				// Visual and sound effects for teleportation
+				if (this.Map != null)
+				{
+					Point3D from = m.Location;
 
-                m.MoveToWorld(p, this.Map);
+					Effects.SendLocationParticles(EffectItem.Create(from, m.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
+					Effects.SendLocationParticles(EffectItem.Create(p, m.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 5023);
 
-                m.PlaySound(0x1FE);
-            }
+					m.MoveToWorld(p, this.Map);
 
-            NextTeleport = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(30, 60));
-        }
+					m.PlaySound(0x1FE);
+				}
+			}
+
+			// Reset the NextTeleport cooldown
+			NextTeleport = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(30, 60));
+		}
+
 
         public override void OnDeath(Container c)
         {
@@ -1558,41 +1573,56 @@ namespace Server.Mobiles
             base.AlterMeleeDamageFrom(from, ref damage);
         }
 
-        public void DoTeleport(Mobile m)
-        {
-            if (!InRange(m.Location, 1))
-            {
-                int x, y, z = 0;
-                Point3D p = Point3D.Zero;
+		public void DoTeleport(Mobile m)
+		{
+			// Check if the Mobile is null or its Map/Location is invalid
+			if (m == null || m.Deleted || m.Map == null || !m.Map.CanFit(m.Location, 16, true, false))
+				return;
 
-                for (int i = 0; i < 25; i++)
-                {
-                    x = Utility.RandomMinMax(this.X - 1, this.X + 1);
-                    y = Utility.RandomMinMax(this.Y - 1, this.Y + 1);
-                    z = this.Map.GetAverageZ(x, y);
+			if (!InRange(m.Location, 1))
+			{
+				int x, y, z = 0;
+				Point3D p = Point3D.Zero;
 
-                    if (this.Map.CanSpawnMobile(x, y, z) && (x != this.X || y != this.Y))
-                    {
-                        p = new Point3D(x, y, z);
-                        break;
-                    }
-                }
+				for (int i = 0; i < 25; i++)
+				{
+					x = Utility.RandomMinMax(this.X - 1, this.X + 1);
+					y = Utility.RandomMinMax(this.Y - 1, this.Y + 1);
 
-                if (p == Point3D.Zero)
-                    p = this.Location;
+					// Safely attempt to get Z coordinate
+					if (this.Map != null && this.Map.CanSpawnMobile(x, y, this.Z))
+					{
+						z = this.Map.GetAverageZ(x, y);
+						if (this.Map.CanSpawnMobile(x, y, z) && (x != this.X || y != this.Y))
+						{
+							p = new Point3D(x, y, z);
+							break;
+						}
+					}
+				}
 
-                Point3D from = m.Location;
+				// Default to creature's location if no valid point is found
+				if (p == Point3D.Zero)
+					p = this.Location;
 
-                Effects.SendLocationParticles(EffectItem.Create(from, m.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
-                Effects.SendLocationParticles(EffectItem.Create(p, m.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 5023);
+				// Visual and sound effects for teleportation
+				if (this.Map != null)
+				{
+					Point3D from = m.Location;
 
-                m.MoveToWorld(p, this.Map);
+					Effects.SendLocationParticles(EffectItem.Create(from, m.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
+					Effects.SendLocationParticles(EffectItem.Create(p, m.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 5023);
 
-                m.PlaySound(0x1FE);
-            }
+					m.MoveToWorld(p, this.Map);
 
-            NextTeleport = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(30, 60));
-        }
+					m.PlaySound(0x1FE);
+				}
+			}
+
+			// Reset the NextTeleport cooldown
+			NextTeleport = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(30, 60));
+		}
+
 
         public override void OnDeath(Container c)
         {
