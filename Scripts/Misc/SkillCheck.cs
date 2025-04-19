@@ -237,26 +237,28 @@ namespace Server.Misc
         }
         #endregion
 
-        public static bool CheckSkill(Mobile from, Skill skill, object obj, double chance)
+		public static bool CheckSkill( Mobile from, Skill skill, object obj, double chance )
 		{
 			if (from.Skills.Cap == 0)
 				return false;
 
-            var success = true;
-            var gc = GetGainChance(from, skill, chance, success);
+			if (chance < 0.0) chance = 0.0;
+			if (chance > 1.0) chance = 1.0;
+
+			bool success = (Utility.RandomDouble() <= chance);
+
+			var gc = GetGainChance(from, skill, chance, success);
 
 			if (AllowGain(from, skill, obj))
 			{
 				if (from.Alive && (skill.Base < 10.0 || Utility.RandomDouble() <= gc || CheckGGS(from, skill)))
-				{
 					Gain(from, skill);
-				}
 			}
 
-            EventSink.InvokeSkillCheck(new SkillCheckEventArgs(from, skill, success));
-
-            return success;
+			EventSink.InvokeSkillCheck(new SkillCheckEventArgs(from, skill, success));
+			return success;
 		}
+
 
         private static double GetGainChance(Mobile from, Skill skill, double chance, bool success)
         {
