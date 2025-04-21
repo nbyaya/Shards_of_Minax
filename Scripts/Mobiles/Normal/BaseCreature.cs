@@ -5928,18 +5928,16 @@ namespace Server.Mobiles
 
             if (!Summoned && !NoKillAwards && !IsBonded && !NoLootOnDeath)
             {
-				if (treasureLevel >= 0)
-				{
-					// Optional cleanup: you don't need to repeat the outer checks here
-					if ((m_Paragon || (!String.IsNullOrEmpty(ParagonName))) && Paragon.ChestChance > Utility.RandomDouble())
-					{
-						PackItem(new ParagonChest(this.Name, treasureLevel));
-					}
-					else if ((Map == Map.Felucca || Map == Map.Trammel) && TreasureMap.LootChance >= Utility.RandomDouble())
-					{
-						PackItem(new TreasureMap(treasureLevel, Map));
-					}
-				}
+                if (treasureLevel >= 0)
+                {
+                    if ( !Summoned && !NoKillAwards && !IsBonded && treasureLevel >= 0 )
+                    {
+                        if ( m_Paragon && Paragon.ChestChance > Utility.RandomDouble() )
+                            PackItem( new ParagonChest( this.Name, treasureLevel ) );
+                        else if ( (Map == Map.Felucca || Map == Map.Trammel) && TreasureMap.LootChance >= Utility.RandomDouble() )
+                            PackItem( new TreasureMap( treasureLevel, Map ) );
+                    }
+                }
 
                 if (m_Paragon && Paragon.ChocolateIngredientChance > Utility.RandomDouble())
                 {
