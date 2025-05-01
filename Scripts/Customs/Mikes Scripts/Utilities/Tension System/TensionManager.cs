@@ -10,9 +10,9 @@ namespace Bittiez.CustomSystems
         private static readonly string FilePath = "tension.dat";
 
         // Backing field for the tension tally.
-        private static int m_Tension;
+        private static double m_Tension;
 
-        public static int Tension
+        public static double Tension
         {
             get { return m_Tension; }
             set
@@ -28,13 +28,13 @@ namespace Bittiez.CustomSystems
             Load();
         }
 
-        public static void IncreaseTension(int amount)
+        public static void IncreaseTension(double amount)
         {
             m_Tension += amount;
             Save();
         }
 
-        public static void SetTension(int amount)
+        public static void SetTension(double amount)
         {
             m_Tension = amount;
             Save();
@@ -61,7 +61,7 @@ namespace Bittiez.CustomSystems
                 if (File.Exists(FilePath))
                 {
                     string text = File.ReadAllText(FilePath);
-                    int.TryParse(text, out m_Tension);
+                    double.TryParse(text, out m_Tension);
                 }
                 else
                 {
