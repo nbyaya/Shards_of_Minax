@@ -16,7 +16,7 @@ namespace Bittiez.CustomSystems
             AddLabel(90, 20, 1152, "Tension Admin Panel"); // Title in white
 
             // Display the current tension value in white
-            AddLabel(50, 50, 1152, $"Current Tension: {TensionManager.Tension}");
+            AddLabel(50, 50, 1152, $"Current Tension: {Math.Round(TensionManager.Tension, 4)}");
 
             // Text entry box
             AddLabel(50, 80, 1152, "Adjust Tension By:");
