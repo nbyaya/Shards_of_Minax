@@ -100,7 +100,7 @@ namespace Server.ACC.CSS.Systems.BeggingMagic
 
             private string GetWealthStatus(BaseCreature target)
             {
-                if (target is null)
+                if (target == null)
                     return "Unknown";
 
                 // Calculate total amount of gold in the creature's backpack

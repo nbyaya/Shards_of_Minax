@@ -1590,7 +1590,7 @@ namespace Server
 		#region Enums
 		
 		public static void WriteFlag<TEnum>(this GenericWriter writer, TEnum flag)
-			where TEnum : struct, Enum
+			where TEnum : struct
 		{
 			InternalWriteFlag(writer, typeof(TEnum), flag);
 		}
@@ -1654,7 +1654,7 @@ namespace Server
 		}
 
 		public static TEnum ReadFlag<TEnum>(this GenericReader reader)
-			where TEnum : struct, Enum
+			where TEnum : struct
 		{
 			switch (reader.ReadByte())
 			{
@@ -1672,7 +1672,7 @@ namespace Server
 		}
 
 		private static TEnum ToEnum<TEnum>(object val)
-			where TEnum : struct, Enum
+			where TEnum : struct
 		{
 			var type = typeof(TEnum);
 
