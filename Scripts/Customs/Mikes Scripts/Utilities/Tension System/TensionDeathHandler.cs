@@ -26,7 +26,7 @@ namespace Bittiez.CustomSystems
                 return;
 
             // Each death increases tension by 1
-            TensionManager.IncreaseTension(0.00001);
+            TensionManager.IncreaseTension(0.0001);
         }
 
         private static void TensionGump_OnCommand(CommandEventArgs e)
