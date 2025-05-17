@@ -10,8 +10,8 @@ public class GlassSwordOfValor : LoreSword
     {
         Name = "Glass Sword of Valor";
         Hue = Utility.Random(50, 2900);
-        MinDamage = 500;
-        MaxDamage = 1000;
+        MinDamage = 50;
+        MaxDamage = 100;
         Attributes.BonusStr = 50;
         Attributes.Luck = 250;
         Slayer = SlayerName.OrcSlaying;
