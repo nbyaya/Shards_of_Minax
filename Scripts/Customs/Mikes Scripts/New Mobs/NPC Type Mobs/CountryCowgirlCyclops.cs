@@ -21,10 +21,10 @@ namespace Server.Mobiles
 			Team = Utility.RandomMinMax(1, 5);
 
             // Cowgirl outfit
-            AddItem(new LeatherSkirt(Utility.RandomNeutralHue()));
-            AddItem(new FancyShirt(Utility.RandomNeutralHue()));
-            AddItem(new Boots(Utility.RandomNeutralHue()));
-            AddItem(new WideBrimHat(Utility.RandomNeutralHue()));
+            AddItem(new LeatherSkirt());
+            AddItem(new FancyShirt());
+            AddItem(new Boots());
+            AddItem(new WideBrimHat());
 
             SetStr(800, 1200);
             SetDex(177, 255);
