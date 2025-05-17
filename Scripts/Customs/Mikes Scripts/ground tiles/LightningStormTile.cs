@@ -15,7 +15,7 @@ namespace Server.Items
         public TimeSpan AutoDelete { get; set; }
 
         [Constructable]
-        public LightningStormTile() : base(0x1AE4) // Use an appropriate storm cloud-like tile ID
+        public LightningStormTile() : base(0x0E65) // Use an appropriate storm cloud-like tile ID
         {
             Movable = false;
             Name = "a lightning storm";

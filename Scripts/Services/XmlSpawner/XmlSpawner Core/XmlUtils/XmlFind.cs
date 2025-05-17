@@ -137,13 +137,15 @@ namespace Server.Mobiles
 			public string Searchattachtype;
 			public string Searchname;
 			public string Searchspawnentry;
+			public bool Dosearchsosaria;
+
 
 			public Map Currentmap;
 			public Point3D Currentloc;
 
 			public SearchCriteria(bool dotype, bool doname, bool dorange, bool doregion, bool doentry, bool doentrytype, bool docondition, bool dofel, bool dotram,
 				bool domal, bool doilsh, bool dotok, bool doter, bool doint, bool donull, bool doerr, bool doage, bool dowithattach, bool doattach, bool dohidevalid,
-				bool agedirection, double age, int range, string region, string condition, string type, string attachtype, string name, string entry
+				bool agedirection, double age, int range, string region, string condition, string type, string attachtype, string name, string entry, bool doSosaria
 				)
 			{
 				Dosearchtype = dotype;
@@ -175,6 +177,7 @@ namespace Server.Mobiles
 				Searchattachtype = attachtype;
 				Searchname = name;
 				Searchspawnentry = entry;
+				Dosearchsosaria = doSosaria;  // new flag
 
 			}
 
@@ -520,13 +523,18 @@ namespace Server.Mobiles
 						}
 
 						// check for map
-						if ((i.Map == Map.Felucca && criteria.Dosearchfel) || (i.Map == Map.Trammel && criteria.Dosearchtram) ||
-							(i.Map == Map.Malas && criteria.Dosearchmal) || (i.Map == Map.Ilshenar && criteria.Dosearchilsh) || 
-                            (i.Map == Map.TerMur && criteria.Dosearchter) || (i.Map == Map.Internal && criteria.Dosearchint) ||
-							(i.Map == null && criteria.Dosearchnull))
+						if ((i.Map == Map.Felucca && criteria.Dosearchfel) ||
+							(i.Map == Map.Trammel && criteria.Dosearchtram) ||
+							(i.Map == Map.Malas && criteria.Dosearchmal) ||
+							(i.Map == Map.Ilshenar && criteria.Dosearchilsh) ||
+							(i.Map == Map.TerMur && criteria.Dosearchter) ||
+							(i.Map == Map.Internal && criteria.Dosearchint) ||
+							(i.Map == null && criteria.Dosearchnull) ||
+							(i.Map == Map.Sosaria && criteria.Dosearchsosaria))
 						{
 							hasmap = true;
 						}
+
 
 						if (tokunomap != null && i.Map == tokunomap && criteria.Dosearchtok)
 						{
@@ -958,7 +966,8 @@ namespace Server.Mobiles
 			type, // type
 			null, // attachtype
 			null, // name
-			null // entry 
+			null, // entry
+			false // doSosaria
 			),
 
 			null, -1, 0, null, null,
@@ -1103,10 +1112,15 @@ namespace Server.Mobiles
             AddCheck(75, y, 0xD2, 0xD3, m_SearchCriteria.Dosearchter, 320);
             AddLabel(98, y, 0x384, "Ter");
 
+
+
 			y += 20;
 			// add the hide valid internal map button
-			AddCheck(5, y, 0xD2, 0xD3, m_SearchCriteria.Dohidevalidint, 316);
-			AddLabel(28, y, 0x384, "Hide valid internal");
+			AddCheck(75, y, 0xD2, 0xD3, m_SearchCriteria.Dohidevalidint, 316);
+			AddLabel(98, y, 0x384, "Hide valid internal");
+			
+			AddCheck(5, y, 0xD2, 0xD3, m_SearchCriteria.Dosearchsosaria, 322); // new switch id, e.g., 322
+			AddLabel(28, y, 0x384, "Sosaria");			
 
 			// ----------------
 			// FILTER section
@@ -2228,6 +2242,9 @@ namespace Server.Mobiles
 			m_SearchCriteria.Dosearchwithattach = info.IsSwitched(317);
 			m_SearchCriteria.Dosearchattach = info.IsSwitched(325);
 			m_SearchCriteria.Dosearchregion = info.IsSwitched(319);
+			
+			m_SearchCriteria.Dosearchsosaria = info.IsSwitched(322);
+
 
 			switch (info.ButtonID)
 			{

@@ -7,14 +7,54 @@ namespace Server.Items
     {
         [Constructable]
         public JukaBow()
-        { }
+        {
+            ApplyRandomTier();
+        }
 
         public JukaBow(Serial serial)
             : base(serial)
         { }
 
+        private void ApplyRandomTier()
+        {
+            Random rand = new Random();
+            double chanceForSpecialTier = rand.NextDouble();
+
+            // 50% chance for default stats, 50% chance for a special tier
+            if (chanceForSpecialTier < 0.5)
+            {
+                // Default stats, don't modify anything
+                return;
+            }
+
+            // Now determine which special tier it falls into
+            double tierChance = rand.NextDouble();
+
+            if (tierChance < 0.05)
+            {
+                this.MinDamage = rand.Next(1, 80);
+                this.MaxDamage = rand.Next(80, 120);
+            }
+            else if (tierChance < 0.2)
+            {
+                this.MinDamage = rand.Next(1, 70);
+                this.MaxDamage = rand.Next(70, 100);
+            }
+            else if (tierChance < 0.5)
+            {
+                this.MinDamage = rand.Next(1, 50);
+                this.MaxDamage = rand.Next(50, 75);
+            }
+            else
+            {
+                this.MinDamage = rand.Next(1, 30);
+                this.MaxDamage = rand.Next(30, 50);
+            }
+        }
+
         [CommandProperty(AccessLevel.GameMaster)]
         public bool IsModified => Slayer != SlayerName.None;
+
         public override int AosStrengthReq => 80;
         public override int AosDexterityReq => 80;
         public override int OldStrengthReq => 80;
@@ -58,7 +98,7 @@ namespace Server.Items
 
             if (g == null || !g.IsChildOf(from.Backpack))
             {
-                from.SendMessage("Those are not gears."); // Apparently gears that aren't in your backpack aren't really gears at all. :-(
+                from.SendMessage("Those are not gears.");
             }
             else if (IsModified)
             {

@@ -13,7 +13,7 @@ namespace Server.Mobiles
             Name = "a mummy";
             Body = 154;
             BaseSoundID = 471;
-			Team = 4;
+			
 
             SetStr(346, 370);
             SetDex(71, 90);

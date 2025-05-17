@@ -13,7 +13,7 @@ namespace Server.Mobiles
             this.Name = "an ophidian matriarch";
             this.Body = 87;
             this.BaseSoundID = 644;
-			Team = 3;
+			
 
             this.SetStr(416, 505);
             this.SetDex(96, 115);

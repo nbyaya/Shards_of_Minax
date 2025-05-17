@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<accounts count="1">
+	<account>
+		<username>admin</username>
+		<newCryptPassword>DD-94-70-95-28-BB-1C-83-D0-8F-30-88-D4-04-3F-47-42-89-1F-4F</newCryptPassword>
+		<accessLevel>Owner</accessLevel>
+		<created>2025-05-16T17:37:16.8863572Z</created>
+		<lastLogin>2025-05-16T17:37:56.5936703Z</lastLogin>
+		<totalGameTime>PT9M4.3068789S</totalGameTime>
+		<chars>
+			<char index="0">119</char>
+		</chars>
+		<totalCurrency>0</totalCurrency>
+		<sovereigns>55</sovereigns>
+	</account>
+</accounts>

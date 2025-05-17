@@ -8,6 +8,7 @@ using Server.Factions;
 using Server.Items;
 using Server.Mobiles;
 using Server.Engines.Quests;
+using Server.Engines.XmlSpawner2;
 #endregion
 
 namespace Server.Engines.Craft
@@ -1823,6 +1824,10 @@ namespace Server.Engines.Craft
 					{
 						((Food)item).PlayerConstructed = true;
 					}
+					if (endquality == 2 && makersMark)
+					{
+						XmlAttach.AttachTo(item, new XmlLevelItem());
+					}										
 					else if (item.Hue == 0)
 					{
 						item.Hue = resHue;

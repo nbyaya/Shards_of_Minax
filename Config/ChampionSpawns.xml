@@ -94,61 +94,61 @@
         <location x="174" y="1629" z="8" map="Malas" radius="25"/>
 	</spawn>	
     <spawn name="UltimateMasterAlchemist" type="UltimateMasterAlchemist">
-        <location x="1521" y="555" z="24" map="Ilshenar" radius="60"/>
+        <location x="530" y="203" z="47" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterAnatomy" type="UltimateMasterAnatomy">
-        <location x="1207" y="1125" z="-5" map="Ilshenar" radius="60"/>
+        <location x="570" y="488" z="20" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterAnimalLore" type="UltimateMasterAnimalLore">
-        <location x="820" y="1070" z="-10" map="Ilshenar" radius="60"/>
+        <location x="983" y="1078" z="20" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterAnimalTamer" type="UltimateMasterAnimalTamer">
-        <location x="1643" y="314" z="68" map="Ilshenar" radius="60"/>
+        <location x="1291" y="1449" z="20" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterArcher" type="UltimateMasterArcher">
-        <location x="1363" y="1067" z="7" map="Ilshenar" radius="60"/>
+        <location x="1700" y="1820" z="21" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterArmsLore" type="UltimateMasterArmsLore">
-        <location x="1251" y="743" z="-60" map="Ilshenar" radius="60"/>
+        <location x="2310" y="1804" z="20" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterBeggar" type="UltimateMasterBeggar">
-        <location x="575" y="427" z="41" map="Ilshenar" radius="60"/>
+        <location x="2908" y="1988" z="20" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterBlacksmith" type="UltimateMasterBlacksmith">
-        <location x="116" y="1510" z="-8" map="Ilshenar" radius="60"/>
+        <location x="3316" y="2062" z="60" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterBushido" type="UltimateMasterBushido">
-        <location x="109" y="943" z="-8" map="Ilshenar" radius="60"/>
+        <location x="3507" y="2283" z="91" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterCamper" type="UltimateMasterCamper">
-        <location x="445" y="1543" z="-9" map="Ilshenar" radius="60"/>
+        <location x="3254" y="2806" z="20" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterCarpenter" type="UltimateMasterCarpenter">
-        <location x="1746" y="1213" z="20" map="Ilshenar" radius="60"/>
+        <location x="3787" y="1854" z="82" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterCartographer" type="UltimateMasterCartographer">
-        <location x="2114" y="906" z="-8" map="Ilshenar" radius="60"/>
+        <location x="3403" y="1178" z="20" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterChivalry" type="UltimateMasterChivalry">
-        <location x="2113" y="1001" z="-8" map="Ilshenar" radius="60"/>
+        <location x="3012" y="381" z="21" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterChef" type="UltimateMasterChef">
-        <location x="1273" y="484" z="22" map="Ilshenar" radius="60"/>
+        <location x="1900" y="918" z="45" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterDetectingHidden" type="UltimateMasterDetectingHidden">
-        <location x="1421" y="314" z="92" map="Ilshenar" radius="60"/>
+        <location x="1824" y="760" z="38" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterDiscordance" type="UltimateMasterDiscordance">
-        <location x="1598" y="627" z="6" map="Ilshenar" radius="60"/>
+        <location x="5208" y="1737" z="20" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterIntelligence" type="UltimateMasterIntelligence">
-        <location x="1757" y="875" z="-6" map="Ilshenar" radius="60"/>
+        <location x="1819" y="3315" z="21" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterFencer" type="UltimateMasterFencer">
-        <location x="1349" y="1251" z="9" map="Ilshenar" radius="60"/>
+        <location x="1863" y="3624" z="32" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterFishing" type="UltimateMasterFishing">
-        <location x="897" y="1314" z="-51" map="Ilshenar" radius="60"/>
+        <location x="1092" y="3384" z="32" map="Sosaria" radius="60"/>
     </spawn>
     <spawn name="UltimateMasterBowcraft" type="UltimateMasterBowcraft">
         <location x="411" y="1199" z="-46" map="Ilshenar" radius="60"/>

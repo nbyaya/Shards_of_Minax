@@ -34,16 +34,20 @@ namespace Server.Items
 			}
 		}
 
-		public static int ExpToLevel( int currentlevel )
+		public static int ExpToLevel(int currentlevel)
 		{
-			double req = ( currentlevel + 1 ) * 10;
-
-			req = Math.Pow( req, 2 );
-
+			double req = (currentlevel + 1) * 10;
+			req = Math.Pow(req, 2);
 			req -= 100.0;
 
-			return ( (int)Math.Round( req ) );
+			if (currentlevel > 15)
+			{
+				req *= Math.Pow(1.5, currentlevel - 15); // Exponential multiplier
+			}
+
+			return (int)Math.Round(req);
 		}
+
 
 		#endregion
 

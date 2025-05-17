@@ -14,7 +14,7 @@ namespace Server.Items
         public TimeSpan AutoDelete { get; set; }
 
         [Constructable]
-        public ThunderstormTile2() : base(0x1D4A) // Use an appropriate item ID for a storm tile
+        public ThunderstormTile2() : base(0x0E5C) // Use an appropriate item ID for a storm tile
         {
             Movable = false;
             Name = "a thunderstorm tile";

@@ -14,7 +14,7 @@ namespace Server.Items
         public TimeSpan AutoDelete { get; set; }
 
         [Constructable]
-        public VortexTile() : base(0x122A) // Use an appropriate vortex-like tile ID
+        public VortexTile() : base(0x37CC) // Use an appropriate vortex-like tile ID
         {
             Movable = false;
             Name = "a swirling vortex";

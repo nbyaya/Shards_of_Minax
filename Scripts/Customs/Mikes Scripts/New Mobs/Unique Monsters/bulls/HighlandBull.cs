@@ -203,22 +203,26 @@ namespace Server.Mobiles
             m_NextToughHide = DateTime.UtcNow + TimeSpan.FromSeconds(40); // Cooldown for Tough Hide
         }
 
-        private Point3D GetSpawnPosition(int range)
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                int x = X + Utility.RandomMinMax(-range, range);
-                int y = Y + Utility.RandomMinMax(-range, range);
-                int z = Map.GetAverageZ(x, y);
+		private Point3D GetSpawnPosition(int range)
+		{
+			if (Map == null || Deleted)
+				return Location;  // Fallback if not placed in world
 
-                Point3D p = new Point3D(x, y, z);
+			for (int i = 0; i < 10; i++)
+			{
+				int x = X + Utility.RandomMinMax(-range, range);
+				int y = Y + Utility.RandomMinMax(-range, range);
+				int z = Map.GetAverageZ(x, y);
 
-                if (Map.CanSpawnMobile(p))
-                    return p;
-            }
+				Point3D p = new Point3D(x, y, z);
 
-            return Location;
-        }
+				if (Map.CanSpawnMobile(p))
+					return p;
+			}
+
+			return Location;
+		}
+
 
         public override void Serialize(GenericWriter writer)
         {

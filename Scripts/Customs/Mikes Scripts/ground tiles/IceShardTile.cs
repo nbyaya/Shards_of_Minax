@@ -14,7 +14,7 @@ namespace Server.Items
         public TimeSpan AutoDelete { get; set; }
 
         [Constructable]
-        public IceShardTile() : base(0x122F) // Use an appropriate ice-like tile ID
+        public IceShardTile() : base(0x0E68) // Use an appropriate ice-like tile ID
         {
             Movable = false;
             Name = "an ice shard tile";

@@ -17,7 +17,7 @@ namespace Server.Mobiles
             Body = 0x3CA; // Ghost body
             Hue = 0x4001; // Transparent hue
             Name = "Ghost Scout";
-            Team = 4;
+            Team = 2;
 
             SetStr( 150, 200 );
             SetDex( 250, 300 );

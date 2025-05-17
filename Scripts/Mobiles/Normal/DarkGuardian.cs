@@ -14,7 +14,7 @@ namespace Server.Mobiles
             Name = "a dark guardian";
             Body = 78;
             BaseSoundID = 0x3E9;
-			Team = 4;
+			
 
             SetStr(125, 150);
             SetDex(100, 120);

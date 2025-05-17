@@ -14,7 +14,7 @@ namespace Server.Mobiles
         public BoneShielder() : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = 0x9C4; // bone color
-			Team = 3;
+			Team = 1;
 
             Body = 0x190; // using male model for simplicity
             Name = NameList.RandomName("male");

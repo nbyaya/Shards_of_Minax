@@ -14,7 +14,7 @@ namespace Server.Mobiles
         public Diplomat() : base(AIType.AI_Mage, FightMode.None, 10, 1, 0.2, 0.4)
         {
             Hue = Utility.RandomSkinHue();
-			Team = 5;
+			Team = 2;
 
             if (Female = Utility.RandomBool())
             {

@@ -12,6 +12,9 @@ namespace Server.Items
             : base(0x2D21)
         {
             this.Weight = 4.0;
+
+            // Apply random tier damage here
+            ApplyRandomTier();
         }
 
         public AssassinSpike(Serial serial)
@@ -19,122 +22,70 @@ namespace Server.Items
         {
         }
 
-        public override WeaponAbility PrimaryAbility
+        private void ApplyRandomTier()
         {
-            get
+            Random rand = new Random();
+            double chanceForSpecialTier = rand.NextDouble();
+
+            if (chanceForSpecialTier < 0.5)
             {
-                return WeaponAbility.InfectiousStrike;
+                // Default stats, no change
+                return;
+            }
+
+            double tierChance = rand.NextDouble();
+
+            if (tierChance < 0.05)
+            {
+                this.MinDamage = rand.Next(1, 80);
+                this.MaxDamage = rand.Next(80, 120);
+            }
+            else if (tierChance < 0.2)
+            {
+                this.MinDamage = rand.Next(1, 70);
+                this.MaxDamage = rand.Next(70, 100);
+            }
+            else if (tierChance < 0.5)
+            {
+                this.MinDamage = rand.Next(1, 50);
+                this.MaxDamage = rand.Next(50, 75);
+            }
+            else
+            {
+                this.MinDamage = rand.Next(1, 30);
+                this.MaxDamage = rand.Next(30, 50);
             }
         }
-        public override WeaponAbility SecondaryAbility
-        {
-            get
-            {
-                return WeaponAbility.ShadowStrike;
-            }
-        }
-        public override int AosStrengthReq
-        {
-            get
-            {
-                return 15;
-            }
-        }
-        public override int AosMinDamage
-        {
-            get
-            {
-                return 10;
-            }
-        }
-        public override int AosMaxDamage
-        {
-            get
-            {
-                return 12;
-            }
-        }
-        public override int AosSpeed
-        {
-            get
-            {
-                return 50;
-            }
-        }
-        public override float MlSpeed
-        {
-            get
-            {
-                return 2.00f;
-            }
-        }
-        public override int OldStrengthReq
-        {
-            get
-            {
-                return 15;
-            }
-        }
-        public override int OldMinDamage
-        {
-            get
-            {
-                return 10;
-            }
-        }
-        public override int OldMaxDamage
-        {
-            get
-            {
-                return 12;
-            }
-        }
-        public override int OldSpeed
-        {
-            get
-            {
-                return 50;
-            }
-        }
-        public override int DefMissSound
-        {
-            get
-            {
-                return 0x239;
-            }
-        }
-        public override SkillName DefSkill
-        {
-            get
-            {
-                return SkillName.Fencing;
-            }
-        }
-        public override int InitMinHits
-        {
-            get
-            {
-                return 30;
-            }
-        }// TODO
-        public override int InitMaxHits
-        {
-            get
-            {
-                return 60;
-            }
-        }// TODO
+
+        public override WeaponAbility PrimaryAbility => WeaponAbility.InfectiousStrike;
+        public override WeaponAbility SecondaryAbility => WeaponAbility.ShadowStrike;
+
+        public override int AosStrengthReq => 15;
+        public override int AosMinDamage => 10;
+        public override int AosMaxDamage => 12;
+        public override int AosSpeed => 50;
+        public override float MlSpeed => 2.00f;
+
+        public override int OldStrengthReq => 15;
+        public override int OldMinDamage => 10;
+        public override int OldMaxDamage => 12;
+        public override int OldSpeed => 50;
+
+        public override int DefMissSound => 0x239;
+        public override SkillName DefSkill => SkillName.Fencing;
+
+        public override int InitMinHits => 30;
+        public override int InitMaxHits => 60;
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-
             writer.WriteEncodedInt(0); // version
         }
 
         public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
-
             int version = reader.ReadEncodedInt();
         }
     }

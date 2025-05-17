@@ -81,6 +81,7 @@ namespace Server.Engines.UOStore
         {
             // Featured
 			UltimaStore.Register<KingLootbox>(new TextDefinition[] { new TextDefinition("Kings Lootbox"), new TextDefinition("A Kings Ransom!") }, 0, 0xE41, 0, 2331, 400, StoreCategory.Featured);
+			UltimaStore.Register<ElderLootbox>(new TextDefinition[] { new TextDefinition("Elder Lootbox"), new TextDefinition("Magic Maps!") }, 0, 0xE41, 0, 2331, 400, StoreCategory.Featured);
 			UltimaStore.Register<WorldLootbox>(new TextDefinition[] { new TextDefinition("World Lootbox"), new TextDefinition("Treasures of the World") }, 0, 0xE41, 0, 2534, 250, StoreCategory.Featured);
 			UltimaStore.Register<GearLootbox>(new TextDefinition[] { new TextDefinition("Gear Lootbox"), new TextDefinition("Powerful Gear") }, 0, 0xE41, 0, 1005, 250, StoreCategory.Featured);
 			UltimaStore.Register<MagicalLootbox>(new TextDefinition[] { new TextDefinition("Magical Lootbox"), new TextDefinition("Items of Power") }, 0, 0xE41, 0, 2704, 200, StoreCategory.Featured);			

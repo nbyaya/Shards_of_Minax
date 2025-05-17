@@ -17,7 +17,7 @@ namespace Server.Mobiles
             Body = Utility.RandomList(0x191, 0x190);
             Name = NameList.RandomName(Body == 0x191 ? "female" : "male");
             Title = " the Herbalist Poisoner";
-			Team = 5;
+			Team = 2;
 
             Item hair = new Item(Utility.RandomList(0x203B, 0x203C, 0x203D));
             hair.Hue = Utility.RandomHairHue();

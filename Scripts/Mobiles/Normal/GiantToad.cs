@@ -14,7 +14,7 @@ namespace Server.Mobiles
             this.Name = "a giant toad";
             this.Body = 80;
             this.BaseSoundID = 0x26B;
-			Team = 3;
+			
 
             this.SetStr(76, 100);
             this.SetDex(6, 25);

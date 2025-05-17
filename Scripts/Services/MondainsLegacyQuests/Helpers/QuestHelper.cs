@@ -496,6 +496,9 @@ namespace Server.Engines.Quests
 
             if (Map.TerMur.Regions.TryGetValue(name, out reg))
                 return reg;
+			
+            if (Map.Sosaria.Regions.TryGetValue(name, out reg))
+                return reg;			
 				
             return reg;
         }

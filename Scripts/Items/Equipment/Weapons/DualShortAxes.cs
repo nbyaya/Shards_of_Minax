@@ -10,7 +10,10 @@ namespace Server.Items
         public DualShortAxes()
             : base(0x8FD)
         {
-            //Weight = 8.0;
+            // Weight = 8.0;
+
+            // Apply random tier damage
+            ApplyRandomTier();
         }
 
         public DualShortAxes(Serial serial)
@@ -18,111 +21,63 @@ namespace Server.Items
         {
         }
 
-        public override WeaponAbility PrimaryAbility
+        private void ApplyRandomTier()
         {
-            get
+            Random rand = new Random();
+            double chanceForSpecialTier = rand.NextDouble();
+
+            // 50% chance for default stats, 50% chance for a special tier
+            if (chanceForSpecialTier < 0.5)
             {
-                return WeaponAbility.DoubleStrike;
+                // Default stats, don't modify anything
+                return;
+            }
+
+            // Determine special tier
+            double tierChance = rand.NextDouble();
+
+            if (tierChance < 0.05)
+            {
+                this.MinDamage = rand.Next(1, 80);
+                this.MaxDamage = rand.Next(80, 120);
+            }
+            else if (tierChance < 0.2)
+            {
+                this.MinDamage = rand.Next(1, 70);
+                this.MaxDamage = rand.Next(70, 100);
+            }
+            else if (tierChance < 0.5)
+            {
+                this.MinDamage = rand.Next(1, 50);
+                this.MaxDamage = rand.Next(50, 75);
+            }
+            else
+            {
+                this.MinDamage = rand.Next(1, 30);
+                this.MaxDamage = rand.Next(30, 50);
             }
         }
-        public override WeaponAbility SecondaryAbility
-        {
-            get
-            {
-                return WeaponAbility.InfectiousStrike;
-            }
-        }
-        public override int AosStrengthReq
-        {
-            get
-            {
-                return 35;
-            }
-        }
-        public override int AosMinDamage
-        {
-            get
-            {
-                return 14;
-            }
-        }
-        public override int AosMaxDamage
-        {
-            get
-            {
-                return 17;
-            }
-        }
-        public override int AosSpeed
-        {
-            get
-            {
-                return 33;
-            }
-        }
-        public override float MlSpeed
-        {
-            get
-            {
-                return 3.00f;
-            }
-        }
-        public override int OldStrengthReq
-        {
-            get
-            {
-                return 45;
-            }
-        }
-        public override int OldMinDamage
-        {
-            get
-            {
-                return 5;
-            }
-        }
-        public override int OldMaxDamage
-        {
-            get
-            {
-                return 35;
-            }
-        }
-        public override int OldSpeed
-        {
-            get
-            {
-                return 37;
-            }
-        }
-        public override int InitMinHits
-        {
-            get
-            {
-                return 31;
-            }
-        }
-        public override int InitMaxHits
-        {
-            get
-            {
-                return 110;
-            }
-        }
-        public override Race RequiredRace
-        {
-            get
-            {
-                return Race.Gargoyle;
-            }
-        }
-        public override bool CanBeWornByGargoyles
-        {
-            get
-            {
-                return true;
-            }
-        }
+
+        public override WeaponAbility PrimaryAbility => WeaponAbility.DoubleStrike;
+        public override WeaponAbility SecondaryAbility => WeaponAbility.InfectiousStrike;
+
+        public override int AosStrengthReq => 35;
+        public override int AosMinDamage => 14;
+        public override int AosMaxDamage => 17;
+        public override int AosSpeed => 33;
+        public override float MlSpeed => 3.00f;
+
+        public override int OldStrengthReq => 45;
+        public override int OldMinDamage => 5;
+        public override int OldMaxDamage => 35;
+        public override int OldSpeed => 37;
+
+        public override int InitMinHits => 31;
+        public override int InitMaxHits => 110;
+
+        public override Race RequiredRace => Race.Gargoyle;
+        public override bool CanBeWornByGargoyles => true;
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

@@ -17,7 +17,7 @@ namespace Server.Mobiles
             this.SetStr(151, 170);
             this.SetDex(92, 130);
             this.SetInt(51, 65);
-			Team = 5;
+			
 
             this.SetDamage(29, 34);
 

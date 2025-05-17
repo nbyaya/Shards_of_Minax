@@ -14,7 +14,7 @@ namespace Server.Items
         public TimeSpan AutoDelete { get; set; }
 
         [Constructable]
-        public QuicksandTile() : base(0x177B) // Use an appropriate sand-like tile ID
+        public QuicksandTile() : base(0x1B71) // Use an appropriate sand-like tile ID
         {
             Movable = false;
             Name = "quicksand";

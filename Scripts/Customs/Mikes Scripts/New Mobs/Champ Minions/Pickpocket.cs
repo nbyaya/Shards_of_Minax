@@ -14,7 +14,7 @@ namespace Server.Mobiles
         public Pickpocket() : base(AIType.AI_Thief, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = Utility.RandomSkinHue();
-			Team = 5;
+			Team = 2;
 
             if (Female = Utility.RandomBool())
             {

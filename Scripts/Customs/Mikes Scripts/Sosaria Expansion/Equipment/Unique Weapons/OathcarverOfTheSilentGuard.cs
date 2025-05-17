@@ -1,0 +1,53 @@
+using System;
+using Server;
+using Server.Items;
+using Server.Engines.XmlSpawner2;
+
+public class OathcarverOfTheSilentGuard : Broadsword
+{
+    [Constructable]
+    public OathcarverOfTheSilentGuard()
+    {
+        Name = "Oathcarver of the Silent Guard";
+        Hue = 1157;  // A shade of deep blue, representing tranquility and mystery
+        MinDamage = Utility.RandomMinMax(30, 50);
+        MaxDamage = Utility.RandomMinMax(55, 85); 
+        Attributes.WeaponSpeed = 5;
+        Attributes.Luck = 25;
+        
+        // Slayer effect – Oathcarver is especially effective against Evil, aiding in protection of the innocent
+        Slayer = SlayerName.Silver;
+        
+        // Weapon attributes - increasing the sword’s tactical advantage in combat
+        WeaponAttributes.HitLeechHits = 25;
+        WeaponAttributes.HitLeechMana = 15;
+        WeaponAttributes.HitLeechStam = 10;
+        WeaponAttributes.BattleLust = 20;
+
+        // Skill bonuses for defensive and strategic combat, in line with the Silent Guard's duty
+        SkillBonuses.SetValues(0, SkillName.Tactics, 15.0);
+        SkillBonuses.SetValues(1, SkillName.Swords, 20.0);
+        SkillBonuses.SetValues(2, SkillName.Parry, 10.0);
+        
+        // Additional thematic bonus
+        SkillBonuses.SetValues(3, SkillName.Chivalry, 10.0);
+        
+        XmlAttach.AttachTo(this, new XmlLevelItem());
+    }
+
+    public OathcarverOfTheSilentGuard(Serial serial) : base(serial)
+    {
+    }
+
+    public override void Serialize(GenericWriter writer)
+    {
+        base.Serialize(writer);
+        writer.Write((int)0); // version
+    }
+
+    public override void Deserialize(GenericReader reader)
+    {
+        base.Deserialize(reader);
+        int version = reader.ReadInt();
+    }
+}

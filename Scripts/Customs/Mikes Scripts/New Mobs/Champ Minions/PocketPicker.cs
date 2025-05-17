@@ -17,7 +17,7 @@ namespace Server.Mobiles
             Body = 0x190;
             Name = NameList.RandomName("male");
             Title = "the Pocket Picker";
-			Team = 4;
+			Team = 2;
 
             Item hair = new Item(Utility.RandomList(0x203B, 0x203C, 0x203D));
             Item shirt = new Shirt();

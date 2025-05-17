@@ -14,7 +14,7 @@ namespace Server.Mobiles
             this.Name = "a satyr";
             this.Body = 271;
             this.BaseSoundID = 0x586;
-			Team = 5;
+			
 
             this.SetStr(177, 195);
             this.SetDex(251, 269);

@@ -13,7 +13,7 @@ namespace Server.Mobiles
         {
             Name = "a deathwatch beetle";
             Body = 242;
-			Team = 3;
+			
 
             SetStr(136, 160);
             SetDex(41, 52);

@@ -14,7 +14,7 @@ namespace Server.Items
         public TimeSpan AutoDelete { get; set; }
 
         [Constructable]
-        public ToxicGasTile() : base(0x1D3B) // Use an appropriate item ID for a gas tile
+        public ToxicGasTile() : base(0x3729) // Use an appropriate item ID for a gas tile
         {
             Movable = false;
             Name = "a toxic gas tile";

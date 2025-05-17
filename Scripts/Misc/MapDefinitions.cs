@@ -30,6 +30,17 @@ namespace Server.Misc
                 RegisterMap(3, 3, 3, 2560, 2048, 1, "Malas", MapRules.FeluccaRules);
                 RegisterMap(4, 4, 4, 1448, 1448, 1, "Tokuno", MapRules.FeluccaRules);
                 RegisterMap(5, 5, 5, 1280, 4096, 1, "TerMur", MapRules.FeluccaRules);
+				RegisterMap(32, 6, 6, 7168, 4096, 0, "Sosaria", MapRules.FeluccaRules);
+				RegisterMap(33, 7, 7, 7168, 4096, 0, "Map7", MapRules.FeluccaRules);
+				RegisterMap(34, 8, 8, 2560, 2048, 0, "Map8", MapRules.FeluccaRules);
+				RegisterMap(35, 9, 9, 1280, 4096, 0, "Map9", MapRules.FeluccaRules);
+				RegisterMap(36, 10, 10, 7168, 4096, 0, "Map10", MapRules.FeluccaRules);
+				RegisterMap(37, 11, 11, 7168, 4096, 0, "Map11", MapRules.FeluccaRules);
+				RegisterMap(38, 12, 12, 7168, 4096, 0, "Map12", MapRules.FeluccaRules);
+				RegisterMap(39, 13, 13, 7168, 4096, 0, "Map13", MapRules.FeluccaRules);
+				RegisterMap(40, 14, 14, 2560, 2048, 0, "Map14", MapRules.FeluccaRules);
+				RegisterMap(41, 15, 15, 2560, 2048, 0, "Map15", MapRules.FeluccaRules);
+
             }
 
             RegisterMap(0x7F, 0x7F, 0x7F, Map.SectorSize, Map.SectorSize, 1, "Internal", MapRules.Internal);

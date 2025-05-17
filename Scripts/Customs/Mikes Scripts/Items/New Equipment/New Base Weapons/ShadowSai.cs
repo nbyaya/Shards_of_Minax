@@ -7,13 +7,18 @@ namespace Server.Items
     [FlipableAttribute(0x27AF, 0x27FA)]
     public class ShadowSai : BaseKnife
     {
+        private int _minDamage;
+        private int _maxDamage;
+
         [Constructable]
         public ShadowSai()
             : base(0x27AF)
         {
             this.Weight = 7.0;
             this.Layer = Layer.TwoHanded;
-			this.Name = "Shadow Sai";			
+            this.Name = "Shadow Sai";
+
+            ApplyRandomTier();
         }
 
         public ShadowSai(Serial serial)
@@ -21,151 +26,83 @@ namespace Server.Items
         {
         }
 
-        public override WeaponAbility PrimaryAbility
+        private void ApplyRandomTier()
         {
-            get
+            Random rand = new Random();
+            double chanceForSpecialTier = rand.NextDouble();
+
+            if (chanceForSpecialTier < 0.5)
             {
-                return WeaponAbility.DualWield;
+                // Default stats
+                _minDamage = 10;
+                _maxDamage = 13;
+                return;
             }
-        }
-        public override WeaponAbility SecondaryAbility
-        {
-            get
+
+            double tierChance = rand.NextDouble();
+
+            if (tierChance < 0.05)
             {
-                return WeaponAbility.ArmorPierce;
+                _minDamage = rand.Next(1, 60);
+                _maxDamage = rand.Next(60, 90);
             }
-        }
-        public override int AosStrengthReq
-        {
-            get
+            else if (tierChance < 0.2)
             {
-                return 15;
+                _minDamage = rand.Next(1, 50);
+                _maxDamage = rand.Next(50, 75);
             }
-        }
-        public override int AosMinDamage
-        {
-            get
+            else if (tierChance < 0.5)
             {
-                return 10;
+                _minDamage = rand.Next(1, 35);
+                _maxDamage = rand.Next(35, 55);
             }
-        }
-        public override int AosMaxDamage
-        {
-            get
+            else
             {
-                return 13;
-            }
-        }
-        public override int AosSpeed
-        {
-            get
-            {
-                return 55;
-            }
-        }
-        public override float MlSpeed
-        {
-            get
-            {
-                return 2.00f;
-            }
-        }
-        public override int OldStrengthReq
-        {
-            get
-            {
-                return 15;
-            }
-        }
-        public override int OldMinDamage
-        {
-            get
-            {
-                return 9;
-            }
-        }
-        public override int OldMaxDamage
-        {
-            get
-            {
-                return 11;
-            }
-        }
-        public override int OldSpeed
-        {
-            get
-            {
-                return 55;
-            }
-        }
-        public override int DefHitSound
-        {
-            get
-            {
-                return 0x23C;
-            }
-        }
-        public override int DefMissSound
-        {
-            get
-            {
-                return 0x232;
-            }
-        }
-        public override int InitMinHits
-        {
-            get
-            {
-                return 55;
-            }
-        }
-        public override int InitMaxHits
-        {
-            get
-            {
-                return 60;
+                _minDamage = rand.Next(1, 20);
+                _maxDamage = rand.Next(20, 35);
             }
         }
 
-		public override SkillName DefSkill
-        {
-            get
-            {
-                return SkillName.Hiding;
-            }
-        }
-		
+        public override WeaponAbility PrimaryAbility => WeaponAbility.DualWield;
+        public override WeaponAbility SecondaryAbility => WeaponAbility.ArmorPierce;
+
+        public override int AosStrengthReq => 15;
+        public override int AosMinDamage => _minDamage > 0 ? _minDamage : 10;
+        public override int AosMaxDamage => _maxDamage > 0 ? _maxDamage : 13;
+        public override int AosSpeed => 55;
+        public override float MlSpeed => 2.00f;
+
+        public override int OldStrengthReq => 15;
+        public override int OldMinDamage => 9;
+        public override int OldMaxDamage => 11;
+        public override int OldSpeed => 55;
+
+        public override int DefHitSound => 0x23C;
+        public override int DefMissSound => 0x232;
+
+        public override int InitMinHits => 55;
+        public override int InitMaxHits => 60;
+
+        public override SkillName DefSkill => SkillName.Hiding;
+
+        public override WeaponType DefType => WeaponType.Piercing;
+        public override WeaponAnimation DefAnimation => WeaponAnimation.Pierce1H;
+
         public override void AddNameProperties(ObjectPropertyList list)
         {
             base.AddNameProperties(list);
             list.Add("Skill Required: Hiding");
         }
 
-        public override WeaponType DefType
-        {
-            get
-            {
-                return WeaponType.Piercing;
-            }
-        }
-        public override WeaponAnimation DefAnimation
-        {
-            get
-            {
-                return WeaponAnimation.Pierce1H;
-            }
-        }
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-
             writer.Write((int)0); // version
         }
 
         public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
-
             int version = reader.ReadInt();
         }
     }

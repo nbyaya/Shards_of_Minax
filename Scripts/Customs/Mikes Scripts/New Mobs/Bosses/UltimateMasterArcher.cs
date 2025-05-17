@@ -192,7 +192,7 @@ namespace Server.Mobiles
         }
     }
 
-    public class HoodsLongbow : BaseRanged
+    public class HoodsLongbow : Bow
     {
         [Constructable]
         public HoodsLongbow() : base(0x13B2)

@@ -2922,4 +2922,548 @@
       <go x="542" y="2473" z="0" />
     </region>
   </Facet>
+  <Facet name="Sosaria">
+
+		<region type="TownRegion" priority="50" name="Death Gulch">
+			<rect x="3673" y="1472" width="129" height="52" />
+			<go x="3716" y="1540" z="0" />
+			<music name="Cove" />
+			<region name="Death Gulch Inn">
+				<rune name="Death Gulch Inn" />
+				<rect x="3711" y="1476" width="11" height="7" />
+				<logoutDelay active="false" />
+			</region>
+		</region>
+		<region type="TownRegion" priority="50" name="Devil Guard">
+			<rect x="1543" y="1349" width="244" height="104" />
+			<rect x="1416" y="1453" width="534" height="160" />
+			<rect x="1532" y="1613" width="401" height="49" />
+			<rect x="1599" y="1662" width="316" height="65" />
+			<go x="1656" y="1485" z="2" />
+			<music name="Serpents" />
+			<region name="Devil Guard Inn">
+				<rune name="Devil Guard Inn" />
+				<rect x="1594" y="1490" width="14" height="17" />
+				<logoutDelay active="false" />
+			</region>
+		</region>
+		<region type="GuardedRegion" priority="50" name="the town of Moon">
+			<rect x="762" y="667" width="103" height="72" />
+			<rect x="762" y="739" width="85" height="46" />
+			<go x="807" y="728" z="0" />
+			<music name="ElfCity" />
+			<region name="Trinsic Inn">
+				<rune name="Trinsic Inn" />
+				<rect x="829" y="686" width="3" height="5" />
+				<rect x="833" y="677" width="5" height="14" />
+				<logoutDelay active="false" />
+			</region>
+		</region>
+		<region type="GuardedRegion" priority="49" name="the town of Grey">
+			<rect x="818" y="2041" width="125" height="67" />
+			<rect x="895" y="2108" width="37" height="32" />
+			<go x="902" y="2063" z="0" />
+			<music name="Ocllo" />
+			<region name="Grey Inn">
+				<rune name="Grey Inn" />
+				<rect x="908" y="2068" width="8" height="14" />
+				<logoutDelay active="false" />
+			</region>
+		</region>
+		<region type="GuardedRegion" priority="50" name="the town of West Montor">
+			<rect x="3056" y="2561" width="137" height="102" />
+			<go x="3122" y="2610" z="0" />
+			<music name="Minoc" />
+			<region name="West Montor Inn">
+				<rune name="West Montor Inn" />
+				<rect x="3107" y="2622" width="17" height="9" />
+				<rect x="3107" y="2632" width="11" height="8" />
+				<rect x="3107" y="2641" width="17" height="9" />
+				<logoutDelay active="false" />
+			</region>
+		</region>
+		<region type="GuardedRegion" priority="50" name="the town of East Montor">
+			<rect x="3246" y="2561" width="137" height="102" />
+			<go x="3313" y="2610" z="0" />
+			<music name="Minoc" />
+			<region name="East Montor Inn">
+				<rune name="East Montor Inn" />
+				<rect x="3306" y="2631" width="15" height="10" />
+				<logoutDelay active="false" />
+			</region>
+		</region>
+		<region type="GuardedRegion" priority="50" name="the town of Fawn">
+			<rect x="2058" y="242" width="148" height="79" />
+			<go x="2119" y="276" z="0" />
+			<music name="Nujelm" />
+			<region name="Fawn Inn">
+				<rune name="Fawn Inn" />
+				<rect x="2135" y="247" width="16" height="25" />
+				<logoutDelay active="false" />
+			</region>
+		</region>
+		<region type="GuardedRegion" priority="50" name="the town of Yew">
+			<rect x="2336" y="825" width="207" height="90" />
+			<go x="2432" y="875" z="2" />
+			<music name="Yew" />
+			<region name="Yew Inn">
+				<rune name="Yew Inn" />
+				<rect x="2483" y="847" width="12" height="13" />
+				<logoutDelay active="false" />
+			</region>
+		</region>
+		<region type="GuardedRegion" priority="50" name="the town of Britain">
+			<rect x="2884" y="1041" width="63" height="71" />
+			<rect x="2940" y="888" width="110" height="231" />
+			<go x="2999" y="1044" z="0" />
+			<music name="Britain1" />
+			<region name="Britain Inn">
+				<rune name="Britain Inn" />
+				<rect x="2963" y="1080" width="18" height="17" />
+				<logoutDelay active="false" />
+			</region>
+		</region>
+		<region type="TownRegion" priority="50" name="Pirate Isle">
+			<rect x="1733" y="2116" width="182" height="150" />
+			<go x="1818" y="2231" z="0" />
+			<music name="BucsDen" />
+		</region>
+
+		// MONTOR JAIL
+
+		<region type="GuardedRegion" priority="50" name="Jail">
+			<rect x="3112" y="2569" width="21" height="4" />
+			<go x="5275" y="1163" z="0" />
+			<music name="Linelle" />
+		</region>
+
+		// FARM REGIONS
+
+		<region name="some Farmlands">
+			<rect x="2960" y="1263" width="45" height="22" /> // Southern Britain Farm
+			<rect x="2930" y="1181" width="43" height="34" /> // Southern Britain Farm
+			<rect x="2807" y="973" width="40" height="44" /> // Western Britain Farm
+			<rect x="2758" y="895" width="41" height="52" /> // Western Britain Farm
+			<rect x="2606" y="504" width="54" height="46" /> // Northern Britain Farm
+			<rect x="2670" y="586" width="51" height="53" /> // Northern Britain Farm
+			<rect x="2771" y="584" width="56" height="41" /> // Northern Britain Farm
+			<rect x="935" y="626" width="85" height="61" /> // Eastern Moon Farm
+			<rect x="902" y="765" width="38" height="37" /> // Southern Moon Farm
+			<rect x="954" y="1019" width="62" height="109" /> // Southern Moon Farm
+			<go x="2977" y="1238" z="0" />
+		</region>
+
+		// ABANDONED REGIONS
+
+		<region name="an Abandoned Home">
+			<rect x="1896" y="913" width="12" height="11" /> // Abandoned Home 1
+			<rect x="3312" y="2057" width="13" height="11" /> // Abandoned Home 2
+			<go x="1911" y="928" z="0" />
+		</region>
+
+		// SPECIAL REGIONS
+
+		<region name="the Lighthouse">
+			<rect x="3191" y="506" width="10" height="15" /> // Lighthouse
+			<go x="3195" y="525" z="0" />
+		</region>
+
+		<region name="a Haunted Forest">
+			<rect x="2408" y="528" width="131" height="54" /> // Haunted Forest
+			<rect x="2442" y="499" width="59" height="20" /> // Haunted Forest
+			<rect x="2541" y="541" width="54" height="73" /> // Haunted Forest
+			<go x="2495" y="548" z="0" />
+			<music name="Dungeon9" />
+		</region>
+
+
+		// ORC CONTROLLED REGIONS
+
+		<region name="Orc Territory">
+			<rect x="517" y="450" width="104" height="57" /> // North-West Small Fort
+			<rect x="552" y="505" width="79" height="56" />
+			<rect x="3283" y="1053" width="252" height="193" /> // East of LB Town Medium Fort
+			<rect x="2071" y="1516" width="578" height="600" /> // Main HQ below Devil Guard
+			<go x="572" y="489" z="0" />
+			<music name="Samlethe" />
+		</region>
+
+		// RUINS REGIONS
+
+		<region name="some Old Ruins">
+			<rect x="497" y="188" width="51" height="28" /> // Temple Ruins
+			<rect x="1808" y="745" width="36" height="29" /> // Mage Keep Ruins
+			<rect x="3082" y="795" width="25" height="19" /> // Tower Ruins above LB Town
+			<rect x="3674" y="498" width="48" height="57" /> // Ancient Temple Ruins
+			<rect x="1655" y="1780" width="97" height="83" /> // Old House Ruins
+			<rect x="1082" y="3376" width="19" height="17" /> // Unknown Ruins 1
+			<rect x="1854" y="3615" width="17" height="14" /> // Unknown Ruins 2
+			<go x="541" y="203" z="1" />
+			<music name="Approach" />
+		</region>
+
+		// GRAVEYARD REGIONS
+
+		<region name="a Cemetary">
+			<rect x="806" y="598" width="24" height="32" /> // Moon Cemetary
+			<rect x="2159" y="351" width="18" height="19" /> // Fawn Cemetary
+			<rect x="3055" y="952" width="39" height="22" /> // Nobility Cemetary
+			<rect x="3062" y="1013" width="34" height="23" /> // Britain Cemetary
+			<rect x="1736" y="1599" width="42" height="42" /> // Devil Guard Cemetary
+			<rect x="928" y="1972" width="58" height="37" /> // Grey Cemetary
+			<rect x="2894" y="1968" width="39" height="29" /> // Ancient Cemetary
+			<rect x="3237" y="2784" width="34" height="38" /> // Montor Cemetary
+			<rect x="1812" y="3304" width="14" height="16" /> // Old Cemetary
+			<rect x="999" y="3421" width="8" height="11" /> // Family Plot
+			<rect x="5659" y="3225" width="81" height="7" /> // Town Cemetary
+			<go x="572" y="489" z="0" />
+			<music name="Dungeon2" />
+		</region>
+
+		// OLD FORTRESS/TOWER REGIONS
+
+		<region name="an Old Fortress">
+			<rect x="1226" y="1381" width="139" height="138" /> // Fortress Ruins
+			<rect x="3779" y="1846" width="33" height="11" /> // Dark Fortress
+			<rect x="3786" y="1857" width="26" height="20" /> // Dark Fortress
+			<go x="3800" y="1868" z="0" />
+			<music name="Approach" />
+		</region>
+
+		<region name="the Dark Tower">
+			<rect x="3501" y="2277" width="12" height="14" /> Mage Tower
+			<go x="1818" y="2231" z="0" />
+			<music name="Approach" />
+		</region>
+
+		<region name="a Mountain Stronghold">
+			<rect x="1365" y="3633" width="78" height="53" /> // Castle Stronghold in the Mountains
+			<go x="1405" y="3687" z="45" />
+			<music name="Approach" />
+		</region>
+
+		// ICE ISLAND REGIONS
+
+		<region name="Vinterdale Isle">
+			<rect x="4277" y="1122" width="811" height="246" />
+			<go x="4597" y="1269" z="2" />
+			<music name="Vesper" />
+		</region>
+		<region type="GuardedRegion" priority="50" name="the Iceclad Fisherman's Village">
+			<rect x="4287" y="1137" width="54" height="64" />
+			<go x="2899" y="676" z="2" />
+			<music name="Paws" />
+			<region name="Fisherman's Inn">
+				<rune name="Fisherman's Inn" />
+				<rect x="4295" y="1191" width="10" height="6" />
+				<rect x="4306" y="1185" width="6" height="12" />
+				<logoutDelay active="false" />
+			</region>
+		</region>
+		<region type="GuardedRegion" priority="50" name="the Mountain Crest Village">
+			<rect x="4482" y="1233" width="84" height="63" />
+			<go x="4514" y="1276" z="2" />
+			<music name="Skarabra" />
+			<region name="Mountain Crest Inn">
+				<rune name="Mountain Crest Inn" />
+				<rect x="4486" y="1258" width="10" height="5" />
+				<rect x="4490" y="1264" width="6" height="6" />
+				<rect x="4486" y="1271" width="10" height="5" />
+				<logoutDelay active="false" />
+			</region>
+		</region>
+		<region type="GuardedRegion" priority="50" name="the Shingorr Village">
+			<rect x="4715" y="1134" width="77" height="70" />
+			<go x="4749" y="1177" z="2" />
+			<music name="Jhelom" />
+			<region name="Shingorr Inn">
+				<rune name="Shingorr Inn" />
+				<rect x="4718" y="1171" width="5" height="6" />
+				<rect x="4724" y="1171" width="6" height="12" />
+				<logoutDelay active="false" />
+			</region>
+		</region>
+
+		// UMBER VEIL REGIONS
+
+		<region name="Unknown Land">
+			<rect x="864" y="3189" width="1262" height="899" />
+			<go x="1553" y="3612" z="0" />
+			<music name="MinocNegative" />
+			<region name="Inn">
+				<rune name="Unknown Inn" />
+				<rect x="1295" y="3848" width="22" height="16" />
+				<logoutDelay active="false" />
+			</region>
+		</region>
+		<region type="TownRegion" priority="50" name="the town of Renika">
+			<rect x="1411" y="3737" width="76" height="73" />
+			<go x="1449" y="3787" z="0" />
+			<music name="Magincia" />
+			<region name="Renika Inn">
+				<rune name="Renika Inn" />
+				<rect x="1415" y="3794" width="5" height="7" />
+				<rect x="1421" y="3794" width="6" height="13" />
+				<logoutDelay active="false" />
+			</region>
+		</region>
+
+		<region type="GuardedRegion" priority="50" name="a Cathedral">
+			<rect x="1386" y="3777" width="17" height="13" /> // Only safe area in Unknown Lands
+			<go x="1449" y="3787" z="0" />
+			<logoutDelay active="false" />
+		</region>
+
+		// AMBROSIA REGIONS
+
+		<region name="Ambrosia">
+			<rect x="5130" y="3042" width="1005" height="1046" />
+			<go x="5583" y="3556" z="10" />
+			<music name="Vesper" />
+		</region>
+		<region type="TownRegion" priority="50" name="a Ababdoned Town">
+			<rect x="5641" y="3219" width="185" height="122" />
+			<go x="5743" y="3262" z="0" />
+			<music name="Moonglow" />
+		</region>
+
+		// DAWN REGIONS
+
+		<region name="Dawn">
+			<rect x="2376" y="2238" width="288" height="267" />
+			<go x="2533" y="2363" z="0)" />
+			<music name="Vesper" />
+		</region>
+		<region type="GuardedRegion" priority="50" name="the town of Dawn">
+			<rect x="2471" y="2329" width="119" height="62" />
+			<rect x="2471" y="2391" width="88" height="21" />
+			<go x="2487" y="2369" z="0" />
+			<music name="Wind" />
+			<region name="Dawn Inn">
+				<rune name="Dawn Inn" />
+				<rect x="2488" y="2348" width="7" height="11" />
+				<rect x="2495" y="2354" width="4" height="5" />
+				<logoutDelay active="false" />
+			</region>
+		</region>
+
+		// ETHERIAL PLANE REGIONS
+
+		<region name="Etherial Plane">
+			<rect x="5808" y="2750" width="288" height="267" />
+			<go x="5965" y="2875" z="0)" />
+			<music name="Vesper" />
+		</region>
+		<region type="TownRegion" priority="50" name="the etherial town of Dawn">
+			<rect x="5903" y="2841" width="119" height="62" />
+			<rect x="5903" y="2903" width="88" height="21" />
+			<go x="5919" y="2881" z="0" />
+			<music name="Wind" />
+			<region name="Etherial Inn">
+				<rune name="Etherial Inn" />
+				<rect x="5920" y="2860" width="7" height="11" />
+				<rect x="5927" y="2866" width="4" height="5" />
+				<logoutDelay active="true" />
+			</region>
+		</region>
+
+		// GREEN ACRES REGIONS
+
+		<region name="Green Acres">
+			<rect x="4526" y="3660" width="465" height="378" />
+			<go x="4752" y="3861" z="0" />
+			<music name="Moonglow" />
+		</region>
+
+		// STARTING ROOMS
+
+		<region type="DungeonRegion" priority="50" name="the Start Room">
+			<rect x="5378" y="2755" width="31" height="32" />
+			<go x="5392" y="2771" z="0" />
+			<music name="Minoc" />
+			<logoutDelay active="false" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Town Room">
+			<rect x="5248" y="2755" width="29" height="26" />
+			<go x="5263" y="2767" z="0" />
+			<music name="Minoc" />
+			<logoutDelay active="false" />
+		</region>
+
+		// DUNGEON ENTRANCES
+
+		<region type="NoHousingRegion" priority="50" name="at or near a Dungeon Entrance">
+			<rect x="1613" y="2520" width="44" height="81" /> // Doom Entrance Area
+			<rect x="2989" y="439" width="31" height="28" /> // Dardin's Pit Entrance Area
+			<rect x="3577" y="450" width="65" height="22" /> // Perinia Depths Entrance Area
+			<rect x="3820" y="1487" width="31" height="34" /> // Time Awaits Entrance Area
+			<rect x="3707" y="2026" width="102" height="44" /> // Clues Entrance Area
+			<rect x="975" y="1361" width="81" height="68" /> // Mines Of Morinia Entrance Area
+			<rect x="3308" y="1619" width="79" height="93" /> // Fires Of Hell Entrance Area
+			<rect x="1115" y="440" width="77" height="63" /> // Ancient Pyramid Entrance Area
+			<rect x="1512" y="3563" width="48" height="75" /> // Catacombs Entrance Area
+			<go x="3344" y="1654" z="0" />
+		</region>
+
+		// SOSARIA DUNGEON REGIONS
+
+		<region type="DungeonRegion" priority="50" name="the Caverns under the Britain Cemetery">
+			<rect x="5874" y="2452" width="117" height="133" />
+			<go x="5953" y="2480" z="5" />
+			<music name="Dungeon9" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Sewers under Britain">
+			<rect x="5738" y="2550" width="87" height="95" />
+			<go x="5806" y="2604" z="5" />
+			<music name="Dungeon9" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Doom Dungeon">
+			<rect x="5187" y="49" width="230" height="333" />
+			<go x="5322" y="72" z="0" />
+			<music name="Dungeon9" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Dardin's Pit Dungeon">
+			<rect x="5476" y="24" width="314" height="458" />
+			<go x="5698" y="49" z="0" />
+			<music name="ParoxysmusLair" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Perinia Depths Dungeon">
+			<rect x="5820" y="26" width="233" height="474" />
+			<go x="5953" y="80" z="0" />
+			<music name="Dungeon9" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Time Awaits Dungeon">
+			<rect x="5467" y="542" width="281" height="397" />
+			<go x="5630" y="594" z="0" />
+			<music name="MelisandesLair" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Clues Dungeon">
+			<rect x="5537" y="2080" width="484" height="183" />
+			<rect x="5264" y="2237" width="162" height="134" />
+			<go x="5313" y="2275" z="0" />
+			<music name="Dungeon9" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Mines Of Morinia Dungeon">
+			<rect x="5809" y="913" width="245" height="710" />
+			<rect x="5529" y="1437" width="280" height="186" />
+			<go x="5898" y="1223" z="0" />
+			<music name="Dungeon9" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Fires Of Hell Dungeon">
+			<rect x="5209" y="1048" width="218" height="422" />
+			<rect x="5435" y="1174" width="302" height="205" />
+			<go x="5333" y="1290" z="0" />
+			<music name="Dungeon9" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Ancient Pyramid">
+			<rect x="5197" y="441" width="230" height="537" />
+			<go x="5322" y="573" z="0" />
+			<music name="Dungeon9" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Kings Chamber">
+			<rect x="5192" y="1793" width="39" height="53" />
+			<go x="5213" y="1839" z="0" />
+			<music name="Dungeon9" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Time Lord's Chamber">
+			<rect x="4653" y="3228" width="288" height="259" />
+			<go x="5213" y="1839" z="0" />
+			<music name="Dungeon9" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="a Player's Dungeon">
+			<rect x="2307" y="3217" width="528" height="856" />
+			<rect x="2861" y="3206" width="498" height="178" />
+			<go x="2683" y="3541" z="0" />
+			<music name="Dungeon9" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Caverns under Dawn">
+			<rect x="53" y="3276" width="629" height="672" />
+			<go x="317" y="3824" z="0" />
+			<music name="Dungeon9" />
+		</region>
+
+		// SOSARIA CAVE REGIONS
+
+		<region type="DungeonRegion" priority="50" name="a Cave">
+			<rect x="5160" y="1552" width="333" height="214" />
+			<rect x="5534" y="1671" width="569" height="382" />
+			<rect x="5183" y="1859" width="251" height="272" />
+			<rect x="5622" y="2328" width="254" height="177" />
+			<rect x="5193" y="2441" width="268" height="218" />
+			<rect x="2922" y="3536" width="588" height="482" />
+			<rect x="3650" y="3642" width="399" height="217" />
+			<rect x="3742" y="1450" width="13" height="22" />
+			<go x="5284" y="1667" z="0" />
+			<music name="Mountn_a" />
+		</region>
+
+		// ICE ISLAND DUNGEON REGIONS
+
+		<region type="DungeonRegion" priority="50" name="the Frost Guard Dungeon">
+			<rect x="4191" y="3257" width="296" height="97" /> // the Frost Guard Dungeon
+			<go x="4468" y="3284" z="25" />
+			<music name="Dungeon9" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Cresent Cavern Dungeon"> // the Cresent Cavern Dungeon
+			<rect x="4285" y="3423" width="179" height="84" />
+			<go x="4309" y="3481" z="25" />
+			<music name="Dungeon9" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Ice Cavern Dungeon"> // the Ice Cavern Dungeon
+			<rect x="4187" y="3588" width="252" height="284" />
+			<go x="4401" y="3679" z="0" />
+			<music name="Dungeon9" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Icy Depths Dungeon"> // the Icy Depths Dungeon
+			<rect x="5161" y="2873" width="134" height="104" />
+			<go x="5186" y="2957" z="25" />
+			<music name="Dungeon9" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Witchen Delve Dungeon"> // the Witches Delve Dungeon
+			<rect x="5347" y="2865" width="136" height="115" />
+			<go x="5430" y="2887" z="25" />
+			<music name="Dungeon9" />
+		</region>
+
+		<region type="DungeonRegion" priority="50" name="the Dragon's Eye Watch Dungeon"> // the Dragon's Eye Watch Dungeon
+			<rect x="5480" y="2718" width="110" height="91" />
+			<go x="5539" y="2795" z="0" />
+			<music name="Dungeon9" />
+		</region>
+
+		// UMBER VEIL DUNGEON REGIONS
+
+		<region type="DungeonRegion" priority="50" name="the Ancient Catacombs">
+			<rect x="3789" y="3236" width="260" height="270" />
+			<go x="4028" y="3343" z="20" />
+			<music name="Dungeon9" />
+		</region>
+
+		// EXODUS ISLE DUNGEON REGIONS
+
+		<region type="DungeonRegion" priority="50" name="the Exodus Dungeon">
+			<rect x="5842" y="547" width="176" height="162" />
+			<go x="5928" y="590" z="0" />
+			<music name="Dungeon9" />
+		</region>
+
+	</Facet>
 </ServerRegions>

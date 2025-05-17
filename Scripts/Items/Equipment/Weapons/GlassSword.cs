@@ -11,6 +11,9 @@ namespace Server.Items
             : base(0x90C)
         {
             this.Weight = 6.0;
+
+            // Apply tiered damage system
+            ApplyRandomTier();
         }
 
         public GlassSword(Serial serial)
@@ -18,114 +21,61 @@ namespace Server.Items
         {
         }
 
-        public override WeaponAbility PrimaryAbility
+        private void ApplyRandomTier()
         {
-            get
+            Random rand = new Random();
+            double chanceForSpecialTier = rand.NextDouble();
+
+            // 50% chance for default stats, 50% for tiered
+            if (chanceForSpecialTier < 0.5)
+                return;
+
+            double tierChance = rand.NextDouble();
+
+            if (tierChance < 0.05)
             {
-                return WeaponAbility.BleedAttack;
+                this.MinDamage = rand.Next(1, 80);
+                this.MaxDamage = rand.Next(80, 120);
             }
-        }
-        public override WeaponAbility SecondaryAbility
-        {
-            get
+            else if (tierChance < 0.2)
             {
-                return WeaponAbility.MortalStrike;
+                this.MinDamage = rand.Next(1, 70);
+                this.MaxDamage = rand.Next(70, 100);
             }
-        }
-        public override int AosStrengthReq
-        {
-            get
+            else if (tierChance < 0.5)
             {
-                return 20;
+                this.MinDamage = rand.Next(1, 50);
+                this.MaxDamage = rand.Next(50, 75);
             }
-        }
-        public override int AosMinDamage
-        {
-            get
+            else
             {
-                return 11;
-            }
-        }
-        public override int AosMaxDamage
-        {
-            get
-            {
-                return 15;
-            }
-        }
-        public override int AosSpeed
-        {
-            get
-            {
-                return 46;
-            }
-        }
-        public override float MlSpeed
-        {
-            get
-            {
-                return 2.75f;
-            }
-        }
-        public override int OldStrengthReq
-        {
-            get
-            {
-                return 10;
-            }
-        }
-        public override int OldMinDamage
-        {
-            get
-            {
-                return 5;
-            }
-        }
-        public override int OldMaxDamage
-        {
-            get
-            {
-                return 26;
-            }
-        }
-        public override int OldSpeed
-        {
-            get
-            {
-                return 58;
-            }
-        }
-        public override int DefHitSound
-        {
-            get
-            {
-                return 0x23B;
-            }
-        }
-        public override int DefMissSound
-        {
-            get
-            {
-                return 0x23A;
-            }
-        }
-        public override int InitMinHits
-        {
-            get
-            {
-                return 31;
-            }
-        }
-        public override int InitMaxHits
-        {
-            get
-            {
-                return 90;
+                this.MinDamage = rand.Next(1, 30);
+                this.MaxDamage = rand.Next(30, 50);
             }
         }
 
-        public override Race RequiredRace { get { return Race.Gargoyle; } }
-        public override bool CanBeWornByGargoyles { get { return true; } }
+        public override WeaponAbility PrimaryAbility => WeaponAbility.BleedAttack;
+        public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
+
+        public override int AosStrengthReq => 20;
+        public override int AosMinDamage => 11;
+        public override int AosMaxDamage => 15;
+        public override int AosSpeed => 46;
+        public override float MlSpeed => 2.75f;
+
+        public override int OldStrengthReq => 10;
+        public override int OldMinDamage => 5;
+        public override int OldMaxDamage => 26;
+        public override int OldSpeed => 58;
+
+        public override int DefHitSound => 0x23B;
+        public override int DefMissSound => 0x23A;
+
+        public override int InitMinHits => 31;
+        public override int InitMaxHits => 90;
+
+        public override Race RequiredRace => Race.Gargoyle;
+        public override bool CanBeWornByGargoyles => true;
 
         public override void Serialize(GenericWriter writer)
         {

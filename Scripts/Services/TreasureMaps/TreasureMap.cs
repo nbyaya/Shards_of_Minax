@@ -365,6 +365,7 @@ namespace Server.Items
         {
             Level = level;
             var newSystem = TreasureMapInfo.NewSystem;
+			
 
             if (newSystem)
             {

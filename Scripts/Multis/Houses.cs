@@ -509,7 +509,7 @@ namespace Server.Multis
     {
         public static Rectangle2D[] AreaArray = new Rectangle2D[] { new Rectangle2D(-7, -7, 15, 14), new Rectangle2D(-6, 7, 6, 1) };
         public LargeMarbleHouse(Mobile owner)
-            : base(0x96, owner, 1370, 10)
+            : base(0x4E, owner, 1370, 10)
         {
             uint keyValue = CreateKeys(owner);
 

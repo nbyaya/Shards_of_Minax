@@ -148,7 +148,7 @@ namespace Server.Mobiles
 				return false;
 
 			// tension-based chance + fame-based chance
-			double tension = TensionManager.Tension;
+			int tension = TensionManager.Tension;
 			double tensionChance = Math.Min(tension / 300000.0, 1.0);
 
 			int fame = bc.Fame > 32000 ? 32000 : bc.Fame;

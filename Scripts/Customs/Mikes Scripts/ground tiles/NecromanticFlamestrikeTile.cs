@@ -14,7 +14,7 @@ namespace Server.Items
         public TimeSpan AutoDelete { get; set; }
 
         [Constructable]
-        public NecromanticFlamestrikeTile() : base(0x1A8) // Use an appropriate tile ID
+        public NecromanticFlamestrikeTile() : base(0x0E5F) // Use an appropriate tile ID
         {
             Movable = false;
             Name = "a necromantic flamestrike";

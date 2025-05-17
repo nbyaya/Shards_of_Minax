@@ -13,7 +13,7 @@ namespace Server.Mobiles
             Name = "a zombie";
             Body = 3;
             BaseSoundID = 471;
-			Team = 4;
+			
 
             SetStr(46, 70);
             SetDex(31, 50);

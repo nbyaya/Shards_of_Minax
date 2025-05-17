@@ -16,7 +16,7 @@ namespace Server.Mobiles
             Name = "a fan dancer";
             Body = 247;
             BaseSoundID = 0x372;
-			Team = 5;
+			
 
             SetStr(301, 375);
             SetDex(201, 255);

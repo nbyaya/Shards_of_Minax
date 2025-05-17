@@ -13,7 +13,7 @@ namespace Server.Mobiles
             this.Name = "a poison elemental";
             this.Body = 162;
             this.BaseSoundID = 263;
-			Team = 2;
+			
 
             this.SetStr(426, 515);
             this.SetDex(166, 185);

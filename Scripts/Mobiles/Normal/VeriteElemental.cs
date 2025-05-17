@@ -19,7 +19,7 @@ namespace Server.Mobiles
             Name = "a verite elemental";
             Body = 113;
             BaseSoundID = 268;
-			Team = 2;
+			
 
             SetStr(226, 255);
             SetDex(126, 145);

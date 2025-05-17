@@ -8,13 +8,12 @@ using Server.Items;
 
 namespace Server.Items
 {    
-    /// <summary>
-    /// A concrete example: WitchBurningTorch.
-    /// This blaster uses SulfurousAsh as ammo and adds extra fire damage.
-    /// </summary>
     [FlipableAttribute(0xF6B, 0xF6B)]
     public class WitchBurningTorch : BaseMagicRanged
     {
+        private int _tierMinDamage;
+        private int _tierMaxDamage;
+
         [Constructable]
         public WitchBurningTorch() : base(0xF6B)
         {
@@ -22,31 +21,64 @@ namespace Server.Items
             this.Layer = Layer.TwoHanded;
 			this.Name = "Witch Burning Torch";
 			this.Hue = 674;
-            // Additional initialization for a fire elemental blaster can be done here.
+
+            ApplyRandomTier();
         }
         
         public WitchBurningTorch(Serial serial) : base(serial)
         {
         }
-        
-        // Use the same effect as the heavy crossbow (adjust if desired)
+
+        private void ApplyRandomTier()
+        {
+            Random rand = new Random();
+            double chanceForSpecialTier = rand.NextDouble();
+
+            // 50% chance for default stats, 50% chance for a special tier
+            if (chanceForSpecialTier < 0.5)
+            {
+                _tierMinDamage = 20; // Default AosMinDamage
+                _tierMaxDamage = 24; // Default AosMaxDamage
+                return;
+            }
+
+            double tierChance = rand.NextDouble();
+
+            if (tierChance < 0.05)
+            {
+                _tierMinDamage = rand.Next(10, 80);
+                _tierMaxDamage = rand.Next(80, 120);
+            }
+            else if (tierChance < 0.2)
+            {
+                _tierMinDamage = rand.Next(10, 70);
+                _tierMaxDamage = rand.Next(70, 100);
+            }
+            else if (tierChance < 0.5)
+            {
+                _tierMinDamage = rand.Next(10, 50);
+                _tierMaxDamage = rand.Next(50, 75);
+            }
+            else
+            {
+                _tierMinDamage = rand.Next(10, 30);
+                _tierMaxDamage = rand.Next(30, 50);
+            }
+        }
+
+        public override int AosMinDamage => _tierMinDamage;
+        public override int AosMaxDamage => _tierMaxDamage;
+
         public override int EffectID { get { return 0x36D4; } }
-        
-        // Define the reagent type used for this blaster.
-        // (Ensure that the SulfurousAsh class exists in your project.)
+
         public override Type ReagentAmmoType { get { return typeof(Log); } }
         public override Item ReagentAmmo { get { return new Log(); } }
-        
-        // Override elemental damage properties – this variant adds fire damage.
+
         public override int FireDamage { get { return 20; } }
-        
-        // You can leave these abilities and damage values similar to the heavy crossbow,
-        // or adjust them to suit your desired balance.
+
         public override WeaponAbility PrimaryAbility { get { return WeaponAbility.MovingShot; } }
         public override WeaponAbility SecondaryAbility { get { return WeaponAbility.Dismount; } }
         public override int AosStrengthReq { get { return 80; } }
-        public override int AosMinDamage { get { return 20; } }
-        public override int AosMaxDamage { get { return 24; } }
         public override int AosSpeed { get { return 22; } }
         public override float MlSpeed { get { return 5.00f; } }
         public override int OldStrengthReq { get { return 40; } }
@@ -64,14 +96,8 @@ namespace Server.Items
 			list.Add("Ammo: Log");
         }	
 
-		public override SkillName DefSkill
-        {
-            get
-            {
-                return SkillName.MagicResist;
-            }
-        }
-        
+		public override SkillName DefSkill => SkillName.MagicResist;
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

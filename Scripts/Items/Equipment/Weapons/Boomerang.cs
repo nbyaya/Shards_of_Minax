@@ -10,6 +10,9 @@ namespace Server.Items
         {
             Weight = 4.0;
             Layer = Layer.OneHanded;
+
+            // Apply random tier damage here
+            ApplyRandomTier();
         }
 
         public Boomerang(Serial serial)
@@ -17,107 +20,64 @@ namespace Server.Items
         {
         }
 
-        public override int MinThrowRange { get { return 4; } }
+        private void ApplyRandomTier()
+        {
+            Random rand = new Random();
+            double chanceForSpecialTier = rand.NextDouble();
 
-        public override WeaponAbility PrimaryAbility
-        {
-            get
+            // 50% chance for default stats, 50% chance for a special tier
+            if (chanceForSpecialTier < 0.5)
             {
-                return WeaponAbility.MysticArc;
+                // Default stats, don't modify anything
+                return;
             }
-        }
-        public override WeaponAbility SecondaryAbility
-        {
-            get
+
+            // Now determine which special tier it falls into
+            double tierChance = rand.NextDouble();
+
+            if (tierChance < 0.05)
             {
-                return WeaponAbility.ConcussionBlow;
+                this.MinDamage = rand.Next(1, 80);
+                this.MaxDamage = rand.Next(80, 120);
             }
-        }
-        /*
-        Boomerang 0x8FF: MysticArc, ConcussionBlow
-        Cyclone 2305/0x901: MovingShot, InfusedThrow
-        Soul Glaive 2314/0x090A: ArmorIgnore, MortalStrike
-        */
-        public override int AosStrengthReq
-        {
-            get
+            else if (tierChance < 0.2)
             {
-                return 25;
+                this.MinDamage = rand.Next(1, 70);
+                this.MaxDamage = rand.Next(70, 100);
             }
-        }
-        public override int AosMinDamage
-        {
-            get
+            else if (tierChance < 0.5)
             {
-                return 11;
+                this.MinDamage = rand.Next(1, 50);
+                this.MaxDamage = rand.Next(50, 75);
             }
-        }
-        public override int AosMaxDamage
-        {
-            get
+            else
             {
-                return 15;
-            }
-        }
-        public override int AosSpeed
-        {
-            get
-            {
-                return 25;
-            }
-        }
-        public override float MlSpeed
-        {
-            get
-            {
-                return 2.75f;
-            }
-        }
-        public override int OldStrengthReq
-        {
-            get
-            {
-                return 20;
-            }
-        }
-        public override int OldMinDamage
-        {
-            get
-            {
-                return 9;
-            }
-        }
-        public override int OldMaxDamage
-        {
-            get
-            {
-                return 41;
-            }
-        }
-        public override int OldSpeed
-        {
-            get
-            {
-                return 20;
-            }
-        }
-        public override int InitMinHits
-        {
-            get
-            {
-                return 31;
-            }
-        }
-        public override int InitMaxHits
-        {
-            get
-            {
-                return 60;
+                this.MinDamage = rand.Next(1, 30);
+                this.MaxDamage = rand.Next(30, 50);
             }
         }
 
-        public override Race RequiredRace { get { return Race.Gargoyle; } }
-        public override bool CanBeWornByGargoyles { get { return true; } }
+        public override int MinThrowRange => 4;
+
+        public override WeaponAbility PrimaryAbility => WeaponAbility.MysticArc;
+        public override WeaponAbility SecondaryAbility => WeaponAbility.ConcussionBlow;
+
+        public override int AosStrengthReq => 25;
+        public override int AosMinDamage => 11;
+        public override int AosMaxDamage => 15;
+        public override int AosSpeed => 25;
+        public override float MlSpeed => 2.75f;
+
+        public override int OldStrengthReq => 20;
+        public override int OldMinDamage => 9;
+        public override int OldMaxDamage => 41;
+        public override int OldSpeed => 20;
+
+        public override int InitMinHits => 31;
+        public override int InitMaxHits => 60;
+
+        public override Race RequiredRace => Race.Gargoyle;
+        public override bool CanBeWornByGargoyles => true;
 
         public override void Serialize(GenericWriter writer)
         {

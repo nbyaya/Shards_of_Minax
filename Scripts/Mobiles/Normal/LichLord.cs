@@ -13,7 +13,7 @@ namespace Server.Mobiles
             this.Name = "a lich lord";
             this.Body = 79;
             this.BaseSoundID = 412;
-			Team = 4;
+			
 
             this.SetStr(416, 505);
             this.SetDex(146, 165);

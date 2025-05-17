@@ -944,7 +944,9 @@ namespace Server.Achievements
 
         private static void LoadQuestAchievements()
         {
-            int index = 1000;
+/*             int index = 1000; */
+			const int CustomQuestStart = 12000;
+			int index = CustomQuestStart;			
 
             foreach (Assembly assembly in ScriptCompiler.Assemblies)
             {
@@ -1065,8 +1067,8 @@ namespace Server.Achievements
                 {
                     if (index > 1999)
                     {
-                        //throw new ArgumentException(String.Format("Index alloted for Quests: {0}", "1000-1999"));
-                        ErrorLogging(String.Format("Bad Quest Index [{1}]: Index alloted for Quests: {0}", "1000-1999", index));
+/*                         //throw new ArgumentException(String.Format("Index alloted for Quests: {0}", "1000-1999"));
+                        ErrorLogging(String.Format("Bad Quest Index [{1}]: Index alloted for Quests: {0}", "1000-1999", index)); */
                     }
 
                     Register(index++, achievement);
@@ -1076,8 +1078,8 @@ namespace Server.Achievements
                 {
                     if (index > 1999)
                     {
-                        //throw new ArgumentException(String.Format("Index alloted for Quests: {0}", "1000-1999"));
-                        ErrorLogging(String.Format("Bad Quest Index [{1}]: Index alloted for Quests: {0}", "1000-1999", index));
+/*                         //throw new ArgumentException(String.Format("Index alloted for Quests: {0}", "1000-1999"));
+                        ErrorLogging(String.Format("Bad Quest Index [{1}]: Index alloted for Quests: {0}", "1000-1999", index)); */
                     }
 
                     Register(index++, achievement);

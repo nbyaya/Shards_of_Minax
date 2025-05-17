@@ -13,7 +13,7 @@ namespace Server.Mobiles
             Name = "a green goblin alchemist";
             Body = 723;
             BaseSoundID = 0x600;
-			Team = 5;
+			
 
             SetStr(282, 331);
             SetDex(62, 79);

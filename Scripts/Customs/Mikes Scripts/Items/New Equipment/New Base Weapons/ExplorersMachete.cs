@@ -10,7 +10,10 @@ namespace Server.Items
             : base(0x2D35)
         {
             this.Weight = 6.0;
-			this.Name = "Explorers Machete";			
+            this.Name = "Explorers Machete";
+
+            // Apply random tier damage here
+            ApplyRandomTier();
         }
 
         public ExplorersMachete(Serial serial)
@@ -18,137 +21,80 @@ namespace Server.Items
         {
         }
 
-        public override WeaponAbility PrimaryAbility
+        private void ApplyRandomTier()
         {
-            get
+            Random rand = new Random();
+            double chanceForSpecialTier = rand.NextDouble();
+
+            // 50% chance for default stats, 50% chance for a special tier
+            if (chanceForSpecialTier < 0.5)
             {
-                return WeaponAbility.DefenseMastery;
+                // Default stats, don't modify anything
+                return;
             }
-        }
-        public override WeaponAbility SecondaryAbility
-        {
-            get
+
+            // Now determine which special tier it falls into
+            double tierChance = rand.NextDouble();
+
+            if (tierChance < 0.05)
             {
-                return WeaponAbility.Bladeweave;
+                this.MinDamage = rand.Next(1, 80);
+                this.MaxDamage = rand.Next(80, 120);
             }
-        }
-        public override int AosStrengthReq
-        {
-            get
+            else if (tierChance < 0.2)
             {
-                return 20;
+                this.MinDamage = rand.Next(1, 70);
+                this.MaxDamage = rand.Next(70, 100);
             }
-        }
-        public override int AosMinDamage
-        {
-            get
+            else if (tierChance < 0.5)
             {
-                return 11;
+                this.MinDamage = rand.Next(1, 50);
+                this.MaxDamage = rand.Next(50, 75);
             }
-        }
-        public override int AosMaxDamage
-        {
-            get
+            else
             {
-                return 15;
-            }
-        }
-        public override int AosSpeed
-        {
-            get
-            {
-                return 41;
-            }
-        }
-        public override float MlSpeed
-        {
-            get
-            {
-                return 2.75f;
-            }
-        }
-        public override int OldStrengthReq
-        {
-            get
-            {
-                return 20;
-            }
-        }
-        public override int OldMinDamage
-        {
-            get
-            {
-                return 13;
-            }
-        }
-        public override int OldMaxDamage
-        {
-            get
-            {
-                return 15;
-            }
-        }
-        public override int OldSpeed
-        {
-            get
-            {
-                return 41;
-            }
-        }
-        public override int DefHitSound
-        {
-            get
-            {
-                return 0x23B;
-            }
-        }
-        public override int DefMissSound
-        {
-            get
-            {
-                return 0x239;
-            }
-        }
-        public override int InitMinHits
-        {
-            get
-            {
-                return 30;
-            }
-        }
-        public override int InitMaxHits
-        {
-            get
-            {
-                return 60;
+                this.MinDamage = rand.Next(1, 30);
+                this.MaxDamage = rand.Next(30, 50);
             }
         }
 
-		public override SkillName DefSkill
-        {
-            get
-            {
-                return SkillName.Cartography;
-            }
-        }
-		
+        public override WeaponAbility PrimaryAbility => WeaponAbility.DefenseMastery;
+        public override WeaponAbility SecondaryAbility => WeaponAbility.Bladeweave;
+
+        public override int AosStrengthReq => 20;
+        public override int AosMinDamage => 11;
+        public override int AosMaxDamage => 15;
+        public override int AosSpeed => 41;
+        public override float MlSpeed => 2.75f;
+
+        public override int OldStrengthReq => 20;
+        public override int OldMinDamage => 13;
+        public override int OldMaxDamage => 15;
+        public override int OldSpeed => 41;
+
+        public override int DefHitSound => 0x23B;
+        public override int DefMissSound => 0x239;
+
+        public override int InitMinHits => 30;
+        public override int InitMaxHits => 60;
+
+        public override SkillName DefSkill => SkillName.Cartography;
+
         public override void AddNameProperties(ObjectPropertyList list)
         {
             base.AddNameProperties(list);
             list.Add("Skill Required: Cartography");
-        }		
-		
+        }
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-
             writer.WriteEncodedInt(0); // version
         }
 
         public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
-
             int version = reader.ReadEncodedInt();
         }
     }

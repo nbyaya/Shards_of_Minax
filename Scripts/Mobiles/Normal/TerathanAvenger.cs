@@ -13,7 +13,7 @@ namespace Server.Mobiles
             this.Name = "a terathan avenger";
             this.Body = 152;
             this.BaseSoundID = 0x24D;
-			Team = 5;
+			
 
             this.SetStr(467, 645);
             this.SetDex(77, 95);

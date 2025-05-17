@@ -13,7 +13,7 @@ namespace Server.Mobiles
             Name = "a skeletal dragon";
             Body = 104;
             BaseSoundID = 0x488;
-			Team = 4;
+			
 
             SetStr(898, 1030);
             SetDex(68, 200);

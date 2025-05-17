@@ -13,6 +13,9 @@ namespace Server.Items
             Weight = 11.0;
             UsesRemaining = 50;
             ShowUsesRemaining = true;
+
+            // Apply random tier damage
+            ApplyRandomTier();
         }
 
         public Pickaxe(Serial serial)
@@ -20,129 +23,73 @@ namespace Server.Items
         {
         }
 
-        public override HarvestSystem HarvestSystem
+        private void ApplyRandomTier()
         {
-            get
+            Random rand = new Random();
+            double chanceForSpecialTier = rand.NextDouble();
+
+            // 50% chance for default stats, 50% chance for a special tier
+            if (chanceForSpecialTier < 0.5)
             {
-                return Mining.System;
+                // Default stats, don't modify anything
+                return;
             }
-        }
-        public override WeaponAbility PrimaryAbility
-        {
-            get
+
+            // Determine special tier
+            double tierChance = rand.NextDouble();
+
+            if (tierChance < 0.05)
             {
-                return WeaponAbility.DoubleStrike;
+                this.MinDamage = rand.Next(1, 80);
+                this.MaxDamage = rand.Next(80, 120);
             }
-        }
-        public override WeaponAbility SecondaryAbility
-        {
-            get
+            else if (tierChance < 0.2)
             {
-                return WeaponAbility.Disarm;
+                this.MinDamage = rand.Next(1, 70);
+                this.MaxDamage = rand.Next(70, 100);
             }
-        }
-        public override int AosStrengthReq
-        {
-            get
+            else if (tierChance < 0.5)
             {
-                return 50;
+                this.MinDamage = rand.Next(1, 50);
+                this.MaxDamage = rand.Next(50, 75);
             }
-        }
-        public override int AosMinDamage
-        {
-            get
+            else
             {
-                return 12;
-            }
-        }
-        public override int AosMaxDamage
-        {
-            get
-            {
-                return 16;
-            }
-        }
-        public override int AosSpeed
-        {
-            get
-            {
-                return 35;
-            }
-        }
-        public override float MlSpeed
-        {
-            get
-            {
-                return 3.00f;
-            }
-        }
-        public override int OldStrengthReq
-        {
-            get
-            {
-                return 25;
-            }
-        }
-        public override int OldMinDamage
-        {
-            get
-            {
-                return 1;
-            }
-        }
-        public override int OldMaxDamage
-        {
-            get
-            {
-                return 15;
-            }
-        }
-        public override int OldSpeed
-        {
-            get
-            {
-                return 35;
-            }
-        }
-        public override int InitMinHits
-        {
-            get
-            {
-                return 31;
-            }
-        }
-        public override int InitMaxHits
-        {
-            get
-            {
-                return 60;
+                this.MinDamage = rand.Next(1, 30);
+                this.MaxDamage = rand.Next(30, 50);
             }
         }
 
-        public override bool CanBeWornByGargoyles { get { return true; } }
+        public override HarvestSystem HarvestSystem => Mining.System;
+        public override WeaponAbility PrimaryAbility => WeaponAbility.DoubleStrike;
+        public override WeaponAbility SecondaryAbility => WeaponAbility.Disarm;
 
-        public override WeaponAnimation DefAnimation
-        {
-            get
-            {
-                return WeaponAnimation.Slash1H;
-            }
-        }
-		
-		public override SkillName DefSkill
-        {
-            get
-            {
-                return SkillName.Mining;
-            }
-        }
-		
+        public override int AosStrengthReq => 50;
+        public override int AosMinDamage => 12;
+        public override int AosMaxDamage => 16;
+        public override int AosSpeed => 35;
+        public override float MlSpeed => 3.00f;
+
+        public override int OldStrengthReq => 25;
+        public override int OldMinDamage => 1;
+        public override int OldMaxDamage => 15;
+        public override int OldSpeed => 35;
+
+        public override int InitMinHits => 31;
+        public override int InitMaxHits => 60;
+
+        public override bool CanBeWornByGargoyles => true;
+
+        public override WeaponAnimation DefAnimation => WeaponAnimation.Slash1H;
+
+        public override SkillName DefSkill => SkillName.Mining;
+
         public override void AddNameProperties(ObjectPropertyList list)
         {
             base.AddNameProperties(list);
             list.Add("Skill Required: Mining");
-        }		
-		
+        }
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

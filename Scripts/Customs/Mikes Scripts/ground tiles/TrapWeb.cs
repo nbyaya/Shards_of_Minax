@@ -14,7 +14,7 @@ namespace Server.Items
         public TimeSpan AutoDelete { get; set; }
 
         [Constructable]
-        public TrapWeb() : base(0x122A) // Use an appropriate sand-like tile ID
+        public TrapWeb() : base(0x0EE3) // Use an appropriate sand-like tile ID
         {
             Movable = false;
             Name = "Trap Web";

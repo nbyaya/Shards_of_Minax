@@ -200,14 +200,14 @@ namespace Server.Items
 
 					damage += alchemyBonus;
 
-					if (!Core.AOS && damage > 40)
+/* 					if (!Core.AOS && damage > 40)
 					{
 						damage = 40;
 					}
 					else if (Core.AOS && toDamage > 2)
 					{
 						damage /= toDamage - 1;
-					}
+					} */
 
 					AOS.Damage(m, from, damage, 0, 100, 0, 0, 0, Server.DamageType.SpellAOE);
 				}

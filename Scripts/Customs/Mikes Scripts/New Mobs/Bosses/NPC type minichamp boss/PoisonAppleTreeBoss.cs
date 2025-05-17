@@ -14,7 +14,7 @@ namespace Server.Mobiles
             Name = "Poison Apple Overlord";
             Title = "the Corruptor of the Orchard";
             Hue = 2174; // Poison green color, remains same as original
-            Team = 1; // Boss team
+
 
             // Update stats to match or exceed those of a high-level boss
             SetStr(425); // Increased strength

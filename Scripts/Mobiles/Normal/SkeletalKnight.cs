@@ -13,7 +13,7 @@ namespace Server.Mobiles
             Name = "a skeletal knight";
             Body = 147;
             BaseSoundID = 451;
-			Team = 4;
+			
 
             SetStr(196, 250);
             SetDex(76, 95);

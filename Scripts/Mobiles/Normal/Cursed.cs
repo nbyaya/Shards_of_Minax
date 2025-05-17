@@ -16,7 +16,7 @@ namespace Server.Mobiles
             this.Body = 0x190;
             this.Name = NameList.RandomName("male");
             this.BaseSoundID = 471;
-			Team = 4;
+			
 
             this.AddItem(new ShortPants(Utility.RandomNeutralHue()));
             this.AddItem(new Shirt(Utility.RandomNeutralHue()));

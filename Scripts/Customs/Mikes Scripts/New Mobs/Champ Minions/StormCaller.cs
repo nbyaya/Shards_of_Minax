@@ -16,7 +16,7 @@ namespace Server.Mobiles
             Hue = 1150; // Stormy gray hue
             Body = 0x190; // Human male body
             Name = "Storm Caller";
-			Team = 5;
+			Team = 2;
 
             Item robe = new Robe(1150); // Gray robe
             AddItem(robe);

@@ -11,7 +11,7 @@ namespace Server.Mobiles
         {
             this.Name = "an undead guardian";
             this.Body = 722; 
-			Team = 4;
+			
 
             this.SetStr(212);
             this.SetDex(76);

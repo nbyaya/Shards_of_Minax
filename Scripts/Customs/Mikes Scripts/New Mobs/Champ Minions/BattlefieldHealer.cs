@@ -17,7 +17,7 @@ namespace Server.Mobiles
             Body = 0x191;
             Name = NameList.RandomName("female");
             Title = " the Healer";
-			Team = 4;
+			Team = 2;
 
             Item robe = new Robe(Utility.RandomNeutralHue());
             AddItem(robe);

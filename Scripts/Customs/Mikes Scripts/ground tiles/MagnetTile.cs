@@ -14,7 +14,7 @@ namespace Server.Items
         public TimeSpan AutoDelete { get; set; }
 
         [Constructable]
-        public MagnetTile() : base(0x1AC5) // Use an appropriate tile ID
+        public MagnetTile() : base(0x0E62) // Use an appropriate tile ID
         {
             Movable = false;
             Name = "a magnetic disturbance";

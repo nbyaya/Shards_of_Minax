@@ -11,7 +11,7 @@ namespace Server.Mobiles
             : base()
         {
             Name = "an enslaved satyr";
-			Team = 4;
+			
 
             Fame = 10000;
             Karma = -10000;

@@ -12,7 +12,7 @@ namespace Server.Mobiles
         {
             Name = "a lava elemental";
             Body = 720; 
-			Team = 2;
+			
 
             SetStr(446, 510);
             SetDex(160, 190);

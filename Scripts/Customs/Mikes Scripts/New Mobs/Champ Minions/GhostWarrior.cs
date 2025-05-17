@@ -16,7 +16,7 @@ namespace Server.Mobiles
             Body = 0x190;
             Hue = 0x4001; // Ghostly hue
             Name = "Ghost Warrior";
-			Team = 3;
+			Team = 1;
 
             SetStr(600, 800);
             SetDex(200, 300);

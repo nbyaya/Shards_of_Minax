@@ -409,6 +409,18 @@ namespace Server
 		public static Map Tokuno { get { return m_Maps[4]; } }
 		public static Map TerMur { get { return m_Maps[5]; } }
 		public static Map Internal { get { return m_Maps[0x7F]; } }
+		public static Map Sosaria => Map.Maps[32]; // Ensure 6 is the correct index
+		public static Map Map7 => Map.Maps[33];
+		public static Map Map8 => Map.Maps[34];
+		public static Map Map9 => Map.Maps[35];
+		public static Map Map10 => Map.Maps[36];
+		public static Map Map11 => Map.Maps[37];
+		public static Map Map12 => Map.Maps[38];
+		public static Map Map13 => Map.Maps[39];
+		public static Map Map14 => Map.Maps[40];
+		public static Map Map15 => Map.Maps[41];
+
+		
 
 		private static readonly List<Map> m_AllMaps = new List<Map>();
 

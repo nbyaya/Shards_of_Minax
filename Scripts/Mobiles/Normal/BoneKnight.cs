@@ -13,7 +13,7 @@ namespace Server.Mobiles
             this.Name = "a bone knight";
             this.Body = 57;
             this.BaseSoundID = 451;
-			Team = 4;
+			
 
             this.SetStr(196, 250);
             this.SetDex(76, 95);

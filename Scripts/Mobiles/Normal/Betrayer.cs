@@ -14,7 +14,7 @@ namespace Server.Mobiles
         {
             Name = "a betrayer";
             Body = 767;
-			Team = 1;
+			
 
             SetStr(401, 500);
             SetDex(81, 100);

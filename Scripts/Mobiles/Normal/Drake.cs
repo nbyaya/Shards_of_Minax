@@ -13,7 +13,7 @@ namespace Server.Mobiles
             Name = "a drake";
             Body = Utility.RandomList(60, 61);
             BaseSoundID = 362;
-			Team = 3;
+			
 
             SetStr(401, 430);
             SetDex(133, 152);

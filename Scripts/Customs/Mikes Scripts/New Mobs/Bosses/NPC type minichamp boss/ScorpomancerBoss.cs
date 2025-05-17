@@ -46,7 +46,7 @@ namespace Server.Mobiles
             XmlAttach.AttachTo(this, new XmlRandomAbility());
 
             // Set team to a unique value to prevent confusion with normal Scorpomancer
-            Team = 6; 
+
         }
 
         public override void GenerateLoot()

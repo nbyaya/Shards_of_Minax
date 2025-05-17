@@ -11,6 +11,9 @@ namespace Server.Items
             : base(0x905)
         {
             this.Weight = 4.0;
+
+            // Apply random tier damage here
+            ApplyRandomTier();
         }
 
         public GlassStaff(Serial serial)
@@ -18,100 +21,62 @@ namespace Server.Items
         {
         }
 
-        public override WeaponAbility PrimaryAbility
+        private void ApplyRandomTier()
         {
-            get
+            Random rand = new Random();
+            double chanceForSpecialTier = rand.NextDouble();
+
+            // 50% chance for default stats, 50% chance for a special tier
+            if (chanceForSpecialTier < 0.5)
             {
-                return WeaponAbility.DoubleStrike;
+                // Default stats, don't modify anything
+                return;
             }
-        }
-        public override WeaponAbility SecondaryAbility
-        {
-            get
+
+            // Now determine which special tier it falls into
+            double tierChance = rand.NextDouble();
+
+            if (tierChance < 0.05)
             {
-                return WeaponAbility.MortalStrike;
+                this.MinDamage = rand.Next(1, 80);
+                this.MaxDamage = rand.Next(80, 120);
             }
-        }
-        public override int AosStrengthReq
-        {
-            get
+            else if (tierChance < 0.2)
             {
-                return 20;
+                this.MinDamage = rand.Next(1, 70);
+                this.MaxDamage = rand.Next(70, 100);
             }
-        }
-        public override int AosMinDamage
-        {
-            get
+            else if (tierChance < 0.5)
             {
-                return 11;
+                this.MinDamage = rand.Next(1, 50);
+                this.MaxDamage = rand.Next(50, 75);
             }
-        }
-        public override int AosMaxDamage
-        {
-            get
+            else
             {
-                return 14;
-            }
-        }
-        public override int AosSpeed
-        {
-            get
-            {
-                return 39;
-            }
-        }
-        public override float MlSpeed
-        {
-            get
-            {
-                return 2.25f;
-            }
-        }
-        public override int OldStrengthReq
-        {
-            get
-            {
-                return 35;
-            }
-        }
-        public override int OldMinDamage
-        {
-            get
-            {
-                return 8;
-            }
-        }
-        public override int OldMaxDamage
-        {
-            get
-            {
-                return 33;
-            }
-        }
-        public override int OldSpeed
-        {
-            get
-            {
-                return 35;
-            }
-        }
-        public override int InitMinHits
-        {
-            get
-            {
-                return 31;
-            }
-        }
-        public override int InitMaxHits
-        {
-            get
-            {
-                return 70;
+                this.MinDamage = rand.Next(1, 30);
+                this.MaxDamage = rand.Next(30, 50);
             }
         }
 
-        public override Race RequiredRace { get { return Race.Gargoyle; } }
-        public override bool CanBeWornByGargoyles { get { return true; } }
+        public override WeaponAbility PrimaryAbility => WeaponAbility.DoubleStrike;
+        public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
+
+        public override int AosStrengthReq => 20;
+        public override int AosMinDamage => 11;
+        public override int AosMaxDamage => 14;
+        public override int AosSpeed => 39;
+        public override float MlSpeed => 2.25f;
+
+        public override int OldStrengthReq => 35;
+        public override int OldMinDamage => 8;
+        public override int OldMaxDamage => 33;
+        public override int OldSpeed => 35;
+
+        public override int InitMinHits => 31;
+        public override int InitMaxHits => 70;
+
+        public override Race RequiredRace => Race.Gargoyle;
+        public override bool CanBeWornByGargoyles => true;
 
         public override void Serialize(GenericWriter writer)
         {

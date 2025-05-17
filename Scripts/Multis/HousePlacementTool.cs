@@ -211,30 +211,8 @@ namespace Server.Items
             {
                 if (m_Classic)
                 {
-                    if (i == 8)
-                    {
-                        page = 2;
-                        index = 0;
-                    }
-                    else if (i == 20)
-                    {
-                        page = 3;
-                        index = 0;
-                    }
-                    else if (i == 32)
-                    {
-                        page = 4;
-                        index = 0;
-                    }
-                    else if (i > 44)
-                    {
-                        page = 4 + ((i - 20) / 14);
-                        index = (i - 20) % 14;
-                    }
-                    else
-                    {
-                        index++;
-                    }
+                    page = 1 + (i / 14);
+                    index = i % 14;
                 }
                 else
                 {
@@ -266,7 +244,10 @@ namespace Server.Items
                 int lockdowns = (int)(entry.Lockdowns * BaseHouse.GlobalBonusStorageScalar);
 
                 AddButton(10, y, 4005, 4007, 1 + i, GumpButtonType.Reply, 0);
-                AddHtmlLocalized(50, y, 225, 20, entry.Description, LabelColor, false, false);
+			if (entry.HasCustomDescription)
+				AddLabel(50, y, LabelHue, entry.CustomDescription);       // NEW branch
+			else
+				AddHtmlLocalized(50, y, 225, 20, entry.Description, LabelColor, false, false);
                 AddLabel(275, y, LabelHue, storage.ToString());
                 AddLabel(350, y, LabelHue, lockdowns.ToString());
                 AddLabel(425, y, LabelHue, entry.Cost.ToString("N0", System.Globalization.CultureInfo.GetCultureInfo("en-US")));
@@ -299,6 +280,8 @@ namespace Server.Items
         private bool m_Placed;
         private bool m_Classic;
         private HousePlacementTool m_Tool;
+
+		
 
         public NewHousePlacementTarget(HousePlacementTool tool, HousePlacementEntry[] entries, HousePlacementEntry entry, bool classic)
             : base(entry.MultiID, entry.Offset)
@@ -354,7 +337,8 @@ namespace Server.Items
     {
         private static readonly HousePlacementEntry[] m_ClassicHouses = new HousePlacementEntry[]
         {
-            new HousePlacementEntry(typeof(SmallOldHouse),  1011303,	425,	212,	489,	244,	10,	36750, 0,	4,	0,	0x0064),
+
+			new HousePlacementEntry(typeof(SmallOldHouse),  1011303,	425,	212,	489,	244,	10,	36750, 0,	4,	0,	0x0064),
             new HousePlacementEntry(typeof(SmallOldHouse),  1011304,	425,	212,	489,	244,	10,	36750, 0,	4,	0,	0x0066),
             new HousePlacementEntry(typeof(SmallOldHouse),  1011305,	425,	212,	489,	244,	10,	36500, 0,	4,	0,	0x0068),
             new HousePlacementEntry(typeof(SmallOldHouse),  1011306,	425,	212,	489,	244,	10,	35000, 0,	4,	0,	0x006A),
@@ -378,27 +362,73 @@ namespace Server.Items
 
         private static readonly HousePlacementEntry[] m_HousesEJ =
         {
-            new HousePlacementEntry(typeof(SmallOldHouse),      1011303,	425,	212,	489,	244,	10,	36750, 0,	4,	0,	0x0064),
+            new HousePlacementEntry(typeof(BlueTent),  "Blue Tent",	351,	81,	351,	81,	1,	5000, 0,	4,	0,	0x0070),
+			new HousePlacementEntry(typeof(GreenTent), "Green Tent", 351, 81, 351, 81, 1, 5000, 0, 4, 0, 0x0072),
+			new HousePlacementEntry(typeof(NewSmallStoneHomeEast), "Small Stone Home East", 382, 112, 382, 112, 2, 36750, 4, -2, 0, 0x005C),
+			new HousePlacementEntry(typeof(NewSmallStoneHouseEast), "Small Stone House East", 382, 112, 382, 112, 2, 36750, 4, -2, 0, 0x005F),
+			new HousePlacementEntry(typeof(SmallOldHouse),      1011303,	425,	212,	489,	244,	10,	36750, 0,	4,	0,	0x0064),
             new HousePlacementEntry(typeof(SmallOldHouse),      1011304,	425,	212,	489,	244,	10,	36750, 0,	4,	0,	0x0066),
             new HousePlacementEntry(typeof(SmallOldHouse),      1011305,	425,	212,	489,	244,	10,	36500, 0,	4,	0,	0x0068),
             new HousePlacementEntry(typeof(SmallOldHouse),      1011306,	425,	212,	489,	244,	10,	35000, 0,	4,	0,	0x006A),
             new HousePlacementEntry(typeof(SmallOldHouse),      1011307,	425,	212,	489,	244,	10,	36500, 0,	4,	0,	0x006C),
             new HousePlacementEntry(typeof(SmallOldHouse),      1011308,	425,	212,	489,	244,	10,	36500, 0,	4,	0,	0x006E),
-            new HousePlacementEntry(typeof(SmallShop),          1011321,	425,	212,	489,	244,	10,	50250, -1,	4,	0,	0x00A0),
-            new HousePlacementEntry(typeof(SmallShop),          1011322,	425,	212,	489,	244,	10,	52250, 0,	4,	0,	0x00A2),
-            new HousePlacementEntry(typeof(SmallTower),         1011317,	580,	290,	667,	333,	14,	73250, 3,	4,	0,	0x0098),
-            new HousePlacementEntry(typeof(TwoStoryVilla),      1011319,	1100,	550,	1265,	632,	24,	113500, 3,	6,	0,	0x009E),
-            new HousePlacementEntry(typeof(SandStonePatio),     1011320,	850,	425,	1265,	632,	24,	76250, -1,	4,	0,	0x009C),
-            new HousePlacementEntry(typeof(LogCabin),           1011318,	1100,	550,	1265,	632,	24,	81250, 1,	6,	0,	0x009A),
+            new HousePlacementEntry(typeof(SmallShop),          1011321,	425,	212,	489,	244,	10,	50250, -1,	4,	0,	0x00A0),			
+			new HousePlacementEntry(typeof(SmallShop),          1011322,	425,	212,	489,	244,	10,	52250, 0,	4,	0,	0x00A2),
+			new HousePlacementEntry(typeof(NewSmallStoneStoreFront), "Small Stone Store Front", 410, 140, 410, 140, 3, 52250, 0, 4, 0, 0x005B),
+			new HousePlacementEntry(typeof(NewSmallWoodenShackPorch), "Small Wooden Shack Porch", 410, 140, 410, 140, 3, 52250, -3, 4, 0, 0x0060),
+			new HousePlacementEntry(typeof(NewPlainStoneHouse), "Plain Stone House", 456, 186, 456, 186, 5, 53000, -5, 6, 0, 0x0062),
+			new HousePlacementEntry(typeof(NewSmallLogCabinWithDeck), "Small Log Cabin With Deck", 449, 179, 449, 179, 4, 54000, 1, 4, 0, 0x0088),
+			new HousePlacementEntry(typeof(NewPlainPlasterHouse), "Plain Plaster House", 463, 193, 463, 193, 5, 55000, -5, 4, 0, 0x0061),
+			new HousePlacementEntry(typeof(NewSmallSandstoneWorkshop), "Small Sandstone Workshop", 458, 188, 458, 188, 5, 56000, 4, 4, 0, 0x0084),
+			new HousePlacementEntry(typeof(NewTwoStorySmallPlasterDwelling), "Two Story Small Plaster Dwelling", 470, 200, 470, 200, 5, 57000, 3, 3, 0, 0x0082),
+			new HousePlacementEntry(typeof(Wagon), "Wagon", 470, 200, 470, 200, 5, 58000, 0, 0, 0, 0x0094),
+			new HousePlacementEntry(typeof(NewTwoStorySmallStoneDwelling), "Two Story Small Stone Dwelling", 470, 200, 470, 200, 5, 59000, 3, 3, 0, 0x0058),
+			new HousePlacementEntry(typeof(NewTwoStorySmallStoneHome), "Two Story Small Stone Home", 470, 200, 470, 200, 5, 60000, 3, 3, 0, 0x0056),
+			new HousePlacementEntry(typeof(NewTwoStorySmallStoneHouse), "Two Story Small Stone House", 470, 200, 470, 200, 5, 61000, 3, 3, 0, 0x0057),
+			new HousePlacementEntry(typeof(NewTwoStorySmallWoodenDwelling), "Two Story Small Wooden Dwelling", 470, 200, 470, 200, 5, 62000, 3, 3, 0, 0x0059),
+			new HousePlacementEntry(typeof(NewLogCabin), "Log Cabin", 488, 218, 488, 218, 6, 63000, 2, 5, 0, 0x0086),
+			new HousePlacementEntry(typeof(NewSmallStoneShoppe), "Small Stone Shoppe", 478, 208, 478, 208, 5, 64000, -5, 6, 0, 0x0052),
+			new HousePlacementEntry(typeof(NewWoodenHomePorch), "Wooden Home Porch", 487, 217, 487, 217, 6, 65000, 2, 5, 0, 0x0053),
+			new HousePlacementEntry(typeof(NewSmallStoneTemple), "Small Stone Temple", 504, 234, 504, 234, 6, 66000, 4, -3, 0, 0x0083),
+			new HousePlacementEntry(typeof(NewBrickHomeWithFrontDeck), "Brick Home With Front Deck", 518, 248, 518, 248, 7, 67000, 0, 7, 0, 0x0091),
+			new HousePlacementEntry(typeof(NewPlasterHousePictureWindow), "Plaster House Picture Window", 515, 245, 515, 245, 7, 68000, 7, -6, 0, 0x004F),
+			new HousePlacementEntry(typeof(NewStoneHomeWithEnclosedPatio), "Stone Home With Enclosed Patio", 516, 246, 516, 246, 7, 69000, 7, 0, 0, 0x0085),
+			new HousePlacementEntry(typeof(NewOldStoneHomeShoppe), "Old Stone Home Shoppe", 526, 256, 526, 256, 7, 70000, 8, -5, 0, 0x008E),
+			new HousePlacementEntry(typeof(NewBrickHomeWithLargePorch), "Brick Home With Large Porch", 533, 263, 533, 263, 7, 71000, -6, 6, 0, 0x0093),
+			new HousePlacementEntry(typeof(NewTwoStoryWoodenHomeWithPorch), "Two Story Wooden Home With Porch", 562, 292, 562, 292, 8, 72000, 6, 4, 0, 0x0051),
+			new HousePlacementEntry(typeof(NewTwoStoryBrickHouse), "Two Story Brick House", 568, 298, 568, 298, 8, 73000, -4, 5, 0, 0x004E),
+			new HousePlacementEntry(typeof(NewFancyStoneWoodHome), "Fancy Stone Wood Home", 580, 310, 580, 310, 9, 73000, -4, 5, 0, 0x005D),
+			new HousePlacementEntry(typeof(SmallTower),         1011317,	580,	290,	667,	333,	14,	73250, 3,	4,	0,	0x0098),	
+			new HousePlacementEntry(typeof(NewTwoStoryStoneVilla), "Two Story Stone Villa", 589, 319, 589, 319, 9, 74000, 4, 8, 0, 0x0081),
+			new HousePlacementEntry(typeof(NewWoodenHomeUpperDeck), "Wooden Home Upper Deck", 590, 320, 590, 320, 9, 75000, -4, 5, 0, 0x0080),
+			new HousePlacementEntry(typeof(NewBrickArena), "Brick Arena", 608, 338, 608, 338, 10, 76000, -8, 11, 0, 0x008A),
+			new HousePlacementEntry(typeof(SandStonePatio),     1011320,	850,	425,	1265,	632,	24,	76250, -1,	4,	0,	0x009C),
+			new HousePlacementEntry(typeof(NewMarbleShoppe), "Marble Shoppe", 608, 338, 608, 338, 10, 77000, -5, 6, 0, 0x0092),
+			new HousePlacementEntry(typeof(NewPlasterHomeDirtDeck), "Plaster Home Dirt Deck", 622, 352, 622, 352, 10, 78000, -2, 7, 0, 0x0063),
+			new HousePlacementEntry(typeof(NewTwoStoryBrickHome), "Two Story Brick Home", 625, 355, 625, 355, 10, 79000, -3, 7, 0, 0x0050),
+			new HousePlacementEntry(typeof(NewBrickHouseWithSteeple), "Brick House With Steeple", 654, 384, 654, 384, 11, 80000, 0, 6, 0, 0x004D),
+			new HousePlacementEntry(typeof(NewFancyWoodenStoneHouse), "Fancy Wooden Stone House", 653, 383, 653, 383, 11, 81000, 6, -4, 0, 0x005E),
+			new HousePlacementEntry(typeof(LogCabin),           1011318,	1100,	550,	1265,	632,	24,	81250, 1,	6,	0,	0x009A),
+			new HousePlacementEntry(typeof(NewTwoStorySandstoneHouse), "Two Story Sandstone House", 725, 455, 725, 455, 14, 82000, 7, -4, 0, 0x004C),
+			new HousePlacementEntry(typeof(NewSmallStoneTower), "Small Stone Tower", 731, 461, 731, 461, 14, 83000, -2, 6, 0, 0x0054),
+			new HousePlacementEntry(typeof(NewSmallBrickCastle), "Small Brick Castle", 743, 473, 743, 473, 14, 84000, -5, 6, 0, 0x008F),
+			new HousePlacementEntry(typeof(NewStoneFort), "Stone Fort", 750, 480, 750, 480, 14, 85000, -5, 7, 0, 0x008B),
+			new HousePlacementEntry(typeof(NewRaisedBrickHome), "Raised Brick Home", 866, 596, 866, 596, 18, 86000, 3, 7, 0, 0x0089),
+			new HousePlacementEntry(typeof(NewSmallWizardTower), "Small Wizard Tower", 869, 599, 869, 599, 18, 87000, -2, 6, 0, 0x0090),
+			new HousePlacementEntry(typeof(NewWoodenMansion), "Wooden Mansion", 920, 650, 920, 650, 20, 88000, 6, 7, 0, 0x005A),
+			new HousePlacementEntry(typeof(NewThreeStoryStoneVilla), "Three Story Stone Villa", 965, 695, 965, 695, 22, 89000, -6, 7, 0, 0x0055),                                    
+            new HousePlacementEntry(typeof(TwoStoryVilla),      1011319,	1100,	550,	1265,	632,	24,	113500, 3,	6,	0,	0x009E),                        
+			new HousePlacementEntry(typeof(LargeTent), "Large Tent", 1572, 1302, 1572, 1302, 28, 123500, 1, 13, 0, 0x0049),
+			new HousePlacementEntry(typeof(LargePatioHouse),    1011315,	1370,	685,	1576,	788,	28,	129000, -4,	7,	0,	0x008C),
             new HousePlacementEntry(typeof(GuildHouse),         1011309,	1370,	685,	1576,	788,	28,	131250, -1,	7,	0,	0x0074),
             new HousePlacementEntry(typeof(TwoStoryHouse),      1011310,	1370,	685,	1576,	788,	28,	162500, -3,	7,	0,	0x0076),
-            new HousePlacementEntry(typeof(TwoStoryHouse),      1011311,	1370,	685,	1576,	788,	28,	162750, -3,	7,	0,	0x0078),
-            new HousePlacementEntry(typeof(LargePatioHouse),    1011315,	1370,	685,	1576,	788,	28,	129000, -4,	7,	0,	0x008C),
-            new HousePlacementEntry(typeof(LargeMarbleHouse),   1011316,	1370,	685,	1576,	788,	28,	160250, -4,	7,	0,	0x0096),
+            new HousePlacementEntry(typeof(TwoStoryHouse),      1011311,	1370,	685,	1576,	788,	28,	162750, -3,	7,	0,	0x0078),            
+            new HousePlacementEntry(typeof(LargeMarbleHouse),   1011316,	1370,	685,	1576,	788,	28,	160250, -4,	7,	0,	0x0096),	
             new HousePlacementEntry(typeof(Tower),              1011312,	2119,	1059,	2437,	1218,	42,	366250, 0,	7,	0,	0x007A),
             new HousePlacementEntry(typeof(Keep),               1011313,	2625,	1312,	3019,	1509,	52,	562500, 0, 11,	0,	0x007C),
             new HousePlacementEntry(typeof(Castle),             1011314,	4076,	2038,	4688,	2344,	78,	865000, 0, 16,	0,	0x007E),
-
+			new HousePlacementEntry(typeof(Pyramid), "Pyramid", 3856, 3586, 3856, 3586, 32, 900000, 3, 16, 0, 0x0048),
+			new HousePlacementEntry(typeof(Fortress), "Fortress", 6448, 6178, 6448, 6178, 36, 950000, 4, 16, 0, 0x004B), 
             new HousePlacementEntry(typeof(TrinsicKeep),        1158748,    2625,   1312,   3019,   1509,   52, 29643750, 0, 11,    0,  0x147E),
             new HousePlacementEntry(typeof(GothicRoseCastle),   1158749,    4076,   2038,   4688,   2344,   78, 44808750, 0, 16,    0,  0x147F),
             new HousePlacementEntry(typeof(ElsaCastle),         1158750,    4076,   2038,   4688,   2344,   78, 45450000, 0, 16,    0,  0x1480),
@@ -411,21 +441,18 @@ namespace Server.Items
             new HousePlacementEntry(typeof(DarkthornKeep),      1158853,    2625,   1312,   3019,   1509,   52, 27990000, 0, 11,    0,  0x1487),
             new HousePlacementEntry(typeof(SandalwoodKeep),     1158854,    2625,   1312,   3019,   1509,   52, 23456250, 0, 11,    0,  0x1488),
             new HousePlacementEntry(typeof(CasaMoga),           1158855,    2625,   1312,   3019,   1509,   52, 26313750, 0, 11,    0,  0x1489),
-
             new HousePlacementEntry(typeof(RobinsRoost),                1158960,    4076,   2038,   4688,   2344,   78, 43863750, 0, 16,    0,  0x148A),
             new HousePlacementEntry(typeof(Camelot),                    1158961,    4076,   2038,   4688,   2344,   78, 47092500, 0, 16,    0,  0x148B),
             new HousePlacementEntry(typeof(LacrimaeInCaelo),            1158962,    4076,   2038,   4688,   2344,   78, 45315000, 0, 16,    0,  0x148C),
             new HousePlacementEntry(typeof(OkinawaSweetDreamCastle),    1158963,    4076,   2038,   4688,   2344,   78, 40128750, 0, 16,    0,  0x148D),
             new HousePlacementEntry(typeof(TheSandstoneCastle),         1158964,    4076,   2038,   4688,   2344,   78, 48690000, 0, 16,    0,  0x148E),
             new HousePlacementEntry(typeof(GrimswindSisters),           1158965,    4076,   2038,   4688,   2344,   78, 42142500, 0, 16,    0,  0x148F),
-
             new HousePlacementEntry(typeof(FortressOfLestat),           1159050,    2625,   1312,   3019,   1509,   52, 27405000, 0, 11,    0,  0x1490),
             new HousePlacementEntry(typeof(CitadelOfTheFarEast),        1159051,    2625,   1312,   3019,   1509,   52, 29036250, 0, 11,    0,  0x1491),
             new HousePlacementEntry(typeof(KeepIncarcerated),           1159052,    2625,   1312,   3019,   1509,   52, 26291250, 0, 11,    0,  0x1492),
             new HousePlacementEntry(typeof(DesertRose),                 1159054,    2625,   1312,   3019,   1509,   52, 21206250, 0, 11,    0,  0x1494),
             new HousePlacementEntry(typeof(SallyTreesRefurbishedKeep),  1159053,    2625,   1312,   3019,   1509,   52, 29688750, 0, 11,    0,  0x1493),
             new HousePlacementEntry(typeof(TheCloversKeep),             1159055,    2625,   1312,   3019,   1509,   52, 27360000, 0, 11,    0,  0x1495),
-
             new HousePlacementEntry(typeof(TheSorceresCastle),          1159264,    4076,   2038,   4688,   2344,   78, 40924500, 0, 16,    0,  0x1496),
             new HousePlacementEntry(typeof(TheCastleCascade),           1159265,    4076,   2038,   4688,   2344,   78, 48217500, 0, 16,    0,  0x1497),
             new HousePlacementEntry(typeof(TheHouseBuiltOnTheRuins),    1159266,    4076,   2038,   4688,   2344,   78, 42255000, 0, 16,    0,  0x1498),
@@ -564,10 +591,12 @@ namespace Server.Items
         private readonly int m_Cost;
         private readonly int m_MultiID;
         private readonly Point3D m_Offset;
+		private readonly string _customDescription;   // NEW – only set when we are NOT using a cliloc		
 
         public HousePlacementEntry(Type type, int description, int storage, int lockdowns, int newStorage, int newLockdowns, int vendors, int cost, int xOffset, int yOffset, int zOffset, int multiID)
         {
             m_Type = type;
+			_customDescription = null;                // << keep old behaviour
             m_Description = description;
             m_Storage = storage;
             m_Lockdowns = lockdowns;
@@ -581,6 +610,22 @@ namespace Server.Items
 
             m_MultiID = multiID;
         }
+
+		/* ---- NEW ctor (plain text) ----------------------------------------- */
+		public HousePlacementEntry(Type type, string customDescription,
+								   int storage, int lockdowns, int newStorage,
+								   int newLockdowns, int vendors, int cost,
+								   int xOffset, int yOffset, int zOffset, int multiID)
+			: this(type, 0,               // pass “0” – never a real cliloc
+				   storage, lockdowns, newStorage, newLockdowns,
+				   vendors, cost, xOffset, yOffset, zOffset, multiID)
+		{
+			_customDescription = customDescription;
+		}
+
+		/* ---- helper properties --------------------------------------------- */
+		public bool   HasCustomDescription  => _customDescription != null;
+		public string CustomDescription     => _customDescription;
 
         static HousePlacementEntry()
         {
@@ -1105,7 +1150,10 @@ namespace Server.Items
                 int lockdowns = (int)(entry.Lockdowns * BaseHouse.GlobalBonusStorageScalar);
 
                 AddButton(10, y, 4005, 4007, 1 + i, GumpButtonType.Reply, 0);
-                AddHtmlLocalized(50, y, 225, 20, entry.Description, LabelColor, false, false);
+				if (entry.HasCustomDescription)
+					AddLabel(50, y, LabelHue, entry.CustomDescription);       // NEW branch
+				else
+					AddHtmlLocalized(50, y, 225, 20, entry.Description, LabelColor, false, false);
                 AddLabel(275, y, LabelHue, storage.ToString());
                 AddLabel(350, y, LabelHue, lockdowns.ToString());
                 AddLabel(425, y, LabelHue, entry.Cost.ToString("N0", System.Globalization.CultureInfo.GetCultureInfo("en-US")));

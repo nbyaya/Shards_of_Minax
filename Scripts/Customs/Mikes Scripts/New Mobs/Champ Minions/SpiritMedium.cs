@@ -17,7 +17,7 @@ namespace Server.Mobiles
             Body = Utility.RandomList(0x191, 0x190);
             Name = NameList.RandomName(Body == 0x191 ? "female" : "male");
             Title = "the Spirit Medium";
-			Team = 3;
+			Team = 1;
 
             if (Utility.RandomBool())
             {

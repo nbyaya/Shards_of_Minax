@@ -3,7 +3,6 @@ using System;
 namespace Server.Mobiles
 {
     [CorpseName("a storm bear corpse")]
-    [TypeAlias("Server.Mobiles.StormBear")]
     public class StormBear : BaseCreature
     {
         private DateTime m_NextThunderStrike;

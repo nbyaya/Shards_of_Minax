@@ -16,7 +16,7 @@ namespace Server.Mobiles
             Hue = Utility.RandomSkinHue();
             Body = 0x190; // Assuming male for this example, change to 0x191 for female if needed
             Name = "Shield Bearer";
-			Team = 4;
+			Team = 2;
 
             Item shield = new HeaterShield();
             shield.Movable = false;

@@ -15,7 +15,7 @@ namespace Server.Mobiles
             Hue = 32768;
             Female = true;
             BaseSoundID = 362;
-			Team = 4;
+			
 
             SetStr(790, 830);
             SetDex(85, 125);

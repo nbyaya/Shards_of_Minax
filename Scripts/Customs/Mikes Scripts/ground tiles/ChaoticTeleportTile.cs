@@ -14,7 +14,7 @@ namespace Server.Items
         public TimeSpan AutoDelete { get; set; }
 
         [Constructable]
-        public ChaoticTeleportTile() : base(0x1BC3) // Use an appropriate magical-looking tile ID
+        public ChaoticTeleportTile() : base(0x0E68) // Use an appropriate magical-looking tile ID
         {
             Movable = false;
             Name = "a chaotic teleport tile";

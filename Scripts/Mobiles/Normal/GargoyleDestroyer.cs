@@ -13,7 +13,7 @@ namespace Server.Mobiles
             this.Name = "Gargoyle Destroyer";
             this.Body = 0x2F3;
             this.BaseSoundID = 0x174;
-			Team = 5;
+			
 
             this.SetStr(760, 850);
             this.SetDex(102, 150);

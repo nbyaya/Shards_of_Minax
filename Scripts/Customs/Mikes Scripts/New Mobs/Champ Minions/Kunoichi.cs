@@ -14,7 +14,7 @@ namespace Server.Mobiles
         public Kunoichi() : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = Utility.RandomSkinHue();
-			Team = 5;
+			Team = 2;
 
             Body = 0x191;
             Name = NameList.RandomName("female");

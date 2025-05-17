@@ -13,7 +13,7 @@ namespace Server.Mobiles
             Name = "a flesh golem";
             Body = 304;
             BaseSoundID = 684;
-			Team = 4;
+			
 
             SetStr(176, 200);
             SetDex(51, 75);

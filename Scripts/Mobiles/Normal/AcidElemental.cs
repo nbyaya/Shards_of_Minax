@@ -17,7 +17,7 @@ namespace Server.Mobiles
             Name = "an acid elemental";
             Body = 158;
             BaseSoundID = 263;
-			Team = 2;
+			
 
             SetStr(326, 355);
             SetDex(66, 85);

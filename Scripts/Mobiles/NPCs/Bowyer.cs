@@ -8,6 +8,7 @@ namespace Server.Mobiles
     public class Bowyer : BaseVendor
     {
         private readonly List<SBInfo> m_SBInfos = new List<SBInfo>();
+		public override bool UsesRandomisedStock => true;
         [Constructable]
         public Bowyer()
             : base("the bowyer")

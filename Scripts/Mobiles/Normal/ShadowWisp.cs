@@ -13,7 +13,7 @@ namespace Server.Mobiles
             Name = "a shadow wisp";
             Body = 165;
             BaseSoundID = 466;
-			Team = 4;
+			
 
             SetStr(16, 40);
             SetDex(16, 45);

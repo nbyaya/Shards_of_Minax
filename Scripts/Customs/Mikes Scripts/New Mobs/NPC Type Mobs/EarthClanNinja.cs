@@ -16,7 +16,7 @@ namespace Server.Mobiles
         {
             // Setting the hue to an earthy color to fit the earth clan ninja theme
             Hue = 0x972;
-			Team = 3;
+			Team = 1;
 
             // Setting the body to human, ninjas are typically human
             Body = 0x190; // Use 0x191 for a female ninja

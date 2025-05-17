@@ -14,7 +14,7 @@ namespace Server.Mobiles
             this.Name = NameList.RandomName("ratman");
             this.Body = 42;
             this.BaseSoundID = 437;
-			Team = 4;
+			
 
             this.SetStr(96, 120);
             this.SetDex(81, 100);

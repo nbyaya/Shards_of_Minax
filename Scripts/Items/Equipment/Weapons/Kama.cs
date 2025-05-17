@@ -13,6 +13,9 @@ namespace Server.Items
         {
             this.Weight = 7.0;
             this.Layer = Layer.TwoHanded;
+
+            // Apply random tier damage here
+            ApplyRandomTier();
         }
 
         public Kama(Serial serial)
@@ -20,143 +23,76 @@ namespace Server.Items
         {
         }
 
-        public override WeaponAbility PrimaryAbility
+        private void ApplyRandomTier()
         {
-            get
+            Random rand = new Random();
+            double chanceForSpecialTier = rand.NextDouble();
+
+            // 50% chance for default stats, 50% chance for a special tier
+            if (chanceForSpecialTier < 0.5)
             {
-                return WeaponAbility.WhirlwindAttack;
+                // Default stats, don't modify anything
+                return;
+            }
+
+            // Determine which special tier it falls into
+            double tierChance = rand.NextDouble();
+
+            if (tierChance < 0.05)
+            {
+                this.MinDamage = rand.Next(1, 80);
+                this.MaxDamage = rand.Next(80, 120);
+            }
+            else if (tierChance < 0.2)
+            {
+                this.MinDamage = rand.Next(1, 70);
+                this.MaxDamage = rand.Next(70, 100);
+            }
+            else if (tierChance < 0.5)
+            {
+                this.MinDamage = rand.Next(1, 50);
+                this.MaxDamage = rand.Next(50, 75);
+            }
+            else
+            {
+                this.MinDamage = rand.Next(1, 30);
+                this.MaxDamage = rand.Next(30, 50);
             }
         }
-        public override WeaponAbility SecondaryAbility
-        {
-            get
-            {
-                return WeaponAbility.DefenseMastery;
-            }
-        }
-        public override int AosStrengthReq
-        {
-            get
-            {
-                return 15;
-            }
-        }
-        public override int AosMinDamage
-        {
-            get
-            {
-                return 10;
-            }
-        }
-        public override int AosMaxDamage
-        {
-            get
-            {
-                return 13;
-            }
-        }
-        public override int AosSpeed
-        {
-            get
-            {
-                return 55;
-            }
-        }
-        public override float MlSpeed
-        {
-            get
-            {
-                return 2.00f;
-            }
-        }
-        public override int OldStrengthReq
-        {
-            get
-            {
-                return 15;
-            }
-        }
-        public override int OldMinDamage
-        {
-            get
-            {
-                return 9;
-            }
-        }
-        public override int OldMaxDamage
-        {
-            get
-            {
-                return 11;
-            }
-        }
-        public override int OldSpeed
-        {
-            get
-            {
-                return 55;
-            }
-        }
-        public override int DefHitSound
-        {
-            get
-            {
-                return 0x232;
-            }
-        }
-        public override int DefMissSound
-        {
-            get
-            {
-                return 0x238;
-            }
-        }
-        public override int InitMinHits
-        {
-            get
-            {
-                return 35;
-            }
-        }
-        public override int InitMaxHits
-        {
-            get
-            {
-                return 60;
-            }
-        }
-        public override SkillName DefSkill
-        {
-            get
-            {
-                return SkillName.Fencing;
-            }
-        }
-        public override WeaponType DefType
-        {
-            get
-            {
-                return WeaponType.Piercing;
-            }
-        }
-        public override WeaponAnimation DefAnimation
-        {
-            get
-            {
-                return WeaponAnimation.Pierce1H;
-            }
-        }
+
+        public override WeaponAbility PrimaryAbility => WeaponAbility.WhirlwindAttack;
+        public override WeaponAbility SecondaryAbility => WeaponAbility.DefenseMastery;
+
+        public override int AosStrengthReq => 15;
+        public override int AosMinDamage => 10;
+        public override int AosMaxDamage => 13;
+        public override int AosSpeed => 55;
+        public override float MlSpeed => 2.00f;
+
+        public override int OldStrengthReq => 15;
+        public override int OldMinDamage => 9;
+        public override int OldMaxDamage => 11;
+        public override int OldSpeed => 55;
+
+        public override int DefHitSound => 0x232;
+        public override int DefMissSound => 0x238;
+
+        public override int InitMinHits => 35;
+        public override int InitMaxHits => 60;
+
+        public override SkillName DefSkill => SkillName.Fencing;
+        public override WeaponType DefType => WeaponType.Piercing;
+        public override WeaponAnimation DefAnimation => WeaponAnimation.Pierce1H;
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-
             writer.Write((int)0); // version
         }
 
         public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
-
             int version = reader.ReadInt();
         }
     }

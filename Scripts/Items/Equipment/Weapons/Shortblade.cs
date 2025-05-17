@@ -2,7 +2,6 @@ using System;
 
 namespace Server.Items
 {
-    // Based off a Warfork
     [FlipableAttribute(0x907, 0x4076)]
     public class Shortblade : BaseSword
     {
@@ -11,6 +10,9 @@ namespace Server.Items
             : base(0x907)
         {
             //Weight = 9.0;
+
+            // Apply random tier damage here
+            ApplyRandomTier();
         }
 
         public Shortblade(Serial serial)
@@ -18,135 +20,69 @@ namespace Server.Items
         {
         }
 
-        public override WeaponAbility PrimaryAbility
+        private void ApplyRandomTier()
         {
-            get
+            Random rand = new Random();
+            double chanceForSpecialTier = rand.NextDouble();
+
+            // 50% chance for default stats, 50% chance for a special tier
+            if (chanceForSpecialTier < 0.5)
             {
-                return WeaponAbility.ArmorIgnore;
+                // Default stats, don't modify anything
+                return;
             }
-        }
-        public override WeaponAbility SecondaryAbility
-        {
-            get
+
+            // Now determine which special tier it falls into
+            double tierChance = rand.NextDouble();
+
+            if (tierChance < 0.05)
             {
-                return WeaponAbility.MortalStrike;
+                this.MinDamage = rand.Next(1, 80);
+                this.MaxDamage = rand.Next(80, 120);
             }
-        }
-        public override int AosStrengthReq
-        {
-            get
+            else if (tierChance < 0.2)
             {
-                return 45;
+                this.MinDamage = rand.Next(1, 70);
+                this.MaxDamage = rand.Next(70, 100);
             }
-        }
-        public override int AosMinDamage
-        {
-            get
+            else if (tierChance < 0.5)
             {
-                return 10;
+                this.MinDamage = rand.Next(1, 50);
+                this.MaxDamage = rand.Next(50, 75);
             }
-        }
-        public override int AosMaxDamage
-        {
-            get
+            else
             {
-                return 13;
-            }
-        }
-        public override int AosSpeed
-        {
-            get
-            {
-                return 43;
-            }
-        }
-        public override float MlSpeed
-        {
-            get
-            {
-                return 2.25f;
-            }
-        }
-        public override int OldStrengthReq
-        {
-            get
-            {
-                return 35;
-            }
-        }
-        public override int OldMinDamage
-        {
-            get
-            {
-                return 4;
-            }
-        }
-        public override int OldMaxDamage
-        {
-            get
-            {
-                return 32;
-            }
-        }
-        public override int OldSpeed
-        {
-            get
-            {
-                return 45;
-            }
-        }
-        public override int DefHitSound
-        {
-            get
-            {
-                return 0x236;
-            }
-        }
-        public override int DefMissSound
-        {
-            get
-            {
-                return 0x238;
-            }
-        }
-        public override int InitMinHits
-        {
-            get
-            {
-                return 31;
-            }
-        }
-        public override int InitMaxHits
-        {
-            get
-            {
-                return 110;
-            }
-        }
-        public override SkillName DefSkill
-        {
-            get
-            {
-                return SkillName.Fencing;
-            }
-        }
-        public override WeaponType DefType
-        {
-            get
-            {
-                return WeaponType.Piercing;
-            }
-        }
-        public override WeaponAnimation DefAnimation
-        {
-            get
-            {
-                return WeaponAnimation.Pierce1H;
+                this.MinDamage = rand.Next(1, 30);
+                this.MaxDamage = rand.Next(30, 50);
             }
         }
 
-        public override Race RequiredRace { get { return Race.Gargoyle; } }
-        public override bool CanBeWornByGargoyles { get { return true; } }
+        public override WeaponAbility PrimaryAbility => WeaponAbility.ArmorIgnore;
+        public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
+
+        public override int AosStrengthReq => 45;
+        public override int AosMinDamage => 10;
+        public override int AosMaxDamage => 13;
+        public override int AosSpeed => 43;
+        public override float MlSpeed => 2.25f;
+
+        public override int OldStrengthReq => 35;
+        public override int OldMinDamage => 4;
+        public override int OldMaxDamage => 32;
+        public override int OldSpeed => 45;
+
+        public override int DefHitSound => 0x236;
+        public override int DefMissSound => 0x238;
+
+        public override int InitMinHits => 31;
+        public override int InitMaxHits => 110;
+
+        public override SkillName DefSkill => SkillName.Fencing;
+        public override WeaponType DefType => WeaponType.Piercing;
+        public override WeaponAnimation DefAnimation => WeaponAnimation.Pierce1H;
+
+        public override Race RequiredRace => Race.Gargoyle;
+        public override bool CanBeWornByGargoyles => true;
 
         public override void Serialize(GenericWriter writer)
         {

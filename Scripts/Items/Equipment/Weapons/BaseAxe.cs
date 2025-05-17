@@ -42,14 +42,8 @@ namespace Server.Items
         {
             get
             {
-                return SkillName.Lumberjacking;
+                return SkillName.Swords;
             }
-        }
-
-        public override void AddNameProperties(ObjectPropertyList list)
-        {
-            base.AddNameProperties(list);
-            list.Add("Skill Required: Lumberjacking");
         }
 
         public override WeaponType DefType

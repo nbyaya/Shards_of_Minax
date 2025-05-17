@@ -13,7 +13,7 @@ namespace Server.Mobiles
             this.Name = "a terathan drone";
             this.Body = 71;
             this.BaseSoundID = 594;
-			Team = 5;
+			
 
             this.SetStr(36, 65);
             this.SetDex(96, 145);

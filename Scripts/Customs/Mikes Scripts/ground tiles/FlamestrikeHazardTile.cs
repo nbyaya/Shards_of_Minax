@@ -15,7 +15,7 @@ namespace Server.Items
         public TimeSpan AutoDelete { get; set; }
 
         [Constructable]
-        public FlamestrikeHazardTile() : base(0x1AC2) // Use an appropriate fire-like tile ID
+        public FlamestrikeHazardTile() : base(0x0E62) // Use an appropriate fire-like tile ID
         {
             Movable = false;
             Name = "a flamestrike hazard";

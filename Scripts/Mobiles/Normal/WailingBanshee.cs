@@ -13,7 +13,7 @@ namespace Server.Mobiles
             Name = "a wailing banshee";
             Body = 310;
             BaseSoundID = 0x482;
-			Team = 4;
+			
 
             SetStr(126, 150);
             SetDex(76, 100);

@@ -6,7 +6,7 @@ using Server.Network;
 namespace Server.Mobiles
 {
     [CorpseName("a colossal toad corpse")]
-    [TypeAlias("Server.Mobiles.ColossalToad")]
+
     public class ColossalToad : BaseCreature
     {
         private DateTime m_NextTongueLash;

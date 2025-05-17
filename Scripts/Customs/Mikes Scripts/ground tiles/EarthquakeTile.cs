@@ -14,7 +14,7 @@ namespace Server.Items
         public TimeSpan AutoDelete { get; set; }
 
         [Constructable]
-        public EarthquakeTile() : base(0x122A) // Use an appropriate ground crack tile ID
+        public EarthquakeTile() : base(0x0E65) // Use an appropriate ground crack tile ID
         {
             Movable = false;
             Name = "an earthquake fissure";
@@ -37,7 +37,7 @@ namespace Server.Items
             {
                 if (m.Alive && m is PlayerMobile)
                 {
-                    m.SendLocalizedMessage(1010167); // The earth beneath your feet begins to shake!
+                    m.SendMessage("The earth beneath your feet begins to shake!");
                     m.Animate(32, 5, 1, true, false, 0); // Play a stumble animation
 
                     // Chance to drop a random item
@@ -49,11 +49,9 @@ namespace Server.Items
                         if (toDrop != null && toDrop.Movable)
                         {
                             m.AddToBackpack(toDrop);
-                            m.SendLocalizedMessage(1062385); // The ground shakes and the trembling causes you to drop an item in your backpack!
+                            m.SendMessage("The ground shakes and the trembling causes you to drop an item in your backpack!");
                         }
                     }
-
-
                 }
             }
             eable.Free();

@@ -14,7 +14,7 @@ namespace Server.Mobiles
             this.Name = "an Effete Undead Gargoyle";
             this.Body = 722;
             this.BaseSoundID = 372;
-			Team = 5;
+			
 
             this.SetStr(60, 65);
             this.SetDex(60, 65);

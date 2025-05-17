@@ -9,7 +9,7 @@ namespace Server.ACC.CSS.Systems.ChivalryMagic
 	public class CallRighteous : ChivalrySpell
 	{
 		private static SpellInfo m_Info = new SpellInfo(
-		                                                "Summon Elementals", "Xel Hor Tum",
+		                                                "Call Righteous", "Xel Hor Tum",
 		                                                //SpellCircle.Third,
 		                                                266,
 		                                                9040

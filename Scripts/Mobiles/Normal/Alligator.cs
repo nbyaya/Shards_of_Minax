@@ -13,7 +13,7 @@ namespace Server.Mobiles
             Name = "an alligator";
             Body = 0xCA;
             BaseSoundID = 660;
-			Team = 3;
+			
 
             SetStr(76, 100);
             SetDex(6, 25);

@@ -13,7 +13,7 @@ namespace Server.Mobiles
             Name = "a moloch";
             Body = 0x311;
             BaseSoundID = 0x300;
-			Team = 1;
+			
 
             SetStr(331, 360);
             SetDex(66, 85);

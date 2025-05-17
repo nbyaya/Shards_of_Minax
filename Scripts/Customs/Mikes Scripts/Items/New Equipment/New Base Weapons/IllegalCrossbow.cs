@@ -11,7 +11,10 @@ namespace Server.Items
         {
             this.Weight = 7.0;
             this.Layer = Layer.TwoHanded;
-			this.Name = "Illegal Crossbow";			
+            this.Name = "Illegal Crossbow";
+
+            // Apply random tier damage here
+            ApplyRandomTier();
         }
 
         public IllegalCrossbow(Serial serial)
@@ -19,151 +22,82 @@ namespace Server.Items
         {
         }
 
-        public override int EffectID
+        private void ApplyRandomTier()
         {
-            get
+            Random rand = new Random();
+            double chanceForSpecialTier = rand.NextDouble();
+
+            // 50% chance for default stats, 50% chance for a special tier
+            if (chanceForSpecialTier < 0.5)
             {
-                return 0x1BFE;
+                // Default stats, don't modify anything
+                return;
+            }
+
+            // Now determine which special tier it falls into
+            double tierChance = rand.NextDouble();
+
+            if (tierChance < 0.05)
+            {
+                this.MinDamage = rand.Next(1, 90);
+                this.MaxDamage = rand.Next(90, 130);
+            }
+            else if (tierChance < 0.2)
+            {
+                this.MinDamage = rand.Next(1, 75);
+                this.MaxDamage = rand.Next(75, 110);
+            }
+            else if (tierChance < 0.5)
+            {
+                this.MinDamage = rand.Next(1, 55);
+                this.MaxDamage = rand.Next(55, 80);
+            }
+            else
+            {
+                this.MinDamage = rand.Next(1, 35);
+                this.MaxDamage = rand.Next(35, 60);
             }
         }
-        public override Type AmmoType
-        {
-            get
-            {
-                return typeof(Bolt);
-            }
-        }
-        public override Item Ammo
-        {
-            get
-            {
-                return new Bolt();
-            }
-        }
-        public override WeaponAbility PrimaryAbility
-        {
-            get
-            {
-                return WeaponAbility.ConcussionBlow;
-            }
-        }
-        public override WeaponAbility SecondaryAbility
-        {
-            get
-            {
-                return WeaponAbility.MortalStrike;
-            }
-        }
-        public override int AosStrengthReq
-        {
-            get
-            {
-                return 35;
-            }
-        }
-        public override int AosMinDamage
-        {
-            get
-            {
-                return 18;
-            }
-        }
-        public override int AosMaxDamage
-        {
-            get
-            {
-                return Core.ML ? 22 : 22;
-            }
-        }
-        public override int AosSpeed
-        {
-            get
-            {
-                return 24;
-            }
-        }
-        public override float MlSpeed
-        {
-            get
-            {
-                return 4.50f;
-            }
-        }
-        public override int OldStrengthReq
-        {
-            get
-            {
-                return 30;
-            }
-        }
-        public override int OldMinDamage
-        {
-            get
-            {
-                return 8;
-            }
-        }
-        public override int OldMaxDamage
-        {
-            get
-            {
-                return 43;
-            }
-        }
-        public override int OldSpeed
-        {
-            get
-            {
-                return 18;
-            }
-        }
-        public override int DefMaxRange
-        {
-            get
-            {
-                return 8;
-            }
-        }
-        public override int InitMinHits
-        {
-            get
-            {
-                return 31;
-            }
-        }
-        public override int InitMaxHits
-        {
-            get
-            {
-                return 80;
-            }
-        }
-		
-		public override SkillName DefSkill
-        {
-            get
-            {
-                return SkillName.Stealing;
-            }
-        }
-		
+
+        public override int EffectID => 0x1BFE;
+        public override Type AmmoType => typeof(Bolt);
+        public override Item Ammo => new Bolt();
+
+        public override WeaponAbility PrimaryAbility => WeaponAbility.ConcussionBlow;
+        public override WeaponAbility SecondaryAbility => WeaponAbility.MortalStrike;
+
+        public override int AosStrengthReq => 35;
+        public override int AosMinDamage => 18;
+        public override int AosMaxDamage => Core.ML ? 22 : 22;
+        public override int AosSpeed => 24;
+        public override float MlSpeed => 4.50f;
+
+        public override int OldStrengthReq => 30;
+        public override int OldMinDamage => 8;
+        public override int OldMaxDamage => 43;
+        public override int OldSpeed => 18;
+
+        public override int DefMaxRange => 8;
+        public override int InitMinHits => 31;
+        public override int InitMaxHits => 80;
+
+        public override SkillName DefSkill => SkillName.Stealing;
+
         public override void AddNameProperties(ObjectPropertyList list)
         {
             base.AddNameProperties(list);
             list.Add("Skill Required: Stealing");
-        }			
-		
+        }
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-
             writer.Write((int)0); // version
         }
 
         public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
-
             int version = reader.ReadInt();
         }
     }

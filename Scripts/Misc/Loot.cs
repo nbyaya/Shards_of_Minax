@@ -718,6 +718,15 @@ namespace Server
 				typeof( WrestlingSpellbook ),
 				typeof( SpiritSpeakSpellbook ),
 				typeof( TheForgottenFortress ),
+				typeof( OTPyramidOfProgress ),
+				typeof( OTLoyaltyOathScroll ),
+				typeof( TestimoniesOfTheAscended ),
+				typeof( WealthWithoutEffort ),
+				typeof( FiscalMysticismOfCosmicEquilibrium ),
+				typeof( AscendOrStagnate ),
+				typeof( UnlockingTheBrokenStar ),
+				typeof( SevenStepsToAscension ),
+				typeof( TheStarBeyondScarcity ),
 				typeof( EnigmaOfElementalEquilibrium )
 		};
 

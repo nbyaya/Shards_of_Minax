@@ -323,6 +323,49 @@ namespace Server
             0x0207,
             0x0209
         };
+		
+		private static readonly Rectangle2D[] m_SosariaRegions = new Rectangle2D[]
+		{
+			new Rectangle2D(new Point2D(0, 0), new Point2D(7168, 4096)) // or any smaller region to test with
+		};
+		private static readonly Rectangle2D[] m_Map7 = new Rectangle2D[]
+		{
+			new Rectangle2D(new Point2D(0, 0), new Point2D(7168, 4096)) // or any smaller region to test with
+		};		
+		private static readonly Rectangle2D[] m_Map8 = new Rectangle2D[]
+		{
+			new Rectangle2D(new Point2D(0, 0), new Point2D(2560, 2048)) // or any smaller region to test with
+		};
+		private static readonly Rectangle2D[] m_Map9 = new Rectangle2D[]
+		{
+			new Rectangle2D(new Point2D(0, 0), new Point2D(1280, 4096)) // or any smaller region to test with
+		};
+		private static readonly Rectangle2D[] m_Map10 = new Rectangle2D[]
+		{
+			new Rectangle2D(new Point2D(0, 0), new Point2D(7168, 4096)) // or any smaller region to test with
+		};
+		private static readonly Rectangle2D[] m_Map11 = new Rectangle2D[]
+		{
+			new Rectangle2D(new Point2D(0, 0), new Point2D(7168, 4096)) // or any smaller region to test with
+		};
+		private static readonly Rectangle2D[] m_Map12 = new Rectangle2D[]
+		{
+			new Rectangle2D(new Point2D(0, 0), new Point2D(7168, 4096)) // or any smaller region to test with
+		};
+		private static readonly Rectangle2D[] m_Map13 = new Rectangle2D[]
+		{
+			new Rectangle2D(new Point2D(0, 0), new Point2D(7168, 4096)) // or any smaller region to test with
+		};
+		private static readonly Rectangle2D[] m_Map14 = new Rectangle2D[]
+		{
+			new Rectangle2D(new Point2D(0, 0), new Point2D(2560, 2048)) // or any smaller region to test with
+		};
+		private static readonly Rectangle2D[] m_Map15 = new Rectangle2D[]
+		{
+			new Rectangle2D(new Point2D(0, 0), new Point2D(2560, 2048)) // or any smaller region to test with
+		};		
+		
+		
         private static Map m_Map;
         private static int m_Count;
         public static void Initialize()
@@ -376,9 +419,78 @@ namespace Server
 
             int malasCount = m_Count;
 
+			m_Map = Map.Maps[32]; // assuming 6 is the correct index for Sosaria
+			m_Count = 0;
+
+			for (int i = 0; i < m_SosariaRegions.Length; ++i)
+				Generate(m_SosariaRegions[i]);
+
+			int sosariaCount = m_Count;
+			
+			m_Map = Map.Maps[33]; // assuming 6 is the correct index for Sosaria
+			m_Count = 0;
+
+			for (int i = 0; i < m_Map7.Length; ++i)
+				Generate(m_Map7[i]);
+
+			m_Map = Map.Maps[34]; // assuming 6 is the correct index for Sosaria
+			m_Count = 0;
+
+			for (int i = 0; i < m_Map8.Length; ++i)
+				Generate(m_Map8[i]);	
+
+			m_Map = Map.Maps[35]; // assuming 6 is the correct index for Sosaria
+			m_Count = 0;
+
+			for (int i = 0; i < m_Map9.Length; ++i)
+				Generate(m_Map9[i]);	
+
+			m_Map = Map.Maps[36]; // assuming 6 is the correct index for Sosaria
+			m_Count = 0;
+
+			for (int i = 0; i < m_Map10.Length; ++i)
+				Generate(m_Map10[i]);	
+
+			m_Map = Map.Maps[37]; // assuming 6 is the correct index for Sosaria
+			m_Count = 0;
+
+			for (int i = 0; i < m_Map11.Length; ++i)
+				Generate(m_Map11[i]);	
+
+			m_Map = Map.Maps[38]; // assuming 6 is the correct index for Sosaria
+			m_Count = 0;
+
+			for (int i = 0; i < m_Map12.Length; ++i)
+				Generate(m_Map12[i]);	
+
+			m_Map = Map.Maps[39]; // assuming 6 is the correct index for Sosaria
+			m_Count = 0;
+
+			for (int i = 0; i < m_Map13.Length; ++i)
+				Generate(m_Map13[i]);	
+
+			m_Map = Map.Maps[40]; // assuming 6 is the correct index for Sosaria
+			m_Count = 0;
+
+			for (int i = 0; i < m_Map14.Length; ++i)
+				Generate(m_Map14[i]);	
+
+			m_Map = Map.Maps[41]; // assuming 6 is the correct index for Sosaria
+			m_Count = 0;
+
+			for (int i = 0; i < m_Map15.Length; ++i)
+				Generate(m_Map15[i]);	
+
+			
+
+
+
             Network.NetState.Resume();
 
-            World.Broadcast(0x35, true, "Door generation complete. Trammel: {0}; Felucca: {1}; Ilshenar: {2}; Malas: {3};", trammelCount, feluccaCount, ilshenarCount, malasCount);
+			World.Broadcast(0x35, true, 
+				"Door generation complete. Trammel: {0}; Felucca: {1}; Ilshenar: {2}; Malas: {3}; Sosaria: {4};", 
+				trammelCount, feluccaCount, ilshenarCount, malasCount, sosariaCount);
+
         }
 
         public static bool IsFrame(int id, int[] list)

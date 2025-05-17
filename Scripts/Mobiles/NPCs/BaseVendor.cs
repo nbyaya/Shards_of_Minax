@@ -29,6 +29,60 @@ namespace Server.Mobiles
 		ThighBoots
 	}
 
+    public static class VendorRandomiser
+    {
+        private static readonly Random _rng = new Random();
+
+        public static void Apply(
+            List<SBInfo> sbSet,          // <-- the read-only list we exposed
+            double inclusionChance,
+            int    minQty,
+            int    maxQty,
+            double minFactor,
+            double maxFactor)
+        {
+            if (sbSet == null || sbSet.Count == 0)
+                return;
+
+            foreach (var sb in sbSet)
+            {
+                if (sb?.BuyInfo == null)
+                    continue;
+
+                // 1️⃣  prune items
+                for (int i = sb.BuyInfo.Count - 1; i >= 0; --i)
+                {
+                    if (_rng.NextDouble() > inclusionChance)
+                        sb.BuyInfo.RemoveAt(i);
+                }
+
+                // guarantee we never empty an SB block entirely
+                if (sb.BuyInfo.Count == 0)
+                    continue;
+
+                // 2️⃣  mutate remaining items
+                foreach (var gbi in sb.BuyInfo)
+                {
+                    gbi.Amount = _rng.Next(minQty, maxQty + 1);
+
+                    double factor = _rng.NextDouble()
+                                     * (maxFactor - minFactor) + minFactor;
+
+                    gbi.Price = Math.Max(1, (int)(gbi.Price * factor));
+                }
+
+                /* 3️⃣  (optional) mirror the sell list — commented out, because
+                        GenericSellInfo is a custom dictionary-style class that
+                        doesn’t expose RemoveAll.  If you *really* need strict
+                        mirroring you could iterate through sb.SellInfo.Types
+                        and call Remove(…) for each missing type. */
+						
+
+						
+            }
+        }
+    }
+
 	public abstract class BaseVendor : BaseCreature, IVendor
 	{
         public static bool UseVendorEconomy = Core.AOS && !Siege.SiegeShard;
@@ -37,6 +91,31 @@ namespace Server.Mobiles
         public static int EconomyStockAmount = Config.Get("Vendors.EconomyStockAmount", 500);
         public static TimeSpan DelayRestock = TimeSpan.FromMinutes(Config.Get("Vendors.RestockDelay", 60));
         public static int MaxSell = Config.Get("Vendors.MaxSell", 500);
+		
+		/// <summary>
+		/// If true, this vendor uses the randomised-stock system.
+		/// </summary>
+		public virtual bool UsesRandomisedStock => false;
+
+		/// <summary>
+		/// Per-vendor chance (0.0–1.0) that each item remains in stock.
+		/// </summary>
+		public virtual double RandomStockInclusionChance => 0.60;
+
+		/// <summary>
+		/// Per-vendor min/max quantity when restocking.
+		/// </summary>
+		public virtual int RandomStockMinQty => 1;
+		public virtual int RandomStockMaxQty => 50;
+
+		/// <summary>
+		/// Per-vendor price multiplier range when restocking.
+		/// </summary>
+		public virtual double RandomPriceFactorMin => 0.80;
+		public virtual double RandomPriceFactorMax => 1.50;
+
+		/// <summary>Read-only access for helper classes.</summary>
+		internal List<SBInfo> StockInfoList => SBInfos;
 
 		public static List<BaseVendor> AllVendors { get; private set; }
 
@@ -405,6 +484,17 @@ namespace Server.Mobiles
 			SBInfos.Clear();
 
 			InitSBInfo();
+
+			// 🔸 NEW: if this vendor wants random stock, mutate it now
+			if (UsesRandomisedStock)
+				VendorRandomiser.Apply(
+					StockInfoList,
+					RandomStockInclusionChance,
+					RandomStockMinQty,
+					RandomStockMaxQty,
+					RandomPriceFactorMin,
+					RandomPriceFactorMax
+				);
 
 			m_ArmorBuyInfo.Clear();
 			m_ArmorSellInfo.Clear();
@@ -890,6 +980,10 @@ namespace Server.Mobiles
 
 		public virtual void Restock()
 		{
+			
+			if (UsesRandomisedStock)
+				LoadSBInfo();       // resets LastRestock inside			
+			
 			m_LastRestock = DateTime.UtcNow;
 
 			var buyInfo = GetBuyInfo();

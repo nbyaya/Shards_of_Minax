@@ -284,10 +284,10 @@ namespace Server.SkillHandlers
 				{
 					m_Thief.SendLocalizedMessage(1060025, "", 0x66D); // You're not skilled enough to attempt the theft of this item.
 				}
-				else if ((toSteal.Parent is Mobile) && (profile.Talents[TalentID.StealingEquipped].Points == 0))
+/* 				else if ((toSteal.Parent is Mobile) && (profile.Talents[TalentID.StealingEquipped].Points == 0))
                 {
 					m_Thief.SendLocalizedMessage(1005585); // You cannot steal items which are equiped.
-				}
+				} */
 				else if (root == m_Thief)
 				{
 					m_Thief.SendLocalizedMessage(502704); // You catch yourself red-handed.

@@ -14,7 +14,7 @@ namespace Server.Mobiles
         public ShadowLurker() : base(AIType.AI_Thief, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
             Hue = Utility.RandomNeutralHue();
-			Team = 3;
+			Team = 1;
 
             if (Female = Utility.RandomBool())
             {

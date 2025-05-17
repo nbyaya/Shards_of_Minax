@@ -47,32 +47,32 @@ namespace Server.Items
         public override void AddNameProperty(ObjectPropertyList list)
         {
             if (m_Value == 5.0)
-                list.Add("a wonderous scroll of Leveling (+{0} max levels)", m_Value);
+                list.Add("a wonderous scroll of Leveling (+{0} level)", m_Value);
             else if (m_Value == 10.0)
-                list.Add("an exalted scroll of Leveling (+{0} max levels)", m_Value);
+                list.Add("an exalted scroll of Leveling (+{0} level)", m_Value);
             else if (m_Value == 15.0)
-                list.Add("a mythical scroll of Leveling (+{0} max levels)", m_Value);
+                list.Add("a mythical scroll of Leveling (+{0} level)", m_Value);
             else if (m_Value == 20.0)
-                list.Add("a legendary scroll of Leveling (+{0} max levels)", m_Value);
+                list.Add("a legendary scroll of Leveling (+{0} level)", m_Value);
             else
-                list.Add("a scroll of Leveling (+{0} max levels)", m_Value);
+                list.Add("a scroll of Leveling (+{0} level)", m_Value);
         }
 
         public override void OnSingleClick(Mobile from)
         {
             if (m_Value == 5.0)
-                base.LabelTo(from, "a wonderous scroll of Leveling (+{0} max levels)", m_Value);
+                base.LabelTo(from, "a wonderous scroll of Leveling (+{0} level)", m_Value);
             else if (m_Value == 10.0)
-                base.LabelTo(from, "an exalted scroll of Leveling (+{0} max levels)", m_Value);
+                base.LabelTo(from, "an exalted scroll of Leveling (+{0} level)", m_Value);
             else if (m_Value == 15.0)
-                base.LabelTo(from, "a mythical scroll of Leveling (+{0} max levels)", m_Value);
+                base.LabelTo(from, "a mythical scroll of Leveling (+{0} level)", m_Value);
             else if (m_Value == 20.0)
-                base.LabelTo(from, "a legendary scroll of Leveling (+{0} max levels)", m_Value);
+                base.LabelTo(from, "a legendary scroll of Leveling (+{0} level)", m_Value);
             else
-                base.LabelTo(from, "a scroll of Leveling (+{0} max levels)", m_Value);
+                base.LabelTo(from, "a scroll of Leveling (+{0} level)", m_Value);
         }
 
-		public override void AddNameProperties( ObjectPropertyList list )
+/* 		public override void AddNameProperties( ObjectPropertyList list )
 		{
             string BlacksmithMsg;
             bool IsBlacksmithOnly;
@@ -93,7 +93,7 @@ namespace Server.Items
 
 
             list.Add(1060847, "Levelable Items Only\t {0}", BlacksmithMsg);
-		}
+		} */
 
 		public LevelUpScroll( Serial serial ) : base( serial )
 		{
@@ -194,14 +194,15 @@ namespace Server.Items
                             //ILevelable b = (ILevelable)target;
 
                             //if ((b.MaxLevel + m_Scroll.Value) > LevelItems.MaxLevelsCap)
-                            if((levitem.MaxLevel + m_Scroll.Value) > LevelItems.MaxLevelsCap)
+                            if((levitem.Level + m_Scroll.Value) > 100)
                             {
                                 from.SendMessage("The level on this item is already too high to use this scroll!");
                             }
                             else
                             {
                                 //b.MaxLevel += m_Scroll.Value;
-                                levitem.MaxLevel += m_Scroll.Value;
+                                levitem.Level += m_Scroll.Value;
+								levitem.Points += m_Scroll.Value*4;
                                 from.SendMessage("Your item has leveled up by " + m_Scroll.Value + " levels.");
                                 m_Scroll.Delete();
 

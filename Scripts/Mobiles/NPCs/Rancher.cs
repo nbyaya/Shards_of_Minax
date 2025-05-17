@@ -6,6 +6,7 @@ namespace Server.Mobiles
     public class Rancher : BaseVendor
     {
         private readonly List<SBInfo> m_SBInfos = new List<SBInfo>();
+		public override bool UsesRandomisedStock => true;
         [Constructable]
         public Rancher()
             : base("the rancher")

@@ -12,7 +12,7 @@ namespace Server.Mobiles
         {
             Name = "a gremlin";
             Body = 724; 
-			Team = 5;
+			
 
             SetStr(106);
             SetDex(130);

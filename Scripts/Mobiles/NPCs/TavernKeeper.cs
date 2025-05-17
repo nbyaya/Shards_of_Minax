@@ -6,6 +6,7 @@ namespace Server.Mobiles
     public class TavernKeeper : BaseVendor 
     { 
         private readonly List<SBInfo> m_SBInfos = new List<SBInfo>();
+		public override bool UsesRandomisedStock => true;
         [Constructable]
         public TavernKeeper()
             : base("the tavern keeper")

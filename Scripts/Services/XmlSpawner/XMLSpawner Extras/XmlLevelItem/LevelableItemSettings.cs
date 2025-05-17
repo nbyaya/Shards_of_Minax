@@ -6,8 +6,8 @@ namespace Server
 	public class LevelItems
 	{
 		//These are the definable features for item leveling...
-        public static readonly int DefaultMaxLevel = 200; //Default Max level for items.
-        public static readonly int MaxLevelsCap = 1000; //Number of total levels items can go up to when maxed.
+        public static readonly int DefaultMaxLevel = 100; //Default Max level for items.
+        public static readonly int MaxLevelsCap = 100; //Number of total levels items can go up to when maxed.
         public static readonly bool EnableExpCap = true; //true = Cap experience per level.  false = no cap.
         public static readonly bool DisplayExpProp = true; //true = Display experience on item onmouseover/click.
 

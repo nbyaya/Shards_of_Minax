@@ -13,7 +13,7 @@ namespace Server.Mobiles
             this.Name = "a fire elemental";
             this.Body = 15;
             this.BaseSoundID = 838;
-			Team = 2;
+			
 
             this.SetStr(126, 155);
             this.SetDex(166, 185);

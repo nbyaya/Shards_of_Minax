@@ -481,7 +481,7 @@ namespace Server.Customs.Invasion_System
         public static void CheckTensionInvasions_OnCommand(CommandEventArgs e)
         {
             Mobile from = e.Mobile;
-            double tension = TensionManager.Tension;
+            int tension = TensionManager.Tension;
             from.SendMessage($"[Tension Debug] Current Tension: {tension}");
 
             if (tension < 10000)
@@ -530,7 +530,7 @@ namespace Server.Customs.Invasion_System
                 townsToInvade = availableTowns.Count;
 
             // Determine the current tier based on the current tension
-            int currentTier = InvasionTierHelper.GetTier((int)TensionManager.Tension);
+            int currentTier = InvasionTierHelper.GetTier(TensionManager.Tension);
 
             // Get cumulative lists of monster and champion types for this tier
             List<TownMonsterType> monsterOptions = InvasionTierHelper.GetMonsterTypesForTier(currentTier);
@@ -557,7 +557,7 @@ namespace Server.Customs.Invasion_System
         {
             // Reduce tension by 500 every hour (to a minimum of zero)
             TensionManager.Tension = Math.Max(0, TensionManager.Tension - 500);
-            double tension = TensionManager.Tension;
+            int tension = TensionManager.Tension;
 
             // Only trigger invasions if tension is at least 10,000
             if (tension < 10000)
@@ -595,7 +595,7 @@ namespace Server.Customs.Invasion_System
                 availableTowns.RemoveAt(index);
 
                 // Determine current tier and get options
-                int currentTier = InvasionTierHelper.GetTier((int)TensionManager.Tension);
+                int currentTier = InvasionTierHelper.GetTier(tension);
                 List<TownMonsterType> monsterOptions = InvasionTierHelper.GetMonsterTypesForTier(currentTier);
                 List<TownChampionType> championOptions = InvasionTierHelper.GetChampionTypesForTier(currentTier);
 

@@ -12,6 +12,9 @@ namespace Server.Items
             : base(0x1401)
         {
             Weight = 2.0;
+
+            // Apply random tier damage
+            ApplyRandomTier();
         }
 
         public Kryss(Serial serial)
@@ -19,132 +22,63 @@ namespace Server.Items
         {
         }
 
-        public override WeaponAbility PrimaryAbility
+        private void ApplyRandomTier()
         {
-            get
+            Random rand = new Random();
+            double chanceForSpecialTier = rand.NextDouble();
+
+            // 50% chance for default stats, 50% chance for a special tier
+            if (chanceForSpecialTier < 0.5)
+                return;
+
+            double tierChance = rand.NextDouble();
+
+            if (tierChance < 0.05)
             {
-                return WeaponAbility.ArmorIgnore;
+                this.MinDamage = rand.Next(1, 60);
+                this.MaxDamage = rand.Next(60, 100);
+            }
+            else if (tierChance < 0.2)
+            {
+                this.MinDamage = rand.Next(1, 50);
+                this.MaxDamage = rand.Next(50, 80);
+            }
+            else if (tierChance < 0.5)
+            {
+                this.MinDamage = rand.Next(1, 35);
+                this.MaxDamage = rand.Next(35, 60);
+            }
+            else
+            {
+                this.MinDamage = rand.Next(1, 20);
+                this.MaxDamage = rand.Next(20, 40);
             }
         }
-        public override WeaponAbility SecondaryAbility
-        {
-            get
-            {
-                return WeaponAbility.InfectiousStrike;
-            }
-        }
-        public override int AosStrengthReq
-        {
-            get
-            {
-                return 10;
-            }
-        }
-        public override int AosMinDamage
-        {
-            get
-            {
-                return 10;
-            }
-        }
-        public override int AosMaxDamage
-        {
-            get
-            {
-                return 12;
-            }
-        }
-        public override int AosSpeed
-        {
-            get
-            {
-                return 53;
-            }
-        }
-        public override float MlSpeed
-        {
-            get
-            {
-                return 2.00f;
-            }
-        }
-        public override int OldStrengthReq
-        {
-            get
-            {
-                return 10;
-            }
-        }
-        public override int OldMinDamage
-        {
-            get
-            {
-                return 3;
-            }
-        }
-        public override int OldMaxDamage
-        {
-            get
-            {
-                return 28;
-            }
-        }
-        public override int OldSpeed
-        {
-            get
-            {
-                return 53;
-            }
-        }
-        public override int DefHitSound
-        {
-            get
-            {
-                return 0x23C;
-            }
-        }
-        public override int DefMissSound
-        {
-            get
-            {
-                return 0x238;
-            }
-        }
-        public override int InitMinHits
-        {
-            get
-            {
-                return 31;
-            }
-        }
-        public override int InitMaxHits
-        {
-            get
-            {
-                return 90;
-            }
-        }
-        public override SkillName DefSkill
-        {
-            get
-            {
-                return SkillName.Fencing;
-            }
-        }
-        public override WeaponType DefType
-        {
-            get
-            {
-                return WeaponType.Piercing;
-            }
-        }
-        public override WeaponAnimation DefAnimation
-        {
-            get
-            {
-                return WeaponAnimation.Pierce1H;
-            }
-        }
+
+        public override WeaponAbility PrimaryAbility => WeaponAbility.ArmorIgnore;
+        public override WeaponAbility SecondaryAbility => WeaponAbility.InfectiousStrike;
+
+        public override int AosStrengthReq => 10;
+        public override int AosMinDamage => 10;
+        public override int AosMaxDamage => 12;
+        public override int AosSpeed => 53;
+        public override float MlSpeed => 2.00f;
+
+        public override int OldStrengthReq => 10;
+        public override int OldMinDamage => 3;
+        public override int OldMaxDamage => 28;
+        public override int OldSpeed => 53;
+
+        public override int DefHitSound => 0x23C;
+        public override int DefMissSound => 0x238;
+
+        public override int InitMinHits => 31;
+        public override int InitMaxHits => 90;
+
+        public override SkillName DefSkill => SkillName.Fencing;
+        public override WeaponType DefType => WeaponType.Piercing;
+        public override WeaponAnimation DefAnimation => WeaponAnimation.Pierce1H;
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

@@ -4729,14 +4729,28 @@ namespace Server.Items
         }
     }
 
-    public class BlueberryPie    : Item
+    public class BlueberryPie    : Food
     {
         [Constructable]
         public BlueberryPie   () : base(0x4C0C)
         {
-            Weight = 1.0;
-            Hue = 0;
             Name = "Blueberry Pie";
+            Hue = 0x59C;
+            Stackable = false;
+            Weight = 1.0;
+            FillFactor = 10;
+        }
+
+        public override bool Eat(Mobile from)
+        {
+            if (base.Eat(from))
+            {
+                from.Hits += 10; // Restore some health
+                from.CurePoison(from); // Cure minor poisons
+                from.SendMessage(0x59B, "The sweet pie soothes your body and mind.");
+                return true;
+            }
+            return false;
         }
 
         public BlueberryPie   (Serial serial) : base(serial) { }

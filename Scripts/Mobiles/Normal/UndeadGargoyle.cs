@@ -14,7 +14,7 @@ namespace Server.Mobiles
             Name = "an Undead Gargoyle";
             Body = 722;
             BaseSoundID = 372;
-			Team = 4;
+			
 
             SetStr(250, 350);
             SetDex(120, 140);

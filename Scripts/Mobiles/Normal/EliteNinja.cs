@@ -24,7 +24,7 @@ namespace Server.Mobiles
 			Body = ( this.Female = Utility.RandomBool() ) ? 0x191 : 0x190;
 
 			SetHits( 251, 350 );
-			Team = 5;
+			
 
 			SetStr( 126, 225 );
 			SetDex( 81, 95 );

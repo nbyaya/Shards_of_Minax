@@ -13,7 +13,7 @@ namespace Server.Mobiles
             this.Name = "an Effete putrid gargoyle";
             this.Body = 4;
             this.BaseSoundID = 372;
-			Team = 5;
+			
 
             this.SetStr(215, 220);
             this.SetDex(90, 95);

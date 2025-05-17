@@ -16,7 +16,7 @@ namespace Server.Mobiles
             Body = 0x190;
             Name = NameList.RandomName("male");
             Title = " the Librarian Custodian";
-			Team = 4;
+			Team = 2;
 
             Hue = Utility.RandomSkinHue();
             Item robe = new Robe(Utility.RandomNeutralHue());

@@ -56,7 +56,11 @@ namespace Server.Mobiles
             // Special ability timer
             Timer.DelayCall(TimeSpan.FromSeconds(5.0), TimeSpan.FromSeconds(8.0), PerformMoltenSlam);
         }
-        public MagmaColossus(Serial serial) : base(serial) { }
+
+        public MagmaColossus(Serial serial)
+            : base(serial)
+        {
+        }
 
         private void PerformMoltenSlam()
         {

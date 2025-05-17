@@ -16,7 +16,7 @@ namespace Server.Items
         public TimeSpan AutoDelete { get; set; }
 
         [Constructable]
-        public HealingPulseTile() : base(0x1AE4) // Use an appropriate tile ID
+        public HealingPulseTile() : base(0x0E5F) // Use an appropriate tile ID
         {
             Movable = false;
             Name = "a healing pulse";

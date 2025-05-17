@@ -12,7 +12,7 @@ namespace Server.Mobiles
         {
             Name = "a minotaur captain";
             Body = 280;
-			Team = 5;
+			
 
             SetStr(401, 425);
             SetDex(91, 110);

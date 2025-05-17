@@ -14,6 +14,8 @@ namespace Server.Mobiles
                 return this.m_SBInfos;
             }
         }
+		
+		public override bool UsesRandomisedStock => true;
 
         public override NpcGuild NpcGuild
         {

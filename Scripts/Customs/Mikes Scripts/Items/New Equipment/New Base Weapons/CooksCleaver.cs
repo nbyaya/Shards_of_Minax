@@ -12,7 +12,10 @@ namespace Server.Items
             : base(0xEC3)
         {
             Weight = 2.0;
-			this.Name = "Cooks Cleaver";			
+            this.Name = "Cooks Cleaver";
+
+            // Apply random tier damage
+            ApplyRandomTier();
         }
 
         public CooksCleaver(Serial serial)
@@ -20,112 +23,68 @@ namespace Server.Items
         {
         }
 
-        public override WeaponAbility PrimaryAbility
+        private void ApplyRandomTier()
         {
-            get
+            Random rand = new Random();
+            double chanceForSpecialTier = rand.NextDouble();
+
+            // 50% chance for default stats, 50% chance for a special tier
+            if (chanceForSpecialTier < 0.5)
             {
-                return WeaponAbility.BleedAttack;
+                // Default stats, don't modify anything
+                return;
+            }
+
+            // Determine which special tier it falls into
+            double tierChance = rand.NextDouble();
+
+            if (tierChance < 0.05)
+            {
+                this.MinDamage = rand.Next(1, 80);
+                this.MaxDamage = rand.Next(80, 120);
+            }
+            else if (tierChance < 0.2)
+            {
+                this.MinDamage = rand.Next(1, 70);
+                this.MaxDamage = rand.Next(70, 100);
+            }
+            else if (tierChance < 0.5)
+            {
+                this.MinDamage = rand.Next(1, 50);
+                this.MaxDamage = rand.Next(50, 75);
+            }
+            else
+            {
+                this.MinDamage = rand.Next(1, 30);
+                this.MaxDamage = rand.Next(30, 50);
             }
         }
-        public override WeaponAbility SecondaryAbility
-        {
-            get
-            {
-                return WeaponAbility.InfectiousStrike;
-            }
-        }
-        public override int AosStrengthReq
-        {
-            get
-            {
-                return 10;
-            }
-        }
-        public override int AosMinDamage
-        {
-            get
-            {
-                return 10;
-            }
-        }
-        public override int AosMaxDamage
-        {
-            get
-            {
-                return 14;
-            }
-        }
-        public override int AosSpeed
-        {
-            get
-            {
-                return 46;
-            }
-        }
-        public override float MlSpeed
-        {
-            get
-            {
-                return 2.50f;
-            }
-        }
-        public override int OldStrengthReq
-        {
-            get
-            {
-                return 10;
-            }
-        }
-        public override int OldMinDamage
-        {
-            get
-            {
-                return 2;
-            }
-        }
-        public override int OldMaxDamage
-        {
-            get
-            {
-                return 13;
-            }
-        }
-        public override int OldSpeed
-        {
-            get
-            {
-                return 40;
-            }
-        }
-        public override int InitMinHits
-        {
-            get
-            {
-                return 31;
-            }
-        }
-        public override int InitMaxHits
-        {
-            get
-            {
-                return 50;
-            }
-        }
-		
-		public override SkillName DefSkill
-        {
-            get
-            {
-                return SkillName.Cooking;
-            }
-        }
-		
+
+        public override WeaponAbility PrimaryAbility => WeaponAbility.BleedAttack;
+        public override WeaponAbility SecondaryAbility => WeaponAbility.InfectiousStrike;
+
+        public override int AosStrengthReq => 10;
+        public override int AosMinDamage => 10;
+        public override int AosMaxDamage => 14;
+        public override int AosSpeed => 46;
+        public override float MlSpeed => 2.50f;
+
+        public override int OldStrengthReq => 10;
+        public override int OldMinDamage => 2;
+        public override int OldMaxDamage => 13;
+        public override int OldSpeed => 40;
+
+        public override int InitMinHits => 31;
+        public override int InitMaxHits => 50;
+
+        public override SkillName DefSkill => SkillName.Cooking;
+
         public override void AddNameProperties(ObjectPropertyList list)
         {
             base.AddNameProperties(list);
             list.Add("Skill Required: Cooking");
-        }		
-		
+        }
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

@@ -16,7 +16,7 @@ namespace Server.Mobiles
         {
             // Earth Clan Samurai should have a grounded hue, representing their earthy nature
             Hue = 0x734; // Adjust the hue to fit your shard's earth theme
-			Team = 3;
+			Team = 1;
 
             // Body value should remain humanoid, representing the Samurai's discipline
             Body = 0x190; // Use the shard's specific body value for samurai if available

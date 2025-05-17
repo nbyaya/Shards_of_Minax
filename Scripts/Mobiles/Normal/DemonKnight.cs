@@ -18,7 +18,7 @@ namespace Server.Mobiles
             Title = "the Dark Father";
             Body = 318;
             BaseSoundID = 0x165;
-			Team = 1;
+			
 
             SetStr(500);
             SetDex(100);

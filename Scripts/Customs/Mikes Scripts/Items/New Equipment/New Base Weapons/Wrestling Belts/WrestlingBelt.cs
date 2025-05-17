@@ -11,9 +11,49 @@ namespace Server.Items
         {
             Weight = 1.0;
             Name = "Wrestler's Belt";
+
+            // Apply random tier damage here
+            ApplyRandomTier();
         }
 
         public WrestlingBelt(Serial serial) : base(serial) { }
+
+        private void ApplyRandomTier()
+        {
+            Random rand = new Random();
+            double chanceForSpecialTier = rand.NextDouble();
+
+            // 50% chance for default stats, 50% chance for a special tier
+            if (chanceForSpecialTier < 0.5)
+            {
+                // Default stats, don't modify anything
+                return;
+            }
+
+            // Now determine which special tier it falls into
+            double tierChance = rand.NextDouble();
+
+            if (tierChance < 0.05)
+            {
+                this.MinDamage = rand.Next(1, 50);  // Wrestling damage tiers scaled down
+                this.MaxDamage = rand.Next(50, 80);
+            }
+            else if (tierChance < 0.2)
+            {
+                this.MinDamage = rand.Next(1, 40);
+                this.MaxDamage = rand.Next(40, 65);
+            }
+            else if (tierChance < 0.5)
+            {
+                this.MinDamage = rand.Next(1, 25);
+                this.MaxDamage = rand.Next(25, 40);
+            }
+            else
+            {
+                this.MinDamage = rand.Next(1, 15);
+                this.MaxDamage = rand.Next(15, 25);
+            }
+        }
 
         public override WeaponAbility PrimaryAbility => WeaponAbility.Disarm;
         public override WeaponAbility SecondaryAbility => WeaponAbility.ParalyzingBlow;

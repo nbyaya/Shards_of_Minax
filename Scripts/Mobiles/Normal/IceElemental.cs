@@ -13,7 +13,7 @@ namespace Server.Mobiles
             Name = "an ice elemental";
             Body = 161;
             BaseSoundID = 268;
-			Team = 2;
+			
 
             SetStr(156, 185);
             SetDex(96, 115);

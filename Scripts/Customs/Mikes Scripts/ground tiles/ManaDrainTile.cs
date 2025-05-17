@@ -13,7 +13,7 @@ namespace Server.Items
         public TimeSpan AutoDelete { get; set; }
 
         [Constructable]
-        public ManaDrainTile() : base(0x122A) // Use an appropriate magical-looking tile ID
+        public ManaDrainTile() : base(0x0E62) // Use an appropriate magical-looking tile ID
         {
             Movable = false;
             Name = "a mana drain field";
