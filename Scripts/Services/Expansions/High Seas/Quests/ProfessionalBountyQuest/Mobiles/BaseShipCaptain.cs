@@ -390,7 +390,11 @@ namespace Server.Mobiles
 
         public void ShootCannons(Mobile focus, bool shootAtBoat)
         {
-            List<Item> cannons = new List<Item>(m_Galleon.Cannons.Where(i => !i.Deleted));
+			if (m_Galleon == null || m_Galleon.Cannons == null)
+				return;
+
+			List<Item> cannons = new List<Item>(m_Galleon.Cannons.Where(i => !i.Deleted));
+
 
             foreach (var cannon in cannons.OfType<IShipCannon>())
             {
