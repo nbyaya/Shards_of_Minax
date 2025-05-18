@@ -13,19 +13,19 @@ namespace Bittiez.CustomSystems
             Dragable = true;
             AddPage(0);
             AddBackground(0, 0, 300, 200, 9270); // Background box
-            AddLabel(90, 20, 1152, "Tension Admin Panel"); // Title in white
+            AddLabel(90, 20, 1152, "张力管理面板"); // Title in white
 
             // Display the current tension value in white
-            AddLabel(50, 50, 1152, $"Current Tension: {TensionManager.Tension}");
+            AddLabel(50, 50, 1152, $"当前张力值: {TensionManager.Tension.ToString("F3")}");
 
             // Text entry box
-            AddLabel(50, 80, 1152, "Adjust Tension By:");
+            AddLabel(50, 80, 1152, "调整张力值：");
             AddBackground(180, 75, 50, 20, 3000);
             AddTextEntry(180, 77, 46, 16, 1152, 0, "0"); // Default value "0"
 
             // Apply Button
             AddButton(50, 110, 4023, 4025, 1, GumpButtonType.Reply, 0);
-            AddLabel(90, 110, 1152, "Apply Change");
+            AddLabel(90, 110, 1152, "应用更改");
         }
 
         public override void OnResponse(NetState sender, RelayInfo info)
@@ -38,11 +38,11 @@ namespace Bittiez.CustomSystems
                 if (entry != null && int.TryParse(entry.Text, out int amount))
                 {
                     TensionManager.IncreaseTension(amount);
-                    from.SendMessage($"Tension adjusted by {amount}. New Tension: {TensionManager.Tension}");
+                    from.SendMessage($"张力已调整：{amount}。当前张力值：{TensionManager.Tension}");
                 }
                 else
                 {
-                    from.SendMessage("Invalid number entered. Please enter a valid integer.");
+                    from.SendMessage("输入的数字无效，请输入一个有效的整数。");
                 }
 
                 // Refresh gump to show updated value

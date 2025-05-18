@@ -65,7 +65,7 @@ namespace Server.Mobiles
         /// </summary>
         public double GetBuffMultiplier(double baseValue)
         {
-            int tension = TensionManager.Tension;
+            double tension = TensionManager.Tension;
             double scaleFactor = 1.0 + (tension / 50000.0);
             return baseValue * scaleFactor;
         }
