@@ -39,21 +39,33 @@ namespace Server.Custom
             Frozen = true;
             CantWalk = true;
 
-
-
             // Dress or equip Zana as you see fit
-            AddItem(new FancyShirt() { Hue = 0, Name = "Zana's Ruffled Shirt" }); // Dark grey
-            AddItem(new FancyKilt() { Hue = 802, Name = "Cartographer's Skirt" }); // Black or dark hue
-            AddItem(new ThighBoots() { Hue = 1109, Name = "Explorer's Boots" }); // Black boots
-            AddItem(new BodySash() { Hue = 802, Name = "Ribbon of the Atlas" }); // Red sash
-            AddItem(new ElvenGlasses() { Hue = 0, Name = "Eyes of Realms" }); // Optional, dark cloak
-            AddItem(new MageWand() { Hue = 1171, Name = "Atlas Wand" }); // Golden hue staff
+            SafeEquip(new FancyShirt() { Hue = 0, Name = "Zana's Ruffled Shirt" }, Layer.Shirt); // Dark grey
+            SafeEquip(new FancyKilt() { Hue = 802, Name = "Cartographer's Skirt" }, Layer.Waist); // Black or dark hue
+            SafeEquip(new ThighBoots() { Hue = 1109, Name = "Explorer's Boots" }, Layer.Shoes); // Black boots
+            SafeEquip(new BodySash() { Hue = 802, Name = "Ribbon of the Atlas" }, Layer.MiddleTorso); // Red sash
+            SafeEquip(new ElvenGlasses() { Hue = 0, Name = "Eyes of Realms" }, Layer.Helm); // Optional, dark cloak
+            SafeEquip(new MageWand() { Hue = 1171, Name = "Atlas Wand" }, Layer.OneHanded); // Golden hue staff  
+			
+			// 删除默认背包（如果有）
+			Container existingBackpack = this.FindItemOnLayer(Layer.Backpack) as Container;
+            if (existingBackpack != null)
+                existingBackpack.Delete();
 
             Backpack backpack = new Backpack();
             backpack.Hue = 1150;
             backpack.Name = "Map Satchel";
             AddItem(backpack);
         }
+
+        private void SafeEquip(Item item, Layer layer)
+        {
+           Item existing = FindItemOnLayer(layer);
+           if (existing != null)
+               existing.Delete();
+
+           AddItem(item);
+        } 
 
         public override void InitDynamicStock()
         {
