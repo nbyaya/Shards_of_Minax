@@ -2,6 +2,7 @@ using System;
 using Server;
 using Server.Mobiles;
 using Server.Commands;
+using Bittiez.CustomSystems; // 确保引用 TensionManager 的命名空间
 
 namespace Bittiez.CustomSystems
 {
@@ -25,8 +26,8 @@ namespace Bittiez.CustomSystems
             if (e.Creature is BaseCreature baseCreature && baseCreature.Summoned)
                 return;
 
-            // Each death increases tension by 1
-            TensionManager.IncreaseTension(1);
+            // 将 1 改为 0.001d (使用 d 后缀明确表示 double)
+            TensionManager.IncreaseTension(0.001d);
         }
 
         private static void TensionGump_OnCommand(CommandEventArgs e)

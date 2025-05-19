@@ -16,7 +16,7 @@ namespace Bittiez.CustomSystems
             AddLabel(90, 20, 1152, "张力管理面板"); // Title in white
 
             // Display the current tension value in white
-            AddLabel(50, 50, 1152, $"当前张力值: {TensionManager.Tension}");
+            AddLabel(50, 50, 1152, $"当前张力值: {TensionManager.Tension.ToString("F3")}");
 
             // Text entry box
             AddLabel(50, 80, 1152, "调整张力值:");

@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using Server;
+using System.Globalization; // 需要这个命名空间来处理浮点数的文化差异
 
 namespace Bittiez.CustomSystems
 {
@@ -10,9 +11,9 @@ namespace Bittiez.CustomSystems
         private static readonly string FilePath = "tension.dat";
 
         // Backing field for the tension tally.
-        private static int m_Tension;
+        private static double m_Tension;
 
-        public static int Tension
+        public static double Tension
         {
             get { return m_Tension; }
             set
@@ -28,13 +29,13 @@ namespace Bittiez.CustomSystems
             Load();
         }
 
-        public static void IncreaseTension(int amount)
+        public static void IncreaseTension(double amount)
         {
             m_Tension += amount;
             Save();
         }
 
-        public static void SetTension(int amount)
+        public static void SetTension(double amount)
         {
             m_Tension = amount;
             Save();
@@ -46,7 +47,7 @@ namespace Bittiez.CustomSystems
             try
             {
                 // Write tension value to file
-                File.WriteAllText(FilePath, m_Tension.ToString());
+                File.WriteAllText(FilePath, m_Tension.ToString("F3"));
             }
             catch (Exception ex)
             {
@@ -61,7 +62,19 @@ namespace Bittiez.CustomSystems
                 if (File.Exists(FilePath))
                 {
                     string text = File.ReadAllText(FilePath);
-                    int.TryParse(text, out m_Tension);
+                    double parsedTension;
+					// 使用 double.TryParse 尝试解析浮点数，并指定 InvariantCulture
+					if (double.TryParse(text, NumberStyles.Float, CultureInfo.InvariantCulture, out parsedTension))
+					{
+						m_Tension = parsedTension;
+					}
+					else
+					{
+					
+					    // 如果解析失败，将张力设置为 0
+						Console.WriteLine($"[TensionManager] Could not parse tension value '{text}' from file. Setting to 0.");
+						m_Tension = 0;
+					}					
                 }
                 else
                 {
