@@ -1,17 +1,16 @@
 using System;
-using Server;
-using Server.Gumps;
-using Server.Mobiles;
-using Server.Items;
-using Server.Targeting;
 using System.Linq;
+using Server;
+using Server.Items;
+using Server.Mobiles;
+using Server.Gumps;
 
 namespace Server.Items
 {
     [Flipable(0x14EF, 0x14F0)]
     public class AnimalTamingContract : Item
     {
-        private int m_CreatureType;
+        private int m_CreatureType;    // global index into AnimalTamingContractType.Get
         private int m_GoldReward;
         private int m_AmountToTame;
         private int m_AmountTamed;
@@ -63,66 +62,67 @@ namespace Server.Items
         [Constructable]
         public AnimalTamingContract(PlayerMobile player) : base(0x14EF)
         {
-            Weight = 1.0;
-            Movable = true;
-            LootType = LootType.Blessed;
+            Weight    = 1.0;
+            Movable   = true;
+            LootType  = LootType.Blessed;
 
-            // Filter creatures based on player's taming skill
-            var validCreatures = AnimalTamingContractType.Get.Where(creatureType =>
-            {
-                try
+            // 1) Build list of ALL valid creatures from the master array
+            var candidates = AnimalTamingContractType.Get
+                .Where(ct =>
                 {
-                    var creature = Activator.CreateInstance(creatureType.Type) as BaseCreature;
-                    return creature != null && creature.Tamable &&
-                           player.Skills[SkillName.AnimalTaming].Value >= creature.MinTameSkill;
-                }
-                catch
-                {
-                    return false;
-                }
-            }).ToList();
+                    try
+                    {
+                        var bc = Activator.CreateInstance(ct.Type) as BaseCreature;
+                        return bc != null
+                            && bc.Tamable
+                            && player.Skills[SkillName.AnimalTaming].Value >= bc.MinTameSkill;
+                    }
+                    catch
+                    {
+                        return false;
+                    }
+                })
+                .ToList();
 
-            if (validCreatures.Count > 0)
-            {
-                CreatureType = Utility.Random(validCreatures.Count);
-                var selectedCreature = validCreatures[CreatureType];
-
-                AmountToTame = Utility.RandomMinMax(5, 10); // Taming animals is quite time consuming, we shouldnt request too many animals
-                GoldReward = AmountToTame * 500;
-                Name = "Animal Taming Contract: " + AmountToTame + " " + selectedCreature.Name;
-                AmountTamed = 0;
-
-                PowerScrollSkill = SkillName.AnimalTaming;
-                PowerScrollValue = 0; // Placeholder
-            }
-            else
+            // 2) If none available, give a no-quest placeholder
+            if (candidates.Count == 0)
             {
                 Name = "Animal Taming Contract: No tamable creatures available";
+                return;
             }
+
+            // 3) Pick one at random from the valid subset
+            var selected = candidates[Utility.Random(candidates.Count)];
+
+            // 4) Store its GLOBAL index, not the subset index
+            m_CreatureType = Array.IndexOf(AnimalTamingContractType.Get, selected);
+
+            // 5) Set up amounts, reward and name
+            m_AmountToTame = Utility.RandomMinMax(5, 10);
+            m_GoldReward   = m_AmountToTame * 500;
+            m_AmountTamed  = 0;
+
+            Name = $"Animal Taming Contract: {m_AmountToTame} {selected.Name}";
+
+            // Power‐scroll defaults
+            m_PowerScrollSkill = SkillName.AnimalTaming;
+            m_PowerScrollValue = 0.0;
         }
 
         public override void OnDoubleClick(Mobile from)
         {
-            if (IsChildOf(from.Backpack))
+            if (!IsChildOf(from.Backpack))
             {
-                // Calculate PowerScrollValue based on player's current AnimalTaming skill cap
-                Skill AnimalTaming = from.Skills[SkillName.AnimalTaming];
-                if (AnimalTaming != null)
-                {
-                    double currentCap = AnimalTaming.Cap;
-                    PowerScrollValue = Math.Min(150.0, currentCap + 10.0);
-                }
-                else
-                {
-                    PowerScrollValue = 51.0; // Default value if skill is somehow missing
-                }
+                from.SendLocalizedMessage(1047012); // must be in backpack
+                return;
+            }
 
-                from.SendGump(new AnimalTamingContractGump(from, this));
-            }
-            else
-            {
-                from.SendLocalizedMessage(1047012); // This contract must be in your backpack to use it.
-            }
+            var skill = from.Skills[SkillName.AnimalTaming];
+            m_PowerScrollValue = (skill != null)
+                ? Math.Min(150.0, skill.Cap + 10.0)
+                : 51.0;
+
+            from.SendGump(new AnimalTamingContractGump(from, this));
         }
 
         public AnimalTamingContract(Serial serial) : base(serial) { }
@@ -130,7 +130,7 @@ namespace Server.Items
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write((int)1); // version
+            writer.Write(1); // version
 
             writer.Write(m_CreatureType);
             writer.Write(m_GoldReward);
@@ -145,10 +145,10 @@ namespace Server.Items
             base.Deserialize(reader);
             int version = reader.ReadInt();
 
-            m_CreatureType = reader.ReadInt();
-            m_GoldReward = reader.ReadInt();
-            m_AmountToTame = reader.ReadInt();
-            m_AmountTamed = reader.ReadInt();
+            m_CreatureType     = reader.ReadInt();
+            m_GoldReward       = reader.ReadInt();
+            m_AmountToTame     = reader.ReadInt();
+            m_AmountTamed      = reader.ReadInt();
 
             if (version >= 1)
             {

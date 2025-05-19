@@ -68,37 +68,46 @@ namespace Server.Items
             LootType = LootType.Blessed;
 
             // Filter creatures based on player's taming skill
-            var validCreatures = AnimalLoreContractType.Get.Where(creatureType =>
-            {
-                try
+            var candidates = AnimalLoreContractType.Get
+                .Where(ct =>
                 {
-                    var creature = Activator.CreateInstance(creatureType.Type) as BaseCreature;
-                    return creature != null && creature.Tamable &&
-                           player.Skills[SkillName.AnimalTaming].Value >= creature.MinTameSkill;
-                }
-                catch
-                {
-                    return false;
-                }
-            }).ToList();
+                    try
+                    {
+                        var bc = Activator.CreateInstance(ct.Type) as BaseCreature;
+                        return bc != null
+                            && bc.Tamable
+                            && player.Skills[SkillName.AnimalTaming].Value >= bc.MinTameSkill;
+                    }
+                    catch
+                    {
+                        return false;
+                    }
+                })
+                .ToList();
 
-            if (validCreatures.Count > 0)
+            // 2) If none available, give a no-quest placeholder
+            if (candidates.Count == 0)
             {
-                CreatureType = Utility.Random(validCreatures.Count);
-                var selectedCreature = validCreatures[CreatureType];
-
-                AmountToTame = Utility.RandomMinMax(5, 10); // Taming animals is quite time consuming, we shouldnt request too many animals
-                GoldReward = AmountToTame * 500;
-                Name = "AnimalLore Contract: " + AmountToTame + " " + selectedCreature.Name;
-                AmountTamed = 0;
-
-                PowerScrollSkill = SkillName.AnimalLore;
-                PowerScrollValue = 0; // Placeholder
+                Name = "Animal Lore Contract: No tamable creatures available";
+                return;
             }
-            else
-            {
-                Name = "AnimalLore Contract: No tamable creatures available";
-            }
+
+            // 3) Pick one at random from the valid subset
+            var selected = candidates[Utility.Random(candidates.Count)];
+
+            // 4) Store its GLOBAL index, not the subset index
+            m_CreatureType = Array.IndexOf(AnimalLoreContractType.Get, selected);
+
+            // 5) Set up amounts, reward and name
+            m_AmountToTame = Utility.RandomMinMax(5, 10);
+            m_GoldReward   = m_AmountToTame * 500;
+            m_AmountTamed  = 0;
+
+            Name = $"Animal Lore Contract: {m_AmountToTame} {selected.Name}";
+
+            // Power‐scroll defaults
+            m_PowerScrollSkill = SkillName.AnimalLore;
+            m_PowerScrollValue = 0.0;
         }
 
 

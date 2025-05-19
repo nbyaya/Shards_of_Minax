@@ -68,37 +68,46 @@ namespace Server.Items
             LootType = LootType.Blessed;
 
             // Filter creatures based on player's taming skill
-            var validCreatures = TrackingContractType.Get.Where(creatureType =>
-            {
-                try
+            var candidates = TrackingContractType.Get
+                .Where(ct =>
                 {
-                    var creature = Activator.CreateInstance(creatureType.Type) as BaseCreature;
-                    return creature != null && creature.Tamable &&
-                           player.Skills[SkillName.AnimalTaming].Value >= creature.MinTameSkill;
-                }
-                catch
-                {
-                    return false;
-                }
-            }).ToList();
+                    try
+                    {
+                        var bc = Activator.CreateInstance(ct.Type) as BaseCreature;
+                        return bc != null
+                            && bc.Tamable
+                            && player.Skills[SkillName.AnimalTaming].Value >= bc.MinTameSkill;
+                    }
+                    catch
+                    {
+                        return false;
+                    }
+                })
+                .ToList();
 
-            if (validCreatures.Count > 0)
-            {
-                CreatureType = Utility.Random(validCreatures.Count);
-                var selectedCreature = validCreatures[CreatureType];
-
-                AmountToTame = Utility.RandomMinMax(5, 10); // Taming animals is quite time consuming, we shouldnt request too many animals
-                GoldReward = AmountToTame * 500;
-                Name = "Tracking Contract: " + AmountToTame + " " + selectedCreature.Name;
-                AmountTamed = 0;
-
-                PowerScrollSkill = SkillName.Tracking;
-                PowerScrollValue = 0; // Placeholder
-            }
-            else
+            // 2) If none available, give a no-quest placeholder
+            if (candidates.Count == 0)
             {
                 Name = "Tracking Contract: No tamable creatures available";
+                return;
             }
+
+            // 3) Pick one at random from the valid subset
+            var selected = candidates[Utility.Random(candidates.Count)];
+
+            // 4) Store its GLOBAL index, not the subset index
+            m_CreatureType = Array.IndexOf(AnimalTamingContractType.Get, selected);
+
+            // 5) Set up amounts, reward and name
+            m_AmountToTame = Utility.RandomMinMax(5, 10);
+            m_GoldReward   = m_AmountToTame * 500;
+            m_AmountTamed  = 0;
+
+            Name = $"Tracking Contract: {m_AmountToTame} {selected.Name}";
+
+            // Power‐scroll defaults
+            m_PowerScrollSkill = SkillName.Tracking;
+            m_PowerScrollValue = 0.0;
         }
 
 
