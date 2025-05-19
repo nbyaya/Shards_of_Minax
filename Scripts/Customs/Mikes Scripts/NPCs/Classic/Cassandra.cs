@@ -5,12 +5,12 @@ using Server.Gumps;
 using Server.Network;
 using Server.Items;
 
-public class CassandraTheSeer : BaseCreature
+public class Cassandra : BaseCreature
 {
     private DateTime lastRewardTime;
 
     [Constructable]
-    public CassandraTheSeer() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
+    public Cassandra() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
         Name = "Cassandra";
         Body = 0x191; // Human female body
@@ -36,7 +36,7 @@ public class CassandraTheSeer : BaseCreature
         lastRewardTime = DateTime.MinValue;
     }
 
-    public CassandraTheSeer(Serial serial) : base(serial)
+    public Cassandra(Serial serial) : base(serial)
     {
     }
 

@@ -5,12 +5,12 @@ using Server.Gumps;
 using Server.Network;
 using Server.Items;
 
-public class EinharTheBeastmaster : BaseCreature
+public class Einhar : BaseCreature
 {
     private DateTime lastRewardTime;
 
     [Constructable]
-    public EinharTheBeastmaster() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
+    public Einhar() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
         Name = "Einhar";
         Body = 0x190; // Human male body
@@ -37,7 +37,7 @@ public class EinharTheBeastmaster : BaseCreature
         lastRewardTime = DateTime.MinValue;
     }
 
-    public EinharTheBeastmaster(Serial serial) : base(serial)
+    public Einhar(Serial serial) : base(serial)
     {
     }
 

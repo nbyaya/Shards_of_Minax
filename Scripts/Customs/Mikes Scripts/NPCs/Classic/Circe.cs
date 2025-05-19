@@ -5,10 +5,10 @@ using Server.Gumps;
 using Server.Network;
 using Server.Items;
 
-public class CirceTheWitch : BaseCreature
+public class Circe : BaseCreature
 {
     [Constructable]
-    public CirceTheWitch() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
+    public Circe() : base(AIType.AI_Vendor, FightMode.None, 10, 1, 0.2, 0.4)
     {
         Name = "Circe";
         Body = 0x191; // Human female body
@@ -30,7 +30,7 @@ public class CirceTheWitch : BaseCreature
         HairHue = Race.RandomHairHue();
     }
 
-    public CirceTheWitch(Serial serial) : base(serial)
+    public Circe(Serial serial) : base(serial)
     {
     }
 
