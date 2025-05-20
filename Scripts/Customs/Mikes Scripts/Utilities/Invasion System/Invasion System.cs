@@ -491,7 +491,7 @@ namespace Server.Customs.Invasion_System
             }
 
             // Calculate proportion based on tension (range: 10,000 to 100,000)
-            double proportion = (tension - 10000) / 200000.0;
+            double proportion = (tension - 10000) / 900000.0;
             if (proportion > 1.0)
                 proportion = 1.0;
 
@@ -513,7 +513,7 @@ namespace Server.Customs.Invasion_System
         private static void TriggerInvasions(int townsToInvade)
         {
             // Reduce tension by 500 each time invasions are triggered (ensuring it never goes below 0)
-            TensionManager.Tension = Math.Max(0, TensionManager.Tension - 500);
+            TensionManager.Tension = Math.Max(0, TensionManager.Tension - TensionManager.TensionReductionAmount);
 
             List<InvasionTowns> availableTowns = new List<InvasionTowns>();
             foreach (InvasionTowns town in Enum.GetValues(typeof(InvasionTowns)))
@@ -556,7 +556,7 @@ namespace Server.Customs.Invasion_System
         private static void CheckAndScheduleInvasions()
         {
             // Reduce tension by 500 every hour (to a minimum of zero)
-            TensionManager.Tension = Math.Max(0, TensionManager.Tension - 500);
+            TensionManager.Tension = Math.Max(0, TensionManager.Tension - TensionManager.TensionReductionAmount);
             double tension = TensionManager.Tension;
 
             // Only trigger invasions if tension is at least 10,000
