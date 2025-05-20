@@ -174,6 +174,8 @@ namespace Server.Mobiles
 
     public class Sheepdog : BaseCreature
     {
+        private ExpireTimer m_ExpireTimer;
+
         [Constructable]
         public Sheepdog() : base(AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4)
         {
@@ -210,6 +212,19 @@ namespace Server.Mobiles
             Tamable = true;
             ControlSlots = 1;
             MinTameSkill = 35.1;
+
+            // Start the expiration timer (change TimeSpan as needed)
+            m_ExpireTimer = new ExpireTimer(this, TimeSpan.FromMinutes(2.0));
+            m_ExpireTimer.Start();
+        }
+
+        // Clean up the timer if the dog is deleted by other means
+        public override void OnDelete()
+        {
+            if (m_ExpireTimer != null)
+                m_ExpireTimer.Stop();
+
+            base.OnDelete();
         }
 
         public Sheepdog(Serial serial) : base(serial)
@@ -222,11 +237,31 @@ namespace Server.Mobiles
             writer.Write((int)0);
         }
 
-		public override void Deserialize(GenericReader reader)
-		{
-			base.Deserialize(reader);
-			int version = reader.ReadInt();
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+        }
 
-		}
+        // Timer class for self-deletion
+        private class ExpireTimer : Timer
+        {
+            private Sheepdog m_Owner;
+
+            public ExpireTimer(Sheepdog owner, TimeSpan delay) : base(delay)
+            {
+                m_Owner = owner;
+                Priority = TimerPriority.OneMinute;
+            }
+
+            protected override void OnTick()
+            {
+                if (m_Owner != null && !m_Owner.Deleted)
+                {
+                    // Optionally: m_Owner.Say("The sheepdog vanishes!");
+                    m_Owner.Delete();
+                }
+            }
+		}	
     }
 }
