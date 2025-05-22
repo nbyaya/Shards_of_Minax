@@ -40,11 +40,11 @@ namespace Server.Items
                 .Where(item => playerSkillLevel >= item.MinDifficulty && playerSkillLevel <= item.MaxDifficulty)
                 .ToList();
 
-            // Ensure there are items available for the player's skill level
-            if (availableItems.Count == 0)
-            {
-                throw new InvalidOperationException("No items available for the player's skill level.");
-            }
+			if ( availableItems.Count == 0 )
+			{
+				// Option A: let them pick from *any* recipe
+				availableItems = CookingCollectionType.Items;
+			}	
 
             // Select a random item from the filtered list
             CookingCollectionType selectedItem = availableItems[Utility.Random(availableItems.Count)];

@@ -40,22 +40,17 @@ namespace Server.Items
                 .Where(item => skillLevel >= item.MinSkill && skillLevel <= item.MaxSkill)
                 .ToList();
 
-            if (eligibleItems.Count > 0)
-            {
-                // Randomly select an item
-                m_LumberjackingItem = eligibleItems[Utility.Random(eligibleItems.Count)];
+			if (eligibleItems.Count == 0)
+			{
+				// fallback: assign from all available items
+				eligibleItems = LumberjackingCollectionType.Resources;
+			}
 
-                // Set amount needed and name
-                AmountNeeded = Utility.RandomMinMax(10, 20);
-                Name = $"Lumberjacking Collection Contract: {AmountNeeded} {m_LumberjackingItem.ResourceType}(s)";
-                AmountCollected = 0;
-            }
-            else
-            {
-                // Default fallback if no items match the skill level
-                m_LumberjackingItem = null;
-                Name = "Invalid Lumberjacking Contract";
-            }
+			m_LumberjackingItem = eligibleItems[Utility.Random(eligibleItems.Count)];
+			AmountNeeded = Utility.RandomMinMax(10, 20);
+			Name = $"Lumberjacking Collection Contract: {AmountNeeded} {m_LumberjackingItem.ResourceType.Name}(s)";
+			AmountCollected = 0;
+
         }
 
         public override void OnDoubleClick(Mobile from)

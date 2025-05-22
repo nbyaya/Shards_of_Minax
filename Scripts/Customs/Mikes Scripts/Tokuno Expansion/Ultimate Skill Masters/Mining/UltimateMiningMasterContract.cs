@@ -33,29 +33,25 @@ namespace Server.Items
             // Determine the player's Mining skill
             double skillLevel = player?.Skills[SkillName.Mining]?.Value ?? 0.0;
 
-            MiningCollectionType.PopulateMiningCollection();
+			MiningCollectionType.PopulateMiningCollection();
 
-            // Filter items based on skill level
-            var eligibleItems = MiningCollectionType.Resources
-                .Where(item => skillLevel >= item.MinSkill && skillLevel <= item.MaxSkill)
-                .ToList();
+			var eligibleItems = MiningCollectionType.Resources
+				.Where(item => skillLevel >= item.MinSkill && skillLevel <= item.MaxSkill)
+				.ToList();
 
-            if (eligibleItems.Count > 0)
-            {
-                // Randomly select an item
-                m_MiningItem = eligibleItems[Utility.Random(eligibleItems.Count)];
+			if (eligibleItems.Count == 0)
+			{
+				double highestSkill = MiningCollectionType.Resources.Max(i => i.MaxSkill);
+				eligibleItems = MiningCollectionType.Resources
+					.Where(i => i.MaxSkill == highestSkill)
+					.ToList();
+			}
 
-                // Set amount needed and name
-                AmountNeeded = Utility.RandomMinMax(10, 20);
-                Name = $"Mining Collection Contract: {AmountNeeded} {m_MiningItem.ResourceType}(s)";
-                AmountCollected = 0;
-            }
-            else
-            {
-                // Default fallback if no items match the skill level
-                m_MiningItem = null;
-                Name = "Invalid Mining Contract";
-            }
+			m_MiningItem = eligibleItems[Utility.Random(eligibleItems.Count)];
+			AmountNeeded = Utility.RandomMinMax(10, 20);
+			AmountCollected = 0;
+			Name = $"Mining Collection Contract: {AmountNeeded} {m_MiningItem.ResourceType.Name}(s)";
+
         }
 
         public override void OnDoubleClick(Mobile from)

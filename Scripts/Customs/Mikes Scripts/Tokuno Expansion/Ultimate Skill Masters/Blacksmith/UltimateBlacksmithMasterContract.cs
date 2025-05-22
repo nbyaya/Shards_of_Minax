@@ -41,10 +41,15 @@ namespace Server.Items
                 .ToList();
 
             // Ensure there are items available for the player's skill level
-            if (availableItems.Count == 0)
-            {
-                throw new InvalidOperationException("No items available for the player's skill level.");
-            }
+			if (availableItems.Count == 0)
+			{
+				// Fallback: pick items with highest MaxDifficulty
+				double maxDifficulty = BlacksmithCollectionType.Items.Max(i => i.MaxDifficulty);
+				availableItems = BlacksmithCollectionType.Items
+					.Where(i => i.MaxDifficulty == maxDifficulty)
+					.ToList();
+			}
+
 
             // Select a random item from the filtered list
             BlacksmithCollectionType selectedItem = availableItems[Utility.Random(availableItems.Count)];

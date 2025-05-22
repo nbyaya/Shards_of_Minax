@@ -40,11 +40,9 @@ namespace Server.Items
                 .Where(item => playerSkillLevel >= item.MinDifficulty && playerSkillLevel <= item.MaxDifficulty)
                 .ToList();
 
-            // Ensure there are items available for the player's skill level
-            if (availableItems.Count == 0)
-            {
-                throw new InvalidOperationException("No items available for the player's skill level.");
-            }
+			// If nothing matches (e.g. skill > MaxDifficulty), give them any challenge
+			if ( availableItems.Count == 0 )
+				availableItems = FletchingCollectionType.Items;
 
             // Select a random item from the filtered list
             FletchingCollectionType selectedItem = availableItems[Utility.Random(availableItems.Count)];

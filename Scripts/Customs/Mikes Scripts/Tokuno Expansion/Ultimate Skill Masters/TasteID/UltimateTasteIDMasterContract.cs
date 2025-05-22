@@ -40,11 +40,9 @@ namespace Server.Items
                 .Where(item => playerSkillLevel >= item.MinDifficulty && playerSkillLevel <= item.MaxDifficulty)
                 .ToList();
 
-            // Ensure there are items available for the player's skill level
-            if (availableItems.Count == 0)
-            {
-                throw new InvalidOperationException("No items available for the player's skill level.");
-            }
+			// If nothing matches (e.g. skill > 100), just let them get *some* challenge
+			if (availableItems.Count == 0)
+				availableItems = TasteIDCollectionType.Items;
 
             // Select a random item from the filtered list
             TasteIDCollectionType selectedItem = availableItems[Utility.Random(availableItems.Count)];

@@ -36,15 +36,24 @@ namespace Server.Items
             CartographyCollectionType.PopulateCartographyCollection();
 
             // Filter items based on the player's skill level
-            var availableItems = CartographyCollectionType.Items
-                .Where(item => playerSkillLevel >= item.MinDifficulty && playerSkillLevel <= item.MaxDifficulty)
-                .ToList();
+			var availableItems = CartographyCollectionType.Items
+				.Where(item => playerSkillLevel >= item.MinDifficulty && playerSkillLevel <= item.MaxDifficulty)
+				.ToList();
 
-            // Ensure there are items available for the player's skill level
-            if (availableItems.Count == 0)
-            {
-                throw new InvalidOperationException("No items available for the player's skill level.");
-            }
+			// Fallback if no items matched the player's skill level
+			if (availableItems.Count == 0)
+			{
+				// Fallback to hardest tier, or just use entire list
+				var maxDiff = CartographyCollectionType.Items.Max(i => i.MaxDifficulty);
+				availableItems = CartographyCollectionType.Items
+					.Where(i => i.MaxDifficulty == maxDiff)
+					.ToList();
+
+				// If still empty for some reason, fallback to entire list
+				if (availableItems.Count == 0)
+					availableItems = CartographyCollectionType.Items;
+			}
+
 
             // Select a random item from the filtered list
             CartographyCollectionType selectedItem = availableItems[Utility.Random(availableItems.Count)];

@@ -40,11 +40,12 @@ namespace Server.Items
                 .Where(item => playerSkillLevel >= item.MinDifficulty && playerSkillLevel <= item.MaxDifficulty)
                 .ToList();
 
-            // Ensure there are items available for the player's skill level
-            if (availableItems.Count == 0)
-            {
-                throw new InvalidOperationException("No items available for the player's skill level.");
-            }
+			if (availableItems.Count == 0)
+			{
+				// Fallback to full list if no match
+				availableItems = CarpentryCollectionType.Items;
+			}
+
 
             // Select a random item from the filtered list
             CarpentryCollectionType selectedItem = availableItems[Utility.Random(availableItems.Count)];

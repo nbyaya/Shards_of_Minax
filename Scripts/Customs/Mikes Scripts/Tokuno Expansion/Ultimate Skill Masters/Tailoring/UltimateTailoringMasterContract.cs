@@ -40,22 +40,21 @@ namespace Server.Items
                 .Where(item => skillLevel >= item.MinSkill && skillLevel <= item.MaxSkill)
                 .ToList();
 
-            if (eligibleItems.Count > 0)
-            {
-                // Randomly select an item
-                m_TailoringItem = eligibleItems[Utility.Random(eligibleItems.Count)];
+			if (eligibleItems.Count == 0)
+			{
+				// Use fallback: highest-skill-level items
+				double maxSkill = TailoringCollectionType.Items.Max(i => i.MaxSkill);
+				eligibleItems = TailoringCollectionType.Items
+					.Where(i => i.MaxSkill == maxSkill)
+					.ToList();
+			}
 
-                // Set amount needed and name
-                AmountNeeded = Utility.RandomMinMax(10, 20);
-                Name = $"Tailoring Collection Contract: {AmountNeeded} {m_TailoringItem.ItemType}(s)";
-                AmountCollected = 0;
-            }
-            else
-            {
-                // Default fallback if no items match the skill level
-                m_TailoringItem = null;
-                Name = "Invalid Tailoring Contract";
-            }
+			// Pick a random item from eligible list (guaranteed not empty)
+			m_TailoringItem = eligibleItems[Utility.Random(eligibleItems.Count)];
+			AmountNeeded = Utility.RandomMinMax(10, 20);
+			Name = $"Tailoring Collection Contract: {AmountNeeded} {m_TailoringItem.ItemType.Name}(s)";
+			AmountCollected = 0;
+
         }
 
         public override void OnDoubleClick(Mobile from)

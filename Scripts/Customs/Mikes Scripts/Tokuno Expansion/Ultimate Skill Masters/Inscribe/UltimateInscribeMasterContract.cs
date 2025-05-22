@@ -43,22 +43,24 @@ namespace Server.Items
                 .Where(item => skillLevel >= item.MinSkill && skillLevel <= item.MaxSkill)
                 .ToList();
 
-            if (eligibleItems.Count > 0)
-            {
-                // Randomly select an item
-                m_InscribeItem = eligibleItems[Utility.Random(eligibleItems.Count)];
+			if (eligibleItems.Count == 0)
+			{
+				// Fallback: Give them the easiest item (or random item)
+				var fallbackItem = InscribeCollectionType.Items
+					.OrderBy(i => i.MinSkill)
+					.FirstOrDefault();
 
-                // Set amount needed and name
-                AmountNeeded = Utility.RandomMinMax(10, 20);
-                Name = $"Inscribe Collection Contract: {AmountNeeded} {m_InscribeItem.Name}(s)";
-                AmountCollected = 0;
-            }
-            else
-            {
-                // Default fallback if no items match the skill level
-                m_InscribeItem = null;
-                Name = "Invalid Inscribe Contract";
-            }
+				if (fallbackItem == null)
+					throw new InvalidOperationException("No Inscribe items defined in InscribeCollectionType.");
+
+				eligibleItems.Add(fallbackItem);
+			}
+
+			// Now select from eligible (or fallback) list
+			m_InscribeItem = eligibleItems[Utility.Random(eligibleItems.Count)];
+			AmountNeeded = Utility.RandomMinMax(10, 20);
+			Name = $"Inscribe Collection Contract: {AmountNeeded} {m_InscribeItem.Name}(s)";
+			AmountCollected = 0;
         }
 
         public override void OnDoubleClick(Mobile from)

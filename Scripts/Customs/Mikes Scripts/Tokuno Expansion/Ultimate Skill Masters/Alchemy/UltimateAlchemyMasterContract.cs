@@ -44,22 +44,21 @@ namespace Server.Items
                 .Where(item => skillLevel >= item.MinDifficulty && skillLevel <= item.MaxDifficulty)
                 .ToList();
 
-            if (eligibleItems.Count > 0)
-            {
-                // Randomly select an item
-                m_AlchemyItem = eligibleItems[Utility.Random(eligibleItems.Count)];
+			if (eligibleItems.Count == 0)
+			{
+				// Fallback to hardest recipes if nothing matches
+				double maxDiff = AlchemyCollectionType.Items.Max(i => i.MaxDifficulty);
+				eligibleItems = AlchemyCollectionType.Items
+					.Where(i => i.MaxDifficulty == maxDiff)
+					.ToList();
+			}
 
-                // Set amount needed and name
-                AmountNeeded = Utility.RandomMinMax(10, 20);
-                Name = $"Alchemy Collection Contract: {AmountNeeded} {m_AlchemyItem.Name}(s)";
-                AmountCollected = 0;
-            }
-            else
-            {
-                // Default fallback if no items match the skill level
-                m_AlchemyItem = null;
-                Name = "Invalid Alchemy Contract";
-            }
+			// Safe: guaranteed to have items now
+			m_AlchemyItem = eligibleItems[Utility.Random(eligibleItems.Count)];
+			AmountNeeded = Utility.RandomMinMax(10, 20);
+			Name = $"Alchemy Collection Contract: {AmountNeeded} {m_AlchemyItem.Name}(s)";
+			AmountCollected = 0;
+
         }
 
         public override void OnDoubleClick(Mobile from)

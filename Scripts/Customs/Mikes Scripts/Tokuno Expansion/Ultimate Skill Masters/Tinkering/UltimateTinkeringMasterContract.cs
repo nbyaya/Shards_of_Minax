@@ -40,22 +40,21 @@ namespace Server.Items
                 .Where(item => skillLevel >= item.MinSkill && skillLevel <= item.MaxSkill)
                 .ToList();
 
-            if (eligibleItems.Count > 0)
-            {
-                // Randomly select an item
-                m_TinkeringItem = eligibleItems[Utility.Random(eligibleItems.Count)];
+			if (eligibleItems.Count == 0)
+			{
+				// Fall back to highest-difficulty items if none matched
+				double maxSkill = TinkeringCollectionType.Items.Max(i => i.MaxSkill);
+				eligibleItems = TinkeringCollectionType.Items
+					.Where(i => i.MaxSkill == maxSkill)
+					.ToList();
+			}
 
-                // Set amount needed and name
-                AmountNeeded = Utility.RandomMinMax(10, 20);
-                Name = $"Tinkering Collection Contract: {AmountNeeded} {m_TinkeringItem.ItemType}(s)";
-                AmountCollected = 0;
-            }
-            else
-            {
-                // Default fallback if no items match the skill level
-                m_TinkeringItem = null;
-                Name = "Invalid Tinkering Contract";
-            }
+			// Now always valid
+			m_TinkeringItem = eligibleItems[Utility.Random(eligibleItems.Count)];
+			AmountNeeded = Utility.RandomMinMax(10, 20);
+			Name = $"Tinkering Collection Contract: {AmountNeeded} {m_TinkeringItem.ItemType.Name}(s)";
+			AmountCollected = 0;
+
         }
 
         public override void OnDoubleClick(Mobile from)

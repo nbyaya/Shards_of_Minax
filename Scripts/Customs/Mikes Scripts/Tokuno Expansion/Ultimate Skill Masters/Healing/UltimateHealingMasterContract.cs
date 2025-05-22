@@ -42,23 +42,19 @@ namespace Server.Items
             var eligibleItems = HealingCollectionType.Items
                 .Where(item => skillLevel >= item.MinDifficulty && skillLevel <= item.MaxDifficulty)
                 .ToList();
+			if (eligibleItems.Count == 0)
+			{
+				// Default to the most difficult items
+				double maxDiff = HealingCollectionType.Items.Max(i => i.MaxDifficulty);
+				eligibleItems = HealingCollectionType.Items.Where(i => i.MaxDifficulty == maxDiff).ToList();
+			}
 
-            if (eligibleItems.Count > 0)
-            {
-                // Randomly select an item
-                m_HealingItem = eligibleItems[Utility.Random(eligibleItems.Count)];
+			// At this point, we are guaranteed a valid list
+			m_HealingItem = eligibleItems[Utility.Random(eligibleItems.Count)];
+			AmountNeeded = Utility.RandomMinMax(10, 20);
+			Name = $"Healing Collection Contract: {AmountNeeded} {m_HealingItem.Name}(s)";
+			AmountCollected = 0;
 
-                // Set amount needed and name
-                AmountNeeded = Utility.RandomMinMax(10, 20);
-                Name = $"Healing Collection Contract: {AmountNeeded} {m_HealingItem.Name}(s)";
-                AmountCollected = 0;
-            }
-            else
-            {
-                // Default fallback if no items match the skill level
-                m_HealingItem = null;
-                Name = "Invalid Healing Contract";
-            }
         }
 
         public override void OnDoubleClick(Mobile from)
