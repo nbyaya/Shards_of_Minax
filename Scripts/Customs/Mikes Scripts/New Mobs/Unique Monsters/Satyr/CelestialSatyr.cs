@@ -128,57 +128,51 @@ namespace Server.Mobiles
             m_NextHeavenlyHymn = DateTime.UtcNow + TimeSpan.FromSeconds(30); // Cooldown for Heavenly Hymn
         }
 
-        private void LuminousChime()
-        {
-            PublicOverheadMessage(MessageType.Regular, 0x3B2, true, "* Emits a burst of light *");
-            PlaySound(0x2D7);
-            FixedEffect(0x373A, 10, 16);
+		private void LuminousChime()
+		{
+			PublicOverheadMessage(MessageType.Regular, 0x3B2, true, "* Emits a burst of light *");
+			PlaySound(0x2D7);
+			FixedEffect(0x373A, 10, 16);
 
-            foreach (Mobile m in GetMobilesInRange(5))
-            {
-                if (m == this)
+			foreach (Mobile m in GetMobilesInRange(5))
+			{
+				if (m == this)
 					continue;
-				
-				// 确保目标不是自己并且不是友军
-				if (m is BaseCreature creature)
-                {
-					if (!creature.IsFriend(this))
-					{	
-					    m.SendMessage("You are blinded by the celestial burst of light!");
-						m.SendMessage("You feel your skills diminished by the celestial light!");
-						Timer.DelayCall(TimeSpan.FromSeconds(0), () => ApplySkillDebuff(creature));
-					} 				                    
-                }
-				else if (m is PlayerMobile)
-				{	
-				     m.SendMessage("You are blinded by the celestial burst of light!");
-					 m.SendMessage("You feel dazed by the celestial light, but recover quickly."); // 可选效果
-					 // 此处您可以选择给玩家添加视觉特效或临时 debuff
-				}	 
-            }
 
-            m_NextLuminousChime = DateTime.UtcNow + TimeSpan.FromSeconds(45); // Cooldown for Luminous Chime
-        }
+				// only consider it "friendly" if it's a BaseCreature that IsFriend
+				bool isFriend = (m is BaseCreature bc && bc.IsFriend(this));
 
-        private void ApplySkillDebuff(Mobile m)
-        {
-            if (m is BaseCreature creature)
-            {
-                // Temporarily reduce Tactics skill
-                double originalTactics = creature.Skills[SkillName.Tactics].Base;
-                creature.Skills[SkillName.Tactics].Base *= 0.7; // Reduce by 30%
+				if (!isFriend)
+				{
+					m.SendMessage("You are blinded by the celestial burst of light!");
+					m.SendMessage("You feel your skills diminished by the celestial light!");
 
-                // Restore skill after a duration
-                Timer.DelayCall(TimeSpan.FromSeconds(30), () =>
-                {
-                    if (!m.Deleted)
-                    {
-                        creature.Skills[SkillName.Tactics].Base = originalTactics;
-                        m.SendMessage("The celestial light's effects fade, and you feel your skills return to normal.");
-                    }
-                });
-            }
-        }
+					// we can debuff _any_ mobile with Skills—even players
+					Timer.DelayCall(TimeSpan.Zero, () => ApplySkillDebuff(m));
+				}
+			}
+
+			m_NextLuminousChime = DateTime.UtcNow + TimeSpan.FromSeconds(45);
+		}
+
+		private void ApplySkillDebuff(Mobile m)
+		{
+			// grab the Tactics skill on whatever Mobile this is
+			var tactics = m.Skills[SkillName.Tactics];
+			double original = tactics.Base;
+
+			tactics.Base *= 0.7; // −30%
+
+			Timer.DelayCall(TimeSpan.FromSeconds(30), () =>
+			{
+				if (!m.Deleted)
+				{
+					tactics.Base = original;
+					m.SendMessage("The celestial light's effects fade, and you feel your skills return to normal.");
+				}
+			});
+		}
+
 
         private void SeraphicBallad()
         {
