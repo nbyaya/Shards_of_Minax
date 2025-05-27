@@ -585,36 +585,35 @@ namespace Server.Items
             return CheckLoot(from, true) && base.CheckLift(from, item, ref reject);
         }
 
-        public override void OnItemLifted(Mobile from, Item item)
-        {
-            bool notYetLifted = !m_Lifted.Contains(item);
+		public override void OnItemLifted(Mobile from, Item item)
+		{
+			// Safety check to prevent crash
+			if (from == null || item == null)
+				return;
 
-            from.RevealingAction();
+			if (m_Lifted == null)
+				m_Lifted = new List<Item>();
 
-            if (notYetLifted)
-            {
-                m_Lifted.Add(item);
+			bool notYetLifted = !m_Lifted.Contains(item);
 
-                if (0.1 >= Utility.RandomDouble()) // 10% chance to spawn a new monster
-                {
-                    try
-					{
-						if (TreasureMap != null)
-						{	
-					        var spawn = TreasureMap.Spawn(Level, GetWorldLocation(), Map, from, false);
-							if (spawn != null)
-								spawn.Hue = 2725;
-						}
-					}
-					catch (Exception ex)
-					{
-						Console.WriteLine($"[TreasureMapChest] Error spawning monster in OnItemLifted: {ex}");
-					}	
-                }
-            }
+			from.RevealingAction();
 
-            base.OnItemLifted(from, item);
-        }
+			if (notYetLifted)
+			{
+				m_Lifted.Add(item);
+
+				if (0.1 >= Utility.RandomDouble()) // 10% chance to spawn a new monster
+				{
+					var spawn = TreasureMap.Spawn(Level, GetWorldLocation(), Map, from, false);
+
+					if (spawn != null)
+						spawn.Hue = 2725;
+				}
+			}
+
+			base.OnItemLifted(from, item);
+		}
+
 
         public void SpawnAncientGuardian(Mobile from)
         {
