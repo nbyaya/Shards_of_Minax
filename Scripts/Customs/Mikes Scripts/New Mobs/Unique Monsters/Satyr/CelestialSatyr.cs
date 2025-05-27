@@ -136,14 +136,25 @@ namespace Server.Mobiles
 
             foreach (Mobile m in GetMobilesInRange(5))
             {
-                if (m != this && !((BaseCreature)m).IsFriend(this))
+                if (m == this)
+					continue;
+				
+				// 确保目标不是自己并且不是友军
+				if (m is BaseCreature creature)
                 {
-                    m.SendMessage("You are blinded by the celestial burst of light!");
-
-                    // Apply a temporary skill reduction to simulate reduced accuracy
-                    m.SendMessage("You feel your skills diminished by the celestial light!");
-                    Timer.DelayCall(TimeSpan.FromSeconds(0), () => ApplySkillDebuff(m));
+					if (!creature.IsFriend(this))
+					{	
+					    m.SendMessage("You are blinded by the celestial burst of light!");
+						m.SendMessage("You feel your skills diminished by the celestial light!");
+						Timer.DelayCall(TimeSpan.FromSeconds(0), () => ApplySkillDebuff(creature));
+					} 				                    
                 }
+				else if (m is PlayerMobile)
+				{	
+				     m.SendMessage("You are blinded by the celestial burst of light!");
+					 m.SendMessage("You feel dazed by the celestial light, but recover quickly."); // 可选效果
+					 // 此处您可以选择给玩家添加视觉特效或临时 debuff
+				}	 
             }
 
             m_NextLuminousChime = DateTime.UtcNow + TimeSpan.FromSeconds(45); // Cooldown for Luminous Chime
