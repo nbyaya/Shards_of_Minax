@@ -597,9 +597,19 @@ namespace Server.Items
 
                 if (0.1 >= Utility.RandomDouble()) // 10% chance to spawn a new monster
                 {
-                    var spawn = TreasureMap.Spawn(Level, GetWorldLocation(), Map, from, false);
-
-                    spawn.Hue = 2725;
+                    try
+					{
+						if (TreasureMap != null)
+						{	
+					        var spawn = TreasureMap.Spawn(Level, GetWorldLocation(), Map, from, false);
+							if (spawn != null)
+								spawn.Hue = 2725;
+						}
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine($"[TreasureMapChest] Error spawning monster in OnItemLifted: {ex}");
+					}	
                 }
             }
 
