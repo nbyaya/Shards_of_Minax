@@ -144,8 +144,8 @@ namespace Server.Items
             Longsword longsword = new Longsword();
             longsword.Name = "Glass Sword of Valor";
             longsword.Hue = Utility.RandomMinMax(50, 150);
-            longsword.MinDamage = 500;
-            longsword.MaxDamage = 1000;
+            longsword.MinDamage = 50;
+            longsword.MaxDamage = 100;
             longsword.Attributes.BonusStr = 50;
             longsword.Attributes.Luck = 250;
             longsword.Slayer = SlayerName.OrcSlaying;
