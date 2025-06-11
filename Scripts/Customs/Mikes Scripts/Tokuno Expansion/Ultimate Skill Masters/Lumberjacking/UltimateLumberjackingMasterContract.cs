@@ -81,7 +81,7 @@ namespace Server.Items
         {
             base.Deserialize(reader);
             int version = reader.ReadInt();
-            string itemName = reader.ReadString();
+            //string itemName = reader.ReadString();
             m_AmountNeeded = reader.ReadInt();
             m_AmountCollected = reader.ReadInt();
         }

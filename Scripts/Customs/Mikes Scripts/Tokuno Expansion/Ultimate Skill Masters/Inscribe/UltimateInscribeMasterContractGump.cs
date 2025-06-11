@@ -14,7 +14,14 @@ namespace Server.Gumps
 
         public UltimateInscribeMasterContractGump(Mobile from, UltimateInscribeMasterContract contract) : base(0, 0)
         {
-            m_Contract = contract;
+            
+			if (contract == null || contract.ItemType == null)
+			{
+				from.SendMessage("This contract is corrupted.  Please discard it and request a new one.");
+				return;
+			}			
+					
+			m_Contract = contract;
 
             AddPage(0);
             AddBackground(0, 0, 300, 200, 5170);
