@@ -617,7 +617,13 @@ namespace Server.Items
 
         public void SpawnAncientGuardian(Mobile from)
         {
-            ExecuteTrap(from);
+            
+			// safety: make sure our guardian list is initialized
+			if (AncientGuardians == null)
+				AncientGuardians = new List<Mobile>();
+					
+			
+			ExecuteTrap(from);
 
             if (!AncientGuardians.Any(g => g.Alive))
             {
@@ -731,6 +737,11 @@ namespace Server.Items
                         break;
                     }
             }
+
+			// post-load safety: ensure our lists exist
+			if (Guardians        == null) Guardians        = new List<Mobile>();
+			if (AncientGuardians == null) AncientGuardians = new List<Mobile>();
+
 
             if (!Temporary)
             {
